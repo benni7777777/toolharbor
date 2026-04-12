@@ -61,7 +61,7 @@ ehthumbs.db
 .cache
 
 # Reference project (if not needed in repo)
-bentopdf-main
+reference-upstream
 # Comparison/debug files
 comparisons.txt
 

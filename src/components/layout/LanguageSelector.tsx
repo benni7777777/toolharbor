@@ -2,17 +2,17 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
 import { Globe, ChevronDown, Check } from 'lucide-react';
 import { type Locale, locales, localeConfig, getLocalizedPath } from '@/lib/i18n/config';
 import { Button } from '@/components/ui/Button';
+import { useSafeTranslations } from '@/lib/i18n/useSafeTranslations';
 
 export interface LanguageSelectorProps {
   currentLocale: Locale;
 }
 
 // Storage key for language preference
-const LANGUAGE_PREFERENCE_KEY = 'pdfcraft-language-preference';
+const LANGUAGE_PREFERENCE_KEY = 'opentoolskit-language-preference';
 
 /**
  * Save language preference to localStorage
@@ -37,7 +37,7 @@ export function getLanguagePreference(): Locale | null {
 }
 
 export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocale }) => {
-  const t = useTranslations('common.buttons');
+  const t = useSafeTranslations('common.buttons');
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);

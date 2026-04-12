@@ -1,7 +1,7 @@
 /**
  * Tools configuration file
  * Contains all 67 PDF tools with their properties, categories, and related tools
- * Migrated from BentoPDF and enhanced for PDFCraft
+ * Launch PDF registry for OpenToolsKit phase 1
  */
 
 import { Tool, ToolCategory } from '@/types/tool';
@@ -19,7 +19,7 @@ const LARGE_FILE_SIZE = Infinity; // No limit
  * - Exactly one category from the 6 defined categories
  * - At least 2 related tools
  */
-export const tools: Tool[] = [
+const pdfLaunchTools: Omit<Tool, 'toolFamily' | 'renderer' | 'seoCategorySlug'>[] = [
   // ==================== ORGANIZE & MANAGE ====================
   {
     id: 'pdf-multi-tool',
@@ -506,7 +506,7 @@ export const tools: Tool[] = [
     maxFileSize: DEFAULT_MAX_FILE_SIZE,
     maxFiles: 1,
     features: ['preserve-formatting', 'preserve-images', 'chapter-structure'],
-    relatedTools: ['word-to-pdf', 'txt-to-pdf', 'html-to-pdf'],
+    relatedTools: ['word-to-pdf', 'txt-to-pdf', 'markdown-to-pdf'],
   },
   {
     id: 'mobi-to-pdf',
@@ -530,7 +530,7 @@ export const tools: Tool[] = [
     maxFileSize: DEFAULT_MAX_FILE_SIZE,
     maxFiles: 1,
     features: ['preserve-formatting', 'dpi-setting', 'quality-setting'],
-    relatedTools: ['image-to-pdf', 'scan-to-pdf', 'ocr-pdf'],
+    relatedTools: ['image-to-pdf', 'ocr-pdf', 'pdf-to-jpg'],
   },
   {
     id: 'fb2-to-pdf',
@@ -1107,7 +1107,7 @@ export const tools: Tool[] = [
     maxFileSize: LARGE_FILE_SIZE,
     maxFiles: 10,
     features: ['auto-straighten', 'scanned-documents', 'angle-detection', 'batch-processing'],
-    relatedTools: ['compress-pdf', 'ocr', 'repair-pdf'],
+    relatedTools: ['compress-pdf', 'ocr-pdf', 'repair-pdf'],
   },
   {
     id: 'pdf-booklet',
@@ -1119,7 +1119,7 @@ export const tools: Tool[] = [
     maxFileSize: DEFAULT_MAX_FILE_SIZE,
     maxFiles: 1,
     features: ['booklet-layout', 'saddle-stitch', 'grid-modes', 'paper-sizes', 'preview'],
-    relatedTools: ['n-up', 'posterize-pdf', 'print-pdf'],
+    relatedTools: ['n-up-pdf', 'posterize-pdf', 'pdf-reader'],
   },
   {
     id: 'rasterize-pdf',
@@ -1143,7 +1143,7 @@ export const tools: Tool[] = [
     maxFileSize: DEFAULT_MAX_FILE_SIZE,
     maxFiles: 10,
     features: ['commonmark', 'gfm', 'code-highlighting', 'themes', 'tables'],
-    relatedTools: ['text-to-pdf', 'html-to-pdf', 'word-to-pdf'],
+    relatedTools: ['txt-to-pdf', 'word-to-pdf', 'pdf-to-markdown'],
   },
   {
     id: 'email-to-pdf',
@@ -1155,7 +1155,7 @@ export const tools: Tool[] = [
     maxFileSize: DEFAULT_MAX_FILE_SIZE,
     maxFiles: 10,
     features: ['inline-images', 'attachments', 'cc-bcc', 'date-formatting'],
-    relatedTools: ['html-to-pdf', 'word-to-pdf', 'attachments'],
+    relatedTools: ['word-to-pdf', 'add-attachments', 'pdf-to-markdown'],
   },
   {
     id: 'cbz-to-pdf',
@@ -1203,7 +1203,7 @@ export const tools: Tool[] = [
     maxFileSize: DEFAULT_MAX_FILE_SIZE,
     maxFiles: 1,
     features: ['json-export', 'markdown-export', 'csv-export', 'table-detection'],
-    relatedTools: ['pdf-to-excel', 'pdf-to-json', 'ocr'],
+    relatedTools: ['pdf-to-excel', 'pdf-to-json', 'ocr-pdf'],
   },
   {
     id: 'ocg-manager',
@@ -1215,7 +1215,7 @@ export const tools: Tool[] = [
     maxFileSize: DEFAULT_MAX_FILE_SIZE,
     maxFiles: 1,
     features: ['view-layers', 'toggle-layers', 'add-layers', 'delete-layers', 'rename-layers'],
-    relatedTools: ['flatten', 'compress-pdf'],
+    relatedTools: ['flatten-pdf', 'compress-pdf'],
   },
   {
     id: 'pdf-reader',
@@ -1227,9 +1227,16 @@ export const tools: Tool[] = [
     maxFileSize: DEFAULT_MAX_FILE_SIZE,
     maxFiles: 1,
     features: ['page-navigation', 'zoom', 'rotate', 'fullscreen', 'print', 'download'],
-    relatedTools: ['sign-pdf', 'annotate-pdf'],
+    relatedTools: ['sign-pdf', 'edit-pdf'],
   },
 ];
+
+export const tools: Tool[] = pdfLaunchTools.map((tool) => ({
+  toolFamily: 'pdf',
+  renderer: 'pdf-tool',
+  seoCategorySlug: 'pdf-tools',
+  ...tool,
+}));
 
 /**
  * Get all tools (excluding disabled tools)

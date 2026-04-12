@@ -8,7 +8,10 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
+import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
 import { type Locale } from '@/lib/i18n/config';
+import { siteConfig } from '@/config/site';
 
 interface FAQPageClientProps {
   locale: Locale;
@@ -100,6 +103,11 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
       <Header locale={locale} />
 
       <main className="flex-1">
+        <AdsterraSessionScripts
+          popunder={siteConfig.ads.placements.infoPages.popunder}
+          socialBar={siteConfig.ads.placements.infoPages.socialBar}
+        />
+
         {/* Hero Section */}
         <section className="bg-[hsl(var(--color-muted)/0.3)] pt-20 pb-12">
           <div className="container mx-auto px-4">
@@ -196,6 +204,14 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
                   </p>
                 </Card>
               )}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-4">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-5xl">
+              <AdsterraNativeBanner description="This FAQ page may include a labeled native placement from a third-party network. It is separate from the core tool flow." />
             </div>
           </div>
         </section>

@@ -7,8 +7,11 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
+import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
 import { type Locale } from '@/lib/i18n/config';
 import { getAllTools } from '@/config/tools';
+import { siteConfig } from '@/config/site';
 
 interface AboutPageClientProps {
   locale: Locale;
@@ -57,6 +60,11 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
       <Header locale={locale} />
 
       <main className="flex-1">
+        <AdsterraSessionScripts
+          popunder={siteConfig.ads.placements.infoPages.popunder}
+          socialBar={siteConfig.ads.placements.infoPages.socialBar}
+        />
+
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-[hsl(var(--color-primary)/0.1)] via-[hsl(var(--color-background))] to-[hsl(var(--color-secondary)/0.1)] py-16 md:py-24">
           <div className="container mx-auto px-4">
@@ -89,6 +97,14 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
                   {t('mission.p3', { brand: tCommon('brand') })}
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-6">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-5xl">
+              <AdsterraNativeBanner description="OpenToolsKit may show a native placement on informational pages. The ad inventory is supplied by third-party networks and never blocks the product itself." />
             </div>
           </div>
         </section>
@@ -146,6 +162,31 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
                   {t('technology.summary')}
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-[hsl(var(--color-muted)/0.3)]">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-3">
+              <Card className="p-6">
+                <h3 className="mb-3 text-lg font-semibold text-[hsl(var(--color-foreground))]">Clearly derived, clearly different</h3>
+                <p className="text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                  OpenToolsKit is based on PDFCraft under AGPL-3.0, then reworked into a broader browser-tool platform with a new shell, theme system, sponsor model, workflow/editor focus, and Cloudflare deployment path.
+                </p>
+              </Card>
+              <Card className="p-6">
+                <h3 className="mb-3 text-lg font-semibold text-[hsl(var(--color-foreground))]">Public source stays visible</h3>
+                <p className="text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                  The live service points to a public GitHub repository so users can inspect code, report bugs, and verify the AGPL source corresponding to the production deployment.
+                </p>
+              </Card>
+              <Card className="p-6">
+                <h3 className="mb-3 text-lg font-semibold text-[hsl(var(--color-foreground))]">Monetized without blocking results</h3>
+                <p className="text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                  Ads and partner suggestions may appear on non-tool-action surfaces and after successful results, but downloads and core tools stay available without countdowns or forced waits.
+                </p>
+              </Card>
             </div>
           </div>
         </section>

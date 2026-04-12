@@ -2,7 +2,7 @@
  * Excel to PDF Processor
  * 
  * Converts Excel spreadsheets to PDF using LibreOffice WASM.
- * Uses the shared LibreOfficeConverter singleton (same approach as BentoPDF).
+ * Uses the shared LibreOfficeConverter singleton for in-browser conversion.
  */
 
 import type {

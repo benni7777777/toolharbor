@@ -1,5 +1,7 @@
+import type { ToolFamily } from '@/config/site';
+
 /**
- * Tool category types - 6 defined categories
+ * Tool category types - 6 defined PDF launch categories
  */
 export type ToolCategory =
   | 'edit-annotate'
@@ -81,10 +83,18 @@ export interface Tool {
   id: string;
   /** URL path slug, e.g., 'merge-pdf' */
   slug: string;
+  /** Broad product family used by the generalized OpenToolsKit platform */
+  toolFamily: ToolFamily;
   /** Lucide icon name */
   icon: string;
   /** Primary tool category */
   category: ToolCategory;
+  /** Optional family category for non-PDF tools in later phases */
+  familyCategory?: string;
+  /** High-level SEO hub slug */
+  seoCategorySlug?: string;
+  /** Optional rendering surface for future non-PDF tool families */
+  renderer?: 'pdf-tool' | 'image-tool' | 'text-tool' | 'calculator-tool' | 'developer-tool' | 'publishing-tool' | 'social-tool';
   /** Accepted input file formats */
   acceptedFormats: string[];
   /** Output file format */

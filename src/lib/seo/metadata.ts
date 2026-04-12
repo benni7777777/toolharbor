@@ -128,7 +128,7 @@ export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
       title: fullTitle,
       description: optimizedDescription,
       images: [ogImage.startsWith('http') ? ogImage : `${siteConfig.url}${ogImage}`],
-      creator: siteConfig.creator,
+      creator: siteConfig.seo.twitterHandle,
     },
     verification: {
       // Add verification tags if needed
@@ -146,7 +146,7 @@ export function generateToolMetadata(options: ToolMetadataOptions): Metadata {
   const { locale, tool, content } = options;
   const path = `/tools/${tool.slug}`;
 
-  // Enhance keywords with common PDF-related terms
+  const familyLabel = tool.toolFamily.toUpperCase();
   const enhancedKeywords = [
     ...content.keywords,
     'free',
@@ -155,6 +155,7 @@ export function generateToolMetadata(options: ToolMetadataOptions): Metadata {
     'browser-based',
     'secure',
     'private',
+    familyLabel,
   ];
 
   return generateBaseMetadata({
@@ -170,7 +171,7 @@ export function generateToolMetadata(options: ToolMetadataOptions): Metadata {
  * Generate metadata for the homepage
  */
 export function generateHomeMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
-  const defaultTitle = `${siteConfig.name} - Professional PDF Tools`;
+  const defaultTitle = siteConfig.seo.defaultTitle;
   const defaultDescription = siteConfig.description;
 
   return generateBaseMetadata({
@@ -178,7 +179,7 @@ export function generateHomeMetadata(locale: Locale, translations?: { title: str
     path: '',
     title: translations?.title || defaultTitle,
     description: translations?.description || defaultDescription,
-    keywords: ['PDF tools', 'merge PDF', 'split PDF', 'compress PDF', 'convert PDF', 'free PDF tools', 'online PDF editor'],
+    keywords: [...siteConfig.seo.keywords],
   });
 }
 
@@ -189,9 +190,11 @@ export function generateToolsListMetadata(locale: Locale, translations?: { title
   return generateBaseMetadata({
     locale,
     path: '/tools',
-    title: translations?.title || 'All PDF Tools',
-    description: translations?.description || 'Browse all 67+ professional PDF tools. Merge, split, compress, convert, edit, and secure your PDF files for free.',
-    keywords: ['PDF tools', 'all PDF tools', 'PDF editor', 'PDF converter', 'PDF merger', 'PDF splitter'],
+    title: translations?.title || 'All Browser Tools',
+    description:
+      translations?.description ||
+      'Browse the OpenToolsKit launch catalog for browser-based PDF tools, workflow automation, and multilingual utility pages.',
+    keywords: ['OpenToolsKit', 'browser tools', 'PDF tools', 'workflow editor', 'private online tools'],
   });
 }
 
@@ -203,8 +206,10 @@ export function generateAboutMetadata(locale: Locale, translations?: { title: st
     locale,
     path: '/about',
     title: translations?.title || 'About',
-    description: translations?.description || `Learn about ${siteConfig.name} - your free, private, and powerful PDF toolkit. All processing happens in your browser.`,
-    keywords: ['about', 'PDF tools', 'privacy', 'browser-based'],
+    description:
+      translations?.description ||
+      `Learn how ${siteConfig.name} turns private browser utilities into an open-source tool platform for PDFs and beyond.`,
+    keywords: ['about', 'OpenToolsKit', 'privacy', 'browser-based'],
   });
 }
 
@@ -216,8 +221,8 @@ export function generateFaqMetadata(locale: Locale, translations?: { title: stri
     locale,
     path: '/faq',
     title: translations?.title || 'Frequently Asked Questions',
-    description: translations?.description || `Find answers to common questions about ${siteConfig.name}. Learn how to use our PDF tools effectively.`,
-    keywords: ['FAQ', 'help', 'questions', 'PDF tools help'],
+    description: translations?.description || `Find answers to common questions about ${siteConfig.name}, the workflow editor, browser extension, and source code.`,
+    keywords: ['FAQ', 'help', 'questions', 'OpenToolsKit help'],
   });
 }
 
@@ -241,9 +246,11 @@ export function generateContactMetadata(locale: Locale, translations?: { title: 
   return generateBaseMetadata({
     locale,
     path: '/contact',
-    title: translations?.title || 'Contact Us',
-    description: translations?.description || `Get in touch with ${siteConfig.name} team. We'd love to hear from you.`,
-    keywords: ['contact', 'support', 'help', 'feedback'],
+    title: translations?.title || 'Support & Source',
+    description:
+      translations?.description ||
+      `Browse public support, AGPL attribution, source code, and issue reporting for ${siteConfig.name}.`,
+    keywords: ['support', 'source code', 'AGPL', 'issues', 'OpenToolsKit'],
   });
 }
 

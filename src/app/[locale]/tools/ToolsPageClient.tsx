@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { Search, X, Filter, Star } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
 import { ToolGrid } from '@/components/tools/ToolGrid';
 import { ToolCard } from '@/components/tools/ToolCard';
 import { Button } from '@/components/ui/Button';
@@ -15,6 +16,7 @@ import { toolMatchesQuery } from '@/lib/utils/search';
 import { type Locale } from '@/lib/i18n/config';
 import { CATEGORY_INFO, type ToolCategory } from '@/types/tool';
 import { useFavorites } from '@/hooks/useFavorites';
+import { siteConfig } from '@/config/site';
 
 type CategoryFilter = ToolCategory | 'all' | 'favorites';
 
@@ -233,6 +235,12 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                 {selectedCategory !== 'all' && selectedCategory !== 'favorites' && ` ${t('toolsPage.inCategory', { category: t(`home.categories.${categoryTranslationKeys[selectedCategory as ToolCategory]}`) })}`}
               </p>
             </div>
+
+            {siteConfig.ads.placements.toolsIndex.nativeBanner && (
+              <div className="mb-8">
+                <AdsterraNativeBanner description="This catalog page may include a labeled native placement. Tool discovery stays separate from processing and download actions." />
+              </div>
+            )}
 
             {/* Tools Grid */}
             {filteredTools.length > 0 ? (

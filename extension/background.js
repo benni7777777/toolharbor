@@ -1,73 +1,62 @@
-// PDFCraft Chrome Extension - Background Service Worker
+// OpenToolsKit Chrome Extension - Background Service Worker
 
-const PDFCRAFT_URL = 'https://pdfcraft.devtoolcafe.com/en';
+const OPENTOOLSKIT_URL = 'https://www.opentoolskit.com/en';
 
-// Create context menu when extension is installed
 chrome.runtime.onInstalled.addListener(() => {
-    // Create main context menu item
-    chrome.contextMenus.create({
-        id: 'pdfcraft-open',
-        title: 'Open with PDFCraft',
-        contexts: ['link', 'page']
-    });
+  chrome.contextMenus.create({
+    id: 'opentoolskit-open',
+    title: 'Open with OpenToolsKit',
+    contexts: ['link', 'page'],
+  });
 
-    // Create submenu for specific tools
-    chrome.contextMenus.create({
-        id: 'pdfcraft-merge',
-        parentId: 'pdfcraft-open',
-        title: 'Merge PDFs',
-        contexts: ['link', 'page']
-    });
+  chrome.contextMenus.create({
+    id: 'opentoolskit-merge',
+    parentId: 'opentoolskit-open',
+    title: 'Merge PDFs',
+    contexts: ['link', 'page'],
+  });
 
-    chrome.contextMenus.create({
-        id: 'pdfcraft-compress',
-        parentId: 'pdfcraft-open',
-        title: 'Compress PDF',
-        contexts: ['link', 'page']
-    });
+  chrome.contextMenus.create({
+    id: 'opentoolskit-compress',
+    parentId: 'opentoolskit-open',
+    title: 'Compress PDF',
+    contexts: ['link', 'page'],
+  });
 
-    chrome.contextMenus.create({
-        id: 'pdfcraft-convert',
-        parentId: 'pdfcraft-open',
-        title: 'Convert to PDF',
-        contexts: ['link', 'page']
-    });
+  chrome.contextMenus.create({
+    id: 'opentoolskit-convert',
+    parentId: 'opentoolskit-open',
+    title: 'Convert to PDF',
+    contexts: ['link', 'page'],
+  });
 
-    chrome.contextMenus.create({
-        id: 'pdfcraft-all-tools',
-        parentId: 'pdfcraft-open',
-        title: 'All Tools →',
-        contexts: ['link', 'page']
-    });
-
-    console.log('PDFCraft context menus created');
+  chrome.contextMenus.create({
+    id: 'opentoolskit-all-tools',
+    parentId: 'opentoolskit-open',
+    title: 'All tools',
+    contexts: ['link', 'page'],
+  });
 });
 
-// Handle context menu clicks
-chrome.contextMenus.onClicked.addListener((info, tab) => {
-    let url = PDFCRAFT_URL;
+chrome.contextMenus.onClicked.addListener((info) => {
+  let url = OPENTOOLSKIT_URL;
 
-    switch (info.menuItemId) {
-        case 'pdfcraft-merge':
-            url = `${PDFCRAFT_URL}/tools/merge-pdf`;
-            break;
-        case 'pdfcraft-compress':
-            url = `${PDFCRAFT_URL}/tools/compress-pdf`;
-            break;
-        case 'pdfcraft-convert':
-            url = `${PDFCRAFT_URL}/tools/jpg-to-pdf`;
-            break;
-        case 'pdfcraft-all-tools':
-        case 'pdfcraft-open':
-            url = PDFCRAFT_URL;
-            break;
-        default:
-            url = PDFCRAFT_URL;
-    }
+  switch (info.menuItemId) {
+    case 'opentoolskit-merge':
+      url = `${OPENTOOLSKIT_URL}/tools/merge-pdf`;
+      break;
+    case 'opentoolskit-compress':
+      url = `${OPENTOOLSKIT_URL}/tools/compress-pdf`;
+      break;
+    case 'opentoolskit-convert':
+      url = `${OPENTOOLSKIT_URL}/tools/jpg-to-pdf`;
+      break;
+    case 'opentoolskit-all-tools':
+    case 'opentoolskit-open':
+    default:
+      url = OPENTOOLSKIT_URL;
+      break;
+  }
 
-    // Open PDFCraft in a new tab
-    chrome.tabs.create({ url: url });
+  chrome.tabs.create({ url });
 });
-
-// Log when service worker starts
-console.log('PDFCraft background service worker started');

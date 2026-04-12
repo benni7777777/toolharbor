@@ -1,28 +1,28 @@
 {
   "metadata": {
     "home": {
-      "title": "PDFCraft - Alat PDF Profesional",
-      "description": "Gratis, Pribadi & Berbasis Browser. Gabung, edit, dan ubah file PDF secara online tanpa mengunggah ke server."
+      "title": "OpenToolsKit - Browser Tools for Private Document Work",
+      "description": "Open-source browser tools for PDF and document workflows. Private by default, multilingual, and built for Cloudflare delivery."
     },
     "tools": {
-      "title": "Semua Alat PDF",
-      "description": "Jelajahi lebih dari 67 alat PDF profesional. Gabungkan, pisahkan, kompres, konversi, edit, dan amankan file PDF Anda secara gratis."
+      "title": "OpenToolsKit Tools",
+      "description": "Browse the OpenToolsKit launch catalog for browser-based PDF tools, workflow automation, and multilingual utility pages."
     },
     "about": {
       "title": "Tentang",
-      "description": "Pelajari tentang PDFCraft - toolkit PDF gratis, pribadi, dan kuat. Semua proses terjadi di browser Anda."
+      "description": "Learn how OpenToolsKit turns private browser utilities into an open-source tool platform."
     },
     "faq": {
       "title": "Pertanyaan yang Sering Diajukan",
-      "description": "Temukan jawaban untuk pertanyaan umum tentang PDFCraft. Pelajari cara menggunakan alat PDF kami secara efektif."
+      "description": "Find answers about OpenToolsKit, the workflow editor, browser extension, and source code."
     },
     "privacy": {
       "title": "Kebijakan Privasi",
-      "description": "Kebijakan privasi PDFCraft. File Anda tidak pernah meninggalkan perangkat Anda - semua proses terjadi secara lokal di browser Anda."
+      "description": "Kebijakan privasi OpenToolsKit. File Anda tidak pernah meninggalkan perangkat Anda - semua proses terjadi secara lokal di browser Anda."
     },
     "contact": {
-      "title": "Hubungi Kami",
-      "description": "Hubungi tim PDFCraft. Kami ingin mendengar pendapat Anda."
+      "title": "Support & Source",
+      "description": "Open-source support, issue reporting, and AGPL source links for OpenToolsKit."
     },
     "keywords": {
       "pdfTools": "alat PDF",
@@ -35,8 +35,8 @@
     }
   },
   "common": {
-    "brand": "PDFCraft",
-    "tagline": "Alat PDF Profesional - Gratis & Pribadi",
+    "brand": "OpenToolsKit",
+    "tagline": "Open-source browser tools - private by default",
     "navigation": {
       "home": "Beranda",
       "tools": "Alat",
@@ -44,7 +44,7 @@
       "about": "Tentang",
       "faq": "FAQ",
       "privacy": "Privasi",
-      "contact": "Kontak"
+      "contact": "Support"
     },
     "buttons": {
       "upload": "Unggah File",
@@ -83,8 +83,8 @@
       "loading": "Memuat..."
     },
     "footer": {
-      "footer": "© 2025 PDFCraft. Seluruh hak cipta dilindungi undang-undang.",
-      "copyright": "© {year} PDFCraft. Seluruh hak cipta dilindungi undang-undang.",
+      "footer": "© 2025 OpenToolsKit. Seluruh hak cipta dilindungi undang-undang.",
+      "copyright": "© {year} OpenToolsKit. Seluruh hak cipta dilindungi undang-undang.",
       "privacyBadge": "100% Pribadi - File tidak pernah meninggalkan perangkat Anda",
       "madeWith": "Dibuat dengan <Heart /> dan <Nextjs />"
     },
@@ -129,7 +129,7 @@
       "finish": "Selesai",
       "skip": "Lewati",
       "stepOf": "dari",
-      "welcomeTitle": "Selamat Datang di PDFCraft!",
+      "welcomeTitle": "Selamat Datang di OpenToolsKit!",
       "welcomeMessage": "Apakah Anda ingin tur singkat untuk mempelajari cara menggunakan alat PDF kami? Hanya butuh satu menit.",
       "helpButton": "Tur Bantuan"
     },
@@ -170,8 +170,8 @@
     }
   },
   "toolsPage": {
-    "title": "Alat PDF Profesional",
-    "subtitle": "{count}+ alat gratis, aman, dan mudah digunakan untuk semua kebutuhan PDF Anda.",
+    "title": "OpenToolsKit Launch Tools",
+    "subtitle": "{count}+ browser-based launch tools for PDF workflows, editing, conversion, and secure document handling.",
     "filters": "Filter",
     "allTools": "Semua Alat",
     "clearAll": "Bersihkan semua",
@@ -200,16 +200,16 @@
     "sections": {
       "general": {
         "whatIs": {
-          "question": "Apa itu PDFCraft?",
-          "answer": "PDFCraft adalah toolkit PDF gratis yang berfokus pada privasi yang berjalan sepenuhnya di browser Anda. Kami menawarkan 80+ alat profesional untuk mengedit, mengonversi, menggabung, memisah, dan mengamankan file PDF tanpa mengunggahnya ke server mana pun."
+          "question": "Apa itu OpenToolsKit?",
+          "answer": "OpenToolsKit adalah toolkit PDF gratis yang berfokus pada privasi yang berjalan sepenuhnya di browser Anda. Kami menawarkan 80+ alat profesional untuk mengedit, mengonversi, menggabung, memisah, dan mengamankan file PDF tanpa mengunggahnya ke server mana pun."
         },
         "isFree": {
-          "question": "Apakah PDFCraft benar-benar gratis?",
-          "answer": "Ya, PDFCraft sepenuhnya gratis untuk digunakan. Tidak ada biaya tersembunyi, tidak ada tingkat premium, dan tidak perlu registrasi. Semua fitur tersedia untuk semua orang."
+          "question": "Apakah OpenToolsKit benar-benar gratis?",
+          "answer": "Ya, OpenToolsKit sepenuhnya gratis untuk digunakan. Tidak ada biaya tersembunyi, tidak ada tingkat premium, dan tidak perlu registrasi. Semua fitur tersedia untuk semua orang."
         },
         "account": {
           "question": "Apakah saya perlu membuat akun?",
-          "answer": "Tidak, Anda tidak perlu membuat akun atau mendaftar untuk menggunakan PDFCraft. Cukup kunjungi situs web dan mulai gunakan alat apa pun segera."
+          "answer": "Tidak, Anda tidak perlu membuat akun atau mendaftar untuk menggunakan OpenToolsKit. Cukup kunjungi situs web dan mulai gunakan alat apa pun segera."
         }
       },
       "privacy": {
@@ -218,8 +218,8 @@
           "answer": "Tidak, file Anda tidak pernah diunggah ke server mana pun. Semua pemrosesan PDF terjadi secara lokal di browser Anda menggunakan JavaScript dan WebAssembly. File Anda tidak pernah meninggalkan perangkat Anda."
         },
         "safe": {
-          "question": "Apakah aman menggunakan PDFCraft untuk dokumen sensitif?",
-          "answer": "Ya, PDFCraft dirancang dengan mengutamakan privasi. Karena semua pemrosesan terjadi secara lokal di browser Anda, dokumen sensitif Anda tetap berada di perangkat Anda dan tidak pernah dikirimkan melalui internet."
+          "question": "Apakah aman menggunakan OpenToolsKit untuk dokumen sensitif?",
+          "answer": "Ya, OpenToolsKit dirancang dengan mengutamakan privasi. Karena semua pemrosesan terjadi secara lokal di browser Anda, dokumen sensitif Anda tetap berada di perangkat Anda dan tidak pernah dikirimkan melalui internet."
         },
         "storage": {
           "question": "Apa yang terjadi dengan file saya setelah diproses?",
@@ -229,7 +229,7 @@
       "features": {
         "operations": {
           "question": "Operasi PDF apa saja yang bisa saya lakukan?",
-          "answer": "PDFCraft menawarkan 67+ alat termasuk: gabung, pisah, kompres, konversi (ke/dari gambar, teks, JSON), edit, anotasi, tanda tangan, tambah watermark, enkripsi/dekripsi, OCR, dan banyak lagi."
+          "answer": "OpenToolsKit menawarkan 67+ alat termasuk: gabung, pisah, kompres, konversi (ke/dari gambar, teks, JSON), edit, anotasi, tanda tangan, tambah watermark, enkripsi/dekripsi, OCR, dan banyak lagi."
         },
         "merge": {
           "question": "Bisakah saya menggabungkan beberapa file PDF?",
@@ -237,17 +237,17 @@
         },
         "images": {
           "question": "Bisakah saya mengonversi gambar ke PDF?",
-          "answer": "Ya, PDFCraft mendukung konversi berbagai format gambar (JPG, PNG, WebP, BMP, TIFF, SVG, HEIC) ke PDF. Anda dapat mengonversi satu atau beberapa gambar sekaligus."
+          "answer": "Ya, OpenToolsKit mendukung konversi berbagai format gambar (JPG, PNG, WebP, BMP, TIFF, SVG, HEIC) ke PDF. Anda dapat mengonversi satu atau beberapa gambar sekaligus."
         },
         "edit": {
           "question": "Bisakah saya mengedit teks dalam PDF?",
-          "answer": "PDFCraft menyediakan alat anotasi dan pengeditan termasuk menyorot, menambah teks, bentuk, gambar, dan tanda tangan. Untuk pengeditan teks lengkap, alat Editor PDF menawarkan kemampuan anotasi yang komprehensif."
+          "answer": "OpenToolsKit menyediakan alat anotasi dan pengeditan termasuk menyorot, menambah teks, bentuk, gambar, dan tanda tangan. Untuk pengeditan teks lengkap, alat Editor PDF menawarkan kemampuan anotasi yang komprehensif."
         }
       },
       "technical": {
         "browsers": {
           "question": "Browser apa saja yang didukung?",
-          "answer": "PDFCraft berfungsi di semua browser modern termasuk Chrome, Firefox, Safari, dan Edge. Kami merekomendasikan penggunaan versi terbaru browser Anda untuk pengalaman terbaik."
+          "answer": "OpenToolsKit berfungsi di semua browser modern termasuk Chrome, Firefox, Safari, dan Edge. Kami merekomendasikan penggunaan versi terbaru browser Anda untuk pengalaman terbaik."
         },
         "sizeLimit": {
           "question": "Apakah ada batasan ukuran file?",
@@ -258,14 +258,14 @@
           "answer": "Karena semua pemrosesan terjadi di browser Anda, kinerja tergantung pada kemampuan perangkat Anda. File besar membutuhkan lebih banyak memori dan daya pemrosesan. Untuk hasil terbaik, tutup tab browser dan aplikasi lainnya."
         },
         "offline": {
-          "question": "Apakah PDFCraft berfungsi secara offline?",
-          "answer": "Saat ini, PDFCraft memerlukan koneksi internet untuk memuat aplikasi. Namun, setelah dimuat, pemrosesan PDF itu sendiri terjadi secara lokal dan tidak memerlukan koneksi."
+          "question": "Apakah OpenToolsKit berfungsi secara offline?",
+          "answer": "Saat ini, OpenToolsKit memerlukan koneksi internet untuk memuat aplikasi. Namun, setelah dimuat, pemrosesan PDF itu sendiri terjadi secara lokal dan tidak memerlukan koneksi."
         }
       },
       "languages": {
         "supported": {
           "question": "Bahasa apa saja yang didukung?",
-          "answer": "PDFCraft tersedia dalam 10 bahasa: Inggris, Jepang, Korea, Spanyol, Prancis, Jerman, Mandarin, Portugis, Italia, dan Bahasa Indonesia."
+          "answer": "OpenToolsKit tersedia dalam 10 bahasa: Inggris, Jepang, Korea, Spanyol, Prancis, Jerman, Mandarin, Portugis, Italia, dan Bahasa Indonesia."
         },
         "change": {
           "question": "Bagaimana cara mengubah bahasa?",
@@ -274,19 +274,19 @@
       }
     },
     "cta": {
-      "title": "Masih punya pertanyaan?",
-      "description": "Tidak menemukan jawaban yang Anda cari? Jangan ragu untuk menghubungi kami.",
-      "button": "Hubungi Kami"
+      "title": "Need public support?",
+      "description": "Use the support page for source links, AGPL attribution, and GitHub issue reporting.",
+      "button": "Open Support"
     }
   },
   "aboutPage": {
     "title": "Tentang {brand}",
-    "description": "{brand} adalah toolkit PDF gratis yang berfokus pada privasi yang berjalan sepenuhnya di browser Anda. Dengan {count}+ alat profesional, Anda dapat mengedit, mengonversi, menggabung, memisah, dan mengamankan file PDF Anda tanpa pernah mengunggahnya ke server.",
+    "description": "{brand} is an open-source browser tool platform that launches with {count}+ PDF tools, a workflow editor, and public source distribution.",
     "mission": {
       "title": "Misi Kami",
-      "p1": "Kami percaya bahwa setiap orang harus memiliki akses ke alat PDF yang kuat tanpa mengorbankan privasi mereka atau membayar biaya langganan yang mahal. Itulah sebabnya kami membuat {brand} – toolkit PDF komprehensif yang mengutamakan privasi Anda.",
-      "p2": "Berbeda dengan layanan PDF tradisional yang mengharuskan Anda mengunggah file ke server jarak jauh, {brand} memproses semuanya secara lokal di browser Anda. Dokumen sensitif Anda tidak pernah meninggalkan perangkat Anda, memberi Anda kendali penuh atas data Anda.",
-      "p3": "Baik Anda seorang pelajar, profesional, atau pengguna biasa, {brand} menyediakan semua alat yang Anda butuhkan untuk bekerja dengan PDF secara efisien dan aman."
+      "p1": "We believe private browser tools should stay accessible, inspectable, and useful beyond a single file format. That is why {brand} has been shaped into a broader browser-tool platform.",
+      "p2": "Unlike traditional services that depend on remote processing for routine document work, {brand} keeps core flows in the browser where applicable and keeps source availability visible through a public AGPL repository.",
+      "p3": "Phase 1 focuses on the PDF suite, workflow editor, and extension, while preparing the platform for additional tool families."
     },
     "values": {
       "title": "Nilai-Nilai Kami",
@@ -296,7 +296,7 @@
       },
       "fast": {
         "title": "Cepat & Efisien",
-        "description": "Didukung oleh teknologi web modern, PDFCraft memberikan pemrosesan PDF yang sangat cepat tanpa perlu unggah atau unduh."
+        "description": "Didukung oleh teknologi web modern, OpenToolsKit memberikan pemrosesan PDF yang sangat cepat tanpa perlu unggah atau unduh."
       },
       "accessible": {
         "title": "Dapat Diakses di Mana Saja",
@@ -304,7 +304,7 @@
       },
       "free": {
         "title": "Gratis Selamanya",
-        "description": "PDFCraft sepenuhnya gratis untuk digunakan tanpa biaya tersembunyi, tidak perlu registrasi, dan tanpa batasan penggunaan."
+        "description": "OpenToolsKit sepenuhnya gratis untuk digunakan tanpa biaya tersembunyi, tidak perlu registrasi, dan tanpa batasan penggunaan."
       },
       "openSource": {
         "title": "Open Source",
@@ -325,43 +325,43 @@
         "pdflib": "<strong1>pdf-lib & PDF.js</strong1> - Pustaka manipulasi PDF standar industri",
         "indexeddb": "<strong1>IndexedDB</strong1> - Untuk penyimpanan lokal yang aman bagi pekerjaan Anda"
       },
-      "summary": "Kombinasi teknologi ini memungkinkan kami menyediakan alat PDF tingkat profesional yang berjalan sepenuhnya di browser Anda, tanpa pemrosesan sisi server."
+      "summary": "This stack supports launch-ready browser tools, static export, local processing, and public-source trust surfaces without forcing a server-bound editing model."
     },
     "cta": {
       "title": "Siap untuk Memulai?",
-      "description": "Jelajahi {count}+ alat PDF kami dan lihat apa yang bisa dilakukan {brand} untuk Anda.",
+      "description": "Explore our {count}+ launch tools and see how {brand} handles private browser workflows.",
       "button": "Lihat Semua Alat"
     }
   },
   "contactPage": {
     "hero": {
-      "title": "Hubungi Kami",
-      "description": "Punya pertanyaan, saran, atau menemukan bug? Kami ingin mendengar dari Anda."
+      "title": "Support & Source",
+      "description": "Use GitHub for source access, issue reporting, and AGPL attribution."
     },
     "methods": {
       "email": {
-        "title": "Email",
-        "description": "Kirimkan email kepada kami dan kami akan membalas dalam 24-48 jam.",
-        "action": "contact@pdfcraft.app"
+        "title": "Source Code",
+        "description": "Inspect the public repository for the live service.",
+        "action": "Open repository"
       },
       "github": {
-        "title": "GitHub",
-        "description": "Laporkan bug, minta fitur, atau berkontribusi pada proyek.",
-        "action": "Lihat di GitHub"
+        "title": "GitHub Issues",
+        "description": "Report bugs, request features, and track public support.",
+        "action": "Report an issue"
       },
       "twitter": {
-        "title": "Twitter",
-        "description": "Ikuti kami untuk pembaruan dan pengumuman.",
-        "action": "@pdfcraft"
+        "title": "AGPL Notice",
+        "description": "Review project attribution and derivative notice details.",
+        "action": "Read NOTICE"
       }
     },
     "form": {
-      "title": "Kirim Pesan",
-      "description": "Isi formulir di bawah ini dan kami akan segera menghubungi Anda.",
+      "title": "Public support workflow",
+      "description": "Open the repository, review the notice, or file a GitHub issue.",
       "success": {
-        "title": "Pesan Terkirim!",
-        "description": "Terima kasih telah menghubungi kami. Kami akan membalas dalam 24-48 jam.",
-        "button": "Kirim Pesan Lain"
+        "title": "Use GitHub",
+        "description": "Support and source access are handled through the public repository.",
+        "button": "Open support"
       },
       "fields": {
         "name": {
@@ -388,16 +388,16 @@
           "placeholder": "Beri tahu kami lebih lanjut tentang pertanyaan Anda..."
         }
       },
-      "error": "Terjadi kesalahan. Silakan coba lagi atau hubungi kami langsung melalui email.",
+      "error": "Use the public GitHub support routes instead.",
       "submit": {
-        "loading": "Mengirim...",
-        "default": "Kirim Pesan"
+        "loading": "Opening...",
+        "default": "Open GitHub"
       }
     },
     "faq": {
-      "title": "Mencari Jawaban Cepat?",
-      "description": "Lihat halaman FAQ kami untuk jawaban atas pertanyaan umum tentang {brand}.",
-      "button": "Lihat FAQ"
+      "title": "Need quick answers first?",
+      "description": "Review the FAQ, then use the support page if you still need help.",
+      "button": "View FAQ"
     }
   },
   "errors": {
@@ -426,9 +426,9 @@
   },
   "home": {
     "hero": {
-      "title": "Alat PDF Profesional",
-      "highlight": "Alat Profesional",
-      "subtitle": "Pemrosesan PDF gratis, pribadi, dan kuat di browser Anda",
+      "title": "Browser Tools for",
+      "highlight": "Private Workflows",
+      "subtitle": "Open-source, multilingual, and browser-first utility workflows",
       "cta": "Mulai Sekarang"
     },
     "features": {
@@ -441,18 +441,18 @@
         "description": "Tanpa registrasi, tanpa batasan, tanpa biaya tersembunyi."
       },
       "powerful": {
-        "title": "Alat yang Kuat",
-        "description": "67+ alat PDF profesional untuk semua kebutuhan Anda."
+        "title": "Launch-ready suite",
+        "description": "Phase 1 ships the PDF suite, workflow editor, extension, and visible source links."
       }
     },
     "popularTools": {
       "badge": "Paling Populer",
-      "title": "Alat PDF Populer",
+      "title": "Popular launch tools",
       "description": "Alat yang paling sering digunakan untuk membantu Anda menyelesaikan pekerjaan lebih cepat."
     },
     "categoriesSection": {
       "title": "Jelajahi Semua Kategori Alat",
-      "description": "{count}+ alat PDF profesional yang diatur berdasarkan kategori",
+      "description": "{count}+ launch tools organized by category",
       "toolsCount": "{count} alat"
     },
     "categoriesDescription": {
@@ -482,7 +482,7 @@
   "workflow": {
     "title": "Pembangun Alur Kerja PDF",
     "subtitle": "Buat pipa pemrosesan PDF khusus dengan menghubungkan alat-alat",
-    "metaTitle": "Pembangun Alur Kerja PDF - PDFCraft",
+    "metaTitle": "Pembangun Alur Kerja PDF - OpenToolsKit",
     "metaDescription": "Buat pipa pemrosesan PDF khusus dengan menghubungkan alat secara visual. Bangun, simpan, dan gunakan kembali alur kerja Anda.",
     "toolbox": "Kotak Alat",
     "dragToAdd": "Seret alat untuk menambahkan ke alur kerja",
@@ -1511,4 +1511,3 @@
     }
   }
 }
-

@@ -1,16 +1,20 @@
 'use client';
 
-import React, { useState, useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useTranslations } from 'next-intl';
-import { Search, Menu, X, Command, Github } from 'lucide-react';
+import { Github, Menu, Search, X } from 'lucide-react';
 import { type Locale } from '@/lib/i18n/config';
 import { Button } from '@/components/ui/Button';
 import { RecentFilesDropdown } from '@/components/common/RecentFilesDropdown';
 import { searchTools, SearchResult } from '@/lib/utils/search';
 import { getToolContent } from '@/config/tool-content';
 import { getAllTools } from '@/config/tools';
+import { siteConfig } from '@/config/site';
+import { LanguageSelector } from './LanguageSelector';
+import { BrandMark } from './BrandMark';
+import { ThemeToggle } from '@/components/theme/ThemeToggle';
+import { useSafeTranslations } from '@/lib/i18n/useSafeTranslations';
 
 export interface HeaderProps {
   locale: Locale;
@@ -18,7 +22,7 @@ export interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => {
-  const t = useTranslations('common');
+  const t = useSafeTranslations('common');
   const router = useRouter();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -30,17 +34,16 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
-  // Load localized tool content on mount
   useEffect(() => {
     const allTools = getAllTools();
     const contentMap: Record<string, { title: string; description: string }> = {};
 
-    allTools.forEach(tool => {
+    allTools.forEach((tool) => {
       const content = getToolContent(locale, tool.id);
       if (content) {
         contentMap[tool.id] = {
           title: content.title,
-          description: content.metaDescription
+          description: content.metaDescription,
         };
       }
     });
@@ -48,28 +51,24 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
     setLocalizedTools(contentMap);
   }, [locale]);
 
-  // Handle scroll effect
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle search query changes
   useEffect(() => {
-    if (searchQuery.trim()) {
-      const results = searchTools(searchQuery, localizedTools); // Pass localized content
-      setSearchResults(results.slice(0, 8)); // Limit to 8 results
-      setSelectedIndex(-1);
-    } else {
+    if (!searchQuery.trim()) {
       setSearchResults([]);
       setSelectedIndex(-1);
+      return;
     }
+
+    const results = searchTools(searchQuery, localizedTools);
+    setSearchResults(results.slice(0, 8));
+    setSelectedIndex(-1);
   }, [searchQuery, localizedTools]);
 
-  // Close search when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchContainerRef.current && !searchContainerRef.current.contains(event.target as Node)) {
@@ -85,304 +84,251 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
     }
   }, [isSearchOpen]);
 
-  // Handle keyboard navigation
-  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      setSelectedIndex(prev => Math.min(prev + 1, searchResults.length - 1));
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      setSelectedIndex(prev => Math.max(prev - 1, -1));
-    } else if (e.key === 'Enter') {
-      e.preventDefault();
-      if (selectedIndex >= 0 && searchResults[selectedIndex]) {
-        navigateToTool(searchResults[selectedIndex].tool.slug);
-      } else if (searchResults.length > 0) {
-        navigateToTool(searchResults[0].tool.slug);
-      }
-    } else if (e.key === 'Escape') {
-      setIsSearchOpen(false);
-      setSearchQuery('');
-      setSearchResults([]);
-    }
-  }, [searchResults, selectedIndex]);
-
-  const navigateToTool = useCallback((slug: string) => {
-    router.push(`/${locale}/tools/${slug}`);
-    setIsSearchOpen(false);
-    setSearchQuery('');
-    setSearchResults([]);
-  }, [locale, router]);
-
-  const handleSearchToggle = useCallback(() => {
-    setIsSearchOpen((prev) => !prev);
-    if (!isSearchOpen) {
-      setTimeout(() => searchInputRef.current?.focus(), 100);
-    } else {
-      setSearchQuery('');
-      setSearchResults([]);
-    }
-  }, [isSearchOpen]);
-
-  // Keyboard shortcut for search
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
         setIsSearchOpen(true);
-        setTimeout(() => searchInputRef.current?.focus(), 100);
+        setTimeout(() => searchInputRef.current?.focus(), 50);
       }
     };
+
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const handleMobileMenuToggle = useCallback(() => {
-    setIsMobileMenuOpen((prev) => !prev);
-  }, []);
+  const navigateToTool = useCallback(
+    (slug: string) => {
+      router.push(`/${locale}/tools/${slug}`);
+      setIsSearchOpen(false);
+      setSearchQuery('');
+      setSearchResults([]);
+      setIsMobileMenuOpen(false);
+    },
+    [locale, router]
+  );
 
-  // Get tool icon based on category
-  const getToolIcon = (category: string) => {
-    const icons: Record<string, string> = {
-      'edit-annotate': '✏️',
-      'convert-to-pdf': '📄',
-      'convert-from-pdf': '🖼️',
-      'organize-manage': '📁',
-      'optimize-repair': '🔧',
-      'secure-pdf': '🔒',
-    };
-    return icons[category] || '📄';
-  };
+  const handleSearchKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        setSelectedIndex((prev) => Math.min(prev + 1, searchResults.length - 1));
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        setSelectedIndex((prev) => Math.max(prev - 1, -1));
+      } else if (event.key === 'Enter') {
+        event.preventDefault();
+        const target = selectedIndex >= 0 ? searchResults[selectedIndex] : searchResults[0];
+        if (target) {
+          navigateToTool(target.tool.slug);
+        }
+      } else if (event.key === 'Escape') {
+        setIsSearchOpen(false);
+        setSearchQuery('');
+        setSearchResults([]);
+      }
+    },
+    [navigateToTool, searchResults, selectedIndex]
+  );
 
-  const navItems = [
-    { href: `/${locale}`, label: t('navigation.home') },
-    { href: `/${locale}/tools`, label: t('navigation.tools') },
-    { href: `/${locale}/workflow`, label: t('navigation.workflow') || 'Workflow' },
-    { href: `/${locale}/about`, label: t('navigation.about') },
-    { href: `/${locale}/faq`, label: t('navigation.faq') },
-  ];
+  const navItems = useMemo(
+    () => [
+      { href: `/${locale}`, label: t('navigation.home') },
+      { href: `/${locale}/tools`, label: t('navigation.tools') },
+      { href: `/${locale}/workflow`, label: t('navigation.workflow') || 'Workflow' },
+      { href: `/${locale}/about`, label: t('navigation.about') },
+      { href: `/${locale}/faq`, label: t('navigation.faq') },
+    ],
+    [locale, t]
+  );
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${scrolled
-        ? 'bg-[hsl(var(--color-background))]/80 backdrop-blur-md border-b border-[hsl(var(--color-border))/0.5] shadow-sm'
-        : 'bg-transparent border-transparent'
-        }`}
+      className={`sticky top-0 z-50 border-b transition-all duration-300 ${
+        scrolled
+          ? 'border-[hsl(var(--color-border))/0.9] bg-[hsl(var(--color-background))/0.84] backdrop-blur-xl'
+          : 'border-transparent bg-[hsl(var(--color-background))/0.55] backdrop-blur-md'
+      }`}
       role="banner"
     >
-      <div className="container mx-auto px-4">
-        <div className="flex h-20 items-center justify-between">
-          {/* Logo and Brand */}
-          <div className="flex items-center gap-2">
+      <div className="mx-auto max-w-7xl px-4 py-3">
+        <div className="grid gap-3 lg:grid-cols-[auto_1fr_auto] lg:items-center">
+          <div className="flex items-center justify-between gap-3">
             <Link
               href={`/${locale}`}
-              className="group flex items-center gap-2.5 text-xl font-bold text-[hsl(var(--color-foreground))] hover:opacity-90 transition-opacity"
+              className="group inline-flex items-center gap-3 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))/0.82] px-3 py-2 shadow-[var(--shadow-sm)] transition-transform hover:-translate-y-0.5"
               aria-label={`${t('brand')} - ${t('navigation.home')}`}
             >
-              <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] shadow-lg shadow-primary/25 transition-transform group-hover:scale-105">
-                <svg
-                  className="h-5 w-5 text-white"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-                  <polyline points="14 2 14 8 20 8" />
-                </svg>
+              <BrandMark className="h-10 w-10" />
+              <div className="min-w-0">
+                <div className="text-sm font-black uppercase tracking-[0.2em] text-[hsl(var(--color-accent-strong))]">
+                  {siteConfig.shortName}
+                </div>
+                <div className="text-lg font-semibold text-[hsl(var(--color-foreground))]" data-testid="brand-name">
+                  {t('brand')}
+                </div>
               </div>
-              <span className="text-xl tracking-tight" data-testid="brand-name">
-                {t('brand')}
-              </span>
             </Link>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              className="lg:hidden"
+              aria-label={isMobileMenuOpen ? 'Close navigation' : 'Open navigation'}
+            >
+              {isMobileMenuOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+            </Button>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav
-            className={`hidden md:flex items-center gap-1 rounded-full border border-[hsl(var(--color-border))/0.4] bg-[hsl(var(--color-background))/0.5] p-1.5 backdrop-blur-sm shadow-sm transition-all duration-300 ${isSearchOpen ? 'opacity-0 translate-y-[-10px] pointer-events-none' : 'opacity-100 translate-y-0'
-              }`}
-            role="navigation"
-            aria-label="Main navigation"
-          >
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="px-4 py-1.5 text-sm font-medium text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-muted))/0.5] rounded-full transition-all"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <div className="hidden lg:flex items-center justify-center">
+            <nav
+              className="inline-flex flex-wrap items-center gap-1 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))/0.76] p-1 shadow-[var(--shadow-sm)]"
+              role="navigation"
+              aria-label="Main navigation"
+            >
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-full px-4 py-2 text-sm font-medium text-[hsl(var(--color-muted-foreground))] transition-colors hover:bg-[hsl(var(--color-surface-subtle))] hover:text-[hsl(var(--color-foreground))]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
-          {/* Right side actions */}
-          <div className="flex items-center gap-3">
-            {/* Search */}
+          <div className="flex items-center justify-end gap-2">
             {showSearch && (
               <div className="relative" ref={searchContainerRef}>
                 {isSearchOpen ? (
-                  <div className="fixed md:absolute left-4 right-4 md:left-auto md:right-0 top-[22px] md:top-1/2 md:-translate-y-1/2 z-50 md:origin-right animate-in fade-in slide-in-from-right-4 duration-200">
-                    <div className="relative w-full md:w-96">
-                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[hsl(var(--color-muted-foreground))]" />
-                      <input
-                        ref={searchInputRef}
-                        type="search"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        onKeyDown={handleKeyDown}
-                        placeholder={t('search.placeholder') || 'Search tools...'}
-                        className="w-full pl-10 pr-10 py-2.5 text-sm rounded-xl border border-[hsl(var(--color-border))] bg-[hsl(var(--color-background))] shadow-lg focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-primary))]"
-                        aria-label="Search tools"
-                        autoComplete="off"
-                      />
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={handleSearchToggle}
-                        aria-label="Close search"
-                        className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8 p-0 hover:bg-transparent"
-                      >
-                        <X className="h-4 w-4 text-[hsl(var(--color-muted-foreground))]" aria-hidden="true" />
-                      </Button>
+                  <div className="relative">
+                    <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[hsl(var(--color-muted-foreground))]" aria-hidden="true" />
+                    <input
+                      ref={searchInputRef}
+                      type="search"
+                      value={searchQuery}
+                      onChange={(event) => setSearchQuery(event.target.value)}
+                      onKeyDown={handleSearchKeyDown}
+                      placeholder={t('search.placeholder') || 'Search tools'}
+                      className="w-full min-w-[16rem] rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] py-2 pl-10 pr-10 text-sm text-[hsl(var(--color-foreground))] shadow-[var(--shadow-sm)] outline-none transition-all focus:border-[hsl(var(--color-accent-strong))]"
+                    />
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => {
+                        setIsSearchOpen(false);
+                        setSearchQuery('');
+                        setSearchResults([]);
+                      }}
+                      className="absolute right-1 top-1/2 h-8 w-8 -translate-y-1/2"
+                      aria-label="Close search"
+                    >
+                      <X className="h-4 w-4" aria-hidden="true" />
+                    </Button>
 
-                      {/* Search Results Dropdown */}
-                      {searchResults.length > 0 && (
-                        <div className="absolute top-full left-0 right-0 mt-2 bg-[hsl(var(--color-background))] border border-[hsl(var(--color-border))] rounded-xl shadow-xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 max-h-[60vh] overflow-y-auto">
-                          <ul className="py-2" role="listbox">
-                            {searchResults.map((result, index) => {
-                              const localized = localizedTools[result.tool.id];
-                              const toolName = localized?.title || result.tool.id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-                              const toolDescription = localized?.description || result.tool.features.slice(0, 3).join(' • ');
+                    {searchResults.length > 0 && (
+                      <div className="absolute right-0 top-full z-50 mt-2 w-full min-w-[22rem] overflow-hidden rounded-3xl border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-2 shadow-[var(--shadow-lg)]">
+                        <ul className="space-y-1" role="listbox">
+                          {searchResults.map((result, index) => {
+                            const localized = localizedTools[result.tool.id];
+                            const title = localized?.title || result.tool.slug;
+                            const description = localized?.description || result.tool.features.slice(0, 3).join(', ');
+                            const isSelected = index === selectedIndex;
 
-                              return (
-                                <li key={result.tool.id}>
-                                  <button
-                                    onClick={() => navigateToTool(result.tool.slug)}
-                                    onMouseEnter={() => setSelectedIndex(index)}
-                                    className={`
-                                      w-full px-4 py-2.5 text-left flex items-center gap-3 transition-colors
-                                      ${index === selectedIndex
-                                        ? 'bg-[hsl(var(--color-primary))/0.1] text-[hsl(var(--color-primary))]'
-                                        : 'hover:bg-[hsl(var(--color-muted))] text-[hsl(var(--color-foreground))]'
-                                      }
-                                    `}
-                                    role="option"
-                                    aria-selected={index === selectedIndex}
-                                  >
-                                    <span className="text-xl filter grayscale group-hover:grayscale-0">{getToolIcon(result.tool.category)}</span>
-                                    <div className="flex-1 min-w-0">
-                                      <div className="font-semibold text-sm truncate">
-                                        {toolName}
-                                      </div>
-                                      <div className="text-xs text-[hsl(var(--color-muted-foreground))] truncate">
-                                        {toolDescription}
-                                      </div>
-                                    </div>
-                                  </button>
-                                </li>
-                              );
-                            })}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
+                            return (
+                              <li key={result.tool.id}>
+                                <button
+                                  type="button"
+                                  onClick={() => navigateToTool(result.tool.slug)}
+                                  onMouseEnter={() => setSelectedIndex(index)}
+                                  className={`flex w-full items-start gap-3 rounded-2xl px-3 py-3 text-left transition-colors ${
+                                    isSelected
+                                      ? 'bg-[hsl(var(--color-accent-soft))] text-[hsl(var(--color-foreground))]'
+                                      : 'hover:bg-[hsl(var(--color-surface-subtle))]'
+                                  }`}
+                                  role="option"
+                                  aria-selected={isSelected}
+                                >
+                                  <span className="inline-flex min-h-9 min-w-9 items-center justify-center rounded-2xl bg-[hsl(var(--color-surface-subtle))] text-xs font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-accent-strong))]">
+                                    {result.tool.toolFamily}
+                                  </span>
+                                  <span className="min-w-0">
+                                    <span className="block truncate text-sm font-semibold">{title}</span>
+                                    <span className="block truncate text-xs text-[hsl(var(--color-muted-foreground))]">{description}</span>
+                                  </span>
+                                </button>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <Button
                     variant="ghost"
-                    size="sm"
-                    onClick={handleSearchToggle}
+                    size="icon"
+                    onClick={() => {
+                      setIsSearchOpen(true);
+                      setTimeout(() => searchInputRef.current?.focus(), 50);
+                    }}
+                    className="border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))/0.74]"
                     aria-label="Open search"
-                    className="relative text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]"
                   >
-                    <Search className="h-5 w-5" aria-hidden="true" />
-                    <span className="ml-2 hidden lg:inline-block text-xs text-[hsl(var(--color-muted-foreground))/0.5] border border-[hsl(var(--color-border))] rounded px-1.5 py-0.5">⌘K</span>
+                    <Search className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 )}
               </div>
             )}
 
-            {/* Recent Files Dropdown */}
             <RecentFilesDropdown
               locale={locale}
               translations={{
-                title: t('recentFiles.title') || 'Recent Files',
+                title: t('recentFiles.title') || 'Recent files',
                 empty: t('recentFiles.empty') || 'No recent files',
                 clearAll: t('recentFiles.clearAll') || 'Clear all',
                 processedWith: t('recentFiles.processedWith') || 'Processed with',
               }}
             />
-
-            {/* GitHub Repository Link */}
+            <ThemeToggle />
+            <LanguageSelector currentLocale={locale} />
             <a
-              href="https://github.com/PDFCraftTool/pdfcraft"
+              href={siteConfig.links.github}
               target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center justify-center h-9 w-9 rounded-lg text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-muted))/0.5] transition-all"
-              aria-label="GitHub Repository"
+              rel="noreferrer noopener"
+              className="hidden h-10 w-10 items-center justify-center rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))/0.72] text-[hsl(var(--color-muted-foreground))] transition-colors hover:text-[hsl(var(--color-foreground))] lg:inline-flex"
+              aria-label="Source code on GitHub"
             >
-              <Github className="h-5 w-5" aria-hidden="true" />
+              <Github className="h-4 w-4" aria-hidden="true" />
             </a>
-
-            {/* Language Selector placeholder */}
-            <div id="language-selector-slot" />
-
-            {/* Mobile Menu Toggle */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="md:hidden"
-              onClick={handleMobileMenuToggle}
-              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isMobileMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-5 w-5" aria-hidden="true" />
-              ) : (
-                <Menu className="h-5 w-5" aria-hidden="true" />
-              )}
-            </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav
-            id="mobile-menu"
-            className="md:hidden py-4 border-t border-[hsl(var(--color-border))] bg-[hsl(var(--color-background))] backdrop-blur-xl shadow-lg"
-            role="navigation"
-            aria-label="Mobile navigation"
-          >
-            <ul className="flex flex-col gap-2 p-2">
+          <div className="mt-3 rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))/0.92] p-4 shadow-[var(--shadow-md)] lg:hidden">
+            <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
               {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="block px-4 py-3 text-base font-medium text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-muted))] rounded-lg transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-              {/* GitHub Link in Mobile Menu */}
-              <li>
-                <a
-                  href="https://github.com/PDFCraftTool/pdfcraft"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-3 text-base font-medium text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-muted))] rounded-lg transition-colors"
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-2xl px-4 py-3 text-sm font-medium text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-surface-subtle))]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <Github className="h-5 w-5" aria-hidden="true" />
-                  GitHub
-                </a>
-              </li>
-            </ul>
-          </nav>
+                  {item.label}
+                </Link>
+              ))}
+              <a
+                href={siteConfig.links.github}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="rounded-2xl px-4 py-3 text-sm font-medium text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-surface-subtle))]"
+              >
+                GitHub
+              </a>
+            </nav>
+          </div>
         )}
       </div>
     </header>

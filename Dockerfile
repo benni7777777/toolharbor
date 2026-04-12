@@ -1,5 +1,5 @@
 # =============================================================================
-# PDFCraft Production Dockerfile
+# OpenToolsKit Production Dockerfile
 # Multi-stage build for optimized image size
 # Optimized with BuildKit cache mounts for faster builds
 # =============================================================================
@@ -34,24 +34,24 @@ RUN --mount=type=cache,target=/root/.npm \
 FROM nginx:1.25-alpine AS production
 
 # Add labels for GitHub Container Registry
-LABEL org.opencontainers.image.source="https://github.com/PDFCraftTool/pdfcraft"
-LABEL org.opencontainers.image.description="PDFCraft - Professional PDF Tools, Free, Private & Browser-Based"
+LABEL org.opencontainers.image.source="https://github.com/benni7777777/toolharbor"
+LABEL org.opencontainers.image.description="OpenToolsKit - Open-source browser tools for private document workflows"
 LABEL org.opencontainers.image.licenses="AGPL-3.0"
-LABEL org.opencontainers.image.title="PDFCraft"
-LABEL org.opencontainers.image.vendor="PDFCraftTool"
+LABEL org.opencontainers.image.title="OpenToolsKit"
+LABEL org.opencontainers.image.vendor="OpenToolsKit"
 
 # Copy custom nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY security-headers.conf /etc/nginx/security-headers.conf
 
 # Copy the static export from builder stage
-COPY --from=builder /app/out /website/pdfcraft
+COPY --from=builder /app/out /website/opentoolskit
 
 # Decompress LibreOffice WASM .gz files so both original and .gz exist.
 # gzip_static requires the original file to exist; without it, Nginx returns 404.
 # The .gz files are kept alongside for gzip_static to serve to gzip-capable clients.
-RUN if [ -d /website/pdfcraft/libreoffice-wasm ]; then \
-    cd /website/pdfcraft/libreoffice-wasm && \
+RUN if [ -d /website/opentoolskit/libreoffice-wasm ]; then \
+    cd /website/opentoolskit/libreoffice-wasm && \
     for f in *.gz; do \
     [ -f "$f" ] && gunzip -k "$f" || true; \
     done; \

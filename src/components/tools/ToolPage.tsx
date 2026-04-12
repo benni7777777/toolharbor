@@ -1,6 +1,5 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { Tool, ToolContent, HowToStep, UseCase, FAQ, ToolCategory } from '@/types/tool';
 import { Card } from '@/components/ui/Card';
 import { getToolById } from '@/config/tools';
@@ -14,6 +13,7 @@ import { Home, ChevronRight } from 'lucide-react';
 import { FavoriteButton } from '@/components/ui/FavoriteButton';
 import { useMemo } from 'react';
 import { sanitizeHtml } from '@/lib/utils/html-sanitizer';
+import { useSafeTranslations } from '@/lib/i18n/useSafeTranslations';
 
 export interface ToolPageProps {
   /** Tool data */
@@ -47,7 +47,7 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
     .map(id => getToolById(id))
     .filter((t): t is Tool => t !== undefined);
 
-  const t = useTranslations();
+  const t = useSafeTranslations();
 
   // Get tool display name
   const toolDisplayName = content.title || tool.id
@@ -188,7 +188,7 @@ interface DescriptionSectionProps {
 }
 
 function DescriptionSection({ description }: DescriptionSectionProps) {
-  const t = useTranslations();
+  const t = useSafeTranslations();
   const sanitizedDescription = useMemo(() => sanitizeHtml(description), [description]);
   if (!description) return null;
 
@@ -222,7 +222,7 @@ interface HowToUseSectionProps {
 }
 
 function HowToUseSection({ steps }: HowToUseSectionProps) {
-  const t = useTranslations();
+  const t = useSafeTranslations();
   if (!steps || steps.length === 0) return null;
 
   return (
@@ -281,7 +281,7 @@ interface UseCasesSectionProps {
 }
 
 function UseCasesSection({ useCases }: UseCasesSectionProps) {
-  const t = useTranslations();
+  const t = useSafeTranslations();
   if (!useCases || useCases.length === 0) return null;
 
   return (
@@ -341,7 +341,7 @@ interface FAQSectionProps {
 }
 
 function FAQSection({ faq }: FAQSectionProps) {
-  const t = useTranslations();
+  const t = useSafeTranslations();
   if (!faq || faq.length === 0) return null;
 
   return (
@@ -394,7 +394,7 @@ interface RelatedToolsSectionProps {
 }
 
 function RelatedToolsSection({ tools, locale, localizedRelatedTools }: RelatedToolsSectionProps) {
-  const t = useTranslations();
+  const t = useSafeTranslations();
   if (!tools || tools.length === 0) return null;
 
   return (

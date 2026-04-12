@@ -165,8 +165,8 @@ export function generateSoftwareApplicationSchema(
     name: content.title,
     description: content.metaDescription,
     url: `${siteConfig.url}/${locale}/tools/${tool.slug}`,
-    applicationCategory: 'UtilitiesApplication',
-    operatingSystem: 'Windows, macOS, Linux, iOS, Android, Chrome OS',
+    applicationCategory: tool.toolFamily === 'pdf' ? 'UtilitiesApplication' : 'BusinessApplication',
+    operatingSystem: 'Web Browser',
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -205,11 +205,11 @@ export function generateHowToSchema(
     '@type': 'HowTo',
     name: `How to ${content.title}`,
     description: content.metaDescription,
-    totalTime: 'PT5M', // Estimated 5 minutes for most PDF operations
+    totalTime: 'PT5M',
     tool: [
       {
         '@type': 'HowToTool',
-        name: 'Web Browser',
+      name: 'Modern web browser',
       },
     ],
     step: content.howToUse.map((step: HowToStep) => ({
@@ -260,7 +260,7 @@ export function generateWebPageSchema(
     },
     about: {
       '@type': 'Thing',
-      name: 'PDF Processing',
+      name: `${tool.toolFamily.toUpperCase()} browser tool`,
     },
     mainEntity: {
       '@type': 'SoftwareApplication',

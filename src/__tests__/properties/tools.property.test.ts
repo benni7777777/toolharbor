@@ -319,9 +319,10 @@ describe('Tool Configuration Property Tests', () => {
       );
     });
 
-    it('getAllTools returns all 67 tools', () => {
+    it('getAllTools returns the full configured tool inventory', () => {
       const allTools = getAllTools();
-      expect(allTools.length).toBe(67);
+      expect(allTools.length).toBe(tools.length);
+      expect(allTools.length).toBeGreaterThan(0);
     });
 
     it('all tools have required properties', () => {

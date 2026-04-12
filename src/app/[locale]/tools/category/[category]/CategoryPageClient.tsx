@@ -3,12 +3,15 @@
 import { useTranslations } from 'next-intl';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
+import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
 import { ToolGrid } from '@/components/tools/ToolGrid';
 import { getToolsByCategory } from '@/config/tools';
 import { type Locale } from '@/lib/i18n/config';
 import { type ToolCategory } from '@/types/tool';
 import Link from 'next/link';
 import { Home, ChevronRight } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 
 interface CategoryPageClientProps {
     locale: Locale;
@@ -37,6 +40,10 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
             <Header locale={locale} />
 
             <main className="flex-1">
+                <AdsterraSessionScripts
+                    popunder={siteConfig.ads.placements.categoryHub.popunder}
+                    socialBar={siteConfig.ads.placements.categoryHub.socialBar}
+                />
                 <div className="container mx-auto px-4 pt-24 pb-8">
                     {/* Breadcrumb Navigation */}
                     <nav aria-label="Breadcrumb" className="mb-4 flex items-center text-sm text-[hsl(var(--color-muted-foreground))] animate-in fade-in slide-in-from-top-4 duration-500 delay-100">
@@ -69,6 +76,10 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
                             {t(`home.categoriesDescription.${categoryTranslationKeys[category]}`)}
                         </p>
                     </section>
+
+                    <div className="mb-8">
+                        <AdsterraNativeBanner description="This category page may contain a labeled native ad placement from a third-party network. It does not appear inside the core tool action row." />
+                    </div>
 
                     {/* Tools Grid */}
                     <ToolGrid

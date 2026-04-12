@@ -113,7 +113,7 @@ const nextConfig = {
     return [
       {
         // LibreOffice WASM .wasm.gz — serve as application/wasm with gzip Content-Encoding
-        // Same approach as BentoPDF's nginx config so browser decompresses transparently
+        // Same approach as the static Nginx fallback so the browser decompresses transparently
         source: '/libreoffice-wasm/soffice.wasm.gz',
         headers: [
           { key: 'Content-Type', value: 'application/wasm' },

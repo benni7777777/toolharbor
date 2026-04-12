@@ -52,6 +52,6 @@
   ],
   "exclude": [
     "node_modules",
-    "bentopdf-main"
+    "reference-upstream"
   ]
 }

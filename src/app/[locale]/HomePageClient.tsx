@@ -2,15 +2,19 @@
 
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { ArrowRight, Zap, Wrench, Lock, Sparkles, Edit, FileImage, FolderOpen, Settings, ShieldCheck, Star } from 'lucide-react';
+import { ArrowRight, Zap, Wrench, Lock, Sparkles, Edit, FileImage, FolderOpen, Settings, ShieldCheck, Star, Workflow, Boxes } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { BrandMark } from '@/components/layout/BrandMark';
+import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
+import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
 import { ToolGrid } from '@/components/tools/ToolGrid';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { getAllTools, getToolsByCategory, getPopularTools } from '@/config/tools';
 import { type Locale } from '@/lib/i18n/config';
 import { CATEGORY_INFO, type ToolCategory } from '@/types/tool';
+import { siteConfig } from '@/config/site';
 
 interface HomePageClientProps {
   locale: Locale;
@@ -86,50 +90,63 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
       <Header locale={locale} />
 
       <main id="main-content" className="flex-1 relative" tabIndex={-1}>
+        <AdsterraSessionScripts
+          popunder={siteConfig.ads.placements.homepage.popunder}
+          socialBar={siteConfig.ads.placements.homepage.socialBar}
+        />
+
         {/* Hero Section */}
         <section
           className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28"
           aria-labelledby="hero-title"
         >
-          {/* Animated Background Blobs */}
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-[hsl(var(--color-primary)/0.2)] rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
-            <div className="absolute top-0 right-1/4 w-96 h-96 bg-[hsl(var(--color-accent)/0.2)] rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
-            <div className="absolute -bottom-32 left-1/2 w-96 h-96 bg-[hsl(var(--color-secondary)/0.3)] rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
+          <div className="absolute inset-0 -z-10 overflow-hidden">
+            <div className="absolute left-[8%] top-[8%] h-64 w-64 rounded-full bg-[hsl(var(--color-accent)/0.14)] blur-3xl" />
+            <div className="absolute right-[4%] top-[14%] h-72 w-72 rounded-full bg-[hsl(var(--color-highlight)/0.15)] blur-3xl" />
+            <div className="absolute bottom-[-8rem] left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-[hsl(var(--color-primary)/0.12)] blur-3xl" />
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              {/* Brand Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-[hsl(var(--color-background)/0.8)] border border-[hsl(var(--color-primary)/0.2)] shadow-sm backdrop-blur-md transition-all hover:bg-[hsl(var(--color-background))]">
-                <Sparkles className="h-4 w-4 text-[hsl(var(--color-primary))]" aria-hidden="true" />
-                <span className="text-sm font-medium text-[hsl(var(--color-primary))]">
-                  {t('common.brand')}
+              <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))/0.86] px-4 py-2 shadow-[var(--shadow-sm)] backdrop-blur-md">
+                <BrandMark className="h-8 w-8" />
+                <span className="text-sm font-semibold tracking-[0.16em] text-[hsl(var(--color-accent-strong))]">
+                  {siteConfig.name}
                 </span>
               </div>
 
-              {/* Hero Title */}
               <h1 id="hero-title" className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
                 <span className="text-[hsl(var(--color-foreground))]">{t('home.hero.title')} </span>
                 <span className="text-gradient block mt-1 pb-2">{t('home.hero.highlight')}</span>
               </h1>
 
-              {/* Hero Subtitle */}
               <p className="text-lg text-[hsl(var(--color-muted-foreground))] mb-8 max-w-2xl mx-auto leading-relaxed">
-                {t('home.hero.subtitle')}
+                {siteConfig.description}
               </p>
 
-              {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link href={`/${locale}/tools`}>
-                  <Button variant="primary" size="lg" className="h-11 px-8 text-base shadow-lg hover:shadow-primary/25 transition-all hover:-translate-y-0.5">
+                  <Button variant="primary" size="lg" className="h-12 rounded-full px-8 text-base shadow-[var(--shadow-md)] transition-all hover:-translate-y-0.5">
                     {t('home.hero.cta')}
                     <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
                   </Button>
                 </Link>
-                <div className="flex items-center gap-2 text-sm text-[hsl(var(--color-muted-foreground))] bg-[hsl(var(--color-background)/0.5)] px-4 py-2 rounded-full border border-[hsl(var(--color-border))] backdrop-blur-sm">
-                  <Lock className="h-4 w-4 text-green-500" aria-hidden="true" />
+                <Link href={`/${locale}/workflow`}>
+                  <Button variant="outline" size="lg" className="h-12 rounded-full px-8 text-base">
+                    <Workflow className="h-4 w-4" aria-hidden="true" />
+                    <span>{t('common.navigation.workflow') || 'Workflow'}</span>
+                  </Button>
+                </Link>
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+                <div className="flex items-center gap-2 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))/0.72] px-4 py-2 text-sm text-[hsl(var(--color-muted-foreground))]">
+                  <Lock className="h-4 w-4 text-[hsl(var(--color-accent-strong))]" aria-hidden="true" />
                   <span>{t('common.footer.privacyBadge')}</span>
+                </div>
+                <div className="flex items-center gap-2 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))/0.72] px-4 py-2 text-sm text-[hsl(var(--color-muted-foreground))]">
+                  <Boxes className="h-4 w-4 text-[hsl(var(--color-highlight))]" aria-hidden="true" />
+                  <span>Phase 1: PDF suite, workflow editor, extension</span>
                 </div>
               </div>
             </div>
@@ -137,14 +154,14 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
         </section>
 
         {/* Features Section */}
-        <section className="py-12 relative z-20" aria-label="Features">
+        <section className="relative z-20 py-12" aria-label="Features">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {features.map((feature, index) => {
                 const Icon = feature.icon;
                 return (
-                  <Card key={index} className="p-6 text-center glass-card border-0 hover:-translate-y-1 transition-transform duration-300" hover={false}>
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[hsl(var(--color-primary)/0.1)] mb-4 text-[hsl(var(--color-primary))]">
+                  <Card key={index} className="p-6 text-center glass-card hover:-translate-y-1 transition-transform duration-300" hover={false}>
+                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[hsl(var(--color-accent-soft))] text-[hsl(var(--color-accent-strong))]">
                       <Icon className={`h-6 w-6 ${feature.color}`} aria-hidden="true" />
                     </div>
                     <h3 className="text-lg font-bold text-[hsl(var(--color-foreground))] mb-2">
@@ -160,13 +177,21 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
           </div>
         </section>
 
+        <section className="py-4">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-5xl">
+              <AdsterraNativeBanner description="OpenToolsKit may show a native sponsor placement on discovery surfaces like the homepage. Tool actions and downloads remain separate." />
+            </div>
+          </div>
+        </section>
+
         {/* Popular Tools Section */}
-        <section className="py-16 bg-[hsl(var(--color-muted)/0.5)]" aria-labelledby="popular-tools-heading">
+        <section className="py-16" aria-labelledby="popular-tools-heading">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 mb-3 rounded-full bg-[hsl(var(--color-primary)/0.1)] border border-[hsl(var(--color-primary)/0.2)]">
-                <Star className="h-4 w-4 text-[hsl(var(--color-primary))]" aria-hidden="true" />
-                <span className="text-sm font-medium text-[hsl(var(--color-primary))]">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] px-3 py-1 shadow-[var(--shadow-sm)]">
+                <Star className="h-4 w-4 text-[hsl(var(--color-highlight))]" aria-hidden="true" />
+                <span className="text-sm font-medium text-[hsl(var(--color-foreground))]">
                   {t('home.popularTools.badge')}
                 </span>
               </div>
@@ -212,7 +237,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
         </section>
 
         {/* Tool Categories Section */}
-        <section className="py-16 bg-[hsl(var(--color-muted)/0.3)]" aria-labelledby="categories-heading">
+        <section className="py-16 bg-[hsl(var(--color-card))/0.66]" aria-labelledby="categories-heading">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
               <h2 id="categories-heading" className="text-3xl font-bold text-[hsl(var(--color-foreground))] mb-3">
@@ -236,10 +261,10 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                     href={`/${locale}/tools?category=${category}`}
                     className="group"
                   >
-                    <Card className="p-5 h-full glass-card hover:bg-white/80 dark:hover:bg-slate-800/80 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-[hsl(var(--color-border)/0.6)]">
+                    <Card className="p-5 h-full glass-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-md)] border-[hsl(var(--color-border)/0.6)]">
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[hsl(var(--color-primary)/0.1)] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <Icon className="h-5 w-5 text-[hsl(var(--color-primary))]" aria-hidden="true" />
+                        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-[hsl(var(--color-accent-soft))] transition-transform duration-300 group-hover:scale-110">
+                          <Icon className="h-5 w-5 text-[hsl(var(--color-accent-strong))]" aria-hidden="true" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <h3 className="font-semibold text-base text-[hsl(var(--color-foreground))] mb-1 group-hover:text-[hsl(var(--color-primary))] transition-colors">

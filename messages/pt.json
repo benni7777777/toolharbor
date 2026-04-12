@@ -1,28 +1,28 @@
 {
   "metadata": {
     "home": {
-      "title": "PDFCraft - Ferramentas PDF Profissionais",
-      "description": "Grátis, privado e baseado em navegador. Mescle e edite arquivos PDF online sem enviar para servidores."
+      "title": "OpenToolsKit - Browser Tools for Private Document Work",
+      "description": "Open-source browser tools for PDF and document workflows. Private by default, multilingual, and built for Cloudflare delivery."
     },
     "tools": {
-      "title": "Todas as Ferramentas PDF",
-      "description": "Navegue por mais de 67 ferramentas PDF profissionais. Mescle, divida, comprima, converta, edite e proteja seus arquivos PDF gratuitamente."
+      "title": "OpenToolsKit Tools",
+      "description": "Browse the OpenToolsKit launch catalog for browser-based PDF tools, workflow automation, and multilingual utility pages."
     },
     "about": {
       "title": "Sobre Nós",
-      "description": "Conheça o PDFCraft - seu kit de ferramentas PDF gratuito, privado e poderoso. Todo o processamento acontece no seu navegador."
+      "description": "Learn how OpenToolsKit turns private browser utilities into an open-source tool platform."
     },
     "faq": {
       "title": "Perguntas Frequentes",
-      "description": "Encontre respostas para perguntas comuns sobre o PDFCraft. Aprenda a usar nossas ferramentas PDF de forma eficaz."
+      "description": "Find answers about OpenToolsKit, the workflow editor, browser extension, and source code."
     },
     "privacy": {
       "title": "Política de Privacidade",
-      "description": "Política de privacidade do PDFCraft. Seus arquivos nunca saem do seu dispositivo - todo o processamento acontece localmente no seu navegador."
+      "description": "Política de privacidade do OpenToolsKit. Seus arquivos nunca saem do seu dispositivo - todo o processamento acontece localmente no seu navegador."
     },
     "contact": {
-      "title": "Contato",
-      "description": "Entre em contato com a equipe do PDFCraft. Adoraríamos ouvir você."
+      "title": "Support & Source",
+      "description": "Open-source support, issue reporting, and AGPL source links for OpenToolsKit."
     },
     "keywords": {
       "pdfTools": "ferramentas PDF",
@@ -35,15 +35,15 @@
     }
   },
   "common": {
-    "brand": "PDFCraft",
-    "tagline": "Ferramentas PDF Profissionais - Grátis e Privadas",
+    "brand": "OpenToolsKit",
+    "tagline": "Open-source browser tools - private by default",
     "navigation": {
       "home": "Início",
       "tools": "Ferramentas",
       "about": "Sobre",
       "faq": "Perguntas Frequentes",
       "privacy": "Privacidade",
-      "contact": "Contato",
+      "contact": "Support",
       "workflow": "Fluxo de Trabalho"
     },
     "buttons": {
@@ -83,9 +83,9 @@
       "loading": "Carregando..."
     },
     "footer": {
-      "copyright": "© {year} PDFCraft. Todos os direitos reservados.",
+      "copyright": "© {year} OpenToolsKit. Todos os direitos reservados.",
       "privacyBadge": "100% Privado - Os arquivos nunca saem do seu dispositivo",
-      "footer": "© 2025 PDFCraft. All rights reserved.",
+      "footer": "© 2025 OpenToolsKit. All rights reserved.",
       "madeWith": "Made with <Heart /> and <Nextjs />"
     },
     "recentFiles": {
@@ -129,7 +129,7 @@
       "finish": "Finalizar",
       "skip": "Pular",
       "stepOf": "de",
-      "welcomeTitle": "Bem-vindo ao PDFCraft!",
+      "welcomeTitle": "Bem-vindo ao OpenToolsKit!",
       "welcomeMessage": "Gostaria de um tour rápido para aprender a usar nossas ferramentas PDF? Leva apenas um minuto.",
       "helpButton": "Tour de Ajuda"
     },
@@ -156,16 +156,16 @@
       "sections": {
         "general": {
           "whatIs": {
-            "question": "What is PDFCraft?",
-            "answer": "PDFCraft is a free, privacy-focused PDF toolkit that runs entirely in your browser. It offers 67+ professional tools for editing, converting, merging, splitting, and securing PDF files without uploading them to any server."
+            "question": "What is OpenToolsKit?",
+            "answer": "OpenToolsKit is a free, privacy-focused PDF toolkit that runs entirely in your browser. It offers 67+ professional tools for editing, converting, merging, splitting, and securing PDF files without uploading them to any server."
           },
           "isFree": {
-            "question": "Is PDFCraft really free?",
-            "answer": "Yes, PDFCraft is completely free to use. There are no hidden costs, no premium tiers, and no registration required. All features are available to everyone."
+            "question": "Is OpenToolsKit really free?",
+            "answer": "Yes, OpenToolsKit is completely free to use. There are no hidden costs, no premium tiers, and no registration required. All features are available to everyone."
           },
           "account": {
             "question": "Do I need to create an account?",
-            "answer": "No, you don't need to create an account or register to use PDFCraft. Simply visit the website and start using any tool immediately."
+            "answer": "No, you don't need to create an account or register to use OpenToolsKit. Simply visit the website and start using any tool immediately."
           }
         },
         "privacy": {
@@ -174,8 +174,8 @@
             "answer": "No, your files are never uploaded to any server. All PDF processing happens locally in your browser using JavaScript and WebAssembly. Your files never leave your device."
           },
           "safe": {
-            "question": "Is it safe to use PDFCraft with sensitive documents?",
-            "answer": "Yes, PDFCraft is designed with privacy in mind. Since all processing happens locally in your browser, your sensitive documents remain on your device and are never transmitted over the internet."
+            "question": "Is it safe to use OpenToolsKit with sensitive documents?",
+            "answer": "Yes, OpenToolsKit is designed with privacy in mind. Since all processing happens locally in your browser, your sensitive documents remain on your device and are never transmitted over the internet."
           },
           "storage": {
             "question": "What happens to my files after processing?",
@@ -185,7 +185,7 @@
         "features": {
           "operations": {
             "question": "What PDF operations can I perform?",
-            "answer": "PDFCraft offers 67+ tools including: merge, split, compress, convert (to/from images, text, JSON), edit, annotate, sign, add watermarks, encrypt/decrypt, OCR, and many more."
+            "answer": "OpenToolsKit offers 67+ tools including: merge, split, compress, convert (to/from images, text, JSON), edit, annotate, sign, add watermarks, encrypt/decrypt, OCR, and many more."
           },
           "merge": {
             "question": "Can I merge multiple PDF files?",
@@ -193,17 +193,17 @@
           },
           "images": {
             "question": "Can I convert images to PDF?",
-            "answer": "Yes, PDFCraft supports converting various image formats (JPG, PNG, WebP, BMP, TIFF, SVG, HEIC) to PDF. You can convert single or multiple images at once."
+            "answer": "Yes, OpenToolsKit supports converting various image formats (JPG, PNG, WebP, BMP, TIFF, SVG, HEIC) to PDF. You can convert single or multiple images at once."
           },
           "edit": {
             "question": "Can I edit text in a PDF?",
-            "answer": "PDFCraft provides annotation and editing tools including highlighting, adding text, shapes, images, and signatures. For full text editing, the PDF Editor tool offers comprehensive annotation capabilities."
+            "answer": "OpenToolsKit provides annotation and editing tools including highlighting, adding text, shapes, images, and signatures. For full text editing, the PDF Editor tool offers comprehensive annotation capabilities."
           }
         },
         "technical": {
           "browsers": {
             "question": "What browsers are supported?",
-            "answer": "PDFCraft works on all modern browsers including Chrome, Firefox, Safari, and Edge. We recommend using the latest version of your browser for the best experience."
+            "answer": "OpenToolsKit works on all modern browsers including Chrome, Firefox, Safari, and Edge. We recommend using the latest version of your browser for the best experience."
           },
           "sizeLimit": {
             "question": "Is there a file size limit?",
@@ -214,14 +214,14 @@
             "answer": "Since all processing happens in your browser, performance depends on your device's capabilities. Large files require more memory and processing power. For best results, close other browser tabs and applications."
           },
           "offline": {
-            "question": "Does PDFCraft work offline?",
-            "answer": "Currently, PDFCraft requires an internet connection to load the application. However, once loaded, the PDF processing itself happens locally and doesn't require a connection."
+            "question": "Does OpenToolsKit work offline?",
+            "answer": "Currently, OpenToolsKit requires an internet connection to load the application. However, once loaded, the PDF processing itself happens locally and doesn't require a connection."
           }
         },
         "languages": {
           "supported": {
             "question": "What languages are supported?",
-            "answer": "PDFCraft is available in 9 languages: English, Japanese, Korean, Spanish, French, German, Chinese, Portuguese, and Arabic (with RTL support)."
+            "answer": "OpenToolsKit is available in 9 languages: English, Japanese, Korean, Spanish, French, German, Chinese, Portuguese, and Arabic (with RTL support)."
           },
           "change": {
             "question": "How do I change the language?",
@@ -252,7 +252,7 @@
         },
         "fast": {
           "title": "Fast & Efficient",
-          "description": "Powered by modern web technologies, PDFCraft delivers lightning-fast PDF processing without the need for uploads or downloads."
+          "description": "Powered by modern web technologies, OpenToolsKit delivers lightning-fast PDF processing without the need for uploads or downloads."
         },
         "accessible": {
           "title": "Accessible Everywhere",
@@ -260,7 +260,7 @@
         },
         "free": {
           "title": "Free Forever",
-          "description": "PDFCraft is completely free to use with no hidden costs, no registration required, and no limits on usage."
+          "description": "OpenToolsKit is completely free to use with no hidden costs, no registration required, and no limits on usage."
         },
         "openSource": {
           "title": "Open Source",
@@ -298,7 +298,7 @@
         "email": {
           "title": "Email",
           "description": "Envie-nos um email e responderemos dentro de 24-48 horas.",
-          "action": "contact@pdfcraft.app"
+          "action": "Open repository"
         },
         "github": {
           "title": "GitHub",
@@ -308,7 +308,7 @@
         "twitter": {
           "title": "Twitter",
           "description": "Siga-nos para atualizações e anúncios.",
-          "action": "@pdfcraft"
+          "action": "@OpenToolsKit"
         }
       },
       "form": {
@@ -398,14 +398,15 @@
     "browserNotSupported": "Seu navegador não suporta este recurso.",
     "invalidPageRange": "Intervalo de páginas inválido especificado.",
     "invalidOptions": "Opções inválidas fornecidas.",
+    "invalidPassword": "A senha informada está incorreta. Verifique e tente novamente.",
     "unknown": "Ocorreu um erro inesperado. Por favor, tente novamente.",
     "toolNotFound": "Tool Not Found"
   },
   "home": {
     "hero": {
-      "title": "Ferramentas PDF Profissionais",
-      "highlight": "Ferramentas Profissionais",
-      "subtitle": "Processamento de PDF gratuito, privado e poderoso no seu navegador",
+      "title": "Browser Tools for",
+      "highlight": "Private Workflows",
+      "subtitle": "Open-source, multilingual, and browser-first utility workflows",
       "cta": "Começar"
     },
     "features": {
@@ -418,18 +419,18 @@
         "description": "Sem cadastro, sem limites, sem custos ocultos."
       },
       "powerful": {
-        "title": "Ferramentas Poderosas",
-        "description": "Mais de 67 ferramentas PDF profissionais para todas as suas necessidades."
+        "title": "Launch-ready suite",
+        "description": "Phase 1 ships the PDF suite, workflow editor, extension, and visible source links."
       }
     },
     "popularTools": {
       "badge": "Mais Popular",
-      "title": "Ferramentas PDF Populares",
+      "title": "Popular launch tools",
       "description": "Nossas ferramentas mais usadas para ajudar você a terminar seu trabalho mais rápido."
     },
     "categoriesSection": {
       "title": "Explorar todas as categorias",
-      "description": "{count}+ ferramentas PDF profissionais organizadas por categoria",
+      "description": "{count}+ launch tools organized by category",
       "toolsCount": "{count} ferramentas"
     },
     "categoriesDescription": {
@@ -459,7 +460,7 @@
   "workflow": {
     "title": "Editor de Fluxo de Trabalho PDF",
     "subtitle": "Crie pipelines de processamento PDF personalizados conectando ferramentas",
-    "metaTitle": "Editor de Fluxo de Trabalho PDF - PDFCraft",
+    "metaTitle": "Editor de Fluxo de Trabalho PDF - OpenToolsKit",
     "metaDescription": "Crie pipelines de processamento PDF personalizados conectando ferramentas visualmente. Construa, salve e reutilize seus fluxos de trabalho.",
     "toolbox": "Caixa de Ferramentas",
     "dragToAdd": "Arraste ferramentas para adicionar ao fluxo de trabalho",
@@ -642,8 +643,8 @@
     }
   },
   "toolsPage": {
-    "title": "Ferramentas PDF Profissionais",
-    "subtitle": "Mais de {count} ferramentas gratuitas, seguras e fáceis de usar para todas as suas necessidades de PDF.",
+    "title": "OpenToolsKit Launch Tools",
+    "subtitle": "{count}+ browser-based launch tools for PDF workflows, editing, conversion, and secure document handling.",
     "filters": "Filtros",
     "allTools": "Todas as Ferramentas",
     "clearAll": "Limpar tudo",
@@ -2188,16 +2189,16 @@
     "sections": {
       "general": {
         "whatIs": {
-          "question": "O que é o PDFCraft?",
-          "answer": "O PDFCraft é um conjunto de ferramentas PDF gratuito e focado na privacidade que funciona inteiramente no seu navegador. Ele oferece mais de {count} ferramentas profissionais para editar, converter, mesclar, dividir e criptografar arquivos PDF sem nunca enviá-los para um servidor."
+          "question": "O que é o OpenToolsKit?",
+          "answer": "O OpenToolsKit é um conjunto de ferramentas PDF gratuito e focado na privacidade que funciona inteiramente no seu navegador. Ele oferece mais de {count} ferramentas profissionais para editar, converter, mesclar, dividir e criptografar arquivos PDF sem nunca enviá-los para um servidor."
         },
         "isFree": {
-          "question": "O PDFCraft é realmente gratuito?",
-          "answer": "Sim, o PDFCraft é totalmente gratuito. Não há taxas ocultas, assinaturas premium ou obrigatoriedade de registro. Todos os recursos estão disponíveis para todos."
+          "question": "O OpenToolsKit é realmente gratuito?",
+          "answer": "Sim, o OpenToolsKit é totalmente gratuito. Não há taxas ocultas, assinaturas premium ou obrigatoriedade de registro. Todos os recursos estão disponíveis para todos."
         },
         "account": {
           "question": "Preciso criar uma conta?",
-          "answer": "Não, você não precisa criar uma conta ou se registrar para usar o PDFCraft. Basta visitar o site e começar a usar qualquer ferramenta imediatamente."
+          "answer": "Não, você não precisa criar uma conta ou se registrar para usar o OpenToolsKit. Basta visitar o site e começar a usar qualquer ferramenta imediatamente."
         }
       },
       "privacy": {
@@ -2206,8 +2207,8 @@
           "answer": "Não, seus arquivos nunca são enviados para um servidor. Todo o processamento de PDF é feito localmente no seu navegador usando JavaScript e WebAssembly. Seus arquivos nunca saem do seu dispositivo."
         },
         "safe": {
-          "question": "É seguro usar o PDFCraft para documentos sensíveis?",
-          "answer": "Sim, o PDFCraft foi projetado com a privacidade como prioridade. Como todo o processamento ocorre localmente no seu navegador, seus documentos sensíveis permanecem no seu dispositivo e nunca são transmitidos pela Internet."
+          "question": "É seguro usar o OpenToolsKit para documentos sensíveis?",
+          "answer": "Sim, o OpenToolsKit foi projetado com a privacidade como prioridade. Como todo o processamento ocorre localmente no seu navegador, seus documentos sensíveis permanecem no seu dispositivo e nunca são transmitidos pela Internet."
         },
         "storage": {
           "question": "O que acontece com meus arquivos após o processamento?",
@@ -2217,7 +2218,7 @@
       "features": {
         "operations": {
           "question": "Quais operações de PDF posso realizar?",
-          "answer": "O PDFCraft oferece mais de {count} ferramentas, incluindo: mesclar, dividir, comprimir, converter (de/para imagens, texto, JSON), editar, anotar, assinar, adicionar marcas d'água, criptografar/descriptografar, OCR e muito mais."
+          "answer": "O OpenToolsKit oferece mais de {count} ferramentas, incluindo: mesclar, dividir, comprimir, converter (de/para imagens, texto, JSON), editar, anotar, assinar, adicionar marcas d'água, criptografar/descriptografar, OCR e muito mais."
         },
         "merge": {
           "question": "Posso mesclar vários arquivos PDF?",
@@ -2225,17 +2226,17 @@
         },
         "images": {
           "question": "Posso converter imagens em PDF?",
-          "answer": "Sim, o PDFCraft suporta a conversão de vários formatos de imagem (JPG, PNG, WebP, BMP, TIFF, SVG, HEIC) para PDF. Você pode converter uma ou várias imagens de uma vez."
+          "answer": "Sim, o OpenToolsKit suporta a conversão de vários formatos de imagem (JPG, PNG, WebP, BMP, TIFF, SVG, HEIC) para PDF. Você pode converter uma ou várias imagens de uma vez."
         },
         "edit": {
           "question": "Posso editar o texto de um PDF?",
-          "answer": "O PDFCraft oferece ferramentas de anotação e edição que incluem destaque, adição de texto, formas, imagens e assinaturas. Para edição completa de texto, a ferramenta Editor de PDF fornece funcionalidades abrangentes de anotação."
+          "answer": "O OpenToolsKit oferece ferramentas de anotação e edição que incluem destaque, adição de texto, formas, imagens e assinaturas. Para edição completa de texto, a ferramenta Editor de PDF fornece funcionalidades abrangentes de anotação."
         }
       },
       "technical": {
         "browsers": {
           "question": "Quais navegadores são suportados?",
-          "answer": "O PDFCraft funciona em todos os navegadores modernos, incluindo Chrome, Firefox, Safari e Edge. Recomendamos o uso da versão mais recente do seu navegador para uma melhor experiência."
+          "answer": "O OpenToolsKit funciona em todos os navegadores modernos, incluindo Chrome, Firefox, Safari e Edge. Recomendamos o uso da versão mais recente do seu navegador para uma melhor experiência."
         },
         "sizeLimit": {
           "question": "Existe um limite de tamanho de arquivo?",
@@ -2246,14 +2247,14 @@
           "answer": "Como todo o processamento é feito no navegador, o desempenho depende das capacidades do seu dispositivo. Arquivos grandes exigem mais memória e poder de processamento. Para melhores resultados, feche outras abas e aplicativos."
         },
         "offline": {
-          "question": "O PDFCraft funciona offline?",
-          "answer": "Atualmente, o PDFCraft requer uma conexão com a Internet para carregar o aplicativo inicialmente. No entanto, uma vez carregado, o processamento de PDF ocorre localmente e não requer conexão."
+          "question": "O OpenToolsKit funciona offline?",
+          "answer": "Atualmente, o OpenToolsKit requer uma conexão com a Internet para carregar o aplicativo inicialmente. No entanto, uma vez carregado, o processamento de PDF ocorre localmente e não requer conexão."
         }
       },
       "languages": {
         "supported": {
           "question": "Quais idiomas são suportados?",
-          "answer": "O PDFCraft está disponível em 9 idiomas: Inglês, Japonês, Coreano, Espanhol, Francês, Alemão, Chinês, Português e Árabe (com suporte para leitura da direita para a esquerda)."
+          "answer": "O OpenToolsKit está disponível em 9 idiomas: Inglês, Japonês, Coreano, Espanhol, Francês, Alemão, Chinês, Português e Árabe (com suporte para leitura da direita para a esquerda)."
         },
         "change": {
           "question": "Como posso mudar o idioma?",
@@ -2262,19 +2263,19 @@
       }
     },
     "cta": {
-      "title": "Ainda tem dúvidas?",
-      "description": "Não encontrou a resposta que procurava? Sinta-se à vontade para entrar em contato conosco.",
-      "button": "Contate-nos"
+      "title": "Need public support?",
+      "description": "Use the support page for source links, AGPL attribution, and GitHub issue reporting.",
+      "button": "Open Support"
     }
   },
   "aboutPage": {
     "title": "Sobre {brand}",
-    "description": "{brand} é um conjunto de ferramentas PDF gratuito e focado na privacidade que funciona inteiramente no seu navegador. Com mais de {count} ferramentas profissionais, você pode editar, converter, mesclar, dividir e proteger seus arquivos PDF sem nunca enviá-los para um servidor.",
+    "description": "{brand} is an open-source browser tool platform that launches with {count}+ PDF tools, a workflow editor, and public source distribution.",
     "mission": {
       "title": "Nossa Missão",
-      "p1": "Acreditamos que todos devem ter acesso a ferramentas PDF poderosas sem comprometer sua privacidade ou pagar taxas de assinatura caras. É por isso que criamos o {brand} – um conjunto abrangente de ferramentas PDF que coloca sua privacidade em primeiro lugar.",
-      "p2": "Ao contrário dos serviços PDF tradicionais que exigem o envio de seus arquivos para servidores remotos, o {brand} processa tudo localmente no seu navegador. Seus documentos confidenciais nunca saem do seu dispositivo, oferecendo controle total sobre seus dados.",
-      "p3": "Seja você um estudante, profissional ou usuário casual, o {brand} fornece todas as ferramentas necessárias para trabalhar com PDFs de forma eficiente e segura."
+      "p1": "We believe private browser tools should stay accessible, inspectable, and useful beyond a single file format. That is why {brand} has been shaped into a broader browser-tool platform.",
+      "p2": "Unlike traditional services that depend on remote processing for routine document work, {brand} keeps core flows in the browser where applicable and keeps source availability visible through a public AGPL repository.",
+      "p3": "Phase 1 focuses on the PDF suite, workflow editor, and extension, while preparing the platform for additional tool families."
     },
     "values": {
       "title": "Nossos Valores",
@@ -2284,7 +2285,7 @@
       },
       "fast": {
         "title": "Rápido e Eficiente",
-        "description": "Impulsionado por tecnologias web modernas, o PDFCraft oferece processamento de PDF extremamente rápido sem a necessidade de uploads ou downloads."
+        "description": "Impulsionado por tecnologias web modernas, o OpenToolsKit oferece processamento de PDF extremamente rápido sem a necessidade de uploads ou downloads."
       },
       "accessible": {
         "title": "Acessível em Qualquer Lugar",
@@ -2292,7 +2293,7 @@
       },
       "free": {
         "title": "Gratuito para Sempre",
-        "description": "O PDFCraft é totalmente gratuito para usar, sem custos ocultos, sem necessidade de registro e sem limites de uso."
+        "description": "O OpenToolsKit é totalmente gratuito para usar, sem custos ocultos, sem necessidade de registro e sem limites de uso."
       },
       "openSource": {
         "title": "Código Aberto",
@@ -2313,43 +2314,43 @@
         "pdflib": "<strong1>pdf-lib & PDF.js</strong1> - Bibliotecas de manipulação de PDF padrão da indústria",
         "indexeddb": "<strong1>IndexedDB</strong1> - Para armazenamento local seguro do seu trabalho"
       },
-      "summary": "Essa combinação de tecnologias nos permite fornecer ferramentas PDF de nível profissional que funcionam inteiramente no seu navegador, sem qualquer processamento no servidor."
+      "summary": "This stack supports launch-ready browser tools, static export, local processing, and public-source trust surfaces without forcing a server-bound editing model."
     },
     "cta": {
       "title": "Pronto para Começar?",
-      "description": "Explore nossas mais de {count} ferramentas PDF e veja o que o {brand} pode fazer por você.",
+      "description": "Explore our {count}+ launch tools and see how {brand} handles private browser workflows.",
       "button": "Explorar Todas as Ferramentas"
     }
   },
   "contactPage": {
     "hero": {
-      "title": "Contate-nos",
-      "description": "Tem uma pergunta, sugestão ou encontrou um erro? Gostaríamos muito de ouvir você."
+      "title": "Support & Source",
+      "description": "Use GitHub for source access, issue reporting, and AGPL attribution."
     },
     "methods": {
       "email": {
-        "title": "E-mail",
-        "description": "Envie-nos um e-mail e responderemos dentro de 24 a 48 horas.",
-        "action": "contact@pdfcraft.app"
+        "title": "Source Code",
+        "description": "Inspect the public repository for the live service.",
+        "action": "Open repository"
       },
       "github": {
-        "title": "GitHub",
-        "description": "Relate erros, solicite recursos ou contribua para o projeto.",
-        "action": "Ver no GitHub"
+        "title": "GitHub Issues",
+        "description": "Report bugs, request features, and track public support.",
+        "action": "Report an issue"
       },
       "twitter": {
-        "title": "Twitter",
-        "description": "Siga-nos para atualizações e anúncios.",
-        "action": "@pdfcraft"
+        "title": "AGPL Notice",
+        "description": "Review project attribution and derivative notice details.",
+        "action": "Read NOTICE"
       }
     },
     "form": {
-      "title": "Envie-nos uma Mensagem",
-      "description": "Preencha o formulário abaixo e entraremos em contato o mais rápido possível.",
+      "title": "Public support workflow",
+      "description": "Open the repository, review the notice, or file a GitHub issue.",
       "success": {
-        "title": "Mensagem Enviada!",
-        "description": "Obrigado pelo contato. Retornaremos em breve, entre 24 e 48 horas.",
-        "button": "Enviar Outra Mensagem"
+        "title": "Use GitHub",
+        "description": "Support and source access are handled through the public repository.",
+        "button": "Open support"
       },
       "fields": {
         "name": {
@@ -2376,16 +2377,16 @@
           "placeholder": "Conte-nos mais sobre sua consulta..."
         }
       },
-      "error": "Algo deu errado. Tente novamente ou entre em contato diretamente por e-mail.",
+      "error": "Use the public GitHub support routes instead.",
       "submit": {
-        "loading": "Enviando...",
-        "default": "Enviar Mensagem"
+        "loading": "Opening...",
+        "default": "Open GitHub"
       }
     },
     "faq": {
-      "title": "Procurando Respostas Rápidas?",
-      "description": "Confira nossa página de perguntas frequentes para obter respostas sobre o {brand}.",
-      "button": "Ver FAQ"
+      "title": "Need quick answers first?",
+      "description": "Review the FAQ, then use the support page if you still need help.",
+      "button": "View FAQ"
     }
   }
 }

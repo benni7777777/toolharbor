@@ -1,28 +1,28 @@
 {
   "metadata": {
     "home": {
-      "title": "PDFCraft - 專業 PDF 工具",
-      "description": "免費、私密、基於瀏覽器。線上合併、編輯 PDF 檔案，無需上傳到伺服器。"
+      "title": "OpenToolsKit - Browser Tools for Private Document Work",
+      "description": "Open-source browser tools for PDF and document workflows. Private by default, multilingual, and built for Cloudflare delivery."
     },
     "tools": {
-      "title": "所有 PDF 工具",
-      "description": "瀏覽 67+ 款專業 PDF 工具。免費合併、分割、壓縮、轉換、編輯和保護您的 PDF 檔案。"
+      "title": "OpenToolsKit Tools",
+      "description": "Browse the OpenToolsKit launch catalog for browser-based PDF tools, workflow automation, and multilingual utility pages."
     },
     "about": {
       "title": "關於我們",
-      "description": "瞭解 PDFCraft - 您免費、私密且強大的 PDF 工具箱。所有處理都在您的瀏覽器中進行。"
+      "description": "Learn how OpenToolsKit turns private browser utilities into an open-source tool platform."
     },
     "faq": {
       "title": "常見問題",
-      "description": "查找有關 PDFCraft 的常見問題解答。瞭解如何有效使用我們的 PDF 工具。"
+      "description": "Find answers about OpenToolsKit, the workflow editor, browser extension, and source code."
     },
     "privacy": {
       "title": "隱私政策",
-      "description": "PDFCraft 隱私政策。您的檔案永遠不會離開您的裝置 - 所有處理都在本地瀏覽器中進行。"
+      "description": "OpenToolsKit 隱私政策。您的檔案永遠不會離開您的裝置 - 所有處理都在本地瀏覽器中進行。"
     },
     "contact": {
-      "title": "聯絡我們",
-      "description": "聯繫 PDFCraft 團隊。我們很樂意聽取您的意見。"
+      "title": "Support & Source",
+      "description": "Open-source support, issue reporting, and AGPL source links for OpenToolsKit."
     },
     "keywords": {
       "pdfTools": "PDF 工具",
@@ -35,15 +35,15 @@
     }
   },
   "common": {
-    "brand": "PDFCraft",
-    "tagline": "專業PDF工具 - 免費且私密",
+    "brand": "OpenToolsKit",
+    "tagline": "Open-source browser tools - private by default",
     "navigation": {
       "home": "首頁",
       "tools": "工具",
       "about": "關於",
       "faq": "常見問題",
       "privacy": "隱私",
-      "contact": "聯絡我們",
+      "contact": "Support",
       "workflow": "工作流"
     },
     "buttons": {
@@ -83,8 +83,8 @@
       "loading": "載入中..."
     },
     "footer": {
-      "footer": "© 2025 PDFCraft. 保留所有權利。",
-      "copyright": "© {year} PDFCraft. 保留所有權利。",
+      "footer": "© 2025 OpenToolsKit. 保留所有權利。",
+      "copyright": "© {year} OpenToolsKit. 保留所有權利。",
       "privacyBadge": "100% 私密 - 檔案永不離開您的裝置",
       "madeWith": "Made with <Heart /> and <Nextjs />"
     },
@@ -129,7 +129,7 @@
       "finish": "完成",
       "skip": "跳過",
       "stepOf": "/",
-      "welcomeTitle": "歡迎使用PDFCraft！",
+      "welcomeTitle": "歡迎使用OpenToolsKit！",
       "welcomeMessage": "想要快速瞭解如何使用我們的PDF工具嗎？只需一分鐘。",
       "helpButton": "幫助導覽"
     },
@@ -164,8 +164,8 @@
     }
   },
   "toolsPage": {
-    "title": "專業 PDF 工具",
-    "subtitle": "{count}+ 款免費、安全且易於使用的工具，滿足您所有的 PDF 需求。",
+    "title": "OpenToolsKit Launch Tools",
+    "subtitle": "{count}+ browser-based launch tools for PDF workflows, editing, conversion, and secure document handling.",
     "filters": "篩選",
     "allTools": "所有工具",
     "clearAll": "清除全部",
@@ -194,16 +194,16 @@
     "sections": {
       "general": {
         "whatIs": {
-          "question": "PDFCraft 是什麼？",
-          "answer": "PDFCraft 是一個免費、注重隱私的 PDF 工具包，完全在您的瀏覽器中執行。它提供 67+ 個專業工具，用於編輯、轉換、合併、分割和加密 PDF 檔案，而無需將其上傳到任何伺服器。"
+          "question": "OpenToolsKit 是什麼？",
+          "answer": "OpenToolsKit 是一個免費、注重隱私的 PDF 工具包，完全在您的瀏覽器中執行。它提供 67+ 個專業工具，用於編輯、轉換、合併、分割和加密 PDF 檔案，而無需將其上傳到任何伺服器。"
         },
         "isFree": {
-          "question": "PDFCraft 真的免費嗎？",
-          "answer": "是的，PDFCraft 完全免費使用。沒有隱藏費用，沒有高階會員，也無需註冊。所有功能對每個人開放。"
+          "question": "OpenToolsKit 真的免費嗎？",
+          "answer": "是的，OpenToolsKit 完全免費使用。沒有隱藏費用，沒有高階會員，也無需註冊。所有功能對每個人開放。"
         },
         "account": {
           "question": "我需要建立賬戶嗎？",
-          "answer": "不需要，您無需建立賬戶或註冊即可使用 PDFCraft。只需訪問網站即可立即開始使用任何工具。"
+          "answer": "不需要，您無需建立賬戶或註冊即可使用 OpenToolsKit。只需訪問網站即可立即開始使用任何工具。"
         }
       },
       "privacy": {
@@ -212,8 +212,8 @@
           "answer": "不會，您的檔案從未上傳到任何伺服器。所有 PDF 處理都使用 JavaScript 和 WebAssembly 在瀏覽器本地進行。您的檔案從未離開您的裝置。"
         },
         "safe": {
-          "question": "使用 PDFCraft 處理敏感文件安全嗎？",
-          "answer": "是的，PDFCraft 的設計以隱私為重。由於所有處理都在瀏覽器本地進行，您的敏感文件保留在您的裝置上，從未透過網際網路傳輸。"
+          "question": "使用 OpenToolsKit 處理敏感文件安全嗎？",
+          "answer": "是的，OpenToolsKit 的設計以隱私為重。由於所有處理都在瀏覽器本地進行，您的敏感文件保留在您的裝置上，從未透過網際網路傳輸。"
         },
         "storage": {
           "question": "處理後我的檔案會怎樣？",
@@ -223,7 +223,7 @@
       "features": {
         "operations": {
           "question": "我可以執行哪些 PDF 操作？",
-          "answer": "PDFCraft 提供 67+ 個工具，包括：合併、分割、壓縮、轉換（轉為/來自影象、文字、JSON）、編輯、註釋、簽名、新增水印、加密/解密、OCR 等等。"
+          "answer": "OpenToolsKit 提供 67+ 個工具，包括：合併、分割、壓縮、轉換（轉為/來自影象、文字、JSON）、編輯、註釋、簽名、新增水印、加密/解密、OCR 等等。"
         },
         "merge": {
           "question": "我可以合併多個 PDF 檔案嗎？",
@@ -231,17 +231,17 @@
         },
         "images": {
           "question": "我可以將影象轉換為 PDF 嗎？",
-          "answer": "是的，PDFCraft 支援將各種影象格式（JPG、PNG、WebP、BMP、TIFF、SVG、HEIC）轉換為 PDF。您可以一次轉換單個或多個影象。"
+          "answer": "是的，OpenToolsKit 支援將各種影象格式（JPG、PNG、WebP、BMP、TIFF、SVG、HEIC）轉換為 PDF。您可以一次轉換單個或多個影象。"
         },
         "edit": {
           "question": "我可以編輯 PDF 中的文字嗎？",
-          "answer": "PDFCraft 提供註釋和編輯工具，包括高亮、新增文字、形狀、影象和簽名。如需全文編輯，PDF 編輯器工具提供全面的註釋功能。"
+          "answer": "OpenToolsKit 提供註釋和編輯工具，包括高亮、新增文字、形狀、影象和簽名。如需全文編輯，PDF 編輯器工具提供全面的註釋功能。"
         }
       },
       "technical": {
         "browsers": {
           "question": "支援哪些瀏覽器？",
-          "answer": "PDFCraft 適用於所有現代瀏覽器，包括 Chrome、Firefox、Safari 和 Edge。我們建議使用最新版本的瀏覽器以獲得最佳體驗。"
+          "answer": "OpenToolsKit 適用於所有現代瀏覽器，包括 Chrome、Firefox、Safari 和 Edge。我們建議使用最新版本的瀏覽器以獲得最佳體驗。"
         },
         "sizeLimit": {
           "question": "有檔案大小限制嗎？",
@@ -252,14 +252,14 @@
           "answer": "由於所有處理都在瀏覽器中進行，效能取決於您裝置的能力。大檔案需要更多的記憶體和處理能力。為了獲得最佳結果，請關閉其他瀏覽器標籤頁和應用程式。"
         },
         "offline": {
-          "question": "PDFCraft 可以離線工作嗎？",
-          "answer": "目前，PDFCraft 需要網際網路連線才能載入應用程式。但是，一旦載入，PDF 處理本身在本地進行，不需要連線。"
+          "question": "OpenToolsKit 可以離線工作嗎？",
+          "answer": "目前，OpenToolsKit 需要網際網路連線才能載入應用程式。但是，一旦載入，PDF 處理本身在本地進行，不需要連線。"
         }
       },
       "languages": {
         "supported": {
           "question": "支援哪些語言？",
-          "answer": "PDFCraft 提供 9 種語言版本：英語、日語、韓語、西班牙語、法語、德語、中文、葡萄牙語和阿拉伯語（支援從右到左）。"
+          "answer": "OpenToolsKit 提供 9 種語言版本：英語、日語、韓語、西班牙語、法語、德語、中文、葡萄牙語和阿拉伯語（支援從右到左）。"
         },
         "change": {
           "question": "如何更改語言？",
@@ -268,19 +268,19 @@
       }
     },
     "cta": {
-      "title": "還有問題嗎？",
-      "description": "找不到您想要的答案？請隨時聯絡我們。",
-      "button": "聯絡我們"
+      "title": "Need public support?",
+      "description": "Use the support page for source links, AGPL attribution, and GitHub issue reporting.",
+      "button": "Open Support"
     }
   },
   "aboutPage": {
     "title": "關於 {brand}",
-    "description": "{brand} 是一個免費、注重隱私的 PDF 工具包，完全在您的瀏覽器中執行。擁有 {count}+ 個專業工具，您可以編輯、轉換、合併、分割和保護您的 PDF 檔案，而無需將其上傳到任何伺服器。",
+    "description": "{brand} is an open-source browser tool platform that launches with {count}+ PDF tools, a workflow editor, and public source distribution.",
     "mission": {
       "title": "我們的使命",
-      "p1": "我們相信，每個人都應該能夠使用強大的 PDF 工具，而無需犧牲隱私或支付昂貴的訂閱費用。這就是為什麼我們建立了 {brand} —— 一個將您的隱私放在首位的綜合 PDF 工具包。",
-      "p2": "與要求您將檔案上傳到遠端伺服器的傳統 PDF 服務不同，{brand} 在您的瀏覽器中本地處理所有內容。您的敏感文件從未離開您的裝置，讓您完全控制您的資料。",
-      "p3": "無論您是學生、專業人士還是普通使用者，{brand} 都為您提供高效、安全地處理 PDF 所需的所有工具。"
+      "p1": "We believe private browser tools should stay accessible, inspectable, and useful beyond a single file format. That is why {brand} has been shaped into a broader browser-tool platform.",
+      "p2": "Unlike traditional services that depend on remote processing for routine document work, {brand} keeps core flows in the browser where applicable and keeps source availability visible through a public AGPL repository.",
+      "p3": "Phase 1 focuses on the PDF suite, workflow editor, and extension, while preparing the platform for additional tool families."
     },
     "values": {
       "title": "我們的價值觀",
@@ -290,7 +290,7 @@
       },
       "fast": {
         "title": "快速高效",
-        "description": "由現代 Web 技術驅動，PDFCraft 提供閃電般的 PDF 處理速度，無需上傳或下載。"
+        "description": "由現代 Web 技術驅動，OpenToolsKit 提供閃電般的 PDF 處理速度，無需上傳或下載。"
       },
       "accessible": {
         "title": "隨處可用",
@@ -298,7 +298,7 @@
       },
       "free": {
         "title": "永久免費",
-        "description": "PDFCraft 完全免費使用，沒有隱藏費用，無需註冊，也不限制使用次數。"
+        "description": "OpenToolsKit 完全免費使用，沒有隱藏費用，無需註冊，也不限制使用次數。"
       },
       "openSource": {
         "title": "開源透明",
@@ -319,43 +319,43 @@
         "pdflib": "<strong1>pdf-lib & PDF.js</strong1> - 業界標準的 PDF 操作庫",
         "indexeddb": "<strong1>IndexedDB</strong1> - 用於安全地本地儲存您的工作"
       },
-      "summary": "這種技術組合使我們能夠提供專業級的 PDF 工具，完全在您的瀏覽器中執行，無需任何伺服器端處理。"
+      "summary": "This stack supports launch-ready browser tools, static export, local processing, and public-source trust surfaces without forcing a server-bound editing model."
     },
     "cta": {
       "title": "準備好開始了嗎？",
-      "description": "探索我們的 {count}+ 個 PDF 工具，看看 {brand} 能為您做什麼。",
+      "description": "Explore our {count}+ launch tools and see how {brand} handles private browser workflows.",
       "button": "瀏覽所有工具"
     }
   },
   "contactPage": {
     "hero": {
-      "title": "聯絡我們",
-      "description": "有問題、建議或發現錯誤？我們期待您的反饋。"
+      "title": "Support & Source",
+      "description": "Use GitHub for source access, issue reporting, and AGPL attribution."
     },
     "methods": {
       "email": {
-        "title": "電子郵件",
-        "description": "傳送電子郵件給我們，我們將在 24-48 小時內回覆。",
-        "action": "contact@pdfcraft.app"
+        "title": "Source Code",
+        "description": "Inspect the public repository for the live service.",
+        "action": "Open repository"
       },
       "github": {
-        "title": "GitHub",
-        "description": "報告錯誤、請求功能或為專案做貢獻。",
-        "action": "在 GitHub 上檢視"
+        "title": "GitHub Issues",
+        "description": "Report bugs, request features, and track public support.",
+        "action": "Report an issue"
       },
       "twitter": {
-        "title": "推特",
-        "description": "關注我們要獲取更新和公告。",
-        "action": "@pdfcraft"
+        "title": "AGPL Notice",
+        "description": "Review project attribution and derivative notice details.",
+        "action": "Read NOTICE"
       }
     },
     "form": {
-      "title": "傳送訊息",
-      "description": "填寫下面的表格，我們會盡快回復您。",
+      "title": "Public support workflow",
+      "description": "Open the repository, review the notice, or file a GitHub issue.",
       "success": {
-        "title": "訊息已傳送！",
-        "description": "感謝您的聯絡。我們將在 24-48 小時內回覆您。",
-        "button": "傳送另一條訊息"
+        "title": "Use GitHub",
+        "description": "Support and source access are handled through the public repository.",
+        "button": "Open support"
       },
       "fields": {
         "name": {
@@ -382,16 +382,16 @@
           "placeholder": "告訴我們更多關於您的諮詢..."
         }
       },
-      "error": "出了點問題。請重試或直接透過電子郵件聯絡我們。",
+      "error": "Use the public GitHub support routes instead.",
       "submit": {
-        "loading": "傳送中...",
-        "default": "傳送訊息"
+        "loading": "Opening...",
+        "default": "Open GitHub"
       }
     },
     "faq": {
-      "title": "尋找快速答案？",
-      "description": "檢視我們的常見問題頁面，獲取有關 {brand} 的常見問題解答。",
-      "button": "檢視常見問題"
+      "title": "Need quick answers first?",
+      "description": "Review the FAQ, then use the support page if you still need help.",
+      "button": "View FAQ"
     }
   },
   "errors": {
@@ -411,14 +411,15 @@
     "browserNotSupported": "您的瀏覽器不支援此功能。",
     "invalidPageRange": "指定的頁面範圍無效。",
     "invalidOptions": "提供的選項無效。",
+    "invalidPassword": "您輸入的密碼不正確，請檢查後重試。",
     "unknown": "發生意外錯誤。請重試。",
     "toolNotFound": "工具未找到"
   },
   "home": {
     "hero": {
-      "title": "專業PDF工具",
-      "highlight": "專業工具",
-      "subtitle": "在瀏覽器中免費、私密、強大的PDF處理",
+      "title": "Browser Tools for",
+      "highlight": "Private Workflows",
+      "subtitle": "Open-source, multilingual, and browser-first utility workflows",
       "cta": "開始使用"
     },
     "features": {
@@ -431,18 +432,18 @@
         "description": "無需註冊，無限制，無隱藏費用。"
       },
       "powerful": {
-        "title": "強大工具",
-        "description": "67+專業PDF工具滿足您的所有需求。"
+        "title": "Launch-ready suite",
+        "description": "Phase 1 ships the PDF suite, workflow editor, extension, and visible source links."
       }
     },
     "popularTools": {
       "badge": "最熱門",
-      "title": "熱門 PDF 工具",
+      "title": "Popular launch tools",
       "description": "我們最常用的工具，幫助您更快地完成工作。"
     },
     "categoriesSection": {
       "title": "瀏覽所有工具分類",
-      "description": "{count}+ 個按類別組織的專業 PDF 工具",
+      "description": "{count}+ launch tools organized by category",
       "toolsCount": "{count} 個工具"
     },
     "categoriesDescription": {
@@ -472,7 +473,7 @@
   "workflow": {
     "title": "PDF 工作流程編輯器",
     "subtitle": "透過連接工具建立自訂 PDF 處理管道",
-    "metaTitle": "PDF 工作流程編輯器 - PDFCraft",
+    "metaTitle": "PDF 工作流程編輯器 - OpenToolsKit",
     "metaDescription": "透過視覺化連接工具建立自訂 PDF 處理管道。建構、儲存和重複使用您的工作流程。",
     "toolbox": "工具箱",
     "dragToAdd": "拖曳工具新增到工作流程",

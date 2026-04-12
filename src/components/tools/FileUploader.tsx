@@ -49,10 +49,20 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
   const t = useTranslations('common');
   const tErrors = useTranslations('errors');
 
+  const withFallback = useCallback((value: string, fallback: string) => {
+    return value && !value.includes('.') ? value : fallback;
+  }, []);
+
   const [isDragging, setIsDragging] = useState(false);
   const [dragCounter, setDragCounter] = useState(0);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dropZoneRef = useRef<HTMLDivElement>(null);
+  const uploadLabel = label || withFallback(t('buttons.upload'), 'Upload Files');
+  const dragDropText = withFallback(t('fileUploader.dragDrop'), 'Drag and drop your files here');
+  const supportText = withFallback(t('fileUploader.support'), 'Support');
+  const pasteText = withFallback(t('fileUploader.paste'), 'Paste from clipboard');
+  const dropToUploadText = withFallback(t('fileUploader.dropToUpload'), 'Drop files here');
+  const maxSizeLabel = maxSize === Infinity ? null : `${Math.round(maxSize / (1024 * 1024))}MB`;
 
   // Generate accept string for input element
   const acceptString = accept.join(',');
@@ -285,7 +295,7 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
       ref={dropZoneRef}
       role="button"
       tabIndex={disabled ? -1 : 0}
-      aria-label={label || t('buttons.upload')}
+      aria-label={uploadLabel}
       aria-disabled={disabled}
       className={`${baseStyles} ${stateStyles} ${className}`.trim()}
       onClick={handleClick}
@@ -322,30 +332,37 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
 
       {/* Label */}
       <p className="text-xl font-semibold text-[hsl(var(--color-foreground))] mb-3 text-center">
-        {label || t('buttons.upload')}
+        {uploadLabel}
       </p>
 
       {/* Description */}
       <div className="text-sm text-[hsl(var(--color-muted-foreground))] text-center max-w-sm leading-relaxed">
         {description || (
           <>
-            <p className="mb-2">{t('fileUploader.dragDrop')}</p>
+            <p className="mb-2">{dragDropText}</p>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[hsl(var(--color-muted)/0.5)] text-xs font-medium">
-              <span className="opacity-70">{t('fileUploader.support')}:</span>
-              <span>{t('fileUploader.paste')}</span>
+              <span className="opacity-70">{supportText}:</span>
+              <span>{pasteText}</span>
             </div>
           </>
         )}
       </div>
 
-      {/* File info hints - only show when multiple files allowed */}
-      {multiple && (
-        <div className="mt-6 flex flex-wrap gap-2 justify-center">
+      <div className="mt-6 flex flex-wrap gap-2 justify-center">
+        <span className="text-xs px-2 py-1 rounded-md bg-[hsl(var(--color-muted))] text-[hsl(var(--color-muted-foreground))]">
+          {accept.join(', ')}
+        </span>
+        {maxSizeLabel && (
           <span className="text-xs px-2 py-1 rounded-md bg-[hsl(var(--color-muted))] text-[hsl(var(--color-muted-foreground))]">
-            Files: {maxFiles}
+            {maxSizeLabel}
           </span>
-        </div>
-      )}
+        )}
+        {multiple && (
+          <span className="text-xs px-2 py-1 rounded-md bg-[hsl(var(--color-muted))] text-[hsl(var(--color-muted-foreground))]">
+            Max files: {maxFiles}
+          </span>
+        )}
+      </div>
 
       {/* Drag overlay */}
       {isDragging && (
@@ -354,7 +371,7 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
             <Plus className="w-8 h-8" />
           </div>
           <p className="text-xl font-bold text-[hsl(var(--color-primary))]">
-            {t('fileUploader.dropToUpload')}
+            {dropToUploadText}
           </p>
         </div>
       )}

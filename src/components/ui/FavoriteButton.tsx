@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { Star } from 'lucide-react';
-import { useTranslations } from 'next-intl';
 import { useFavorites } from '@/hooks/useFavorites';
+import { useSafeTranslations } from '@/lib/i18n/useSafeTranslations';
 
 export interface FavoriteButtonProps {
     /** The tool ID to toggle favorite status */
@@ -47,7 +47,7 @@ export function FavoriteButton({
     showLabel = false,
     onToggle,
 }: FavoriteButtonProps) {
-    const t = useTranslations();
+    const t = useSafeTranslations();
     const { isFavorite, toggleFavorite, isLoaded } = useFavorites();
 
     const favorite = isFavorite(toolId);

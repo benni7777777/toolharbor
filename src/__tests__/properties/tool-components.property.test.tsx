@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import * as fc from 'fast-check';
-import { render, screen } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 import React from 'react';
 import { tools } from '@/config/tools';
 import { locales } from '@/lib/i18n/config';
@@ -10,6 +10,19 @@ import { ToolCard } from '@/components/tools/ToolCard';
 vi.mock('next/link', () => ({
   default: ({ children, href, ...props }: { children: React.ReactNode; href: string }) => 
     React.createElement('a', { href, ...props }, children),
+}));
+
+vi.mock('next/navigation', () => ({
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+  }),
+  usePathname: () => '/en/tools',
+}));
+
+vi.mock('@/components/theme/ThemeToggle', () => ({
+  ThemeToggle: () => React.createElement('div', { 'data-testid': 'theme-toggle-mock' }),
 }));
 
 describe('Tool Component Property Tests', () => {
@@ -27,6 +40,7 @@ describe('Tool Component Property Tests', () => {
           fc.constantFrom(...tools),
           fc.constantFrom(...locales),
           (tool, locale) => {
+            cleanup();
             const { unmount } = render(<ToolCard tool={tool} locale={locale} />);
             
             // Tool card should be rendered
@@ -48,6 +62,7 @@ describe('Tool Component Property Tests', () => {
             expect(descriptionElement.textContent).toBeTruthy();
             
             unmount();
+            cleanup();
             return true;
           }
         ),
@@ -60,6 +75,7 @@ describe('Tool Component Property Tests', () => {
         fc.property(
           fc.constantFrom(...tools),
           (tool) => {
+            cleanup();
             const { unmount } = render(<ToolCard tool={tool} locale="en" />);
             
             const nameElement = screen.getByTestId('tool-card-name');
@@ -71,6 +87,7 @@ describe('Tool Component Property Tests', () => {
             expect(nameElement.textContent).toBe(expectedName);
             
             unmount();
+            cleanup();
             return true;
           }
         ),
@@ -84,6 +101,7 @@ describe('Tool Component Property Tests', () => {
           fc.constantFrom(...tools),
           fc.constantFrom(...locales),
           (tool, locale) => {
+            cleanup();
             const { unmount } = render(<ToolCard tool={tool} locale={locale} />);
             
             const linkElement = screen.getByTestId('tool-card');
@@ -92,6 +110,7 @@ describe('Tool Component Property Tests', () => {
             expect(linkElement).toHaveAttribute('href', expectedUrl);
             
             unmount();
+            cleanup();
             return true;
           }
         ),
@@ -104,6 +123,7 @@ describe('Tool Component Property Tests', () => {
         fc.property(
           fc.constantFrom(...tools),
           (tool) => {
+            cleanup();
             const { unmount } = render(<ToolCard tool={tool} locale="en" />);
             
             const iconElement = screen.getByTestId('tool-card-icon');
@@ -113,6 +133,7 @@ describe('Tool Component Property Tests', () => {
             expect(svgElement).toHaveAttribute('data-icon', tool.icon);
             
             unmount();
+            cleanup();
             return true;
           }
         ),
@@ -125,6 +146,7 @@ describe('Tool Component Property Tests', () => {
         fc.property(
           fc.constantFrom(...tools),
           (tool) => {
+            cleanup();
             const { unmount } = render(<ToolCard tool={tool} locale="en" />);
             
             const descriptionElement = screen.getByTestId('tool-card-description');
@@ -139,6 +161,7 @@ describe('Tool Component Property Tests', () => {
             expect(hasFeatureContent).toBe(true);
             
             unmount();
+            cleanup();
             return true;
           }
         ),
@@ -209,6 +232,7 @@ describe('Tool Page Property Tests', () => {
           fc.constantFrom(...locales),
           (tool, locale) => {
             const content = generateValidToolContent(tool);
+            cleanup();
             const { unmount } = render(
               <ToolPage tool={tool} content={content} locale={locale}>
                 <div data-testid="tool-interface">Tool Interface</div>
@@ -246,6 +270,7 @@ describe('Tool Page Property Tests', () => {
             expect(faqList.children.length).toBeGreaterThanOrEqual(3);
             
             unmount();
+            cleanup();
             return true;
           }
         ),
@@ -259,6 +284,7 @@ describe('Tool Page Property Tests', () => {
           fc.constantFrom(...tools),
           (tool) => {
             const content = generateValidToolContent(tool);
+            cleanup();
             const { unmount } = render(
               <ToolPage tool={tool} content={content} locale="en">
                 <div>Interface</div>
@@ -269,6 +295,7 @@ describe('Tool Page Property Tests', () => {
             expect(title.textContent).toBe(content.title);
             
             unmount();
+            cleanup();
             return true;
           }
         ),
@@ -282,6 +309,7 @@ describe('Tool Page Property Tests', () => {
           fc.constantFrom(...tools),
           (tool) => {
             const content = generateValidToolContent(tool);
+            cleanup();
             const { unmount } = render(
               <ToolPage tool={tool} content={content} locale="en">
                 <div>Interface</div>
@@ -296,6 +324,7 @@ describe('Tool Page Property Tests', () => {
             expect(relatedToolsGrid.children.length).toBeGreaterThanOrEqual(2);
             
             unmount();
+            cleanup();
             return true;
           }
         ),
@@ -309,6 +338,7 @@ describe('Tool Page Property Tests', () => {
           fc.constantFrom(...tools),
           (tool) => {
             const content = generateValidToolContent(tool);
+            cleanup();
             const { unmount } = render(
               <ToolPage tool={tool} content={content} locale="en">
                 <div>Interface</div>
@@ -322,6 +352,7 @@ describe('Tool Page Property Tests', () => {
             });
             
             unmount();
+            cleanup();
             return true;
           }
         ),
@@ -335,6 +366,7 @@ describe('Tool Page Property Tests', () => {
           fc.constantFrom(...tools),
           (tool) => {
             const content = generateValidToolContent(tool);
+            cleanup();
             const { unmount } = render(
               <ToolPage tool={tool} content={content} locale="en">
                 <div data-testid="custom-tool-interface">Custom Interface</div>
@@ -350,6 +382,7 @@ describe('Tool Page Property Tests', () => {
             expect(customInterface).toBeInTheDocument();
             
             unmount();
+            cleanup();
             return true;
           }
         ),

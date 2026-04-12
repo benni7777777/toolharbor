@@ -1,12 +1,12 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
 import { Tool, ToolCategory } from '@/types/tool';
 import { Card } from '@/components/ui/Card';
 import { ArrowUpRight } from 'lucide-react';
 import { getToolIcon } from '@/config/icons';
 import { FavoriteButton } from '@/components/ui/FavoriteButton';
+import { useSafeTranslations } from '@/lib/i18n/useSafeTranslations';
 
 export interface ToolCardProps {
   /** Tool data to display */
@@ -33,7 +33,7 @@ const categoryTranslationKeys: Record<ToolCategory, string> = {
  * Includes hover effects and links to the tool page.
  */
 export function ToolCard({ tool, locale, className = '', localizedContent }: ToolCardProps) {
-  const t = useTranslations();
+  const t = useSafeTranslations();
   const toolUrl = `/${locale}/tools/${tool.slug}`;
 
   // Get a human-readable name from the tool ID
@@ -79,7 +79,7 @@ export function ToolCard({ tool, locale, className = '', localizedContent }: Too
               data-testid="tool-card-icon"
               aria-hidden="true"
             >
-              <IconComponent className="w-7 h-7 text-[hsl(var(--color-primary))]" />
+              <IconComponent className="w-7 h-7 text-[hsl(var(--color-primary))]" data-icon={tool.icon} />
             </div>
           </div>
 

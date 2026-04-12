@@ -9,45 +9,45 @@
  * - display: swap for better performance
  */
 
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { Manrope, Space_Mono } from 'next/font/google';
 
 /**
- * Inter font - Primary sans-serif font
+ * Manrope font - Primary sans-serif font
  * Used for body text and UI elements
  */
-export const inter = Inter({
+export const manrope = Manrope({
   subsets: ['latin', 'latin-ext'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-manrope',
   preload: true,
-  fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+  fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
   adjustFontFallback: true,
 });
 
 /**
- * JetBrains Mono font - Monospace font
+ * Space Mono font - Monospace font
  * Used for code snippets and technical content
  */
-export const jetbrainsMono = JetBrains_Mono({
+export const spaceMono = Space_Mono({
   subsets: ['latin', 'latin-ext'],
   display: 'swap',
-  variable: '--font-jetbrains-mono',
+  variable: '--font-space-mono',
   preload: false, // Only preload if code is shown above the fold
-  fallback: ['Fira Code', 'Consolas', 'Monaco', 'monospace'],
-  adjustFontFallback: true,
+  fallback: ['Consolas', 'Monaco', 'monospace'],
+  weight: ['400', '700'],
 });
 
 /**
  * Combined font variables for use in className
  */
-export const fontVariables = `${inter.variable} ${jetbrainsMono.variable}`;
+export const fontVariables = `${manrope.variable} ${spaceMono.variable}`;
 
 /**
  * Font class names for direct usage
  */
 export const fontClassNames = {
-  sans: inter.className,
-  mono: jetbrainsMono.className,
+  sans: manrope.className,
+  mono: spaceMono.className,
 };
 
 /**
@@ -55,6 +55,6 @@ export const fontClassNames = {
  * These are set as CSS variables and can be used in Tailwind
  */
 export const fontCssVariables = {
-  '--font-sans': inter.style.fontFamily,
-  '--font-mono': jetbrainsMono.style.fontFamily,
+  '--font-sans': manrope.style.fontFamily,
+  '--font-mono': spaceMono.style.fontFamily,
 } as const;

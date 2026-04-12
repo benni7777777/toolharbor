@@ -9,7 +9,6 @@ import { ProcessingProgress, ProcessingStatus } from '../ProcessingProgress';
 import { DownloadButton } from '../DownloadButton';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
-import { pdfToMarkdown } from '@/lib/pdf/processors/pdf-to-markdown';
 import type { UploadedFile, ProcessOutput } from '@/types/pdf';
 import { sanitizeHtml } from '@/lib/utils/html-sanitizer';
 
@@ -113,6 +112,7 @@ export function PDFToMarkdownTool({ className = '' }: PDFToMarkdownToolProps) {
         setHtmlContent('');
 
         try {
+            const { pdfToMarkdown } = await import('@/lib/pdf/processors/pdf-to-markdown');
             const output: ProcessOutput = await pdfToMarkdown(
                 file.file,
                 {
