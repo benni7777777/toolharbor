@@ -18,6 +18,8 @@ import {
   toolMatchesQuery,
 } from '@/lib/utils/search';
 
+const enabledTools = tools.filter(tool => !tool.disabled);
+
 describe('Tool Configuration Property Tests', () => {
   /**
    * **Feature: nextjs-pdf-toolkit, Property 10: Tool Category Assignment**
@@ -30,7 +32,7 @@ describe('Tool Configuration Property Tests', () => {
     it('every tool is assigned to exactly one valid category', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             // Tool must have a category
             expect(tool.category).toBeDefined();
@@ -49,7 +51,7 @@ describe('Tool Configuration Property Tests', () => {
     });
 
     it('all 6 categories are represented in the tools', () => {
-      const categoriesInUse = new Set(tools.map(t => t.category));
+      const categoriesInUse = new Set(enabledTools.map(t => t.category));
       
       for (const category of TOOL_CATEGORIES) {
         expect(categoriesInUse.has(category)).toBe(true);
@@ -69,7 +71,7 @@ describe('Tool Configuration Property Tests', () => {
             }
             
             // Count should match manual filter
-            const manualCount = tools.filter(t => t.category === category).length;
+            const manualCount = enabledTools.filter(t => t.category === category).length;
             expect(categoryTools.length).toBe(manualCount);
             
             return true;
@@ -82,7 +84,7 @@ describe('Tool Configuration Property Tests', () => {
     it('no tool has an invalid category', () => {
       const invalidCategories = ['invalid', 'unknown', '', null, undefined];
       
-      for (const tool of tools) {
+      for (const tool of enabledTools) {
         expect(invalidCategories).not.toContain(tool.category);
         expect(TOOL_CATEGORIES).toContain(tool.category);
       }
@@ -101,7 +103,7 @@ describe('Tool Configuration Property Tests', () => {
     it('every tool has at least 2 related tools', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             expect(tool.relatedTools).toBeDefined();
             expect(Array.isArray(tool.relatedTools)).toBe(true);
@@ -119,7 +121,7 @@ describe('Tool Configuration Property Tests', () => {
       
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             for (const relatedId of tool.relatedTools) {
               // Each related tool ID must exist in the tools list
@@ -137,7 +139,7 @@ describe('Tool Configuration Property Tests', () => {
     it('no tool references itself as a related tool', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             expect(tool.relatedTools).not.toContain(tool.id);
             return true;
@@ -150,7 +152,7 @@ describe('Tool Configuration Property Tests', () => {
     it('related tools are unique (no duplicates)', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             const uniqueRelated = new Set(tool.relatedTools);
             expect(uniqueRelated.size).toBe(tool.relatedTools.length);
@@ -225,7 +227,7 @@ describe('Tool Configuration Property Tests', () => {
     it('exact tool name matches return that tool with high score', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             const toolName = tool.id.replace(/-/g, ' ');
             const results = searchTools(toolName);
@@ -270,7 +272,7 @@ describe('Tool Configuration Property Tests', () => {
     it('toolMatchesQuery returns true for matching tools', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             // Tool should match its own name
             const toolName = tool.id.replace(/-/g, ' ');
@@ -306,7 +308,7 @@ describe('Tool Configuration Property Tests', () => {
     it('getToolById returns correct tool', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             const found = getToolById(tool.id);
             expect(found).toBeDefined();
@@ -321,14 +323,14 @@ describe('Tool Configuration Property Tests', () => {
 
     it('getAllTools returns the full configured tool inventory', () => {
       const allTools = getAllTools();
-      expect(allTools.length).toBe(tools.length);
+      expect(allTools.length).toBe(enabledTools.length);
       expect(allTools.length).toBeGreaterThan(0);
     });
 
     it('all tools have required properties', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             expect(tool.id).toBeTruthy();
             expect(tool.slug).toBeTruthy();

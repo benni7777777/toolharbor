@@ -6,6 +6,8 @@ import { tools } from '@/config/tools';
 import { locales } from '@/lib/i18n/config';
 import { ToolCard } from '@/components/tools/ToolCard';
 
+const enabledTools = tools.filter(tool => !tool.disabled);
+
 // Mock next/link
 vi.mock('next/link', () => ({
   default: ({ children, href, ...props }: { children: React.ReactNode; href: string }) => 
@@ -37,7 +39,7 @@ describe('Tool Component Property Tests', () => {
     it('every tool card contains icon, name, and description', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           fc.constantFrom(...locales),
           (tool, locale) => {
             cleanup();
@@ -73,7 +75,7 @@ describe('Tool Component Property Tests', () => {
     it('tool card name is derived from tool ID', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             cleanup();
             const { unmount } = render(<ToolCard tool={tool} locale="en" />);
@@ -98,7 +100,7 @@ describe('Tool Component Property Tests', () => {
     it('tool card links to correct tool page URL', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           fc.constantFrom(...locales),
           (tool, locale) => {
             cleanup();
@@ -121,7 +123,7 @@ describe('Tool Component Property Tests', () => {
     it('tool card icon has correct data attribute', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             cleanup();
             const { unmount } = render(<ToolCard tool={tool} locale="en" />);
@@ -144,7 +146,7 @@ describe('Tool Component Property Tests', () => {
     it('tool card description is derived from features', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             cleanup();
             const { unmount } = render(<ToolCard tool={tool} locale="en" />);
@@ -228,7 +230,7 @@ describe('Tool Page Property Tests', () => {
     it('tool page contains all required sections with minimum content', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           fc.constantFrom(...locales),
           (tool, locale) => {
             const content = generateValidToolContent(tool);
@@ -281,7 +283,7 @@ describe('Tool Page Property Tests', () => {
     it('tool page header displays correct title', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             const content = generateValidToolContent(tool);
             cleanup();
@@ -306,7 +308,7 @@ describe('Tool Page Property Tests', () => {
     it('tool page includes related tools section', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             const content = generateValidToolContent(tool);
             cleanup();
@@ -335,7 +337,7 @@ describe('Tool Page Property Tests', () => {
     it('tool page how-to steps are numbered correctly', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             const content = generateValidToolContent(tool);
             cleanup();
@@ -363,7 +365,7 @@ describe('Tool Page Property Tests', () => {
     it('tool page renders tool interface area', () => {
       fc.assert(
         fc.property(
-          fc.constantFrom(...tools),
+          fc.constantFrom(...enabledTools),
           (tool) => {
             const content = generateValidToolContent(tool);
             cleanup();

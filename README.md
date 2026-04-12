@@ -96,6 +96,15 @@ OpenToolsKit may render:
 
 OpenToolsKit does **not** use ads to gate downloads, block results, or force countdowns before access to completed work.
 
+## Cloudflare Pages note
+
+The Cloudflare Pages launch build excludes the large LibreOffice WASM payload that powers a few office-document conversions. Until those assets are moved to an external object store or worker-delivered origin, the following tools stay disabled in the public Pages deployment:
+
+- Word to PDF
+- Excel to PDF
+- PowerPoint to PDF
+- RTF to PDF
+
 ## Support
 
 There is no email support address in this project. Support and transparency are handled through:

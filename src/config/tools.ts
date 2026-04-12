@@ -447,6 +447,7 @@ const pdfLaunchTools: Omit<Tool, 'toolFamily' | 'renderer' | 'seoCategorySlug'>[
     maxFiles: 1,
     features: ['preserve-layout', 'preserve-formatting', 'extract-text'],
     relatedTools: ['pdf-to-docx', 'txt-to-pdf', 'excel-to-pdf'],
+    disabled: true,
   },
   {
     id: 'excel-to-pdf',
@@ -459,6 +460,7 @@ const pdfLaunchTools: Omit<Tool, 'toolFamily' | 'renderer' | 'seoCategorySlug'>[
     maxFiles: 1,
     features: ['preserve-tables', 'multiple-sheets', 'page-layout'],
     relatedTools: ['pdf-to-excel', 'word-to-pdf', 'pptx-to-pdf'],
+    disabled: true,
   },
   {
     id: 'pptx-to-pdf',
@@ -471,6 +473,7 @@ const pdfLaunchTools: Omit<Tool, 'toolFamily' | 'renderer' | 'seoCategorySlug'>[
     maxFiles: 1,
     features: ['preserve-slides', 'preserve-layout', 'high-quality'],
     relatedTools: ['pdf-to-pptx', 'word-to-pdf', 'excel-to-pdf'],
+    disabled: true,
   },
   {
     id: 'xps-to-pdf',
@@ -495,6 +498,7 @@ const pdfLaunchTools: Omit<Tool, 'toolFamily' | 'renderer' | 'seoCategorySlug'>[
     maxFiles: 1,
     features: ['preserve-formatting', 'extract-text', 'page-size'],
     relatedTools: ['word-to-pdf', 'txt-to-pdf', 'merge-pdf'],
+    disabled: true,
   },
   {
     id: 'epub-to-pdf',
