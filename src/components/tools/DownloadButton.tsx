@@ -7,7 +7,10 @@ import { addRecentFile } from '@/lib/storage/recent-files';
 import { useToolContext } from '@/lib/contexts/ToolContext';
 import { sanitizeFilename } from '@/lib/utils/sanitize';
 import { siteConfig } from '@/config/site';
-import { ExternalLink, X } from 'lucide-react';
+import { LoaderCircle, X } from 'lucide-react';
+import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
+import AdsterraSessionScripts, { triggerAdsterraSessionScripts } from '@/components/ads/AdsterraSessionScripts';
+import PostResultSponsorCard from '@/components/common/PostResultSponsorCard';
 
 export interface DownloadButtonProps extends Omit<ButtonProps, 'onClick' | 'children'> {
   /** Blob data to download */
@@ -69,14 +72,15 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
   const t = useTranslations('common');
   const [blobUrl, setBlobUrl] = useState<string | null>(null);
   const [isDownloading, setIsDownloading] = useState(false);
-  const [showSponsorToast, setShowSponsorToast] = useState(false);
+  const [showMonetizationPanel, setShowMonetizationPanel] = useState(false);
+  const [showNativeBanner, setShowNativeBanner] = useState(false);
   
   // Get tool info from context if not provided via props
   const toolContext = useToolContext();
   const toolSlug = propToolSlug || toolContext?.toolSlug;
   const toolName = propToolName || toolContext?.toolName;
-  const sponsorHref = `${siteConfig.sponsorship.redirectPathPrefix}/${siteConfig.ads.providers.zeydoo.placementId}?tool=${toolSlug ?? 'unknown'}&placement=${siteConfig.ads.providers.zeydoo.placementId}&provider=${siteConfig.ads.providers.zeydoo.providerQueryValue}`;
-  const isSponsorEligible = size === 'lg' && variant !== 'ghost';
+  const resultPlacement = siteConfig.ads.placements.resultSuccess;
+  const isSponsorEligible = variant !== 'ghost' && siteConfig.sponsorship.enabled;
 
   // Create blob URL when file changes
   useEffect(() => {
@@ -92,6 +96,21 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
       setBlobUrl(null);
     }
   }, [file]);
+
+  useEffect(() => {
+    if (!showMonetizationPanel || !resultPlacement.nativeBanner) {
+      setShowNativeBanner(false);
+      return;
+    }
+
+    const revealTimeout = window.setTimeout(() => {
+      setShowNativeBanner(true);
+    }, 900);
+
+    return () => {
+      window.clearTimeout(revealTimeout);
+    };
+  }, [showMonetizationPanel, resultPlacement.nativeBanner]);
 
   /**
    * Handle download click
@@ -115,6 +134,13 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+    if (isSponsorEligible) {
+      triggerAdsterraSessionScripts({
+        popunder: resultPlacement.popunder,
+        socialBar: resultPlacement.socialBar,
+      });
+    }
 
     // Revoke the blob URL after a short delay to ensure download starts
     if (autoRevoke) {
@@ -141,10 +167,10 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
       }
 
       if (isSponsorEligible) {
-        setShowSponsorToast(true);
+        setShowMonetizationPanel(true);
       }
     }, 500);
-  }, [file, blobUrl, filename, isDownloading, autoRevoke, onDownloadStart, onDownloadComplete, toolSlug, toolName, isSponsorEligible]);
+  }, [file, blobUrl, filename, isDownloading, autoRevoke, onDownloadStart, onDownloadComplete, toolSlug, toolName, isSponsorEligible, resultPlacement.popunder, resultPlacement.socialBar]);
 
   // Determine if button should be disabled
   const isDisabled = disabled || !file || !blobUrl;
@@ -188,38 +214,63 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
         </span>
       </Button>
 
-      {showSponsorToast && (
-        <div className="fixed bottom-4 right-4 z-[80] w-[min(24rem,calc(100vw-2rem))] rounded-[1.75rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-4 shadow-[var(--shadow-lg)]">
+      {showMonetizationPanel && (
+        <div
+          className="fixed bottom-4 right-4 z-[80] w-[min(32rem,calc(100vw-2rem))] overflow-hidden rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-4 shadow-[var(--shadow-lg)]"
+          data-testid="download-monetization-panel"
+        >
+          <AdsterraSessionScripts
+            popunder={resultPlacement.popunder}
+            socialBar={resultPlacement.socialBar}
+          />
+
           <div className="flex items-start justify-between gap-3">
-            <div className="space-y-1">
+            <div className="space-y-2">
               <div className="inline-flex rounded-full bg-[hsl(var(--color-accent-soft))] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-accent-strong))]">
                 {siteConfig.sponsorship.label}
               </div>
-              <p className="text-sm font-semibold text-[hsl(var(--color-foreground))]">{siteConfig.sponsorship.title}</p>
-              <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
-                {siteConfig.sponsorship.disclosure}
-              </p>
+              <div className="space-y-1">
+                <p className="text-sm font-semibold text-[hsl(var(--color-foreground))]">
+                  Download started. Sponsored placements are now available.
+                </p>
+                <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
+                  {siteConfig.ads.disclosureSummary} {siteConfig.ads.actionDisclosure}
+                </p>
+              </div>
             </div>
             <button
               type="button"
-              onClick={() => setShowSponsorToast(false)}
+              onClick={() => setShowMonetizationPanel(false)}
               className="rounded-full p-1 text-[hsl(var(--color-muted-foreground))] transition-colors hover:text-[hsl(var(--color-foreground))]"
-              aria-label="Dismiss sponsor suggestion"
+              aria-label="Dismiss sponsored placements"
             >
               <X className="h-4 w-4" aria-hidden="true" />
             </button>
           </div>
-          <div className="mt-3 flex items-center justify-between gap-3">
-            <p className="text-xs text-[hsl(var(--color-muted-foreground))]">{siteConfig.sponsorship.helperText}</p>
-            <a
-              href={sponsorHref}
-              target="_blank"
-              rel="noreferrer noopener sponsored"
-              className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))] px-4 py-2 text-sm font-medium text-[hsl(var(--color-foreground))] transition-colors hover:border-[hsl(var(--color-accent-strong))] hover:text-[hsl(var(--color-accent-strong))]"
-            >
-              <span>Open partner site</span>
-              <ExternalLink className="h-4 w-4" aria-hidden="true" />
-            </a>
+
+          <div className="mt-4 space-y-4">
+            <PostResultSponsorCard
+              placementId={siteConfig.ads.providers.zeydoo.placementId}
+              title="Open a partner offer in a new tab"
+              description="This partner suggestion opens separately and does not interrupt your current download."
+              ctaLabel="Open partner site"
+            />
+
+            {resultPlacement.nativeBanner && (
+              showNativeBanner ? (
+                <AdsterraNativeBanner
+                  title="Sponsored results placement"
+                  description="This native placement appears after successful downloads. Ads help fund the project while keeping the file flow immediate."
+                />
+              ) : (
+                <div className="rounded-[1.75rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))] p-4 text-sm text-[hsl(var(--color-muted-foreground))]">
+                  <div className="flex items-center gap-3">
+                    <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" />
+                    <span>Loading sponsored placement...</span>
+                  </div>
+                </div>
+              )
+            )}
           </div>
         </div>
       )}

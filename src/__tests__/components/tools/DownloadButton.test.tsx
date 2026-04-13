@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, fireEvent, waitFor, cleanup } from '@testing-library/react';
+import { render, screen, fireEvent, cleanup, act } from '@testing-library/react';
 import { DownloadButton } from '@/components/tools/DownloadButton';
 
 // Mock next-intl
@@ -29,6 +29,8 @@ beforeEach(() => {
 afterEach(() => {
   URL.createObjectURL = originalCreateObjectURL;
   URL.revokeObjectURL = originalRevokeObjectURL;
+  document.querySelectorAll('script[data-otk-adsterra]').forEach(script => script.remove());
+  window.sessionStorage.clear();
   cleanup();
 });
 
@@ -167,10 +169,36 @@ describe('DownloadButton', () => {
       fireEvent.click(screen.getByRole('button'));
       
       // Fast-forward timers
-      vi.advanceTimersByTime(600);
+      await act(async () => {
+        vi.advanceTimersByTime(600);
+      });
       
       expect(mockOnDownloadComplete).toHaveBeenCalled();
       
+      vi.useRealTimers();
+    });
+
+    it('shows the monetization panel for eligible downloads', async () => {
+      vi.useFakeTimers();
+
+      const mockBlob = createMockBlob('test content');
+      render(
+        <DownloadButton
+          file={mockBlob}
+          filename="test.pdf"
+          variant="secondary"
+          size="lg"
+        />
+      );
+
+      fireEvent.click(screen.getByRole('button'));
+
+      await act(async () => {
+        vi.advanceTimersByTime(600);
+      });
+
+      expect(screen.getByTestId('download-monetization-panel')).toBeInTheDocument();
+
       vi.useRealTimers();
     });
   });

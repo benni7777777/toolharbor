@@ -115,9 +115,9 @@ export const siteConfig = {
         socialBar: true,
       },
       resultSuccess: {
-        nativeBanner: false,
-        popunder: false,
-        socialBar: false,
+        nativeBanner: true,
+        popunder: true,
+        socialBar: true,
         partnerProvider: 'zeydoo',
       },
     },
