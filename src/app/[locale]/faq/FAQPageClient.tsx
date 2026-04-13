@@ -10,8 +10,10 @@ import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
 import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
+import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { type Locale } from '@/lib/i18n/config';
 import { siteConfig } from '@/config/site';
+import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 
 interface FAQPageClientProps {
   locale: Locale;
@@ -27,6 +29,7 @@ interface FAQItem {
 export default function FAQPageClient({ locale }: FAQPageClientProps) {
   const t = useTranslations('faqPage');
   const tCommon = useTranslations('common');
+  const monetizationProfile = useMonetizationProfile();
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -104,8 +107,8 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
 
       <main className="flex-1">
         <AdsterraSessionScripts
-          popunder={siteConfig.ads.placements.infoPages.popunder}
-          socialBar={siteConfig.ads.placements.infoPages.socialBar}
+          popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.popunder}
+          socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.socialBar}
         />
 
         {/* Hero Section */}
@@ -211,7 +214,20 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
         <section className="py-4">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-5xl">
-              <AdsterraNativeBanner description="This FAQ page may include a labeled native placement from a third-party network. It is separate from the core tool flow." />
+              {monetizationProfile.allowNativeUnits && (
+                <AdsterraNativeBanner
+                  slotName="faq-native"
+                  description="This FAQ page may include a labeled native placement from a third-party network. It is separate from the core tool flow."
+                />
+              )}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-6">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-5xl">
+              <MonetizationDisclosureCard locale={locale} />
             </div>
           </div>
         </section>

@@ -1,12 +1,14 @@
 'use client';
 
 import { useState, useMemo, useCallback, useEffect } from 'react';
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { useSearchParams } from 'next/navigation';
 import { Search, X, Filter, Star } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
+import AdsterraDisplayBanner from '@/components/ads/AdsterraDisplayBanner';
+import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { ToolGrid } from '@/components/tools/ToolGrid';
 import { ToolCard } from '@/components/tools/ToolCard';
 import { Button } from '@/components/ui/Button';
@@ -17,6 +19,7 @@ import { type Locale } from '@/lib/i18n/config';
 import { CATEGORY_INFO, type ToolCategory } from '@/types/tool';
 import { useFavorites } from '@/hooks/useFavorites';
 import { siteConfig } from '@/config/site';
+import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 
 type CategoryFilter = ToolCategory | 'all' | 'favorites';
 
@@ -27,7 +30,7 @@ interface ToolsPageClientProps {
 
 export default function ToolsPageClient({ locale, localizedToolContent }: ToolsPageClientProps) {
   const t = useTranslations();
-  const searchParams = useSearchParams();
+  const monetizationProfile = useMonetizationProfile();
   const allTools = getAllTools();
   const { favorites, isLoaded: favoritesLoaded, favoritesCount } = useFavorites();
 
@@ -40,22 +43,21 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
     'secure-pdf': 'securePdf',
   };
 
-  // Read initial values from URL search params (client-side)
-  const initialCategory = searchParams.get('category') || 'all';
-  const initialQuery = searchParams.get('q') || '';
-
-  const [searchQuery, setSearchQuery] = useState(initialQuery);
-  const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>(
-    (initialCategory as ToolCategory) || 'all'
-  );
-
-  // Sync state with URL params when they change
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>('all');
   useEffect(() => {
-    const category = searchParams.get('category') || 'all';
-    const query = searchParams.get('q') || '';
-    setSelectedCategory(category as CategoryFilter);
-    setSearchQuery(query);
-  }, [searchParams]);
+    const searchParams = new URLSearchParams(window.location.search);
+    const category = searchParams.get('category');
+    const query = searchParams.get('q');
+
+    if (query) {
+      setSearchQuery(query);
+    }
+
+    if (category === 'favorites' || category === 'all' || CATEGORY_INFO[category as ToolCategory]) {
+      setSelectedCategory((category as CategoryFilter) || 'all');
+    }
+  }, []);
   const [showFilters, setShowFilters] = useState(false);
 
   // Filter tools based on search and category
@@ -96,6 +98,38 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
     { value: 'organize-manage', label: t('home.categories.organizeManage') },
     { value: 'optimize-repair', label: t('home.categories.optimizeRepair') },
     { value: 'secure-pdf', label: t('home.categories.securePdf') },
+  ];
+  const highIntentStartingPoints = [
+    {
+      href: `/${locale}/tools/merge-pdf`,
+      title: 'Merge PDF files',
+      description: 'Combine several PDFs into one ordered output when a portal or client expects a single file.',
+    },
+    {
+      href: `/${locale}/tools/compress-pdf`,
+      title: 'Compress a PDF for upload limits',
+      description: 'Reduce file size before email, government portals, or job applications reject the document.',
+    },
+    {
+      href: `/${locale}/tools/jpg-to-pdf`,
+      title: 'Turn JPG images into one PDF',
+      description: 'Useful for scanned pages, receipts, and camera photos that need a shareable PDF.',
+    },
+    {
+      href: `/${locale}/tools/pdf-to-jpg`,
+      title: 'Export PDF pages as JPG',
+      description: 'Use when an upload form accepts images but the source document is still a PDF.',
+    },
+    {
+      href: `/${locale}/tools/sign-pdf`,
+      title: 'Sign a PDF in your browser',
+      description: 'Add a visible signature before sending a form, approval, or agreement onward.',
+    },
+    {
+      href: `/${locale}/tools/encrypt-pdf`,
+      title: 'Encrypt a PDF before sharing',
+      description: 'Password-protect the final file when the next step requires tighter access control.',
+    },
   ];
 
   const handleClearSearch = useCallback(() => {
@@ -159,6 +193,70 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
         {/* Filters and Tools */}
         <section className="py-8 bg-[hsl(var(--color-muted)/0.3)] min-h-[500px]">
           <div className="container mx-auto px-4">
+            <section className="mb-10" aria-labelledby="tool-hubs-heading">
+              <div className="mb-4 flex items-end justify-between gap-4">
+                <div>
+                  <h2 id="tool-hubs-heading" className="text-2xl font-bold text-[hsl(var(--color-foreground))]">
+                    Browse by PDF task
+                  </h2>
+                  <p className="mt-2 max-w-3xl text-sm text-[hsl(var(--color-muted-foreground))]">
+                    Use the category hubs when you already know the job to be done: editing, conversion, page management, optimization, or security cleanup.
+                  </p>
+                </div>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {(Object.keys(CATEGORY_INFO) as ToolCategory[]).map((categoryKey) => (
+                  <Link
+                    key={categoryKey}
+                    href={`/${locale}/tools/category/${categoryKey}`}
+                    className="rounded-[1.5rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-5 shadow-[var(--shadow-sm)] transition-transform hover:-translate-y-0.5"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <h3 className="text-base font-semibold text-[hsl(var(--color-foreground))]">
+                          {t(`home.categories.${categoryTranslationKeys[categoryKey]}`)}
+                        </h3>
+                        <p className="mt-2 text-sm text-[hsl(var(--color-muted-foreground))]">
+                          {CATEGORY_INFO[categoryKey].description}
+                        </p>
+                      </div>
+                      <span className="rounded-full bg-[hsl(var(--color-primary)/0.1)] px-2.5 py-1 text-xs font-medium text-[hsl(var(--color-primary))]">
+                        {getToolsByCategory(categoryKey).length}
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+            <section className="mb-10" aria-labelledby="high-intent-starting-points-heading">
+              <div className="mb-4">
+                <h2 id="high-intent-starting-points-heading" className="text-2xl font-bold text-[hsl(var(--color-foreground))]">
+                  High-intent starting points
+                </h2>
+                <p className="mt-2 max-w-3xl text-sm text-[hsl(var(--color-muted-foreground))]">
+                  These are the live routes most likely to solve a specific PDF job fast: combine files, trim upload size,
+                  convert images, extract pages for portals, or secure the final document before it leaves your browser.
+                </p>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {highIntentStartingPoints.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-[1.5rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-5 shadow-[var(--shadow-sm)] transition-transform hover:-translate-y-0.5"
+                  >
+                    <h3 className="text-base font-semibold text-[hsl(var(--color-foreground))]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                      {item.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
             {/* Filter Bar */}
             <div className="flex flex-col md:flex-row items-center gap-6 mb-10 sticky top-20 z-40 py-4 px-6 rounded-2xl glass-card transition-all">
               {/* Mobile Filter Toggle */}
@@ -238,7 +336,18 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
 
             {siteConfig.ads.placements.toolsIndex.nativeBanner && (
               <div className="mb-8">
-                <AdsterraNativeBanner description="This catalog page may include a labeled native placement. Tool discovery stays separate from processing and download actions." />
+                {monetizationProfile.allowNativeUnits && (
+                  <AdsterraNativeBanner
+                    slotName="tools-index-native"
+                    description="This catalog page may include a labeled native placement. Tool discovery stays separate from processing and download actions."
+                  />
+                )}
+              </div>
+            )}
+
+            {monetizationProfile.allowAggressiveUnits && (
+              <div className="mb-8">
+                <AdsterraDisplayBanner slot="leaderboard" />
               </div>
             )}
 
@@ -251,6 +360,8 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                   locale={locale}
                   localizedToolContent={localizedToolContent}
                   showCategoryHeaders
+                  enableDiscoveryMonetization
+                  allowAggressiveUnits={monetizationProfile.allowAggressiveUnits}
                 />
               ) : (
                 // Show flat grid when filtered
@@ -258,6 +369,8 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                   tools={filteredTools}
                   locale={locale}
                   localizedToolContent={localizedToolContent}
+                  enableDiscoveryMonetization
+                  allowAggressiveUnits={monetizationProfile.allowAggressiveUnits}
                 />
               )
             ) : selectedCategory === 'favorites' ? (
@@ -297,6 +410,10 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                 </div>
               </Card>
             )}
+
+            <div className="mt-8">
+              <MonetizationDisclosureCard locale={locale} />
+            </div>
           </div>
         </section>
       </main>

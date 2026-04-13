@@ -8,6 +8,8 @@ import { Footer } from '@/components/layout/Footer';
 import { BrandMark } from '@/components/layout/BrandMark';
 import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
 import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
+import AdsterraDisplayBanner from '@/components/ads/AdsterraDisplayBanner';
+import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { ToolGrid } from '@/components/tools/ToolGrid';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
@@ -15,6 +17,7 @@ import { getAllTools, getToolsByCategory, getPopularTools } from '@/config/tools
 import { type Locale } from '@/lib/i18n/config';
 import { CATEGORY_INFO, type ToolCategory } from '@/types/tool';
 import { siteConfig } from '@/config/site';
+import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 
 interface HomePageClientProps {
   locale: Locale;
@@ -31,6 +34,7 @@ interface HomePageClientProps {
 
 export default function HomePageClient({ locale, localizedToolContent }: HomePageClientProps) {
   const t = useTranslations();
+  const monetizationProfile = useMonetizationProfile();
   const allTools = getAllTools();
   const popularTools = getPopularTools();
 
@@ -91,8 +95,8 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
 
       <main id="main-content" className="flex-1 relative" tabIndex={-1}>
         <AdsterraSessionScripts
-          popunder={siteConfig.ads.placements.homepage.popunder}
-          socialBar={siteConfig.ads.placements.homepage.socialBar}
+          popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.homepage.popunder}
+          socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.homepage.socialBar}
         />
 
         {/* Hero Section */}
@@ -180,10 +184,23 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
         <section className="py-4">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-5xl">
-              <AdsterraNativeBanner description="OpenToolsKit may show a native sponsor placement on discovery surfaces like the homepage. Tool actions and downloads remain separate." />
+              {monetizationProfile.allowNativeUnits && (
+                <AdsterraNativeBanner
+                  slotName="homepage-native"
+                  description="OpenToolsKit may show a native sponsor placement on discovery surfaces like the homepage. Tool actions and downloads remain separate."
+                />
+              )}
             </div>
           </div>
         </section>
+
+        {monetizationProfile.allowAggressiveUnits && (
+          <section className="py-4">
+            <div className="container mx-auto px-4">
+              <AdsterraDisplayBanner slot="leaderboard" className="mx-auto max-w-5xl" />
+            </div>
+          </section>
+        )}
 
         {/* Popular Tools Section */}
         <section className="py-16" aria-labelledby="popular-tools-heading">
@@ -206,6 +223,8 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
               tools={popularTools}
               locale={locale}
               localizedToolContent={localizedToolContent}
+              enableDiscoveryMonetization
+              allowAggressiveUnits={monetizationProfile.allowAggressiveUnits}
             />
           </div>
         </section>
@@ -232,7 +251,17 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
               tools={getToolsByCategory('organize-manage').slice(0, 8)}
               locale={locale}
               localizedToolContent={localizedToolContent}
+              enableDiscoveryMonetization
+              allowAggressiveUnits={monetizationProfile.allowAggressiveUnits}
             />
+          </div>
+        </section>
+
+        <section className="py-6">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-5xl">
+              <MonetizationDisclosureCard locale={locale} />
+            </div>
           </div>
         </section>
 
@@ -258,7 +287,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                 return (
                   <Link
                     key={category}
-                    href={`/${locale}/tools?category=${category}`}
+                    href={`/${locale}/tools/category/${category}`}
                     className="group"
                   >
                     <Card className="p-5 h-full glass-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-md)] border-[hsl(var(--color-border)/0.6)]">

@@ -26,11 +26,6 @@ export interface SoftwareApplicationSchema {
     price: string;
     priceCurrency: string;
   };
-  aggregateRating?: {
-    '@type': 'AggregateRating';
-    ratingValue: string;
-    ratingCount: string;
-  };
   featureList?: string[];
   screenshot?: string;
   softwareVersion?: string;
@@ -66,7 +61,7 @@ export interface HowToSchema {
  */
 export interface WebPageSchema {
   '@context': 'https://schema.org';
-  '@type': 'WebPage';
+  '@type': 'WebPage' | 'CollectionPage';
   name: string;
   description: string;
   url: string;
@@ -113,14 +108,6 @@ export interface WebSiteSchema {
   name: string;
   url: string;
   description: string;
-  potentialAction?: {
-    '@type': 'SearchAction';
-    target: {
-      '@type': 'EntryPoint';
-      urlTemplate: string;
-    };
-    'query-input': string;
-  };
 }
 
 /**
@@ -171,11 +158,6 @@ export function generateSoftwareApplicationSchema(
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      ratingCount: '1250',
     },
     keywords: content.keywords ? content.keywords.join(', ') : undefined,
   };
@@ -297,14 +279,6 @@ export function generateWebSiteSchema(locale: Locale): WebSiteSchema {
     name: siteConfig.name,
     url: `${siteConfig.url}/${locale}`,
     description: siteConfig.description,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${siteConfig.url}/${locale}/tools?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
   };
 }
 
@@ -322,6 +296,64 @@ export function generateOrganizationSchema(): OrganizationSchema {
   };
 }
 
+export function generateBasicWebPageSchema(options: {
+  locale: Locale;
+  path: string;
+  name: string;
+  description: string;
+  type?: 'WebPage' | 'CollectionPage';
+  aboutName?: string;
+}): WebPageSchema {
+  const languageMap: Record<Locale, string> = {
+    en: 'en-US',
+    ja: 'ja-JP',
+    ko: 'ko-KR',
+    es: 'es-ES',
+    fr: 'fr-FR',
+    de: 'de-DE',
+    zh: 'zh-CN',
+    'zh-TW': 'zh-TW',
+    pt: 'pt-BR',
+    ar: 'ar-AR',
+    it: 'it-IT',
+    id: 'id-ID',
+    vi: 'vi-VN',
+  };
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': options.type || 'WebPage',
+    name: options.name,
+    description: options.description,
+    url: `${siteConfig.url}/${options.locale}${options.path}`,
+    inLanguage: languageMap[options.locale] || 'en-US',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    about: options.aboutName
+      ? {
+          '@type': 'Thing',
+          name: options.aboutName,
+        }
+      : undefined,
+  };
+}
+
+export interface ItemListSchema {
+  '@context': 'https://schema.org';
+  '@type': 'ItemList';
+  name: string;
+  url: string;
+  itemListElement: Array<{
+    '@type': 'ListItem';
+    position: number;
+    url: string;
+    name: string;
+  }>;
+}
+
 /**
  * Generate BreadcrumbList schema for navigation
  */
@@ -337,6 +369,26 @@ export function generateBreadcrumbSchema(
       position: index + 1,
       name: item.name,
       item: `${siteConfig.url}/${locale}${item.path}`,
+    })),
+  };
+}
+
+export function generateItemListSchema(options: {
+  locale: Locale;
+  path: string;
+  name: string;
+  items: Array<{ name: string; path: string }>;
+}): ItemListSchema {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: options.name,
+    url: `${siteConfig.url}/${options.locale}${options.path}`,
+    itemListElement: options.items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: `${siteConfig.url}/${options.locale}${item.path}`,
+      name: item.name,
     })),
   };
 }

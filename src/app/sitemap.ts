@@ -9,6 +9,7 @@ import { MetadataRoute } from 'next';
 import { siteConfig } from '@/config/site';
 import { locales, type Locale } from '@/lib/i18n/config';
 import { getAllTools } from '@/config/tools';
+import { TOOL_CATEGORIES } from '@/types/tool';
 
 // Required for static export
 export const dynamic = 'force-static';
@@ -19,7 +20,9 @@ export const dynamic = 'force-static';
 const PRIORITY = {
   home: 1.0,
   tools: 0.9,
+  category: 0.8,
   toolPage: 0.8,
+  workflow: 0.7,
   static: 0.6,
 } as const;
 
@@ -29,7 +32,9 @@ const PRIORITY = {
 const CHANGE_FREQUENCY = {
   home: 'daily',
   tools: 'weekly',
+  category: 'weekly',
   toolPage: 'weekly',
+  workflow: 'weekly',
   static: 'monthly',
 } as const;
 
@@ -39,6 +44,7 @@ const CHANGE_FREQUENCY = {
 const STATIC_PAGES = [
   { path: '', priority: PRIORITY.home, changeFrequency: CHANGE_FREQUENCY.home },
   { path: '/tools', priority: PRIORITY.tools, changeFrequency: CHANGE_FREQUENCY.tools },
+  { path: '/workflow', priority: PRIORITY.workflow, changeFrequency: CHANGE_FREQUENCY.workflow },
   { path: '/about', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static },
   { path: '/faq', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static },
   { path: '/privacy', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static },
@@ -58,6 +64,15 @@ function generateLocaleEntries(locale: Locale, lastModified: Date): MetadataRout
       lastModified,
       changeFrequency: page.changeFrequency as 'daily' | 'weekly' | 'monthly',
       priority: page.priority,
+    });
+  }
+
+  for (const category of TOOL_CATEGORIES) {
+    entries.push({
+      url: `${siteConfig.url}/${locale}/tools/category/${category}`,
+      lastModified,
+      changeFrequency: CHANGE_FREQUENCY.category,
+      priority: PRIORITY.category,
     });
   }
   
@@ -98,8 +113,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 export function getSitemapUrlCount(): number {
   const tools = getAllTools();
   const staticPagesCount = STATIC_PAGES.length;
+  const categoryPagesCount = TOOL_CATEGORIES.length;
   const toolPagesCount = tools.length;
   const localesCount = locales.length;
   
-  return (staticPagesCount + toolPagesCount) * localesCount;
+  return (staticPagesCount + categoryPagesCount + toolPagesCount) * localesCount;
 }

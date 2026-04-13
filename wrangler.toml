@@ -3,8 +3,10 @@ compatibility_date = "2026-04-12"
 pages_build_output_dir = "out"
 
 [vars]
-ZEYDOO_SOURCE = "opentoolskit"
+PARTNER_REDIRECT_SOURCE = "opentoolskit"
 SPONSOR_FALLBACK_URL = "https://www.opentoolskit.com/en/contact"
 
 # Configure the secret in Cloudflare instead of committing it:
+# wrangler secret put PARTNER_REDIRECT_BASE_URL
+# Legacy fallback supported for one release:
 # wrangler secret put ZEYDOO_BASE_URL

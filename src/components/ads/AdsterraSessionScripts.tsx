@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react';
 import { siteConfig } from '@/config/site';
+import { trackMonetizationEvent } from '@/lib/monetization/analytics';
+import { isCooldownActive, markCooldownHit } from '@/lib/monetization/storage';
 
 interface AdsterraSessionScriptsProps {
   popunder?: boolean;
@@ -10,14 +12,16 @@ interface AdsterraSessionScriptsProps {
 
 function injectScript(src: string, kind: string) {
   if (document.querySelector(`script[data-otk-adsterra="${kind}"][src="${src}"]`)) {
-    return;
+    return false;
   }
 
   const script = document.createElement('script');
   script.src = src;
   script.async = false;
+  script.setAttribute('data-cfasync', 'false');
   script.dataset.otkAdsterra = kind;
   document.body.appendChild(script);
+  return true;
 }
 
 export function triggerAdsterraSessionScripts({
@@ -35,18 +39,40 @@ export function triggerAdsterraSessionScripts({
   const { popunder: popunderConfig, socialBar: socialBarConfig } = siteConfig.ads.providers.adsterra;
 
   if (popunder) {
-    const hasFired = window.sessionStorage.getItem(popunderConfig.sessionKey);
-    if (!hasFired) {
-      window.sessionStorage.setItem(popunderConfig.sessionKey, '1');
-      injectScript(popunderConfig.scriptSrc, 'popunder');
+    const cooldownActive = isCooldownActive(
+      popunderConfig.cooldownStorageKey,
+      siteConfig.monetizationRules.popunderCooldownHours,
+    );
+
+    if (!cooldownActive) {
+      const injected = injectScript(popunderConfig.scriptSrc, 'popunder');
+      if (injected) {
+        markCooldownHit(popunderConfig.cooldownStorageKey);
+        trackMonetizationEvent({
+          event: 'popunder_injected',
+          placement: 'session',
+          provider: 'adsterra',
+        });
+      }
     }
   }
 
   if (socialBar) {
-    const hasFired = window.sessionStorage.getItem(socialBarConfig.sessionKey);
-    if (!hasFired) {
-      window.sessionStorage.setItem(socialBarConfig.sessionKey, '1');
-      injectScript(socialBarConfig.scriptSrc, 'socialbar');
+    const cooldownActive = isCooldownActive(
+      socialBarConfig.cooldownStorageKey,
+      siteConfig.monetizationRules.socialBarCooldownHours,
+    );
+
+    if (!cooldownActive) {
+      const injected = injectScript(socialBarConfig.scriptSrc, 'socialbar');
+      if (injected) {
+        markCooldownHit(socialBarConfig.cooldownStorageKey);
+        trackMonetizationEvent({
+          event: 'socialbar_injected',
+          placement: 'session',
+          provider: 'adsterra',
+        });
+      }
     }
   }
 }

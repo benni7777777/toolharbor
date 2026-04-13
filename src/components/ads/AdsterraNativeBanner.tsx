@@ -2,17 +2,20 @@
 
 import { useEffect, useRef } from 'react';
 import { siteConfig } from '@/config/site';
+import { trackMonetizationEvent } from '@/lib/monetization/analytics';
 
 interface AdsterraNativeBannerProps {
   className?: string;
   title?: string;
   description?: string;
+  slotName?: string;
 }
 
 export function AdsterraNativeBanner({
   className = '',
   title = 'Partner suggestion',
   description = 'Ads and partner offers help keep OpenToolsKit open source.',
+  slotName = 'native-banner',
 }: AdsterraNativeBannerProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const { nativeBanner } = siteConfig.ads.providers.adsterra;
@@ -47,7 +50,12 @@ export function AdsterraNativeBanner({
     }
 
     container.dataset.otkAdMounted = 'true';
-  }, [nativeBanner.containerId, nativeBanner.scriptSrc]);
+    trackMonetizationEvent({
+      event: 'native_impression',
+      placement: slotName,
+      provider: 'adsterra',
+    });
+  }, [nativeBanner.containerId, nativeBanner.scriptSrc, slotName]);
 
   if (!siteConfig.ads.enabled || !siteConfig.ads.providers.adsterra.enabled) {
     return null;

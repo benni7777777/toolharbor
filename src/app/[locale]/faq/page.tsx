@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { locales, type Locale } from '@/lib/i18n/config';
-import { generateFaqMetadata } from '@/lib/seo';
+import { generateFaqMetadata, generateBasicWebPageSchema, generateBreadcrumbSchema } from '@/lib/seo';
+import { JsonLd } from '@/components/seo/JsonLd';
 import FAQPageClient from './FAQPageClient';
 
 export function generateStaticParams() {
@@ -33,5 +34,29 @@ export default async function FAQPage({ params }: FAQPageProps) {
   // Enable static rendering
   setRequestLocale(locale);
 
-  return <FAQPageClient locale={locale as Locale} />;
+  const localeValue = locale as Locale;
+
+  return (
+    <>
+      <JsonLd
+        data={generateBasicWebPageSchema({
+          locale: localeValue,
+          path: '/faq',
+          name: 'OpenToolsKit FAQ',
+          description: 'Frequently asked questions about browser-side PDF tools, privacy, and support.',
+          aboutName: 'OpenToolsKit FAQ',
+        })}
+      />
+      <JsonLd
+        data={generateBreadcrumbSchema(
+          [
+            { name: 'Home', path: '' },
+            { name: 'FAQ', path: '/faq' },
+          ],
+          localeValue
+        )}
+      />
+      <FAQPageClient locale={localeValue} />
+    </>
+  );
 }

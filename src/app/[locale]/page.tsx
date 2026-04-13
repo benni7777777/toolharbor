@@ -1,5 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import { locales, type Locale } from '@/lib/i18n/config';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { generateOrganizationSchema, generateWebSiteSchema } from '@/lib/seo';
 import HomePageClient from './HomePageClient';
 
 export function generateStaticParams() {
@@ -33,5 +35,11 @@ export default async function HomePage({ params }: HomePageProps) {
     return acc;
   }, {} as Record<string, { title: string; description: string }>);
 
-  return <HomePageClient locale={locale as Locale} localizedToolContent={localizedToolContent} />;
+  return (
+    <>
+      <JsonLd data={generateOrganizationSchema()} />
+      <JsonLd data={generateWebSiteSchema(locale as Locale)} />
+      <HomePageClient locale={locale as Locale} localizedToolContent={localizedToolContent} />
+    </>
+  );
 }

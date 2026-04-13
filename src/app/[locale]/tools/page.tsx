@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { locales, type Locale } from '@/lib/i18n/config';
 import { generateToolsListMetadata } from '@/lib/seo';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { generateBasicWebPageSchema, generateBreadcrumbSchema, generateItemListSchema } from '@/lib/seo';
 import ToolsPageClient from './ToolsPageClient';
 
 export function generateStaticParams() {
@@ -28,16 +29,6 @@ interface ToolsPageProps {
   params: Promise<{ locale: string }>;
 }
 
-function ToolsPageFallback() {
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="animate-pulse text-[hsl(var(--color-muted-foreground))]">
-        Loading...
-      </div>
-    </div>
-  );
-}
-
 export default async function ToolsPage({ params }: ToolsPageProps) {
   const { locale } = await params;
 
@@ -59,11 +50,40 @@ export default async function ToolsPage({ params }: ToolsPageProps) {
     return acc;
   }, {} as Record<string, { title: string; description: string }>);
 
-  // Note: searchParams are handled client-side in ToolsPageClient
-  // because static export doesn't support server-side searchParams
+  const localeValue = locale as Locale;
+  const itemList = generateItemListSchema({
+    locale: localeValue,
+    path: '/tools',
+    name: 'OpenToolsKit PDF Tools',
+    items: tools.map((tool) => ({
+      name: localizedToolContent[tool.id]?.title || tool.slug,
+      path: `/tools/${tool.slug}`,
+    })),
+  });
+
+  const webPage = generateBasicWebPageSchema({
+    locale: localeValue,
+    path: '/tools',
+    name: 'All PDF Tools',
+    description: 'Directory of browser-based PDF tools for merging, splitting, converting, editing, and securing documents.',
+    type: 'CollectionPage',
+    aboutName: 'PDF tools',
+  });
+
+  const breadcrumb = generateBreadcrumbSchema(
+    [
+      { name: 'Home', path: '' },
+      { name: 'Tools', path: '/tools' },
+    ],
+    localeValue
+  );
+
   return (
-    <Suspense fallback={<ToolsPageFallback />}>
-      <ToolsPageClient locale={locale as Locale} localizedToolContent={localizedToolContent} />
-    </Suspense>
+    <>
+      <JsonLd data={webPage} />
+      <JsonLd data={itemList} />
+      <JsonLd data={breadcrumb} />
+      <ToolsPageClient locale={localeValue} localizedToolContent={localizedToolContent} />
+    </>
   );
 }

@@ -28,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
   return (
     <footer className="border-t border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))/0.88] backdrop-blur-xl" role="contentinfo">
       <div className="mx-auto max-w-7xl px-4 py-12">
-        <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-[1.3fr_0.9fr_0.9fr_1fr]">
           <div className="space-y-5">
             <Link href={`/${locale}`} className="inline-flex items-center gap-3">
               <BrandMark className="h-11 w-11" />
@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                 <div className="space-y-1">
                   <p className="text-sm font-semibold text-[hsl(var(--color-foreground))]">Private by design</p>
                   <p className="text-sm text-[hsl(var(--color-muted-foreground))]">
-                    Files stay in your browser. Sponsor interaction is optional, clearly labeled, and never required for the core result.
+                    Files stay in your browser where applicable. Advertising and partner offers keep the service free, and the live source remains public under AGPL-3.0.
                   </p>
                 </div>
               </div>
@@ -93,6 +93,47 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
           </div>
 
           <div className="space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-accent-strong))]">Popular PDF tasks</h3>
+            <ul className="space-y-3 text-sm text-[hsl(var(--color-muted-foreground))]">
+              <li>
+                <Link href={`/${locale}/tools/merge-pdf`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                  Merge PDF files
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/tools/compress-pdf`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                  Compress a PDF for upload limits
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/tools/jpg-to-pdf`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                  Convert JPG to PDF
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/tools/pdf-to-jpg`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                  Convert PDF pages to JPG
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/tools/sign-pdf`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                  Sign a PDF in your browser
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/tools/encrypt-pdf`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                  Encrypt a PDF
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/workflow`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                  Build a PDF workflow
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
             <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-accent-strong))]">Open project</h3>
             <div className="space-y-3 rounded-[1.5rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-4">
               <a
@@ -118,6 +159,9 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
               </p>
               <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
                 {siteConfig.ads.disclosureSummary} {siteConfig.sponsorship.disclosure}
+              </p>
+              <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
+                Source code for the live service is publicly available under {siteConfig.legal.license}.
               </p>
             </div>
           </div>

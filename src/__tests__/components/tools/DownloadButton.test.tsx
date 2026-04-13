@@ -2,6 +2,8 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, fireEvent, cleanup, act } from '@testing-library/react';
 import { DownloadButton } from '@/components/tools/DownloadButton';
 
+const mockMonetizationProfile = vi.fn();
+
 // Mock next-intl
 vi.mock('next-intl', () => ({
   useTranslations: () => (key: string) => {
@@ -10,6 +12,14 @@ vi.mock('next-intl', () => ({
     };
     return translations[key] || key;
   },
+}));
+
+vi.mock('next/navigation', () => ({
+  usePathname: () => '/en/tools/merge-pdf',
+}));
+
+vi.mock('@/hooks/useMonetizationProfile', () => ({
+  useMonetizationProfile: () => mockMonetizationProfile(),
 }));
 
 // Store original URL methods
@@ -24,6 +34,15 @@ beforeEach(() => {
   URL.createObjectURL = mockCreateObjectURL;
   URL.revokeObjectURL = mockRevokeObjectURL;
   vi.clearAllMocks();
+  mockMonetizationProfile.mockReturnValue({
+    country: 'GB',
+    isUkEea: true,
+    isLoading: false,
+    previewMode: 'auto',
+    allowNativeUnits: true,
+    allowAggressiveUnits: false,
+    allowHardGate: false,
+  });
 });
 
 afterEach(() => {
@@ -200,6 +219,34 @@ describe('DownloadButton', () => {
       expect(screen.getByTestId('download-monetization-panel')).toBeInTheDocument();
 
       vi.useRealTimers();
+    });
+
+    it('shows a 15-second gate for aggressive eligible downloads', () => {
+      mockMonetizationProfile.mockReturnValue({
+        country: 'US',
+        isUkEea: false,
+        isLoading: false,
+        previewMode: 'aggressive',
+        allowNativeUnits: true,
+        allowAggressiveUnits: true,
+        allowHardGate: true,
+      });
+
+      const mockBlob = createMockBlob('test content');
+      render(
+        <DownloadButton
+          file={mockBlob}
+          filename="test.pdf"
+          variant="secondary"
+          size="lg"
+        />
+      );
+
+      fireEvent.click(screen.getByRole('button'));
+
+      expect(screen.getByTestId('download-gate-overlay')).toBeInTheDocument();
+      expect(screen.getByText(/download unlocks in 15 seconds/i)).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /download unlocks in 15s/i })).toBeDisabled();
     });
   });
 

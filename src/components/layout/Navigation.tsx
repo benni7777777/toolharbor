@@ -27,12 +27,12 @@ export const Navigation: React.FC<NavigationProps> = ({ locale, currentPath }) =
   const menuItemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   const categories: CategoryItem[] = [
-    { id: 'edit-annotate', labelKey: 'editAnnotate', href: `/${locale}/tools?category=edit-annotate` },
-    { id: 'convert-to-pdf', labelKey: 'convertToPdf', href: `/${locale}/tools?category=convert-to-pdf` },
-    { id: 'convert-from-pdf', labelKey: 'convertFromPdf', href: `/${locale}/tools?category=convert-from-pdf` },
-    { id: 'organize-manage', labelKey: 'organizeManage', href: `/${locale}/tools?category=organize-manage` },
-    { id: 'optimize-repair', labelKey: 'optimizeRepair', href: `/${locale}/tools?category=optimize-repair` },
-    { id: 'secure-pdf', labelKey: 'securePdf', href: `/${locale}/tools?category=secure-pdf` },
+    { id: 'edit-annotate', labelKey: 'editAnnotate', href: `/${locale}/tools/category/edit-annotate` },
+    { id: 'convert-to-pdf', labelKey: 'convertToPdf', href: `/${locale}/tools/category/convert-to-pdf` },
+    { id: 'convert-from-pdf', labelKey: 'convertFromPdf', href: `/${locale}/tools/category/convert-from-pdf` },
+    { id: 'organize-manage', labelKey: 'organizeManage', href: `/${locale}/tools/category/organize-manage` },
+    { id: 'optimize-repair', labelKey: 'optimizeRepair', href: `/${locale}/tools/category/optimize-repair` },
+    { id: 'secure-pdf', labelKey: 'securePdf', href: `/${locale}/tools/category/secure-pdf` },
   ];
 
   const mainNavItems = [

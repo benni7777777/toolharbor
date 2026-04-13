@@ -21,6 +21,7 @@ const themeInitScript = `
 `;
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: siteConfig.seo.defaultTitle,
   description: siteConfig.description,
   icons: {

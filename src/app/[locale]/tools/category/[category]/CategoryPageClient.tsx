@@ -5,13 +5,17 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
 import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
+import AdsterraDisplayBanner from '@/components/ads/AdsterraDisplayBanner';
+import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { ToolGrid } from '@/components/tools/ToolGrid';
 import { getToolsByCategory } from '@/config/tools';
+import { getCategorySeo } from '@/config/seo';
 import { type Locale } from '@/lib/i18n/config';
 import { type ToolCategory } from '@/types/tool';
 import Link from 'next/link';
 import { Home, ChevronRight } from 'lucide-react';
 import { siteConfig } from '@/config/site';
+import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 
 interface CategoryPageClientProps {
     locale: Locale;
@@ -21,7 +25,9 @@ interface CategoryPageClientProps {
 
 export default function CategoryPageClient({ locale, category, localizedToolContent }: CategoryPageClientProps) {
     const t = useTranslations();
+    const monetizationProfile = useMonetizationProfile();
     const tools = getToolsByCategory(category);
+    const categorySeo = getCategorySeo(category);
 
     // Map categories to translation keys (matching ToolsPage structure)
     const categoryTranslationKeys: Record<ToolCategory, string> = {
@@ -41,8 +47,8 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
 
             <main className="flex-1">
                 <AdsterraSessionScripts
-                    popunder={siteConfig.ads.placements.categoryHub.popunder}
-                    socialBar={siteConfig.ads.placements.categoryHub.socialBar}
+                    popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.categoryHub.popunder}
+                    socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.categoryHub.socialBar}
                 />
                 <div className="container mx-auto px-4 pt-24 pb-8">
                     {/* Breadcrumb Navigation */}
@@ -75,18 +81,77 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
                         <p className="text-base text-[hsl(var(--color-muted-foreground))]">
                             {t(`home.categoriesDescription.${categoryTranslationKeys[category]}`)}
                         </p>
+                        <p className="mt-4 max-w-3xl text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                            {categorySeo.intro}
+                        </p>
+                    </section>
+
+                    <section className="mb-8 grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(280px,360px)]">
+                        <div className="rounded-[1.75rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-6 shadow-[var(--shadow-sm)]">
+                            <h2 className="text-xl font-semibold text-[hsl(var(--color-foreground))]">
+                                Best for
+                            </h2>
+                            <ul className="mt-4 space-y-3 text-sm text-[hsl(var(--color-muted-foreground))]">
+                                {categorySeo.bestFor.map((item) => (
+                                    <li key={item} className="flex gap-3">
+                                        <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[hsl(var(--color-primary))]" aria-hidden="true" />
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <aside className="rounded-[1.75rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-6 shadow-[var(--shadow-sm)]">
+                            <h2 className="text-xl font-semibold text-[hsl(var(--color-foreground))]">
+                                Related paths
+                            </h2>
+                            <div className="mt-4 space-y-3 text-sm">
+                                <Link href={`/${locale}/tools`} className="block text-[hsl(var(--color-primary))] hover:underline">
+                                    Browse the full PDF tool directory
+                                </Link>
+                                <Link href={`/${locale}/workflow`} className="block text-[hsl(var(--color-primary))] hover:underline">
+                                    Open the PDF workflow builder
+                                </Link>
+                                {categorySeo.adjacentCategories.map((adjacentCategory) => (
+                                    <Link
+                                        key={adjacentCategory}
+                                        href={`/${locale}/tools/category/${adjacentCategory}`}
+                                        className="block text-[hsl(var(--color-primary))] hover:underline"
+                                    >
+                                        {t(`home.categories.${categoryTranslationKeys[adjacentCategory]}`)} tools
+                                    </Link>
+                                ))}
+                            </div>
+                        </aside>
                     </section>
 
                     <div className="mb-8">
-                        <AdsterraNativeBanner description="This category page may contain a labeled native ad placement from a third-party network. It does not appear inside the core tool action row." />
+                        {monetizationProfile.allowNativeUnits && (
+                            <AdsterraNativeBanner
+                                slotName="category-native"
+                                description="This category page may contain a labeled native ad placement from a third-party network. It does not appear inside the core tool action row."
+                            />
+                        )}
                     </div>
+
+                    {monetizationProfile.allowAggressiveUnits && (
+                        <div className="mb-8">
+                            <AdsterraDisplayBanner slot="leaderboard" />
+                        </div>
+                    )}
 
                     {/* Tools Grid */}
                     <ToolGrid
                         tools={tools}
                         locale={locale}
                         localizedToolContent={localizedToolContent}
+                        enableDiscoveryMonetization
+                        allowAggressiveUnits={monetizationProfile.allowAggressiveUnits}
                     />
+
+                    <div className="mt-8">
+                        <MonetizationDisclosureCard locale={locale} />
+                    </div>
                 </div>
             </main>
 

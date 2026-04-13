@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { locales, type Locale } from '@/lib/i18n/config';
-import { generatePrivacyMetadata } from '@/lib/seo';
+import { generatePrivacyMetadata, generateBasicWebPageSchema, generateBreadcrumbSchema } from '@/lib/seo';
+import { JsonLd } from '@/components/seo/JsonLd';
 import PrivacyPageClient from './PrivacyPageClient';
 
 export function generateStaticParams() {
@@ -33,5 +34,29 @@ export default async function PrivacyPage({ params }: PrivacyPageProps) {
   // Enable static rendering
   setRequestLocale(locale);
 
-  return <PrivacyPageClient locale={locale as Locale} />;
+  const localeValue = locale as Locale;
+
+  return (
+    <>
+      <JsonLd
+        data={generateBasicWebPageSchema({
+          locale: localeValue,
+          path: '/privacy',
+          name: 'Privacy Policy',
+          description: 'Privacy policy for browser-side file handling and OpenToolsKit service disclosures.',
+          aboutName: 'Privacy policy',
+        })}
+      />
+      <JsonLd
+        data={generateBreadcrumbSchema(
+          [
+            { name: 'Home', path: '' },
+            { name: 'Privacy', path: '/privacy' },
+          ],
+          localeValue
+        )}
+      />
+      <PrivacyPageClient locale={localeValue} />
+    </>
+  );
 }

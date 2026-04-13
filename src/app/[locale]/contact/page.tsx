@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { locales, type Locale } from '@/lib/i18n/config';
-import { generateContactMetadata } from '@/lib/seo';
+import { generateContactMetadata, generateBasicWebPageSchema, generateBreadcrumbSchema } from '@/lib/seo';
+import { JsonLd } from '@/components/seo/JsonLd';
 import ContactPageClient from './ContactPageClient';
 
 export function generateStaticParams() {
@@ -33,5 +34,29 @@ export default async function ContactPage({ params }: ContactPageProps) {
   // Enable static rendering
   setRequestLocale(locale);
 
-  return <ContactPageClient locale={locale as Locale} />;
+  const localeValue = locale as Locale;
+
+  return (
+    <>
+      <JsonLd
+        data={generateBasicWebPageSchema({
+          locale: localeValue,
+          path: '/contact',
+          name: 'Support, Source Code, and AGPL Notice',
+          description: 'GitHub support, source code links, and AGPL notice for OpenToolsKit.',
+          aboutName: 'Support and source code',
+        })}
+      />
+      <JsonLd
+        data={generateBreadcrumbSchema(
+          [
+            { name: 'Home', path: '' },
+            { name: 'Support', path: '/contact' },
+          ],
+          localeValue
+        )}
+      />
+      <ContactPageClient locale={localeValue} />
+    </>
+  );
 }

@@ -8,14 +8,17 @@ import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
 import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
+import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { type Locale } from '@/lib/i18n/config';
 import { siteConfig } from '@/config/site';
+import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 
 interface ContactPageClientProps {
   locale: Locale;
 }
 
 export default function ContactPageClient({ locale }: ContactPageClientProps) {
+  const monetizationProfile = useMonetizationProfile();
   const supportCards = [
     {
       icon: Github,
@@ -49,8 +52,8 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
 
       <main className="flex-1">
         <AdsterraSessionScripts
-          popunder={siteConfig.ads.placements.infoPages.popunder}
-          socialBar={siteConfig.ads.placements.infoPages.socialBar}
+          popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.popunder}
+          socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.socialBar}
         />
 
         <section className="bg-[hsl(var(--color-muted)/0.3)] py-16">
@@ -104,7 +107,20 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
         <section className="py-4">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-5xl">
-              <AdsterraNativeBanner description="This support page may show a third-party native placement. Core tools and downloads remain unaffected." />
+              {monetizationProfile.allowNativeUnits && (
+                <AdsterraNativeBanner
+                  slotName="contact-native"
+                  description="This support page may show a third-party native placement. Core tools and downloads remain unaffected."
+                />
+              )}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-6">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-5xl">
+              <MonetizationDisclosureCard locale={locale} />
             </div>
           </div>
         </section>

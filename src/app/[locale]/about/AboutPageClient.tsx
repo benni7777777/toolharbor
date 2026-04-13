@@ -9,9 +9,11 @@ import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
 import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
+import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { type Locale } from '@/lib/i18n/config';
 import { getAllTools } from '@/config/tools';
 import { siteConfig } from '@/config/site';
+import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 
 interface AboutPageClientProps {
   locale: Locale;
@@ -20,6 +22,7 @@ interface AboutPageClientProps {
 export default function AboutPageClient({ locale }: AboutPageClientProps) {
   const t = useTranslations('aboutPage');
   const tCommon = useTranslations('common');
+  const monetizationProfile = useMonetizationProfile();
   const allTools = getAllTools();
 
   const values = [
@@ -61,8 +64,8 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
 
       <main className="flex-1">
         <AdsterraSessionScripts
-          popunder={siteConfig.ads.placements.infoPages.popunder}
-          socialBar={siteConfig.ads.placements.infoPages.socialBar}
+          popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.popunder}
+          socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.socialBar}
         />
 
         {/* Hero Section */}
@@ -104,7 +107,12 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
         <section className="py-6">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-5xl">
-              <AdsterraNativeBanner description="OpenToolsKit may show a native placement on informational pages. The ad inventory is supplied by third-party networks and never blocks the product itself." />
+              {monetizationProfile.allowNativeUnits && (
+                <AdsterraNativeBanner
+                  slotName="about-native"
+                  description="OpenToolsKit may show a native placement on informational pages. The ad inventory is supplied by third-party networks and never blocks the product itself."
+                />
+              )}
             </div>
           </div>
         </section>
@@ -184,9 +192,17 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
               <Card className="p-6">
                 <h3 className="mb-3 text-lg font-semibold text-[hsl(var(--color-foreground))]">Monetized without blocking results</h3>
                 <p className="text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
-                  Ads and partner suggestions may appear on non-tool-action surfaces and after successful results, but downloads and core tools stay available without countdowns or forced waits.
+                  Ads and partner suggestions may appear on non-tool-action surfaces and after successful results. Where monetization gates are used, they are labeled, limited, and tied to strict session and geo safety rules.
                 </p>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-6">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-5xl">
+              <MonetizationDisclosureCard locale={locale} />
             </div>
           </div>
         </section>

@@ -3,6 +3,7 @@
 import { Tool, ToolContent, HowToStep, UseCase, FAQ, ToolCategory } from '@/types/tool';
 import { Card } from '@/components/ui/Card';
 import { getToolById } from '@/config/tools';
+import { getToolSeoProfile } from '@/lib/seo/profiles';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { type Locale } from '@/lib/i18n/config';
@@ -14,6 +15,10 @@ import { FavoriteButton } from '@/components/ui/FavoriteButton';
 import { useMemo } from 'react';
 import { sanitizeHtml } from '@/lib/utils/html-sanitizer';
 import { useSafeTranslations } from '@/lib/i18n/useSafeTranslations';
+import AdsterraDisplayBanner from '@/components/ads/AdsterraDisplayBanner';
+import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
+import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
+import type { ToolSeoExample } from '@/config/seo';
 
 export interface ToolPageProps {
   /** Tool data */
@@ -46,8 +51,13 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
   const relatedTools = tool.relatedTools
     .map(id => getToolById(id))
     .filter((t): t is Tool => t !== undefined);
+  const seoProfile = getToolSeoProfile(tool, content);
+  const comparisonTools = seoProfile.comparisonToolIds
+    .map(id => getToolById(id))
+    .filter((candidate): candidate is Tool => candidate !== undefined);
 
   const t = useSafeTranslations();
+  const monetizationProfile = useMonetizationProfile();
 
   // Get tool display name
   const toolDisplayName = content.title || tool.id
@@ -92,7 +102,7 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
             </nav>
 
             {/* Tool Header */}
-            <ToolHeader tool={tool} content={content} />
+            <ToolHeader tool={tool} content={content} pageHeading={seoProfile.h1} fastAnswer={seoProfile.fastAnswer} />
 
             {/* Tool Interface Area */}
             <section
@@ -103,6 +113,34 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
               {children}
             </section>
 
+            <section className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]" aria-label="Monetization surfaces">
+              <div className="space-y-4">
+                <MonetizationDisclosureCard locale={locale} />
+                {monetizationProfile.allowAggressiveUnits && (
+                  <div className="lg:hidden">
+                    <AdsterraDisplayBanner slot="mobileSticky" className="rounded-[1.75rem]" />
+                  </div>
+                )}
+              </div>
+
+              {monetizationProfile.allowAggressiveUnits && (
+                <aside className="hidden lg:block">
+                  <div className="sticky top-28 space-y-4">
+                    <AdsterraDisplayBanner slot="rectangle" className="rounded-[1.75rem]" />
+                  </div>
+                </aside>
+              )}
+            </section>
+
+            <QuickAnswerSection
+              tool={tool}
+              locale={locale}
+              primaryQuery={seoProfile.primaryQuery}
+              bestFor={seoProfile.bestFor}
+            />
+
+            <InputsOutputsSection inputs={seoProfile.inputs} outputs={seoProfile.outputs} />
+
             {/* Description Section */}
             <DescriptionSection description={content.description} />
 
@@ -112,11 +150,23 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
             {/* Use Cases Section */}
             <UseCasesSection useCases={content.useCases} />
 
+            <ComparisonSection
+              currentTool={tool}
+              locale={locale}
+              tools={comparisonTools}
+              localizedRelatedTools={localizedRelatedTools}
+            />
+
+            <LimitationsSection limitations={seoProfile.limitations} />
+
+            <ExamplesSection examples={seoProfile.examples} />
+
             {/* FAQ Section */}
             <FAQSection faq={content.faq} />
 
             {/* Related Tools Section */}
             <RelatedToolsSection
+              currentTool={tool}
               tools={relatedTools}
               locale={locale}
               localizedRelatedTools={localizedRelatedTools}
@@ -136,9 +186,11 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
 interface ToolHeaderProps {
   tool: Tool;
   content: ToolContent;
+  pageHeading: string;
+  fastAnswer: string;
 }
 
-function ToolHeader({ tool, content }: ToolHeaderProps) {
+function ToolHeader({ tool, content, pageHeading, fastAnswer }: ToolHeaderProps) {
   const toolName = tool.id
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -164,7 +216,7 @@ function ToolHeader({ tool, content }: ToolHeaderProps) {
         data-testid="tool-page-title"
         itemProp="name"
       >
-        {content.title || toolName}
+        {pageHeading || content.title || toolName}
       </h1>
       <p
         className="text-lg text-[hsl(var(--color-muted-foreground))] max-w-2xl mx-auto leading-relaxed mb-4"
@@ -173,10 +225,104 @@ function ToolHeader({ tool, content }: ToolHeaderProps) {
       >
         {content.metaDescription}
       </p>
+      <div className="mx-auto mb-5 max-w-3xl rounded-[1.5rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] px-5 py-4 text-left shadow-[var(--shadow-sm)]">
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-accent-strong))]">
+          Fast answer
+        </p>
+        <p className="mt-2 text-sm leading-6 text-[hsl(var(--color-foreground))]">
+          {fastAnswer}
+        </p>
+      </div>
       <div className="flex items-center justify-center">
         <FavoriteButton toolId={tool.id} size="lg" showLabel />
       </div>
     </header>
+  );
+}
+
+interface QuickAnswerSectionProps {
+  tool: Tool;
+  locale: string;
+  primaryQuery: string;
+  bestFor: string[];
+}
+
+function QuickAnswerSection({ tool, locale, primaryQuery, bestFor }: QuickAnswerSectionProps) {
+  return (
+    <section className="mt-10 grid gap-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(260px,0.65fr)]" aria-labelledby="quick-answer-heading">
+      <Card variant="outlined" size="lg" className="glass-card">
+        <h2 id="quick-answer-heading" className="text-2xl font-bold text-[hsl(var(--color-foreground))]">
+          What this tool is best for
+        </h2>
+        <p className="mt-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+          Primary search intent: <span className="font-medium text-[hsl(var(--color-foreground))]">{primaryQuery}</span>
+        </p>
+        <ul className="mt-4 space-y-3 text-sm text-[hsl(var(--color-muted-foreground))]">
+          {bestFor.map((item) => (
+            <li key={item} className="flex gap-3">
+              <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[hsl(var(--color-primary))]" aria-hidden="true" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </Card>
+
+      <Card variant="outlined" size="lg" className="glass-card">
+        <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))]">
+          Related paths
+        </h2>
+        <div className="mt-4 space-y-3 text-sm">
+          <Link href={`/${locale}/tools/category/${tool.category}`} className="block text-[hsl(var(--color-primary))] hover:underline">
+            Open the {tool.category.replace(/-/g, ' ')} hub
+          </Link>
+          <Link href={`/${locale}/workflow`} className="block text-[hsl(var(--color-primary))] hover:underline">
+            Use this tool inside the workflow builder
+          </Link>
+          <Link href={`/${locale}/tools`} className="block text-[hsl(var(--color-primary))] hover:underline">
+            Browse the full PDF tool directory
+          </Link>
+        </div>
+      </Card>
+    </section>
+  );
+}
+
+interface InputsOutputsSectionProps {
+  inputs: string[];
+  outputs: string[];
+}
+
+function InputsOutputsSection({ inputs, outputs }: InputsOutputsSectionProps) {
+  return (
+    <section className="mt-10 grid gap-6 lg:grid-cols-2" aria-labelledby="inputs-outputs-heading">
+      <Card variant="outlined" size="lg" className="glass-card">
+        <h2 id="inputs-outputs-heading" className="text-2xl font-bold text-[hsl(var(--color-foreground))]">
+          Inputs and outputs
+        </h2>
+        <div className="mt-5 grid gap-5 md:grid-cols-2">
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[hsl(var(--color-accent-strong))]">
+              Inputs
+            </h3>
+            <ul className="mt-3 space-y-2 text-sm text-[hsl(var(--color-muted-foreground))]">
+              {inputs.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[hsl(var(--color-accent-strong))]">
+              Outputs
+            </h3>
+            <ul className="mt-3 space-y-2 text-sm text-[hsl(var(--color-muted-foreground))]">
+              {outputs.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Card>
+    </section>
   );
 }
 
@@ -333,6 +479,120 @@ function UseCasesSection({ useCases }: UseCasesSectionProps) {
   );
 }
 
+interface ComparisonSectionProps {
+  currentTool: Tool;
+  tools: Tool[];
+  locale: string;
+  localizedRelatedTools: Record<string, { title: string; description: string }>;
+}
+
+function ComparisonSection({ currentTool, tools, locale, localizedRelatedTools }: ComparisonSectionProps) {
+  if (!tools || tools.length === 0) return null;
+
+  const currentToolName = currentTool.id
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+
+  return (
+    <section className="mt-10" aria-labelledby="comparison-heading">
+      <h2 id="comparison-heading" className="text-2xl font-bold text-[hsl(var(--color-foreground))] mb-6">
+        When to use this instead of a related tool
+      </h2>
+      <div className="grid gap-4 lg:grid-cols-3">
+        {tools.map((tool) => {
+          const localized = localizedRelatedTools[tool.id];
+          const toolName = localized?.title || tool.id
+            .split('-')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+
+          return (
+            <Card key={tool.id} variant="outlined" size="lg" className="glass-card">
+              <h3 className="text-lg font-semibold text-[hsl(var(--color-foreground))]">
+                {toolName}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                Use <span className="font-medium text-[hsl(var(--color-foreground))]">{currentToolName}</span> when
+                the job is narrower or more direct than <span className="font-medium text-[hsl(var(--color-foreground))]">{toolName}</span>.
+                Switch to {toolName} if your problem is actually about its broader workflow or output.
+              </p>
+              <Link href={`/${locale}/tools/${tool.slug}`} className="mt-4 inline-block text-sm font-medium text-[hsl(var(--color-primary))] hover:underline">
+                Compare with {toolName}
+              </Link>
+            </Card>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+interface LimitationsSectionProps {
+  limitations: string[];
+}
+
+function LimitationsSection({ limitations }: LimitationsSectionProps) {
+  if (!limitations || limitations.length === 0) return null;
+
+  return (
+    <section className="mt-10" aria-labelledby="limitations-heading">
+      <Card variant="outlined" size="lg" className="glass-card">
+        <h2 id="limitations-heading" className="text-2xl font-bold text-[hsl(var(--color-foreground))]">
+          Limitations and edge cases
+        </h2>
+        <ul className="mt-4 space-y-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+          {limitations.map((item) => (
+            <li key={item} className="flex gap-3">
+              <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[hsl(var(--color-accent-strong))]" aria-hidden="true" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </Card>
+    </section>
+  );
+}
+
+interface ExamplesSectionProps {
+  examples: ToolSeoExample[];
+}
+
+function ExamplesSection({ examples }: ExamplesSectionProps) {
+  if (!examples || examples.length === 0) return null;
+
+  return (
+    <section className="mt-10" aria-labelledby="examples-heading">
+      <h2 id="examples-heading" className="text-2xl font-bold text-[hsl(var(--color-foreground))] mb-6">
+        Examples
+      </h2>
+      <div className="grid gap-4 lg:grid-cols-2">
+        {examples.map((example) => (
+          <Card key={example.title} variant="outlined" size="lg" className="glass-card">
+            <h3 className="text-lg font-semibold text-[hsl(var(--color-foreground))]">
+              {example.title}
+            </h3>
+            <div className="mt-4 space-y-3 text-sm leading-6">
+              <div>
+                <p className="font-semibold uppercase tracking-[0.16em] text-[hsl(var(--color-accent-strong))]">
+                  Input
+                </p>
+                <p className="mt-1 text-[hsl(var(--color-muted-foreground))]">{example.input}</p>
+              </div>
+              <div>
+                <p className="font-semibold uppercase tracking-[0.16em] text-[hsl(var(--color-accent-strong))]">
+                  Output
+                </p>
+                <p className="mt-1 text-[hsl(var(--color-muted-foreground))]">{example.output}</p>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 /**
  * FAQ section with common questions and answers
  */
@@ -388,12 +648,13 @@ function FAQSection({ faq }: FAQSectionProps) {
  * Related tools section
  */
 interface RelatedToolsSectionProps {
+  currentTool: Tool;
   tools: Tool[];
   locale: string;
   localizedRelatedTools: Record<string, { title: string; description: string }>;
 }
 
-function RelatedToolsSection({ tools, locale, localizedRelatedTools }: RelatedToolsSectionProps) {
+function RelatedToolsSection({ currentTool, tools, locale, localizedRelatedTools }: RelatedToolsSectionProps) {
   const t = useSafeTranslations();
   if (!tools || tools.length === 0) return null;
 
@@ -409,6 +670,9 @@ function RelatedToolsSection({ tools, locale, localizedRelatedTools }: RelatedTo
       >
         {t('tools.relatedTools')}
       </h2>
+      <p className="mb-5 max-w-3xl text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+        If your problem is not exactly a {currentTool.id.replace(/-/g, ' ')} job, these adjacent tools are the closest next paths.
+      </p>
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         data-testid="related-tools-grid"

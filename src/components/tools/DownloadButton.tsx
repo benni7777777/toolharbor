@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import { Button, type ButtonProps } from '../ui/Button';
 import { addRecentFile } from '@/lib/storage/recent-files';
 import { useToolContext } from '@/lib/contexts/ToolContext';
@@ -9,50 +10,34 @@ import { sanitizeFilename } from '@/lib/utils/sanitize';
 import { siteConfig } from '@/config/site';
 import { LoaderCircle, X } from 'lucide-react';
 import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
-import AdsterraSessionScripts, { triggerAdsterraSessionScripts } from '@/components/ads/AdsterraSessionScripts';
+import { triggerAdsterraSessionScripts } from '@/components/ads/AdsterraSessionScripts';
 import PostResultSponsorCard from '@/components/common/PostResultSponsorCard';
+import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
+import { getSessionCount, incrementSessionCount } from '@/lib/monetization/storage';
+import { trackMonetizationEvent } from '@/lib/monetization/analytics';
 
 export interface DownloadButtonProps extends Omit<ButtonProps, 'onClick' | 'children'> {
-  /** Blob data to download */
   file: Blob | null;
-  /** Filename for the download */
   filename: string;
-  /** Custom button text */
   label?: string;
-  /** Callback after download starts */
   onDownloadStart?: () => void;
-  /** Callback after download completes */
   onDownloadComplete?: () => void;
-  /** Auto-revoke blob URL after download (default: true) */
   autoRevoke?: boolean;
-  /** Show file size in button */
   showFileSize?: boolean;
-  /** Tool slug for recent files tracking (optional, uses context if not provided) */
   toolSlug?: string;
-  /** Tool display name for recent files tracking (optional, uses context if not provided) */
   toolName?: string;
 }
 
-/**
- * Format file size for display
- */
 function formatFileSize(bytes: number): string {
   if (bytes === 0) return '0 Bytes';
-  
+
   const k = 1024;
   const sizes = ['Bytes', 'KB', 'MB', 'GB'];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
-  
+
   return `${parseFloat((bytes / Math.pow(k, i)).toFixed(2))} ${sizes[i]}`;
 }
 
-/**
- * DownloadButton Component
- * Requirements: 5.4
- * 
- * Generates download link from Blob with custom filename.
- * Uses blob URLs that are revoked after download for security.
- */
 export const DownloadButton: React.FC<DownloadButtonProps> = ({
   file,
   filename,
@@ -70,35 +55,50 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
   ...buttonProps
 }) => {
   const t = useTranslations('common');
+  const monetizationProfile = useMonetizationProfile();
+  const pathname = usePathname();
   const [blobUrl, setBlobUrl] = useState<string | null>(null);
   const [isDownloading, setIsDownloading] = useState(false);
   const [showMonetizationPanel, setShowMonetizationPanel] = useState(false);
   const [showNativeBanner, setShowNativeBanner] = useState(false);
-  
-  // Get tool info from context if not provided via props
+  const [hardGateCount, setHardGateCount] = useState<number>(0);
+  const [isGateOpen, setIsGateOpen] = useState(false);
+  const [isGateUnlocked, setIsGateUnlocked] = useState(false);
+  const [gateSecondsRemaining, setGateSecondsRemaining] = useState<number>(siteConfig.monetizationRules.hardGateSeconds);
+  const [currentDownloadUsedGate, setCurrentDownloadUsedGate] = useState(false);
+
   const toolContext = useToolContext();
   const toolSlug = propToolSlug || toolContext?.toolSlug;
   const toolName = propToolName || toolContext?.toolName;
+  const localePrefix = useMemo(() => {
+    if (!pathname) {
+      return `/${siteConfig.defaultLocale}`;
+    }
+
+    const segments = pathname.split('/').filter(Boolean);
+    return segments.length > 0 ? `/${segments[0]}` : `/${siteConfig.defaultLocale}`;
+  }, [pathname]);
   const resultPlacement = siteConfig.ads.placements.resultSuccess;
   const isSponsorEligible = variant !== 'ghost' && siteConfig.sponsorship.enabled;
 
-  // Create blob URL when file changes
   useEffect(() => {
     if (file) {
       const url = URL.createObjectURL(file);
       setBlobUrl(url);
-      
-      // Cleanup function to revoke URL when component unmounts or file changes
       return () => {
         URL.revokeObjectURL(url);
       };
-    } else {
-      setBlobUrl(null);
     }
+
+    setBlobUrl(null);
   }, [file]);
 
   useEffect(() => {
-    if (!showMonetizationPanel || !resultPlacement.nativeBanner) {
+    setHardGateCount(getSessionCount(siteConfig.monetizationRules.hardGateSessionStorageKey));
+  }, []);
+
+  useEffect(() => {
+    if (!showMonetizationPanel || !resultPlacement.nativeBanner || currentDownloadUsedGate) {
       setShowNativeBanner(false);
       return;
     }
@@ -110,45 +110,93 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
     return () => {
       window.clearTimeout(revealTimeout);
     };
-  }, [showMonetizationPanel, resultPlacement.nativeBanner]);
+  }, [showMonetizationPanel, resultPlacement.nativeBanner, currentDownloadUsedGate]);
 
-  /**
-   * Handle download click
-   */
-  const handleDownload = useCallback(() => {
-    if (!file || !blobUrl || isDownloading) return;
+  useEffect(() => {
+    if (!isGateOpen || isGateUnlocked) {
+      return;
+    }
+
+    if (gateSecondsRemaining <= 0) {
+      setIsGateUnlocked(true);
+      trackMonetizationEvent({
+        event: 'gate_timer_complete',
+        placement: 'result-gate',
+        provider: 'adsterra',
+        tool: toolSlug,
+        country: monetizationProfile.country,
+      });
+      trackMonetizationEvent({
+        event: 'download_unlocked',
+        placement: 'result-gate',
+        unlockReason: 'timer',
+        tool: toolSlug,
+        country: monetizationProfile.country,
+      });
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      setGateSecondsRemaining((current) => current - 1);
+    }, 1000);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, [isGateOpen, isGateUnlocked, gateSecondsRemaining, monetizationProfile.country, toolSlug]);
+
+  useEffect(() => {
+    if (file) {
+      setIsGateOpen(false);
+      setIsGateUnlocked(false);
+      setGateSecondsRemaining(siteConfig.monetizationRules.hardGateSeconds);
+      setShowMonetizationPanel(false);
+      setCurrentDownloadUsedGate(false);
+    }
+  }, [file]);
+
+  const shouldUseHardGate = useMemo(() => {
+    if (!isSponsorEligible) {
+      return false;
+    }
+
+    if (!monetizationProfile.allowHardGate) {
+      return false;
+    }
+
+    return hardGateCount < siteConfig.monetizationRules.hardGatePerSessionMax;
+  }, [hardGateCount, isSponsorEligible, monetizationProfile.allowHardGate]);
+
+  const performDownload = useCallback((usedHardGate: boolean) => {
+    if (!file || !blobUrl || isDownloading) {
+      return;
+    }
 
     setIsDownloading(true);
     onDownloadStart?.();
 
-    // Sanitize filename to prevent path traversal
     const safeFilename = sanitizeFilename(filename, 'download.pdf');
-
-    // Create a temporary anchor element
     const link = document.createElement('a');
     link.href = blobUrl;
     link.download = safeFilename;
     link.style.display = 'none';
-    
-    // Append to body, click, and remove
+
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
-    if (isSponsorEligible) {
+    if (monetizationProfile.allowAggressiveUnits) {
       triggerAdsterraSessionScripts({
         popunder: resultPlacement.popunder,
         socialBar: resultPlacement.socialBar,
       });
     }
 
-    // Revoke the blob URL after a short delay to ensure download starts
     if (autoRevoke) {
-      setTimeout(() => {
+      window.setTimeout(() => {
         URL.revokeObjectURL(blobUrl);
         setBlobUrl(null);
-        
-        // Recreate URL for potential re-download
+
         if (file) {
           const newUrl = URL.createObjectURL(file);
           setBlobUrl(newUrl);
@@ -156,26 +204,114 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
       }, 100);
     }
 
-    // Mark download as complete
-    setTimeout(() => {
+    window.setTimeout(() => {
       setIsDownloading(false);
       onDownloadComplete?.();
-      
-      // Record to recent files if tool info is provided
+
       if (toolSlug && file) {
         addRecentFile(filename, file.size, toolSlug, toolName);
       }
 
       if (isSponsorEligible) {
+        setCurrentDownloadUsedGate(usedHardGate);
         setShowMonetizationPanel(true);
       }
     }, 500);
-  }, [file, blobUrl, filename, isDownloading, autoRevoke, onDownloadStart, onDownloadComplete, toolSlug, toolName, isSponsorEligible, resultPlacement.popunder, resultPlacement.socialBar]);
+  }, [
+    autoRevoke,
+    blobUrl,
+    file,
+    filename,
+    isDownloading,
+    isSponsorEligible,
+    monetizationProfile.allowAggressiveUnits,
+    onDownloadComplete,
+    onDownloadStart,
+    resultPlacement.popunder,
+    resultPlacement.socialBar,
+    toolName,
+    toolSlug,
+  ]);
 
-  // Determine if button should be disabled
+  const handlePartnerUnlock = useCallback(() => {
+    if (isGateUnlocked) {
+      return;
+    }
+
+    setIsGateUnlocked(true);
+    trackMonetizationEvent({
+      event: 'gate_unlocked_by_partner_click',
+      placement: 'result-gate',
+      provider: siteConfig.ads.providers.partnerRedirect.providerName,
+      tool: toolSlug,
+      country: monetizationProfile.country,
+    });
+    trackMonetizationEvent({
+      event: 'download_unlocked',
+      placement: 'result-gate',
+      unlockReason: 'partner',
+      tool: toolSlug,
+      country: monetizationProfile.country,
+    });
+
+    if (monetizationProfile.allowAggressiveUnits) {
+      triggerAdsterraSessionScripts({
+        popunder: resultPlacement.popunder,
+        socialBar: resultPlacement.socialBar,
+      });
+    }
+  }, [
+    isGateUnlocked,
+    monetizationProfile.allowAggressiveUnits,
+    monetizationProfile.country,
+    resultPlacement.popunder,
+    resultPlacement.socialBar,
+    toolSlug,
+  ]);
+
+  const handleDownload = useCallback(() => {
+    if (!file || !blobUrl || isDownloading) {
+      return;
+    }
+
+    if (shouldUseHardGate) {
+      const nextCount = incrementSessionCount(siteConfig.monetizationRules.hardGateSessionStorageKey);
+      setHardGateCount(nextCount);
+      setCurrentDownloadUsedGate(true);
+      setIsGateOpen(true);
+      setIsGateUnlocked(false);
+      setGateSecondsRemaining(siteConfig.monetizationRules.hardGateSeconds);
+      trackMonetizationEvent({
+        event: 'gate_shown',
+        placement: 'result-gate',
+        provider: 'adsterra',
+        tool: toolSlug,
+        country: monetizationProfile.country,
+      });
+      return;
+    }
+
+    performDownload(false);
+  }, [blobUrl, file, isDownloading, monetizationProfile.country, performDownload, shouldUseHardGate, toolSlug]);
+
+  const gateReady = isGateUnlocked || gateSecondsRemaining <= 0;
+
+  const closeGate = useCallback(() => {
+    if (!gateReady) {
+      return;
+    }
+
+    setIsGateOpen(false);
+    trackMonetizationEvent({
+      event: 'gate_abandon',
+      placement: 'result-gate',
+      tool: toolSlug,
+      country: monetizationProfile.country,
+    });
+  }, [gateReady, monetizationProfile.country, toolSlug]);
+
+  const unlockCtaLabel = gateReady ? 'Download now' : `Download unlocks in ${gateSecondsRemaining}s`;
   const isDisabled = disabled || !file || !blobUrl;
-
-  // Build button text
   const buttonText = label || t('buttons.download');
   const fileSizeText = showFileSize && file ? ` (${formatFileSize(file.size)})` : '';
 
@@ -214,16 +350,108 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
         </span>
       </Button>
 
+      {isGateOpen && (
+        <div className="fixed inset-0 z-[90] flex items-end justify-center bg-[hsl(var(--color-background))/0.78] p-4 backdrop-blur-md sm:items-center">
+          <div
+            className="w-full max-w-2xl overflow-hidden rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-6 shadow-[var(--shadow-lg)]"
+            data-testid="download-gate-overlay"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div className="space-y-2">
+                <div className="inline-flex rounded-full bg-[hsl(var(--color-accent-soft))] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-accent-strong))]">
+                  {siteConfig.sponsorship.label}
+                </div>
+                <h3 className="text-2xl font-semibold text-[hsl(var(--color-foreground))]">
+                  Your file is ready
+                </h3>
+                <p className="text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                  Download unlocks in {gateSecondsRemaining} seconds. OpenToolsKit stays free thanks to advertising and partner offers.
+                </p>
+                <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
+                  Ads and partner links are delivered by third-party networks. We do not individually control or endorse every creative or landing page.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={closeGate}
+                disabled={!gateReady}
+                className="rounded-full border border-[hsl(var(--color-border))] p-2 text-[hsl(var(--color-muted-foreground))] transition-colors hover:text-[hsl(var(--color-foreground))] disabled:cursor-not-allowed disabled:opacity-50"
+                aria-label="Dismiss sponsor gate"
+              >
+                <X className="h-4 w-4" aria-hidden="true" />
+              </button>
+            </div>
+
+            <div className="mt-6 grid gap-4 lg:grid-cols-[0.38fr_0.62fr]">
+              <div className="rounded-[1.75rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))] p-5">
+                <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-full border-4 border-[hsl(var(--color-border))]">
+                  <div className="text-center">
+                    <p className="text-3xl font-bold text-[hsl(var(--color-foreground))]">{gateSecondsRemaining}</p>
+                    <p className="text-xs uppercase tracking-[0.18em] text-[hsl(var(--color-muted-foreground))]">Seconds</p>
+                  </div>
+                </div>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  disabled={!gateReady}
+                  onClick={() => {
+                    setIsGateOpen(false);
+                    performDownload(true);
+                  }}
+                  className="mt-5 w-full justify-center rounded-full"
+                >
+                  {unlockCtaLabel}
+                </Button>
+              </div>
+
+              <div className="space-y-4">
+                {resultPlacement.nativeBanner ? (
+                  <AdsterraNativeBanner
+                    slotName="result-gate"
+                    title="Sponsored result unlock"
+                    description="This native placement appears during the result gate and helps keep OpenToolsKit free."
+                  />
+                ) : null}
+                <PostResultSponsorCard
+                  placementId={siteConfig.ads.providers.partnerRedirect.placementId}
+                  title="Open a partner offer to unlock immediately"
+                  description="The offer opens in a new tab. Sponsor clicks unlock the download instantly while keeping your current page intact."
+                  ctaLabel="Open partner site"
+                  onSponsorClick={handlePartnerUnlock}
+                />
+                <div className="flex flex-wrap gap-3 text-sm">
+                  <a
+                    href={siteConfig.links.source}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="text-[hsl(var(--color-primary))] transition-colors hover:text-[hsl(var(--color-accent-strong))]"
+                  >
+                    Source Code
+                  </a>
+                  <a
+                    href={`${localePrefix}/privacy`}
+                    className="text-[hsl(var(--color-primary))] transition-colors hover:text-[hsl(var(--color-accent-strong))]"
+                  >
+                    Privacy
+                  </a>
+                  <a
+                    href={`${localePrefix}/contact`}
+                    className="text-[hsl(var(--color-primary))] transition-colors hover:text-[hsl(var(--color-accent-strong))]"
+                  >
+                    Support
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {showMonetizationPanel && (
         <div
           className="fixed bottom-4 right-4 z-[80] w-[min(32rem,calc(100vw-2rem))] overflow-hidden rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-4 shadow-[var(--shadow-lg)]"
           data-testid="download-monetization-panel"
         >
-          <AdsterraSessionScripts
-            popunder={resultPlacement.popunder}
-            socialBar={resultPlacement.socialBar}
-          />
-
           <div className="flex items-start justify-between gap-3">
             <div className="space-y-2">
               <div className="inline-flex rounded-full bg-[hsl(var(--color-accent-soft))] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-accent-strong))]">
@@ -231,7 +459,7 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
               </div>
               <div className="space-y-1">
                 <p className="text-sm font-semibold text-[hsl(var(--color-foreground))]">
-                  Download started. Sponsored placements are now available.
+                  Download started. Sponsored placements remain available below.
                 </p>
                 <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
                   {siteConfig.ads.disclosureSummary} {siteConfig.ads.actionDisclosure}
@@ -250,17 +478,18 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
 
           <div className="mt-4 space-y-4">
             <PostResultSponsorCard
-              placementId={siteConfig.ads.providers.zeydoo.placementId}
-              title="Open a partner offer in a new tab"
-              description="This partner suggestion opens separately and does not interrupt your current download."
+              placementId={siteConfig.ads.providers.partnerRedirect.placementId}
+              title="Useful next step for your document workflow"
+              description="This partner suggestion opens separately and helps fund the project without interrupting the result you already unlocked."
               ctaLabel="Open partner site"
             />
 
-            {resultPlacement.nativeBanner && (
+            {resultPlacement.nativeBanner && !currentDownloadUsedGate && (
               showNativeBanner ? (
                 <AdsterraNativeBanner
+                  slotName="result-drawer"
                   title="Sponsored results placement"
-                  description="This native placement appears after successful downloads. Ads help fund the project while keeping the file flow immediate."
+                  description="This native placement appears after successful downloads. Ads help fund the project while keeping the file flow intact."
                 />
               ) : (
                 <div className="rounded-[1.75rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))] p-4 text-sm text-[hsl(var(--color-muted-foreground))]">

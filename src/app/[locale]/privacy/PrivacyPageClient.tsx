@@ -7,8 +7,10 @@ import { Footer } from '@/components/layout/Footer';
 import { Card } from '@/components/ui/Card';
 import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
 import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
+import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { type Locale } from '@/lib/i18n/config';
 import { siteConfig } from '@/config/site';
+import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 
 interface PrivacyPageClientProps {
   locale: Locale;
@@ -16,6 +18,7 @@ interface PrivacyPageClientProps {
 
 export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
   const t = useTranslations();
+  const monetizationProfile = useMonetizationProfile();
 
   const privacyHighlights = [
     {
@@ -36,7 +39,7 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
     {
       icon: Eye,
       title: 'Clear Boundaries',
-      description: 'Ads and partner offers are labeled and optional. They do not unlock or delay your core result.',
+      description: 'Ads and partner offers are labeled and controlled by frequency, geo, and disclosure rules that stay separate from file processing.',
     },
   ];
 
@@ -46,8 +49,8 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
 
       <main className="flex-1">
         <AdsterraSessionScripts
-          popunder={siteConfig.ads.placements.infoPages.popunder}
-          socialBar={siteConfig.ads.placements.infoPages.socialBar}
+          popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.popunder}
+          socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.socialBar}
         />
 
         <section className="bg-gradient-to-br from-[hsl(var(--color-primary)/0.1)] via-[hsl(var(--color-background))] to-[hsl(var(--color-secondary)/0.1)] py-16">
@@ -144,7 +147,7 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
                 successful result. These surfaces help fund the open-source service.
               </p>
               <ul className="list-disc pl-6 space-y-2 text-[hsl(var(--color-muted-foreground))] mb-4">
-                <li>We do not use ads to gate downloads or add forced countdowns</li>
+                <li>Some eligible downloads may show a clearly labeled timed sponsor gate before the file unlocks</li>
                 <li>Partner links are labeled and open away from the current tool flow</li>
                 <li>Third-party networks may deliver creatives, links, and landing pages</li>
               </ul>
@@ -174,7 +177,20 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
         <section className="py-4">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-5xl">
-              <AdsterraNativeBanner description="This privacy page may carry a labeled native ad placement on behalf of a third-party network. It does not affect file processing or downloads." />
+              {monetizationProfile.allowNativeUnits && (
+                <AdsterraNativeBanner
+                  slotName="privacy-native"
+                  description="This privacy page may carry a labeled native ad placement on behalf of a third-party network. It does not affect file processing or downloads."
+                />
+              )}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-6">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-5xl">
+              <MonetizationDisclosureCard locale={locale} />
             </div>
           </div>
         </section>

@@ -1,4 +1,6 @@
 interface Env {
+  PARTNER_REDIRECT_BASE_URL?: string;
+  PARTNER_REDIRECT_SOURCE?: string;
   ZEYDOO_BASE_URL?: string;
   ZEYDOO_SOURCE?: string;
   SPONSOR_FALLBACK_URL?: string;
@@ -27,16 +29,18 @@ function getRouteSegment(route: RouteParam): string {
 export const onRequest = async (context: PagesFunctionContext<Env>) => {
   const requestUrl = new URL(context.request.url);
   const placement = getRouteSegment(context.params.route);
-  const provider = requestUrl.searchParams.get('provider') ?? 'zeydoo';
+  const provider = requestUrl.searchParams.get('provider') ?? 'partner';
   const fallbackUrl = context.env.SPONSOR_FALLBACK_URL ?? 'https://www.opentoolskit.com/en/contact';
+  const partnerBaseUrl = context.env.PARTNER_REDIRECT_BASE_URL ?? context.env.ZEYDOO_BASE_URL;
+  const partnerSource = context.env.PARTNER_REDIRECT_SOURCE ?? context.env.ZEYDOO_SOURCE ?? 'opentoolskit';
 
-  if (provider !== 'zeydoo' || !context.env.ZEYDOO_BASE_URL) {
+  if (provider !== 'partner' || !partnerBaseUrl) {
     return Response.redirect(fallbackUrl, 302);
   }
 
-  const target = new URL(context.env.ZEYDOO_BASE_URL);
+  const target = new URL(partnerBaseUrl);
   const tool = requestUrl.searchParams.get('tool');
-  const source = requestUrl.searchParams.get('source') ?? context.env.ZEYDOO_SOURCE ?? 'opentoolskit';
+  const source = requestUrl.searchParams.get('source') ?? partnerSource;
 
   target.searchParams.set('placement', placement);
   target.searchParams.set('source', source);

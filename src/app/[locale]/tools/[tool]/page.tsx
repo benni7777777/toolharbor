@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import '@/lib/polyfills/promise-with-resolvers';
-import { getToolById, getAllTools } from '@/config/tools';
+import { getToolBySlug, getAllTools } from '@/config/tools';
 import { getToolContent, type Locale } from '@/config/tool-content';
 import { ToolPage } from '@/components/tools/ToolPage';
 import { MergePDFTool } from '@/components/tools/merge';
@@ -78,6 +78,7 @@ import { MOBIToPDFTool } from '@/components/tools/mobi-to-pdf';
 import { FB2ToPDFTool } from '@/components/tools/fb2-to-pdf';
 import { DJVUToPDFTool } from '@/components/tools/djvu-to-pdf';
 import { PDFToSVGTool } from '@/components/tools/pdf-to-svg';
+import { PDFToMarkdownTool } from '@/components/tools/pdf-to-markdown';
 import { DeskewPDFTool } from '@/components/tools/deskew';
 import { PDFBookletTool } from '@/components/tools/pdf-booklet';
 import { RasterizePDFTool } from '@/components/tools/rasterize';
@@ -102,7 +103,7 @@ import {
 } from '@/lib/seo/structured-data';
 import type { Metadata } from 'next';
 
-  const SUPPORTED_LOCALES: Locale[] = ['en', 'ja', 'ko', 'es', 'fr', 'de', 'zh', 'zh-TW', 'pt', 'ar', 'it', 'vi'];
+const SUPPORTED_LOCALES: Locale[] = ['en', 'ja', 'ko', 'es', 'fr', 'de', 'zh', 'zh-TW', 'pt', 'ar', 'it', 'id', 'vi'];
 
 interface ToolPageParams {
   params: Promise<{
@@ -131,7 +132,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: ToolPageParams): Promise<Metadata> {
   const { locale: localeParam, tool: toolSlug } = await params;
   const locale = localeParam as Locale;
-  const tool = getToolById(toolSlug);
+  const tool = getToolBySlug(toolSlug);
   const t = await getTranslations({ locale, namespace: 'errors' });
 
   if (!tool) {
@@ -152,7 +153,6 @@ export async function generateMetadata({ params }: ToolPageParams): Promise<Meta
     tool,
     content,
     locale,
-    path: `/tools/${toolSlug}`,
   });
 }
 
@@ -170,7 +170,7 @@ export default async function ToolPageRoute({ params }: ToolPageParams) {
   const t = await getTranslations();
 
   // Get tool data
-  const tool = getToolById(toolSlug);
+  const tool = getToolBySlug(toolSlug);
 
   if (!tool) {
     notFound();
@@ -447,4 +447,3 @@ export default async function ToolPageRoute({ params }: ToolPageParams) {
     </>
   );
 }
-import { PDFToMarkdownTool } from '@/components/tools/pdf-to-markdown';

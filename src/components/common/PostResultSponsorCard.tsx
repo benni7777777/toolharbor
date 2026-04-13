@@ -5,6 +5,7 @@ import { ExternalLink } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { siteConfig } from '@/config/site';
 import { useToolContext } from '@/lib/contexts/ToolContext';
+import { trackMonetizationEvent } from '@/lib/monetization/analytics';
 
 interface PostResultSponsorCardProps {
   placementId?: string;
@@ -12,6 +13,7 @@ interface PostResultSponsorCardProps {
   description?: string;
   ctaLabel?: string;
   href?: string;
+  onSponsorClick?: () => void;
 }
 
 export function PostResultSponsorCard({
@@ -20,11 +22,12 @@ export function PostResultSponsorCard({
   description = 'Open a vetted partner offer in a new tab. Your download stays available whether you open it or not.',
   ctaLabel = 'Open partner site',
   href,
+  onSponsorClick,
 }: PostResultSponsorCardProps) {
   const toolContext = useToolContext();
   const linkHref =
     href ??
-    `${siteConfig.sponsorship.redirectPathPrefix}/${placementId}?tool=${toolContext?.toolSlug ?? 'unknown'}&placement=${placementId}&provider=${siteConfig.ads.providers.zeydoo.providerQueryValue}`;
+    `${siteConfig.sponsorship.redirectPathPrefix}/${placementId}?tool=${toolContext?.toolSlug ?? 'unknown'}&placement=${placementId}&provider=${siteConfig.ads.providers.partnerRedirect.providerQueryValue}`;
 
   return (
     <Card className="border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-4 shadow-[var(--shadow-sm)]">
@@ -43,6 +46,15 @@ export function PostResultSponsorCard({
           href={linkHref}
           target="_blank"
           rel="noreferrer noopener sponsored"
+          onClick={() => {
+            trackMonetizationEvent({
+              event: 'partner_click',
+              placement: placementId,
+              provider: siteConfig.ads.providers.partnerRedirect.providerName,
+              tool: toolContext?.toolSlug,
+            });
+            onSponsorClick?.();
+          }}
           className="inline-flex min-w-fit items-center justify-center gap-2 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))] px-4 py-2 text-sm font-medium text-[hsl(var(--color-foreground))] transition-colors hover:border-[hsl(var(--color-accent-strong))] hover:text-[hsl(var(--color-accent-strong))]"
         >
           <span>{ctaLabel}</span>

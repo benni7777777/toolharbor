@@ -20,6 +20,10 @@ export interface ToolGridProps {
   className?: string;
   /** localized tool content */
   localizedToolContent?: Record<string, { title: string; description: string }>;
+  /** Enable monetizable discovery click behavior */
+  enableDiscoveryMonetization?: boolean;
+  /** Whether aggressive monetization is allowed */
+  allowAggressiveUnits?: boolean;
 }
 
 /**
@@ -37,6 +41,8 @@ export function ToolGrid({
   showCategoryHeaders = false,
   className = '',
   localizedToolContent,
+  enableDiscoveryMonetization = false,
+  allowAggressiveUnits = false,
 }: ToolGridProps) {
   const t = useTranslations();
 
@@ -139,6 +145,8 @@ export function ToolGrid({
                     tool={tool}
                     locale={locale}
                     localizedContent={localizedToolContent?.[tool.id]}
+                    enableDiscoveryMonetization={enableDiscoveryMonetization}
+                    allowAggressiveUnits={allowAggressiveUnits}
                   />
                 ))}
               </div>
@@ -161,6 +169,8 @@ export function ToolGrid({
           tool={tool}
           locale={locale}
           localizedContent={localizedToolContent?.[tool.id]}
+          enableDiscoveryMonetization={enableDiscoveryMonetization}
+          allowAggressiveUnits={allowAggressiveUnits}
         />
       ))}
     </div>

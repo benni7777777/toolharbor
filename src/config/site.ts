@@ -64,9 +64,9 @@ export const siteConfig = {
     enabled: true,
     disclosureLabel: 'Sponsored',
     disclosureSummary:
-      'Ads and partner offers help keep OpenToolsKit open source. Third-party networks supply creatives and landing pages.',
+      'OpenToolsKit stays free thanks to advertising and partner offers. Ads and partner links are delivered by third-party networks.',
     actionDisclosure:
-      'Core tool results stay available without ad or partner interaction.',
+      'We do not individually control or endorse every creative or landing page.',
     providers: {
       adsterra: {
         enabled: true,
@@ -78,19 +78,40 @@ export const siteConfig = {
         popunder: {
           scriptSrc:
             'https://pl29133188.profitablecpmratenetwork.com/61/f4/91/61f491d249763152efe5f91b4bc03b34.js',
-          sessionKey: 'opentoolskit-adsterra-popunder-fired',
+          cooldownStorageKey: 'opentoolskit-adsterra-popunder-last-fired',
         },
         socialBar: {
           scriptSrc:
             'https://pl29133189.profitablecpmratenetwork.com/e9/36/e3/e936e3ac148536d9b73ee692803490a2.js',
-          sessionKey: 'opentoolskit-adsterra-socialbar-fired',
+          cooldownStorageKey: 'opentoolskit-adsterra-socialbar-last-fired',
+        },
+        displayBanners: {
+          leaderboard: {
+            enabled: false,
+            scriptSrc: '',
+            containerId: 'otk-adsterra-leaderboard',
+            label: 'Desktop leaderboard',
+          },
+          rectangle: {
+            enabled: false,
+            scriptSrc: '',
+            containerId: 'otk-adsterra-rectangle',
+            label: 'Desktop rectangle',
+          },
+          mobileSticky: {
+            enabled: false,
+            scriptSrc: '',
+            containerId: 'otk-adsterra-mobile-sticky',
+            label: 'Mobile sticky banner',
+          },
         },
       },
-      zeydoo: {
+      partnerRedirect: {
         enabled: true,
         redirectPathPrefix: '/go',
-        providerQueryValue: 'zeydoo',
+        providerQueryValue: 'partner',
         placementId: 'post-result-primary',
+        providerName: 'partner',
       },
     },
     placements: {
@@ -118,8 +139,21 @@ export const siteConfig = {
         nativeBanner: true,
         popunder: true,
         socialBar: true,
-        partnerProvider: 'zeydoo',
+        partnerProvider: 'partner',
       },
+    },
+  },
+  monetizationRules: {
+    hardGateSeconds: 15,
+    hardGatePerSessionMax: 1,
+    hardGateSessionStorageKey: 'opentoolskit-hard-gate-count',
+    popunderCooldownHours: 12,
+    socialBarCooldownHours: 12,
+    unlockOnPartnerClick: true,
+    closeButtonBehavior: 'after-timer',
+    previewOverrideStorageKey: 'opentoolskit-monetization-preview',
+    geoPolicy: {
+      ukEea: 'native-only-until-consent',
     },
   },
   sponsorship: {
@@ -130,9 +164,9 @@ export const siteConfig = {
     title: 'Partner suggestion',
     eyebrow: 'Supports OpenToolsKit',
     disclosure:
-      'Partner links and ad creatives are served by third-party networks. Core results stay available without sponsor interaction.',
+      'Ads and partner links are delivered by third-party networks. We do not individually control or endorse every creative or landing page.',
     helperText:
-      'Opening a partner link helps fund the project and its AGPL source distribution.',
+      'OpenToolsKit stays free thanks to advertising and partner offers. Source code for the live service is publicly available under AGPL-3.0.',
   },
   cloudflare: {
     pagesBuildCommand: 'npm run build',

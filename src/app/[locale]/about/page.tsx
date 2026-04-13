@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { locales, type Locale } from '@/lib/i18n/config';
-import { generateAboutMetadata } from '@/lib/seo';
+import { generateAboutMetadata, generateBasicWebPageSchema, generateBreadcrumbSchema } from '@/lib/seo';
+import { JsonLd } from '@/components/seo/JsonLd';
 import AboutPageClient from './AboutPageClient';
 
 export function generateStaticParams() {
@@ -33,5 +34,29 @@ export default async function AboutPage({ params }: AboutPageProps) {
   // Enable static rendering
   setRequestLocale(locale);
 
-  return <AboutPageClient locale={locale as Locale} />;
+  const localeValue = locale as Locale;
+
+  return (
+    <>
+      <JsonLd
+        data={generateBasicWebPageSchema({
+          locale: localeValue,
+          path: '/about',
+          name: 'About OpenToolsKit',
+          description: 'About the OpenToolsKit browser-side PDF tool platform.',
+          aboutName: 'OpenToolsKit',
+        })}
+      />
+      <JsonLd
+        data={generateBreadcrumbSchema(
+          [
+            { name: 'Home', path: '' },
+            { name: 'About', path: '/about' },
+          ],
+          localeValue
+        )}
+      />
+      <AboutPageClient locale={localeValue} />
+    </>
+  );
 }

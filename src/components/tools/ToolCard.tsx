@@ -7,6 +7,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { getToolIcon } from '@/config/icons';
 import { FavoriteButton } from '@/components/ui/FavoriteButton';
 import { useSafeTranslations } from '@/lib/i18n/useSafeTranslations';
+import { triggerAdsterraSessionScripts } from '@/components/ads/AdsterraSessionScripts';
 
 export interface ToolCardProps {
   /** Tool data to display */
@@ -17,6 +18,10 @@ export interface ToolCardProps {
   className?: string;
   /** Localized content */
   localizedContent?: { title: string; description: string };
+  /** Trigger popunder fallback from discovery surfaces */
+  enableDiscoveryMonetization?: boolean;
+  /** Whether aggressive monetization is allowed for the current visitor */
+  allowAggressiveUnits?: boolean;
 }
 
 const categoryTranslationKeys: Record<ToolCategory, string> = {
@@ -32,7 +37,14 @@ const categoryTranslationKeys: Record<ToolCategory, string> = {
  * ToolCard component displays a single PDF tool with icon, name, and description.
  * Includes hover effects and links to the tool page.
  */
-export function ToolCard({ tool, locale, className = '', localizedContent }: ToolCardProps) {
+export function ToolCard({
+  tool,
+  locale,
+  className = '',
+  localizedContent,
+  enableDiscoveryMonetization = false,
+  allowAggressiveUnits = false,
+}: ToolCardProps) {
   const t = useSafeTranslations();
   const toolUrl = `/${locale}/tools/${tool.slug}`;
 
@@ -57,6 +69,16 @@ export function ToolCard({ tool, locale, className = '', localizedContent }: Too
   return (
     <Link
       href={toolUrl}
+      onClick={() => {
+        if (!enableDiscoveryMonetization || !allowAggressiveUnits) {
+          return;
+        }
+
+        triggerAdsterraSessionScripts({
+          popunder: true,
+          socialBar: false,
+        });
+      }}
       className={`block focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 rounded-[var(--radius-lg)] group ${className}`}
       data-testid="tool-card"
     >

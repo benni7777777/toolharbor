@@ -6,9 +6,12 @@
  */
 
 import type { Metadata } from 'next';
+import { getCategorySeo, getStaticPageSeo } from '@/config/seo';
 import { siteConfig } from '@/config/site';
-import { type Locale, localeConfig, locales } from '@/lib/i18n/config';
+import { type Locale, locales } from '@/lib/i18n/config';
+import { getToolSeoProfile } from '@/lib/seo/profiles';
 import type { Tool, ToolContent } from '@/types/tool';
+import type { ToolCategory } from '@/types/tool';
 
 /**
  * Base metadata configuration
@@ -84,7 +87,7 @@ export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
   return {
     title: fullTitle,
     description: optimizedDescription,
-    keywords: [...new Set([...keywords, 'PDF', 'PDF tools', 'free', 'online', siteConfig.name])],
+    keywords: [...new Set([...keywords, 'OpenToolsKit', 'browser tools', 'private tools', siteConfig.name])],
     authors: [{ name: siteConfig.creator }],
     creator: siteConfig.creator,
     publisher: siteConfig.name,
@@ -145,24 +148,22 @@ export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
 export function generateToolMetadata(options: ToolMetadataOptions): Metadata {
   const { locale, tool, content } = options;
   const path = `/tools/${tool.slug}`;
+  const seoProfile = getToolSeoProfile(tool, content);
 
-  const familyLabel = tool.toolFamily.toUpperCase();
   const enhancedKeywords = [
+    seoProfile.primaryQuery,
+    ...seoProfile.secondaryQueries,
     ...content.keywords,
-    'free',
-    'online',
-    'no registration',
     'browser-based',
-    'secure',
-    'private',
-    familyLabel,
+    'client-side',
+    'no sign up',
   ];
 
   return generateBaseMetadata({
     locale,
     path,
-    title: content.title,
-    description: content.metaDescription,
+    title: seoProfile.pageTitle,
+    description: seoProfile.metaDescription,
     keywords: enhancedKeywords,
   });
 }
@@ -171,15 +172,14 @@ export function generateToolMetadata(options: ToolMetadataOptions): Metadata {
  * Generate metadata for the homepage
  */
 export function generateHomeMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
-  const defaultTitle = siteConfig.seo.defaultTitle;
-  const defaultDescription = siteConfig.description;
+  const pageSeo = getStaticPageSeo('home');
 
   return generateBaseMetadata({
     locale,
     path: '',
-    title: translations?.title || defaultTitle,
-    description: translations?.description || defaultDescription,
-    keywords: [...siteConfig.seo.keywords],
+    title: locale === 'en' ? pageSeo.title : translations?.title || pageSeo.title,
+    description: locale === 'en' ? pageSeo.description : translations?.description || pageSeo.description,
+    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries, ...siteConfig.seo.keywords],
   });
 }
 
@@ -187,14 +187,13 @@ export function generateHomeMetadata(locale: Locale, translations?: { title: str
  * Generate metadata for the tools listing page
  */
 export function generateToolsListMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
+  const pageSeo = getStaticPageSeo('tools');
   return generateBaseMetadata({
     locale,
     path: '/tools',
-    title: translations?.title || 'All Browser Tools',
-    description:
-      translations?.description ||
-      'Browse the OpenToolsKit launch catalog for browser-based PDF tools, workflow automation, and multilingual utility pages.',
-    keywords: ['OpenToolsKit', 'browser tools', 'PDF tools', 'workflow editor', 'private online tools'],
+    title: locale === 'en' ? pageSeo.title : translations?.title || pageSeo.title,
+    description: locale === 'en' ? pageSeo.description : translations?.description || pageSeo.description,
+    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries],
   });
 }
 
@@ -202,14 +201,13 @@ export function generateToolsListMetadata(locale: Locale, translations?: { title
  * Generate metadata for the about page
  */
 export function generateAboutMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
+  const pageSeo = getStaticPageSeo('about');
   return generateBaseMetadata({
     locale,
     path: '/about',
-    title: translations?.title || 'About',
-    description:
-      translations?.description ||
-      `Learn how ${siteConfig.name} turns private browser utilities into an open-source tool platform for PDFs and beyond.`,
-    keywords: ['about', 'OpenToolsKit', 'privacy', 'browser-based'],
+    title: locale === 'en' ? pageSeo.title : translations?.title || pageSeo.title,
+    description: locale === 'en' ? pageSeo.description : translations?.description || pageSeo.description,
+    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries],
   });
 }
 
@@ -217,12 +215,13 @@ export function generateAboutMetadata(locale: Locale, translations?: { title: st
  * Generate metadata for the FAQ page
  */
 export function generateFaqMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
+  const pageSeo = getStaticPageSeo('faq');
   return generateBaseMetadata({
     locale,
     path: '/faq',
-    title: translations?.title || 'Frequently Asked Questions',
-    description: translations?.description || `Find answers to common questions about ${siteConfig.name}, the workflow editor, browser extension, and source code.`,
-    keywords: ['FAQ', 'help', 'questions', 'OpenToolsKit help'],
+    title: locale === 'en' ? pageSeo.title : translations?.title || pageSeo.title,
+    description: locale === 'en' ? pageSeo.description : translations?.description || pageSeo.description,
+    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries],
   });
 }
 
@@ -230,12 +229,13 @@ export function generateFaqMetadata(locale: Locale, translations?: { title: stri
  * Generate metadata for the privacy page
  */
 export function generatePrivacyMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
+  const pageSeo = getStaticPageSeo('privacy');
   return generateBaseMetadata({
     locale,
     path: '/privacy',
-    title: translations?.title || 'Privacy Policy',
-    description: translations?.description || `${siteConfig.name} privacy policy. Your files never leave your device - all processing happens locally in your browser.`,
-    keywords: ['privacy', 'security', 'data protection', 'local processing'],
+    title: locale === 'en' ? pageSeo.title : translations?.title || pageSeo.title,
+    description: locale === 'en' ? pageSeo.description : translations?.description || pageSeo.description,
+    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries],
   });
 }
 
@@ -243,14 +243,35 @@ export function generatePrivacyMetadata(locale: Locale, translations?: { title: 
  * Generate metadata for the contact page
  */
 export function generateContactMetadata(locale: Locale, translations?: { title: string; description: string }): Metadata {
+  const pageSeo = getStaticPageSeo('contact');
   return generateBaseMetadata({
     locale,
     path: '/contact',
-    title: translations?.title || 'Support & Source',
-    description:
-      translations?.description ||
-      `Browse public support, AGPL attribution, source code, and issue reporting for ${siteConfig.name}.`,
-    keywords: ['support', 'source code', 'AGPL', 'issues', 'OpenToolsKit'],
+    title: locale === 'en' ? pageSeo.title : translations?.title || pageSeo.title,
+    description: locale === 'en' ? pageSeo.description : translations?.description || pageSeo.description,
+    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries],
+  });
+}
+
+export function generateWorkflowMetadata(locale: Locale): Metadata {
+  const pageSeo = getStaticPageSeo('workflow');
+  return generateBaseMetadata({
+    locale,
+    path: '/workflow',
+    title: pageSeo.title,
+    description: pageSeo.description,
+    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries],
+  });
+}
+
+export function generateCategoryMetadata(locale: Locale, category: ToolCategory): Metadata {
+  const categorySeo = getCategorySeo(category);
+  return generateBaseMetadata({
+    locale,
+    path: `/tools/category/${category}`,
+    title: categorySeo.title,
+    description: categorySeo.description,
+    keywords: [categorySeo.primaryQuery, ...categorySeo.secondaryQueries],
   });
 }
 

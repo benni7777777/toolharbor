@@ -5,6 +5,7 @@ import React from 'react';
 import { tools } from '@/config/tools';
 import { locales } from '@/lib/i18n/config';
 import { ToolCard } from '@/components/tools/ToolCard';
+import { getToolSeoProfile } from '@/lib/seo/profiles';
 
 const enabledTools = tools.filter(tool => !tool.disabled);
 
@@ -294,7 +295,7 @@ describe('Tool Page Property Tests', () => {
             );
             
             const title = screen.getByTestId('tool-page-title');
-            expect(title.textContent).toBe(content.title);
+            expect(title.textContent).toBe(getToolSeoProfile(tool, content).h1);
             
             unmount();
             cleanup();

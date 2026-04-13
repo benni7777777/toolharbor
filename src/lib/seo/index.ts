@@ -14,6 +14,8 @@ export {
   generateFaqMetadata,
   generatePrivacyMetadata,
   generateContactMetadata,
+  generateWorkflowMetadata,
+  generateCategoryMetadata,
   getCanonicalUrl,
   getAlternateUrls,
   getOpenGraphLocale,
@@ -23,13 +25,18 @@ export {
   type ToolMetadataOptions,
 } from './metadata';
 
+export { getToolSeoProfile, type ToolSeoProfile } from './profiles';
+export { getStaticPageSeo, getCategorySeo } from '@/config/seo';
+
 // Structured data generation
 export {
   generateSoftwareApplicationSchema,
   generateFAQPageSchema,
   generateWebSiteSchema,
   generateOrganizationSchema,
+  generateBasicWebPageSchema,
   generateBreadcrumbSchema,
+  generateItemListSchema,
   generateToolPageStructuredData,
   generateHowToSchema,
   generateWebPageSchema,
@@ -41,6 +48,7 @@ export {
   type WebSiteSchema,
   type OrganizationSchema,
   type BreadcrumbListSchema,
+  type ItemListSchema,
   type HowToSchema,
   type WebPageSchema,
 } from './structured-data';
