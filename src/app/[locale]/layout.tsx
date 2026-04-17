@@ -7,6 +7,7 @@ import { generateHomeMetadata } from '@/lib/seo';
 import { fontVariables } from '@/lib/fonts';
 import { SkipLink } from '@/components/common/SkipLink';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
+import SiteMonetizationRails from '@/components/ads/SiteMonetizationRails';
 import { siteConfig } from '@/config/site';
 import '@/app/globals.css';
 
@@ -76,6 +77,7 @@ export default async function LocaleLayout({
         <div lang={locale} dir={direction} className={`${fontVariables} min-h-screen bg-background text-foreground antialiased font-sans`}>
           <SkipLink targetId="main-content">Skip to main content</SkipLink>
           {children}
+          <SiteMonetizationRails />
         </div>
       </ThemeProvider>
     </NextIntlClientProvider>

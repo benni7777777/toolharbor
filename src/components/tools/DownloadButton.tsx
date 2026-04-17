@@ -573,6 +573,9 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
                   title="Open a partner offer to unlock immediately"
                   description="The offer opens in a new tab. Sponsor clicks unlock the download instantly while keeping your current page intact."
                   ctaLabel="Open partner site"
+                  sourceId={`tool:${toolSlug ?? 'unknown'}:result-gate:contextual-soft:soft-bordered`}
+                  campaign="result-gate-unlock"
+                  placementMeta="download-gate"
                   onSponsorClick={handlePartnerUnlock}
                 />
                 <div className="flex flex-wrap gap-3 text-sm">
@@ -633,12 +636,31 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
           </div>
 
           <div className="mt-4 space-y-4">
-            <PostResultSponsorCard
-              placementId={siteConfig.ads.providers.partnerRedirect.placementId}
-              title="Useful next step for your document workflow"
-              description="This partner suggestion opens separately and helps fund the project without interrupting the result you already unlocked."
-              ctaLabel="Open partner site"
-            />
+            <div className="grid gap-3 md:grid-cols-2">
+              <PostResultSponsorCard
+                placementId={siteConfig.ads.providers.partnerRedirect.placementId}
+                title="Useful next step for your document workflow"
+                description="This partner suggestion opens separately and helps fund the project without interrupting the result you already unlocked."
+                ctaLabel="Open partner site"
+                sourceId={`tool:${toolSlug ?? 'unknown'}:post-result-primary:contextual-soft:soft-bordered`}
+                campaign="post-result-primary"
+                placementMeta="download-panel"
+                compact
+                showHelperText={false}
+              />
+
+              <PostResultSponsorCard
+                placementId="next-step"
+                title="Compare another sponsored route"
+                description="Optional partner path in a new tab. Your completed file remains available here."
+                ctaLabel="View option"
+                sourceId={`tool:${toolSlug ?? 'unknown'}:next-step:contextual-soft:soft-bordered`}
+                campaign="post-result-secondary"
+                placementMeta="download-panel"
+                compact
+                showHelperText={false}
+              />
+            </div>
 
             {resultPlacement.nativeBanner && !currentDownloadUsedGate && (
               showNativeBanner ? (

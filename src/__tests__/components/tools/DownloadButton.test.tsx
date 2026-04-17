@@ -350,12 +350,14 @@ describe('DownloadButton', () => {
         vi.advanceTimersByTime(600);
       });
 
-      const partnerLink = screen.getByRole('link', { name: /open partner site/i });
+      const partnerLink = screen.getAllByRole('link', { name: /open partner site/i })[0];
       const href = partnerLink.getAttribute('href') ?? '';
 
       expect(href).toContain(`${siteConfig.sponsorship.redirectPathPrefix}/${siteConfig.ads.providers.partnerRedirect.placementId}`);
       expect(href).toContain('placement=post-result-primary');
       expect(href).toContain('provider=partner');
+      expect(href).toContain('source=tool%3Aunknown%3Apost-result-primary%3Acontextual-soft%3Asoft-bordered');
+      expect(href).toContain('campaign=post-result-primary');
 
       vi.useRealTimers();
     });
