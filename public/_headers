@@ -11,9 +11,7 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  # SharedArrayBuffer-ready defaults for any future externally hosted worker assets
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
+  # Do not set COOP/COEP globally; COEP blocks third-party ad scripts.
   Cross-Origin-Resource-Policy: cross-origin
 
 # HTML pages - no cache, always revalidate

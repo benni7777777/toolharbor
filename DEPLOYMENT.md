@@ -2,6 +2,12 @@
 
 This project is configured for static export, making it deployable to any static hosting provider.
 
+> **Production ad compatibility warning:** OpenToolsKit production must not set global
+> `Cross-Origin-Embedder-Policy` or `Cross-Origin-Opener-Policy` headers while the
+> Adsterra runtime is enabled. COEP blocks the third-party ad scripts. Keep the
+> Cloudflare response-header transform that removes COEP active unless an
+> ad-compatible isolation plan is implemented.
+
 ## 📦 Build Output
 
 When you run `npm run build`, Next.js generates a static site in the `out/` directory containing:
@@ -46,7 +52,7 @@ vercel --prod
 
 Configuration is already set in `vercel.json` with:
 - Security headers (X-Content-Type-Options, X-Frame-Options, etc.)
-- Cross-Origin isolation headers (COOP/COEP/CORP) for SharedArrayBuffer support
+- Ad-compatible headers that avoid global COOP/COEP while Adsterra is enabled
 - Cache headers for static assets
 - WASM MIME type configuration
 
@@ -163,9 +169,8 @@ server {
     add_header X-XSS-Protection "1; mode=block" always;
     add_header Referrer-Policy "strict-origin-when-cross-origin" always;
     add_header Permissions-Policy "camera=(), microphone=(), geolocation=()" always;
-    # Required for SharedArrayBuffer (LibreOffice WASM pthreads)
-    add_header Cross-Origin-Opener-Policy "same-origin" always;
-    add_header Cross-Origin-Embedder-Policy "require-corp" always;
+    # Do not set global COOP/COEP while Adsterra is enabled.
+    # Route-specific isolation is required if LibreOffice WASM is re-enabled.
     add_header Cross-Origin-Resource-Policy "cross-origin" always;
 
     # IMPORTANT: Nginx's add_header in a location block overrides ALL
@@ -177,8 +182,6 @@ server {
         expires 1y;
         add_header Cache-Control "public, max-age=31536000, immutable";
         add_header X-Content-Type-Options "nosniff" always;
-        add_header Cross-Origin-Opener-Policy "same-origin" always;
-        add_header Cross-Origin-Embedder-Policy "require-corp" always;
         add_header Cross-Origin-Resource-Policy "cross-origin" always;
     }
 
@@ -194,8 +197,6 @@ server {
             application/octet-stream data;
         }
         add_header X-Content-Type-Options "nosniff" always;
-        add_header Cross-Origin-Opener-Policy "same-origin" always;
-        add_header Cross-Origin-Embedder-Policy "require-corp" always;
         add_header Cross-Origin-Resource-Policy "cross-origin" always;
     }
 
@@ -205,8 +206,6 @@ server {
         add_header Cache-Control "public, max-age=0, must-revalidate";
         add_header X-Content-Type-Options "nosniff" always;
         add_header X-Frame-Options "SAMEORIGIN" always;
-        add_header Cross-Origin-Opener-Policy "same-origin" always;
-        add_header Cross-Origin-Embedder-Policy "require-corp" always;
         add_header Cross-Origin-Resource-Policy "cross-origin" always;
     }
 
@@ -252,9 +251,8 @@ Header set X-Frame-Options "SAMEORIGIN"
 Header set X-XSS-Protection "1; mode=block"
 Header set Referrer-Policy "strict-origin-when-cross-origin"
 Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
-# Required for SharedArrayBuffer (LibreOffice WASM pthreads)
-Header set Cross-Origin-Opener-Policy "same-origin"
-Header set Cross-Origin-Embedder-Policy "require-corp"
+# Do not set global COOP/COEP while Adsterra is enabled.
+# Route-specific isolation is required if LibreOffice WASM is re-enabled.
 Header set Cross-Origin-Resource-Policy "cross-origin"
 ```
 
@@ -279,10 +277,7 @@ aws cloudfront create-invalidation --distribution-id YOUR_DIST_ID --paths "/*"
 - Set error document to `404.html`
 
 **CloudFront Response Headers Policy:**
-Create a response headers policy with these custom headers to enable SharedArrayBuffer:
-- `Cross-Origin-Opener-Policy: same-origin`
-- `Cross-Origin-Embedder-Policy: require-corp`
-- `Cross-Origin-Resource-Policy: cross-origin`
+Create a response headers policy with normal security headers and `Cross-Origin-Resource-Policy: cross-origin`. Do not set global `Cross-Origin-Opener-Policy` or `Cross-Origin-Embedder-Policy` while Adsterra is enabled.
 
 Attach this policy to your CloudFront distribution's behavior settings.
 
@@ -343,14 +338,6 @@ Configure `firebase.json`:
           {
             "key": "Permissions-Policy",
             "value": "camera=(), microphone=(), geolocation=()"
-          },
-          {
-            "key": "Cross-Origin-Opener-Policy",
-            "value": "same-origin"
-          },
-          {
-            "key": "Cross-Origin-Embedder-Policy",
-            "value": "require-corp"
           },
           {
             "key": "Cross-Origin-Resource-Policy",
@@ -512,19 +499,17 @@ The converter requests **uncompressed paths** (`soffice.wasm`, `soffice.data`). 
 | **Next.js Dev** | Serves `soffice.wasm` from `public/` with `Content-Type: application/wasm` |
 | **Nginx (Docker)** | `gzip_static on` auto-detects `soffice.wasm.gz` alongside `soffice.wasm`, serves compressed version with `Content-Encoding: gzip` and correct `Content-Type: application/wasm` |
 | **Vercel / Netlify** | Serves the decompressed `soffice.wasm` from `out/`, applies CDN-level compression |
-| **Cloudflare Pages** | Same as Vercel/Netlify, with `_headers` file for COOP/COEP |
+| **Cloudflare Pages** | Same as Vercel/Netlify, with `_headers` kept ad-compatible and no global COOP/COEP |
 | **Apache** | `mod_deflate` compresses on-the-fly, `AddType application/wasm .wasm` sets MIME type |
 
-### Required Headers
+### Header Policy
 
-All platforms must return these headers for LibreOffice WASM to work (required for `SharedArrayBuffer`):
+OpenToolsKit production must keep global COOP/COEP disabled while Adsterra is enabled:
 ```
-Cross-Origin-Opener-Policy: same-origin
-Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Resource-Policy: cross-origin
 ```
 
-These are pre-configured in all deployment files (`vercel.json`, `netlify.toml`, `_headers`, `nginx.conf`, `.htaccess`, `middleware.ts`).
+LibreOffice WASM pthread builds require cross-origin isolation. If those tools are restored later, isolate them with an ad-free route-specific plan instead of setting global COOP/COEP for the whole site.
 
 ---
 
@@ -552,12 +537,14 @@ Content-Type: application/wasm
 3. For Nginx: use `gzip_static on` so Nginx can auto-serve the `.gz` version to gzip-capable clients while keeping the correct MIME type
 
 ### Issue: LibreOffice WASM stuck on `wasm-instantiate` / SharedArrayBuffer not available
-**Solution:** LibreOffice WASM uses Emscripten pthreads (multi-threading), which requires `SharedArrayBuffer`. Browsers only enable `SharedArrayBuffer` in [Cross-Origin Isolated](https://web.dev/cross-origin-isolation-guide/) contexts. Your server **must** return these headers on **all** responses (HTML pages, JS, WASM):
+**Solution:** LibreOffice WASM uses Emscripten pthreads (multi-threading), which requires `SharedArrayBuffer`. Browsers only enable `SharedArrayBuffer` in [Cross-Origin Isolated](https://web.dev/cross-origin-isolation-guide/) contexts. Do not enable these headers globally on OpenToolsKit production while Adsterra is enabled:
 ```
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Resource-Policy: cross-origin
 ```
+
+Use an ad-free route-specific isolation plan if document conversion tools need these headers later.
 
 > ⚠️ **Nginx pitfall:** `add_header` inside a `location` block **completely overrides** all `add_header` directives from the parent `server` block. If you use `add_header Cache-Control ...` in a location block, you must **re-add** all Cross-Origin headers in that same block.
 

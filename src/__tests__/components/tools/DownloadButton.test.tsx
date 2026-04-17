@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, fireEvent, cleanup, act } from '@testing-library/react';
 import { DownloadButton } from '@/components/tools/DownloadButton';
+import { siteConfig } from '@/config/site';
 
 const mockMonetizationProfile = vi.fn();
 
@@ -34,6 +35,8 @@ beforeEach(() => {
   URL.createObjectURL = mockCreateObjectURL;
   URL.revokeObjectURL = mockRevokeObjectURL;
   vi.clearAllMocks();
+  window.localStorage.clear();
+  window.sessionStorage.clear();
   mockMonetizationProfile.mockReturnValue({
     country: 'GB',
     isUkEea: true,
@@ -49,6 +52,7 @@ afterEach(() => {
   URL.createObjectURL = originalCreateObjectURL;
   URL.revokeObjectURL = originalRevokeObjectURL;
   document.querySelectorAll('script[data-otk-adsterra]').forEach(script => script.remove());
+  window.localStorage.clear();
   window.sessionStorage.clear();
   vi.unstubAllEnvs();
   cleanup();
@@ -252,6 +256,81 @@ describe('DownloadButton', () => {
 
       expect(screen.queryByTestId('download-gate-overlay')).not.toBeInTheDocument();
       expect(screen.getByTestId('download-monetization-panel')).toBeInTheDocument();
+
+      vi.useRealTimers();
+    });
+
+    it('fires popunder before any synthetic download link on the trusted click path', () => {
+      mockMonetizationProfile.mockReturnValue({
+        country: 'US',
+        isUkEea: false,
+        isLoading: false,
+        previewMode: 'aggressive',
+        allowNativeUnits: true,
+        allowAggressiveUnits: true,
+        allowHardGate: true,
+      });
+
+      const appendOrder: string[] = [];
+      const originalAppendChild = document.body.appendChild.bind(document.body);
+      const appendSpy = vi.spyOn(document.body, 'appendChild').mockImplementation((node: Node) => {
+        if (node instanceof HTMLScriptElement && node.dataset.otkAdsterra) {
+          appendOrder.push(`script:${node.dataset.otkAdsterra}`);
+        }
+
+        if (node instanceof HTMLAnchorElement && node.download) {
+          appendOrder.push('download-anchor');
+        }
+
+        return originalAppendChild(node) as Node;
+      });
+
+      const mockBlob = createMockBlob('test content');
+      render(
+        <DownloadButton
+          file={mockBlob}
+          filename="test.pdf"
+          variant="secondary"
+          size="lg"
+        />,
+      );
+
+      expect(document.querySelector('script[data-otk-adsterra="popunder"]')).toBeNull();
+
+      fireEvent.click(screen.getByRole('button'));
+
+      expect(appendOrder[0]).toBe('script:popunder');
+      expect(appendOrder.indexOf('script:popunder')).toBeLessThan(appendOrder.indexOf('download-anchor'));
+      expect(document.querySelectorAll('script[data-otk-adsterra="popunder"]')).toHaveLength(1);
+
+      appendSpy.mockRestore();
+    });
+
+    it('uses a partner CTA route that matches the worker allowlist', async () => {
+      vi.useFakeTimers();
+
+      const mockBlob = createMockBlob('test content');
+      render(
+        <DownloadButton
+          file={mockBlob}
+          filename="test.pdf"
+          variant="secondary"
+          size="lg"
+        />,
+      );
+
+      fireEvent.click(screen.getByRole('button'));
+
+      await act(async () => {
+        vi.advanceTimersByTime(600);
+      });
+
+      const partnerLink = screen.getByRole('link', { name: /open partner site/i });
+      const href = partnerLink.getAttribute('href') ?? '';
+
+      expect(href).toContain(`${siteConfig.sponsorship.redirectPathPrefix}/${siteConfig.ads.providers.partnerRedirect.placementId}`);
+      expect(href).toContain('placement=post-result-primary');
+      expect(href).toContain('provider=partner');
 
       vi.useRealTimers();
     });

@@ -10,7 +10,10 @@ import { sanitizeFilename } from '@/lib/utils/sanitize';
 import { siteConfig } from '@/config/site';
 import { LoaderCircle, X } from 'lucide-react';
 import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
-import { triggerAdsterraSessionScripts } from '@/components/ads/AdsterraSessionScripts';
+import {
+  triggerAdsterraPopunder,
+  triggerAdsterraSocialBar,
+} from '@/lib/monetization/adsterra-runtime';
 import PostResultSponsorCard from '@/components/common/PostResultSponsorCard';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 import { getSessionCount, incrementSessionCount } from '@/lib/monetization/storage';
@@ -186,19 +189,32 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
     return hardGateCount < siteConfig.monetizationRules.hardGatePerSessionMax;
   }, [hardGateCount, isSponsorEligible, monetizationProfile.allowHardGate]);
 
-  const triggerResultScripts = useCallback((trustedEvent?: Event, reason = 'result-download-click') => {
+  const triggerResultPopunder = useCallback((trustedEvent?: Event, reason = 'result-download-click') => {
     if (!monetizationProfile.allowAggressiveUnits) {
-      return;
+      return false;
     }
 
-    triggerAdsterraSessionScripts({
-      popunder: resultPlacement.popunder,
-      socialBar: resultPlacement.socialBar,
+    if (!resultPlacement.popunder) {
+      return false;
+    }
+
+    return triggerAdsterraPopunder({
       placement: 'result-success',
       reason,
       trustedEvent,
     });
-  }, [monetizationProfile.allowAggressiveUnits, resultPlacement.popunder, resultPlacement.socialBar]);
+  }, [monetizationProfile.allowAggressiveUnits, resultPlacement.popunder]);
+
+  const triggerResultSocialBar = useCallback((reason = 'result-download-click') => {
+    if (!monetizationProfile.allowAggressiveUnits || !resultPlacement.socialBar) {
+      return false;
+    }
+
+    return triggerAdsterraSocialBar({
+      placement: 'result-success',
+      reason,
+    });
+  }, [monetizationProfile.allowAggressiveUnits, resultPlacement.socialBar]);
 
   const performDownload = useCallback((usedHardGate: boolean) => {
     if (!file || !blobUrl || isDownloading) {
@@ -277,17 +293,22 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
       country: monetizationProfile.country,
     });
 
-    triggerResultScripts(event?.nativeEvent, 'partner-unlock-click');
+    triggerResultSocialBar('partner-unlock-click');
   }, [
     isGateUnlocked,
     monetizationProfile.country,
-    triggerResultScripts,
+    triggerResultSocialBar,
     toolSlug,
   ]);
 
   const handleDownload = useCallback((event?: React.MouseEvent<HTMLButtonElement>) => {
     if (!file || !blobUrl || isDownloading) {
       return;
+    }
+
+    if (!shouldUseHardGate) {
+      // Popunder must stay in the original trusted click stack, before state updates or download helpers.
+      triggerResultPopunder(event?.nativeEvent, 'direct-download-click');
     }
 
     if (shouldUseHardGate) {
@@ -325,7 +346,7 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
       });
     }
 
-    triggerResultScripts(event?.nativeEvent, 'direct-download-click');
+    triggerResultSocialBar('direct-download-click');
     performDownload(false);
   }, [
     blobUrl,
@@ -336,7 +357,8 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
     performDownload,
     shouldUseHardGate,
     toolSlug,
-    triggerResultScripts,
+    triggerResultPopunder,
+    triggerResultSocialBar,
   ]);
 
   const gateReady = isGateUnlocked || gateSecondsRemaining <= 0;
@@ -440,8 +462,10 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
                   size="lg"
                   disabled={!gateReady}
                   onClick={(event) => {
+                    // Keep popunder inside the trusted click before React state and download work.
+                    triggerResultPopunder(event.nativeEvent, 'gate-download-click');
                     setIsGateOpen(false);
-                    triggerResultScripts(event.nativeEvent, 'gate-download-click');
+                    triggerResultSocialBar('gate-download-click');
                     performDownload(true);
                   }}
                   className="mt-5 w-full justify-center rounded-full"

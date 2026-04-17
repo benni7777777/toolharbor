@@ -14,8 +14,10 @@ This repair pass audited the live monetization code paths for Adsterra Native Ba
 | Popunder | The previous session component could be used passively from page load. Popunders need trusted user actions to work reliably and avoid spam behavior. | Popunder now requires a trusted click event. Result/download clicks are the primary trigger, with tool-card discovery clicks as fallback. Cooldown remains one per 12 hours plus once per session. |
 | Social Bar | Social Bar had basic script injection but weak state reporting. | Social Bar now uses the shared runtime, applies `data-cfasync="false"`, records trigger/load/error events, and respects the 12-hour/session cap. |
 | Result flow | The hard gate was profile-driven and could appear before runtime verification was complete. | Hard gate is retained but feature-flagged behind `NEXT_PUBLIC_OTK_HARD_GATE_ENABLED=true`. Default production behavior is the soft post-result drawer. |
+| Popunder timing | A popunder can be blocked when injected after state updates, analytics, synthetic downloads, or async work. | The direct result download click now triggers the popunder as the first monetization side effect in the trusted click stack, before React state updates and before the synthetic download anchor. |
 | Partner redirect | `/go/*` redirected through the worker but did not validate placement names or set explicit no-cache redirect headers. | Added placement allowlisting, preferred `PARTNER_REDIRECT_BASE_URL`, legacy `ZEYDOO_BASE_URL` support, safe fallback, and `302` responses with `Cache-Control: no-cache, no-store, max-age=0`. |
 | Observability | There was no durable debug object for checking runtime events in production. | Added `window.__OTK_MONETIZATION_DEBUG__`, `getMonetizationDebugSnapshot()`, and debug console output in development or with `?otk_monetization_debug=1`. |
+| Cross-origin isolation | `Cross-Origin-Embedder-Policy` blocks Adsterra scripts with `NotSameOriginAfterDefaultedToSameOriginByCoep`. | Active header emitters must not set global COOP/COEP while Adsterra is enabled. Keep the Cloudflare transform rule that strips COEP until repo and production headers are verified ad-compatible. |
 
 ## Runtime model
 
@@ -43,3 +45,6 @@ The 15-second hard gate is implemented but disabled by default. Enable only afte
 
 `NEXT_PUBLIC_OTK_HARD_GATE_ENABLED=true`
 
+## COEP status
+
+Do not set `Cross-Origin-Embedder-Policy` globally on OpenToolsKit production while Adsterra is enabled. If a conversion tool needs cross-origin isolation later, isolate that tool behind an ad-free route-specific exception instead of restoring global COEP.

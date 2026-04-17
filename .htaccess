@@ -86,9 +86,7 @@ AddType application/vnd.ms-fontobject .eot
     Header always set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
-    # Required for SharedArrayBuffer (LibreOffice WASM)
-    Header always set Cross-Origin-Opener-Policy "same-origin"
-    Header always set Cross-Origin-Embedder-Policy "require-corp"
+    # Do not set COOP/COEP globally; COEP blocks third-party ad scripts.
     Header always set Cross-Origin-Resource-Policy "cross-origin"
 
     # --- Cache-Control ---

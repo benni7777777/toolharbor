@@ -9,6 +9,7 @@ Date: 2026-04-17
 - `PARTNER_REDIRECT_BASE_URL` set as a Cloudflare secret.
 - `ZEYDOO_BASE_URL` may remain for one-release backward compatibility only.
 - Do not commit Adsterra API keys, partner destination URLs, dashboard links, or personal identifiers.
+- Do not set `Cross-Origin-Embedder-Policy` globally while Adsterra is enabled.
 
 ## Cloudflare checks
 
@@ -17,6 +18,7 @@ Date: 2026-04-17
 - `/api/monetization/context` returns Cloudflare country and UK/EEA status.
 - `/go/post-result-primary` returns a 302 redirect with `Cache-Control: no-cache, no-store, max-age=0`.
 - Rocket Loader must not rewrite monetization scripts; runtime scripts use `data-cfasync="false"`.
+- Production responses must not include global `Cross-Origin-Embedder-Policy`; keep the Cloudflare response-header transform that removes it until verified absent.
 
 ## Post-deploy runtime checks
 
@@ -32,6 +34,7 @@ Verify:
 - `native_banner_rendered` appears if Adsterra fills the placement.
 - If no creative appears, `native_banner_failed` or runtime no-fill state is visible.
 - Popunder only fires after a real click and only once per 12 hours/session.
+- Popunder script insertion happens before the synthetic download anchor on result/download clicks.
 - Social Bar only fires once per 12 hours/session on allowed surfaces.
 - Result/download flow shows the soft drawer by default.
 - Hard gate does not appear unless `NEXT_PUBLIC_OTK_HARD_GATE_ENABLED=true`.
@@ -47,4 +50,3 @@ Only enable `NEXT_PUBLIC_OTK_HARD_GATE_ENABLED=true` after all of these are veri
 - Social Bar obeys cooldown.
 - Partner redirect works with the Cloudflare secret.
 - Blocked ad scripts do not break download flow.
-
