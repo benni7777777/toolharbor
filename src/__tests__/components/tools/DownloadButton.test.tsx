@@ -37,6 +37,8 @@ beforeEach(() => {
   vi.clearAllMocks();
   window.localStorage.clear();
   window.sessionStorage.clear();
+  delete window.__OTK_MONETIZATION_DEBUG__;
+  window.dataLayer = [];
   mockMonetizationProfile.mockReturnValue({
     country: 'GB',
     isUkEea: true,
@@ -304,6 +306,29 @@ describe('DownloadButton', () => {
       expect(document.querySelectorAll('script[data-otk-adsterra="popunder"]')).toHaveLength(1);
 
       appendSpy.mockRestore();
+    });
+
+    it('logs why popunder is skipped when UK/EEA policy keeps aggressive units off', () => {
+      const mockBlob = createMockBlob('test content');
+      render(
+        <DownloadButton
+          file={mockBlob}
+          filename="test.pdf"
+          variant="secondary"
+          size="lg"
+        />,
+      );
+
+      fireEvent.click(screen.getByRole('button'));
+
+      const blockedEvents = window.__OTK_MONETIZATION_DEBUG__?.events.filter(
+        event => event.monetizationEvent === 'monetization_blocked_reason'
+          && event.reason === 'uk-eea-native-only'
+          && (event.metadata as { unit?: string } | undefined)?.unit === 'popunder',
+      );
+
+      expect(blockedEvents).toHaveLength(1);
+      expect(document.querySelector('script[data-otk-adsterra="popunder"]')).toBeNull();
     });
 
     it('uses a partner CTA route that matches the worker allowlist', async () => {

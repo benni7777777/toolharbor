@@ -191,10 +191,43 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
 
   const triggerResultPopunder = useCallback((trustedEvent?: Event, reason = 'result-download-click') => {
     if (!monetizationProfile.allowAggressiveUnits) {
+      trackMonetizationEvent({
+        event: 'monetization_blocked_reason',
+        placement: 'result-success',
+        provider: 'adsterra',
+        tool: toolSlug,
+        country: monetizationProfile.country,
+        allowedAggressiveUnits: false,
+        reason: monetizationProfile.previewMode === 'off'
+          ? 'preview-off'
+          : monetizationProfile.isUkEea
+            ? 'uk-eea-native-only'
+            : 'aggressive-units-disabled',
+        metadata: {
+          unit: 'popunder',
+          sourceReason: reason,
+          previewMode: monetizationProfile.previewMode,
+          isLoading: monetizationProfile.isLoading,
+          isUkEea: monetizationProfile.isUkEea,
+        },
+      });
       return false;
     }
 
     if (!resultPlacement.popunder) {
+      trackMonetizationEvent({
+        event: 'monetization_blocked_reason',
+        placement: 'result-success',
+        provider: 'adsterra',
+        tool: toolSlug,
+        country: monetizationProfile.country,
+        allowedAggressiveUnits: monetizationProfile.allowAggressiveUnits,
+        reason: 'placement-disabled',
+        metadata: {
+          unit: 'popunder',
+          sourceReason: reason,
+        },
+      });
       return false;
     }
 
@@ -203,10 +236,55 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
       reason,
       trustedEvent,
     });
-  }, [monetizationProfile.allowAggressiveUnits, resultPlacement.popunder]);
+  }, [
+    monetizationProfile.allowAggressiveUnits,
+    monetizationProfile.country,
+    monetizationProfile.isLoading,
+    monetizationProfile.isUkEea,
+    monetizationProfile.previewMode,
+    resultPlacement.popunder,
+    toolSlug,
+  ]);
 
   const triggerResultSocialBar = useCallback((reason = 'result-download-click') => {
-    if (!monetizationProfile.allowAggressiveUnits || !resultPlacement.socialBar) {
+    if (!monetizationProfile.allowAggressiveUnits) {
+      trackMonetizationEvent({
+        event: 'monetization_blocked_reason',
+        placement: 'result-success',
+        provider: 'adsterra',
+        tool: toolSlug,
+        country: monetizationProfile.country,
+        allowedAggressiveUnits: false,
+        reason: monetizationProfile.previewMode === 'off'
+          ? 'preview-off'
+          : monetizationProfile.isUkEea
+            ? 'uk-eea-native-only'
+            : 'aggressive-units-disabled',
+        metadata: {
+          unit: 'socialbar',
+          sourceReason: reason,
+          previewMode: monetizationProfile.previewMode,
+          isLoading: monetizationProfile.isLoading,
+          isUkEea: monetizationProfile.isUkEea,
+        },
+      });
+      return false;
+    }
+
+    if (!resultPlacement.socialBar) {
+      trackMonetizationEvent({
+        event: 'monetization_blocked_reason',
+        placement: 'result-success',
+        provider: 'adsterra',
+        tool: toolSlug,
+        country: monetizationProfile.country,
+        allowedAggressiveUnits: monetizationProfile.allowAggressiveUnits,
+        reason: 'placement-disabled',
+        metadata: {
+          unit: 'socialbar',
+          sourceReason: reason,
+        },
+      });
       return false;
     }
 
@@ -214,7 +292,15 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
       placement: 'result-success',
       reason,
     });
-  }, [monetizationProfile.allowAggressiveUnits, resultPlacement.socialBar]);
+  }, [
+    monetizationProfile.allowAggressiveUnits,
+    monetizationProfile.country,
+    monetizationProfile.isLoading,
+    monetizationProfile.isUkEea,
+    monetizationProfile.previewMode,
+    resultPlacement.socialBar,
+    toolSlug,
+  ]);
 
   const performDownload = useCallback((usedHardGate: boolean) => {
     if (!file || !blobUrl || isDownloading) {
