@@ -69,7 +69,7 @@ export function ToolCard({
   return (
     <Link
       href={toolUrl}
-      onClick={() => {
+      onClick={(event) => {
         if (!enableDiscoveryMonetization || !allowAggressiveUnits) {
           return;
         }
@@ -77,6 +77,9 @@ export function ToolCard({
         triggerAdsterraSessionScripts({
           popunder: true,
           socialBar: false,
+          placement: 'discovery-tool-card',
+          reason: 'tool-card-click',
+          trustedEvent: event.nativeEvent,
         });
       }}
       className={`block focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 rounded-[var(--radius-lg)] group ${className}`}

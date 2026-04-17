@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { siteConfig } from '@/config/site';
 import type { MonetizationContext, MonetizationPreviewMode, MonetizationProfile } from '@/types/monetization';
 import { getLocalStorageItem, setLocalStorageItem } from '@/lib/monetization/storage';
+import { isHardGateFeatureEnabled } from '@/lib/monetization/feature-flags';
 
 const DEFAULT_CONTEXT: MonetizationContext = {
   country: 'unknown',
@@ -90,7 +91,10 @@ export function useMonetizationProfile(): MonetizationProfile {
   const allowAggressiveUnits =
     previewMode === 'aggressive' ||
     (previewMode === 'auto' && !context.isUkEea && !isLoading);
-  const allowHardGate = allowAggressiveUnits && siteConfig.monetizationRules.hardGateSeconds > 0;
+  const allowHardGate =
+    isHardGateFeatureEnabled() &&
+    allowAggressiveUnits &&
+    siteConfig.monetizationRules.hardGateSeconds > 0;
 
   return {
     ...context,

@@ -1,61 +1,59 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { siteConfig } from '@/config/site';
-import { trackMonetizationEvent } from '@/lib/monetization/analytics';
+import { mountAdsterraNative } from '@/lib/monetization/adsterra-runtime';
+import type { AdRuntimeStatus } from '@/types/monetization';
 
 interface AdsterraNativeBannerProps {
   className?: string;
   title?: string;
   description?: string;
   slotName?: string;
+  priority?: number;
 }
+
+const PRIORITY_BY_SLOT: Record<string, number> = {
+  'result-gate': 100,
+  'result-drawer': 95,
+  'tool-page-native': 70,
+  'tools-index-native': 60,
+  'category-native': 55,
+  'homepage-native': 40,
+  'info-native': 25,
+};
 
 export function AdsterraNativeBanner({
   className = '',
   title = 'Partner suggestion',
   description = 'Ads and partner offers help keep OpenToolsKit open source.',
   slotName = 'native-banner',
+  priority,
 }: AdsterraNativeBannerProps) {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const { nativeBanner } = siteConfig.ads.providers.adsterra;
+  const hostRef = useRef<HTMLDivElement>(null);
+  const [status, setStatus] = useState<AdRuntimeStatus>('idle');
+  const resolvedPriority = useMemo(
+    () => priority ?? PRIORITY_BY_SLOT[slotName] ?? 10,
+    [priority, slotName],
+  );
 
   useEffect(() => {
     if (!siteConfig.ads.enabled || !siteConfig.ads.providers.adsterra.enabled) {
       return;
     }
 
-    const wrapper = wrapperRef.current;
-    const container = document.getElementById(nativeBanner.containerId);
-
-    if (!wrapper || !container) {
+    const host = hostRef.current;
+    if (!host) {
       return;
     }
 
-    if (container.dataset.otkAdMounted === 'true') {
-      return;
-    }
-
-    const existingScript = document.querySelector<HTMLScriptElement>(
-      `script[data-otk-adsterra="native-banner"][src="${nativeBanner.scriptSrc}"]`,
-    );
-
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.async = true;
-      script.setAttribute('data-cfasync', 'false');
-      script.dataset.otkAdsterra = 'native-banner';
-      script.src = nativeBanner.scriptSrc;
-      wrapper.prepend(script);
-    }
-
-    container.dataset.otkAdMounted = 'true';
-    trackMonetizationEvent({
-      event: 'native_impression',
+    return mountAdsterraNative({
       placement: slotName,
-      provider: 'adsterra',
+      priority: resolvedPriority,
+      host,
+      onStatusChange: setStatus,
     });
-  }, [nativeBanner.containerId, nativeBanner.scriptSrc, slotName]);
+  }, [resolvedPriority, slotName]);
 
   if (!siteConfig.ads.enabled || !siteConfig.ads.providers.adsterra.enabled) {
     return null;
@@ -75,8 +73,19 @@ export function AdsterraNativeBanner({
       <p className="mb-4 max-w-3xl text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
         {description} {siteConfig.ads.actionDisclosure}
       </p>
-      <div ref={wrapperRef}>
-        <div id={nativeBanner.containerId} />
+      <div
+        ref={hostRef}
+        className={status === 'blocked' || status === 'failed' ? 'hidden' : 'min-h-[120px]'}
+        data-testid="adsterra-native-host"
+        data-otk-ad-status={status}
+        data-otk-ad-placement={slotName}
+      >
+        {status === 'blocked' ? null : (
+          <div className="text-xs text-[hsl(var(--color-muted-foreground))]">
+            {status === 'idle' || status === 'mounting' ? 'Loading sponsored placement...' : null}
+            {status === 'no-fill-timeout' || status === 'failed' ? 'Sponsored placement unavailable.' : null}
+          </div>
+        )}
       </div>
     </section>
   );

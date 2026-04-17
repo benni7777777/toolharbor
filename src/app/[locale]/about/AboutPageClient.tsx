@@ -66,6 +66,8 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
         <AdsterraSessionScripts
           popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.popunder}
           socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.socialBar}
+          placement="about-page"
+          reason="info-page-load"
         />
 
         {/* Hero Section */}
@@ -109,7 +111,7 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
             <div className="mx-auto max-w-5xl">
               {monetizationProfile.allowNativeUnits && (
                 <AdsterraNativeBanner
-                  slotName="about-native"
+                  slotName="info-native"
                   description="OpenToolsKit may show a native placement on informational pages. The ad inventory is supplied by third-party networks and never blocks the product itself."
                 />
               )}

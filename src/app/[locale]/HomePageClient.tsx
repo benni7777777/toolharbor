@@ -97,6 +97,8 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
         <AdsterraSessionScripts
           popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.homepage.popunder}
           socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.homepage.socialBar}
+          placement="homepage"
+          reason="homepage-load"
         />
 
         {/* Hero Section */}

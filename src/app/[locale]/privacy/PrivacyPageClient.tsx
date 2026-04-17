@@ -51,6 +51,8 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
         <AdsterraSessionScripts
           popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.popunder}
           socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.socialBar}
+          placement="privacy-page"
+          reason="info-page-load"
         />
 
         <section className="bg-gradient-to-br from-[hsl(var(--color-primary)/0.1)] via-[hsl(var(--color-background))] to-[hsl(var(--color-secondary)/0.1)] py-16">
@@ -179,7 +181,7 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
             <div className="mx-auto max-w-5xl">
               {monetizationProfile.allowNativeUnits && (
                 <AdsterraNativeBanner
-                  slotName="privacy-native"
+                  slotName="info-native"
                   description="This privacy page may carry a labeled native ad placement on behalf of a third-party network. It does not affect file processing or downloads."
                 />
               )}

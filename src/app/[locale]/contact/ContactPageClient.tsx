@@ -54,6 +54,8 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
         <AdsterraSessionScripts
           popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.popunder}
           socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.socialBar}
+          placement="support-page"
+          reason="info-page-load"
         />
 
         <section className="bg-[hsl(var(--color-muted)/0.3)] py-16">
@@ -109,7 +111,7 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
             <div className="mx-auto max-w-5xl">
               {monetizationProfile.allowNativeUnits && (
                 <AdsterraNativeBanner
-                  slotName="contact-native"
+                  slotName="info-native"
                   description="This support page may show a third-party native placement. Core tools and downloads remain unaffected."
                 />
               )}

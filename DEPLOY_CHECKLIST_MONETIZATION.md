@@ -1,0 +1,50 @@
+# OpenToolsKit Monetization Deploy Checklist
+
+Date: 2026-04-17
+
+## Build configuration
+
+- `NEXT_PUBLIC_OTK_HARD_GATE_ENABLED=false` until live ad runtime verification is complete.
+- `PARTNER_REDIRECT_SOURCE=opentoolskit`.
+- `PARTNER_REDIRECT_BASE_URL` set as a Cloudflare secret.
+- `ZEYDOO_BASE_URL` may remain for one-release backward compatibility only.
+- Do not commit Adsterra API keys, partner destination URLs, dashboard links, or personal identifiers.
+
+## Cloudflare checks
+
+- Pages output directory remains `out`.
+- Functions directory is uploaded.
+- `/api/monetization/context` returns Cloudflare country and UK/EEA status.
+- `/go/post-result-primary` returns a 302 redirect with `Cache-Control: no-cache, no-store, max-age=0`.
+- Rocket Loader must not rewrite monetization scripts; runtime scripts use `data-cfasync="false"`.
+
+## Post-deploy runtime checks
+
+Open:
+
+`https://www.opentoolskit.com/?otk_monetization_debug=1&otk_monetization_preview=aggressive`
+
+Verify:
+
+- One native banner script exists per page.
+- One native container ID exists per page.
+- `native_banner_mount_attempted` appears in debug events.
+- `native_banner_rendered` appears if Adsterra fills the placement.
+- If no creative appears, `native_banner_failed` or runtime no-fill state is visible.
+- Popunder only fires after a real click and only once per 12 hours/session.
+- Social Bar only fires once per 12 hours/session on allowed surfaces.
+- Result/download flow shows the soft drawer by default.
+- Hard gate does not appear unless `NEXT_PUBLIC_OTK_HARD_GATE_ENABLED=true`.
+- Partner CTA opens `/go/post-result-primary...` and does not expose the raw destination in page source.
+
+## Hard gate rollout rule
+
+Only enable `NEXT_PUBLIC_OTK_HARD_GATE_ENABLED=true` after all of these are verified live:
+
+- Native Banner script request is made.
+- Native Banner either renders or logs a clear no-fill/blocked state.
+- Popunder fires only from trusted click paths.
+- Social Bar obeys cooldown.
+- Partner redirect works with the Cloudflare secret.
+- Blocked ad scripts do not break download flow.
+

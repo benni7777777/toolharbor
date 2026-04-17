@@ -109,6 +109,8 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
         <AdsterraSessionScripts
           popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.popunder}
           socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.socialBar}
+          placement="faq-page"
+          reason="info-page-load"
         />
 
         {/* Hero Section */}
@@ -216,7 +218,7 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
             <div className="mx-auto max-w-5xl">
               {monetizationProfile.allowNativeUnits && (
                 <AdsterraNativeBanner
-                  slotName="faq-native"
+                  slotName="info-native"
                   description="This FAQ page may include a labeled native placement from a third-party network. It is separate from the core tool flow."
                 />
               )}

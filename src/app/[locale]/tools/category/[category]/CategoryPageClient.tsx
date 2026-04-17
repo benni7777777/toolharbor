@@ -49,6 +49,8 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
                 <AdsterraSessionScripts
                     popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.categoryHub.popunder}
                     socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.categoryHub.socialBar}
+                    placement="category-hub"
+                    reason="category-load"
                 />
                 <div className="container mx-auto px-4 pt-24 pb-8">
                     {/* Breadcrumb Navigation */}

@@ -13,6 +13,13 @@ interface PagesFunctionContext<TEnv> {
 }
 
 type RouteParam = string | string[] | undefined;
+const ALLOWED_PLACEMENTS = new Set([
+  'post-result-primary',
+  'upload-offer',
+  'next-step',
+  'result-gate',
+  'result-drawer',
+]);
 
 function getRouteSegment(route: RouteParam): string {
   if (Array.isArray(route) && route.length > 0) {
@@ -26,6 +33,16 @@ function getRouteSegment(route: RouteParam): string {
   return 'post-result-primary';
 }
 
+function redirectTo(location: string, headers: Record<string, string>) {
+  return new Response(null, {
+    status: 302,
+    headers: {
+      ...headers,
+      location,
+    },
+  });
+}
+
 export const onRequest = async (context: PagesFunctionContext<Env>) => {
   const requestUrl = new URL(context.request.url);
   const placement = getRouteSegment(context.params.route);
@@ -33,12 +50,40 @@ export const onRequest = async (context: PagesFunctionContext<Env>) => {
   const fallbackUrl = context.env.SPONSOR_FALLBACK_URL ?? 'https://www.opentoolskit.com/en/contact';
   const partnerBaseUrl = context.env.PARTNER_REDIRECT_BASE_URL ?? context.env.ZEYDOO_BASE_URL;
   const partnerSource = context.env.PARTNER_REDIRECT_SOURCE ?? context.env.ZEYDOO_SOURCE ?? 'opentoolskit';
+  const headers = {
+    'cache-control': 'no-cache, no-store, max-age=0',
+    'x-otk-partner-provider': provider,
+  };
 
-  if (provider !== 'partner' || !partnerBaseUrl) {
-    return Response.redirect(fallbackUrl, 302);
+  if (provider !== 'partner' || !ALLOWED_PLACEMENTS.has(placement)) {
+    return redirectTo(fallbackUrl, headers);
   }
 
-  const target = new URL(partnerBaseUrl);
+  if (!partnerBaseUrl) {
+    console.warn('OpenToolsKit partner redirect missing PARTNER_REDIRECT_BASE_URL/ZEYDOO_BASE_URL', {
+      placement,
+      provider,
+    });
+    return redirectTo(fallbackUrl, {
+      ...headers,
+      'x-otk-partner-redirect': 'fallback-missing-secret',
+    });
+  }
+
+  let target: URL;
+  try {
+    target = new URL(partnerBaseUrl);
+  } catch {
+    console.warn('OpenToolsKit partner redirect has invalid base URL secret', {
+      placement,
+      provider,
+    });
+    return redirectTo(fallbackUrl, {
+      ...headers,
+      'x-otk-partner-redirect': 'fallback-invalid-secret',
+    });
+  }
+
   const tool = requestUrl.searchParams.get('tool');
   const source = requestUrl.searchParams.get('source') ?? partnerSource;
 
@@ -57,5 +102,8 @@ export const onRequest = async (context: PagesFunctionContext<Env>) => {
     }
   }
 
-  return Response.redirect(target.toString(), 302);
+  return redirectTo(target.toString(), {
+    ...headers,
+    'x-otk-partner-redirect': 'success',
+  });
 };

@@ -15,6 +15,7 @@ import PostResultSponsorCard from '@/components/common/PostResultSponsorCard';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 import { getSessionCount, incrementSessionCount } from '@/lib/monetization/storage';
 import { trackMonetizationEvent } from '@/lib/monetization/analytics';
+import { isHardGateFeatureEnabled } from '@/lib/monetization/feature-flags';
 
 export interface DownloadButtonProps extends Omit<ButtonProps, 'onClick' | 'children'> {
   file: Blob | null;
@@ -127,6 +128,20 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
         country: monetizationProfile.country,
       });
       trackMonetizationEvent({
+        event: 'gate_timer_completed',
+        placement: 'result-gate',
+        provider: 'adsterra',
+        tool: toolSlug,
+        country: monetizationProfile.country,
+      });
+      trackMonetizationEvent({
+        event: 'gate_unlocked_by_timer',
+        placement: 'result-gate',
+        provider: 'adsterra',
+        tool: toolSlug,
+        country: monetizationProfile.country,
+      });
+      trackMonetizationEvent({
         event: 'download_unlocked',
         placement: 'result-gate',
         unlockReason: 'timer',
@@ -160,12 +175,30 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
       return false;
     }
 
+    if (!isHardGateFeatureEnabled()) {
+      return false;
+    }
+
     if (!monetizationProfile.allowHardGate) {
       return false;
     }
 
     return hardGateCount < siteConfig.monetizationRules.hardGatePerSessionMax;
   }, [hardGateCount, isSponsorEligible, monetizationProfile.allowHardGate]);
+
+  const triggerResultScripts = useCallback((trustedEvent?: Event, reason = 'result-download-click') => {
+    if (!monetizationProfile.allowAggressiveUnits) {
+      return;
+    }
+
+    triggerAdsterraSessionScripts({
+      popunder: resultPlacement.popunder,
+      socialBar: resultPlacement.socialBar,
+      placement: 'result-success',
+      reason,
+      trustedEvent,
+    });
+  }, [monetizationProfile.allowAggressiveUnits, resultPlacement.popunder, resultPlacement.socialBar]);
 
   const performDownload = useCallback((usedHardGate: boolean) => {
     if (!file || !blobUrl || isDownloading) {
@@ -184,13 +217,6 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-
-    if (monetizationProfile.allowAggressiveUnits) {
-      triggerAdsterraSessionScripts({
-        popunder: resultPlacement.popunder,
-        socialBar: resultPlacement.socialBar,
-      });
-    }
 
     if (autoRevoke) {
       window.setTimeout(() => {
@@ -224,16 +250,13 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
     filename,
     isDownloading,
     isSponsorEligible,
-    monetizationProfile.allowAggressiveUnits,
     onDownloadComplete,
     onDownloadStart,
-    resultPlacement.popunder,
-    resultPlacement.socialBar,
     toolName,
     toolSlug,
   ]);
 
-  const handlePartnerUnlock = useCallback(() => {
+  const handlePartnerUnlock = useCallback((event?: React.MouseEvent<HTMLAnchorElement>) => {
     if (isGateUnlocked) {
       return;
     }
@@ -254,22 +277,15 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
       country: monetizationProfile.country,
     });
 
-    if (monetizationProfile.allowAggressiveUnits) {
-      triggerAdsterraSessionScripts({
-        popunder: resultPlacement.popunder,
-        socialBar: resultPlacement.socialBar,
-      });
-    }
+    triggerResultScripts(event?.nativeEvent, 'partner-unlock-click');
   }, [
     isGateUnlocked,
-    monetizationProfile.allowAggressiveUnits,
     monetizationProfile.country,
-    resultPlacement.popunder,
-    resultPlacement.socialBar,
+    triggerResultScripts,
     toolSlug,
   ]);
 
-  const handleDownload = useCallback(() => {
+  const handleDownload = useCallback((event?: React.MouseEvent<HTMLButtonElement>) => {
     if (!file || !blobUrl || isDownloading) {
       return;
     }
@@ -288,11 +304,40 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
         tool: toolSlug,
         country: monetizationProfile.country,
       });
+      trackMonetizationEvent({
+        event: 'gate_timer_started',
+        placement: 'result-gate',
+        provider: 'adsterra',
+        tool: toolSlug,
+        country: monetizationProfile.country,
+      });
       return;
     }
 
+    if (!isHardGateFeatureEnabled() && monetizationProfile.allowAggressiveUnits) {
+      trackMonetizationEvent({
+        event: 'monetization_blocked_reason',
+        placement: 'result-gate',
+        provider: 'adsterra',
+        tool: toolSlug,
+        country: monetizationProfile.country,
+        reason: 'hard-gate-disabled',
+      });
+    }
+
+    triggerResultScripts(event?.nativeEvent, 'direct-download-click');
     performDownload(false);
-  }, [blobUrl, file, isDownloading, monetizationProfile.country, performDownload, shouldUseHardGate, toolSlug]);
+  }, [
+    blobUrl,
+    file,
+    isDownloading,
+    monetizationProfile.allowAggressiveUnits,
+    monetizationProfile.country,
+    performDownload,
+    shouldUseHardGate,
+    toolSlug,
+    triggerResultScripts,
+  ]);
 
   const gateReady = isGateUnlocked || gateSecondsRemaining <= 0;
 
@@ -394,8 +439,9 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
                   variant="primary"
                   size="lg"
                   disabled={!gateReady}
-                  onClick={() => {
+                  onClick={(event) => {
                     setIsGateOpen(false);
+                    triggerResultScripts(event.nativeEvent, 'gate-download-click');
                     performDownload(true);
                   }}
                   className="mt-5 w-full justify-center rounded-full"

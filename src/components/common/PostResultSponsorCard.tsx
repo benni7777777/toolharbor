@@ -13,7 +13,7 @@ interface PostResultSponsorCardProps {
   description?: string;
   ctaLabel?: string;
   href?: string;
-  onSponsorClick?: () => void;
+  onSponsorClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 export function PostResultSponsorCard({
@@ -46,14 +46,14 @@ export function PostResultSponsorCard({
           href={linkHref}
           target="_blank"
           rel="noreferrer noopener sponsored"
-          onClick={() => {
+          onClick={(event) => {
             trackMonetizationEvent({
-              event: 'partner_click',
+              event: 'partner_click_triggered',
               placement: placementId,
               provider: siteConfig.ads.providers.partnerRedirect.providerName,
               tool: toolContext?.toolSlug,
             });
-            onSponsorClick?.();
+            onSponsorClick?.(event);
           }}
           className="inline-flex min-w-fit items-center justify-center gap-2 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))] px-4 py-2 text-sm font-medium text-[hsl(var(--color-foreground))] transition-colors hover:border-[hsl(var(--color-accent-strong))] hover:text-[hsl(var(--color-accent-strong))]"
         >

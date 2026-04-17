@@ -50,6 +50,7 @@ afterEach(() => {
   URL.revokeObjectURL = originalRevokeObjectURL;
   document.querySelectorAll('script[data-otk-adsterra]').forEach(script => script.remove());
   window.sessionStorage.clear();
+  vi.unstubAllEnvs();
   cleanup();
 });
 
@@ -221,7 +222,42 @@ describe('DownloadButton', () => {
       vi.useRealTimers();
     });
 
-    it('shows a 15-second gate for aggressive eligible downloads', () => {
+    it('uses the soft post-result drawer by default even for aggressive eligible downloads', async () => {
+      vi.useFakeTimers();
+      mockMonetizationProfile.mockReturnValue({
+        country: 'US',
+        isUkEea: false,
+        isLoading: false,
+        previewMode: 'aggressive',
+        allowNativeUnits: true,
+        allowAggressiveUnits: true,
+        allowHardGate: true,
+      });
+
+      const mockBlob = createMockBlob('test content');
+      render(
+        <DownloadButton
+          file={mockBlob}
+          filename="test.pdf"
+          variant="secondary"
+          size="lg"
+        />
+      );
+
+      fireEvent.click(screen.getByRole('button'));
+
+      await act(async () => {
+        vi.advanceTimersByTime(600);
+      });
+
+      expect(screen.queryByTestId('download-gate-overlay')).not.toBeInTheDocument();
+      expect(screen.getByTestId('download-monetization-panel')).toBeInTheDocument();
+
+      vi.useRealTimers();
+    });
+
+    it('shows a 15-second gate only when the hard-gate feature flag is enabled', () => {
+      vi.stubEnv('NEXT_PUBLIC_OTK_HARD_GATE_ENABLED', 'true');
       mockMonetizationProfile.mockReturnValue({
         country: 'US',
         isUkEea: false,
