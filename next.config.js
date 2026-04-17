@@ -14,7 +14,6 @@ const nextConfig = {
 
   // Webpack configuration for WASM modules
   webpack: (config, { isServer, webpack }) => {
-    // Handle qpdf-wasm and other modules that use Node.js built-ins
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
@@ -24,34 +23,30 @@ const nextConfig = {
         module: false,
         url: false,
         worker_threads: false,
-        canvas: false,  // Required for pdfjs-dist-legacy
+        canvas: false,
       };
     } else {
-      // Mark canvas as external for server-side builds
       config.externals = config.externals || [];
       config.externals.push({
         canvas: 'commonjs canvas',
       });
     }
 
-    // Also add module and canvas to alias for some packages that use it
     config.resolve.alias = {
       ...config.resolve.alias,
-      'module': false,
+      module: false,
     };
 
-    // Ignore problematic modules that are not needed in browser
     config.plugins.push(
       new webpack.IgnorePlugin({
-        resourceRegExp: /^module$/
+        resourceRegExp: /^module$/,
       }),
       new webpack.IgnorePlugin({
         resourceRegExp: /^canvas$/,
-        contextRegExp: /pdfjs-dist-legacy/
+        contextRegExp: /pdfjs-dist-legacy/,
       })
     );
 
-    // Enable WebAssembly
     config.experiments = {
       ...config.experiments,
       asyncWebAssembly: true,
@@ -61,17 +56,12 @@ const nextConfig = {
   },
 
   // Image optimization configuration
-  // Note: unoptimized is required for static export
   images: {
     unoptimized: true,
-    // Define allowed image formats
     formats: ['image/avif', 'image/webp'],
-    // Define device sizes for responsive images
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    // Define image sizes for srcset
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    // Minimum cache TTL for optimized images (in seconds)
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
+    minimumCacheTTL: 60 * 60 * 24 * 30,
   },
 
   turbopack: {
@@ -80,39 +70,27 @@ const nextConfig = {
     },
   },
 
-  // Trailing slash for static hosting compatibility
   trailingSlash: true,
-
-  // Strict mode for better development experience
   reactStrictMode: true,
 
-  // TypeScript configuration
   typescript: {
-    // Allow production builds even with type errors during development
     ignoreBuildErrors: false,
   },
 
-  // ESLint configuration
   eslint: {
-    // Run ESLint during builds
     ignoreDuringBuilds: false,
   },
 
-  // Compiler options for performance
   compiler: {
-    // Remove console.log in production
-    removeConsole: process.env.NODE_ENV === 'production' ? {
-      exclude: ['error', 'warn'],
-    } : false,
+    removeConsole:
+      process.env.NODE_ENV === 'production'
+        ? { exclude: ['error', 'warn'] }
+        : false,
   },
 
-  // Headers configuration for caching
-  // Note: These headers are applied when running with `next start`
-  // For static export, configure headers in your hosting platform
   async headers() {
     return [
       {
-        // Static assets - long cache
         source: '/:path*.(ico|jpg|jpeg|png|gif|svg|webp|avif|woff|woff2|ttf|eot)',
         headers: [
           {
@@ -122,7 +100,6 @@ const nextConfig = {
         ],
       },
       {
-        // JavaScript and CSS - cache with revalidation
         source: '/:path*.(js|css)',
         headers: [
           {
@@ -132,7 +109,6 @@ const nextConfig = {
         ],
       },
       {
-        // HTML pages - short cache with revalidation
         source: '/:path*',
         headers: [
           {
@@ -142,7 +118,7 @@ const nextConfig = {
         ],
       },
       {
-        // Security headers for all routes
+        // ✅ Security headers (SAFE for ads)
         source: '/:path*',
         headers: [
           {
@@ -160,15 +136,6 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
-          },
-          // Required for SharedArrayBuffer (LibreOffice WASM)
-          {
-            key: 'Cross-Origin-Opener-Policy',
-            value: 'same-origin',
-          },
-          {
-            key: 'Cross-Origin-Embedder-Policy',
-            value: 'require-corp',
           },
           {
             key: 'Cross-Origin-Resource-Policy',
