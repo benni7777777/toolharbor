@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import AdsterraDisplayBanner from '@/components/ads/AdsterraDisplayBanner';
 import PostResultSponsorCard from '@/components/common/PostResultSponsorCard';
 import { siteConfig } from '@/config/site';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
@@ -45,6 +46,8 @@ export function SiteMonetizationRails() {
     alt: 'Sponsored workflow creative',
     eyebrow: 'Workflow',
   };
+  const leftRailDisplayEnabled = siteConfig.ads.providers.adsterra.displayBanners.leftRail.enabled;
+  const rightRailDisplayEnabled = siteConfig.ads.providers.adsterra.displayBanners.rightRail.enabled;
 
   return (
     <>
@@ -53,20 +56,24 @@ export function SiteMonetizationRails() {
         aria-label="Sponsored left rail"
       >
         <div className="pointer-events-auto space-y-3">
-          <PostResultSponsorCard
-            placementId="next-step"
-            title="Open a sponsored route"
-            description="A separate partner option opens in a new tab while this tool stays ready."
-            ctaLabel="Open route"
-            toolSlug={tool}
-            sourceId={railSource}
-            campaign="site-left-rail"
-            placementMeta={context.pageType}
-            compact
-            showHelperText={false}
-            creative={leftCreative}
-            layout="rectangle"
-          />
+          {leftRailDisplayEnabled ? (
+            <AdsterraDisplayBanner slot="leftRail" />
+          ) : (
+            <PostResultSponsorCard
+              placementId="next-step"
+              title="Open a sponsored route"
+              description="A separate partner option opens in a new tab while this tool stays ready."
+              ctaLabel="Open route"
+              toolSlug={tool}
+              sourceId={railSource}
+              campaign="site-left-rail"
+              placementMeta={context.pageType}
+              compact
+              showHelperText={false}
+              creative={leftCreative}
+              layout="rectangle"
+            />
+          )}
         </div>
       </aside>
 
@@ -75,20 +82,24 @@ export function SiteMonetizationRails() {
         aria-label="Sponsored right rail"
       >
         <div className="pointer-events-auto space-y-3">
-          <PostResultSponsorCard
-            placementId="upload-offer"
-            title="Compare a workflow offer"
-            description="Check another sponsored path after using the free browser tools."
-            ctaLabel="View offer"
-            toolSlug={tool}
-            sourceId={railSource}
-            campaign="site-right-rail"
-            placementMeta={context.pageType}
-            compact
-            showHelperText={false}
-            creative={rightCreative}
-            layout="rectangle"
-          />
+          {rightRailDisplayEnabled ? (
+            <AdsterraDisplayBanner slot="rightRail" />
+          ) : (
+            <PostResultSponsorCard
+              placementId="upload-offer"
+              title="Compare a workflow offer"
+              description="Check another sponsored path after using the free browser tools."
+              ctaLabel="View offer"
+              toolSlug={tool}
+              sourceId={railSource}
+              campaign="site-right-rail"
+              placementMeta={context.pageType}
+              compact
+              showHelperText={false}
+              creative={rightCreative}
+              layout="rectangle"
+            />
+          )}
         </div>
       </aside>
 

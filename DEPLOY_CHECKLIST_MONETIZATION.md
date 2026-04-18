@@ -8,6 +8,13 @@ Date: 2026-04-17
 - `PARTNER_REDIRECT_SOURCE=opentoolskit`.
 - `PARTNER_REDIRECT_BASE_URL` set as a Cloudflare secret.
 - `ZEYDOO_BASE_URL` may remain for one-release backward compatibility only.
+- Real inline rail/leaderboard ads require separate Adsterra Banner/Display zones:
+  - `NEXT_PUBLIC_ADSTERRA_LEFT_RAIL_SCRIPT_SRC`
+  - `NEXT_PUBLIC_ADSTERRA_LEFT_RAIL_AT_OPTIONS`
+  - `NEXT_PUBLIC_ADSTERRA_RIGHT_RAIL_SCRIPT_SRC`
+  - `NEXT_PUBLIC_ADSTERRA_RIGHT_RAIL_AT_OPTIONS`
+  - optional `NEXT_PUBLIC_ADSTERRA_LEADERBOARD_*`, `NEXT_PUBLIC_ADSTERRA_RECTANGLE_*`, and `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_*`.
+- Do not paste Popunder, Social Bar, Native Banner, or Zeydoo smartlink URLs into display-banner variables. Those formats do not render inline Opera-style creatives in side rails.
 - Do not commit Adsterra API keys, partner destination URLs, dashboard links, or personal identifiers.
 - Do not set `Cross-Origin-Embedder-Policy` globally while Adsterra is enabled.
 
@@ -30,6 +37,8 @@ Verify:
 
 - One native banner script exists per page.
 - One native container ID exists per page.
+- If display/banner zones are configured, `display_banner_mount_attempted` appears for `leftRail` and `rightRail`.
+- If display/banner zones are not configured, side rails intentionally fall back to first-party partner CTA cards.
 - `native_banner_mount_attempted` appears in debug events.
 - `native_banner_rendered` appears if Adsterra fills the placement.
 - If no creative appears, `native_banner_failed` or runtime no-fill state is visible.

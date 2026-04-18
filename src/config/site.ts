@@ -8,6 +8,49 @@ export type ToolFamily =
   | 'calculator'
   | 'social';
 
+type AdsterraAtOptions = Record<string, string | number | boolean>;
+
+function parseAdsterraAtOptions(raw: string | undefined, fallback: AdsterraAtOptions) {
+  if (!raw?.trim()) {
+    return fallback;
+  }
+
+  try {
+    const parsed = JSON.parse(raw) as AdsterraAtOptions;
+    return parsed && typeof parsed === 'object' ? parsed : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+const adsterraDisplayBannerDefaults = {
+  leaderboard: {
+    width: 728,
+    height: 90,
+    format: 'iframe',
+  },
+  rectangle: {
+    width: 300,
+    height: 250,
+    format: 'iframe',
+  },
+  leftRail: {
+    width: 160,
+    height: 600,
+    format: 'iframe',
+  },
+  rightRail: {
+    width: 160,
+    height: 600,
+    format: 'iframe',
+  },
+  mobileSticky: {
+    width: 320,
+    height: 50,
+    format: 'iframe',
+  },
+} as const;
+
 export const siteConfig = {
   name: 'OpenToolsKit',
   shortName: 'OTK',
@@ -87,22 +130,64 @@ export const siteConfig = {
         },
         displayBanners: {
           leaderboard: {
-            enabled: false,
-            scriptSrc: '',
+            enabled: Boolean(process.env.NEXT_PUBLIC_ADSTERRA_LEADERBOARD_SCRIPT_SRC),
+            scriptSrc: process.env.NEXT_PUBLIC_ADSTERRA_LEADERBOARD_SCRIPT_SRC ?? '',
             containerId: 'otk-adsterra-leaderboard',
             label: 'Desktop leaderboard',
+            width: adsterraDisplayBannerDefaults.leaderboard.width,
+            height: adsterraDisplayBannerDefaults.leaderboard.height,
+            atOptions: parseAdsterraAtOptions(
+              process.env.NEXT_PUBLIC_ADSTERRA_LEADERBOARD_AT_OPTIONS,
+              adsterraDisplayBannerDefaults.leaderboard,
+            ),
           },
           rectangle: {
-            enabled: false,
-            scriptSrc: '',
+            enabled: Boolean(process.env.NEXT_PUBLIC_ADSTERRA_RECTANGLE_SCRIPT_SRC),
+            scriptSrc: process.env.NEXT_PUBLIC_ADSTERRA_RECTANGLE_SCRIPT_SRC ?? '',
             containerId: 'otk-adsterra-rectangle',
             label: 'Desktop rectangle',
+            width: adsterraDisplayBannerDefaults.rectangle.width,
+            height: adsterraDisplayBannerDefaults.rectangle.height,
+            atOptions: parseAdsterraAtOptions(
+              process.env.NEXT_PUBLIC_ADSTERRA_RECTANGLE_AT_OPTIONS,
+              adsterraDisplayBannerDefaults.rectangle,
+            ),
+          },
+          leftRail: {
+            enabled: Boolean(process.env.NEXT_PUBLIC_ADSTERRA_LEFT_RAIL_SCRIPT_SRC),
+            scriptSrc: process.env.NEXT_PUBLIC_ADSTERRA_LEFT_RAIL_SCRIPT_SRC ?? '',
+            containerId: 'otk-adsterra-left-rail',
+            label: 'Desktop left rail',
+            width: adsterraDisplayBannerDefaults.leftRail.width,
+            height: adsterraDisplayBannerDefaults.leftRail.height,
+            atOptions: parseAdsterraAtOptions(
+              process.env.NEXT_PUBLIC_ADSTERRA_LEFT_RAIL_AT_OPTIONS,
+              adsterraDisplayBannerDefaults.leftRail,
+            ),
+          },
+          rightRail: {
+            enabled: Boolean(process.env.NEXT_PUBLIC_ADSTERRA_RIGHT_RAIL_SCRIPT_SRC),
+            scriptSrc: process.env.NEXT_PUBLIC_ADSTERRA_RIGHT_RAIL_SCRIPT_SRC ?? '',
+            containerId: 'otk-adsterra-right-rail',
+            label: 'Desktop right rail',
+            width: adsterraDisplayBannerDefaults.rightRail.width,
+            height: adsterraDisplayBannerDefaults.rightRail.height,
+            atOptions: parseAdsterraAtOptions(
+              process.env.NEXT_PUBLIC_ADSTERRA_RIGHT_RAIL_AT_OPTIONS,
+              adsterraDisplayBannerDefaults.rightRail,
+            ),
           },
           mobileSticky: {
-            enabled: false,
-            scriptSrc: '',
+            enabled: Boolean(process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_SCRIPT_SRC),
+            scriptSrc: process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_SCRIPT_SRC ?? '',
             containerId: 'otk-adsterra-mobile-sticky',
             label: 'Mobile sticky banner',
+            width: adsterraDisplayBannerDefaults.mobileSticky.width,
+            height: adsterraDisplayBannerDefaults.mobileSticky.height,
+            atOptions: parseAdsterraAtOptions(
+              process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_AT_OPTIONS,
+              adsterraDisplayBannerDefaults.mobileSticky,
+            ),
           },
         },
       },
