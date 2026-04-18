@@ -31,8 +31,13 @@ describe('SiteMonetizationRails', () => {
   it('renders first-party partner rails with route-aware metadata', () => {
     render(<SiteMonetizationRails />);
 
-    expect(screen.getByLabelText('Sponsored left rail')).toBeInTheDocument();
-    expect(screen.getByLabelText('Sponsored right rail')).toBeInTheDocument();
+    const leftRail = screen.getByLabelText('Sponsored left rail');
+    const rightRail = screen.getByLabelText('Sponsored right rail');
+
+    expect(leftRail).toBeInTheDocument();
+    expect(rightRail).toBeInTheDocument();
+    expect(leftRail).toHaveClass('hidden', 'xl:block', 'left-4', 'top-32', 'w-56');
+    expect(rightRail).toHaveClass('hidden', 'xl:block', 'right-4', 'top-32', 'w-56');
 
     const links = screen.getAllByRole('link');
     const nextStepLink = links.find((link) => link.getAttribute('href')?.startsWith('/go/next-step'));

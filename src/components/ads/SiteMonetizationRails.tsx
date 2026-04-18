@@ -39,7 +39,7 @@ export function SiteMonetizationRails() {
   return (
     <>
       <aside
-        className="pointer-events-none fixed left-4 top-32 z-30 hidden w-56 min-[1800px]:block"
+        className="pointer-events-none fixed left-4 top-32 z-30 hidden w-56 xl:block"
         aria-label="Sponsored left rail"
       >
         <div className="pointer-events-auto space-y-3">
@@ -59,7 +59,7 @@ export function SiteMonetizationRails() {
       </aside>
 
       <aside
-        className="pointer-events-none fixed right-4 top-32 z-30 hidden w-56 min-[1800px]:block"
+        className="pointer-events-none fixed right-4 top-32 z-30 hidden w-56 xl:block"
         aria-label="Sponsored right rail"
       >
         <div className="pointer-events-auto space-y-3">

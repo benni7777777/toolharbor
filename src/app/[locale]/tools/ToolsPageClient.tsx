@@ -145,7 +145,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
     <div className="min-h-screen flex flex-col bg-[hsl(var(--color-background))]">
       <Header locale={locale} />
 
-      <main className="flex-1">
+      <main className="mx-auto w-full max-w-screen-xl flex-1">
         {/* Page Header */}
         <section className="relative pt-36 pb-20 overflow-hidden">
           {/* Animated Background Blobs (Subtle) */}
