@@ -38,6 +38,7 @@ describe('SiteMonetizationRails', () => {
     expect(rightRail).toBeInTheDocument();
     expect(leftRail).toHaveClass('hidden', 'xl:block', 'left-4', 'top-32', 'w-56');
     expect(rightRail).toHaveClass('hidden', 'xl:block', 'right-4', 'top-32', 'w-56');
+    expect(screen.getAllByRole('img', { name: /sponsored/i })).toHaveLength(3);
 
     const links = screen.getAllByRole('link');
     const nextStepLink = links.find((link) => link.getAttribute('href')?.startsWith('/go/next-step'));

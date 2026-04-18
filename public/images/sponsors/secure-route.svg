@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" role="img" aria-labelledby="title desc">
+  <title id="title">Secure route sponsor creative</title>
+  <desc id="desc">A sponsor graphic with a bright route and shield.</desc>
+  <rect width="600" height="500" rx="28" fill="#071217"/>
+  <path d="M64 304c72-146 178 44 266-92 74-114 132-64 206-10" fill="none" stroke="#38d5dc" stroke-width="28" stroke-linecap="round"/>
+  <path d="M64 360c78-78 164 48 260-38 88-78 140-44 212 12" fill="none" stroke="#b6f36b" stroke-width="18" stroke-linecap="round" opacity=".8"/>
+  <path d="M300 72l112 42v86c0 78-44 144-112 178-68-34-112-100-112-178v-86z" fill="#102f35" stroke="#52f2f2" stroke-width="16"/>
+  <path d="M256 218l34 34 66-86" fill="none" stroke="#ffce3a" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="54" y="84" fill="#52f2f2" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="6">SPONSORED</text>
+  <text x="54" y="420" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800">Open a partner path</text>
+  <text x="54" y="456" fill="#b6c9ca" font-family="Arial, Helvetica, sans-serif" font-size="24">Your current tool stays available</text>
+</svg>

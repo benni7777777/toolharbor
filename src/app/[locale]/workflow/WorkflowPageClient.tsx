@@ -138,7 +138,7 @@ export default function WorkflowPageClient({ locale }: WorkflowPageClientProps) 
                 </nav>
             </header>
 
-            <main id="main-content" className="mx-auto w-full max-w-screen-xl flex-1 xl:max-w-[calc(100vw-32rem)] 2xl:max-w-screen-xl" tabIndex={-1}>
+            <main id="main-content" className="mx-auto w-full max-w-screen-xl flex-1 xl:max-w-[calc(100vw-32rem)] min-[1800px]:max-w-screen-xl" tabIndex={-1}>
                 <section className="border-b border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))/0.86]">
                     <div className="mx-auto max-w-7xl px-4 py-8 lg:py-10">
                         <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)]">

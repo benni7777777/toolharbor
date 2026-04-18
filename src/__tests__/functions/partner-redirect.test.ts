@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { onRequest } from '../../../functions/go/[[route]]';
 
 function createContext({
@@ -67,6 +67,30 @@ describe('partner redirect function', () => {
     expect(target.searchParams.get('ymid')).toBe('session-click-123');
     expect(target.searchParams.get('subId')).toBe('session-click-123');
     expect(target.searchParams.get('source')).toBe('tool:merge-pdf:post-result-primary');
+  });
+
+  it('logs the resolved redirect URL only when debug mode is requested', async () => {
+    const infoSpy = vi.spyOn(console, 'info').mockImplementation(() => undefined);
+
+    const response = await onRequest(createContext({
+      url: 'https://www.opentoolskit.com/go/post-result-primary?tool=merge-pdf&provider=partner&source=debug-source&subId=debug-click&debug=1',
+      env: {
+        PARTNER_REDIRECT_BASE_URL: 'https://partner.example/link?var={SOURCE_ID}&ymid={CLICK_ID}',
+      },
+    }));
+
+    expect(response.status).toBe(302);
+    expect(infoSpy).toHaveBeenCalledWith(
+      'OpenToolsKit partner redirect_url',
+      expect.objectContaining({
+        placement: 'post-result-primary',
+        source: 'debug-source',
+        subId: 'debug-click',
+        redirect_url: expect.stringContaining('debug-click'),
+      }),
+    );
+
+    infoSpy.mockRestore();
   });
 
   it('falls back safely for disallowed placements', async () => {

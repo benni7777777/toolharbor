@@ -20,6 +20,12 @@ interface PostResultSponsorCardProps {
   compact?: boolean;
   className?: string;
   showHelperText?: boolean;
+  creative?: {
+    src: string;
+    alt: string;
+    eyebrow?: string;
+  };
+  layout?: 'text' | 'banner' | 'rectangle';
   onSponsorClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
@@ -53,6 +59,18 @@ function buildLocalSponsorClickId() {
   return `${sessionId}-${createSponsorToken()}`;
 }
 
+function isDebugEnabled() {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  if (process.env.NODE_ENV !== 'production') {
+    return true;
+  }
+
+  return new URLSearchParams(window.location.search).get('otk_monetization_debug') === '1';
+}
+
 export function PostResultSponsorCard({
   placementId = 'post-result-primary',
   title = 'Useful next step for your document workflow',
@@ -66,13 +84,15 @@ export function PostResultSponsorCard({
   compact = false,
   className = '',
   showHelperText = true,
+  creative,
+  layout = 'text',
   onSponsorClick,
 }: PostResultSponsorCardProps) {
   const toolContext = useToolContext();
   const [clickId, setClickId] = useState<string | null>(null);
   const toolSlug = propToolSlug ?? toolContext?.toolSlug ?? 'unknown';
   const resolvedSourceId = sourceId ?? `tool:${toolSlug}:${placementId}:contextual-soft:soft-bordered`;
-  const linkHref = useMemo(() => {
+  const buildLinkHref = useMemo(() => (resolvedClickId: string | null) => {
     if (href) {
       return href;
     }
@@ -92,28 +112,62 @@ export function PostResultSponsorCard({
       params.set('placementMeta', placementMeta);
     }
 
-    if (clickId) {
-      params.set('subId', clickId);
+    if (resolvedClickId) {
+      params.set('subId', resolvedClickId);
+    }
+
+    if (isDebugEnabled()) {
+      params.set('debug', '1');
     }
 
     return `${siteConfig.sponsorship.redirectPathPrefix}/${placementId}?${params.toString()}`;
-  }, [campaign, clickId, href, placementId, placementMeta, resolvedSourceId, toolSlug]);
+  }, [campaign, href, placementId, placementMeta, resolvedSourceId, toolSlug]);
+  const linkHref = useMemo(() => buildLinkHref(clickId), [buildLinkHref, clickId]);
 
   useEffect(() => {
     setClickId(buildLocalSponsorClickId());
   }, [placementId, resolvedSourceId]);
 
-  const cardClassName = `border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] shadow-[var(--shadow-sm)] ${compact ? 'p-3' : 'p-4'} ${className}`.trim();
+  const ensureClickId = () => {
+    if (clickId) {
+      return clickId;
+    }
+
+    const nextClickId = buildLocalSponsorClickId();
+    if (nextClickId) {
+      setClickId(nextClickId);
+    }
+    return nextClickId;
+  };
+
+  const isVisualLayout = Boolean(creative) || layout !== 'text';
+  const cardClassName = `overflow-hidden border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] shadow-[var(--shadow-sm)] ${isVisualLayout ? '!p-0' : compact ? 'p-3' : 'p-4'} ${className}`.trim();
   const bodyClassName = compact
     ? 'flex flex-col gap-3'
     : 'flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between';
   const ctaClassName = compact
-    ? 'inline-flex w-full items-center justify-center gap-2 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))] px-3 py-2 text-xs font-medium text-[hsl(var(--color-foreground))] transition-colors hover:border-[hsl(var(--color-accent-strong))] hover:text-[hsl(var(--color-accent-strong))]'
-    : 'inline-flex min-w-fit items-center justify-center gap-2 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))] px-4 py-2 text-sm font-medium text-[hsl(var(--color-foreground))] transition-colors hover:border-[hsl(var(--color-accent-strong))] hover:text-[hsl(var(--color-accent-strong))]';
+    ? 'inline-flex w-full items-center justify-center gap-2 rounded-md border border-[hsl(var(--color-border))] bg-[hsl(var(--color-accent-strong))] px-3 py-2 text-xs font-semibold text-[hsl(var(--color-background))] transition-colors hover:bg-[hsl(var(--color-primary))]'
+    : 'inline-flex min-w-fit items-center justify-center gap-2 rounded-md border border-[hsl(var(--color-border))] bg-[hsl(var(--color-accent-strong))] px-4 py-2 text-sm font-semibold text-[hsl(var(--color-background))] transition-colors hover:bg-[hsl(var(--color-primary))]';
+  const contentPadding = isVisualLayout ? (compact ? 'p-3' : 'p-4') : '';
+  const creativeClassName = layout === 'rectangle'
+    ? 'aspect-[6/5] w-full object-cover'
+    : layout === 'banner'
+      ? 'aspect-[16/7] w-full object-cover'
+      : 'aspect-[16/9] w-full object-cover';
 
   return (
     <Card className={cardClassName}>
-      <div className={bodyClassName}>
+      {creative && (
+        <div className="relative border-b border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))]">
+          {creative.eyebrow && (
+            <div className="absolute left-3 top-3 z-10 rounded-sm bg-[hsl(var(--color-background))/0.88] px-2 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-[hsl(var(--color-accent-strong))]">
+              {creative.eyebrow}
+            </div>
+          )}
+          <img src={creative.src} alt={creative.alt} className={creativeClassName} loading="lazy" />
+        </div>
+      )}
+      <div className={`${bodyClassName} ${contentPadding}`.trim()}>
         <div className="space-y-2">
           <div className="inline-flex items-center rounded-full bg-[hsl(var(--color-accent-soft))] px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-accent-strong))]">
             {siteConfig.sponsorship.label}
@@ -131,6 +185,9 @@ export function PostResultSponsorCard({
           target="_blank"
           rel="sponsored nofollow noreferrer noopener"
           onClick={(event) => {
+            const resolvedClickId = ensureClickId();
+            const resolvedHref = buildLinkHref(resolvedClickId);
+            event.currentTarget.href = resolvedHref;
             trackMonetizationEvent({
               event: 'partner_click_triggered',
               placement: placementId,
@@ -138,9 +195,10 @@ export function PostResultSponsorCard({
               tool: toolSlug,
               metadata: {
                 sourceId: resolvedSourceId,
-                clickId,
+                clickId: resolvedClickId,
                 campaign,
                 placementMeta,
+                redirect_url: resolvedHref,
               },
             });
             onSponsorClick?.(event);

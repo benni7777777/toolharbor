@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { siteConfig } from '@/config/site';
 import { mountAdsterraNative } from '@/lib/monetization/adsterra-runtime';
+import PostResultSponsorCard from '@/components/common/PostResultSponsorCard';
 import type { AdRuntimeStatus } from '@/types/monetization';
 
 interface AdsterraNativeBannerProps {
@@ -36,6 +37,7 @@ export function AdsterraNativeBanner({
     () => priority ?? PRIORITY_BY_SLOT[slotName] ?? 10,
     [priority, slotName],
   );
+  const showPartnerFallback = status === 'no-fill-timeout' || status === 'failed';
 
   useEffect(() => {
     if (!siteConfig.ads.enabled || !siteConfig.ads.providers.adsterra.enabled) {
@@ -73,20 +75,41 @@ export function AdsterraNativeBanner({
       <p className="mb-4 max-w-3xl text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
         {description} {siteConfig.ads.actionDisclosure}
       </p>
-      <div
-        ref={hostRef}
-        className={status === 'blocked' || status === 'failed' ? 'hidden' : 'min-h-[120px]'}
-        data-testid="adsterra-native-host"
-        data-otk-ad-status={status}
-        data-otk-ad-placement={slotName}
-      >
-        {status === 'blocked' ? null : (
-          <div className="text-xs text-[hsl(var(--color-muted-foreground))]">
-            {status === 'idle' || status === 'mounting' ? 'Loading sponsored placement...' : null}
-            {status === 'no-fill-timeout' || status === 'failed' ? 'Sponsored placement unavailable.' : null}
-          </div>
-        )}
-      </div>
+      {showPartnerFallback ? (
+        <div data-testid="adsterra-native-fallback">
+          <PostResultSponsorCard
+            placementId="next-step"
+            title="Sponsored partner option"
+            description="Native inventory is not available right now. This partner route opens separately and keeps your current page intact."
+            ctaLabel="View sponsored option"
+            sourceId={`native-fallback:${slotName}:no-fill`}
+            campaign="native-fallback"
+            placementMeta={slotName}
+            compact
+            showHelperText={false}
+            creative={{
+              src: '/images/sponsors/file-convert.svg',
+              alt: 'Sponsored fallback creative',
+              eyebrow: 'Fallback',
+            }}
+            layout="banner"
+          />
+        </div>
+      ) : (
+        <div
+          ref={hostRef}
+          className={status === 'blocked' ? 'hidden' : 'min-h-[120px]'}
+          data-testid="adsterra-native-host"
+          data-otk-ad-status={status}
+          data-otk-ad-placement={slotName}
+        >
+          {status === 'blocked' ? null : (
+            <div className="text-xs text-[hsl(var(--color-muted-foreground))]">
+              {status === 'idle' || status === 'mounting' ? 'Loading sponsored placement...' : null}
+            </div>
+          )}
+        </div>
+      )}
     </section>
   );
 }

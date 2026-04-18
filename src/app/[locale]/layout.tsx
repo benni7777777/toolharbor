@@ -8,6 +8,7 @@ import { fontVariables } from '@/lib/fonts';
 import { SkipLink } from '@/components/common/SkipLink';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
 import SiteMonetizationRails from '@/components/ads/SiteMonetizationRails';
+import MonetizationInteractionTriggers from '@/components/ads/MonetizationInteractionTriggers';
 import { siteConfig } from '@/config/site';
 import '@/app/globals.css';
 
@@ -78,6 +79,7 @@ export default async function LocaleLayout({
           <SkipLink targetId="main-content">Skip to main content</SkipLink>
           {children}
           <SiteMonetizationRails />
+          <MonetizationInteractionTriggers />
         </div>
       </ThemeProvider>
     </NextIntlClientProvider>

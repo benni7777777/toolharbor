@@ -66,6 +66,7 @@ export const onRequest = async (context: PagesFunctionContext<Env>) => {
   const partnerSource = context.env.PARTNER_REDIRECT_SOURCE ?? context.env.ZEYDOO_SOURCE ?? 'opentoolskit';
   const source = requestUrl.searchParams.get('source') ?? partnerSource;
   const clickId = requestUrl.searchParams.get('subId') ?? requestUrl.searchParams.get('clickId') ?? createPartnerClickId();
+  const debugMode = requestUrl.searchParams.get('debug') === '1';
   const headers = {
     'cache-control': 'no-cache, no-store, max-age=0',
     'x-otk-partner-provider': provider,
@@ -122,6 +123,16 @@ export const onRequest = async (context: PagesFunctionContext<Env>) => {
     if (value) {
       target.searchParams.set(key, value);
     }
+  }
+
+  if (debugMode) {
+    console.info('OpenToolsKit partner redirect_url', {
+      placement,
+      provider,
+      source,
+      subId: clickId,
+      redirect_url: target.toString(),
+    });
   }
 
   return redirectTo(target.toString(), {

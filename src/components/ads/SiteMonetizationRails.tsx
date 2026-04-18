@@ -35,45 +35,59 @@ export function SiteMonetizationRails() {
   const railSource = `site:${context.routeKey}:rail:contextual-soft:soft-bordered`;
   const mobileSource = `site:${context.routeKey}:mobile-strip:contextual-soft:soft-bordered`;
   const tool = context.toolSlug ?? context.pageType;
+  const leftCreative = {
+    src: '/images/sponsors/secure-route.svg',
+    alt: 'Sponsored partner route creative',
+    eyebrow: 'Partner',
+  };
+  const rightCreative = {
+    src: '/images/sponsors/workflow-boost.svg',
+    alt: 'Sponsored workflow creative',
+    eyebrow: 'Workflow',
+  };
 
   return (
     <>
       <aside
-        className="pointer-events-none fixed left-4 top-32 z-30 hidden w-56 xl:block"
+        className="pointer-events-none fixed left-4 top-32 z-30 hidden w-56 min-[1800px]:w-72 xl:block"
         aria-label="Sponsored left rail"
       >
         <div className="pointer-events-auto space-y-3">
           <PostResultSponsorCard
             placementId="next-step"
-            title="Optional partner route"
-            description="A separate sponsored path opens in a new tab while the tools stay available here."
-            ctaLabel="Open"
+            title="Open a sponsored route"
+            description="A separate partner option opens in a new tab while this tool stays ready."
+            ctaLabel="Open route"
             toolSlug={tool}
             sourceId={railSource}
             campaign="site-left-rail"
             placementMeta={context.pageType}
             compact
             showHelperText={false}
+            creative={leftCreative}
+            layout="rectangle"
           />
         </div>
       </aside>
 
       <aside
-        className="pointer-events-none fixed right-4 top-32 z-30 hidden w-56 xl:block"
+        className="pointer-events-none fixed right-4 top-32 z-30 hidden w-56 min-[1800px]:w-72 xl:block"
         aria-label="Sponsored right rail"
       >
         <div className="pointer-events-auto space-y-3">
           <PostResultSponsorCard
             placementId="upload-offer"
-            title="Sponsored workflow"
-            description="Compare another off-site option after using the free browser tools."
-            ctaLabel="View"
+            title="Compare a workflow offer"
+            description="Check another sponsored path after using the free browser tools."
+            ctaLabel="View offer"
             toolSlug={tool}
             sourceId={railSource}
             campaign="site-right-rail"
             placementMeta={context.pageType}
             compact
             showHelperText={false}
+            creative={rightCreative}
+            layout="rectangle"
           />
         </div>
       </aside>
@@ -101,6 +115,12 @@ export function SiteMonetizationRails() {
               compact
               showHelperText={false}
               className="shadow-[var(--shadow-lg)]"
+              creative={{
+                src: '/images/sponsors/file-convert.svg',
+                alt: 'Sponsored mobile offer creative',
+                eyebrow: 'Mobile',
+              }}
+              layout="banner"
             />
           </div>
         </div>

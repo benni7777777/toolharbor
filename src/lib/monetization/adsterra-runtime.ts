@@ -361,6 +361,12 @@ export function triggerAdsterraPopunder({ placement, reason, trustedEvent }: Scr
       placement,
       provider: 'adsterra',
       reason: 'cooldown',
+      metadata: {
+        unit: 'popunder',
+        sourceReason: reason,
+        cooldownActive,
+        sessionFired,
+      },
     });
     return false;
   }
@@ -402,6 +408,12 @@ export function triggerAdsterraSocialBar({ placement, reason }: Omit<ScriptTrigg
       placement,
       provider: 'adsterra',
       reason: 'cooldown',
+      metadata: {
+        unit: 'socialbar',
+        sourceReason: reason,
+        cooldownActive,
+        sessionFired,
+      },
     });
     return false;
   }

@@ -608,7 +608,7 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
 
       {showMonetizationPanel && (
         <div
-          className="fixed bottom-4 right-4 z-[80] w-[min(32rem,calc(100vw-2rem))] overflow-hidden rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-4 shadow-[var(--shadow-lg)] xl:right-72"
+          className="fixed bottom-4 right-4 z-[80] w-[min(42rem,calc(100vw-2rem))] overflow-hidden rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-5 shadow-[var(--shadow-lg)] xl:right-72"
           data-testid="download-monetization-panel"
         >
           <div className="flex items-start justify-between gap-3">
@@ -618,7 +618,7 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
               </div>
               <div className="space-y-1">
                 <p className="text-sm font-semibold text-[hsl(var(--color-foreground))]">
-                  Download started. Sponsored placements remain available below.
+                  Download started. Sponsored options are ready while your file stays available.
                 </p>
                 <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
                   {siteConfig.ads.disclosureSummary} {siteConfig.ads.actionDisclosure}
@@ -636,29 +636,59 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
           </div>
 
           <div className="mt-4 space-y-4">
-            <div className="grid gap-3 md:grid-cols-2">
+            <div className="grid gap-3 md:grid-cols-3">
               <PostResultSponsorCard
                 placementId={siteConfig.ads.providers.partnerRedirect.placementId}
-                title="Useful next step for your document workflow"
-                description="This partner suggestion opens separately and helps fund the project without interrupting the result you already unlocked."
-                ctaLabel="Open partner site"
+                title="Open the main partner route"
+                description="A sponsored next step opens in a new tab without interrupting this download."
+                ctaLabel="Open route"
                 sourceId={`tool:${toolSlug ?? 'unknown'}:post-result-primary:contextual-soft:soft-bordered`}
                 campaign="post-result-primary"
                 placementMeta="download-panel"
                 compact
                 showHelperText={false}
+                creative={{
+                  src: '/images/sponsors/workflow-boost.svg',
+                  alt: 'Sponsored document workflow creative',
+                  eyebrow: 'Primary',
+                }}
+                layout="rectangle"
               />
 
               <PostResultSponsorCard
                 placementId="next-step"
-                title="Compare another sponsored route"
-                description="Optional partner path in a new tab. Your completed file remains available here."
-                ctaLabel="View option"
+                title="Compare another option"
+                description="A second sponsored path for users who want a different next step."
+                ctaLabel="Compare"
                 sourceId={`tool:${toolSlug ?? 'unknown'}:next-step:contextual-soft:soft-bordered`}
                 campaign="post-result-secondary"
                 placementMeta="download-panel"
                 compact
                 showHelperText={false}
+                creative={{
+                  src: '/images/sponsors/file-convert.svg',
+                  alt: 'Sponsored file conversion creative',
+                  eyebrow: 'Option',
+                }}
+                layout="rectangle"
+              />
+
+              <PostResultSponsorCard
+                placementId="upload-offer"
+                title="Try a sponsored workflow"
+                description="Another partner route for file, upload, or document follow-up tasks."
+                ctaLabel="Try workflow"
+                sourceId={`tool:${toolSlug ?? 'unknown'}:upload-offer:contextual-soft:soft-bordered`}
+                campaign="post-result-workflow"
+                placementMeta="download-panel"
+                compact
+                showHelperText={false}
+                creative={{
+                  src: '/images/sponsors/secure-route.svg',
+                  alt: 'Sponsored secure route creative',
+                  eyebrow: 'Workflow',
+                }}
+                layout="rectangle"
               />
             </div>
 
