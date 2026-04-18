@@ -9,9 +9,15 @@ beforeEach(() => {
 
 describe('AdsterraDisplayBanner', () => {
   it('does not render when a real display zone is not configured', () => {
+    const slot = siteConfig.ads.providers.adsterra.displayBanners.leftRail;
+    const previous = { ...slot };
+    Object.assign(slot, { enabled: false, scriptSrc: '' });
+
     render(<AdsterraDisplayBanner slot="leftRail" />);
 
     expect(screen.queryByLabelText('Desktop left rail')).not.toBeInTheDocument();
+
+    Object.assign(slot, previous);
   });
 
   it('injects standard display banner options and script inside the slot host', () => {
