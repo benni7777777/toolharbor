@@ -164,7 +164,14 @@ export function PostResultSponsorCard({
               {creative.eyebrow}
             </div>
           )}
-          <img src={creative.src} alt={creative.alt} className={creativeClassName} loading="lazy" />
+          <img
+            src={creative.src}
+            alt={creative.alt}
+            className={creativeClassName}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
         </div>
       )}
       <div className={`${bodyClassName} ${contentPadding}`.trim()}>

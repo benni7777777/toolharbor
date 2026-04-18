@@ -43,7 +43,7 @@ describe('AdsterraNativeBanner', () => {
 
     await act(async () => {
       script?.dispatchEvent(new Event('load'));
-      vi.advanceTimersByTime(9100);
+      vi.advanceTimersByTime(18100);
     });
 
     expect(screen.getByTestId('adsterra-native-fallback')).toBeInTheDocument();

@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
-import { trackMonetizationEvent } from '@/lib/monetization/analytics';
 import {
+  armAdsterraPopunder,
   triggerAdsterraPopunder,
   triggerAdsterraSocialBar,
 } from '@/lib/monetization/adsterra-runtime';
@@ -43,12 +43,7 @@ export function AdsterraSessionScripts({
 }: AdsterraSessionScriptsProps) {
   useEffect(() => {
     if (popunder) {
-      trackMonetizationEvent({
-        event: 'monetization_blocked_reason',
-        placement,
-        provider: 'adsterra',
-        reason: 'passive-popunder-disabled',
-      });
+      armAdsterraPopunder({ placement, reason });
     }
 
     triggerAdsterraSessionScripts({ popunder: false, socialBar, placement, reason });

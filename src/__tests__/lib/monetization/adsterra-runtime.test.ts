@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
+  armAdsterraPopunder,
   mountAdsterraNative,
   resetAdsterraRuntimeForTests,
   triggerAdsterraPopunder,
@@ -62,7 +63,7 @@ describe('Adsterra runtime', () => {
     vi.advanceTimersByTime(100);
     const script = document.querySelector('script[data-otk-adsterra="native-banner"]');
     script?.dispatchEvent(new Event('load'));
-    vi.advanceTimersByTime(9100);
+    vi.advanceTimersByTime(18100);
 
     expect(host.dataset.otkAdStatus).toBe('no-fill-timeout');
     expect(host.dataset.otkAdReason).toBe('blocked-timeout');
@@ -113,6 +114,41 @@ describe('Adsterra runtime', () => {
     expect(first).toBe(true);
     expect(second).toBe(false);
     expect(document.querySelectorAll('script[data-otk-adsterra="popunder"]')).toHaveLength(1);
+  });
+
+  it('can arm the popunder script in head before a trusted click records the trigger', () => {
+    const armed = armAdsterraPopunder({
+      placement: 'homepage',
+      reason: 'homepage-load',
+    });
+
+    const script = document.querySelector('head script[data-otk-adsterra="popunder"]');
+    expect(armed).toBe(true);
+    expect(script).toBeTruthy();
+
+    const click = new MouseEvent('click');
+    const triggered = triggerAdsterraPopunder({
+      placement: 'first-button-click',
+      reason: 'first-button-click',
+      trustedEvent: click,
+    });
+
+    expect(triggered).toBe(true);
+    expect(document.querySelectorAll('script[data-otk-adsterra="popunder"]')).toHaveLength(1);
+    expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+      event => {
+        const metadata = event.metadata as Record<string, unknown> | undefined;
+        return event.monetizationEvent === 'popunder_injected'
+          && metadata?.target === 'head';
+      },
+    )).toBe(true);
+    expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+      event => {
+        const metadata = event.metadata as Record<string, unknown> | undefined;
+        return event.monetizationEvent === 'popunder_triggered'
+          && metadata?.alreadyInjected === true;
+      },
+    )).toBe(true);
   });
 
   it('loads social bar once and applies cooldown', () => {

@@ -41,7 +41,7 @@ declare global {
   }
 }
 
-const NATIVE_RENDER_TIMEOUT_MS = 9000;
+const NATIVE_RENDER_TIMEOUT_MS = 18000;
 const SESSION_POPUNDER_KEY = 'opentoolskit-adsterra-popunder-session-fired';
 const SESSION_SOCIALBAR_KEY = 'opentoolskit-adsterra-socialbar-session-fired';
 
@@ -230,8 +230,8 @@ function mountSelectedNativeSlot(registration: NativeRegistration) {
     });
   });
 
-  registration.host.appendChild(script);
   registration.host.appendChild(container);
+  registration.host.appendChild(script);
 
   runtime.nativeRenderTimer = window.setTimeout(() => {
     if (registration.status === 'rendered') {
@@ -301,8 +301,12 @@ function isTrustedClick(trustedEvent?: Event) {
   return trustedEvent.isTrusted || process.env.NODE_ENV !== 'production';
 }
 
-function injectScript(src: string, kind: string, placement: string) {
-  if (document.querySelector(`script[data-otk-adsterra="${kind}"][src="${src}"]`)) {
+function findInjectedScript(src: string, kind: string) {
+  return document.querySelector(`script[data-otk-adsterra="${kind}"][src="${src}"]`);
+}
+
+function injectScript(src: string, kind: string, placement: string, target: HTMLElement = document.body) {
+  if (findInjectedScript(src, kind)) {
     return false;
   }
 
@@ -325,8 +329,34 @@ function injectScript(src: string, kind: string, placement: string) {
       reason: 'script-error',
     });
   });
-  document.body.appendChild(script);
+  target.appendChild(script);
   return true;
+}
+
+export function armAdsterraPopunder({
+  placement,
+  reason,
+}: Omit<ScriptTriggerOptions, 'trustedEvent'>) {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  if (!siteConfig.ads.enabled || !siteConfig.ads.providers.adsterra.enabled) {
+    return false;
+  }
+
+  const config = siteConfig.ads.providers.adsterra.popunder;
+  const injected = injectScript(config.scriptSrc, 'popunder', placement, document.head);
+  if (injected) {
+    trackMonetizationEvent({
+      event: 'popunder_injected',
+      placement,
+      provider: 'adsterra',
+      metadata: { reason, target: 'head' },
+    });
+  }
+
+  return injected;
 }
 
 export function triggerAdsterraPopunder({ placement, reason, trustedEvent }: ScriptTriggerOptions) {
@@ -349,6 +379,7 @@ export function triggerAdsterraPopunder({ placement, reason, trustedEvent }: Scr
   }
 
   const config = siteConfig.ads.providers.adsterra.popunder;
+  const existingScript = findInjectedScript(config.scriptSrc, 'popunder');
   const cooldownActive = isCooldownActive(
     config.cooldownStorageKey,
     siteConfig.monetizationRules.popunderCooldownHours,
@@ -371,10 +402,28 @@ export function triggerAdsterraPopunder({ placement, reason, trustedEvent }: Scr
     return false;
   }
 
+  if (existingScript) {
+    markCooldownHit(config.cooldownStorageKey);
+    setSessionStorageItem(SESSION_POPUNDER_KEY, 'true');
+    trackMonetizationEvent({
+      event: 'popunder_triggered',
+      placement,
+      provider: 'adsterra',
+      metadata: { reason, alreadyInjected: true },
+    });
+    return true;
+  }
+
   const injected = injectScript(config.scriptSrc, 'popunder', placement);
   if (injected) {
     markCooldownHit(config.cooldownStorageKey);
     setSessionStorageItem(SESSION_POPUNDER_KEY, 'true');
+    trackMonetizationEvent({
+      event: 'popunder_injected',
+      placement,
+      provider: 'adsterra',
+      metadata: { reason, target: 'body' },
+    });
     trackMonetizationEvent({
       event: 'popunder_triggered',
       placement,
@@ -422,6 +471,12 @@ export function triggerAdsterraSocialBar({ placement, reason }: Omit<ScriptTrigg
   if (injected) {
     markCooldownHit(config.cooldownStorageKey);
     setSessionStorageItem(SESSION_SOCIALBAR_KEY, 'true');
+    trackMonetizationEvent({
+      event: 'socialbar_injected',
+      placement,
+      provider: 'adsterra',
+      metadata: { reason, target: 'body' },
+    });
     trackMonetizationEvent({
       event: 'socialbar_triggered',
       placement,
