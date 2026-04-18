@@ -43,8 +43,30 @@ describe('partner redirect function', () => {
     expect(target.searchParams.get('existing')).toBe('1');
     expect(target.searchParams.get('placement')).toBe('post-result-primary');
     expect(target.searchParams.get('source')).toBe('opentoolskit');
+    expect(target.searchParams.get('subId')).toBeTruthy();
     expect(target.searchParams.get('tool')).toBe('merge-pdf');
     expect(target.searchParams.get('campaign')).toBe('test');
+  });
+
+  it('replaces Zeydoo-style source and click placeholders before redirecting', async () => {
+    const response = await onRequest(createContext({
+      url: 'https://www.opentoolskit.com/go/post-result-primary?tool=merge-pdf&provider=partner&source=tool:merge-pdf:post-result-primary&subId=session-click-123',
+      env: {
+        PARTNER_REDIRECT_BASE_URL: 'https://partner.example/link?z=10822537&var={SOURCE_ID}&ymid={CLICK_ID}',
+        PARTNER_REDIRECT_SOURCE: 'opentoolskit',
+      },
+    }));
+
+    const target = new URL(response.headers.get('location') ?? '');
+
+    expect(response.status).toBe(302);
+    expect(response.headers.get('x-otk-partner-redirect')).toBe('success');
+    expect(target.origin).toBe('https://partner.example');
+    expect(target.searchParams.get('z')).toBe('10822537');
+    expect(target.searchParams.get('var')).toBe('tool:merge-pdf:post-result-primary');
+    expect(target.searchParams.get('ymid')).toBe('session-click-123');
+    expect(target.searchParams.get('subId')).toBe('session-click-123');
+    expect(target.searchParams.get('source')).toBe('tool:merge-pdf:post-result-primary');
   });
 
   it('falls back safely for disallowed placements', async () => {

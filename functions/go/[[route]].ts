@@ -43,6 +43,20 @@ function redirectTo(location: string, headers: Record<string, string>) {
   });
 }
 
+function createPartnerClickId() {
+  if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
+    return crypto.randomUUID();
+  }
+
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+}
+
+function applyPartnerTemplateTokens(value: string, source: string, clickId: string) {
+  return value
+    .replace(/\{SOURCE_ID\}/g, source)
+    .replace(/\{CLICK_ID\}/g, clickId);
+}
+
 export const onRequest = async (context: PagesFunctionContext<Env>) => {
   const requestUrl = new URL(context.request.url);
   const placement = getRouteSegment(context.params.route);
@@ -50,6 +64,8 @@ export const onRequest = async (context: PagesFunctionContext<Env>) => {
   const fallbackUrl = context.env.SPONSOR_FALLBACK_URL ?? 'https://www.opentoolskit.com/en/contact';
   const partnerBaseUrl = context.env.PARTNER_REDIRECT_BASE_URL ?? context.env.ZEYDOO_BASE_URL;
   const partnerSource = context.env.PARTNER_REDIRECT_SOURCE ?? context.env.ZEYDOO_SOURCE ?? 'opentoolskit';
+  const source = requestUrl.searchParams.get('source') ?? partnerSource;
+  const clickId = requestUrl.searchParams.get('subId') ?? requestUrl.searchParams.get('clickId') ?? createPartnerClickId();
   const headers = {
     'cache-control': 'no-cache, no-store, max-age=0',
     'x-otk-partner-provider': provider,
@@ -72,7 +88,7 @@ export const onRequest = async (context: PagesFunctionContext<Env>) => {
 
   let target: URL;
   try {
-    target = new URL(partnerBaseUrl);
+    target = new URL(applyPartnerTemplateTokens(partnerBaseUrl, source, clickId));
   } catch {
     console.warn('OpenToolsKit partner redirect has invalid base URL secret', {
       placement,
@@ -85,16 +101,22 @@ export const onRequest = async (context: PagesFunctionContext<Env>) => {
   }
 
   const tool = requestUrl.searchParams.get('tool');
-  const source = requestUrl.searchParams.get('source') ?? partnerSource;
 
   target.searchParams.set('placement', placement);
   target.searchParams.set('source', source);
+  target.searchParams.set('subId', clickId);
 
   if (tool) {
     target.searchParams.set('tool', tool);
   }
 
-  const passthroughKeys = ['campaign', 'subId', 'placementMeta'];
+  for (const [key, value] of target.searchParams.entries()) {
+    if (value.includes('{SOURCE_ID}') || value.includes('{CLICK_ID}')) {
+      target.searchParams.set(key, applyPartnerTemplateTokens(value, source, clickId));
+    }
+  }
+
+  const passthroughKeys = ['campaign', 'placementMeta'];
   for (const key of passthroughKeys) {
     const value = requestUrl.searchParams.get(key);
     if (value) {

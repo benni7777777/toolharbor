@@ -62,7 +62,7 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
     <div className="min-h-screen flex flex-col">
       <Header locale={locale} />
 
-      <main className="mx-auto w-full max-w-screen-xl flex-1">
+      <main className="mx-auto w-full max-w-screen-xl flex-1 xl:max-w-[calc(100vw-32rem)] 2xl:max-w-screen-xl">
         <AdsterraSessionScripts
           popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.popunder}
           socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.infoPages.socialBar}

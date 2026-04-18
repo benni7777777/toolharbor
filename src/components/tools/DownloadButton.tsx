@@ -608,7 +608,7 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
 
       {showMonetizationPanel && (
         <div
-          className="fixed bottom-4 right-4 z-[80] w-[min(32rem,calc(100vw-2rem))] overflow-hidden rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-4 shadow-[var(--shadow-lg)]"
+          className="fixed bottom-4 right-4 z-[80] w-[min(32rem,calc(100vw-2rem))] overflow-hidden rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-4 shadow-[var(--shadow-lg)] xl:right-72"
           data-testid="download-monetization-panel"
         >
           <div className="flex items-start justify-between gap-3">

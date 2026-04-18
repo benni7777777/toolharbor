@@ -45,7 +45,7 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
         <div className="min-h-screen flex flex-col bg-[hsl(var(--color-background))]">
             <Header locale={locale} />
 
-            <main className="mx-auto w-full max-w-screen-xl flex-1">
+            <main className="mx-auto w-full max-w-screen-xl flex-1 xl:max-w-[calc(100vw-32rem)] 2xl:max-w-screen-xl">
                 <AdsterraSessionScripts
                     popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.categoryHub.popunder}
                     socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.categoryHub.socialBar}

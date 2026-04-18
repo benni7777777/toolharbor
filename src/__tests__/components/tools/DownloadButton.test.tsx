@@ -223,7 +223,7 @@ describe('DownloadButton', () => {
         vi.advanceTimersByTime(600);
       });
 
-      expect(screen.getByTestId('download-monetization-panel')).toBeInTheDocument();
+      expect(screen.getByTestId('download-monetization-panel')).toHaveClass('xl:right-72');
 
       vi.useRealTimers();
     });

@@ -93,7 +93,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
     <div className="min-h-screen flex flex-col bg-[hsl(var(--color-background))]">
       <Header locale={locale} />
 
-      <main id="main-content" className="mx-auto w-full max-w-screen-xl flex-1 relative" tabIndex={-1}>
+      <main id="main-content" className="mx-auto w-full max-w-screen-xl flex-1 relative xl:max-w-[calc(100vw-32rem)] 2xl:max-w-screen-xl" tabIndex={-1}>
         <AdsterraSessionScripts
           popunder={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.homepage.popunder}
           socialBar={monetizationProfile.allowAggressiveUnits && siteConfig.ads.placements.homepage.socialBar}
