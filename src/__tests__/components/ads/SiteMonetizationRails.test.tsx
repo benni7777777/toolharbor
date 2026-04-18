@@ -69,4 +69,18 @@ describe('SiteMonetizationRails', () => {
     expect(screen.queryByLabelText('Sponsored left rail')).not.toBeInTheDocument();
     expect(screen.queryByLabelText('Sponsored right rail')).not.toBeInTheDocument();
   });
+
+  it('uses home metadata instead of treating the locale segment as a tool', () => {
+    mockUsePathname.mockReturnValue('/en');
+
+    render(<SiteMonetizationRails />);
+
+    const links = screen.getAllByRole('link');
+    const nextStepLink = links.find((link) => link.getAttribute('href')?.startsWith('/go/next-step'));
+    const nextStepUrl = new URL(nextStepLink?.getAttribute('href') ?? '', 'https://www.opentoolskit.com');
+
+    expect(nextStepUrl.searchParams.get('tool')).toBe('home');
+    expect(nextStepUrl.searchParams.get('source')).toBe('site:en:rail:contextual-soft:soft-bordered');
+    expect(nextStepUrl.searchParams.get('placementMeta')).toBe('home');
+  });
 });

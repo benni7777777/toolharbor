@@ -38,6 +38,7 @@ export function AdsterraNativeBanner({
     [priority, slotName],
   );
   const showPartnerFallback = status === 'no-fill-timeout' || status === 'failed';
+  const hideNativeHost = status === 'blocked' || showPartnerFallback;
 
   useEffect(() => {
     if (!siteConfig.ads.enabled || !siteConfig.ads.providers.adsterra.enabled) {
@@ -75,6 +76,19 @@ export function AdsterraNativeBanner({
       <p className="mb-4 max-w-3xl text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
         {description} {siteConfig.ads.actionDisclosure}
       </p>
+      <div
+        ref={hostRef}
+        className={hideNativeHost ? 'hidden' : 'min-h-[120px]'}
+        data-testid="adsterra-native-host"
+        data-otk-ad-status={status}
+        data-otk-ad-placement={slotName}
+        aria-hidden={hideNativeHost}
+      />
+      {status === 'idle' || status === 'mounting' ? (
+        <div className="text-xs text-[hsl(var(--color-muted-foreground))]">
+          Loading sponsored placement...
+        </div>
+      ) : null}
       {showPartnerFallback ? (
         <div data-testid="adsterra-native-fallback">
           <PostResultSponsorCard
@@ -95,21 +109,7 @@ export function AdsterraNativeBanner({
             layout="banner"
           />
         </div>
-      ) : (
-        <div
-          ref={hostRef}
-          className={status === 'blocked' ? 'hidden' : 'min-h-[120px]'}
-          data-testid="adsterra-native-host"
-          data-otk-ad-status={status}
-          data-otk-ad-placement={slotName}
-        >
-          {status === 'blocked' ? null : (
-            <div className="text-xs text-[hsl(var(--color-muted-foreground))]">
-              {status === 'idle' || status === 'mounting' ? 'Loading sponsored placement...' : null}
-            </div>
-          )}
-        </div>
-      )}
+      ) : null}
     </section>
   );
 }

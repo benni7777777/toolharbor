@@ -44,6 +44,7 @@ export type MonetizationBlockedReason =
   | 'missing-secret'
   | 'hard-gate-disabled'
   | 'passive-popunder-disabled'
+  | 'profile-loading'
   | 'untrusted-event';
 
 export interface MonetizationEventPayload {

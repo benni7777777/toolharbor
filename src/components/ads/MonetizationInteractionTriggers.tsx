@@ -3,7 +3,10 @@
 import { useEffect } from 'react';
 import { siteConfig } from '@/config/site';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
-import { triggerAdsterraPopunder } from '@/lib/monetization/adsterra-runtime';
+import {
+  triggerAdsterraPopunder,
+  triggerAdsterraSocialBar,
+} from '@/lib/monetization/adsterra-runtime';
 import { getSessionStorageItem, setSessionStorageItem } from '@/lib/monetization/storage';
 import { trackMonetizationEvent } from '@/lib/monetization/analytics';
 
@@ -12,6 +15,10 @@ type TriggerKind = 'first-tool-interaction' | 'first-file-upload' | 'first-butto
 const SESSION_TRIGGER_PREFIX = 'opentoolskit-adsterra-popunder-triggered:';
 
 function getBlockedReason(profile: ReturnType<typeof useMonetizationProfile>) {
+  if (profile.isLoading) {
+    return 'profile-loading';
+  }
+
   if (profile.previewMode === 'off') {
     return 'preview-off';
   }
@@ -35,13 +42,11 @@ export function MonetizationInteractionTriggers() {
       return;
     }
 
-    function attemptPopunder(kind: TriggerKind, trustedEvent: Event) {
+    function attemptAggressiveScripts(kind: TriggerKind, trustedEvent: Event) {
       const sessionKey = `${SESSION_TRIGGER_PREFIX}${kind}`;
       if (getSessionStorageItem(sessionKey) === 'true') {
         return;
       }
-
-      setSessionStorageItem(sessionKey, 'true');
 
       if (!monetizationProfile.allowAggressiveUnits) {
         trackMonetizationEvent({
@@ -59,13 +64,21 @@ export function MonetizationInteractionTriggers() {
             isUkEea: monetizationProfile.isUkEea,
           },
         });
+        if (!monetizationProfile.isLoading) {
+          setSessionStorageItem(sessionKey, 'true');
+        }
         return;
       }
 
+      setSessionStorageItem(sessionKey, 'true');
       triggerAdsterraPopunder({
         placement: kind,
         reason: kind,
         trustedEvent,
+      });
+      triggerAdsterraSocialBar({
+        placement: kind,
+        reason: kind,
       });
     }
 
@@ -76,25 +89,25 @@ export function MonetizationInteractionTriggers() {
       }
 
       if (target.closest('button,[role="button"]')) {
-        attemptPopunder('first-button-click', event);
+        attemptAggressiveScripts('first-button-click', event);
       }
 
       if (target.closest('[data-testid="tool-page-interface"]')) {
-        attemptPopunder('first-tool-interaction', event);
+        attemptAggressiveScripts('first-tool-interaction', event);
       }
     }
 
     function handleChange(event: Event) {
       const target = event.target instanceof HTMLInputElement ? event.target : null;
       if (target?.type === 'file' && target.files && target.files.length > 0) {
-        attemptPopunder('first-file-upload', event);
+        attemptAggressiveScripts('first-file-upload', event);
       }
     }
 
     function handleDrop(event: DragEvent) {
       const target = event.target instanceof Element ? event.target : null;
       if (target?.closest('[data-testid="tool-page-interface"]') && hasFiles(event)) {
-        attemptPopunder('first-file-upload', event);
+        attemptAggressiveScripts('first-file-upload', event);
       }
     }
 

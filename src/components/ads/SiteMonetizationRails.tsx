@@ -12,7 +12,7 @@ function getPathContext(pathname: string | null) {
   const locale = segments[0] || siteConfig.defaultLocale;
   const toolsIndex = segments.indexOf('tools');
   const toolSlug = toolsIndex >= 0 ? segments[toolsIndex + 1] : undefined;
-  const pageType = toolSlug ? 'tool' : segments[1] || segments[0] || 'home';
+  const pageType = toolSlug ? 'tool' : segments[1] || 'home';
 
   return {
     locale,
