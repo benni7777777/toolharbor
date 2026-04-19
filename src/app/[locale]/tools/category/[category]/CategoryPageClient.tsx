@@ -3,9 +3,11 @@
 import { useTranslations } from 'next-intl';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
-import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
-import AdsterraDisplayBanner from '@/components/ads/AdsterraDisplayBanner';
+import {
+  AdsterraDisplayBanner,
+  AdsterraNativeBanner,
+  AdsterraSessionScripts,
+} from '@/components/ads/DynamicAdsterraComponents';
 import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { ToolGrid } from '@/components/tools/ToolGrid';
 import { getToolsByCategory } from '@/config/tools';

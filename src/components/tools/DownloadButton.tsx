@@ -9,7 +9,7 @@ import { useToolContext } from '@/lib/contexts/ToolContext';
 import { sanitizeFilename } from '@/lib/utils/sanitize';
 import { siteConfig } from '@/config/site';
 import { LoaderCircle, X } from 'lucide-react';
-import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
+import { AdsterraNativeBanner } from '@/components/ads/DynamicAdsterraComponents';
 import {
   triggerAdsterraPopunder,
   triggerAdsterraSocialBar,
@@ -506,7 +506,7 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
       {isGateOpen && (
         <div className="fixed inset-0 z-[90] flex items-end justify-center bg-[hsl(var(--color-background))/0.78] p-4 backdrop-blur-md sm:items-center">
           <div
-            className="w-full max-w-2xl overflow-hidden rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-6 shadow-[var(--shadow-lg)]"
+            className="w-full max-w-2xl overflow-visible rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-6 shadow-[var(--shadow-lg)]"
             data-testid="download-gate-overlay"
           >
             <div className="flex items-start justify-between gap-4">
@@ -608,7 +608,7 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
 
       {showMonetizationPanel && (
         <div
-          className="fixed bottom-4 right-4 z-[80] w-[min(42rem,calc(100vw-2rem))] overflow-hidden rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-5 shadow-[var(--shadow-lg)] xl:right-72"
+          className="fixed bottom-4 right-4 z-[80] w-[min(42rem,calc(100vw-2rem))] overflow-visible rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-5 shadow-[var(--shadow-lg)] xl:right-72"
           data-testid="download-monetization-panel"
         >
           <div className="flex items-start justify-between gap-3">

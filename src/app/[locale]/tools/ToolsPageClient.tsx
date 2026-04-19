@@ -6,8 +6,10 @@ import { useTranslations } from 'next-intl';
 import { Search, X, Filter, Star } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
-import AdsterraDisplayBanner from '@/components/ads/AdsterraDisplayBanner';
+import {
+  AdsterraDisplayBanner,
+  AdsterraNativeBanner,
+} from '@/components/ads/DynamicAdsterraComponents';
 import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { ToolGrid } from '@/components/tools/ToolGrid';
 import { ToolCard } from '@/components/tools/ToolCard';

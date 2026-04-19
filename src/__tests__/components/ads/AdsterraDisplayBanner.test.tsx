@@ -43,10 +43,16 @@ describe('AdsterraDisplayBanner', () => {
 
     expect(screen.getByLabelText(previous.label)).toBeInTheDocument();
     expect(host).toBeTruthy();
+    expect(host).toHaveStyle({ width: '160px', height: '600px', overflow: 'visible' });
     expect(inlineOptions?.textContent).toContain('test-zone');
     expect(script).toHaveAttribute('src', 'https://example.test/display.js');
+    expect((script as HTMLScriptElement | undefined)?.async).toBe(true);
     expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
-      event => event.monetizationEvent === 'display_banner_mount_attempted'
+      event => event.monetizationEvent === 'ad_slot_mount'
+        && event.placement === 'leftRail',
+    )).toBe(true);
+    expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+      event => event.monetizationEvent === 'ad_script_injected'
         && event.placement === 'leftRail',
     )).toBe(true);
 

@@ -63,7 +63,7 @@ describe('Adsterra runtime', () => {
     vi.advanceTimersByTime(100);
     const script = document.querySelector('script[data-otk-adsterra="native-banner"]');
     script?.dispatchEvent(new Event('load'));
-    vi.advanceTimersByTime(18100);
+    vi.advanceTimersByTime(5100);
 
     expect(host.dataset.otkAdStatus).toBe('no-fill-timeout');
     expect(host.dataset.otkAdReason).toBe('blocked-timeout');
@@ -114,6 +114,9 @@ describe('Adsterra runtime', () => {
     expect(first).toBe(true);
     expect(second).toBe(false);
     expect(document.querySelectorAll('script[data-otk-adsterra="popunder"]')).toHaveLength(1);
+    expect(document.querySelector('head script[data-otk-adsterra="popunder"]')).toBeTruthy();
+    expect(document.body.querySelector('script[data-otk-adsterra="popunder"]')).toBeNull();
+    expect(window.adsterraPopunderLoaded).toBe(true);
   });
 
   it('can arm the popunder script in head before a trusted click records the trigger', () => {
@@ -164,6 +167,7 @@ describe('Adsterra runtime', () => {
     expect(first).toBe(true);
     expect(second).toBe(false);
     expect(document.querySelectorAll('script[data-otk-adsterra="socialbar"]')).toHaveLength(1);
-    expect(document.querySelector('script[data-otk-adsterra="socialbar"]')).toHaveAttribute('data-cfasync', 'false');
+    expect(document.querySelector('head script[data-otk-adsterra="socialbar"]')).toHaveAttribute('data-cfasync', 'false');
+    expect(document.body.querySelector('script[data-otk-adsterra="socialbar"]')).toBeNull();
   });
 });

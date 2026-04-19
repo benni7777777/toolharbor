@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import {
   armAdsterraPopunder,
   triggerAdsterraPopunder,
   triggerAdsterraSocialBar,
 } from '@/lib/monetization/adsterra-runtime';
 
-interface AdsterraSessionScriptsProps {
+export interface AdsterraSessionScriptsProps {
   popunder?: boolean;
   socialBar?: boolean;
   placement?: string;
@@ -41,12 +41,19 @@ export function AdsterraSessionScripts({
   placement = 'surface',
   reason = 'surface-load',
 }: AdsterraSessionScriptsProps) {
+  const popunderLoadedRef = useRef(false);
+  const socialBarLoadedRef = useRef(false);
+
   useEffect(() => {
-    if (popunder) {
+    if (popunder && !popunderLoadedRef.current) {
+      popunderLoadedRef.current = true;
       armAdsterraPopunder({ placement, reason });
     }
 
-    triggerAdsterraSessionScripts({ popunder: false, socialBar, placement, reason });
+    if (socialBar && !socialBarLoadedRef.current) {
+      socialBarLoadedRef.current = true;
+      triggerAdsterraSessionScripts({ popunder: false, socialBar, placement, reason });
+    }
   }, [placement, popunder, reason, socialBar]);
 
   return null;

@@ -15,7 +15,7 @@ import { FavoriteButton } from '@/components/ui/FavoriteButton';
 import { useMemo } from 'react';
 import { sanitizeHtml } from '@/lib/utils/html-sanitizer';
 import { useSafeTranslations } from '@/lib/i18n/useSafeTranslations';
-import AdsterraDisplayBanner from '@/components/ads/AdsterraDisplayBanner';
+import { AdsterraDisplayBanner } from '@/components/ads/DynamicAdsterraComponents';
 import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 import type { ToolSeoExample } from '@/config/seo';
@@ -116,11 +116,6 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
             <section className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]" aria-label="Monetization surfaces">
               <div className="space-y-4">
                 <MonetizationDisclosureCard locale={locale} />
-                {monetizationProfile.allowAggressiveUnits && (
-                  <div className="lg:hidden">
-                    <AdsterraDisplayBanner slot="mobileSticky" className="rounded-[1.75rem]" />
-                  </div>
-                )}
               </div>
 
               {monetizationProfile.allowAggressiveUnits && (

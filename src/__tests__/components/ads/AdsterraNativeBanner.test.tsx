@@ -33,7 +33,7 @@ describe('AdsterraNativeBanner', () => {
       vi.advanceTimersByTime(100);
     });
 
-    const script = document.querySelector('script[data-otk-adsterra="native-banner"]');
+    const script = document.querySelector<HTMLScriptElement>('script[data-otk-adsterra="native-banner"]');
     const container = document.getElementById(siteConfig.ads.providers.adsterra.nativeBanner.containerId);
 
     expect(script).toBeTruthy();
@@ -43,10 +43,10 @@ describe('AdsterraNativeBanner', () => {
 
     await act(async () => {
       script?.dispatchEvent(new Event('load'));
-      vi.advanceTimersByTime(18100);
+      vi.advanceTimersByTime(5100);
     });
 
     expect(screen.getByTestId('adsterra-native-fallback')).toBeInTheDocument();
-    expect(host).toHaveClass('hidden');
+    expect(host).toHaveClass('h-0', 'overflow-visible');
   });
 });

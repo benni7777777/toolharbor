@@ -38,6 +38,7 @@ beforeEach(() => {
   window.localStorage.clear();
   window.sessionStorage.clear();
   delete window.__OTK_MONETIZATION_DEBUG__;
+  window.adsterraPopunderLoaded = false;
   window.dataLayer = [];
   mockMonetizationProfile.mockReturnValue({
     country: 'GB',
@@ -54,6 +55,7 @@ afterEach(() => {
   URL.createObjectURL = originalCreateObjectURL;
   URL.revokeObjectURL = originalRevokeObjectURL;
   document.querySelectorAll('script[data-otk-adsterra]').forEach(script => script.remove());
+  window.adsterraPopunderLoaded = false;
   window.localStorage.clear();
   window.sessionStorage.clear();
   vi.unstubAllEnvs();
@@ -274,7 +276,15 @@ describe('DownloadButton', () => {
       });
 
       const appendOrder: string[] = [];
+      const originalHeadAppendChild = document.head.appendChild.bind(document.head);
       const originalAppendChild = document.body.appendChild.bind(document.body);
+      const headAppendSpy = vi.spyOn(document.head, 'appendChild').mockImplementation((node: Node) => {
+        if (node instanceof HTMLScriptElement && node.dataset.otkAdsterra) {
+          appendOrder.push(`script:${node.dataset.otkAdsterra}`);
+        }
+
+        return originalHeadAppendChild(node) as Node;
+      });
       const appendSpy = vi.spyOn(document.body, 'appendChild').mockImplementation((node: Node) => {
         if (node instanceof HTMLScriptElement && node.dataset.otkAdsterra) {
           appendOrder.push(`script:${node.dataset.otkAdsterra}`);
@@ -304,7 +314,10 @@ describe('DownloadButton', () => {
       expect(appendOrder[0]).toBe('script:popunder');
       expect(appendOrder.indexOf('script:popunder')).toBeLessThan(appendOrder.indexOf('download-anchor'));
       expect(document.querySelectorAll('script[data-otk-adsterra="popunder"]')).toHaveLength(1);
+      expect(document.querySelector('head script[data-otk-adsterra="popunder"]')).toBeTruthy();
+      expect(document.body.querySelector('script[data-otk-adsterra="popunder"]')).toBeNull();
 
+      headAppendSpy.mockRestore();
       appendSpy.mockRestore();
     });
 

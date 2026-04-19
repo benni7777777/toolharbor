@@ -29,7 +29,7 @@ beforeEach(() => {
 });
 
 describe('SiteMonetizationRails', () => {
-  it('renders real Adsterra display rail slots by default', () => {
+  it('renders real Adsterra display rail slots by default', async () => {
     render(<SiteMonetizationRails />);
 
     const leftRail = screen.getByLabelText('Sponsored left rail');
@@ -39,8 +39,8 @@ describe('SiteMonetizationRails', () => {
     expect(rightRail).toBeInTheDocument();
     expect(leftRail).toHaveClass('hidden', 'xl:block', 'left-4', 'top-32', 'w-56');
     expect(rightRail).toHaveClass('hidden', 'xl:block', 'right-4', 'top-32', 'w-56');
-    expect(screen.getByLabelText('Desktop left rail')).toBeInTheDocument();
-    expect(screen.getByLabelText('Desktop right rail')).toBeInTheDocument();
+    expect(await screen.findByLabelText('Desktop left rail')).toBeInTheDocument();
+    expect(await screen.findByLabelText('Desktop right rail')).toBeInTheDocument();
 
     const leftHost = document.getElementById('otk-adsterra-left-rail');
     const rightHost = document.getElementById('otk-adsterra-right-rail');
@@ -58,11 +58,14 @@ describe('SiteMonetizationRails', () => {
   it('falls back to first-party partner rails with route-aware metadata when display zones are disabled', () => {
     const leftSlot = siteConfig.ads.providers.adsterra.displayBanners.leftRail;
     const rightSlot = siteConfig.ads.providers.adsterra.displayBanners.rightRail;
+    const mobileSlot = siteConfig.ads.providers.adsterra.displayBanners.mobileSticky;
     const previousLeft = { ...leftSlot };
     const previousRight = { ...rightSlot };
+    const previousMobile = { ...mobileSlot };
 
     Object.assign(leftSlot, { enabled: false, scriptSrc: '' });
     Object.assign(rightSlot, { enabled: false, scriptSrc: '' });
+    Object.assign(mobileSlot, { enabled: false, scriptSrc: '' });
 
     render(<SiteMonetizationRails />);
 
@@ -82,6 +85,7 @@ describe('SiteMonetizationRails', () => {
 
     Object.assign(leftSlot, previousLeft);
     Object.assign(rightSlot, previousRight);
+    Object.assign(mobileSlot, previousMobile);
   });
 
   it('does not render monetization rails when preview mode is off', () => {

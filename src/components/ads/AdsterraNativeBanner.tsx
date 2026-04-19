@@ -6,7 +6,7 @@ import { mountAdsterraNative } from '@/lib/monetization/adsterra-runtime';
 import PostResultSponsorCard from '@/components/common/PostResultSponsorCard';
 import type { AdRuntimeStatus } from '@/types/monetization';
 
-interface AdsterraNativeBannerProps {
+export interface AdsterraNativeBannerProps {
   className?: string;
   title?: string;
   description?: string;
@@ -32,15 +32,38 @@ export function AdsterraNativeBanner({
   priority,
 }: AdsterraNativeBannerProps) {
   const hostRef = useRef<HTMLDivElement>(null);
+  const loadedRef = useRef(false);
+  const cleanupRef = useRef<(() => void) | null>(null);
+  const slotNameRef = useRef(slotName);
+  const priorityRef = useRef<number>(0);
   const [status, setStatus] = useState<AdRuntimeStatus>('idle');
   const resolvedPriority = useMemo(
     () => priority ?? PRIORITY_BY_SLOT[slotName] ?? 10,
     [priority, slotName],
   );
+  priorityRef.current = resolvedPriority;
   const showPartnerFallback = status === 'no-fill-timeout' || status === 'failed';
   const hideNativeHost = status === 'blocked' || showPartnerFallback;
 
+  function cleanupWhenDetached() {
+    window.setTimeout(() => {
+      const host = hostRef.current;
+
+      if (host && document.body.contains(host)) {
+        return;
+      }
+
+      cleanupRef.current?.();
+      cleanupRef.current = null;
+      loadedRef.current = false;
+    }, 0);
+  }
+
   useEffect(() => {
+    if (loadedRef.current) {
+      return cleanupWhenDetached;
+    }
+
     if (!siteConfig.ads.enabled || !siteConfig.ads.providers.adsterra.enabled) {
       return;
     }
@@ -50,13 +73,16 @@ export function AdsterraNativeBanner({
       return;
     }
 
-    return mountAdsterraNative({
-      placement: slotName,
-      priority: resolvedPriority,
+    loadedRef.current = true;
+    cleanupRef.current = mountAdsterraNative({
+      placement: slotNameRef.current,
+      priority: priorityRef.current,
       host,
       onStatusChange: setStatus,
     });
-  }, [resolvedPriority, slotName]);
+
+    return cleanupWhenDetached;
+  }, []);
 
   if (!siteConfig.ads.enabled || !siteConfig.ads.providers.adsterra.enabled) {
     return null;
@@ -78,7 +104,7 @@ export function AdsterraNativeBanner({
       </p>
       <div
         ref={hostRef}
-        className={hideNativeHost ? 'hidden' : 'min-h-[120px]'}
+        className={hideNativeHost ? 'h-0 min-h-0 overflow-visible' : 'min-h-[120px] overflow-visible'}
         data-testid="adsterra-native-host"
         data-otk-ad-status={status}
         data-otk-ad-placement={slotName}

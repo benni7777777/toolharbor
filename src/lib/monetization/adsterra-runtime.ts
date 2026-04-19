@@ -38,10 +38,11 @@ type RuntimeState = {
 declare global {
   interface Window {
     __OTK_ADSTERRA_RUNTIME__?: RuntimeState;
+    adsterraPopunderLoaded?: boolean;
   }
 }
 
-const NATIVE_RENDER_TIMEOUT_MS = 18000;
+const NATIVE_RENDER_TIMEOUT_MS = 4500;
 const SESSION_POPUNDER_KEY = 'opentoolskit-adsterra-popunder-session-fired';
 const SESSION_SOCIALBAR_KEY = 'opentoolskit-adsterra-socialbar-session-fired';
 
@@ -67,6 +68,43 @@ function recordRuntimeEvent(event: Record<string, unknown>) {
   };
 
   runtime.events.push(payload);
+}
+
+function hasAdCreative(container: HTMLElement) {
+  return Array.from(container.childNodes).some((node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      return Boolean(node.textContent?.trim());
+    }
+
+    if (node instanceof HTMLScriptElement) {
+      return false;
+    }
+
+    return true;
+  });
+}
+
+function logAdLifecycleEvent({
+  event,
+  placement,
+  status,
+  reason,
+  metadata,
+}: {
+  event: 'ad_slot_mount' | 'ad_script_injected' | 'ad_render_success' | 'ad_render_failed';
+  placement: string;
+  status?: AdRuntimeStatus;
+  reason?: string;
+  metadata?: Record<string, unknown>;
+}) {
+  trackMonetizationEvent({
+    event,
+    placement,
+    provider: 'adsterra',
+    status,
+    reason,
+    metadata,
+  });
 }
 
 function setNativeStatus(
@@ -107,6 +145,14 @@ function markNativeRendered(registration: NativeRegistration) {
   const runtime = getRuntime();
   cleanupNativeRuntimeTimers(runtime);
   setNativeStatus(registration, 'rendered');
+  logAdLifecycleEvent({
+    event: 'ad_render_success',
+    placement: registration.placement,
+    status: 'rendered',
+    metadata: {
+      unit: 'native-banner',
+    },
+  });
   trackMonetizationEvent({
     event: 'native_banner_rendered',
     placement: registration.placement,
@@ -178,6 +224,15 @@ function mountSelectedNativeSlot(registration: NativeRegistration) {
   cleanupNativeRuntimeTimers(runtime);
   registration.host.innerHTML = '';
   setNativeStatus(registration, 'mounting');
+  logAdLifecycleEvent({
+    event: 'ad_slot_mount',
+    placement: registration.placement,
+    status: 'mounting',
+    metadata: {
+      unit: 'native-banner',
+      target: nativeBanner.containerId,
+    },
+  });
   trackMonetizationEvent({
     event: 'native_banner_mount_attempted',
     placement: registration.placement,
@@ -197,17 +252,18 @@ function mountSelectedNativeSlot(registration: NativeRegistration) {
   container.dataset.otkAdsterraContainer = 'native-banner';
   container.dataset.otkPlacement = registration.placement;
   container.style.minHeight = '120px';
+  container.style.overflow = 'visible';
 
   script.addEventListener('load', () => {
     setNativeStatus(registration, 'loaded');
 
-    if (container.childElementCount > 0 || container.textContent?.trim()) {
+    if (hasAdCreative(container)) {
       markNativeRendered(registration);
       return;
     }
 
     runtime.nativeObserver = new MutationObserver(() => {
-      if (container.childElementCount > 0 || container.textContent?.trim()) {
+      if (hasAdCreative(container)) {
         markNativeRendered(registration);
       }
     });
@@ -221,6 +277,15 @@ function mountSelectedNativeSlot(registration: NativeRegistration) {
   script.addEventListener('error', () => {
     cleanupNativeRuntimeTimers(runtime);
     setNativeStatus(registration, 'failed', 'script-error');
+    logAdLifecycleEvent({
+      event: 'ad_render_failed',
+      placement: registration.placement,
+      status: 'failed',
+      reason: 'script-error',
+      metadata: {
+        unit: 'native-banner',
+      },
+    });
     trackMonetizationEvent({
       event: 'native_banner_failed',
       placement: registration.placement,
@@ -232,15 +297,39 @@ function mountSelectedNativeSlot(registration: NativeRegistration) {
 
   registration.host.appendChild(container);
   registration.host.appendChild(script);
+  logAdLifecycleEvent({
+    event: 'ad_script_injected',
+    placement: registration.placement,
+    status: 'mounting',
+    metadata: {
+      unit: 'native-banner',
+      scriptSrc: nativeBanner.scriptSrc,
+      target: nativeBanner.containerId,
+    },
+  });
 
   runtime.nativeRenderTimer = window.setTimeout(() => {
     if (registration.status === 'rendered') {
       return;
     }
 
+    if (hasAdCreative(container)) {
+      markNativeRendered(registration);
+      return;
+    }
+
     runtime.nativeObserver?.disconnect();
     runtime.nativeObserver = null;
     setNativeStatus(registration, 'no-fill-timeout', 'blocked-timeout');
+    logAdLifecycleEvent({
+      event: 'ad_render_failed',
+      placement: registration.placement,
+      status: 'no-fill-timeout',
+      reason: 'blocked-timeout',
+      metadata: {
+        unit: 'native-banner',
+      },
+    });
     trackMonetizationEvent({
       event: 'native_banner_failed',
       placement: registration.placement,
@@ -305,8 +394,11 @@ function findInjectedScript(src: string, kind: string) {
   return document.querySelector(`script[data-otk-adsterra="${kind}"][src="${src}"]`);
 }
 
-function injectScript(src: string, kind: string, placement: string, target: HTMLElement = document.body) {
+function injectScript(src: string, kind: string, placement: string, target: HTMLElement = document.head) {
   if (findInjectedScript(src, kind)) {
+    if (kind === 'popunder') {
+      window.adsterraPopunderLoaded = true;
+    }
     return false;
   }
 
@@ -315,8 +407,11 @@ function injectScript(src: string, kind: string, placement: string, target: HTML
   script.dataset.otkAdsterra = kind;
   script.dataset.otkPlacement = placement;
   script.src = src;
-  script.async = false;
+  script.async = true;
   script.addEventListener('load', () => {
+    if (kind === 'popunder') {
+      window.adsterraPopunderLoaded = true;
+    }
     recordRuntimeEvent({ kind, placement, status: 'loaded' });
   });
   script.addEventListener('error', () => {
@@ -330,6 +425,18 @@ function injectScript(src: string, kind: string, placement: string, target: HTML
     });
   });
   target.appendChild(script);
+  if (kind === 'popunder') {
+    window.adsterraPopunderLoaded = true;
+  }
+  logAdLifecycleEvent({
+    event: 'ad_script_injected',
+    placement,
+    metadata: {
+      unit: kind,
+      scriptSrc: src,
+      target: target === document.head ? 'head' : target.tagName.toLowerCase(),
+    },
+  });
   return true;
 }
 
@@ -402,7 +509,7 @@ export function triggerAdsterraPopunder({ placement, reason, trustedEvent }: Scr
     return false;
   }
 
-  if (existingScript) {
+  if (existingScript || window.adsterraPopunderLoaded) {
     markCooldownHit(config.cooldownStorageKey);
     setSessionStorageItem(SESSION_POPUNDER_KEY, 'true');
     trackMonetizationEvent({
@@ -414,7 +521,7 @@ export function triggerAdsterraPopunder({ placement, reason, trustedEvent }: Scr
     return true;
   }
 
-  const injected = injectScript(config.scriptSrc, 'popunder', placement);
+  const injected = injectScript(config.scriptSrc, 'popunder', placement, document.head);
   if (injected) {
     markCooldownHit(config.cooldownStorageKey);
     setSessionStorageItem(SESSION_POPUNDER_KEY, 'true');
@@ -422,7 +529,7 @@ export function triggerAdsterraPopunder({ placement, reason, trustedEvent }: Scr
       event: 'popunder_injected',
       placement,
       provider: 'adsterra',
-      metadata: { reason, target: 'body' },
+      metadata: { reason, target: 'head' },
     });
     trackMonetizationEvent({
       event: 'popunder_triggered',
@@ -467,7 +574,7 @@ export function triggerAdsterraSocialBar({ placement, reason }: Omit<ScriptTrigg
     return false;
   }
 
-  const injected = injectScript(config.scriptSrc, 'socialbar', placement);
+  const injected = injectScript(config.scriptSrc, 'socialbar', placement, document.head);
   if (injected) {
     markCooldownHit(config.cooldownStorageKey);
     setSessionStorageItem(SESSION_SOCIALBAR_KEY, 'true');
@@ -475,7 +582,7 @@ export function triggerAdsterraSocialBar({ placement, reason }: Omit<ScriptTrigg
       event: 'socialbar_injected',
       placement,
       provider: 'adsterra',
-      metadata: { reason, target: 'body' },
+      metadata: { reason, target: 'head' },
     });
     trackMonetizationEvent({
       event: 'socialbar_triggered',
@@ -516,6 +623,7 @@ export function resetAdsterraRuntimeForTests() {
   runtime.nativeRegistrations.clear();
   runtime.activeNativeId = null;
   runtime.events = [];
+  window.adsterraPopunderLoaded = false;
   document.querySelectorAll('script[data-otk-adsterra]').forEach((script) => script.remove());
   const nativeContainer = document.getElementById(siteConfig.ads.providers.adsterra.nativeBanner.containerId);
   nativeContainer?.remove();

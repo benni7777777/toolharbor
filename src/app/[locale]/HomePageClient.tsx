@@ -6,9 +6,11 @@ import { ArrowRight, Zap, Wrench, Lock, Sparkles, Edit, FileImage, FolderOpen, S
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { BrandMark } from '@/components/layout/BrandMark';
-import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
-import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
-import AdsterraDisplayBanner from '@/components/ads/AdsterraDisplayBanner';
+import {
+  AdsterraDisplayBanner,
+  AdsterraNativeBanner,
+  AdsterraSessionScripts,
+} from '@/components/ads/DynamicAdsterraComponents';
 import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { ToolGrid } from '@/components/tools/ToolGrid';
 import { Button } from '@/components/ui/Button';

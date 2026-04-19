@@ -5,8 +5,10 @@ import { Shield, Lock, Eye, Server, Trash2 } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Card } from '@/components/ui/Card';
-import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
-import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
+import {
+  AdsterraNativeBanner,
+  AdsterraSessionScripts,
+} from '@/components/ads/DynamicAdsterraComponents';
 import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { type Locale } from '@/lib/i18n/config';
 import { siteConfig } from '@/config/site';

@@ -7,8 +7,10 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
-import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
-import AdsterraSessionScripts from '@/components/ads/AdsterraSessionScripts';
+import {
+  AdsterraNativeBanner,
+  AdsterraSessionScripts,
+} from '@/components/ads/DynamicAdsterraComponents';
 import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { type Locale } from '@/lib/i18n/config';
 import { getAllTools } from '@/config/tools';
@@ -194,7 +196,7 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
               <Card className="p-6">
                 <h3 className="mb-3 text-lg font-semibold text-[hsl(var(--color-foreground))]">Monetized without blocking results</h3>
                 <p className="text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
-                  Ads and partner suggestions may appear on non-tool-action surfaces and after successful results. Where monetization gates are used, they are labeled, limited, and tied to strict session and geo safety rules.
+                  Ads and partner suggestions may appear on non-tool-action surfaces and after successful results. This open-source project also teaches future web developers how monetization can work on public-source websites without hiding the implementation. Where monetization gates are used, they are labeled, limited, and tied to strict session and geo safety rules.
                 </p>
               </Card>
             </div>

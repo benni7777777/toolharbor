@@ -108,7 +108,7 @@ export const siteConfig = {
   name: 'OpenToolsKit',
   shortName: 'OTK',
   description:
-    'Open-source browser tools for PDF, image, text, publishing, developer, calculator, and social workflows. Private by default, fast by design, and built for multilingual discovery.',
+    'Open-source browser tools for PDF, image, text, publishing, developer, calculator, and social workflows. Private by default, fast by design, and built to teach future web developers how transparent website monetization can work in public-source projects.',
   launchDescription:
     'Private, browser-first tools for PDFs today and a broader OpenToolsKit platform tomorrow.',
   url: 'https://www.opentoolskit.com',
