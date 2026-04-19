@@ -1,0 +1,21 @@
+<svg width="640" height="400" viewBox="0 0 640 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Browser speed sponsor preview</title>
+  <desc id="desc">A browser window with fast navigation lines and privacy controls.</desc>
+  <rect width="640" height="400" rx="28" fill="#061A1D"/>
+  <rect x="48" y="56" width="544" height="288" rx="24" fill="#0D2A2E" stroke="#275D63" stroke-width="3"/>
+  <rect x="48" y="56" width="544" height="58" rx="24" fill="#123B40"/>
+  <circle cx="84" cy="85" r="8" fill="#4DD8D0"/>
+  <circle cx="112" cy="85" r="8" fill="#F3C746"/>
+  <circle cx="140" cy="85" r="8" fill="#F36F56"/>
+  <rect x="176" y="72" width="292" height="26" rx="13" fill="#08262A" stroke="#2B7378" stroke-width="2"/>
+  <path d="M198 85h134" stroke="#68E2DC" stroke-width="8" stroke-linecap="round"/>
+  <path d="M116 174h172" stroke="#C8F7F3" stroke-width="12" stroke-linecap="round"/>
+  <path d="M116 216h128" stroke="#6F8F93" stroke-width="12" stroke-linecap="round"/>
+  <path d="M116 258h196" stroke="#6F8F93" stroke-width="12" stroke-linecap="round"/>
+  <path d="M382 248c52-82 96-118 146-126-18 52-52 96-126 146" stroke="#4DD8D0" stroke-width="18" stroke-linecap="round"/>
+  <path d="M400 266l-42 44 18-58" fill="#F3C746"/>
+  <path d="M530 122l-6 56-44-36 50-20Z" fill="#D8FFF9"/>
+  <rect x="414" y="202" width="118" height="74" rx="18" fill="#F3C746"/>
+  <path d="M441 239h64" stroke="#061A1D" stroke-width="14" stroke-linecap="round"/>
+  <path d="M473 220v38" stroke="#061A1D" stroke-width="12" stroke-linecap="round"/>
+</svg>

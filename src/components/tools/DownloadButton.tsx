@@ -8,7 +8,7 @@ import { addRecentFile } from '@/lib/storage/recent-files';
 import { useToolContext } from '@/lib/contexts/ToolContext';
 import { sanitizeFilename } from '@/lib/utils/sanitize';
 import { siteConfig } from '@/config/site';
-import { LoaderCircle, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import { AdsterraNativeBanner } from '@/components/ads/DynamicAdsterraComponents';
 import {
   triggerAdsterraPopunder,
@@ -466,8 +466,8 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
 
   const unlockCtaLabel = gateReady ? 'Download now' : `Download unlocks in ${gateSecondsRemaining}s`;
   const gateDescription = gateReady
-    ? 'Your download is unlocked. OpenToolsKit stays free thanks to advertising and partner offers.'
-    : `Download unlocks in ${gateSecondsRemaining} seconds. OpenToolsKit stays free thanks to advertising and partner offers.`;
+    ? 'Your download is unlocked. Sponsored partner options remain optional and open in a new tab.'
+    : `Wait ${gateSecondsRemaining} seconds, or open the sponsored partner option in a new tab to unlock now. Your current page and file stay intact.`;
   const isDisabled = disabled || !file || !blobUrl;
   const buttonText = label || t('buttons.download');
   const fileSizeText = showFileSize && file ? ` (${formatFileSize(file.size)})` : '';
@@ -510,7 +510,7 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
       {isGateOpen && (
         <div className="fixed inset-0 z-[90] flex items-end justify-center bg-[hsl(var(--color-background))/0.78] p-4 backdrop-blur-md sm:items-center">
           <div
-            className="w-full max-w-2xl overflow-visible rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-6 shadow-[var(--shadow-lg)]"
+            className="w-full max-w-3xl overflow-visible rounded-[2rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-6 shadow-[var(--shadow-lg)]"
             data-testid="download-gate-overlay"
           >
             <div className="flex items-start justify-between gap-4">
@@ -525,7 +525,7 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
                   {gateDescription}
                 </p>
                 <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
-                  Ads and partner links are delivered by third-party networks. We do not individually control or endorse every creative or landing page.
+                  Partner previews are curated by OpenToolsKit. The linked third-party offer may show different creative or terms after it opens.
                 </p>
               </div>
               <button
@@ -565,23 +565,25 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
               </div>
 
               <div className="space-y-4">
-                {resultPlacement.nativeBanner ? (
-                  <AdsterraNativeBanner
-                    slotName="result-gate"
-                    title="Sponsored result unlock"
-                    description="This native placement appears during the result gate and helps keep OpenToolsKit free."
-                  />
-                ) : null}
                 <PostResultSponsorCard
                   placementId={siteConfig.ads.providers.partnerRedirect.placementId}
-                  title="Open a partner offer to unlock immediately"
-                  description="The offer opens in a new tab. Sponsor clicks unlock the download instantly while keeping your current page intact."
-                  ctaLabel="Open partner site"
+                  title="Open a sponsored offer to unlock immediately"
+                  description="This preview is curated by OpenToolsKit. The partner page opens in a new tab, and this download page stays available."
+                  ctaLabel="Open sponsored offer"
                   sourceId={`tool:${toolSlug ?? 'unknown'}:result-gate:contextual-soft:soft-bordered`}
                   campaign="result-gate-unlock"
                   placementMeta="download-gate"
+                  sponsorTheme="secure-sharing"
                   onSponsorClick={handlePartnerUnlock}
                 />
+                {resultPlacement.nativeBanner ? (
+                  <AdsterraNativeBanner
+                    slotName="result-gate"
+                    title="Network ad"
+                    description="Third-party ad inventory may appear here when available. It is separate from the partner preview above."
+                    collapseOnNoFill
+                  />
+                ) : null}
                 <div className="flex flex-wrap gap-3 text-sm">
                   <a
                     href={siteConfig.links.source}
@@ -622,10 +624,10 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
               </div>
               <div className="space-y-1">
                 <p className="text-sm font-semibold text-[hsl(var(--color-foreground))]">
-                  Download started. Sponsored options are ready while your file stays available.
+                  Download started. Sponsored partner options are available if you want a next step.
                 </p>
                 <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
-                  {siteConfig.ads.disclosureSummary} {siteConfig.ads.actionDisclosure}
+                  Partner previews are site-rendered summaries. Third-party offers open in a new tab and this page remains intact.
                 </p>
               </div>
             </div>
@@ -640,76 +642,43 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
           </div>
 
           <div className="mt-4 space-y-4">
-            <div className="grid gap-3 md:grid-cols-3">
+            <div className="grid gap-3 lg:grid-cols-[1fr_0.72fr]">
               <PostResultSponsorCard
                 placementId={siteConfig.ads.providers.partnerRedirect.placementId}
-                title="Open the main partner route"
-                description="A sponsored next step opens in a new tab without interrupting this download."
-                ctaLabel="Open route"
+                title="Continue with a document-ready partner option"
+                description="Open a sponsored offer in a new tab for editing, signing, storage, or another useful follow-up. Your file flow stays intact."
+                ctaLabel="Open sponsored offer"
                 sourceId={`tool:${toolSlug ?? 'unknown'}:post-result-primary:contextual-soft:soft-bordered`}
                 campaign="post-result-primary"
                 placementMeta="download-panel"
-                compact
+                sponsorTheme="pdf-workflow"
                 showHelperText={false}
-                creative={{
-                  src: '/images/sponsors/workflow-boost.svg',
-                  alt: 'Sponsored document workflow creative',
-                  eyebrow: 'Primary',
-                }}
-                layout="rectangle"
+                layout="banner"
               />
 
               <PostResultSponsorCard
                 placementId="next-step"
-                title="Compare another option"
-                description="A second sponsored path for users who want a different next step."
-                ctaLabel="Compare"
+                title="Try another file shortcut"
+                description="Compare a sponsored route for related file or format tasks."
+                ctaLabel="Try recommended next step"
                 sourceId={`tool:${toolSlug ?? 'unknown'}:next-step:contextual-soft:soft-bordered`}
                 campaign="post-result-secondary"
                 placementMeta="download-panel"
+                sponsorTheme="conversion-shortcut"
                 compact
                 showHelperText={false}
-                creative={{
-                  src: '/images/sponsors/file-convert.svg',
-                  alt: 'Sponsored file conversion creative',
-                  eyebrow: 'Option',
-                }}
-                layout="rectangle"
-              />
-
-              <PostResultSponsorCard
-                placementId="upload-offer"
-                title="Try a sponsored workflow"
-                description="Another partner route for file, upload, or document follow-up tasks."
-                ctaLabel="Try workflow"
-                sourceId={`tool:${toolSlug ?? 'unknown'}:upload-offer:contextual-soft:soft-bordered`}
-                campaign="post-result-workflow"
-                placementMeta="download-panel"
-                compact
-                showHelperText={false}
-                creative={{
-                  src: '/images/sponsors/secure-route.svg',
-                  alt: 'Sponsored secure route creative',
-                  eyebrow: 'Workflow',
-                }}
                 layout="rectangle"
               />
             </div>
 
             {resultPlacement.nativeBanner && !currentDownloadUsedGate && (
-              showNativeBanner ? (
+              showNativeBanner && (
                 <AdsterraNativeBanner
                   slotName="result-drawer"
-                  title="Sponsored results placement"
-                  description="This native placement appears after successful downloads. Ads help fund the project while keeping the file flow intact."
+                  title="Network ad"
+                  description="Third-party native inventory may appear here when available. It is separate from the partner previews above."
+                  collapseOnNoFill
                 />
-              ) : (
-                <div className="rounded-[1.75rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))] p-4 text-sm text-[hsl(var(--color-muted-foreground))]">
-                  <div className="flex items-center gap-3">
-                    <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" />
-                    <span>Loading sponsored placement...</span>
-                  </div>
-                </div>
               )
             )}
           </div>

@@ -1,0 +1,20 @@
+<svg width="640" height="400" viewBox="0 0 640 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Productivity add-on sponsor preview</title>
+  <desc id="desc">A productivity dashboard with compact add-on modules.</desc>
+  <rect width="640" height="400" rx="28" fill="#07191C"/>
+  <rect x="60" y="66" width="520" height="268" rx="26" fill="#0D2B30" stroke="#2D6368" stroke-width="3"/>
+  <rect x="92" y="104" width="178" height="82" rx="18" fill="#153C42"/>
+  <rect x="92" y="214" width="178" height="82" rx="18" fill="#153C42"/>
+  <rect x="300" y="104" width="248" height="192" rx="22" fill="#F0F6F3"/>
+  <rect x="124" y="130" width="42" height="30" rx="10" fill="#4DD8D0"/>
+  <path d="M188 146h48" stroke="#C8F7F3" stroke-width="10" stroke-linecap="round"/>
+  <rect x="124" y="240" width="42" height="30" rx="10" fill="#F3C746"/>
+  <path d="M188 256h48" stroke="#C8F7F3" stroke-width="10" stroke-linecap="round"/>
+  <path d="M336 148h128" stroke="#143E43" stroke-width="14" stroke-linecap="round"/>
+  <path d="M336 188h164" stroke="#8CA2A5" stroke-width="12" stroke-linecap="round"/>
+  <path d="M336 226h102" stroke="#8CA2A5" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="512" cy="252" r="42" fill="#4DD8D0"/>
+  <path d="M492 252h40" stroke="#07191C" stroke-width="11" stroke-linecap="round"/>
+  <path d="M512 232v40" stroke="#07191C" stroke-width="11" stroke-linecap="round"/>
+  <rect x="356" y="262" width="82" height="18" rx="9" fill="#F3C746"/>
+</svg>

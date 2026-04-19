@@ -6,7 +6,7 @@ type TranslationValues = Record<string, string | number | boolean | Date | null 
 
 export function useSafeTranslations(namespace?: string) {
   try {
-    const translate = namespace ? useTranslations(namespace) : useTranslations();
+    const translate = useTranslations(namespace);
 
     return (key: string, values?: TranslationValues) => {
       const result = values

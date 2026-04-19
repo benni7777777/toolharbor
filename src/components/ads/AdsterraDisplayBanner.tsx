@@ -28,19 +28,6 @@ function hasAdCreative(container: HTMLElement) {
   });
 }
 
-function buildFallbackHref(slot: DisplayBannerSlot) {
-  const params = new URLSearchParams({
-    tool: 'site',
-    placement: 'next-step',
-    provider: siteConfig.ads.providers.partnerRedirect.providerQueryValue,
-    source: `display-fallback:${slot}:no-fill`,
-    campaign: `display-${slot}-fallback`,
-    placementMeta: slot,
-  });
-
-  return `${siteConfig.sponsorship.redirectPathPrefix}/next-step?${params.toString()}`;
-}
-
 function DisplayBannerFallback({
   slot,
   width,
@@ -55,26 +42,27 @@ function DisplayBannerFallback({
   const isStrip = height <= 90;
   const isShortStrip = height <= 60;
   const isRail = width <= 180;
-  const title = isRail ? 'Sponsored option' : 'Sponsor placement';
+  const title = isRail ? 'Network ad unavailable' : 'Ad slot unavailable';
   const description = isStrip
-    ? 'Ad inventory is not available right now.'
-    : 'This ad slot is waiting for live inventory. A labeled sponsor route is available instead.';
+    ? 'No third-party ad filled this slot.'
+    : 'No third-party ad filled this placement. Page content remains available.';
 
   return (
     <div
-      className={`absolute inset-0 z-10 flex rounded-md border border-dashed border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] text-[hsl(var(--color-foreground))] ${
+      className={`absolute inset-0 z-10 flex rounded-md border border-dashed border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))] text-[hsl(var(--color-foreground))] ${
         isShortStrip ? 'p-1.5' : 'p-2'
       } ${
         isStrip ? 'items-center justify-between gap-3 text-left' : 'flex-col items-center justify-center gap-3 text-center'
       }`.trim()}
       data-testid="adsterra-display-fallback"
+      data-otk-monetization-surface="fallback"
       data-otk-ad-fallback-slot={slot}
       data-otk-ad-fallback-reason={reason ?? 'unknown'}
       style={{ width, height }}
     >
       <div className={isStrip ? 'min-w-0 flex-1' : 'space-y-2'}>
-        <div className="inline-flex rounded-full bg-[hsl(var(--color-accent-soft))] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[hsl(var(--color-accent-strong))]">
-          {siteConfig.ads.disclosureLabel}
+        <div className="inline-flex rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[hsl(var(--color-muted-foreground))]">
+          No-fill
         </div>
         {isShortStrip ? (
           <span className="ml-2 inline-block max-w-[8rem] truncate align-middle text-[11px] font-semibold">
@@ -91,30 +79,11 @@ function DisplayBannerFallback({
           </p>
         )}
       </div>
-      <a
-        href={buildFallbackHref(slot)}
-        target="_blank"
-        rel="sponsored nofollow noreferrer noopener"
-        onClick={() => {
-          trackMonetizationEvent({
-            event: 'partner_click_triggered',
-            placement: 'display-banner-fallback',
-            provider: siteConfig.ads.providers.partnerRedirect.providerName,
-            metadata: {
-              slot,
-              reason,
-              redirect_url: buildFallbackHref(slot),
-            },
-          });
-        }}
-        className={`inline-flex items-center justify-center rounded-md bg-[hsl(var(--color-accent-strong))] font-semibold text-[hsl(var(--color-background))] transition-colors hover:bg-[hsl(var(--color-primary))] ${
-          isShortStrip ? 'px-2 py-1 text-[11px]' : 'px-3 py-2 text-xs'
-        } ${
-          isRail ? 'w-full' : 'min-w-fit'
-        }`.trim()}
-      >
-        {isShortStrip ? 'Open' : 'Open sponsor'}
-      </a>
+      {!isShortStrip && !isRail ? (
+        <p className="text-[11px] text-[hsl(var(--color-muted-foreground))]">
+          This is a temporary network fallback, not a partner offer.
+        </p>
+      ) : null}
     </div>
   );
 }
@@ -226,6 +195,19 @@ export function AdsterraDisplayBanner({ slot, className = '' }: AdsterraDisplayB
           height: currentSlotConfig.height,
         },
       });
+      trackMonetizationEvent({
+        event: 'network_ad_rendered',
+        placement: currentSlot,
+        provider: 'adsterra',
+        status: 'rendered',
+        metadata: {
+          surface: 'networkAd',
+          unit: 'display-banner',
+          containerId: currentSlotConfig.containerId,
+          width: currentSlotConfig.width,
+          height: currentSlotConfig.height,
+        },
+      });
     };
     const markRenderFailed = (reason: string) => {
       if (renderSettled || failureLogged) {
@@ -250,6 +232,36 @@ export function AdsterraDisplayBanner({ slot, className = '' }: AdsterraDisplayB
           height: currentSlotConfig.height,
           childNodeCount: container.childNodes.length,
           hasScript: Boolean(container.querySelector('script')),
+        },
+      });
+      trackMonetizationEvent({
+        event: 'network_ad_failed',
+        placement: currentSlot,
+        provider: 'adsterra',
+        status: 'failed',
+        reason,
+        metadata: {
+          surface: 'networkAd',
+          unit: 'display-banner',
+          containerId: currentSlotConfig.containerId,
+          width: currentSlotConfig.width,
+          height: currentSlotConfig.height,
+          childNodeCount: container.childNodes.length,
+          hasScript: Boolean(container.querySelector('script')),
+        },
+      });
+      trackMonetizationEvent({
+        event: 'fallback_shown',
+        placement: currentSlot,
+        provider: 'adsterra',
+        status: 'failed',
+        reason,
+        metadata: {
+          surface: 'fallback',
+          fallbackType: 'display-banner-no-fill',
+          containerId: currentSlotConfig.containerId,
+          width: currentSlotConfig.width,
+          height: currentSlotConfig.height,
         },
       });
     };
@@ -321,6 +333,7 @@ export function AdsterraDisplayBanner({ slot, className = '' }: AdsterraDisplayB
     <section
       className={`relative z-20 rounded-md border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] ${className}`.trim()}
       aria-label={slotConfig.label}
+      data-otk-monetization-surface="networkAd"
       data-otk-ad-status={status}
       data-otk-ad-reason={failureReason ?? undefined}
       style={{

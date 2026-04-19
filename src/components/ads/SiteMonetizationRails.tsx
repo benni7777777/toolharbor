@@ -36,16 +36,6 @@ export function SiteMonetizationRails() {
   const railSource = `site:${context.routeKey}:rail:contextual-soft:soft-bordered`;
   const mobileSource = `site:${context.routeKey}:mobile-strip:contextual-soft:soft-bordered`;
   const tool = context.toolSlug ?? context.pageType;
-  const leftCreative = {
-    src: '/images/sponsors/secure-route.svg',
-    alt: 'Sponsored partner route creative',
-    eyebrow: 'Partner',
-  };
-  const rightCreative = {
-    src: '/images/sponsors/workflow-boost.svg',
-    alt: 'Sponsored workflow creative',
-    eyebrow: 'Workflow',
-  };
   const leftRailDisplayEnabled = siteConfig.ads.providers.adsterra.displayBanners.leftRail.enabled;
   const rightRailDisplayEnabled = siteConfig.ads.providers.adsterra.displayBanners.rightRail.enabled;
   const mobileStickyDisplayEnabled = siteConfig.ads.providers.adsterra.displayBanners.mobileSticky.enabled;
@@ -62,16 +52,16 @@ export function SiteMonetizationRails() {
           ) : (
             <PostResultSponsorCard
               placementId="next-step"
-              title="Open a sponsored route"
-              description="A separate partner option opens in a new tab while this tool stays ready."
-              ctaLabel="Open route"
+              title="Review a safer file-sharing option"
+              description="A curated partner preview opens a sponsored offer in a new tab while this tool stays ready."
+              ctaLabel="See partner option"
               toolSlug={tool}
               sourceId={railSource}
               campaign="site-left-rail"
               placementMeta={context.pageType}
+              sponsorTheme="secure-sharing"
               compact
               showHelperText={false}
-              creative={leftCreative}
               layout="rectangle"
             />
           )}
@@ -88,16 +78,16 @@ export function SiteMonetizationRails() {
           ) : (
             <PostResultSponsorCard
               placementId="upload-offer"
-              title="Compare a workflow offer"
-              description="Check another sponsored path after using the free browser tools."
-              ctaLabel="View offer"
+              title="Explore a useful productivity add-on"
+              description="Open a labeled partner option that may help with follow-up browser tasks."
+              ctaLabel="Open sponsored offer"
               toolSlug={tool}
               sourceId={railSource}
               campaign="site-right-rail"
               placementMeta={context.pageType}
+              sponsorTheme="productivity-addon"
               compact
               showHelperText={false}
-              creative={rightCreative}
               layout="rectangle"
             />
           )}
@@ -120,21 +110,17 @@ export function SiteMonetizationRails() {
             ) : (
               <PostResultSponsorCard
                 placementId="next-step"
-                title="Sponsored option"
-                description="Optional partner link. Your current page stays open."
-                ctaLabel="Open"
+                title="Speed up your next browser task"
+                description="Optional partner offer opens separately. Your current page stays open."
+                ctaLabel="Open sponsored offer"
                 toolSlug={tool}
                 sourceId={mobileSource}
                 campaign="site-mobile-strip"
                 placementMeta={tool}
+                sponsorTheme="browser-speed"
                 compact
                 showHelperText={false}
                 className="shadow-[var(--shadow-lg)]"
-                creative={{
-                  src: '/images/sponsors/file-convert.svg',
-                  alt: 'Sponsored mobile offer creative',
-                  eyebrow: 'Mobile',
-                }}
                 layout="banner"
               />
             )}

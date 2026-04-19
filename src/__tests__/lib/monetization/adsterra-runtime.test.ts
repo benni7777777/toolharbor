@@ -67,6 +67,10 @@ describe('Adsterra runtime', () => {
 
     expect(host.dataset.otkAdStatus).toBe('no-fill-timeout');
     expect(host.dataset.otkAdReason).toBe('blocked-timeout');
+    expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+      event => event.monetizationEvent === 'network_ad_failed'
+        && event.placement === 'homepage-native',
+    )).toBe(true);
   });
 
   it('marks native banner rendered after Adsterra populates the exact container', async () => {
@@ -88,6 +92,10 @@ describe('Adsterra runtime', () => {
     await Promise.resolve();
 
     expect(host.dataset.otkAdStatus).toBe('rendered');
+    expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+      event => event.monetizationEvent === 'network_ad_rendered'
+        && event.placement === 'result-drawer',
+    )).toBe(true);
   });
 
   it('requires a trusted user action for popunder and respects cooldown', () => {

@@ -21,6 +21,8 @@ import zhTW_Messages from '../../../messages/zh-TW.json';
 import ptMessages from '../../../messages/pt.json';
 import arMessages from '../../../messages/ar.json';
 import itMessages from '../../../messages/it.json';
+import idMessages from '../../../messages/id.json';
+import viMessages from '../../../messages/vi.json';
 
 // Map of locale to messages
 const LOCALE_MESSAGES: Record<Locale, Record<string, unknown>> = {
@@ -35,6 +37,8 @@ const LOCALE_MESSAGES: Record<Locale, Record<string, unknown>> = {
   pt: ptMessages,
   ar: arMessages,
   it: itMessages,
+  id: idMessages,
+  vi: viMessages,
 };
 
 /**

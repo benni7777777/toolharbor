@@ -1,0 +1,22 @@
+<svg width="640" height="400" viewBox="0 0 640 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">File conversion shortcut sponsor preview</title>
+  <desc id="desc">File cards flowing through a conversion arrow into a finished result.</desc>
+  <rect width="640" height="400" rx="28" fill="#061B1E"/>
+  <rect x="56" y="94" width="148" height="204" rx="20" fill="#F7F7F1"/>
+  <path d="M162 94v48h42" fill="#D8F5F2"/>
+  <rect x="86" y="158" width="86" height="14" rx="7" fill="#183F44"/>
+  <rect x="86" y="194" width="72" height="14" rx="7" fill="#91A5A8"/>
+  <rect x="86" y="230" width="96" height="14" rx="7" fill="#91A5A8"/>
+  <rect x="436" y="94" width="148" height="204" rx="20" fill="#DDF8F5"/>
+  <path d="M542 94v48h42" fill="#A4E9E4"/>
+  <rect x="466" y="158" width="80" height="14" rx="7" fill="#183F44"/>
+  <rect x="466" y="194" width="88" height="14" rx="7" fill="#4B777B"/>
+  <rect x="466" y="230" width="58" height="14" rx="7" fill="#4B777B"/>
+  <path d="M242 200h120" stroke="#F3C746" stroke-width="24" stroke-linecap="round"/>
+  <path d="M336 154l62 46-62 46" stroke="#F3C746" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="320" cy="200" r="42" fill="#0E3136" stroke="#49D8D1" stroke-width="6"/>
+  <path d="M302 201h36" stroke="#DDF8F5" stroke-width="9" stroke-linecap="round"/>
+  <path d="M320 183v36" stroke="#DDF8F5" stroke-width="9" stroke-linecap="round"/>
+  <rect x="246" y="302" width="148" height="34" rx="17" fill="#12383D"/>
+  <path d="M276 319h88" stroke="#49D8D1" stroke-width="8" stroke-linecap="round"/>
+</svg>

@@ -1,11 +1,16 @@
 'use client';
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { siteConfig } from '@/config/site';
 import { useToolContext } from '@/lib/contexts/ToolContext';
 import { trackMonetizationEvent } from '@/lib/monetization/analytics';
+import {
+  pickSponsorPreviewTheme,
+  rememberSponsorPreviewTheme,
+  type SponsorPreviewThemeId,
+} from '@/lib/monetization/sponsor-previews';
 
 interface PostResultSponsorCardProps {
   placementId?: string;
@@ -17,6 +22,8 @@ interface PostResultSponsorCardProps {
   sourceId?: string;
   campaign?: string;
   placementMeta?: string;
+  sponsorTheme?: SponsorPreviewThemeId;
+  rotateTheme?: boolean;
   compact?: boolean;
   className?: string;
   showHelperText?: boolean;
@@ -25,7 +32,7 @@ interface PostResultSponsorCardProps {
     alt: string;
     eyebrow?: string;
   };
-  layout?: 'text' | 'banner' | 'rectangle';
+  layout?: 'banner' | 'rectangle';
   onSponsorClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
@@ -73,25 +80,42 @@ function isDebugEnabled() {
 
 export function PostResultSponsorCard({
   placementId = 'post-result-primary',
-  title = 'Useful next step for your document workflow',
-  description = 'Open a vetted partner offer in a new tab. Your download stays available whether you open it or not.',
-  ctaLabel = 'Open partner site',
+  title,
+  description,
+  ctaLabel,
   href,
   toolSlug: propToolSlug,
   sourceId,
   campaign,
   placementMeta,
+  sponsorTheme,
+  rotateTheme = true,
   compact = false,
   className = '',
   showHelperText = true,
   creative,
-  layout = 'text',
+  layout,
   onSponsorClick,
 }: PostResultSponsorCardProps) {
   const toolContext = useToolContext();
   const [clickId, setClickId] = useState<string | null>(null);
+  const shownKeyRef = useRef<string | null>(null);
   const toolSlug = propToolSlug ?? toolContext?.toolSlug ?? 'unknown';
   const resolvedSourceId = sourceId ?? `tool:${toolSlug}:${placementId}:contextual-soft:soft-bordered`;
+  const selectedTheme = useMemo(() => pickSponsorPreviewTheme({
+    seed: `${resolvedSourceId}:${placementId}:${campaign ?? ''}:${placementMeta ?? ''}`,
+    requestedTheme: sponsorTheme,
+    rotate: rotateTheme,
+  }), [campaign, placementId, placementMeta, resolvedSourceId, rotateTheme, sponsorTheme]);
+  const resolvedTitle = title ?? selectedTheme.title;
+  const resolvedDescription = description ?? selectedTheme.description;
+  const resolvedCtaLabel = ctaLabel ?? selectedTheme.ctaLabel;
+  const resolvedCreative = creative ?? {
+    src: selectedTheme.asset.src,
+    alt: selectedTheme.asset.alt,
+    eyebrow: selectedTheme.eyebrow,
+  };
+  const resolvedLayout = layout ?? (compact ? 'rectangle' : 'banner');
   const buildLinkHref = useMemo(() => (resolvedClickId: string | null) => {
     if (href) {
       return href;
@@ -125,8 +149,32 @@ export function PostResultSponsorCard({
   const linkHref = useMemo(() => buildLinkHref(clickId), [buildLinkHref, clickId]);
 
   useEffect(() => {
-    setClickId(buildLocalSponsorClickId());
-  }, [placementId, resolvedSourceId]);
+    const nextClickId = buildLocalSponsorClickId();
+    const shownKey = `${resolvedSourceId}:${placementId}:${selectedTheme.id}`;
+
+    setClickId(nextClickId);
+    rememberSponsorPreviewTheme(selectedTheme.id);
+
+    if (shownKeyRef.current === shownKey) {
+      return;
+    }
+
+    shownKeyRef.current = shownKey;
+    trackMonetizationEvent({
+      event: 'sponsor_preview_shown',
+      placement: placementId,
+      provider: siteConfig.ads.providers.partnerRedirect.providerName,
+      tool: toolSlug,
+      metadata: {
+        surface: 'sponsorPreview',
+        themeId: selectedTheme.id,
+        sourceId: resolvedSourceId,
+        clickId: nextClickId,
+        campaign,
+        placementMeta,
+      },
+    });
+  }, [campaign, placementId, placementMeta, resolvedSourceId, selectedTheme.id, toolSlug]);
 
   const ensureClickId = () => {
     if (clickId) {
@@ -140,51 +188,53 @@ export function PostResultSponsorCard({
     return nextClickId;
   };
 
-  const isVisualLayout = Boolean(creative) || layout !== 'text';
-  const cardClassName = `overflow-hidden border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] shadow-[var(--shadow-sm)] ${isVisualLayout ? '!p-0' : compact ? 'p-3' : 'p-4'} ${className}`.trim();
+  const cardClassName = `overflow-hidden border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] shadow-[var(--shadow-sm)] !p-0 ${className}`.trim();
   const bodyClassName = compact
     ? 'flex flex-col gap-3'
     : 'flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between';
   const ctaClassName = compact
     ? 'inline-flex w-full items-center justify-center gap-2 rounded-md border border-[hsl(var(--color-border))] bg-[hsl(var(--color-accent-strong))] px-3 py-2 text-xs font-semibold text-[hsl(var(--color-background))] transition-colors hover:bg-[hsl(var(--color-primary))]'
     : 'inline-flex min-w-fit items-center justify-center gap-2 rounded-md border border-[hsl(var(--color-border))] bg-[hsl(var(--color-accent-strong))] px-4 py-2 text-sm font-semibold text-[hsl(var(--color-background))] transition-colors hover:bg-[hsl(var(--color-primary))]';
-  const contentPadding = isVisualLayout ? (compact ? 'p-3' : 'p-4') : '';
-  const creativeClassName = layout === 'rectangle'
+  const contentPadding = compact ? 'p-3' : 'p-4';
+  const creativeClassName = resolvedLayout === 'rectangle'
     ? 'aspect-[6/5] w-full object-cover'
-    : layout === 'banner'
-      ? 'aspect-[16/7] w-full object-cover'
-      : 'aspect-[16/9] w-full object-cover';
+    : 'aspect-[16/7] w-full object-cover';
 
   return (
-    <Card className={cardClassName}>
-      {creative && (
-        <div className="relative border-b border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))]">
-          {creative.eyebrow && (
-            <div className="absolute left-3 top-3 z-10 rounded-sm bg-[hsl(var(--color-background))/0.88] px-2 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-[hsl(var(--color-accent-strong))]">
-              {creative.eyebrow}
-            </div>
-          )}
-          <img
-            src={creative.src}
-            alt={creative.alt}
-            className={creativeClassName}
-            loading="eager"
-            decoding="async"
-            fetchPriority="high"
-          />
-        </div>
-      )}
+    <Card
+      className={cardClassName}
+      data-testid="sponsor-preview-card"
+      data-otk-monetization-surface="sponsorPreview"
+      data-sponsor-theme={selectedTheme.id}
+    >
+      <div className="relative border-b border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))]">
+        {resolvedCreative.eyebrow && (
+          <div className="absolute left-3 top-3 z-10 rounded-sm bg-[hsl(var(--color-background))/0.9] px-2 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-[hsl(var(--color-accent-strong))]">
+            {resolvedCreative.eyebrow}
+          </div>
+        )}
+        <img
+          src={resolvedCreative.src}
+          alt={resolvedCreative.alt}
+          className={creativeClassName}
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
+      </div>
       <div className={`${bodyClassName} ${contentPadding}`.trim()}>
         <div className="space-y-2">
           <div className="inline-flex items-center rounded-full bg-[hsl(var(--color-accent-soft))] px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-accent-strong))]">
-            {siteConfig.sponsorship.label}
+            Partner preview
           </div>
           <div>
-            <h3 className={`${compact ? 'text-xs' : 'text-sm'} font-semibold text-[hsl(var(--color-foreground))]`}>{title}</h3>
-            <p className={`mt-1 ${compact ? 'text-xs leading-5' : 'text-sm'} text-[hsl(var(--color-muted-foreground))]`}>{description}</p>
+            <h3 className={`${compact ? 'text-xs' : 'text-sm'} font-semibold text-[hsl(var(--color-foreground))]`}>{resolvedTitle}</h3>
+            <p className={`mt-1 ${compact ? 'text-xs leading-5' : 'text-sm'} text-[hsl(var(--color-muted-foreground))]`}>{resolvedDescription}</p>
           </div>
           {!compact && (
-            <p className="text-xs text-[hsl(var(--color-muted-foreground))]">{siteConfig.sponsorship.disclosure}</p>
+            <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
+              This is a site-rendered partner preview. The sponsored offer opens in a new tab and may differ from this summary.
+            </p>
           )}
         </div>
         <a
@@ -195,29 +245,48 @@ export function PostResultSponsorCard({
             const resolvedClickId = ensureClickId();
             const resolvedHref = buildLinkHref(resolvedClickId);
             event.currentTarget.href = resolvedHref;
+            const metadata = {
+              surface: 'sponsorPreview',
+              themeId: selectedTheme.id,
+              sourceId: resolvedSourceId,
+              clickId: resolvedClickId,
+              campaign,
+              placementMeta,
+              redirect_url: resolvedHref,
+            };
+            trackMonetizationEvent({
+              event: 'sponsor_preview_clicked',
+              placement: placementId,
+              provider: siteConfig.ads.providers.partnerRedirect.providerName,
+              tool: toolSlug,
+              metadata,
+            });
             trackMonetizationEvent({
               event: 'partner_click_triggered',
               placement: placementId,
               provider: siteConfig.ads.providers.partnerRedirect.providerName,
               tool: toolSlug,
-              metadata: {
-                sourceId: resolvedSourceId,
-                clickId: resolvedClickId,
-                campaign,
-                placementMeta,
-                redirect_url: resolvedHref,
-              },
+              metadata,
+            });
+            trackMonetizationEvent({
+              event: 'partner_redirect_opened',
+              placement: placementId,
+              provider: siteConfig.ads.providers.partnerRedirect.providerName,
+              tool: toolSlug,
+              metadata,
             });
             onSponsorClick?.(event);
           }}
           className={ctaClassName}
         >
-          <span>{ctaLabel}</span>
+          <span>{resolvedCtaLabel}</span>
           <ExternalLink className="h-4 w-4" aria-hidden="true" />
         </a>
       </div>
       {showHelperText && (
-        <p className="mt-3 text-xs text-[hsl(var(--color-muted-foreground))]">{siteConfig.sponsorship.helperText}</p>
+        <p className="px-4 pb-4 text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
+          {siteConfig.sponsorship.helperText}
+        </p>
       )}
     </Card>
   );

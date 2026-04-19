@@ -60,7 +60,7 @@ describe('AdsterraDisplayBanner', () => {
     Object.assign(slot, previous);
   });
 
-  it('shows a same-size sponsor fallback when the display slot stays empty after timeout', async () => {
+  it('shows a same-size network fallback when the display slot stays empty after timeout', async () => {
     vi.useFakeTimers();
     const slot = siteConfig.ads.providers.adsterra.displayBanners.rightRail;
     const previous = { ...slot };
@@ -88,11 +88,22 @@ describe('AdsterraDisplayBanner', () => {
     expect(screen.getByLabelText(previous.label)).toHaveAttribute('data-otk-ad-status', 'failed');
     expect(fallback).toHaveStyle({ width: '160px', height: '300px' });
     expect(fallback).toHaveAttribute('data-otk-ad-fallback-slot', 'rightRail');
+    expect(fallback).toHaveAttribute('data-otk-monetization-surface', 'fallback');
+    expect(fallback.querySelector('a')).toBeNull();
     expect(host?.querySelector('script[data-otk-adsterra-display="rightRail"]')).toBeTruthy();
     expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
       event => event.monetizationEvent === 'ad_render_failed'
         && event.placement === 'rightRail'
         && (event.metadata as { containerId?: string } | undefined)?.containerId === previous.containerId,
+    )).toBe(true);
+    expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+      event => event.monetizationEvent === 'network_ad_failed'
+        && event.placement === 'rightRail',
+    )).toBe(true);
+    expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+      event => event.monetizationEvent === 'fallback_shown'
+        && event.placement === 'rightRail'
+        && (event.metadata as { surface?: string } | undefined)?.surface === 'fallback',
     )).toBe(true);
 
     Object.assign(slot, previous);
@@ -114,6 +125,10 @@ describe('AdsterraDisplayBanner', () => {
 
     expect(screen.queryByTestId('adsterra-display-fallback')).not.toBeInTheDocument();
     expect(screen.getByLabelText('Desktop left rail')).toHaveAttribute('data-otk-ad-status', 'rendered');
+    expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+      event => event.monetizationEvent === 'network_ad_rendered'
+        && event.placement === 'leftRail',
+    )).toBe(true);
 
     vi.useRealTimers();
   });

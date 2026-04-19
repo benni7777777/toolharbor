@@ -2,8 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { siteConfig } from '@/config/site';
+import { trackMonetizationEvent } from '@/lib/monetization/analytics';
 import { mountAdsterraNative } from '@/lib/monetization/adsterra-runtime';
-import PostResultSponsorCard from '@/components/common/PostResultSponsorCard';
 import type { AdRuntimeStatus } from '@/types/monetization';
 
 export interface AdsterraNativeBannerProps {
@@ -12,6 +12,7 @@ export interface AdsterraNativeBannerProps {
   description?: string;
   slotName?: string;
   priority?: number;
+  collapseOnNoFill?: boolean;
 }
 
 const PRIORITY_BY_SLOT: Record<string, number> = {
@@ -30,9 +31,11 @@ export function AdsterraNativeBanner({
   description = 'Ads and partner offers help keep OpenToolsKit open source.',
   slotName = 'native-banner',
   priority,
+  collapseOnNoFill = false,
 }: AdsterraNativeBannerProps) {
   const hostRef = useRef<HTMLDivElement>(null);
   const loadedRef = useRef(false);
+  const fallbackLoggedRef = useRef<string | null>(null);
   const cleanupRef = useRef<(() => void) | null>(null);
   const slotNameRef = useRef(slotName);
   const priorityRef = useRef<number>(0);
@@ -42,8 +45,9 @@ export function AdsterraNativeBanner({
     [priority, slotName],
   );
   priorityRef.current = resolvedPriority;
-  const showPartnerFallback = status === 'no-fill-timeout' || status === 'failed';
-  const hideNativeHost = status === 'blocked' || showPartnerFallback;
+  const showNetworkFallback = status === 'no-fill-timeout' || status === 'failed';
+  const hideNativeHost = status === 'blocked' || showNetworkFallback;
+  const shouldCollapse = collapseOnNoFill && hideNativeHost;
 
   function cleanupWhenDetached() {
     window.setTimeout(() => {
@@ -84,18 +88,43 @@ export function AdsterraNativeBanner({
     return cleanupWhenDetached;
   }, []);
 
+  useEffect(() => {
+    if (!showNetworkFallback || fallbackLoggedRef.current === status) {
+      return;
+    }
+
+    fallbackLoggedRef.current = status;
+    trackMonetizationEvent({
+      event: 'fallback_shown',
+      placement: slotName,
+      provider: 'adsterra',
+      status,
+      reason: status === 'failed' ? 'script-error' : 'blocked-timeout',
+      metadata: {
+        surface: 'fallback',
+        fallbackType: 'native-banner-no-fill',
+        collapsed: collapseOnNoFill,
+      },
+    });
+  }, [collapseOnNoFill, showNetworkFallback, slotName, status]);
+
   if (!siteConfig.ads.enabled || !siteConfig.ads.providers.adsterra.enabled) {
+    return null;
+  }
+
+  if (shouldCollapse) {
     return null;
   }
 
   return (
     <section
-      className={`rounded-[1.75rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-5 shadow-[var(--shadow-sm)] ${className}`.trim()}
-      aria-label="Sponsored placement"
+      className={`rounded-lg border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-4 shadow-[var(--shadow-sm)] ${className}`.trim()}
+      aria-label="Network ad placement"
+      data-otk-monetization-surface="networkAd"
     >
       <div className="mb-4 flex flex-wrap items-center gap-3">
-        <span className="rounded-full bg-[hsl(var(--color-accent-soft))] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-accent-strong))]">
-          {siteConfig.ads.disclosureLabel}
+        <span className="rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-muted-foreground))]">
+          Ad
         </span>
         <p className="text-sm font-semibold text-[hsl(var(--color-foreground))]">{title}</p>
       </div>
@@ -112,28 +141,19 @@ export function AdsterraNativeBanner({
       />
       {status === 'idle' || status === 'mounting' ? (
         <div className="text-xs text-[hsl(var(--color-muted-foreground))]">
-          Loading sponsored placement...
+          Checking network ad availability...
         </div>
       ) : null}
-      {showPartnerFallback ? (
-        <div data-testid="adsterra-native-fallback">
-          <PostResultSponsorCard
-            placementId="next-step"
-            title="Sponsored partner option"
-            description="Native inventory is not available right now. This partner route opens separately and keeps your current page intact."
-            ctaLabel="View sponsored option"
-            sourceId={`native-fallback:${slotName}:no-fill`}
-            campaign="native-fallback"
-            placementMeta={slotName}
-            compact
-            showHelperText={false}
-            creative={{
-              src: '/images/sponsors/file-convert.svg',
-              alt: 'Sponsored fallback creative',
-              eyebrow: 'Fallback',
-            }}
-            layout="banner"
-          />
+      {showNetworkFallback ? (
+        <div
+          className="rounded-md border border-dashed border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))] p-4 text-sm text-[hsl(var(--color-muted-foreground))]"
+          data-testid="adsterra-native-fallback"
+          data-otk-monetization-surface="fallback"
+        >
+          <p className="font-semibold text-[hsl(var(--color-foreground))]">Network ad unavailable</p>
+          <p className="mt-1 text-xs leading-5">
+            No third-party ad filled this placement. This placeholder is not a partner offer.
+          </p>
         </div>
       ) : null}
     </section>

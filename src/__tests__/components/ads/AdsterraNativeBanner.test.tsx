@@ -16,7 +16,7 @@ afterEach(() => {
 });
 
 describe('AdsterraNativeBanner', () => {
-  it('keeps React content outside the third-party native host and falls back on no-fill', async () => {
+  it('keeps React content outside the third-party native host and shows a network fallback on no-fill', async () => {
     render(
       <AdsterraNativeBanner
         slotName="homepage-native"
@@ -27,7 +27,7 @@ describe('AdsterraNativeBanner', () => {
 
     const host = screen.getByTestId('adsterra-native-host');
     expect(host).toBeEmptyDOMElement();
-    expect(screen.getByText('Loading sponsored placement...')).toBeInTheDocument();
+    expect(screen.getByText('Checking network ad availability...')).toBeInTheDocument();
 
     act(() => {
       vi.advanceTimersByTime(100);
@@ -47,6 +47,45 @@ describe('AdsterraNativeBanner', () => {
     });
 
     expect(screen.getByTestId('adsterra-native-fallback')).toBeInTheDocument();
+    expect(screen.getByTestId('adsterra-native-fallback')).toHaveAttribute('data-otk-monetization-surface', 'fallback');
+    expect(screen.queryByTestId('sponsor-preview-card')).not.toBeInTheDocument();
     expect(host).toHaveClass('h-0', 'overflow-visible');
+    expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+      event => event.monetizationEvent === 'network_ad_failed'
+        && event.placement === 'homepage-native',
+    )).toBe(true);
+    expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+      event => event.monetizationEvent === 'fallback_shown'
+        && event.placement === 'homepage-native',
+    )).toBe(true);
+  });
+
+  it('can collapse native no-fill so deterministic sponsor previews stay primary', async () => {
+    render(
+      <AdsterraNativeBanner
+        slotName="result-drawer"
+        title="Network ad"
+        description="Native placement test"
+        collapseOnNoFill
+      />,
+    );
+
+    act(() => {
+      vi.advanceTimersByTime(100);
+    });
+
+    const script = document.querySelector<HTMLScriptElement>('script[data-otk-adsterra="native-banner"]');
+
+    await act(async () => {
+      script?.dispatchEvent(new Event('load'));
+      vi.advanceTimersByTime(5100);
+    });
+
+    expect(screen.queryByLabelText('Network ad placement')).not.toBeInTheDocument();
+    expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+      event => event.monetizationEvent === 'fallback_shown'
+        && event.placement === 'result-drawer'
+        && (event.metadata as { collapsed?: boolean } | undefined)?.collapsed === true,
+    )).toBe(true);
   });
 });

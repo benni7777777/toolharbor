@@ -1,0 +1,23 @@
+<svg width="640" height="400" viewBox="0 0 640 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">PDF workflow sponsor preview</title>
+  <desc id="desc">A polished document card moving through a PDF task sequence.</desc>
+  <rect width="640" height="400" rx="28" fill="#07181B"/>
+  <rect x="72" y="64" width="214" height="272" rx="22" fill="#F4F7F8"/>
+  <path d="M226 64v64h60" fill="#CDEDEA"/>
+  <path d="M226 64v64h60" stroke="#91C8C4" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="108" y="128" width="116" height="16" rx="8" fill="#173E43"/>
+  <rect x="108" y="170" width="140" height="14" rx="7" fill="#9DB2B5"/>
+  <rect x="108" y="204" width="110" height="14" rx="7" fill="#9DB2B5"/>
+  <rect x="108" y="238" width="132" height="14" rx="7" fill="#9DB2B5"/>
+  <rect x="108" y="286" width="92" height="32" rx="16" fill="#41D2CB"/>
+  <path d="M320 126h172" stroke="#2E666B" stroke-width="12" stroke-linecap="round"/>
+  <path d="M320 200h172" stroke="#2E666B" stroke-width="12" stroke-linecap="round"/>
+  <path d="M320 274h172" stroke="#2E666B" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="540" cy="126" r="30" fill="#F3C746"/>
+  <path d="M526 126l10 10 20-22" stroke="#07181B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="540" cy="200" r="30" fill="#41D2CB"/>
+  <path d="M524 201h32" stroke="#07181B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M540 185v32" stroke="#07181B" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="540" cy="274" r="30" fill="#F36F56"/>
+  <path d="M528 274h24" stroke="#07181B" stroke-width="8" stroke-linecap="round"/>
+</svg>

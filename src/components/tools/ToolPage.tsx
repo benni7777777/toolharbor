@@ -17,6 +17,7 @@ import { sanitizeHtml } from '@/lib/utils/html-sanitizer';
 import { useSafeTranslations } from '@/lib/i18n/useSafeTranslations';
 import { AdsterraDisplayBanner } from '@/components/ads/DynamicAdsterraComponents';
 import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
+import { GrowthPathways } from '@/components/seo/GrowthPathways';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 import type { ToolSeoExample } from '@/config/seo';
 
@@ -155,6 +156,13 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
             <LimitationsSection limitations={seoProfile.limitations} />
 
             <ExamplesSection examples={seoProfile.examples} />
+
+            <GrowthPathways
+              tool={tool}
+              locale={locale}
+              relatedTools={relatedTools}
+              localizedRelatedTools={localizedRelatedTools}
+            />
 
             {/* FAQ Section */}
             <FAQSection faq={content.faq} />

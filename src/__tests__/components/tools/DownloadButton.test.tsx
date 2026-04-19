@@ -34,6 +34,7 @@ const mockRevokeObjectURL = vi.fn();
 beforeEach(() => {
   URL.createObjectURL = mockCreateObjectURL;
   URL.revokeObjectURL = mockRevokeObjectURL;
+  vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => undefined);
   vi.clearAllMocks();
   window.localStorage.clear();
   window.sessionStorage.clear();
@@ -52,6 +53,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
+  vi.restoreAllMocks();
   URL.createObjectURL = originalCreateObjectURL;
   URL.revokeObjectURL = originalRevokeObjectURL;
   document.querySelectorAll('script[data-otk-adsterra]').forEach(script => script.remove());
@@ -254,7 +256,7 @@ describe('DownloadButton', () => {
       fireEvent.click(screen.getByRole('button'));
 
       expect(screen.getByTestId('download-gate-overlay')).toBeInTheDocument();
-      expect(screen.getByText(/download unlocks in 10 seconds/i)).toBeInTheDocument();
+      expect(screen.getByText(/wait 10 seconds/i)).toBeInTheDocument();
       expect(screen.getByRole('button', { name: /download unlocks in 10s/i })).toBeDisabled();
     });
 
@@ -406,7 +408,7 @@ describe('DownloadButton', () => {
         vi.advanceTimersByTime(600);
       });
 
-      const partnerLink = screen.getAllByRole('link', { name: /open route/i })[0];
+      const partnerLink = screen.getAllByRole('link', { name: /open sponsored offer/i })[0];
       const href = partnerLink.getAttribute('href') ?? '';
 
       expect(href).toContain(`${siteConfig.sponsorship.redirectPathPrefix}/${siteConfig.ads.providers.partnerRedirect.placementId}`);
@@ -415,6 +417,14 @@ describe('DownloadButton', () => {
       expect(href).toContain('source=tool%3Aunknown%3Apost-result-primary%3Acontextual-soft%3Asoft-bordered');
       expect(href).toContain('campaign=post-result-primary');
       expect(href).toContain('subId=');
+      expect(screen.getAllByTestId('sponsor-preview-card')[0]).toHaveAttribute(
+        'data-otk-monetization-surface',
+        'sponsorPreview',
+      );
+      expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+        event => event.monetizationEvent === 'sponsor_preview_shown'
+          && event.placement === siteConfig.ads.providers.partnerRedirect.placementId,
+      )).toBe(true);
 
       vi.useRealTimers();
     });
@@ -477,7 +487,7 @@ describe('DownloadButton', () => {
 
       fireEvent.click(screen.getByRole('button'));
 
-      const partnerLink = screen.getByRole('link', { name: /open partner site/i });
+      const partnerLink = screen.getByRole('link', { name: /open sponsored offer/i });
       expect(partnerLink).toHaveAttribute(
         'href',
         expect.stringContaining(`${siteConfig.sponsorship.redirectPathPrefix}/${siteConfig.ads.providers.partnerRedirect.placementId}`),
@@ -487,6 +497,14 @@ describe('DownloadButton', () => {
 
       expect(screen.getByText(/your download is unlocked/i)).toBeInTheDocument();
       expect(screen.getByRole('button', { name: /download now/i })).not.toBeDisabled();
+      expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+        event => event.monetizationEvent === 'sponsor_preview_clicked'
+          && event.placement === siteConfig.ads.providers.partnerRedirect.placementId,
+      )).toBe(true);
+      expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+        event => event.monetizationEvent === 'partner_redirect_opened'
+          && event.placement === siteConfig.ads.providers.partnerRedirect.placementId,
+      )).toBe(true);
     });
   });
 

@@ -72,7 +72,16 @@ describe('SiteMonetizationRails', () => {
 
     render(<SiteMonetizationRails />);
 
-    expect(screen.getAllByRole('img', { name: /sponsored/i })).toHaveLength(3);
+    const sponsorPreviews = screen.getAllByTestId('sponsor-preview-card');
+    expect(sponsorPreviews).toHaveLength(3);
+    expect(sponsorPreviews.every((preview) =>
+      preview.getAttribute('data-otk-monetization-surface') === 'sponsorPreview',
+    )).toBe(true);
+    expect(sponsorPreviews.map((preview) => preview.getAttribute('data-sponsor-theme'))).toEqual([
+      'secure-sharing',
+      'productivity-addon',
+      'browser-speed',
+    ]);
 
     const links = screen.getAllByRole('link');
     const nextStepLink = links.find((link) => link.getAttribute('href')?.startsWith('/go/next-step'));

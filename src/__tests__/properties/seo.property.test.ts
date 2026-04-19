@@ -124,9 +124,10 @@ describe('SEO Property Tests', () => {
             expect(metadata.openGraph?.title).toBeTruthy();
             expect(metadata.openGraph?.description).toBeTruthy();
             expect(metadata.twitter).toBeDefined();
-            expect(metadata.twitter?.card).toBeTruthy();
-            expect(metadata.twitter?.title).toBeTruthy();
-            expect(metadata.twitter?.description).toBeTruthy();
+            const twitter = metadata.twitter as { card?: unknown; title?: unknown; description?: unknown } | null | undefined;
+            expect(twitter?.card).toBeTruthy();
+            expect(twitter?.title).toBeTruthy();
+            expect(twitter?.description).toBeTruthy();
             
             return true;
           }

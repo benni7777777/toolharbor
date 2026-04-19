@@ -154,6 +154,16 @@ function markNativeRendered(registration: NativeRegistration) {
     },
   });
   trackMonetizationEvent({
+    event: 'network_ad_rendered',
+    placement: registration.placement,
+    provider: 'adsterra',
+    status: 'rendered',
+    metadata: {
+      surface: 'networkAd',
+      unit: 'native-banner',
+    },
+  });
+  trackMonetizationEvent({
     event: 'native_banner_rendered',
     placement: registration.placement,
     provider: 'adsterra',
@@ -287,6 +297,17 @@ function mountSelectedNativeSlot(registration: NativeRegistration) {
       },
     });
     trackMonetizationEvent({
+      event: 'network_ad_failed',
+      placement: registration.placement,
+      provider: 'adsterra',
+      status: 'failed',
+      reason: 'script-error',
+      metadata: {
+        surface: 'networkAd',
+        unit: 'native-banner',
+      },
+    });
+    trackMonetizationEvent({
       event: 'native_banner_failed',
       placement: registration.placement,
       provider: 'adsterra',
@@ -327,6 +348,17 @@ function mountSelectedNativeSlot(registration: NativeRegistration) {
       status: 'no-fill-timeout',
       reason: 'blocked-timeout',
       metadata: {
+        unit: 'native-banner',
+      },
+    });
+    trackMonetizationEvent({
+      event: 'network_ad_failed',
+      placement: registration.placement,
+      provider: 'adsterra',
+      status: 'no-fill-timeout',
+      reason: 'blocked-timeout',
+      metadata: {
+        surface: 'networkAd',
         unit: 'native-banner',
       },
     });
