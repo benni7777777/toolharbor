@@ -12,6 +12,7 @@ const DEFAULT_CONTEXT: MonetizationContext = {
 };
 
 const PREVIEW_QUERY_KEY = 'otk_monetization_preview';
+const PREVIEW_MODES: MonetizationPreviewMode[] = ['auto', 'aggressive', 'native-only', 'off'];
 
 let cachedContextPromise: Promise<MonetizationContext> | null = null;
 
@@ -50,14 +51,25 @@ function getPreviewMode(): MonetizationPreviewMode {
   const searchParams = new URLSearchParams(window.location.search);
   const queryValue = searchParams.get(PREVIEW_QUERY_KEY);
   const previewKey = siteConfig.monetizationRules.previewOverrideStorageKey;
+  const allowAggressivePreview = process.env.NODE_ENV !== 'production';
 
-  if (queryValue && ['auto', 'aggressive', 'native-only', 'off'].includes(queryValue)) {
+  if (queryValue && PREVIEW_MODES.includes(queryValue as MonetizationPreviewMode)) {
+    if (queryValue === 'aggressive' && !allowAggressivePreview) {
+      setLocalStorageItem(previewKey, 'auto');
+      return 'auto';
+    }
+
     setLocalStorageItem(previewKey, queryValue);
     return queryValue as MonetizationPreviewMode;
   }
 
   const storedValue = getLocalStorageItem(previewKey);
-  if (storedValue && ['auto', 'aggressive', 'native-only', 'off'].includes(storedValue)) {
+  if (storedValue && PREVIEW_MODES.includes(storedValue as MonetizationPreviewMode)) {
+    if (storedValue === 'aggressive' && !allowAggressivePreview) {
+      setLocalStorageItem(previewKey, 'auto');
+      return 'auto';
+    }
+
     return storedValue as MonetizationPreviewMode;
   }
 
@@ -88,9 +100,9 @@ export function useMonetizationProfile(): MonetizationProfile {
   }, []);
 
   const allowNativeUnits = previewMode !== 'off';
+  const eligibleForAggressiveUnits = !context.isUkEea && !isLoading;
   const allowAggressiveUnits =
-    previewMode === 'aggressive' ||
-    (previewMode === 'auto' && !context.isUkEea && !isLoading);
+    eligibleForAggressiveUnits && (previewMode === 'aggressive' || previewMode === 'auto');
   const allowHardGate =
     isHardGateFeatureEnabled() &&
     allowAggressiveUnits &&

@@ -364,6 +364,7 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
     }
 
     setIsGateUnlocked(true);
+    setGateSecondsRemaining(0);
     trackMonetizationEvent({
       event: 'gate_unlocked_by_partner_click',
       placement: 'result-gate',
@@ -464,6 +465,9 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
   }, [gateReady, monetizationProfile.country, toolSlug]);
 
   const unlockCtaLabel = gateReady ? 'Download now' : `Download unlocks in ${gateSecondsRemaining}s`;
+  const gateDescription = gateReady
+    ? 'Your download is unlocked. OpenToolsKit stays free thanks to advertising and partner offers.'
+    : `Download unlocks in ${gateSecondsRemaining} seconds. OpenToolsKit stays free thanks to advertising and partner offers.`;
   const isDisabled = disabled || !file || !blobUrl;
   const buttonText = label || t('buttons.download');
   const fileSizeText = showFileSize && file ? ` (${formatFileSize(file.size)})` : '';
@@ -518,7 +522,7 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
                   Your file is ready
                 </h3>
                 <p className="text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
-                  Download unlocks in {gateSecondsRemaining} seconds. OpenToolsKit stays free thanks to advertising and partner offers.
+                  {gateDescription}
                 </p>
                 <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
                   Ads and partner links are delivered by third-party networks. We do not individually control or endorse every creative or landing page.

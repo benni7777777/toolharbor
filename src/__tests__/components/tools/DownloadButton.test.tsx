@@ -230,8 +230,7 @@ describe('DownloadButton', () => {
       vi.useRealTimers();
     });
 
-    it('uses the soft post-result drawer by default even for aggressive eligible downloads', async () => {
-      vi.useFakeTimers();
+    it('shows the 10-second gate by default for aggressive eligible downloads', () => {
       mockMonetizationProfile.mockReturnValue({
         country: 'US',
         isUkEea: false,
@@ -240,6 +239,36 @@ describe('DownloadButton', () => {
         allowNativeUnits: true,
         allowAggressiveUnits: true,
         allowHardGate: true,
+      });
+
+      const mockBlob = createMockBlob('test content');
+      render(
+        <DownloadButton
+          file={mockBlob}
+          filename="test.pdf"
+          variant="secondary"
+          size="lg"
+        />
+      );
+
+      fireEvent.click(screen.getByRole('button'));
+
+      expect(screen.getByTestId('download-gate-overlay')).toBeInTheDocument();
+      expect(screen.getByText(/download unlocks in 10 seconds/i)).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /download unlocks in 10s/i })).toBeDisabled();
+    });
+
+    it('uses the soft post-result drawer when the hard-gate feature flag is disabled', async () => {
+      vi.useFakeTimers();
+      vi.stubEnv('NEXT_PUBLIC_OTK_HARD_GATE_ENABLED', 'false');
+      mockMonetizationProfile.mockReturnValue({
+        country: 'US',
+        isUkEea: false,
+        isLoading: false,
+        previewMode: 'aggressive',
+        allowNativeUnits: true,
+        allowAggressiveUnits: true,
+        allowHardGate: false,
       });
 
       const mockBlob = createMockBlob('test content');
@@ -264,7 +293,8 @@ describe('DownloadButton', () => {
       vi.useRealTimers();
     });
 
-    it('fires popunder before any synthetic download link on the trusted click path', () => {
+    it('fires popunder before any synthetic download link on the trusted gate download click path', async () => {
+      vi.useFakeTimers();
       mockMonetizationProfile.mockReturnValue({
         country: 'US',
         isUkEea: false,
@@ -311,6 +341,18 @@ describe('DownloadButton', () => {
 
       fireEvent.click(screen.getByRole('button'));
 
+      expect(screen.getByTestId('download-gate-overlay')).toBeInTheDocument();
+      expect(appendOrder).not.toContain('download-anchor');
+      expect(document.querySelector('script[data-otk-adsterra="popunder"]')).toBeNull();
+
+      for (let i = 0; i < 10; i += 1) {
+        await act(async () => {
+          vi.advanceTimersByTime(1000);
+        });
+      }
+
+      fireEvent.click(screen.getByRole('button', { name: /download now/i }));
+
       expect(appendOrder[0]).toBe('script:popunder');
       expect(appendOrder.indexOf('script:popunder')).toBeLessThan(appendOrder.indexOf('download-anchor'));
       expect(document.querySelectorAll('script[data-otk-adsterra="popunder"]')).toHaveLength(1);
@@ -319,6 +361,7 @@ describe('DownloadButton', () => {
 
       headAppendSpy.mockRestore();
       appendSpy.mockRestore();
+      vi.useRealTimers();
     });
 
     it('logs why popunder is skipped when UK/EEA policy keeps aggressive units off', () => {
@@ -376,8 +419,42 @@ describe('DownloadButton', () => {
       vi.useRealTimers();
     });
 
-    it('shows a 15-second gate only when the hard-gate feature flag is enabled', () => {
+    it('keeps the gate disabled for UK/EEA visitors even when the hard-gate feature flag is enabled', async () => {
+      vi.useFakeTimers();
       vi.stubEnv('NEXT_PUBLIC_OTK_HARD_GATE_ENABLED', 'true');
+      mockMonetizationProfile.mockReturnValue({
+        country: 'GB',
+        isUkEea: true,
+        isLoading: false,
+        previewMode: 'auto',
+        allowNativeUnits: true,
+        allowAggressiveUnits: false,
+        allowHardGate: false,
+      });
+
+      const mockBlob = createMockBlob('test content');
+      render(
+        <DownloadButton
+          file={mockBlob}
+          filename="test.pdf"
+          variant="secondary"
+          size="lg"
+        />
+      );
+
+      fireEvent.click(screen.getByRole('button'));
+
+      await act(async () => {
+        vi.advanceTimersByTime(600);
+      });
+
+      expect(screen.queryByTestId('download-gate-overlay')).not.toBeInTheDocument();
+      expect(screen.getByTestId('download-monetization-panel')).toBeInTheDocument();
+
+      vi.useRealTimers();
+    });
+
+    it('unlocks the gate immediately after the partner CTA opens the redirect route', () => {
       mockMonetizationProfile.mockReturnValue({
         country: 'US',
         isUkEea: false,
@@ -400,9 +477,16 @@ describe('DownloadButton', () => {
 
       fireEvent.click(screen.getByRole('button'));
 
-      expect(screen.getByTestId('download-gate-overlay')).toBeInTheDocument();
-      expect(screen.getByText(/download unlocks in 15 seconds/i)).toBeInTheDocument();
-      expect(screen.getByRole('button', { name: /download unlocks in 15s/i })).toBeDisabled();
+      const partnerLink = screen.getByRole('link', { name: /open partner site/i });
+      expect(partnerLink).toHaveAttribute(
+        'href',
+        expect.stringContaining(`${siteConfig.sponsorship.redirectPathPrefix}/${siteConfig.ads.providers.partnerRedirect.placementId}`),
+      );
+
+      fireEvent.click(partnerLink);
+
+      expect(screen.getByText(/your download is unlocked/i)).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /download now/i })).not.toBeDisabled();
     });
   });
 

@@ -10,7 +10,7 @@ import {
 import { getSessionStorageItem, setSessionStorageItem } from '@/lib/monetization/storage';
 import { trackMonetizationEvent } from '@/lib/monetization/analytics';
 
-type TriggerKind = 'first-tool-interaction' | 'first-file-upload' | 'first-button-click';
+type TriggerKind = 'first-tool-interaction' | 'first-file-upload' | 'primary-cta-click';
 
 const SESSION_TRIGGER_PREFIX = 'opentoolskit-adsterra-popunder-triggered:';
 
@@ -88,11 +88,12 @@ export function MonetizationInteractionTriggers() {
         return;
       }
 
-      if (target.closest('button,[role="button"]')) {
-        attemptAggressiveScripts('first-button-click', event);
+      if (target.closest('[data-otk-monetization-trigger="primary-cta"]')) {
+        attemptAggressiveScripts('primary-cta-click', event);
+        return;
       }
 
-      if (target.closest('[data-testid="tool-page-interface"]')) {
+      if (target.closest('[data-testid="tool-page-interface"] [data-otk-monetization-trigger="tool-interaction"]')) {
         attemptAggressiveScripts('first-tool-interaction', event);
       }
     }

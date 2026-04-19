@@ -26,6 +26,7 @@ beforeEach(() => {
     allowHardGate: false,
   });
   window.sessionStorage.clear();
+  vi.useRealTimers();
 });
 
 describe('SiteMonetizationRails', () => {
@@ -39,6 +40,8 @@ describe('SiteMonetizationRails', () => {
     expect(rightRail).toBeInTheDocument();
     expect(leftRail).toHaveClass('hidden', 'xl:block', 'left-4', 'top-32', 'w-56');
     expect(rightRail).toHaveClass('hidden', 'xl:block', 'right-4', 'top-32', 'w-56');
+    expect(leftRail.firstElementChild).toHaveClass('flex', 'justify-center');
+    expect(rightRail.firstElementChild).toHaveClass('flex', 'justify-center');
     expect(await screen.findByLabelText('Desktop left rail')).toBeInTheDocument();
     expect(await screen.findByLabelText('Desktop right rail')).toBeInTheDocument();
 

@@ -56,7 +56,7 @@ export function SiteMonetizationRails() {
         className="pointer-events-none fixed left-4 top-32 z-30 hidden w-56 min-[1800px]:w-72 xl:block"
         aria-label="Sponsored left rail"
       >
-        <div className="pointer-events-auto space-y-3">
+        <div className="pointer-events-auto flex justify-center">
           {leftRailDisplayEnabled ? (
             <AdsterraDisplayBanner slot="leftRail" />
           ) : (
@@ -82,7 +82,7 @@ export function SiteMonetizationRails() {
         className="pointer-events-none fixed right-4 top-32 z-30 hidden w-56 min-[1800px]:w-72 xl:block"
         aria-label="Sponsored right rail"
       >
-        <div className="pointer-events-auto space-y-3">
+        <div className="pointer-events-auto flex justify-center">
           {rightRailDisplayEnabled ? (
             <AdsterraDisplayBanner slot="rightRail" />
           ) : (

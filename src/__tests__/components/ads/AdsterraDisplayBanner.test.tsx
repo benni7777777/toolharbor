@@ -1,10 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import { beforeEach, describe, expect, it } from 'vitest';
+import { act, render, screen } from '@testing-library/react';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import AdsterraDisplayBanner from '@/components/ads/AdsterraDisplayBanner';
 import { siteConfig } from '@/config/site';
 
 beforeEach(() => {
   delete window.__OTK_MONETIZATION_DEBUG__;
+  vi.useRealTimers();
 });
 
 describe('AdsterraDisplayBanner', () => {
@@ -57,5 +58,63 @@ describe('AdsterraDisplayBanner', () => {
     )).toBe(true);
 
     Object.assign(slot, previous);
+  });
+
+  it('shows a same-size sponsor fallback when the display slot stays empty after timeout', async () => {
+    vi.useFakeTimers();
+    const slot = siteConfig.ads.providers.adsterra.displayBanners.rightRail;
+    const previous = { ...slot };
+
+    Object.assign(slot, {
+      enabled: true,
+      scriptSrc: 'https://example.test/right-rail.js',
+      atOptions: {
+        key: 'right-rail-zone',
+        format: 'iframe',
+        width: 160,
+        height: 300,
+      },
+    });
+
+    render(<AdsterraDisplayBanner slot="rightRail" />);
+
+    await act(async () => {
+      vi.advanceTimersByTime(5000);
+    });
+
+    const fallback = screen.getByTestId('adsterra-display-fallback');
+    const host = document.getElementById(previous.containerId);
+
+    expect(screen.getByLabelText(previous.label)).toHaveAttribute('data-otk-ad-status', 'failed');
+    expect(fallback).toHaveStyle({ width: '160px', height: '300px' });
+    expect(fallback).toHaveAttribute('data-otk-ad-fallback-slot', 'rightRail');
+    expect(host?.querySelector('script[data-otk-adsterra-display="rightRail"]')).toBeTruthy();
+    expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+      event => event.monetizationEvent === 'ad_render_failed'
+        && event.placement === 'rightRail'
+        && (event.metadata as { containerId?: string } | undefined)?.containerId === previous.containerId,
+    )).toBe(true);
+
+    Object.assign(slot, previous);
+    vi.useRealTimers();
+  });
+
+  it('does not show fallback when a creative appears before the timeout', async () => {
+    vi.useFakeTimers();
+
+    render(<AdsterraDisplayBanner slot="leftRail" />);
+
+    const host = document.getElementById(siteConfig.ads.providers.adsterra.displayBanners.leftRail.containerId);
+    const creative = document.createElement('iframe');
+    host?.appendChild(creative);
+
+    await act(async () => {
+      vi.advanceTimersByTime(5000);
+    });
+
+    expect(screen.queryByTestId('adsterra-display-fallback')).not.toBeInTheDocument();
+    expect(screen.getByLabelText('Desktop left rail')).toHaveAttribute('data-otk-ad-status', 'rendered');
+
+    vi.useRealTimers();
   });
 });

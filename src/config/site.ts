@@ -287,7 +287,7 @@ export const siteConfig = {
     },
   },
   monetizationRules: {
-    hardGateSeconds: 15,
+    hardGateSeconds: 10,
     hardGatePerSessionMax: 1,
     hardGateSessionStorageKey: 'opentoolskit-hard-gate-count',
     popunderCooldownHours: 12,

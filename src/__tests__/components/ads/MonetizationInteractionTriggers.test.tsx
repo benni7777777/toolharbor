@@ -26,11 +26,11 @@ beforeEach(() => {
 });
 
 describe('MonetizationInteractionTriggers', () => {
-  it('fires aggressive scripts on the first trusted button click and lets cooldown block later triggers', () => {
+  it('fires aggressive scripts on the first explicit primary CTA click and lets cooldown block later triggers', () => {
     render(
       <>
         <MonetizationInteractionTriggers />
-        <button type="button">Run tool</button>
+        <button type="button" data-otk-monetization-trigger="primary-cta">Run tool</button>
       </>,
     );
 
@@ -41,12 +41,26 @@ describe('MonetizationInteractionTriggers', () => {
     expect(document.querySelectorAll('script[data-otk-adsterra="socialbar"]')).toHaveLength(1);
     expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
       event => event.monetizationEvent === 'popunder_triggered'
-        && event.placement === 'first-button-click',
+        && event.placement === 'primary-cta-click',
     )).toBe(true);
     expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
       event => event.monetizationEvent === 'socialbar_triggered'
-        && event.placement === 'first-button-click',
+        && event.placement === 'primary-cta-click',
     )).toBe(true);
+  });
+
+  it('does not fire aggressive scripts on an unmarked generic button click', () => {
+    render(
+      <>
+        <MonetizationInteractionTriggers />
+        <button type="button">Run tool</button>
+      </>,
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: /run tool/i }));
+
+    expect(document.querySelector('script[data-otk-adsterra="popunder"]')).toBeNull();
+    expect(document.querySelector('script[data-otk-adsterra="socialbar"]')).toBeNull();
   });
 
   it('does not consume the first-click trigger while geo policy is still loading', () => {
@@ -63,7 +77,7 @@ describe('MonetizationInteractionTriggers', () => {
     const { rerender } = render(
       <>
         <MonetizationInteractionTriggers />
-        <button type="button">Run tool</button>
+        <button type="button" data-otk-monetization-trigger="primary-cta">Run tool</button>
       </>,
     );
 
@@ -83,7 +97,7 @@ describe('MonetizationInteractionTriggers', () => {
     rerender(
       <>
         <MonetizationInteractionTriggers />
-        <button type="button">Run tool</button>
+        <button type="button" data-otk-monetization-trigger="primary-cta">Run tool</button>
       </>,
     );
     fireEvent.click(screen.getByRole('button', { name: /run tool/i }));
@@ -109,7 +123,7 @@ describe('MonetizationInteractionTriggers', () => {
     render(
       <>
         <MonetizationInteractionTriggers />
-        <button type="button">Run tool</button>
+        <button type="button" data-otk-monetization-trigger="primary-cta">Run tool</button>
       </>,
     );
 
@@ -119,7 +133,7 @@ describe('MonetizationInteractionTriggers', () => {
     expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
       event => event.monetizationEvent === 'monetization_blocked_reason'
         && event.reason === 'uk-eea-native-only'
-        && event.placement === 'first-button-click',
+        && event.placement === 'primary-cta-click',
     )).toBe(true);
   });
 });
