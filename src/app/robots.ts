@@ -16,16 +16,14 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: ['/', '/ads.txt'],
         disallow: [
           '/api/',
-          '/_next/',
-          '/static/',
           '/go/',
         ],
       },
     ],
-    host: siteConfig.url,
+    host: siteConfig.canonicalHost,
     sitemap: `${siteConfig.url}/sitemap.xml`,
   };
 }

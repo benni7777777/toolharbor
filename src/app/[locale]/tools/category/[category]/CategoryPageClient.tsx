@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import {
-  AdsterraDisplayBanner,
+  AdsterraInlineBanner,
   AdsterraNativeBanner,
   AdsterraSessionScripts,
 } from '@/components/ads/DynamicAdsterraComponents';
@@ -134,14 +134,13 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
                             <AdsterraNativeBanner
                                 slotName="category-native"
                                 description="This category page may contain a labeled native ad placement from a third-party network. It does not appear inside the core tool action row."
+                                collapseOnNoFill
                             />
                         )}
                     </div>
 
                     {monetizationProfile.allowAggressiveUnits && (
-                        <div className="mb-8">
-                            <AdsterraDisplayBanner slot="leaderboard" />
-                        </div>
+                        <AdsterraInlineBanner className="mb-8" />
                     )}
 
                     {/* Tools Grid */}

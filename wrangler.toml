@@ -3,6 +3,7 @@ compatibility_date = "2026-04-12"
 pages_build_output_dir = "out"
 
 [vars]
+NEXT_PUBLIC_ADSENSE_REVIEW_MODE = "true"
 PARTNER_REDIRECT_SOURCE = "opentoolskit"
 SPONSOR_FALLBACK_URL = "https://www.opentoolskit.com/en/contact"
 

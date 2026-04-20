@@ -2,6 +2,11 @@ import type { Metadata } from 'next';
 import '@/lib/polyfills/promise-with-resolvers';
 import '@/app/globals.css';
 import { siteConfig } from '@/config/site';
+import {
+  GOOGLE_ADSENSE_ACCOUNT_ID,
+  GOOGLE_ADSENSE_SCRIPT_SRC,
+  monetizationRuntime,
+} from '@/lib/monetization/review-mode';
 
 const themeInitScript = `
 (() => {
@@ -41,6 +46,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {monetizationRuntime.injectAdsenseVerification && (
+          <>
+            <meta name="google-adsense-account" content={GOOGLE_ADSENSE_ACCOUNT_ID} />
+            <script
+              async
+              src={GOOGLE_ADSENSE_SCRIPT_SRC}
+              crossOrigin="anonymous"
+            />
+          </>
+        )}
         <meta name="color-scheme" content="light dark" />
         <meta name="theme-color" content={siteConfig.theme.lightThemeColor} media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content={siteConfig.theme.darkThemeColor} media="(prefers-color-scheme: dark)" />

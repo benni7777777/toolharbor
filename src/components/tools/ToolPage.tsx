@@ -3,6 +3,7 @@
 import { Tool, ToolContent, HowToStep, UseCase, FAQ, ToolCategory } from '@/types/tool';
 import { Card } from '@/components/ui/Card';
 import { getToolById } from '@/config/tools';
+import { siteConfig } from '@/config/site';
 import { getToolSeoProfile } from '@/lib/seo/profiles';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -12,7 +13,7 @@ import { getToolIcon } from '@/config/icons';
 import Link from 'next/link';
 import { Home, ChevronRight } from 'lucide-react';
 import { FavoriteButton } from '@/components/ui/FavoriteButton';
-import { useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { sanitizeHtml } from '@/lib/utils/html-sanitizer';
 import { useSafeTranslations } from '@/lib/i18n/useSafeTranslations';
 import { AdsterraDisplayBanner } from '@/components/ads/DynamicAdsterraComponents';
@@ -59,6 +60,13 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
 
   const t = useSafeTranslations();
   const monetizationProfile = useMonetizationProfile();
+  const [rectangleCollapsed, setRectangleCollapsed] = useState(false);
+  const handleRectangleCollapse = useCallback(() => {
+    setRectangleCollapsed(true);
+  }, []);
+  const showRectangleAd = monetizationProfile.allowAggressiveUnits
+    && siteConfig.ads.providers.adsterra.displayBanners.rectangle.enabled
+    && !rectangleCollapsed;
 
   // Get tool display name
   const toolDisplayName = content.title || tool.id
@@ -114,15 +122,22 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
               {children}
             </section>
 
-            <section className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]" aria-label="Monetization surfaces">
+            <section
+              className={`mt-8 grid gap-6 ${showRectangleAd ? 'lg:grid-cols-[minmax(0,1fr)_320px]' : ''}`.trim()}
+              aria-label="Monetization surfaces"
+            >
               <div className="space-y-4">
                 <MonetizationDisclosureCard locale={locale} />
               </div>
 
-              {monetizationProfile.allowAggressiveUnits && (
+              {showRectangleAd && (
                 <aside className="hidden lg:block">
                   <div className="sticky top-28 space-y-4">
-                    <AdsterraDisplayBanner slot="rectangle" className="rounded-[1.75rem]" />
+                    <AdsterraDisplayBanner
+                      slot="rectangle"
+                      className="rounded-[1.75rem]"
+                      onCollapse={handleRectangleCollapse}
+                    />
                   </div>
                 </aside>
               )}

@@ -90,11 +90,14 @@ See [`DEPLOYMENT.md`](DEPLOYMENT.md), [`wrangler.toml`](wrangler.toml), and [`.e
 
 OpenToolsKit may render:
 
+- env-backed Adsterra display banners in fixed-size rail, inline, leaderboard, tablet, and mobile slots
 - Adsterra native placements on discovery and informational pages
 - limited session-based SocialBar/Popunder scripts on non-tool-action pages only
 - Zeydoo-backed post-result partner CTAs through same-origin redirect paths
 
-OpenToolsKit does **not** use ads to gate downloads, block results, or force countdowns before access to completed work.
+Temporary AdSense review mode is controlled by `NEXT_PUBLIC_ADSENSE_REVIEW_MODE`. While it is enabled, Adsterra, Zeydoo, sponsor gates, popunders, social bars, and partner redirect monetization are disabled so the review surface stays clean.
+
+Display banner URLs and `atOptions` values are deployment-specific public environment variables. They are not hardcoded in the source tree. Raw partner redirect destinations and account-level credentials must remain in Cloudflare environment configuration, not in commits.
 
 ## Cloudflare Pages note
 

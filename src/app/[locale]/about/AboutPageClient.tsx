@@ -115,6 +115,7 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
                 <AdsterraNativeBanner
                   slotName="info-native"
                   description="OpenToolsKit may show a native placement on informational pages. The ad inventory is supplied by third-party networks and never blocks the product itself."
+                  collapseOnNoFill
                 />
               )}
             </div>

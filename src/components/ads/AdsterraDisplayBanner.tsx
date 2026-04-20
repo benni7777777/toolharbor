@@ -10,9 +10,18 @@ type DisplayBannerSlot = keyof typeof siteConfig.ads.providers.adsterra.displayB
 export interface AdsterraDisplayBannerProps {
   slot: DisplayBannerSlot;
   className?: string;
+  collapseOnNoFill?: boolean;
+  onCollapse?: (slot: DisplayBannerSlot, reason: string) => void;
 }
 
 const DISPLAY_RENDER_TIMEOUT_MS = 5000;
+
+declare global {
+  interface Window {
+    atOptions?: unknown;
+    __OTK_ADSTERRA_DISPLAY_CHAIN__?: Promise<void>;
+  }
+}
 
 function hasAdCreative(container: HTMLElement) {
   return Array.from(container.childNodes).some((node) => {
@@ -28,98 +37,97 @@ function hasAdCreative(container: HTMLElement) {
   });
 }
 
-function DisplayBannerFallback({
-  slot,
-  width,
-  height,
-  reason,
-}: {
-  slot: DisplayBannerSlot;
-  width: number;
-  height: number;
-  reason: string | null;
-}) {
-  const isStrip = height <= 90;
-  const isShortStrip = height <= 60;
-  const isRail = width <= 180;
-  const title = isRail ? 'Network ad unavailable' : 'Ad slot unavailable';
-  const description = isStrip
-    ? 'No third-party ad filled this slot.'
-    : 'No third-party ad filled this placement. Page content remains available.';
+function enqueueDisplayInjection(task: () => Promise<void>) {
+  const previous = window.__OTK_ADSTERRA_DISPLAY_CHAIN__ ?? Promise.resolve();
+  const next = previous.catch(() => undefined).then(task);
 
-  return (
-    <div
-      className={`absolute inset-0 z-10 flex rounded-md border border-dashed border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface-subtle))] text-[hsl(var(--color-foreground))] ${
-        isShortStrip ? 'p-1.5' : 'p-2'
-      } ${
-        isStrip ? 'items-center justify-between gap-3 text-left' : 'flex-col items-center justify-center gap-3 text-center'
-      }`.trim()}
-      data-testid="adsterra-display-fallback"
-      data-otk-monetization-surface="fallback"
-      data-otk-ad-fallback-slot={slot}
-      data-otk-ad-fallback-reason={reason ?? 'unknown'}
-      style={{ width, height }}
-    >
-      <div className={isStrip ? 'min-w-0 flex-1' : 'space-y-2'}>
-        <div className="inline-flex rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[hsl(var(--color-muted-foreground))]">
-          No-fill
-        </div>
-        {isShortStrip ? (
-          <span className="ml-2 inline-block max-w-[8rem] truncate align-middle text-[11px] font-semibold">
-            Ad unavailable
-          </span>
-        ) : (
-          <p className={`${isRail ? 'text-xs' : 'text-sm'} font-semibold leading-5`}>
-            {title}
-          </p>
-        )}
-        {!isStrip && (
-          <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
-            {description}
-          </p>
-        )}
-      </div>
-      {!isShortStrip && !isRail ? (
-        <p className="text-[11px] text-[hsl(var(--color-muted-foreground))]">
-          This is a temporary network fallback, not a partner offer.
-        </p>
-      ) : null}
-    </div>
-  );
+  window.__OTK_ADSTERRA_DISPLAY_CHAIN__ = next.catch(() => undefined).then(() => undefined);
+  return next;
 }
 
-export function AdsterraDisplayBanner({ slot, className = '' }: AdsterraDisplayBannerProps) {
+function isViewportAllowed(minViewportWidth?: number, maxViewportWidth?: number) {
+  if (typeof window === 'undefined' || !window.matchMedia) {
+    return true;
+  }
+
+  const queries = [
+    minViewportWidth ? `(min-width: ${minViewportWidth}px)` : null,
+    maxViewportWidth ? `(max-width: ${maxViewportWidth}px)` : null,
+  ].filter(Boolean);
+
+  return queries.length === 0 || window.matchMedia(queries.join(' and ')).matches;
+}
+
+function useViewportAllowed(minViewportWidth?: number, maxViewportWidth?: number) {
+  const [allowed, setAllowed] = useState(() => isViewportAllowed(minViewportWidth, maxViewportWidth));
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) {
+      return;
+    }
+
+    const queries = [
+      minViewportWidth ? `(min-width: ${minViewportWidth}px)` : null,
+      maxViewportWidth ? `(max-width: ${maxViewportWidth}px)` : null,
+    ].filter(Boolean);
+
+    if (queries.length === 0) {
+      setAllowed(true);
+      return;
+    }
+
+    const mediaQuery = window.matchMedia(queries.join(' and '));
+    const handleChange = () => setAllowed(mediaQuery.matches);
+    handleChange();
+    mediaQuery.addEventListener('change', handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleChange);
+    };
+  }, [maxViewportWidth, minViewportWidth]);
+
+  return allowed;
+}
+
+export function AdsterraDisplayBanner({
+  slot,
+  className = '',
+  collapseOnNoFill = true,
+  onCollapse,
+}: AdsterraDisplayBannerProps) {
   const slotConfig = siteConfig.ads.providers.adsterra.displayBanners[slot];
   const slotRef = useRef(slot);
   const slotConfigRef = useRef(slotConfig);
   const loadedRef = useRef(false);
   const cleanupRef = useRef<(() => void) | null>(null);
+  const onCollapseRef = useRef(onCollapse);
   const [status, setStatus] = useState<AdRuntimeStatus>('idle');
   const [failureReason, setFailureReason] = useState<string | null>(null);
+  const viewportAllowed = useViewportAllowed(
+    slotConfig.minViewportWidth,
+    slotConfig.maxViewportWidth,
+  );
 
-  function cleanupWhenDetached() {
-    window.setTimeout(() => {
-      const container = document.getElementById(slotConfigRef.current.containerId);
-
-      if (container && document.body.contains(container)) {
-        return;
-      }
-
-      cleanupRef.current?.();
-      cleanupRef.current = null;
-      loadedRef.current = false;
-    }, 0);
-  }
+  useEffect(() => {
+    onCollapseRef.current = onCollapse;
+  }, [onCollapse]);
 
   useEffect(() => {
     if (loadedRef.current) {
-      return cleanupWhenDetached;
+      return;
     }
 
     const currentSlot = slotRef.current;
     const currentSlotConfig = slotConfigRef.current;
 
-    if (!currentSlotConfig.enabled || !currentSlotConfig.scriptSrc || !currentSlotConfig.containerId) {
+    if (
+      !siteConfig.ads.enabled
+      || !siteConfig.ads.providers.adsterra.enabled
+      || !viewportAllowed
+      || !currentSlotConfig.enabled
+      || !currentSlotConfig.scriptSrc
+      || !currentSlotConfig.containerId
+    ) {
       return;
     }
 
@@ -161,7 +169,10 @@ export function AdsterraDisplayBanner({ slot, className = '' }: AdsterraDisplayB
 
     const inlineOptions = document.createElement('script');
     inlineOptions.type = 'text/javascript';
-    inlineOptions.text = `atOptions = ${JSON.stringify(currentSlotConfig.atOptions)};`;
+    inlineOptions.text = [
+      `window.atOptions = ${JSON.stringify(currentSlotConfig.atOptions)};`,
+      'var atOptions = window.atOptions;',
+    ].join('\n');
 
     const script = document.createElement('script');
     script.src = currentSlotConfig.scriptSrc;
@@ -180,6 +191,8 @@ export function AdsterraDisplayBanner({ slot, className = '' }: AdsterraDisplayB
       }
 
       renderSettled = true;
+      cleanupRef.current?.();
+      cleanupRef.current = null;
       setStatus('rendered');
       setFailureReason(null);
       container.dataset.otkAdStatus = 'rendered';
@@ -215,10 +228,13 @@ export function AdsterraDisplayBanner({ slot, className = '' }: AdsterraDisplayB
       }
 
       failureLogged = true;
+      cleanupRef.current?.();
+      cleanupRef.current = null;
       setStatus('failed');
       setFailureReason(reason);
       container.dataset.otkAdStatus = 'failed';
       container.dataset.otkAdReason = reason;
+      container.innerHTML = '';
       trackMonetizationEvent({
         event: 'ad_render_failed',
         placement: currentSlot,
@@ -258,12 +274,17 @@ export function AdsterraDisplayBanner({ slot, className = '' }: AdsterraDisplayB
         reason,
         metadata: {
           surface: 'fallback',
-          fallbackType: 'display-banner-no-fill',
+          fallbackType: 'display-banner-collapsed',
+          collapsed: collapseOnNoFill,
           containerId: currentSlotConfig.containerId,
           width: currentSlotConfig.width,
           height: currentSlotConfig.height,
         },
       });
+
+      if (collapseOnNoFill) {
+        onCollapseRef.current?.(currentSlot, reason);
+      }
     };
     const observer = new MutationObserver(markRenderSuccess);
     observer.observe(container, {
@@ -295,37 +316,73 @@ export function AdsterraDisplayBanner({ slot, className = '' }: AdsterraDisplayB
       markRenderFailed('script-error');
     });
 
-    container.appendChild(inlineOptions);
-    container.appendChild(script);
-    trackMonetizationEvent({
-      event: 'ad_script_injected',
-      placement: currentSlot,
-      provider: 'adsterra',
-      metadata: {
-        unit: 'display-banner',
-        scriptSrc: currentSlotConfig.scriptSrc,
-        target: currentSlotConfig.containerId,
-      },
-    });
+    let renderTimer: number | null = null;
+    let cancelled = false;
 
-    const renderTimer = window.setTimeout(() => {
-      if (hasAdCreative(container)) {
-        markRenderSuccess();
+    enqueueDisplayInjection(() => new Promise<void>((resolve) => {
+      if (cancelled || !document.body.contains(container)) {
+        resolve();
         return;
       }
 
-      markRenderFailed('empty-timeout');
-    }, DISPLAY_RENDER_TIMEOUT_MS);
+      const releaseQueue = () => {
+        window.clearTimeout(queueTimer);
+        resolve();
+      };
+      const queueTimer = window.setTimeout(releaseQueue, DISPLAY_RENDER_TIMEOUT_MS + 2500);
+
+      script.addEventListener('load', releaseQueue, { once: true });
+      script.addEventListener('error', releaseQueue, { once: true });
+
+      container.appendChild(inlineOptions);
+      container.appendChild(script);
+      trackMonetizationEvent({
+        event: 'ad_script_injected',
+        placement: currentSlot,
+        provider: 'adsterra',
+        metadata: {
+          unit: 'display-banner',
+          scriptSrc: currentSlotConfig.scriptSrc,
+          target: currentSlotConfig.containerId,
+        },
+      });
+
+      renderTimer = window.setTimeout(() => {
+        if (hasAdCreative(container)) {
+          markRenderSuccess();
+          return;
+        }
+
+        markRenderFailed('empty-timeout');
+      }, DISPLAY_RENDER_TIMEOUT_MS);
+    }));
 
     cleanupRef.current = () => {
+      cancelled = true;
       observer.disconnect();
-      window.clearTimeout(renderTimer);
+      if (renderTimer !== null) {
+        window.clearTimeout(renderTimer);
+      }
     };
 
-    return cleanupWhenDetached;
-  }, []);
+    return () => {
+      cleanupRef.current?.();
+      cleanupRef.current = null;
+      loadedRef.current = false;
+    };
+  }, [collapseOnNoFill, viewportAllowed]);
 
-  if (!slotConfig.enabled || !slotConfig.containerId) {
+  if (
+    !siteConfig.ads.enabled
+    || !siteConfig.ads.providers.adsterra.enabled
+    || !slotConfig.enabled
+    || !slotConfig.containerId
+    || !viewportAllowed
+  ) {
+    return null;
+  }
+
+  if (collapseOnNoFill && status === 'failed') {
     return null;
   }
 
@@ -353,14 +410,6 @@ export function AdsterraDisplayBanner({ slot, className = '' }: AdsterraDisplayB
           overflow: 'visible',
         }}
       />
-      {status === 'failed' && (
-        <DisplayBannerFallback
-          slot={slot}
-          width={slotConfig.width}
-          height={slotConfig.height}
-          reason={failureReason}
-        />
-      )}
     </section>
   );
 }

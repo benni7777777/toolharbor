@@ -13,6 +13,7 @@ function createContext({
   return {
     request: new Request(url),
     env: {
+      NEXT_PUBLIC_ADSENSE_REVIEW_MODE: 'false',
       SPONSOR_FALLBACK_URL: 'https://www.opentoolskit.com/en/contact',
       ...env,
     },
@@ -112,5 +113,18 @@ describe('partner redirect function', () => {
     expect(response.status).toBe(302);
     expect(response.headers.get('location')).toBe('https://www.opentoolskit.com/en/contact');
     expect(response.headers.get('x-otk-partner-redirect')).toBe('fallback-missing-secret');
+  });
+
+  it('disables partner redirects during AdSense review mode', async () => {
+    const response = await onRequest(createContext({
+      env: {
+        NEXT_PUBLIC_ADSENSE_REVIEW_MODE: 'true',
+        PARTNER_REDIRECT_BASE_URL: 'https://partner.example/smartlink',
+      },
+    }));
+
+    expect(response.status).toBe(302);
+    expect(response.headers.get('location')).toBe('https://www.opentoolskit.com/en/contact');
+    expect(response.headers.get('x-otk-partner-redirect')).toBe('disabled-adsense-review-mode');
   });
 });

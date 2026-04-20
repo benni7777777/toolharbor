@@ -185,6 +185,7 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
                 <AdsterraNativeBanner
                   slotName="info-native"
                   description="This privacy page may carry a labeled native ad placement on behalf of a third-party network. It does not affect file processing or downloads."
+                  collapseOnNoFill
                 />
               )}
             </div>

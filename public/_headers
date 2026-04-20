@@ -18,6 +18,10 @@
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
+/ads.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=300, must-revalidate
+
 # JavaScript files - immutable cache (hashed filenames)
 /*.js
   Cache-Control: public, max-age=31536000, immutable

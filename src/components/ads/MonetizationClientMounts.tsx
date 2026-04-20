@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { monetizationRuntime } from '@/lib/monetization/review-mode';
 
 const SiteMonetizationRails = dynamic(
   () => import('@/components/ads/SiteMonetizationRails'),
@@ -13,6 +14,10 @@ const MonetizationInteractionTriggers = dynamic(
 );
 
 export function MonetizationClientMounts() {
+  if (monetizationRuntime.adsenseReviewMode) {
+    return null;
+  }
+
   return (
     <>
       <SiteMonetizationRails />

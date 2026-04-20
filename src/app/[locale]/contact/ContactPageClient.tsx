@@ -115,6 +115,7 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
                 <AdsterraNativeBanner
                   slotName="info-native"
                   description="This support page may show a third-party native placement. Core tools and downloads remain unaffected."
+                  collapseOnNoFill
                 />
               )}
             </div>

@@ -6,7 +6,8 @@ Date: 2026-04-17
 
 | Check | Status | Evidence |
 | --- | --- | --- |
-| Native Banner uses real Adsterra code | Pass in code/test | Runtime injects `https://pl29133190.profitablecpmratenetwork.com/13abb80829d1e16b339d390deb70c6a5/invoke.js` and creates the exact container ID. |
+| AdSense review mode disables monetization | Pass in code/build | `NEXT_PUBLIC_ADSENSE_REVIEW_MODE=true` disables Adsterra, sponsor previews, timed gates, and partner redirects while injecting AdSense verification assets. |
+| Native Banner uses centralized Adsterra config | Pass in code/test | When review mode is off, runtime injects the configured native script from `src/config/site.ts` and creates the expected native host container. |
 | Native Banner one-per-page arbitration | Pass in unit test | Duplicate native placements create one script and one container; lower-priority hosts are marked `blocked`. |
 | Native Banner render detection | Pass in unit test | DOM population of the container moves host status to `rendered`. |
 | Native Banner blocked/no-fill detection | Pass in unit test | Empty container after timeout moves status to `no-fill-timeout`. |
@@ -23,6 +24,8 @@ Date: 2026-04-17
 ## Manual browser verification steps
 
 Use normal Chrome or Edge with extensions off. Do not test with ad blockers, Brave shields, DNS blocking, or strict incognito tracking protection.
+
+These ad-runtime steps apply only after AdSense review mode is disabled with `NEXT_PUBLIC_ADSENSE_REVIEW_MODE=false`.
 
 1. Open `https://www.opentoolskit.com/?otk_monetization_debug=1&otk_monetization_preview=aggressive`.
 2. Check `window.__OTK_MONETIZATION_DEBUG__` in DevTools.

@@ -1,15 +1,38 @@
 import { act, render, screen } from '@testing-library/react';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import AdsterraDisplayBanner from '@/components/ads/AdsterraDisplayBanner';
 import { siteConfig } from '@/config/site';
 
+let restoreAdsterraConfig: (() => void) | null = null;
+
+const enableAdsterraForTest = () => {
+  const previousAdsEnabled = siteConfig.ads.enabled;
+  const previousProviderEnabled = siteConfig.ads.providers.adsterra.enabled;
+
+  Object.assign(siteConfig.ads, { enabled: true });
+  Object.assign(siteConfig.ads.providers.adsterra, { enabled: true });
+
+  restoreAdsterraConfig = () => {
+    Object.assign(siteConfig.ads, { enabled: previousAdsEnabled });
+    Object.assign(siteConfig.ads.providers.adsterra, { enabled: previousProviderEnabled });
+  };
+};
+
 beforeEach(() => {
   delete window.__OTK_MONETIZATION_DEBUG__;
+  delete window.__OTK_ADSTERRA_DISPLAY_CHAIN__;
+  restoreAdsterraConfig = null;
   vi.useRealTimers();
+});
+
+afterEach(() => {
+  restoreAdsterraConfig?.();
+  restoreAdsterraConfig = null;
 });
 
 describe('AdsterraDisplayBanner', () => {
   it('does not render when a real display zone is not configured', () => {
+    enableAdsterraForTest();
     const slot = siteConfig.ads.providers.adsterra.displayBanners.leftRail;
     const previous = { ...slot };
     Object.assign(slot, { enabled: false, scriptSrc: '' });
@@ -21,22 +44,29 @@ describe('AdsterraDisplayBanner', () => {
     Object.assign(slot, previous);
   });
 
-  it('injects standard display banner options and script inside the slot host', () => {
+  it('injects standard display banner options and script inside the slot host', async () => {
+    enableAdsterraForTest();
     const slot = siteConfig.ads.providers.adsterra.displayBanners.leftRail;
     const previous = { ...slot };
 
     Object.assign(slot, {
       enabled: true,
       scriptSrc: 'https://example.test/display.js',
+      minViewportWidth: undefined,
+      maxViewportWidth: undefined,
       atOptions: {
-      key: 'test-zone',
-      format: 'iframe',
-      width: 160,
-      height: 600,
+        key: 'test-zone',
+        format: 'iframe',
+        width: 160,
+        height: 600,
       },
     });
 
     render(<AdsterraDisplayBanner slot="leftRail" />);
+
+    await act(async () => {
+      await Promise.resolve();
+    });
 
     const host = document.getElementById(previous.containerId);
     const script = host?.querySelector('script[data-otk-adsterra-display="leftRail"]');
@@ -60,7 +90,8 @@ describe('AdsterraDisplayBanner', () => {
     Object.assign(slot, previous);
   });
 
-  it('shows a same-size network fallback when the display slot stays empty after timeout', async () => {
+  it('collapses the display slot when it stays empty after timeout', async () => {
+    enableAdsterraForTest();
     vi.useFakeTimers();
     const slot = siteConfig.ads.providers.adsterra.displayBanners.rightRail;
     const previous = { ...slot };
@@ -68,6 +99,8 @@ describe('AdsterraDisplayBanner', () => {
     Object.assign(slot, {
       enabled: true,
       scriptSrc: 'https://example.test/right-rail.js',
+      minViewportWidth: undefined,
+      maxViewportWidth: undefined,
       atOptions: {
         key: 'right-rail-zone',
         format: 'iframe',
@@ -79,18 +112,16 @@ describe('AdsterraDisplayBanner', () => {
     render(<AdsterraDisplayBanner slot="rightRail" />);
 
     await act(async () => {
+      await Promise.resolve();
+    });
+
+    await act(async () => {
       vi.advanceTimersByTime(5000);
     });
 
-    const fallback = screen.getByTestId('adsterra-display-fallback');
-    const host = document.getElementById(previous.containerId);
-
-    expect(screen.getByLabelText(previous.label)).toHaveAttribute('data-otk-ad-status', 'failed');
-    expect(fallback).toHaveStyle({ width: '160px', height: '300px' });
-    expect(fallback).toHaveAttribute('data-otk-ad-fallback-slot', 'rightRail');
-    expect(fallback).toHaveAttribute('data-otk-monetization-surface', 'fallback');
-    expect(fallback.querySelector('a')).toBeNull();
-    expect(host?.querySelector('script[data-otk-adsterra-display="rightRail"]')).toBeTruthy();
+    expect(screen.queryByLabelText(previous.label)).not.toBeInTheDocument();
+    expect(screen.queryByTestId('adsterra-display-fallback')).not.toBeInTheDocument();
+    expect(document.getElementById(previous.containerId)).toBeNull();
     expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
       event => event.monetizationEvent === 'ad_render_failed'
         && event.placement === 'rightRail'
@@ -105,15 +136,40 @@ describe('AdsterraDisplayBanner', () => {
         && event.placement === 'rightRail'
         && (event.metadata as { surface?: string } | undefined)?.surface === 'fallback',
     )).toBe(true);
+    expect(window.__OTK_MONETIZATION_DEBUG__?.events.some(
+      event => event.monetizationEvent === 'fallback_shown'
+        && event.placement === 'rightRail'
+        && (event.metadata as { collapsed?: boolean } | undefined)?.collapsed === true,
+    )).toBe(true);
 
     Object.assign(slot, previous);
     vi.useRealTimers();
   });
 
   it('does not show fallback when a creative appears before the timeout', async () => {
+    enableAdsterraForTest();
     vi.useFakeTimers();
+    const slot = siteConfig.ads.providers.adsterra.displayBanners.leftRail;
+    const previous = { ...slot };
+
+    Object.assign(slot, {
+      enabled: true,
+      scriptSrc: 'https://example.test/left-rail.js',
+      minViewportWidth: undefined,
+      maxViewportWidth: undefined,
+      atOptions: {
+        key: 'left-rail-zone',
+        format: 'iframe',
+        width: 160,
+        height: 600,
+      },
+    });
 
     render(<AdsterraDisplayBanner slot="leftRail" />);
+
+    await act(async () => {
+      await Promise.resolve();
+    });
 
     const host = document.getElementById(siteConfig.ads.providers.adsterra.displayBanners.leftRail.containerId);
     const creative = document.createElement('iframe');
@@ -130,6 +186,41 @@ describe('AdsterraDisplayBanner', () => {
         && event.placement === 'leftRail',
     )).toBe(true);
 
+    Object.assign(slot, previous);
     vi.useRealTimers();
+  });
+
+  it('supports the optional 468x60 display slot through the same env-backed loader', async () => {
+    enableAdsterraForTest();
+    const slot = siteConfig.ads.providers.adsterra.displayBanners.banner468x60;
+    const previous = { ...slot };
+
+    Object.assign(slot, {
+      enabled: true,
+      scriptSrc: 'https://example.test/468x60.js',
+      minViewportWidth: undefined,
+      maxViewportWidth: undefined,
+      atOptions: {
+        key: 'tablet-strip-zone',
+        format: 'iframe',
+        width: 468,
+        height: 60,
+      },
+    });
+
+    render(<AdsterraDisplayBanner slot="banner468x60" />);
+
+    await act(async () => {
+      await Promise.resolve();
+    });
+
+    const host = document.getElementById(previous.containerId);
+    const script = host?.querySelector('script[data-otk-adsterra-display="banner468x60"]');
+
+    expect(screen.getByLabelText(previous.label)).toHaveStyle({ width: '468px', minHeight: '60px' });
+    expect(host).toHaveStyle({ width: '468px', height: '60px' });
+    expect(script).toHaveAttribute('src', 'https://example.test/468x60.js');
+
+    Object.assign(slot, previous);
   });
 });

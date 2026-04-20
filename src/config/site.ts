@@ -1,3 +1,5 @@
+import { monetizationRuntime } from '@/lib/monetization/review-mode';
+
 export type ThemePreference = 'light' | 'dark' | 'system';
 export type ToolFamily =
   | 'pdf'
@@ -10,69 +12,20 @@ export type ToolFamily =
 
 type AdsterraAtOptions = Record<string, string | number | boolean | Record<string, unknown>>;
 
-const adsterraDisplayBannerUnits = {
-  leaderboard: {
-    scriptSrc: 'https://www.highperformanceformat.com/0bdd950b739b904ab9f0044bfa63042a/invoke.js',
-    atOptions: {
-      key: '0bdd950b739b904ab9f0044bfa63042a',
-      format: 'iframe',
-      height: 90,
-      width: 728,
-      params: {},
-    },
-  },
-  rectangle: {
-    scriptSrc: 'https://www.highperformanceformat.com/5bca290bf91b1d97ffe6647608c479ea/invoke.js',
-    atOptions: {
-      key: '5bca290bf91b1d97ffe6647608c479ea',
-      format: 'iframe',
-      height: 250,
-      width: 300,
-      params: {},
-    },
-  },
-  leftRail: {
-    scriptSrc: 'https://www.highperformanceformat.com/9cb17ec1b627d26e665f83d3ae29a07f/invoke.js',
-    atOptions: {
-      key: '9cb17ec1b627d26e665f83d3ae29a07f',
-      format: 'iframe',
-      height: 600,
-      width: 160,
-      params: {},
-    },
-  },
-  rightRail: {
-    scriptSrc: 'https://www.highperformanceformat.com/b4bc15ab1d393108db92811da1b2e52a/invoke.js',
-    atOptions: {
-      key: 'b4bc15ab1d393108db92811da1b2e52a',
-      format: 'iframe',
-      height: 300,
-      width: 160,
-      params: {},
-    },
-  },
-  mobileSticky: {
-    scriptSrc: 'https://www.highperformanceformat.com/7f8a51642b3d96d667eded9cae9970df/invoke.js',
-    atOptions: {
-      key: '7f8a51642b3d96d667eded9cae9970df',
-      format: 'iframe',
-      height: 50,
-      width: 320,
-      params: {},
-    },
-  },
-} as const satisfies Record<string, { scriptSrc: string; atOptions: AdsterraAtOptions }>;
+function readPublicEnv(name: string) {
+  return process.env[name]?.trim() ?? '';
+}
 
-function parseAdsterraAtOptions(raw: string | undefined, fallback: AdsterraAtOptions) {
+function parseAdsterraAtOptions(raw: string | undefined) {
   if (!raw?.trim()) {
-    return fallback;
+    return null;
   }
 
   try {
     const parsed = JSON.parse(raw) as AdsterraAtOptions;
-    return parsed && typeof parsed === 'object' ? parsed : fallback;
+    return parsed && typeof parsed === 'object' ? parsed : null;
   } catch {
-    return fallback;
+    return null;
   }
 }
 
@@ -102,7 +55,51 @@ const adsterraDisplayBannerDefaults = {
     height: 50,
     format: 'iframe',
   },
+  banner468x60: {
+    width: 468,
+    height: 60,
+    format: 'iframe',
+  },
 } as const;
+
+function buildDisplayBannerConfig({
+  scriptEnv,
+  atOptionsEnv,
+  containerId,
+  label,
+  width,
+  height,
+  minViewportWidth,
+  maxViewportWidth,
+}: {
+  scriptEnv: string;
+  atOptionsEnv: string;
+  containerId: string;
+  label: string;
+  width: number;
+  height: number;
+  minViewportWidth?: number;
+  maxViewportWidth?: number;
+}) {
+  const scriptSrc = readPublicEnv(scriptEnv);
+  const atOptions = parseAdsterraAtOptions(readPublicEnv(atOptionsEnv));
+
+  return {
+    enabled: monetizationRuntime.adsterraEnabled && Boolean(scriptSrc && atOptions),
+    scriptSrc,
+    containerId,
+    label,
+    width,
+    height,
+    minViewportWidth,
+    maxViewportWidth,
+    env: {
+      scriptSrc: scriptEnv,
+      atOptions: atOptionsEnv,
+    },
+    atOptions: atOptions ?? {},
+  };
+}
 
 export const siteConfig = {
   name: 'OpenToolsKit',
@@ -157,7 +154,7 @@ export const siteConfig = {
     darkThemeColor: '#071217',
   },
   ads: {
-    enabled: true,
+    enabled: monetizationRuntime.adsterraEnabled,
     disclosureLabel: 'Sponsored',
     disclosureSummary:
       'OpenToolsKit stays free thanks to advertising and partner offers. Ads and partner links are delivered by third-party networks.',
@@ -165,7 +162,7 @@ export const siteConfig = {
       'We do not individually control or endorse every creative or landing page.',
     providers: {
       adsterra: {
-        enabled: true,
+        enabled: monetizationRuntime.adsterraEnabled,
         nativeBanner: {
           scriptSrc:
             'https://pl29133190.profitablecpmratenetwork.com/13abb80829d1e16b339d390deb70c6a5/invoke.js',
@@ -182,75 +179,67 @@ export const siteConfig = {
           cooldownStorageKey: 'opentoolskit-adsterra-socialbar-last-fired',
         },
         displayBanners: {
-          leaderboard: {
-            enabled: true,
-            scriptSrc: process.env.NEXT_PUBLIC_ADSTERRA_LEADERBOARD_SCRIPT_SRC
-              ?? adsterraDisplayBannerUnits.leaderboard.scriptSrc,
+          // Display/banner iframe units are deployment-specific public env values.
+          // Do not hardcode these zone URLs or keys in the open-source repo.
+          leaderboard: buildDisplayBannerConfig({
+            scriptEnv: 'NEXT_PUBLIC_ADSTERRA_LEADERBOARD_SCRIPT_SRC',
+            atOptionsEnv: 'NEXT_PUBLIC_ADSTERRA_LEADERBOARD_AT_OPTIONS',
             containerId: 'otk-adsterra-leaderboard',
             label: 'Desktop leaderboard',
             width: adsterraDisplayBannerDefaults.leaderboard.width,
             height: adsterraDisplayBannerDefaults.leaderboard.height,
-            atOptions: parseAdsterraAtOptions(
-              process.env.NEXT_PUBLIC_ADSTERRA_LEADERBOARD_AT_OPTIONS,
-              adsterraDisplayBannerUnits.leaderboard.atOptions,
-            ),
-          },
-          rectangle: {
-            enabled: true,
-            scriptSrc: process.env.NEXT_PUBLIC_ADSTERRA_RECTANGLE_SCRIPT_SRC
-              ?? adsterraDisplayBannerUnits.rectangle.scriptSrc,
+            minViewportWidth: 900,
+          }),
+          rectangle: buildDisplayBannerConfig({
+            scriptEnv: 'NEXT_PUBLIC_ADSTERRA_RECTANGLE_SCRIPT_SRC',
+            atOptionsEnv: 'NEXT_PUBLIC_ADSTERRA_RECTANGLE_AT_OPTIONS',
             containerId: 'otk-adsterra-rectangle',
             label: 'Desktop rectangle',
             width: adsterraDisplayBannerDefaults.rectangle.width,
             height: adsterraDisplayBannerDefaults.rectangle.height,
-            atOptions: parseAdsterraAtOptions(
-              process.env.NEXT_PUBLIC_ADSTERRA_RECTANGLE_AT_OPTIONS,
-              adsterraDisplayBannerUnits.rectangle.atOptions,
-            ),
-          },
-          leftRail: {
-            enabled: true,
-            scriptSrc: process.env.NEXT_PUBLIC_ADSTERRA_LEFT_RAIL_SCRIPT_SRC
-              ?? adsterraDisplayBannerUnits.leftRail.scriptSrc,
+            minViewportWidth: 1024,
+          }),
+          leftRail: buildDisplayBannerConfig({
+            scriptEnv: 'NEXT_PUBLIC_ADSTERRA_LEFT_RAIL_SCRIPT_SRC',
+            atOptionsEnv: 'NEXT_PUBLIC_ADSTERRA_LEFT_RAIL_AT_OPTIONS',
             containerId: 'otk-adsterra-left-rail',
             label: 'Desktop left rail',
             width: adsterraDisplayBannerDefaults.leftRail.width,
             height: adsterraDisplayBannerDefaults.leftRail.height,
-            atOptions: parseAdsterraAtOptions(
-              process.env.NEXT_PUBLIC_ADSTERRA_LEFT_RAIL_AT_OPTIONS,
-              adsterraDisplayBannerUnits.leftRail.atOptions,
-            ),
-          },
-          rightRail: {
-            enabled: true,
-            scriptSrc: process.env.NEXT_PUBLIC_ADSTERRA_RIGHT_RAIL_SCRIPT_SRC
-              ?? adsterraDisplayBannerUnits.rightRail.scriptSrc,
+            minViewportWidth: 1280,
+          }),
+          rightRail: buildDisplayBannerConfig({
+            scriptEnv: 'NEXT_PUBLIC_ADSTERRA_RIGHT_RAIL_SCRIPT_SRC',
+            atOptionsEnv: 'NEXT_PUBLIC_ADSTERRA_RIGHT_RAIL_AT_OPTIONS',
             containerId: 'otk-adsterra-right-rail',
             label: 'Desktop right rail',
             width: adsterraDisplayBannerDefaults.rightRail.width,
             height: adsterraDisplayBannerDefaults.rightRail.height,
-            atOptions: parseAdsterraAtOptions(
-              process.env.NEXT_PUBLIC_ADSTERRA_RIGHT_RAIL_AT_OPTIONS,
-              adsterraDisplayBannerUnits.rightRail.atOptions,
-            ),
-          },
-          mobileSticky: {
-            enabled: true,
-            scriptSrc: process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_SCRIPT_SRC
-              ?? adsterraDisplayBannerUnits.mobileSticky.scriptSrc,
+            minViewportWidth: 1280,
+          }),
+          mobileSticky: buildDisplayBannerConfig({
+            scriptEnv: 'NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_SCRIPT_SRC',
+            atOptionsEnv: 'NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_AT_OPTIONS',
             containerId: 'otk-adsterra-mobile-sticky',
             label: 'Mobile sticky banner',
             width: adsterraDisplayBannerDefaults.mobileSticky.width,
             height: adsterraDisplayBannerDefaults.mobileSticky.height,
-            atOptions: parseAdsterraAtOptions(
-              process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_AT_OPTIONS,
-              adsterraDisplayBannerUnits.mobileSticky.atOptions,
-            ),
-          },
+            maxViewportWidth: 1023,
+          }),
+          banner468x60: buildDisplayBannerConfig({
+            scriptEnv: 'NEXT_PUBLIC_ADSTERRA_468X60_SCRIPT_SRC',
+            atOptionsEnv: 'NEXT_PUBLIC_ADSTERRA_468X60_AT_OPTIONS',
+            containerId: 'otk-adsterra-468x60',
+            label: 'Inline tablet banner',
+            width: adsterraDisplayBannerDefaults.banner468x60.width,
+            height: adsterraDisplayBannerDefaults.banner468x60.height,
+            minViewportWidth: 640,
+            maxViewportWidth: 899,
+          }),
         },
       },
       partnerRedirect: {
-        enabled: true,
+        enabled: monetizationRuntime.partnerRedirectEnabled,
         redirectPathPrefix: '/go',
         providerQueryValue: 'partner',
         placementId: 'post-result-primary',
@@ -300,7 +289,7 @@ export const siteConfig = {
     },
   },
   sponsorship: {
-    enabled: true,
+    enabled: monetizationRuntime.sponsorSurfacesEnabled,
     storageKey: 'opentoolskit-sponsor-dismissed',
     redirectPathPrefix: '/go',
     label: 'Sponsored',

@@ -7,7 +7,7 @@ import { Search, X, Filter, Star } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import {
-  AdsterraDisplayBanner,
+  AdsterraInlineBanner,
   AdsterraNativeBanner,
 } from '@/components/ads/DynamicAdsterraComponents';
 import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
@@ -342,15 +342,14 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                   <AdsterraNativeBanner
                     slotName="tools-index-native"
                     description="This catalog page may include a labeled native placement. Tool discovery stays separate from processing and download actions."
+                    collapseOnNoFill
                   />
                 )}
               </div>
             )}
 
             {monetizationProfile.allowAggressiveUnits && (
-              <div className="mb-8">
-                <AdsterraDisplayBanner slot="leaderboard" />
-              </div>
+              <AdsterraInlineBanner className="mb-8" />
             )}
 
             {/* Tools Grid */}

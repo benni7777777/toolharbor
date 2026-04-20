@@ -222,6 +222,7 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
                 <AdsterraNativeBanner
                   slotName="info-native"
                   description="This FAQ page may include a labeled native placement from a third-party network. It is separate from the core tool flow."
+                  collapseOnNoFill
                 />
               )}
             </div>

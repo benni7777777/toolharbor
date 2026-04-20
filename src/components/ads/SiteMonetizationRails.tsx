@@ -1,101 +1,67 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { X } from 'lucide-react';
-import { usePathname } from 'next/navigation';
 import { AdsterraDisplayBanner } from '@/components/ads/DynamicAdsterraComponents';
-import PostResultSponsorCard from '@/components/common/PostResultSponsorCard';
 import { siteConfig } from '@/config/site';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 
-function getPathContext(pathname: string | null) {
-  const segments = (pathname ?? '').split('/').filter(Boolean);
-  const locale = segments[0] || siteConfig.defaultLocale;
-  const toolsIndex = segments.indexOf('tools');
-  const toolSlug = toolsIndex >= 0 ? segments[toolsIndex + 1] : undefined;
-  const pageType = toolSlug ? 'tool' : segments[1] || 'home';
-
-  return {
-    locale,
-    pageType,
-    toolSlug,
-    routeKey: segments.join(':') || 'home',
-  };
-}
-
 export function SiteMonetizationRails() {
-  const pathname = usePathname();
   const monetizationProfile = useMonetizationProfile();
   const [mobileDismissed, setMobileDismissed] = useState(false);
-  const context = useMemo(() => getPathContext(pathname), [pathname]);
+  const [collapsedSlots, setCollapsedSlots] = useState<Set<string>>(() => new Set());
+  const handleCollapse = useCallback((slot: string) => {
+    setCollapsedSlots((current) => {
+      const next = new Set(current);
+      next.add(slot);
+      return next;
+    });
+  }, []);
 
-  if (!siteConfig.ads.enabled || !siteConfig.sponsorship.enabled || monetizationProfile.previewMode === 'off') {
+  if (!siteConfig.ads.enabled || monetizationProfile.previewMode === 'off') {
     return null;
   }
 
-  const railSource = `site:${context.routeKey}:rail:contextual-soft:soft-bordered`;
-  const mobileSource = `site:${context.routeKey}:mobile-strip:contextual-soft:soft-bordered`;
-  const tool = context.toolSlug ?? context.pageType;
   const leftRailDisplayEnabled = siteConfig.ads.providers.adsterra.displayBanners.leftRail.enabled;
   const rightRailDisplayEnabled = siteConfig.ads.providers.adsterra.displayBanners.rightRail.enabled;
   const mobileStickyDisplayEnabled = siteConfig.ads.providers.adsterra.displayBanners.mobileSticky.enabled;
+  const showLeftRail = leftRailDisplayEnabled && !collapsedSlots.has('leftRail');
+  const showRightRail = rightRailDisplayEnabled && !collapsedSlots.has('rightRail');
+  const showMobileSticky = !mobileDismissed
+    && monetizationProfile.allowAggressiveUnits
+    && mobileStickyDisplayEnabled
+    && !collapsedSlots.has('mobileSticky');
+
+  if (!showLeftRail && !showRightRail && !showMobileSticky) {
+    return null;
+  }
 
   return (
     <>
-      <aside
-        className="pointer-events-none fixed left-4 top-32 z-30 hidden w-56 min-[1800px]:w-72 xl:block"
-        aria-label="Sponsored left rail"
-      >
-        <div className="pointer-events-auto flex justify-center">
-          {leftRailDisplayEnabled ? (
-            <AdsterraDisplayBanner slot="leftRail" />
-          ) : (
-            <PostResultSponsorCard
-              placementId="next-step"
-              title="Review a safer file-sharing option"
-              description="A curated partner preview opens a sponsored offer in a new tab while this tool stays ready."
-              ctaLabel="See partner option"
-              toolSlug={tool}
-              sourceId={railSource}
-              campaign="site-left-rail"
-              placementMeta={context.pageType}
-              sponsorTheme="secure-sharing"
-              compact
-              showHelperText={false}
-              layout="rectangle"
-            />
-          )}
-        </div>
-      </aside>
+      {showLeftRail && (
+        <aside
+          className="pointer-events-none fixed left-4 top-32 z-20 hidden w-56 min-[1800px]:w-72 xl:block"
+          aria-label="Sponsored left rail"
+        >
+          <div className="pointer-events-auto flex justify-center">
+            <AdsterraDisplayBanner slot="leftRail" onCollapse={handleCollapse} />
+          </div>
+        </aside>
+      )}
 
-      <aside
-        className="pointer-events-none fixed right-4 top-32 z-30 hidden w-56 min-[1800px]:w-72 xl:block"
-        aria-label="Sponsored right rail"
-      >
-        <div className="pointer-events-auto flex justify-center">
-          {rightRailDisplayEnabled ? (
-            <AdsterraDisplayBanner slot="rightRail" />
-          ) : (
-            <PostResultSponsorCard
-              placementId="upload-offer"
-              title="Explore a useful productivity add-on"
-              description="Open a labeled partner option that may help with follow-up browser tasks."
-              ctaLabel="Open sponsored offer"
-              toolSlug={tool}
-              sourceId={railSource}
-              campaign="site-right-rail"
-              placementMeta={context.pageType}
-              sponsorTheme="productivity-addon"
-              compact
-              showHelperText={false}
-              layout="rectangle"
-            />
-          )}
-        </div>
-      </aside>
+      {showRightRail && (
+        <aside
+          className="pointer-events-none fixed right-4 top-32 z-20 hidden w-56 min-[1800px]:w-72 xl:block"
+          aria-label="Sponsored right rail"
+        >
+          <div className="pointer-events-auto flex justify-center">
+            <AdsterraDisplayBanner slot="rightRail" onCollapse={handleCollapse} />
+          </div>
+        </aside>
+      )}
 
-      {!mobileDismissed && monetizationProfile.allowAggressiveUnits && (
-        <div className="fixed inset-x-3 bottom-3 z-[70] lg:hidden">
+      {showMobileSticky && (
+        <div className="fixed inset-x-3 bottom-3 z-40 lg:hidden">
           <div className="relative mx-auto flex max-w-md justify-center overflow-visible">
             <button
               type="button"
@@ -105,25 +71,11 @@ export function SiteMonetizationRails() {
             >
               <X className="h-3.5 w-3.5" aria-hidden="true" />
             </button>
-            {mobileStickyDisplayEnabled ? (
-              <AdsterraDisplayBanner slot="mobileSticky" className="shadow-[var(--shadow-lg)]" />
-            ) : (
-              <PostResultSponsorCard
-                placementId="next-step"
-                title="Speed up your next browser task"
-                description="Optional partner offer opens separately. Your current page stays open."
-                ctaLabel="Open sponsored offer"
-                toolSlug={tool}
-                sourceId={mobileSource}
-                campaign="site-mobile-strip"
-                placementMeta={tool}
-                sponsorTheme="browser-speed"
-                compact
-                showHelperText={false}
-                className="shadow-[var(--shadow-lg)]"
-                layout="banner"
-              />
-            )}
+            <AdsterraDisplayBanner
+              slot="mobileSticky"
+              className="shadow-[var(--shadow-lg)]"
+              onCollapse={handleCollapse}
+            />
           </div>
         </div>
       )}

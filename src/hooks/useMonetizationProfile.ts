@@ -5,6 +5,7 @@ import { siteConfig } from '@/config/site';
 import type { MonetizationContext, MonetizationPreviewMode, MonetizationProfile } from '@/types/monetization';
 import { getLocalStorageItem, setLocalStorageItem } from '@/lib/monetization/storage';
 import { isHardGateFeatureEnabled } from '@/lib/monetization/feature-flags';
+import { monetizationRuntime } from '@/lib/monetization/review-mode';
 
 const DEFAULT_CONTEXT: MonetizationContext = {
   country: 'unknown',
@@ -82,6 +83,13 @@ export function useMonetizationProfile(): MonetizationProfile {
   const [previewMode, setPreviewMode] = useState<MonetizationPreviewMode>('auto');
 
   useEffect(() => {
+    if (monetizationRuntime.adsenseReviewMode) {
+      setPreviewMode('off');
+      setContext(DEFAULT_CONTEXT);
+      setIsLoading(false);
+      return;
+    }
+
     setPreviewMode(getPreviewMode());
 
     let mounted = true;
@@ -99,8 +107,9 @@ export function useMonetizationProfile(): MonetizationProfile {
     };
   }, []);
 
-  const allowNativeUnits = previewMode !== 'off';
-  const eligibleForAggressiveUnits = !context.isUkEea && !isLoading;
+  const allowNativeUnits = !monetizationRuntime.adsenseReviewMode && previewMode !== 'off';
+  const eligibleForAggressiveUnits =
+    !monetizationRuntime.adsenseReviewMode && !context.isUkEea && !isLoading;
   const allowAggressiveUnits =
     eligibleForAggressiveUnits && (previewMode === 'aggressive' || previewMode === 'auto');
   const allowHardGate =

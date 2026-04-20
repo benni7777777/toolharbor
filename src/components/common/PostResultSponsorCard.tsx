@@ -149,6 +149,10 @@ export function PostResultSponsorCard({
   const linkHref = useMemo(() => buildLinkHref(clickId), [buildLinkHref, clickId]);
 
   useEffect(() => {
+    if (!siteConfig.sponsorship.enabled) {
+      return;
+    }
+
     const nextClickId = buildLocalSponsorClickId();
     const shownKey = `${resolvedSourceId}:${placementId}:${selectedTheme.id}`;
 
@@ -187,6 +191,10 @@ export function PostResultSponsorCard({
     }
     return nextClickId;
   };
+
+  if (!siteConfig.sponsorship.enabled) {
+    return null;
+  }
 
   const cardClassName = `overflow-hidden border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] shadow-[var(--shadow-sm)] !p-0 ${className}`.trim();
   const bodyClassName = compact

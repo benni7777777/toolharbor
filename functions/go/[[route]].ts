@@ -1,4 +1,6 @@
 interface Env {
+  NEXT_PUBLIC_ADSENSE_REVIEW_MODE?: string;
+  ADSENSE_REVIEW_MODE?: string;
   PARTNER_REDIRECT_BASE_URL?: string;
   PARTNER_REDIRECT_SOURCE?: string;
   ZEYDOO_BASE_URL?: string;
@@ -57,6 +59,14 @@ function applyPartnerTemplateTokens(value: string, source: string, clickId: stri
     .replace(/\{CLICK_ID\}/g, clickId);
 }
 
+function isAdsenseReviewMode(env: Env) {
+  const raw = (env.NEXT_PUBLIC_ADSENSE_REVIEW_MODE ?? env.ADSENSE_REVIEW_MODE ?? 'true')
+    .trim()
+    .toLowerCase();
+
+  return raw !== 'false' && raw !== '0' && raw !== 'no';
+}
+
 export const onRequest = async (context: PagesFunctionContext<Env>) => {
   const requestUrl = new URL(context.request.url);
   const placement = getRouteSegment(context.params.route);
@@ -74,6 +84,13 @@ export const onRequest = async (context: PagesFunctionContext<Env>) => {
 
   if (provider !== 'partner' || !ALLOWED_PLACEMENTS.has(placement)) {
     return redirectTo(fallbackUrl, headers);
+  }
+
+  if (isAdsenseReviewMode(context.env)) {
+    return redirectTo(fallbackUrl, {
+      ...headers,
+      'x-otk-partner-redirect': 'disabled-adsense-review-mode',
+    });
   }
 
   if (!partnerBaseUrl) {

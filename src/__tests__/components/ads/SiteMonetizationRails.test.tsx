@@ -1,21 +1,30 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { act, render, screen } from '@testing-library/react';
 import SiteMonetizationRails from '@/components/ads/SiteMonetizationRails';
 import { siteConfig } from '@/config/site';
 
-const mockUsePathname = vi.fn();
 const mockMonetizationProfile = vi.fn();
+let restoreAdsterraConfig: (() => void) | null = null;
 
-vi.mock('next/navigation', () => ({
-  usePathname: () => mockUsePathname(),
-}));
+const enableAdsterraForTest = () => {
+  const previousAdsEnabled = siteConfig.ads.enabled;
+  const previousProviderEnabled = siteConfig.ads.providers.adsterra.enabled;
+
+  Object.assign(siteConfig.ads, { enabled: true });
+  Object.assign(siteConfig.ads.providers.adsterra, { enabled: true });
+
+  restoreAdsterraConfig = () => {
+    Object.assign(siteConfig.ads, { enabled: previousAdsEnabled });
+    Object.assign(siteConfig.ads.providers.adsterra, { enabled: previousProviderEnabled });
+  };
+};
 
 vi.mock('@/hooks/useMonetizationProfile', () => ({
   useMonetizationProfile: () => mockMonetizationProfile(),
 }));
 
 beforeEach(() => {
-  mockUsePathname.mockReturnValue('/en/tools/merge-pdf');
+  restoreAdsterraConfig = null;
   mockMonetizationProfile.mockReturnValue({
     country: 'US',
     isUkEea: false,
@@ -26,11 +35,48 @@ beforeEach(() => {
     allowHardGate: false,
   });
   window.sessionStorage.clear();
+  delete window.__OTK_ADSTERRA_DISPLAY_CHAIN__;
   vi.useRealTimers();
 });
 
+afterEach(() => {
+  restoreAdsterraConfig?.();
+  restoreAdsterraConfig = null;
+});
+
 describe('SiteMonetizationRails', () => {
-  it('renders real Adsterra display rail slots by default', async () => {
+  it('renders configured Adsterra display rail slots', async () => {
+    enableAdsterraForTest();
+    const leftSlot = siteConfig.ads.providers.adsterra.displayBanners.leftRail;
+    const rightSlot = siteConfig.ads.providers.adsterra.displayBanners.rightRail;
+    const previousLeft = { ...leftSlot };
+    const previousRight = { ...rightSlot };
+
+    Object.assign(leftSlot, {
+      enabled: true,
+      scriptSrc: 'https://example.test/left-rail.js',
+      minViewportWidth: undefined,
+      maxViewportWidth: undefined,
+      atOptions: {
+        key: 'left-zone',
+        format: 'iframe',
+        width: 160,
+        height: 600,
+      },
+    });
+    Object.assign(rightSlot, {
+      enabled: true,
+      scriptSrc: 'https://example.test/right-rail.js',
+      minViewportWidth: undefined,
+      maxViewportWidth: undefined,
+      atOptions: {
+        key: 'right-zone',
+        format: 'iframe',
+        width: 160,
+        height: 300,
+      },
+    });
+
     render(<SiteMonetizationRails />);
 
     const leftRail = screen.getByLabelText('Sponsored left rail');
@@ -45,20 +91,38 @@ describe('SiteMonetizationRails', () => {
     expect(await screen.findByLabelText('Desktop left rail')).toBeInTheDocument();
     expect(await screen.findByLabelText('Desktop right rail')).toBeInTheDocument();
 
-    const leftHost = document.getElementById('otk-adsterra-left-rail');
-    const rightHost = document.getElementById('otk-adsterra-right-rail');
+    await act(async () => {
+      await Promise.resolve();
+    });
 
-    expect(leftHost?.querySelector('script[data-otk-adsterra-display="leftRail"]')).toHaveAttribute(
+    const leftHost = document.getElementById('otk-adsterra-left-rail');
+    const leftScript = leftHost?.querySelector('script[data-otk-adsterra-display="leftRail"]');
+
+    expect(leftScript).toHaveAttribute(
       'src',
-      'https://www.highperformanceformat.com/9cb17ec1b627d26e665f83d3ae29a07f/invoke.js',
+      'https://example.test/left-rail.js',
     );
+
+    act(() => {
+      leftScript?.dispatchEvent(new Event('load'));
+    });
+
+    await act(async () => {
+      await Promise.resolve();
+    });
+
+    const rightHost = document.getElementById('otk-adsterra-right-rail');
     expect(rightHost?.querySelector('script[data-otk-adsterra-display="rightRail"]')).toHaveAttribute(
       'src',
-      'https://www.highperformanceformat.com/b4bc15ab1d393108db92811da1b2e52a/invoke.js',
+      'https://example.test/right-rail.js',
     );
+
+    Object.assign(leftSlot, previousLeft);
+    Object.assign(rightSlot, previousRight);
   });
 
-  it('falls back to first-party partner rails with route-aware metadata when display zones are disabled', () => {
+  it('does not render rail or mobile placeholders when display zones are disabled', () => {
+    enableAdsterraForTest();
     const leftSlot = siteConfig.ads.providers.adsterra.displayBanners.leftRail;
     const rightSlot = siteConfig.ads.providers.adsterra.displayBanners.rightRail;
     const mobileSlot = siteConfig.ads.providers.adsterra.displayBanners.mobileSticky;
@@ -72,28 +136,9 @@ describe('SiteMonetizationRails', () => {
 
     render(<SiteMonetizationRails />);
 
-    const sponsorPreviews = screen.getAllByTestId('sponsor-preview-card');
-    expect(sponsorPreviews).toHaveLength(3);
-    expect(sponsorPreviews.every((preview) =>
-      preview.getAttribute('data-otk-monetization-surface') === 'sponsorPreview',
-    )).toBe(true);
-    expect(sponsorPreviews.map((preview) => preview.getAttribute('data-sponsor-theme'))).toEqual([
-      'secure-sharing',
-      'productivity-addon',
-      'browser-speed',
-    ]);
-
-    const links = screen.getAllByRole('link');
-    const nextStepLink = links.find((link) => link.getAttribute('href')?.startsWith('/go/next-step'));
-    const uploadOfferLink = links.find((link) => link.getAttribute('href')?.startsWith('/go/upload-offer'));
-
-    expect(nextStepLink).toBeTruthy();
-    expect(uploadOfferLink).toBeTruthy();
-
-    const nextStepUrl = new URL(nextStepLink?.getAttribute('href') ?? '', 'https://www.opentoolskit.com');
-    expect(nextStepUrl.searchParams.get('tool')).toBe('merge-pdf');
-    expect(nextStepUrl.searchParams.get('source')).toBe('site:en:tools:merge-pdf:rail:contextual-soft:soft-bordered');
-    expect(nextStepUrl.searchParams.get('campaign')).toBe('site-left-rail');
+    expect(screen.queryByLabelText('Sponsored left rail')).not.toBeInTheDocument();
+    expect(screen.queryByLabelText('Sponsored right rail')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('sponsor-preview-card')).not.toBeInTheDocument();
 
     Object.assign(leftSlot, previousLeft);
     Object.assign(rightSlot, previousRight);
@@ -117,27 +162,44 @@ describe('SiteMonetizationRails', () => {
     expect(screen.queryByLabelText('Sponsored right rail')).not.toBeInTheDocument();
   });
 
-  it('uses home metadata instead of treating the locale segment as a tool', () => {
+  it('collapses a rail wrapper after display no-fill', async () => {
+    enableAdsterraForTest();
+    vi.useFakeTimers();
     const leftSlot = siteConfig.ads.providers.adsterra.displayBanners.leftRail;
     const rightSlot = siteConfig.ads.providers.adsterra.displayBanners.rightRail;
     const previousLeft = { ...leftSlot };
     const previousRight = { ...rightSlot };
 
-    Object.assign(leftSlot, { enabled: false, scriptSrc: '' });
+    Object.assign(leftSlot, {
+      enabled: true,
+      scriptSrc: 'https://example.test/left-empty.js',
+      minViewportWidth: undefined,
+      maxViewportWidth: undefined,
+      atOptions: {
+        key: 'left-empty',
+        format: 'iframe',
+        width: 160,
+        height: 600,
+      },
+    });
     Object.assign(rightSlot, { enabled: false, scriptSrc: '' });
-    mockUsePathname.mockReturnValue('/en');
 
     render(<SiteMonetizationRails />);
 
-    const links = screen.getAllByRole('link');
-    const nextStepLink = links.find((link) => link.getAttribute('href')?.startsWith('/go/next-step'));
-    const nextStepUrl = new URL(nextStepLink?.getAttribute('href') ?? '', 'https://www.opentoolskit.com');
+    expect(screen.getByLabelText('Sponsored left rail')).toBeInTheDocument();
 
-    expect(nextStepUrl.searchParams.get('tool')).toBe('home');
-    expect(nextStepUrl.searchParams.get('source')).toBe('site:en:rail:contextual-soft:soft-bordered');
-    expect(nextStepUrl.searchParams.get('placementMeta')).toBe('home');
+    await act(async () => {
+      await Promise.resolve();
+      vi.advanceTimersByTime(5000);
+      await Promise.resolve();
+      vi.advanceTimersByTime(5000);
+    });
+
+    expect(screen.queryByLabelText('Sponsored left rail')).not.toBeInTheDocument();
+    expect(screen.queryByLabelText('Desktop left rail')).not.toBeInTheDocument();
 
     Object.assign(leftSlot, previousLeft);
     Object.assign(rightSlot, previousRight);
+    vi.useRealTimers();
   });
 });

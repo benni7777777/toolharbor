@@ -7,7 +7,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { BrandMark } from '@/components/layout/BrandMark';
 import {
-  AdsterraDisplayBanner,
+  AdsterraInlineBanner,
   AdsterraNativeBanner,
   AdsterraSessionScripts,
 } from '@/components/ads/DynamicAdsterraComponents';
@@ -192,6 +192,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                 <AdsterraNativeBanner
                   slotName="homepage-native"
                   description="OpenToolsKit may show a native sponsor placement on discovery surfaces like the homepage. Tool actions and downloads remain separate."
+                  collapseOnNoFill
                 />
               )}
             </div>
@@ -199,11 +200,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
         </section>
 
         {monetizationProfile.allowAggressiveUnits && (
-          <section className="py-4">
-            <div className="container mx-auto px-4">
-              <AdsterraDisplayBanner slot="leaderboard" className="mx-auto max-w-5xl" />
-            </div>
-          </section>
+          <AdsterraInlineBanner className="container mx-auto max-w-5xl px-4 py-4" />
         )}
 
         {/* Popular Tools Section */}

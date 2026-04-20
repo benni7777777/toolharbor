@@ -1,1 +1,4 @@
+https://opentoolskit.com/* https://www.opentoolskit.com/:splat 301
+http://opentoolskit.com/* https://www.opentoolskit.com/:splat 301
+http://www.opentoolskit.com/* https://www.opentoolskit.com/:splat 301
 / /en/ 302
