@@ -8,12 +8,125 @@
   NODE_VERSION = "22"
   NPM_VERSION = "10"
 
-# SPA-style routing
+# Host and legacy redirects. Do not use a SPA catch-all for a static export; missing pages should 404.
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "https://opentoolskit.com/*"
+  to = "https://www.opentoolskit.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://opentoolskit.com/*"
+  to = "https://www.opentoolskit.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.opentoolskit.com/*"
+  to = "https://www.opentoolskit.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
   force = false
+
+[[redirects]]
+  from = "/support"
+  to = "/en/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/source"
+  to = "/en/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/pdf-tools"
+  to = "/en/tools/"
+  status = 301
+
+[[redirects]]
+  from = "/tools"
+  to = "/en/tools/"
+  status = 301
+
+[[redirects]]
+  from = "/tools/*"
+  to = "/en/tools/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/workflow"
+  to = "/en/workflow/"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/en/about/"
+  status = 301
+
+[[redirects]]
+  from = "/faq"
+  to = "/en/faq/"
+  status = 301
+
+[[redirects]]
+  from = "/privacy"
+  to = "/en/privacy/"
+  status = 301
+
+[[redirects]]
+  from = "/terms"
+  to = "/en/terms/"
+  status = 301
+
+[[redirects]]
+  from = "/editorial"
+  to = "/en/editorial/"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/en/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/merge-pdf"
+  to = "/en/tools/merge-pdf/"
+  status = 301
+
+[[redirects]]
+  from = "/split-pdf"
+  to = "/en/tools/split-pdf/"
+  status = 301
+
+[[redirects]]
+  from = "/compress-pdf"
+  to = "/en/tools/compress-pdf/"
+  status = 301
+
+[[redirects]]
+  from = "/jpg-to-pdf"
+  to = "/en/tools/jpg-to-pdf/"
+  status = 301
+
+[[redirects]]
+  from = "/pdf-to-jpg"
+  to = "/en/tools/pdf-to-jpg/"
+  status = 301
+
+[[redirects]]
+  from = "/sign-pdf"
+  to = "/en/tools/sign-pdf/"
+  status = 301
+
+[[redirects]]
+  from = "/encrypt-pdf"
+  to = "/en/tools/encrypt-pdf/"
+  status = 301
 
 # ==========================================
 # Security headers for all routes
@@ -171,3 +284,21 @@
   for = "/manifest.json"
   [headers.values]
     Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/ads.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=300, must-revalidate"

@@ -231,6 +231,11 @@ function mountSelectedNativeSlot(registration: NativeRegistration) {
   const { nativeBanner } = siteConfig.ads.providers.adsterra;
   const runtime = getRuntime();
 
+  if (!nativeBanner.enabled || !nativeBanner.scriptSrc) {
+    setNativeStatus(registration, 'blocked', 'placement-disabled');
+    return;
+  }
+
   cleanupNativeRuntimeTimers(runtime);
   registration.host.innerHTML = '';
   setNativeStatus(registration, 'mounting');
@@ -485,6 +490,10 @@ export function armAdsterraPopunder({
   }
 
   const config = siteConfig.ads.providers.adsterra.popunder;
+  if (!config.enabled || !config.scriptSrc) {
+    return false;
+  }
+
   const injected = injectScript(config.scriptSrc, 'popunder', placement, document.head);
   if (injected) {
     trackMonetizationEvent({
@@ -518,6 +527,10 @@ export function triggerAdsterraPopunder({ placement, reason, trustedEvent }: Scr
   }
 
   const config = siteConfig.ads.providers.adsterra.popunder;
+  if (!config.enabled || !config.scriptSrc) {
+    return false;
+  }
+
   const existingScript = findInjectedScript(config.scriptSrc, 'popunder');
   const cooldownActive = isCooldownActive(
     config.cooldownStorageKey,
@@ -584,6 +597,10 @@ export function triggerAdsterraSocialBar({ placement, reason }: Omit<ScriptTrigg
   }
 
   const config = siteConfig.ads.providers.adsterra.socialBar;
+  if (!config.enabled || !config.scriptSrc) {
+    return false;
+  }
+
   const cooldownActive = isCooldownActive(
     config.cooldownStorageKey,
     siteConfig.monetizationRules.socialBarCooldownHours,

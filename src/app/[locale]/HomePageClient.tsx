@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { ArrowRight, Zap, Wrench, Lock, Sparkles, Edit, FileImage, FolderOpen, Settings, ShieldCheck, Star, Workflow, Boxes } from 'lucide-react';
+import { ArrowRight, Zap, Wrench, Lock, Edit, FileImage, FolderOpen, Settings, ShieldCheck, Star, Workflow, Boxes } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { BrandMark } from '@/components/layout/BrandMark';
@@ -16,8 +16,8 @@ import { ToolGrid } from '@/components/tools/ToolGrid';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { getAllTools, getToolsByCategory, getPopularTools } from '@/config/tools';
-import { type Locale } from '@/lib/i18n/config';
-import { CATEGORY_INFO, type ToolCategory } from '@/types/tool';
+import { locales, type Locale } from '@/lib/i18n/config';
+import { type ToolCategory } from '@/types/tool';
 import { siteConfig } from '@/config/site';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 
@@ -26,21 +26,16 @@ interface HomePageClientProps {
   localizedToolContent?: Record<string, { title: string; description: string }>;
 }
 
-// ... (previous imports)
-
-// ... (props interface)
-
-// ... (previous imports)
-
-// ... (props interface)
-
 export default function HomePageClient({ locale, localizedToolContent }: HomePageClientProps) {
   const t = useTranslations();
   const monetizationProfile = useMonetizationProfile();
   const allTools = getAllTools();
   const popularTools = getPopularTools();
+  const showHomepageNativeAd = monetizationProfile.allowNativeUnits && siteConfig.ads.placements.homepage.nativeBanner;
+  const showInlineAd = monetizationProfile.allowAggressiveUnits;
+  const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
 
-  // Feature highlights (same as before)
+  // Feature highlights
   const features = [
     {
       icon: ShieldCheck,
@@ -108,12 +103,6 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
           className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28"
           aria-labelledby="hero-title"
         >
-          <div className="absolute inset-0 -z-10 overflow-hidden">
-            <div className="absolute left-[8%] top-[8%] h-64 w-64 rounded-full bg-[hsl(var(--color-accent)/0.14)] blur-3xl" />
-            <div className="absolute right-[4%] top-[14%] h-72 w-72 rounded-full bg-[hsl(var(--color-highlight)/0.15)] blur-3xl" />
-            <div className="absolute bottom-[-8rem] left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-[hsl(var(--color-primary)/0.12)] blur-3xl" />
-          </div>
-
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))/0.86] px-4 py-2 shadow-[var(--shadow-sm)] backdrop-blur-md">
@@ -133,13 +122,13 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link href={`/${locale}/tools`}>
+                <Link href={`/${locale}/tools/`}>
                   <Button variant="primary" size="lg" className="h-12 rounded-full px-8 text-base shadow-[var(--shadow-md)] transition-all hover:-translate-y-0.5">
                     {t('home.hero.cta')}
                     <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
                   </Button>
                 </Link>
-                <Link href={`/${locale}/workflow`}>
+                <Link href={`/${locale}/workflow/`}>
                   <Button variant="outline" size="lg" className="h-12 rounded-full px-8 text-base">
                     <Workflow className="h-4 w-4" aria-hidden="true" />
                     <span>{t('common.navigation.workflow') || 'Workflow'}</span>
@@ -154,7 +143,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                 </div>
                 <div className="flex items-center gap-2 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))/0.72] px-4 py-2 text-sm text-[hsl(var(--color-muted-foreground))]">
                   <Boxes className="h-4 w-4 text-[hsl(var(--color-highlight))]" aria-hidden="true" />
-                  <span>Phase 1: PDF suite, workflow editor, extension</span>
+                  <span>PDF suite, workflow editor, and browser extension</span>
                 </div>
               </div>
             </div>
@@ -185,21 +174,21 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
           </div>
         </section>
 
-        <section className="py-4">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-5xl">
-              {monetizationProfile.allowNativeUnits && (
+        {showHomepageNativeAd && (
+          <section className="py-4">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-5xl">
                 <AdsterraNativeBanner
                   slotName="homepage-native"
                   description="OpenToolsKit may show a native sponsor placement on discovery surfaces like the homepage. Tool actions and downloads remain separate."
                   collapseOnNoFill
                 />
-              )}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        {monetizationProfile.allowAggressiveUnits && (
+        {showInlineAd && (
           <AdsterraInlineBanner className="container mx-auto max-w-5xl px-4 py-4" />
         )}
 
@@ -241,7 +230,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                   {t(`home.categoriesDescription.${categoryTranslationKeys['organize-manage']}`)}
                 </p>
               </div>
-              <Link href={`/${locale}/tools`}>
+              <Link href={`/${locale}/tools/`}>
                 <Button variant="outline" size="sm" className="group">
                   {t('common.navigation.tools')}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
@@ -258,13 +247,15 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
           </div>
         </section>
 
-        <section className="py-6">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-5xl">
-              <MonetizationDisclosureCard locale={locale} />
+        {showMonetizationDisclosure && (
+          <section className="py-6">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-5xl">
+                <MonetizationDisclosureCard locale={locale} />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Tool Categories Section */}
         <section className="py-16 bg-[hsl(var(--color-card))/0.66]" aria-labelledby="categories-heading">
@@ -288,7 +279,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                 return (
                   <Link
                     key={category}
-                    href={`/${locale}/tools/category/${category}`}
+                    href={`/${locale}/tools/category/${category}/`}
                     className="group"
                   >
                     <Card className="p-5 h-full glass-card transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-md)] border-[hsl(var(--color-border)/0.6)]">
@@ -340,7 +331,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
               </div>
               <div className="p-4">
                 <div className="text-3xl lg:text-4xl font-bold text-gradient mb-1">
-                  9
+                  {locales.length}
                 </div>
                 <div className="text-xs font-medium text-[hsl(var(--color-muted-foreground))] uppercase tracking-wider">
                   {t('home.stats.languages')}

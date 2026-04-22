@@ -6,60 +6,60 @@
     },
     "tools": {
       "title": "OpenToolsKit Tools",
-      "description": "Browse the OpenToolsKit launch catalog for browser-based PDF tools, workflow automation, and multilingual utility pages."
+      "description": "Browse the OpenToolsKit catalog for browser-based PDF tools, workflow automation, and multilingual utility pages."
     },
     "about": {
-      "title": "私たちについて",
+      "title": "ç§ãŸã¡ã«ã¤ã„ã¦",
       "description": "Learn how OpenToolsKit turns private browser utilities into an open-source tool platform."
     },
     "faq": {
-      "title": "よくある質問",
+      "title": "ã‚ˆãã‚ã‚‹è³ªå•",
       "description": "Find answers about OpenToolsKit, the workflow editor, browser extension, and source code."
     },
     "privacy": {
-      "title": "プライバシーポリシー",
-      "description": "OpenToolsKitプライバシーポリシー。ファイルはデバイスから離れることはありません - すべての処理はローカルブラウザで行われます。"
+      "title": "ãƒ—ãƒ©ã‚¤ãƒã‚·ãƒ¼ãƒãƒªã‚·ãƒ¼",
+      "description": "OpenToolsKitãƒ—ãƒ©ã‚¤ãƒã‚·ãƒ¼ãƒãƒªã‚·ãƒ¼ã€‚ãƒ•ã‚¡ã‚¤ãƒ«ã¯ãƒ‡ãƒã‚¤ã‚¹ã‹ã‚‰é›¢ã‚Œã‚‹ã“ã¨ã¯ã‚ã‚Šã¾ã›ã‚“ - ã™ã¹ã¦ã®å‡¦ç†ã¯ãƒ­ãƒ¼ã‚«ãƒ«ãƒ–ãƒ©ã‚¦ã‚¶ã§è¡Œã‚ã‚Œã¾ã™ã€‚"
     },
     "contact": {
       "title": "Support & Source",
       "description": "Open-source support, issue reporting, and AGPL source links for OpenToolsKit."
     },
     "keywords": {
-      "pdfTools": "PDFツール",
-      "mergePdf": "PDF結合",
-      "splitPdf": "PDF分割",
-      "compressPdf": "PDF圧縮",
-      "convertPdf": "PDF変換",
-      "freePdfTools": "無料PDFツール",
-      "onlinePdfEditor": "オンラインPDFエディター"
+      "pdfTools": "PDFãƒ„ãƒ¼ãƒ«",
+      "mergePdf": "PDFçµåˆ",
+      "splitPdf": "PDFåˆ†å‰²",
+      "compressPdf": "PDFåœ§ç¸®",
+      "convertPdf": "PDFå¤‰æ›",
+      "freePdfTools": "ç„¡æ–™PDFãƒ„ãƒ¼ãƒ«",
+      "onlinePdfEditor": "ã‚ªãƒ³ãƒ©ã‚¤ãƒ³PDFã‚¨ãƒ‡ã‚£ã‚¿ãƒ¼"
     }
   },
   "common": {
     "brand": "OpenToolsKit",
     "tagline": "Open-source browser tools - private by default",
     "navigation": {
-      "home": "ホーム",
-      "tools": "ツール",
-      "about": "概要",
-      "faq": "よくある質問",
-      "privacy": "プライバシー",
+      "home": "ãƒ›ãƒ¼ãƒ ",
+      "tools": "ãƒ„ãƒ¼ãƒ«",
+      "about": "æ¦‚è¦",
+      "faq": "ã‚ˆãã‚ã‚‹è³ªå•",
+      "privacy": "ãƒ—ãƒ©ã‚¤ãƒã‚·ãƒ¼",
       "contact": "Support",
-      "workflow": "ワークフロー"
+      "workflow": "ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼"
     },
     "buttons": {
-      "upload": "ファイルをアップロード",
-      "download": "ダウンロード",
-      "process": "処理",
-      "cancel": "キャンセル",
-      "reset": "リセット",
-      "selectLanguage": "言語を選択",
-      "close": "閉じる",
-      "save": "保存",
-      "delete": "削除",
-      "edit": "編集",
-      "back": "戻る",
-      "next": "次へ",
-      "submit": "送信",
+      "upload": "ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "download": "ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰",
+      "process": "å‡¦ç†",
+      "cancel": "ã‚­ãƒ£ãƒ³ã‚»ãƒ«",
+      "reset": "ãƒªã‚»ãƒƒãƒˆ",
+      "selectLanguage": "è¨€èªžã‚’é¸æŠž",
+      "close": "é–‰ã˜ã‚‹",
+      "save": "ä¿å­˜",
+      "delete": "å‰Šé™¤",
+      "edit": "ç·¨é›†",
+      "back": "æˆ»ã‚‹",
+      "next": "æ¬¡ã¸",
+      "submit": "é€ä¿¡",
       "clear": "Clear",
       "previous": "Previous",
       "clearAll": "Clear All",
@@ -71,72 +71,72 @@
       "insertAtEnd": "Insert at End",
       "rotateAllLeft": "Rotate All Left",
       "rotateAllRight": "Rotate All Right",
-      "confirm": "確認",
-      "add": "追加"
+      "confirm": "ç¢ºèª",
+      "add": "è¿½åŠ "
     },
     "status": {
-      "idle": "準備完了",
-      "uploading": "アップロード中...",
-      "processing": "処理中...",
-      "complete": "完了",
-      "error": "エラー",
-      "loading": "読み込み中..."
+      "idle": "æº–å‚™å®Œäº†",
+      "uploading": "ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ä¸­...",
+      "processing": "å‡¦ç†ä¸­...",
+      "complete": "å®Œäº†",
+      "error": "ã‚¨ãƒ©ãƒ¼",
+      "loading": "èª­ã¿è¾¼ã¿ä¸­..."
     },
     "footer": {
-      "copyright": "© {year} OpenToolsKit. All rights reserved.",
-      "privacyBadge": "100%プライベート - ファイルはデバイスから離れません",
-      "footer": "© 2025 OpenToolsKit. All rights reserved.",
+      "copyright": "Â© {year} OpenToolsKit. All rights reserved.",
+      "privacyBadge": "100%ãƒ—ãƒ©ã‚¤ãƒ™ãƒ¼ãƒˆ - ãƒ•ã‚¡ã‚¤ãƒ«ã¯ãƒ‡ãƒã‚¤ã‚¹ã‹ã‚‰é›¢ã‚Œã¾ã›ã‚“",
+      "footer": "Â© 2025 OpenToolsKit. All rights reserved.",
       "madeWith": "Made with <Heart /> and <Nextjs />"
     },
     "recentFiles": {
-      "title": "最近のファイル",
-      "empty": "最近のファイルはありません",
-      "clearAll": "すべてクリア",
-      "processedWith": "処理ツール:"
+      "title": "æœ€è¿‘ã®ãƒ•ã‚¡ã‚¤ãƒ«",
+      "empty": "æœ€è¿‘ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¯ã‚ã‚Šã¾ã›ã‚“",
+      "clearAll": "ã™ã¹ã¦ã‚¯ãƒªã‚¢",
+      "processedWith": "å‡¦ç†ãƒ„ãƒ¼ãƒ«:"
     },
     "savedProjects": {
-      "title": "保存済みプロジェクト",
-      "empty": "保存済みプロジェクトはありません",
-      "clearAll": "すべてクリア",
-      "resume": "再開",
-      "delete": "削除",
-      "inProgress": "進行中",
-      "paused": "一時停止",
-      "completed": "完了",
-      "progress": "進捗",
-      "files": "ファイル"
+      "title": "ä¿å­˜æ¸ˆã¿ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆ",
+      "empty": "ä¿å­˜æ¸ˆã¿ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã¯ã‚ã‚Šã¾ã›ã‚“",
+      "clearAll": "ã™ã¹ã¦ã‚¯ãƒªã‚¢",
+      "resume": "å†é–‹",
+      "delete": "å‰Šé™¤",
+      "inProgress": "é€²è¡Œä¸­",
+      "paused": "ä¸€æ™‚åœæ­¢",
+      "completed": "å®Œäº†",
+      "progress": "é€²æ—",
+      "files": "ãƒ•ã‚¡ã‚¤ãƒ«"
     },
     "batchProcessing": {
-      "title": "一括処理",
-      "addFiles": "ファイルをドロップまたはクリックして追加",
-      "clearAll": "すべてクリア",
-      "startProcessing": "処理開始",
-      "cancelProcessing": "キャンセル",
-      "downloadAll": "すべてダウンロード",
-      "downloadZip": "ZIPでダウンロード",
-      "pending": "待機中",
-      "processing": "処理中...",
-      "completed": "完了",
-      "error": "エラー",
-      "progress": "全体の進捗",
-      "filesSelected": "ファイル選択済み",
-      "noFiles": "ファイルがまだ追加されていません。一括処理を開始するにはファイルを追加してください。"
+      "title": "ä¸€æ‹¬å‡¦ç†",
+      "addFiles": "ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ­ãƒƒãƒ—ã¾ãŸã¯ã‚¯ãƒªãƒƒã‚¯ã—ã¦è¿½åŠ ",
+      "clearAll": "ã™ã¹ã¦ã‚¯ãƒªã‚¢",
+      "startProcessing": "å‡¦ç†é–‹å§‹",
+      "cancelProcessing": "ã‚­ãƒ£ãƒ³ã‚»ãƒ«",
+      "downloadAll": "ã™ã¹ã¦ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰",
+      "downloadZip": "ZIPã§ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰",
+      "pending": "å¾…æ©Ÿä¸­",
+      "processing": "å‡¦ç†ä¸­...",
+      "completed": "å®Œäº†",
+      "error": "ã‚¨ãƒ©ãƒ¼",
+      "progress": "å…¨ä½“ã®é€²æ—",
+      "filesSelected": "ãƒ•ã‚¡ã‚¤ãƒ«é¸æŠžæ¸ˆã¿",
+      "noFiles": "ãƒ•ã‚¡ã‚¤ãƒ«ãŒã¾ã è¿½åŠ ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚ä¸€æ‹¬å‡¦ç†ã‚’é–‹å§‹ã™ã‚‹ã«ã¯ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„ã€‚"
     },
     "guidedTour": {
-      "startTour": "ツアーを開始",
-      "next": "次へ",
-      "prev": "戻る",
-      "finish": "完了",
-      "skip": "スキップ",
+      "startTour": "ãƒ„ã‚¢ãƒ¼ã‚’é–‹å§‹",
+      "next": "æ¬¡ã¸",
+      "prev": "æˆ»ã‚‹",
+      "finish": "å®Œäº†",
+      "skip": "ã‚¹ã‚­ãƒƒãƒ—",
       "stepOf": "/",
-      "welcomeTitle": "OpenToolsKitへようこそ！",
-      "welcomeMessage": "PDFツールの使い方を学ぶクイックツアーはいかがですか？1分程度で完了します。",
-      "helpButton": "ヘルプツアー"
+      "welcomeTitle": "OpenToolsKitã¸ã‚ˆã†ã“ãï¼",
+      "welcomeMessage": "PDFãƒ„ãƒ¼ãƒ«ã®ä½¿ã„æ–¹ã‚’å­¦ã¶ã‚¯ã‚¤ãƒƒã‚¯ãƒ„ã‚¢ãƒ¼ã¯ã„ã‹ãŒã§ã™ã‹ï¼Ÿ1åˆ†ç¨‹åº¦ã§å®Œäº†ã—ã¾ã™ã€‚",
+      "helpButton": "ãƒ˜ãƒ«ãƒ—ãƒ„ã‚¢ãƒ¼"
     },
     "search": {
-      "placeholder": "ツールを検索...",
-      "hint": "Enterで選択、↑↓で移動",
-      "noResults": "ツールが見つかりません"
+      "placeholder": "ãƒ„ãƒ¼ãƒ«ã‚’æ¤œç´¢...",
+      "hint": "Enterã§é¸æŠžã€â†‘â†“ã§ç§»å‹•",
+      "noResults": "ãƒ„ãƒ¼ãƒ«ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“"
     },
     "faqPage": {
       "title": "Frequently Asked Questions",
@@ -157,7 +157,7 @@
         "general": {
           "whatIs": {
             "question": "What is OpenToolsKit?",
-            "answer": "OpenToolsKit is a free, privacy-focused PDF toolkit that runs entirely in your browser. It offers 67+ professional tools for editing, converting, merging, splitting, and securing PDF files without uploading them to any server."
+            "answer": "OpenToolsKit is a free, privacy-focused PDF toolkit that runs entirely in your browser. It offers 95+ professional tools for editing, converting, merging, splitting, and securing PDF files without uploading them to any server."
           },
           "isFree": {
             "question": "Is OpenToolsKit really free?",
@@ -185,7 +185,7 @@
         "features": {
           "operations": {
             "question": "What PDF operations can I perform?",
-            "answer": "OpenToolsKit offers 67+ tools including: merge, split, compress, convert (to/from images, text, JSON), edit, annotate, sign, add watermarks, encrypt/decrypt, OCR, and many more."
+            "answer": "OpenToolsKit offers 95+ tools including: merge, split, compress, convert (to/from images, text, JSON), edit, annotate, sign, add watermarks, encrypt/decrypt, OCR, and many more."
           },
           "merge": {
             "question": "Can I merge multiple PDF files?",
@@ -221,7 +221,7 @@
         "languages": {
           "supported": {
             "question": "What languages are supported?",
-            "answer": "OpenToolsKit is available in 9 languages: English, Japanese, Korean, Spanish, French, German, Chinese, Portuguese, and Arabic (with RTL support)."
+            "answer": "OpenToolsKit is available in 13 locales: English, Japanese, Korean, Spanish, French, German, Chinese, Portuguese, and Arabic (with RTL support)."
           },
           "change": {
             "question": "How do I change the language?",
@@ -240,7 +240,7 @@
       "description": "{brand} is a free, privacy-focused PDF toolkit that runs entirely in your browser. With {count}+ professional tools, you can edit, convert, merge, split, and secure your PDF files without ever uploading them to a server.",
       "mission": {
         "title": "Our Mission",
-        "p1": "We believe that everyone should have access to powerful PDF tools without compromising their privacy or paying expensive subscription fees. That's why we created {brand} – a comprehensive PDF toolkit that puts your privacy first.",
+        "p1": "We believe that everyone should have access to powerful PDF tools without compromising their privacy or paying expensive subscription fees. That's why we created {brand} â€“ a comprehensive PDF toolkit that puts your privacy first.",
         "p2": "Unlike traditional PDF services that require you to upload your files to remote servers, {brand} processes everything locally in your browser. Your sensitive documents never leave your device, giving you complete control over your data.",
         "p3": "Whether you're a student, professional, or casual user, {brand} provides all the tools you need to work with PDFs efficiently and securely."
       },
@@ -256,7 +256,7 @@
         },
         "accessible": {
           "title": "Accessible Everywhere",
-          "description": "Available in 9 languages and works on any device with a modern browser. No installation required."
+          "description": "Available in 13 locales and works on any device with a modern browser. No installation required."
         },
         "free": {
           "title": "Free Forever",
@@ -291,69 +291,69 @@
     },
     "contactPage": {
       "hero": {
-        "title": "お問い合わせ",
-        "description": "ご質問、ご提案、不具合のご報告はございませんか？ご連絡をお待ちしております。"
+        "title": "ãŠå•ã„åˆã‚ã›",
+        "description": "ã”è³ªå•ã€ã”ææ¡ˆã€ä¸å…·åˆã®ã”å ±å‘Šã¯ã”ã–ã„ã¾ã›ã‚“ã‹ï¼Ÿã”é€£çµ¡ã‚’ãŠå¾…ã¡ã—ã¦ãŠã‚Šã¾ã™ã€‚"
       },
       "methods": {
         "email": {
-          "title": "メール",
-          "description": "メールをお送りください。24〜48時間以内に返信いたします。",
+          "title": "ãƒ¡ãƒ¼ãƒ«",
+          "description": "ãƒ¡ãƒ¼ãƒ«ã‚’ãŠé€ã‚Šãã ã•ã„ã€‚24ã€œ48æ™‚é–“ä»¥å†…ã«è¿”ä¿¡ã„ãŸã—ã¾ã™ã€‚",
           "action": "Open repository"
         },
         "github": {
           "title": "GitHub",
-          "description": "バグの報告、機能のリクエスト、プロジェクトへの貢献はこちら。",
-          "action": "GitHubで見る"
+          "description": "ãƒã‚°ã®å ±å‘Šã€æ©Ÿèƒ½ã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆã€ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã¸ã®è²¢çŒ®ã¯ã“ã¡ã‚‰ã€‚",
+          "action": "GitHubã§è¦‹ã‚‹"
         },
         "twitter": {
           "title": "Twitter",
-          "description": "最新情報やお知らせはこちらでフォロー。",
+          "description": "æœ€æ–°æƒ…å ±ã‚„ãŠçŸ¥ã‚‰ã›ã¯ã“ã¡ã‚‰ã§ãƒ•ã‚©ãƒ­ãƒ¼ã€‚",
           "action": "@OpenToolsKit"
         }
       },
       "form": {
-        "title": "メッセージを送る",
-        "description": "以下のフォームにご記入ください。できるだけ早くご連絡いたします。",
+        "title": "ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ã‚‹",
+        "description": "ä»¥ä¸‹ã®ãƒ•ã‚©ãƒ¼ãƒ ã«ã”è¨˜å…¥ãã ã•ã„ã€‚ã§ãã‚‹ã ã‘æ—©ãã”é€£çµ¡ã„ãŸã—ã¾ã™ã€‚",
         "success": {
-          "title": "送信完了！",
-          "description": "ご連絡ありがとうございます。24〜48時間以内にご連絡いたします。",
-          "button": "別のメッセージを送る"
+          "title": "é€ä¿¡å®Œäº†ï¼",
+          "description": "ã”é€£çµ¡ã‚ã‚ŠãŒã¨ã†ã”ã–ã„ã¾ã™ã€‚24ã€œ48æ™‚é–“ä»¥å†…ã«ã”é€£çµ¡ã„ãŸã—ã¾ã™ã€‚",
+          "button": "åˆ¥ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ã‚‹"
         },
         "fields": {
           "name": {
-            "label": "お名前",
-            "placeholder": "お名前"
+            "label": "ãŠåå‰",
+            "placeholder": "ãŠåå‰"
           },
           "email": {
-            "label": "メールアドレス",
+            "label": "ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹",
             "placeholder": "your@email.com"
           },
           "subject": {
-            "label": "件名",
-            "placeholder": "件名を選択",
+            "label": "ä»¶å",
+            "placeholder": "ä»¶åã‚’é¸æŠž",
             "options": {
-              "general": "一般的なお問い合わせ",
-              "bug": "バグ報告",
-              "feature": "機能リクエスト",
-              "feedback": "フィードバック",
-              "other": "その他"
+              "general": "ä¸€èˆ¬çš„ãªãŠå•ã„åˆã‚ã›",
+              "bug": "ãƒã‚°å ±å‘Š",
+              "feature": "æ©Ÿèƒ½ãƒªã‚¯ã‚¨ã‚¹ãƒˆ",
+              "feedback": "ãƒ•ã‚£ãƒ¼ãƒ‰ãƒãƒƒã‚¯",
+              "other": "ãã®ä»–"
             }
           },
           "message": {
-            "label": "メッセージ",
-            "placeholder": "お問い合わせの詳細をご記入ください..."
+            "label": "ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸",
+            "placeholder": "ãŠå•ã„åˆã‚ã›ã®è©³ç´°ã‚’ã”è¨˜å…¥ãã ã•ã„..."
           }
         },
-        "error": "エラーが発生しました。もう一度お試しいただくか、メールで直接お問い合わせください。",
+        "error": "ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚ã‚‚ã†ä¸€åº¦ãŠè©¦ã—ã„ãŸã ãã‹ã€ãƒ¡ãƒ¼ãƒ«ã§ç›´æŽ¥ãŠå•ã„åˆã‚ã›ãã ã•ã„ã€‚",
         "submit": {
-          "loading": "送信中...",
-          "default": "メッセージを送信"
+          "loading": "é€ä¿¡ä¸­...",
+          "default": "ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ä¿¡"
         }
       },
       "faq": {
-        "title": "よくある質問をお探しですか？",
-        "description": "{brand}に関するよくある質問は、FAQページをご覧ください。",
-        "button": "FAQを見る"
+        "title": "ã‚ˆãã‚ã‚‹è³ªå•ã‚’ãŠæŽ¢ã—ã§ã™ã‹ï¼Ÿ",
+        "description": "{brand}ã«é–¢ã™ã‚‹ã‚ˆãã‚ã‚‹è³ªå•ã¯ã€FAQãƒšãƒ¼ã‚¸ã‚’ã”è¦§ãã ã•ã„ã€‚",
+        "button": "FAQã‚’è¦‹ã‚‹"
       }
     },
     "accessibility": {
@@ -382,24 +382,24 @@
     }
   },
   "errors": {
-    "fileTooLarge": "ファイルが大きすぎます。最大サイズは{maxSize}MBです。",
-    "fileTypeInvalid": "無効なファイル形式です。{acceptedTypes}ファイルをアップロードしてください。",
-    "fileCorrupted": "ファイルが破損しているか、読み取れません。",
-    "fileEmpty": "ファイルが空です。",
-    "fileNotPdf": "ファイルは有効なPDFではありません。",
-    "processingFailed": "処理に失敗しました。もう一度お試しください。",
-    "processingCancelled": "操作がキャンセルされました。",
-    "networkError": "ネットワークエラー。接続を確認してください。",
-    "pdfEncrypted": "このPDFはパスワードで保護されています。先に復号化してください。",
-    "pdfMalformed": "PDF構造が無効です。先に修復ツールをお試しください。",
-    "processingTimeout": "操作に時間がかかりすぎました。小さいファイルでお試しください。",
-    "memoryExceeded": "ブラウザのメモリが不足しています。他のタブを閉じてもう一度お試しください。",
-    "workerFailed": "処理ワーカーがクラッシュしました。ページを更新してもう一度お試しください。",
-    "browserNotSupported": "お使いのブラウザはこの機能をサポートしていません。",
-    "invalidPageRange": "無効なページ範囲が指定されました。",
-    "invalidOptions": "無効なオプションが指定されました。",
-    "invalidPassword": "入力したパスワードが正しくありません。確認してもう一度お試しください。",
-    "unknown": "予期しないエラーが発生しました。もう一度お試しください。",
+    "fileTooLarge": "ãƒ•ã‚¡ã‚¤ãƒ«ãŒå¤§ãã™ãŽã¾ã™ã€‚æœ€å¤§ã‚µã‚¤ã‚ºã¯{maxSize}MBã§ã™ã€‚",
+    "fileTypeInvalid": "ç„¡åŠ¹ãªãƒ•ã‚¡ã‚¤ãƒ«å½¢å¼ã§ã™ã€‚{acceptedTypes}ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ã—ã¦ãã ã•ã„ã€‚",
+    "fileCorrupted": "ãƒ•ã‚¡ã‚¤ãƒ«ãŒç ´æã—ã¦ã„ã‚‹ã‹ã€èª­ã¿å–ã‚Œã¾ã›ã‚“ã€‚",
+    "fileEmpty": "ãƒ•ã‚¡ã‚¤ãƒ«ãŒç©ºã§ã™ã€‚",
+    "fileNotPdf": "ãƒ•ã‚¡ã‚¤ãƒ«ã¯æœ‰åŠ¹ãªPDFã§ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚",
+    "processingFailed": "å‡¦ç†ã«å¤±æ•—ã—ã¾ã—ãŸã€‚ã‚‚ã†ä¸€åº¦ãŠè©¦ã—ãã ã•ã„ã€‚",
+    "processingCancelled": "æ“ä½œãŒã‚­ãƒ£ãƒ³ã‚»ãƒ«ã•ã‚Œã¾ã—ãŸã€‚",
+    "networkError": "ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ã‚¨ãƒ©ãƒ¼ã€‚æŽ¥ç¶šã‚’ç¢ºèªã—ã¦ãã ã•ã„ã€‚",
+    "pdfEncrypted": "ã“ã®PDFã¯ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã§ä¿è­·ã•ã‚Œã¦ã„ã¾ã™ã€‚å…ˆã«å¾©å·åŒ–ã—ã¦ãã ã•ã„ã€‚",
+    "pdfMalformed": "PDFæ§‹é€ ãŒç„¡åŠ¹ã§ã™ã€‚å…ˆã«ä¿®å¾©ãƒ„ãƒ¼ãƒ«ã‚’ãŠè©¦ã—ãã ã•ã„ã€‚",
+    "processingTimeout": "æ“ä½œã«æ™‚é–“ãŒã‹ã‹ã‚Šã™ãŽã¾ã—ãŸã€‚å°ã•ã„ãƒ•ã‚¡ã‚¤ãƒ«ã§ãŠè©¦ã—ãã ã•ã„ã€‚",
+    "memoryExceeded": "ãƒ–ãƒ©ã‚¦ã‚¶ã®ãƒ¡ãƒ¢ãƒªãŒä¸è¶³ã—ã¦ã„ã¾ã™ã€‚ä»–ã®ã‚¿ãƒ–ã‚’é–‰ã˜ã¦ã‚‚ã†ä¸€åº¦ãŠè©¦ã—ãã ã•ã„ã€‚",
+    "workerFailed": "å‡¦ç†ãƒ¯ãƒ¼ã‚«ãƒ¼ãŒã‚¯ãƒ©ãƒƒã‚·ãƒ¥ã—ã¾ã—ãŸã€‚ãƒšãƒ¼ã‚¸ã‚’æ›´æ–°ã—ã¦ã‚‚ã†ä¸€åº¦ãŠè©¦ã—ãã ã•ã„ã€‚",
+    "browserNotSupported": "ãŠä½¿ã„ã®ãƒ–ãƒ©ã‚¦ã‚¶ã¯ã“ã®æ©Ÿèƒ½ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¦ã„ã¾ã›ã‚“ã€‚",
+    "invalidPageRange": "ç„¡åŠ¹ãªãƒšãƒ¼ã‚¸ç¯„å›²ãŒæŒ‡å®šã•ã‚Œã¾ã—ãŸã€‚",
+    "invalidOptions": "ç„¡åŠ¹ãªã‚ªãƒ—ã‚·ãƒ§ãƒ³ãŒæŒ‡å®šã•ã‚Œã¾ã—ãŸã€‚",
+    "invalidPassword": "å…¥åŠ›ã—ãŸãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒæ­£ã—ãã‚ã‚Šã¾ã›ã‚“ã€‚ç¢ºèªã—ã¦ã‚‚ã†ä¸€åº¦ãŠè©¦ã—ãã ã•ã„ã€‚",
+    "unknown": "äºˆæœŸã—ãªã„ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚ã‚‚ã†ä¸€åº¦ãŠè©¦ã—ãã ã•ã„ã€‚",
     "toolNotFound": "Tool Not Found"
   },
   "home": {
@@ -407,244 +407,244 @@
       "title": "Browser Tools for",
       "highlight": "Private Workflows",
       "subtitle": "Open-source, multilingual, and browser-first utility workflows",
-      "cta": "始める"
+      "cta": "å§‹ã‚ã‚‹"
     },
     "features": {
       "privacy": {
-        "title": "100% プライベート",
-        "description": "すべての処理はブラウザ内で行われます。ファイルがデバイスから送信されることはありません。"
+        "title": "100% ãƒ—ãƒ©ã‚¤ãƒ™ãƒ¼ãƒˆ",
+        "description": "ã™ã¹ã¦ã®å‡¦ç†ã¯ãƒ–ãƒ©ã‚¦ã‚¶å†…ã§è¡Œã‚ã‚Œã¾ã™ã€‚ãƒ•ã‚¡ã‚¤ãƒ«ãŒãƒ‡ãƒã‚¤ã‚¹ã‹ã‚‰é€ä¿¡ã•ã‚Œã‚‹ã“ã¨ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚"
       },
       "free": {
-        "title": "完全無料",
-        "description": "登録不要、制限なし、隠れた費用なし。"
+        "title": "å®Œå…¨ç„¡æ–™",
+        "description": "ç™»éŒ²ä¸è¦ã€åˆ¶é™ãªã—ã€éš ã‚ŒãŸè²»ç”¨ãªã—ã€‚"
       },
       "powerful": {
-        "title": "Launch-ready suite",
-        "description": "Phase 1 ships the PDF suite, workflow editor, extension, and visible source links."
+        "title": "Useful browser tools",
+        "description": "PDF tools, workflow editing, and visible source links stay available without account gates."
       }
     },
     "popularTools": {
-      "badge": "最も人気",
-      "title": "Popular launch tools",
-      "description": "作業を効率化するために最も使用されているツール。"
+      "badge": "æœ€ã‚‚äººæ°—",
+      "title": "Popular tools",
+      "description": "ä½œæ¥­ã‚’åŠ¹çŽ‡åŒ–ã™ã‚‹ãŸã‚ã«æœ€ã‚‚ä½¿ç”¨ã•ã‚Œã¦ã„ã‚‹ãƒ„ãƒ¼ãƒ«ã€‚"
     },
     "categoriesSection": {
-      "title": "すべてのツールカテゴリを見る",
-      "description": "{count}+ launch tools organized by category",
-      "toolsCount": "{count} ツール"
+      "title": "ã™ã¹ã¦ã®ãƒ„ãƒ¼ãƒ«ã‚«ãƒ†ã‚´ãƒªã‚’è¦‹ã‚‹",
+      "description": "{count}+ tools organized by category",
+      "toolsCount": "{count} ãƒ„ãƒ¼ãƒ«"
     },
     "categoriesDescription": {
-      "editAnnotate": "PDFコンテンツの編集、注釈、変更",
-      "convertToPdf": "様々な形式からPDFへの変換",
-      "convertFromPdf": "PDFから他の形式への変換",
-      "organizeManage": "PDFページの整理、結合、分割、管理",
-      "optimizeRepair": "PDFファイルの圧縮、最適化、修復",
-      "securePdf": "PDFファイルの暗号化、復号化、保護"
+      "editAnnotate": "PDFã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã®ç·¨é›†ã€æ³¨é‡ˆã€å¤‰æ›´",
+      "convertToPdf": "æ§˜ã€…ãªå½¢å¼ã‹ã‚‰PDFã¸ã®å¤‰æ›",
+      "convertFromPdf": "PDFã‹ã‚‰ä»–ã®å½¢å¼ã¸ã®å¤‰æ›",
+      "organizeManage": "PDFãƒšãƒ¼ã‚¸ã®æ•´ç†ã€çµåˆã€åˆ†å‰²ã€ç®¡ç†",
+      "optimizeRepair": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã®åœ§ç¸®ã€æœ€é©åŒ–ã€ä¿®å¾©",
+      "securePdf": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã®æš—å·åŒ–ã€å¾©å·åŒ–ã€ä¿è­·"
     },
     "stats": {
-      "pdfTools": "PDFツール",
-      "freeToUse": "無料で使用可能",
-      "languages": "言語",
-      "filesUploaded": "アップロードされたファイル"
+      "pdfTools": "PDFãƒ„ãƒ¼ãƒ«",
+      "freeToUse": "ç„¡æ–™ã§ä½¿ç”¨å¯èƒ½",
+      "languages": "è¨€èªž",
+      "filesUploaded": "ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ã•ã‚ŒãŸãƒ•ã‚¡ã‚¤ãƒ«"
     },
     "categories": {
-      "popular": "人気のツール",
-      "editAnnotate": "編集 & 注釈",
-      "convertToPdf": "PDFに変換",
-      "convertFromPdf": "PDFから変換",
-      "organizeManage": "整理 & 管理",
-      "optimizeRepair": "最適化 & 修復",
-      "securePdf": "PDFセキュリティ"
+      "popular": "äººæ°—ã®ãƒ„ãƒ¼ãƒ«",
+      "editAnnotate": "ç·¨é›† & æ³¨é‡ˆ",
+      "convertToPdf": "PDFã«å¤‰æ›",
+      "convertFromPdf": "PDFã‹ã‚‰å¤‰æ›",
+      "organizeManage": "æ•´ç† & ç®¡ç†",
+      "optimizeRepair": "æœ€é©åŒ– & ä¿®å¾©",
+      "securePdf": "PDFã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£"
     }
   },
   "workflow": {
-    "title": "PDFワークフローエディター",
-    "subtitle": "ツールを接続してカスタムPDF処理パイプラインを作成",
-    "metaTitle": "PDFワークフローエディター - OpenToolsKit",
-    "metaDescription": "ツールを視覚的に接続してカスタムPDF処理パイプラインを作成。ワークフローを構築、保存、再利用。",
-    "toolbox": "ツールボックス",
-    "dragToAdd": "ワークフローにツールをドラッグして追加",
-    "searchTools": "ツールを検索...",
-    "toolsAvailable": "個のツールが利用可能",
-    "templates": "テンプレート",
-    "saved": "保存済み",
-    "favorites": "お気に入り",
-    "allCategories": "すべて",
-    "common": "よく使う",
-    "conversion": "変換",
-    "optimization": "最適化",
-    "security": "セキュリティ",
-    "noSavedWorkflows": "保存されたワークフローはありません",
-    "saveWorkflowHint": "最初のワークフローを作成して保存",
-    "noFavorites": "お気に入りのワークフローはありません",
-    "favoriteHint": "ワークフローにスターを付けてここに追加",
-    "selectFiles": "ファイルを選択",
-    "filesSelected": "個のファイルを選択",
-    "execute": "実行",
-    "running": "実行中",
-    "complete": "完了",
-    "error": "エラー",
-    "issues": "件の問題",
-    "stop": "停止",
-    "validationErrors": "検証エラー",
-    "warnings": "警告",
-    "executionFailed": "ワークフロー実行失敗",
-    "retry": "再試行",
-    "nodes": "個のノード",
-    "import": "インポート",
-    "clear": "クリア",
-    "saveWorkflow": "ワークフローを保存",
-    "workflowName": "ワークフロー名",
-    "enterName": "ワークフロー名を入力...",
-    "description": "説明",
-    "optional": "オプション",
-    "enterDescription": "説明を入力...",
-    "workflowComplete": "ワークフローが正常に完了しました！",
-    "downloadResults": "結果をダウンロード",
-    "emptyTitle": "ワークフローを作成",
-    "emptyDescription": "サイドバーからツールをドラッグしてPDF処理パイプラインを構築。ノードを接続して処理順序を定義。",
-    "clickHint": "ノードをクリックして設定を構成",
-    "undo": "元に戻す",
-    "redo": "やり直す",
-    "noSettings": "このツールには設定項目がありません",
-    "reset": "リセット",
-    "cancel": "キャンセル",
-    "apply": "適用",
-    "preview": "プレビュー",
-    "showPreview": "プレビューを表示",
-    "noFilesForPreview": "プレビューするファイルを選択",
-    "generatingPreview": "プレビューを生成中...",
-    "noPreviewAvailable": "プレビューは利用できません",
-    "selectedFiles": "選択されたファイル",
-    "filesCount": "ファイル",
-    "viewEditFiles": "ファイルを表示/編集",
-    "moveUp": "上に移動",
-    "moveDown": "下に移動",
-    "removeFile": "削除",
-    "clearAll": "すべてクリア",
-    "previewNotAvailable": "このファイルタイプのプレビューは利用できません",
-    "confirm": "確認",
-    "collapseSidebar": "サイドバーを折りたたむ",
-    "expandSidebar": "サイドバーを展開",
-    "library": "ライブラリ",
-    "connections": "接続",
-    "history": "履歴",
-    "executionHistory": "実行履歴",
-    "totalExecutions": "総実行回数",
-    "successRate": "成功率",
-    "avgDuration": "平均時間",
-    "noHistory": "実行履歴はまだありません",
-    "noHistoryHint": "ワークフローを実行するとここに履歴が表示されます",
-    "confirmDelete": "この履歴レコードを削除してもよろしいですか？",
-    "confirmClearAllHistory": "すべての履歴を消去してもよろしいですか？この操作は取り消せません。",
-    "unnamedWorkflow": "名前のないワークフロー",
-    "nodesSuccess": "個のノードが成功",
-    "nodesFailed": "失敗",
-    "loadWorkflow": "ワークフローを読み込む",
-    "viewDetails": "詳細を表示",
-    "detailsInConsole": "詳細はコンソールに出力されました (F12)",
+    "title": "PDFãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã‚¨ãƒ‡ã‚£ã‚¿ãƒ¼",
+    "subtitle": "ãƒ„ãƒ¼ãƒ«ã‚’æŽ¥ç¶šã—ã¦ã‚«ã‚¹ã‚¿ãƒ PDFå‡¦ç†ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ã‚’ä½œæˆ",
+    "metaTitle": "PDFãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã‚¨ãƒ‡ã‚£ã‚¿ãƒ¼ - OpenToolsKit",
+    "metaDescription": "ãƒ„ãƒ¼ãƒ«ã‚’è¦–è¦šçš„ã«æŽ¥ç¶šã—ã¦ã‚«ã‚¹ã‚¿ãƒ PDFå‡¦ç†ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ã‚’ä½œæˆã€‚ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã‚’æ§‹ç¯‰ã€ä¿å­˜ã€å†åˆ©ç”¨ã€‚",
+    "toolbox": "ãƒ„ãƒ¼ãƒ«ãƒœãƒƒã‚¯ã‚¹",
+    "dragToAdd": "ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã«ãƒ„ãƒ¼ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ã—ã¦è¿½åŠ ",
+    "searchTools": "ãƒ„ãƒ¼ãƒ«ã‚’æ¤œç´¢...",
+    "toolsAvailable": "å€‹ã®ãƒ„ãƒ¼ãƒ«ãŒåˆ©ç”¨å¯èƒ½",
+    "templates": "ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ",
+    "saved": "ä¿å­˜æ¸ˆã¿",
+    "favorites": "ãŠæ°—ã«å…¥ã‚Š",
+    "allCategories": "ã™ã¹ã¦",
+    "common": "ã‚ˆãä½¿ã†",
+    "conversion": "å¤‰æ›",
+    "optimization": "æœ€é©åŒ–",
+    "security": "ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£",
+    "noSavedWorkflows": "ä¿å­˜ã•ã‚ŒãŸãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã¯ã‚ã‚Šã¾ã›ã‚“",
+    "saveWorkflowHint": "æœ€åˆã®ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã‚’ä½œæˆã—ã¦ä¿å­˜",
+    "noFavorites": "ãŠæ°—ã«å…¥ã‚Šã®ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã¯ã‚ã‚Šã¾ã›ã‚“",
+    "favoriteHint": "ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã«ã‚¹ã‚¿ãƒ¼ã‚’ä»˜ã‘ã¦ã“ã“ã«è¿½åŠ ",
+    "selectFiles": "ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é¸æŠž",
+    "filesSelected": "å€‹ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é¸æŠž",
+    "execute": "å®Ÿè¡Œ",
+    "running": "å®Ÿè¡Œä¸­",
+    "complete": "å®Œäº†",
+    "error": "ã‚¨ãƒ©ãƒ¼",
+    "issues": "ä»¶ã®å•é¡Œ",
+    "stop": "åœæ­¢",
+    "validationErrors": "æ¤œè¨¼ã‚¨ãƒ©ãƒ¼",
+    "warnings": "è­¦å‘Š",
+    "executionFailed": "ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼å®Ÿè¡Œå¤±æ•—",
+    "retry": "å†è©¦è¡Œ",
+    "nodes": "å€‹ã®ãƒŽãƒ¼ãƒ‰",
+    "import": "ã‚¤ãƒ³ãƒãƒ¼ãƒˆ",
+    "clear": "ã‚¯ãƒªã‚¢",
+    "saveWorkflow": "ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã‚’ä¿å­˜",
+    "workflowName": "ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼å",
+    "enterName": "ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼åã‚’å…¥åŠ›...",
+    "description": "èª¬æ˜Ž",
+    "optional": "ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+    "enterDescription": "èª¬æ˜Žã‚’å…¥åŠ›...",
+    "workflowComplete": "ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ãŒæ­£å¸¸ã«å®Œäº†ã—ã¾ã—ãŸï¼",
+    "downloadResults": "çµæžœã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰",
+    "emptyTitle": "ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã‚’ä½œæˆ",
+    "emptyDescription": "ã‚µã‚¤ãƒ‰ãƒãƒ¼ã‹ã‚‰ãƒ„ãƒ¼ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ã—ã¦PDFå‡¦ç†ãƒ‘ã‚¤ãƒ—ãƒ©ã‚¤ãƒ³ã‚’æ§‹ç¯‰ã€‚ãƒŽãƒ¼ãƒ‰ã‚’æŽ¥ç¶šã—ã¦å‡¦ç†é †åºã‚’å®šç¾©ã€‚",
+    "clickHint": "ãƒŽãƒ¼ãƒ‰ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦è¨­å®šã‚’æ§‹æˆ",
+    "undo": "å…ƒã«æˆ»ã™",
+    "redo": "ã‚„ã‚Šç›´ã™",
+    "noSettings": "ã“ã®ãƒ„ãƒ¼ãƒ«ã«ã¯è¨­å®šé …ç›®ãŒã‚ã‚Šã¾ã›ã‚“",
+    "reset": "ãƒªã‚»ãƒƒãƒˆ",
+    "cancel": "ã‚­ãƒ£ãƒ³ã‚»ãƒ«",
+    "apply": "é©ç”¨",
+    "preview": "ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼",
+    "showPreview": "ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’è¡¨ç¤º",
+    "noFilesForPreview": "ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é¸æŠž",
+    "generatingPreview": "ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’ç”Ÿæˆä¸­...",
+    "noPreviewAvailable": "ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã¯åˆ©ç”¨ã§ãã¾ã›ã‚“",
+    "selectedFiles": "é¸æŠžã•ã‚ŒãŸãƒ•ã‚¡ã‚¤ãƒ«",
+    "filesCount": "ãƒ•ã‚¡ã‚¤ãƒ«",
+    "viewEditFiles": "ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¡¨ç¤º/ç·¨é›†",
+    "moveUp": "ä¸Šã«ç§»å‹•",
+    "moveDown": "ä¸‹ã«ç§»å‹•",
+    "removeFile": "å‰Šé™¤",
+    "clearAll": "ã™ã¹ã¦ã‚¯ãƒªã‚¢",
+    "previewNotAvailable": "ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—ã®ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã¯åˆ©ç”¨ã§ãã¾ã›ã‚“",
+    "confirm": "ç¢ºèª",
+    "collapseSidebar": "ã‚µã‚¤ãƒ‰ãƒãƒ¼ã‚’æŠ˜ã‚ŠãŸãŸã‚€",
+    "expandSidebar": "ã‚µã‚¤ãƒ‰ãƒãƒ¼ã‚’å±•é–‹",
+    "library": "ãƒ©ã‚¤ãƒ–ãƒ©ãƒª",
+    "connections": "æŽ¥ç¶š",
+    "history": "å±¥æ­´",
+    "executionHistory": "å®Ÿè¡Œå±¥æ­´",
+    "totalExecutions": "ç·å®Ÿè¡Œå›žæ•°",
+    "successRate": "æˆåŠŸçŽ‡",
+    "avgDuration": "å¹³å‡æ™‚é–“",
+    "noHistory": "å®Ÿè¡Œå±¥æ­´ã¯ã¾ã ã‚ã‚Šã¾ã›ã‚“",
+    "noHistoryHint": "ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã‚’å®Ÿè¡Œã™ã‚‹ã¨ã“ã“ã«å±¥æ­´ãŒè¡¨ç¤ºã•ã‚Œã¾ã™",
+    "confirmDelete": "ã“ã®å±¥æ­´ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’å‰Šé™¤ã—ã¦ã‚‚ã‚ˆã‚ã—ã„ã§ã™ã‹ï¼Ÿ",
+    "confirmClearAllHistory": "ã™ã¹ã¦ã®å±¥æ­´ã‚’æ¶ˆåŽ»ã—ã¦ã‚‚ã‚ˆã‚ã—ã„ã§ã™ã‹ï¼Ÿã“ã®æ“ä½œã¯å–ã‚Šæ¶ˆã›ã¾ã›ã‚“ã€‚",
+    "unnamedWorkflow": "åå‰ã®ãªã„ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼",
+    "nodesSuccess": "å€‹ã®ãƒŽãƒ¼ãƒ‰ãŒæˆåŠŸ",
+    "nodesFailed": "å¤±æ•—",
+    "loadWorkflow": "ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã‚’èª­ã¿è¾¼ã‚€",
+    "viewDetails": "è©³ç´°ã‚’è¡¨ç¤º",
+    "detailsInConsole": "è©³ç´°ã¯ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã«å‡ºåŠ›ã•ã‚Œã¾ã—ãŸ (F12)",
     "workflowTemplates": {
       "mergeCompress": {
-        "name": "結合と圧縮",
-        "description": "複数のPDFを結合し、結果を圧縮してファイルサイズを小さくします"
+        "name": "çµåˆã¨åœ§ç¸®",
+        "description": "è¤‡æ•°ã®PDFã‚’çµåˆã—ã€çµæžœã‚’åœ§ç¸®ã—ã¦ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºã‚’å°ã•ãã—ã¾ã™"
       },
       "imagesToWatermarkedPdf": {
-        "name": "画像から透かし入りPDF",
-        "description": "画像をPDFに変換し、カスタム透かしを追加します"
+        "name": "ç”»åƒã‹ã‚‰é€ã‹ã—å…¥ã‚ŠPDF",
+        "description": "ç”»åƒã‚’PDFã«å¤‰æ›ã—ã€ã‚«ã‚¹ã‚¿ãƒ é€ã‹ã—ã‚’è¿½åŠ ã—ã¾ã™"
       },
       "pdfToImages": {
-        "name": "PDFから圧縮画像",
-        "description": "PDFページをJPG画像に変換します"
+        "name": "PDFã‹ã‚‰åœ§ç¸®ç”»åƒ",
+        "description": "PDFãƒšãƒ¼ã‚¸ã‚’JPGç”»åƒã«å¤‰æ›ã—ã¾ã™"
       },
       "securePdf": {
-        "name": "安全なPDFの作成",
-        "description": "PDFを結合し、透かしを追加し、パスワードで暗号化します"
+        "name": "å®‰å…¨ãªPDFã®ä½œæˆ",
+        "description": "PDFã‚’çµåˆã—ã€é€ã‹ã—ã‚’è¿½åŠ ã—ã€ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã§æš—å·åŒ–ã—ã¾ã™"
       },
       "documentPrep": {
-        "name": "ドキュメントの準備",
-        "description": "PDFを結合し、ページ番号を追加し、ヘッダー/フッターを追加します"
+        "name": "ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã®æº–å‚™",
+        "description": "PDFã‚’çµåˆã—ã€ãƒšãƒ¼ã‚¸ç•ªå·ã‚’è¿½åŠ ã—ã€ãƒ˜ãƒƒãƒ€ãƒ¼/ãƒ•ãƒƒã‚¿ãƒ¼ã‚’è¿½åŠ ã—ã¾ã™"
       },
       "optimizeForWeb": {
-        "name": "ウェブ向けに最適化",
-        "description": "高速なウェブ閲覧のためにPDFを圧縮および線形化します"
+        "name": "ã‚¦ã‚§ãƒ–å‘ã‘ã«æœ€é©åŒ–",
+        "description": "é«˜é€Ÿãªã‚¦ã‚§ãƒ–é–²è¦§ã®ãŸã‚ã«PDFã‚’åœ§ç¸®ãŠã‚ˆã³ç·šå½¢åŒ–ã—ã¾ã™"
       },
       "splitAndWatermark": {
-        "name": "分割と透かし",
-        "description": "PDFを各ページに分割し、それぞれに透かしを追加します"
+        "name": "åˆ†å‰²ã¨é€ã‹ã—",
+        "description": "PDFã‚’å„ãƒšãƒ¼ã‚¸ã«åˆ†å‰²ã—ã€ãã‚Œãžã‚Œã«é€ã‹ã—ã‚’è¿½åŠ ã—ã¾ã™"
       },
       "officeToMergedPdf": {
-        "name": "Officeファイルから単一のPDF",
-        "description": "Word文書をPDFに変換して結合します"
+        "name": "Officeãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰å˜ä¸€ã®PDF",
+        "description": "Wordæ–‡æ›¸ã‚’PDFã«å¤‰æ›ã—ã¦çµåˆã—ã¾ã™"
       },
       "rotateAndNumber": {
-        "name": "回転とページ番号追加",
-        "description": "PDFページを回転させ、ページ番号を追加します"
+        "name": "å›žè»¢ã¨ãƒšãƒ¼ã‚¸ç•ªå·è¿½åŠ ",
+        "description": "PDFãƒšãƒ¼ã‚¸ã‚’å›žè»¢ã•ã›ã€ãƒšãƒ¼ã‚¸ç•ªå·ã‚’è¿½åŠ ã—ã¾ã™"
       },
       "printReady": {
-        "name": "印刷用ドキュメント",
-        "description": "ページ番号を追加し、フラット化して印刷用のPDFを準備します"
+        "name": "å°åˆ·ç”¨ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ",
+        "description": "ãƒšãƒ¼ã‚¸ç•ªå·ã‚’è¿½åŠ ã—ã€ãƒ•ãƒ©ãƒƒãƒˆåŒ–ã—ã¦å°åˆ·ç”¨ã®PDFã‚’æº–å‚™ã—ã¾ã™"
       },
       "grayscaleCompress": {
-        "name": "グレースケールと圧縮",
-        "description": "グレースケールに変換し、サイズを小さくするために圧縮します"
+        "name": "ã‚°ãƒ¬ãƒ¼ã‚¹ã‚±ãƒ¼ãƒ«ã¨åœ§ç¸®",
+        "description": "ã‚°ãƒ¬ãƒ¼ã‚¹ã‚±ãƒ¼ãƒ«ã«å¤‰æ›ã—ã€ã‚µã‚¤ã‚ºã‚’å°ã•ãã™ã‚‹ãŸã‚ã«åœ§ç¸®ã—ã¾ã™"
       },
       "extractAndMerge": {
-        "name": "ページの抽出と結合",
-        "description": "特定のページを抽出し、それらを新しいドキュメントに結合します"
+        "name": "ãƒšãƒ¼ã‚¸ã®æŠ½å‡ºã¨çµåˆ",
+        "description": "ç‰¹å®šã®ãƒšãƒ¼ã‚¸ã‚’æŠ½å‡ºã—ã€ãã‚Œã‚‰ã‚’æ–°ã—ã„ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã«çµåˆã—ã¾ã™"
       },
       "confidentialDocument": {
-        "name": "機密ドキュメント",
-        "description": "機密（Confidential）の透かしを追加し、PDFを暗号化します"
+        "name": "æ©Ÿå¯†ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ",
+        "description": "æ©Ÿå¯†ï¼ˆConfidentialï¼‰ã®é€ã‹ã—ã‚’è¿½åŠ ã—ã€PDFã‚’æš—å·åŒ–ã—ã¾ã™"
       },
       "pdfToEditableDoc": {
-        "name": "PDFから編集可能な文書",
-        "description": "編集のためにPDFをWord文書に変換します"
+        "name": "PDFã‹ã‚‰ç·¨é›†å¯èƒ½ãªæ–‡æ›¸",
+        "description": "ç·¨é›†ã®ãŸã‚ã«PDFã‚’Wordæ–‡æ›¸ã«å¤‰æ›ã—ã¾ã™"
       },
       "fullOptimization": {
-        "name": "完全なドキュメント最適化",
-        "description": "最適なパフォーマンスのために、圧縮、フラット化、および線形化を行います"
+        "name": "å®Œå…¨ãªãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆæœ€é©åŒ–",
+        "description": "æœ€é©ãªãƒ‘ãƒ•ã‚©ãƒ¼ãƒžãƒ³ã‚¹ã®ãŸã‚ã«ã€åœ§ç¸®ã€ãƒ•ãƒ©ãƒƒãƒˆåŒ–ã€ãŠã‚ˆã³ç·šå½¢åŒ–ã‚’è¡Œã„ã¾ã™"
       },
       "pdfToPresentation": {
-        "name": "PDFからPowerPoint",
-        "description": "PDFを編集可能なPowerPointプレゼンテーションに変換します"
+        "name": "PDFã‹ã‚‰PowerPoint",
+        "description": "PDFã‚’ç·¨é›†å¯èƒ½ãªPowerPointãƒ—ãƒ¬ã‚¼ãƒ³ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã«å¤‰æ›ã—ã¾ã™"
       },
       "unlockAndEdit": {
-        "name": "PDFのロック解除と編集",
-        "description": "保護されたPDFを編集するために復号します"
+        "name": "PDFã®ãƒ­ãƒƒã‚¯è§£é™¤ã¨ç·¨é›†",
+        "description": "ä¿è­·ã•ã‚ŒãŸPDFã‚’ç·¨é›†ã™ã‚‹ãŸã‚ã«å¾©å·ã—ã¾ã™"
       },
       "ebookConvert": {
-        "name": "eBookからPDF",
-        "description": "EPUB形式の電子書籍をPDF形式に変換します"
+        "name": "eBookã‹ã‚‰PDF",
+        "description": "EPUBå½¢å¼ã®é›»å­æ›¸ç±ã‚’PDFå½¢å¼ã«å¤‰æ›ã—ã¾ã™"
       },
       "batchWatermark": {
-        "name": "一括透かし追加",
-        "description": "複数のPDFファイルに一度に透かしを追加します"
+        "name": "ä¸€æ‹¬é€ã‹ã—è¿½åŠ ",
+        "description": "è¤‡æ•°ã®PDFãƒ•ã‚¡ã‚¤ãƒ«ã«ä¸€åº¦ã«é€ã‹ã—ã‚’è¿½åŠ ã—ã¾ã™"
       },
       "archivePrep": {
-        "name": "アーカイブの準備",
-        "description": "メタデータを削除し、フラット化して、長期保存用に圧縮します"
+        "name": "ã‚¢ãƒ¼ã‚«ã‚¤ãƒ–ã®æº–å‚™",
+        "description": "ãƒ¡ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’å‰Šé™¤ã—ã€ãƒ•ãƒ©ãƒƒãƒˆåŒ–ã—ã¦ã€é•·æœŸä¿å­˜ç”¨ã«åœ§ç¸®ã—ã¾ã™"
       },
       "reportAssembly": {
-        "name": "レポートの組み立て",
-        "description": "ドキュメントを結合し、ページ番号、ヘッダー/フッター、目次を追加します"
+        "name": "ãƒ¬ãƒãƒ¼ãƒˆã®çµ„ã¿ç«‹ã¦",
+        "description": "ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’çµåˆã—ã€ãƒšãƒ¼ã‚¸ç•ªå·ã€ãƒ˜ãƒƒãƒ€ãƒ¼/ãƒ•ãƒƒã‚¿ãƒ¼ã€ç›®æ¬¡ã‚’è¿½åŠ ã—ã¾ã™"
       },
       "invoiceProcessing": {
-        "name": "請求書処理",
-        "description": "ページを抽出し、透かしを追加し、メール用に圧縮します"
+        "name": "è«‹æ±‚æ›¸å‡¦ç†",
+        "description": "ãƒšãƒ¼ã‚¸ã‚’æŠ½å‡ºã—ã€é€ã‹ã—ã‚’è¿½åŠ ã—ã€ãƒ¡ãƒ¼ãƒ«ç”¨ã«åœ§ç¸®ã—ã¾ã™"
       },
       "photoAlbum": {
-        "name": "フォトアルバム作成",
-        "description": "画像をページ番号付きのPDFに変換します"
+        "name": "ãƒ•ã‚©ãƒˆã‚¢ãƒ«ãƒãƒ ä½œæˆ",
+        "description": "ç”»åƒã‚’ãƒšãƒ¼ã‚¸ç•ªå·ä»˜ãã®PDFã«å¤‰æ›ã—ã¾ã™"
       },
       "cropAndResize": {
-        "name": "切り抜きとサイズ変更",
-        "description": "PDFページを切り抜き、ページの寸法を調整します"
+        "name": "åˆ‡ã‚ŠæŠœãã¨ã‚µã‚¤ã‚ºå¤‰æ›´",
+        "description": "PDFãƒšãƒ¼ã‚¸ã‚’åˆ‡ã‚ŠæŠœãã€ãƒšãƒ¼ã‚¸ã®å¯¸æ³•ã‚’èª¿æ•´ã—ã¾ã™"
       }
     }
   },
   "toolsPage": {
-    "title": "OpenToolsKit Launch Tools",
-    "subtitle": "{count}+ browser-based launch tools for PDF workflows, editing, conversion, and secure document handling.",
+    "title": "OpenToolsKit Tools",
+    "subtitle": "{count}+ browser-based tools for PDF workflows, editing, conversion, and secure document handling.",
     "filters": "Filters",
     "allTools": "All Tools",
     "clearAll": "Clear all",
@@ -657,30 +657,30 @@
   },
   "tools": {
     "search": {
-      "placeholder": "ツールを検索...",
-      "noResults": "「{query}」に一致するツールが見つかりません"
+      "placeholder": "ãƒ„ãƒ¼ãƒ«ã‚’æ¤œç´¢...",
+      "noResults": "ã€Œ{query}ã€ã«ä¸€è‡´ã™ã‚‹ãƒ„ãƒ¼ãƒ«ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“"
     },
-    "relatedTools": "関連ツール",
-    "about": "このツールについて",
-    "howToUse": "使い方",
-    "useCases": "活用シーン",
-    "faq": "よくある質問",
-    "comingSoon": "このツールは間もなく公開されます。",
-    "successTitle": "変換成功！",
+    "relatedTools": "é–¢é€£ãƒ„ãƒ¼ãƒ«",
+    "about": "ã“ã®ãƒ„ãƒ¼ãƒ«ã«ã¤ã„ã¦",
+    "howToUse": "ä½¿ã„æ–¹",
+    "useCases": "æ´»ç”¨ã‚·ãƒ¼ãƒ³",
+    "faq": "ã‚ˆãã‚ã‚‹è³ªå•",
+    "comingSoon": "ã“ã®ãƒ„ãƒ¼ãƒ«ã¯é–“ã‚‚ãªãå…¬é–‹ã•ã‚Œã¾ã™ã€‚",
+    "successTitle": "å¤‰æ›æˆåŠŸï¼",
     "favorite": {
-      "add": "お気に入りに追加",
-      "remove": "お気に入りから削除",
-      "saved": "保存済み",
-      "title": "お気に入りツール",
-      "empty": "お気に入りのツールはまだありません",
-      "hint": "ツールの星アイコンをクリックすると、ここに保存してすぐにアクセスできます。"
+      "add": "ãŠæ°—ã«å…¥ã‚Šã«è¿½åŠ ",
+      "remove": "ãŠæ°—ã«å…¥ã‚Šã‹ã‚‰å‰Šé™¤",
+      "saved": "ä¿å­˜æ¸ˆã¿",
+      "title": "ãŠæ°—ã«å…¥ã‚Šãƒ„ãƒ¼ãƒ«",
+      "empty": "ãŠæ°—ã«å…¥ã‚Šã®ãƒ„ãƒ¼ãƒ«ã¯ã¾ã ã‚ã‚Šã¾ã›ã‚“",
+      "hint": "ãƒ„ãƒ¼ãƒ«ã®æ˜Ÿã‚¢ã‚¤ã‚³ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã™ã‚‹ã¨ã€ã“ã“ã«ä¿å­˜ã—ã¦ã™ãã«ã‚¢ã‚¯ã‚»ã‚¹ã§ãã¾ã™ã€‚"
     },
     "quality": {
-      "title": "出力品質",
-      "low": "低",
-      "medium": "中",
-      "high": "高",
-      "hint": "高品質ほどファイルサイズが大きくなり、変換に時間がかかります。"
+      "title": "å‡ºåŠ›å“è³ª",
+      "low": "ä½Ž",
+      "medium": "ä¸­",
+      "high": "é«˜",
+      "hint": "é«˜å“è³ªã»ã©ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºãŒå¤§ãããªã‚Šã€å¤‰æ›ã«æ™‚é–“ãŒã‹ã‹ã‚Šã¾ã™ã€‚"
     },
     "mergePdf": {
       "uploadLabel": "Upload PDF Files",
@@ -693,36 +693,36 @@
       "successMessage": "PDFs merged successfully! Click the download button to save your file."
     },
     "splitPdf": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをドラッグ＆ドロップするか、クリックして参照。",
-      "splitModeTitle": "分割方法",
-      "splitModeLabel": "分割モード",
-      "modeRanges": "ページ範囲で抽出（デフォルト）",
-      "modeEvenOdd": "偶数/奇数ページで分割",
-      "modeEveryPage": "すべてのページを個別ファイルに分割",
-      "modeVisual": "視覚的にページを選択",
-      "modeBookmarks": "ブックマークで分割",
-      "modeNTimes": "N分割",
-      "rangeInputLabel": "ページ範囲",
-      "rangeInputHint": "ページ番号または範囲をカンマ区切りで入力。各範囲が別ファイルになります。",
-      "evenOddLabel": "ページを抽出",
-      "oddPagesOnly": "奇数ページのみ",
-      "evenPagesOnly": "偶数ページのみ",
-      "bothSeparate": "両方（別ファイル）",
-      "evenOddHint": "奇数ページ: 1, 3, 5... 偶数ページ: 2, 4, 6...",
-      "everyPageInfo": "各ページが個別のPDFファイルとして抽出されます。{count}個のファイルが作成されます。",
-      "visualInfo": "下のサムネイルをクリックして抽出するページを選択。選択したページは単一PDFに結合または個別ファイルに分割されます。",
-      "bookmarksNotice": "注意：ブックマークで分割するにはPDFにブックマークが必要です。ブックマークがない場合、PDF全体が単一ファイルとして返されます。",
-      "splitCountLabel": "分割数",
-      "splitCountHint": "{count}等分に分割（各約{pages}ページ）",
-      "pagePreviewTitle": "ページを選択",
-      "splitButton": "PDFを分割",
-      "resultsTitle": "分割結果",
-      "successMessage": "PDFの分割が完了しました！ダウンロードボタンをクリックしてファイルを保存してください。",
-      "modeVisualShort": "視覚的選択",
-      "modeBookmarksShort": "ブックマーク",
-      "modeNTimesShort": "N分割",
-      "downloadZip": "ZIPとして一括ダウンロード"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦å‚ç…§ã€‚",
+      "splitModeTitle": "åˆ†å‰²æ–¹æ³•",
+      "splitModeLabel": "åˆ†å‰²ãƒ¢ãƒ¼ãƒ‰",
+      "modeRanges": "ãƒšãƒ¼ã‚¸ç¯„å›²ã§æŠ½å‡ºï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆï¼‰",
+      "modeEvenOdd": "å¶æ•°/å¥‡æ•°ãƒšãƒ¼ã‚¸ã§åˆ†å‰²",
+      "modeEveryPage": "ã™ã¹ã¦ã®ãƒšãƒ¼ã‚¸ã‚’å€‹åˆ¥ãƒ•ã‚¡ã‚¤ãƒ«ã«åˆ†å‰²",
+      "modeVisual": "è¦–è¦šçš„ã«ãƒšãƒ¼ã‚¸ã‚’é¸æŠž",
+      "modeBookmarks": "ãƒ–ãƒƒã‚¯ãƒžãƒ¼ã‚¯ã§åˆ†å‰²",
+      "modeNTimes": "Nåˆ†å‰²",
+      "rangeInputLabel": "ãƒšãƒ¼ã‚¸ç¯„å›²",
+      "rangeInputHint": "ãƒšãƒ¼ã‚¸ç•ªå·ã¾ãŸã¯ç¯„å›²ã‚’ã‚«ãƒ³ãƒžåŒºåˆ‡ã‚Šã§å…¥åŠ›ã€‚å„ç¯„å›²ãŒåˆ¥ãƒ•ã‚¡ã‚¤ãƒ«ã«ãªã‚Šã¾ã™ã€‚",
+      "evenOddLabel": "ãƒšãƒ¼ã‚¸ã‚’æŠ½å‡º",
+      "oddPagesOnly": "å¥‡æ•°ãƒšãƒ¼ã‚¸ã®ã¿",
+      "evenPagesOnly": "å¶æ•°ãƒšãƒ¼ã‚¸ã®ã¿",
+      "bothSeparate": "ä¸¡æ–¹ï¼ˆåˆ¥ãƒ•ã‚¡ã‚¤ãƒ«ï¼‰",
+      "evenOddHint": "å¥‡æ•°ãƒšãƒ¼ã‚¸: 1, 3, 5... å¶æ•°ãƒšãƒ¼ã‚¸: 2, 4, 6...",
+      "everyPageInfo": "å„ãƒšãƒ¼ã‚¸ãŒå€‹åˆ¥ã®PDFãƒ•ã‚¡ã‚¤ãƒ«ã¨ã—ã¦æŠ½å‡ºã•ã‚Œã¾ã™ã€‚{count}å€‹ã®ãƒ•ã‚¡ã‚¤ãƒ«ãŒä½œæˆã•ã‚Œã¾ã™ã€‚",
+      "visualInfo": "ä¸‹ã®ã‚µãƒ ãƒã‚¤ãƒ«ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦æŠ½å‡ºã™ã‚‹ãƒšãƒ¼ã‚¸ã‚’é¸æŠžã€‚é¸æŠžã—ãŸãƒšãƒ¼ã‚¸ã¯å˜ä¸€PDFã«çµåˆã¾ãŸã¯å€‹åˆ¥ãƒ•ã‚¡ã‚¤ãƒ«ã«åˆ†å‰²ã•ã‚Œã¾ã™ã€‚",
+      "bookmarksNotice": "æ³¨æ„ï¼šãƒ–ãƒƒã‚¯ãƒžãƒ¼ã‚¯ã§åˆ†å‰²ã™ã‚‹ã«ã¯PDFã«ãƒ–ãƒƒã‚¯ãƒžãƒ¼ã‚¯ãŒå¿…è¦ã§ã™ã€‚ãƒ–ãƒƒã‚¯ãƒžãƒ¼ã‚¯ãŒãªã„å ´åˆã€PDFå…¨ä½“ãŒå˜ä¸€ãƒ•ã‚¡ã‚¤ãƒ«ã¨ã—ã¦è¿”ã•ã‚Œã¾ã™ã€‚",
+      "splitCountLabel": "åˆ†å‰²æ•°",
+      "splitCountHint": "{count}ç­‰åˆ†ã«åˆ†å‰²ï¼ˆå„ç´„{pages}ãƒšãƒ¼ã‚¸ï¼‰",
+      "pagePreviewTitle": "ãƒšãƒ¼ã‚¸ã‚’é¸æŠž",
+      "splitButton": "PDFã‚’åˆ†å‰²",
+      "resultsTitle": "åˆ†å‰²çµæžœ",
+      "successMessage": "PDFã®åˆ†å‰²ãŒå®Œäº†ã—ã¾ã—ãŸï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¿å­˜ã—ã¦ãã ã•ã„ã€‚",
+      "modeVisualShort": "è¦–è¦šçš„é¸æŠž",
+      "modeBookmarksShort": "ãƒ–ãƒƒã‚¯ãƒžãƒ¼ã‚¯",
+      "modeNTimesShort": "Nåˆ†å‰²",
+      "downloadZip": "ZIPã¨ã—ã¦ä¸€æ‹¬ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰"
     },
     "deletePages": {
       "uploadLabel": "Upload PDF File",
@@ -733,8 +733,8 @@
       "warningText": "Selected pages will be permanently removed from the PDF. At least one page must remain.",
       "deleteButton": "Delete Pages",
       "successMessage": "Pages deleted successfully! Click the download button to save your file.",
-      "pageRange": "ページ範囲",
-      "pageRangePlaceholder": "例: 1, 3-5, 8"
+      "pageRange": "ãƒšãƒ¼ã‚¸ç¯„å›²",
+      "pageRangePlaceholder": "ä¾‹: 1, 3-5, 8"
     },
     "extractPages": {
       "uploadLabel": "Upload PDF File",
@@ -743,8 +743,8 @@
       "selectHint": "Click pages to select them, or enter page numbers/ranges above.",
       "extractButton": "Extract Pages",
       "successMessage": "Pages extracted successfully! Click the download button to save your file.",
-      "pageRange": "ページ範囲",
-      "pageRangePlaceholder": "例: 1-5, 8, 10-12"
+      "pageRange": "ãƒšãƒ¼ã‚¸ç¯„å›²",
+      "pageRangePlaceholder": "ä¾‹: 1-5, 8, 10-12"
     },
     "posterizePdf": {
       "uploadLabel": "Upload PDF File",
@@ -760,38 +760,38 @@
       "fill": "Fill (may crop)",
       "pageRange": "Page Range (optional)",
       "pageRangePlaceholder": "e.g., 1-5, 8, 10-15 (leave empty for all pages)",
-      "previewInfo": "Each page will be split into {rows}×{cols} = {total} tiles.",
+      "previewInfo": "Each page will be split into {rows}Ã—{cols} = {total} tiles.",
       "createButton": "Posterize PDF",
       "successMessage": "PDF posterized successfully! Click the download button to save your file."
     },
     "pdfMultiTool": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをドラッグ＆ドロップするか、クリックして参照。複数ファイルをアップロードできます。",
-      "addMoreFiles": "PDFファイルを追加",
-      "organize": "整理",
-      "delete": "削除",
-      "rotate": "回転",
-      "duplicate": "複製",
-      "addBlank": "空白ページを追加",
-      "organizeHint": "ページをドラッグ＆ドロップして並べ替え。",
-      "deleteHint": "削除するページをクリック。",
-      "rotateHint": "ページの回転ボタンをクリックするか、すべて回転：",
-      "duplicateHint": "ページの複製ボタンをクリック。",
-      "reset": "リセット",
-      "undo": "元に戻す",
-      "redo": "やり直し",
-      "selectAll": "すべて選択",
-      "deselectAll": "選択解除",
-      "rotateLeft": "左回転",
-      "rotateRight": "右回転",
-      "exportPDF": "PDFをエクスポート",
-      "downloadSelected": "選択をダウンロード",
-      "clearAll": "すべてクリア",
-      "addBlankPageTitle": "空白ページを追加",
-      "numberOfPages": "ページ数",
-      "insertPosition": "挿入位置",
-      "processButton": "変更を適用",
-      "successMessage": "PDF処理完了！ダウンロードボタンをクリックして保存。"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦å‚ç…§ã€‚è¤‡æ•°ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ã§ãã¾ã™ã€‚",
+      "addMoreFiles": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ",
+      "organize": "æ•´ç†",
+      "delete": "å‰Šé™¤",
+      "rotate": "å›žè»¢",
+      "duplicate": "è¤‡è£½",
+      "addBlank": "ç©ºç™½ãƒšãƒ¼ã‚¸ã‚’è¿½åŠ ",
+      "organizeHint": "ãƒšãƒ¼ã‚¸ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦ä¸¦ã¹æ›¿ãˆã€‚",
+      "deleteHint": "å‰Šé™¤ã™ã‚‹ãƒšãƒ¼ã‚¸ã‚’ã‚¯ãƒªãƒƒã‚¯ã€‚",
+      "rotateHint": "ãƒšãƒ¼ã‚¸ã®å›žè»¢ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã™ã‚‹ã‹ã€ã™ã¹ã¦å›žè»¢ï¼š",
+      "duplicateHint": "ãƒšãƒ¼ã‚¸ã®è¤‡è£½ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã€‚",
+      "reset": "ãƒªã‚»ãƒƒãƒˆ",
+      "undo": "å…ƒã«æˆ»ã™",
+      "redo": "ã‚„ã‚Šç›´ã—",
+      "selectAll": "ã™ã¹ã¦é¸æŠž",
+      "deselectAll": "é¸æŠžè§£é™¤",
+      "rotateLeft": "å·¦å›žè»¢",
+      "rotateRight": "å³å›žè»¢",
+      "exportPDF": "PDFã‚’ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆ",
+      "downloadSelected": "é¸æŠžã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰",
+      "clearAll": "ã™ã¹ã¦ã‚¯ãƒªã‚¢",
+      "addBlankPageTitle": "ç©ºç™½ãƒšãƒ¼ã‚¸ã‚’è¿½åŠ ",
+      "numberOfPages": "ãƒšãƒ¼ã‚¸æ•°",
+      "insertPosition": "æŒ¿å…¥ä½ç½®",
+      "processButton": "å¤‰æ›´ã‚’é©ç”¨",
+      "successMessage": "PDFå‡¦ç†å®Œäº†ï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ä¿å­˜ã€‚"
     },
     "viewMetadata": {
       "uploadLabel": "Upload PDF File",
@@ -841,7 +841,7 @@
       "uploadLabel": "Upload PDF to Edit",
       "uploadDescription": "Drag and drop a PDF file here, or click to browse.",
       "instructions": "How to use",
-      "instructionsText": "Use the toolbar above the PDF to add text, draw, highlight, or add images. Click the download button (💾) in the toolbar to save your edited PDF.",
+      "instructionsText": "Use the toolbar above the PDF to add text, draw, highlight, or add images. Click the download button (ðŸ’¾) in the toolbar to save your edited PDF.",
       "saveButton": "Save PDF",
       "saveDownload": "Save & Download",
       "saveError": "Failed to save PDF. Please use the export button in the toolbar.",
@@ -900,12 +900,12 @@
       "svgQualityHigh": "High (3x - better quality)",
       "svgQualityVeryHigh": "Very High (4x - best quality)",
       "svgQualityHint": "Higher quality produces sharper images but larger file sizes.",
-      "batchMode": "複数のPDFに分割",
-      "imagesPerPdf": "1つのPDFあたりの画像数",
-      "batchModeHint": "{pdfCount}個のPDFファイルが作成され、ZIPアーカイブとしてパッケージされます。",
-      "batchSuccessMessage": "{imageCount}枚の画像から{pdfCount}個のPDFファイルを正常に作成しました！ダウンロードボタンをクリックしてZIPアーカイブを保存してください。",
+      "batchMode": "è¤‡æ•°ã®PDFã«åˆ†å‰²",
+      "imagesPerPdf": "1ã¤ã®PDFã‚ãŸã‚Šã®ç”»åƒæ•°",
+      "batchModeHint": "{pdfCount}å€‹ã®PDFãƒ•ã‚¡ã‚¤ãƒ«ãŒä½œæˆã•ã‚Œã€ZIPã‚¢ãƒ¼ã‚«ã‚¤ãƒ–ã¨ã—ã¦ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã•ã‚Œã¾ã™ã€‚",
+      "batchSuccessMessage": "{imageCount}æžšã®ç”»åƒã‹ã‚‰{pdfCount}å€‹ã®PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ­£å¸¸ã«ä½œæˆã—ã¾ã—ãŸï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ZIPã‚¢ãƒ¼ã‚«ã‚¤ãƒ–ã‚’ä¿å­˜ã—ã¦ãã ã•ã„ã€‚",
       "successMessage": "Images converted to PDF successfully! Click the download button to save your file.",
-      "fitToImage": "画像に合わせる"
+      "fitToImage": "ç”»åƒã«åˆã‚ã›ã‚‹"
     },
     "compressPdf": {
       "uploadLabel": "Upload PDF Files",
@@ -931,16 +931,16 @@
       "originalSize": "Original:",
       "compressedSize": "Compressed:",
       "saved": "Saved:",
-      "algorithmLabel": "圧縮アルゴリズム",
-      "algorithmStandard": "標準",
-      "algorithmCondense": "コンデンス",
+      "algorithmLabel": "åœ§ç¸®ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ ",
+      "algorithmStandard": "æ¨™æº–",
+      "algorithmCondense": "ã‚³ãƒ³ãƒ‡ãƒ³ã‚¹",
       "algorithmPhoton": "Photon",
-      "algorithmStandardDesc": "オブジェクトストリームを使用した汎用的な圧縮",
-      "algorithmCondenseDesc": "インタラクティブ性を維持しながら構造を最適化",
-      "algorithmPhotonDesc": "ページをラスタライズします — 画像の多いPDFに最適です",
-      "photonWarning": "注意：Photonはページを画像に変換するため、テキストの質が低下したり、インタラクティブ性（リンク、フォーム）が失われたりする可能性があります。",
-      "photonDpiLabel": "出力DPI",
-      "photonDpiDesc": "高いDPI = 高画質、大きなファイルサイズ"
+      "algorithmStandardDesc": "ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚’ä½¿ç”¨ã—ãŸæ±Žç”¨çš„ãªåœ§ç¸®",
+      "algorithmCondenseDesc": "ã‚¤ãƒ³ã‚¿ãƒ©ã‚¯ãƒ†ã‚£ãƒ–æ€§ã‚’ç¶­æŒã—ãªãŒã‚‰æ§‹é€ ã‚’æœ€é©åŒ–",
+      "algorithmPhotonDesc": "ãƒšãƒ¼ã‚¸ã‚’ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚ºã—ã¾ã™ â€” ç”»åƒã®å¤šã„PDFã«æœ€é©ã§ã™",
+      "photonWarning": "æ³¨æ„ï¼šPhotonã¯ãƒšãƒ¼ã‚¸ã‚’ç”»åƒã«å¤‰æ›ã™ã‚‹ãŸã‚ã€ãƒ†ã‚­ã‚¹ãƒˆã®è³ªãŒä½Žä¸‹ã—ãŸã‚Šã€ã‚¤ãƒ³ã‚¿ãƒ©ã‚¯ãƒ†ã‚£ãƒ–æ€§ï¼ˆãƒªãƒ³ã‚¯ã€ãƒ•ã‚©ãƒ¼ãƒ ï¼‰ãŒå¤±ã‚ã‚ŒãŸã‚Šã™ã‚‹å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ã€‚",
+      "photonDpiLabel": "å‡ºåŠ›DPI",
+      "photonDpiDesc": "é«˜ã„DPI = é«˜ç”»è³ªã€å¤§ããªãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚º"
     },
     "signPdf": {
       "uploadLabel": "Upload PDF File",
@@ -972,21 +972,21 @@
       "marginLeft": "Margin Left",
       "marginRight": "Margin Right",
       "optionsTitle": "Crop Options",
-      "page": "ページ"
+      "page": "ãƒšãƒ¼ã‚¸"
     },
     "organizePdf": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをドラッグ＆ドロップしてページを整理します。",
-      "reorderTitle": "ドラッグしてページを並べ替え",
-      "reverseOrder": "順序を反転",
-      "resetOrder": "順序をリセット",
-      "reorderHint": "ページをドラッグ＆ドロップして並べ替えます。矢印を使用してページを上下に移動できます。",
-      "orderChanged": "ページの順序が変更されました。「変更を適用」をクリックして保存してください。",
-      "applyButton": "変更を適用",
-      "successMessage": "PDFページの整理が完了しました！ダウンロードボタンをクリックしてファイルを保存してください。",
-      "duplicatePage": "複製",
-      "deletePage": "削除",
-      "cannotDeleteLast": "最後のページは削除できません"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦ãƒšãƒ¼ã‚¸ã‚’æ•´ç†ã—ã¾ã™ã€‚",
+      "reorderTitle": "ãƒ‰ãƒ©ãƒƒã‚°ã—ã¦ãƒšãƒ¼ã‚¸ã‚’ä¸¦ã¹æ›¿ãˆ",
+      "reverseOrder": "é †åºã‚’åè»¢",
+      "resetOrder": "é †åºã‚’ãƒªã‚»ãƒƒãƒˆ",
+      "reorderHint": "ãƒšãƒ¼ã‚¸ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦ä¸¦ã¹æ›¿ãˆã¾ã™ã€‚çŸ¢å°ã‚’ä½¿ç”¨ã—ã¦ãƒšãƒ¼ã‚¸ã‚’ä¸Šä¸‹ã«ç§»å‹•ã§ãã¾ã™ã€‚",
+      "orderChanged": "ãƒšãƒ¼ã‚¸ã®é †åºãŒå¤‰æ›´ã•ã‚Œã¾ã—ãŸã€‚ã€Œå¤‰æ›´ã‚’é©ç”¨ã€ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ä¿å­˜ã—ã¦ãã ã•ã„ã€‚",
+      "applyButton": "å¤‰æ›´ã‚’é©ç”¨",
+      "successMessage": "PDFãƒšãƒ¼ã‚¸ã®æ•´ç†ãŒå®Œäº†ã—ã¾ã—ãŸï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¿å­˜ã—ã¦ãã ã•ã„ã€‚",
+      "duplicatePage": "è¤‡è£½",
+      "deletePage": "å‰Šé™¤",
+      "cannotDeleteLast": "æœ€å¾Œã®ãƒšãƒ¼ã‚¸ã¯å‰Šé™¤ã§ãã¾ã›ã‚“"
     },
     "repairPdf": {
       "uploadLabel": "Upload PDF Files",
@@ -1002,45 +1002,45 @@
       "divisionType": "Division Type",
       "vertical": "Vertical",
       "horizontal": "Horizontal",
-      "grid2x2": "2×2 Grid",
-      "grid3x3": "3×3 Grid",
+      "grid2x2": "2Ã—2 Grid",
+      "grid3x3": "3Ã—3 Grid",
       "previewInfo": "Each page will be divided based on the selected option.",
       "divideButton": "Divide Pages",
       "successMessage": "Pages divided successfully!"
     },
     "extractAttachments": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "添付ファイルを抽出するPDFファイルを選択してください。",
-      "filesTitle": "選択されたファイル",
-      "extractButton": "添付ファイルを抽出",
-      "extractedTitle": "抽出された添付ファイル",
-      "downloadAll": "すべてダウンロード",
-      "successMessage": "添付ファイルの抽出に成功しました！"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "æ·»ä»˜ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æŠ½å‡ºã™ã‚‹PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’é¸æŠžã—ã¦ãã ã•ã„ã€‚",
+      "filesTitle": "é¸æŠžã•ã‚ŒãŸãƒ•ã‚¡ã‚¤ãƒ«",
+      "extractButton": "æ·»ä»˜ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æŠ½å‡º",
+      "extractedTitle": "æŠ½å‡ºã•ã‚ŒãŸæ·»ä»˜ãƒ•ã‚¡ã‚¤ãƒ«",
+      "downloadAll": "ã™ã¹ã¦ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰",
+      "successMessage": "æ·»ä»˜ãƒ•ã‚¡ã‚¤ãƒ«ã®æŠ½å‡ºã«æˆåŠŸã—ã¾ã—ãŸï¼"
     },
     "extractImages": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "画像を抽出するPDFファイルを選択してください。",
-      "filesTitle": "選択されたファイル",
-      "filterTitle": "フィルターオプション",
-      "filterDescription": "小さな画像をフィルター（アイコン、装飾など）",
-      "minWidth": "最小幅 (px)",
-      "minHeight": "最小高さ (px)",
-      "minSizeKB": "最小サイズ (KB)",
-      "extractButton": "画像を抽出",
-      "extractedTitle": "抽出された画像",
-      "downloadAll": "すべてダウンロード",
-      "downloadZip": "ZIPでダウンロード",
-      "page": "ページ",
-      "successMessage": "画像の抽出に成功しました！個別の画像をクリックしてダウンロードするか、「ZIPでダウンロード」を使用してください。",
-      "optionsTitle": "設定",
-      "format": "出力形式",
-      "minSize": "最小サイズ (px)"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "ç”»åƒã‚’æŠ½å‡ºã™ã‚‹PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’é¸æŠžã—ã¦ãã ã•ã„ã€‚",
+      "filesTitle": "é¸æŠžã•ã‚ŒãŸãƒ•ã‚¡ã‚¤ãƒ«",
+      "filterTitle": "ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "filterDescription": "å°ã•ãªç”»åƒã‚’ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼ï¼ˆã‚¢ã‚¤ã‚³ãƒ³ã€è£…é£¾ãªã©ï¼‰",
+      "minWidth": "æœ€å°å¹… (px)",
+      "minHeight": "æœ€å°é«˜ã• (px)",
+      "minSizeKB": "æœ€å°ã‚µã‚¤ã‚º (KB)",
+      "extractButton": "ç”»åƒã‚’æŠ½å‡º",
+      "extractedTitle": "æŠ½å‡ºã•ã‚ŒãŸç”»åƒ",
+      "downloadAll": "ã™ã¹ã¦ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰",
+      "downloadZip": "ZIPã§ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰",
+      "page": "ãƒšãƒ¼ã‚¸",
+      "successMessage": "ç”»åƒã®æŠ½å‡ºã«æˆåŠŸã—ã¾ã—ãŸï¼å€‹åˆ¥ã®ç”»åƒã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã™ã‚‹ã‹ã€ã€ŒZIPã§ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã€ã‚’ä½¿ç”¨ã—ã¦ãã ã•ã„ã€‚",
+      "optionsTitle": "è¨­å®š",
+      "format": "å‡ºåŠ›å½¢å¼",
+      "minSize": "æœ€å°ã‚µã‚¤ã‚º (px)"
     },
     "encryptPdf": {
       "uploadLabel": "Upload PDF File",
       "uploadDescription": "Drag and drop a PDF file here, or click to browse.",
       "passwordTitle": "Password Settings",
-      "privacyNotice": "🔒 Your passwords are processed locally and never sent to any server.",
+      "privacyNotice": "ðŸ”’ Your passwords are processed locally and never sent to any server.",
       "userPasswordLabel": "User Password (to open document)",
       "userPasswordPlaceholder": "Enter password to open PDF",
       "userPasswordHint": "Required to open and view the PDF.",
@@ -1063,7 +1063,7 @@
       "uploadLabel": "Upload PDF File",
       "uploadDescription": "Drag and drop an encrypted PDF file.",
       "passwordTitle": "Enter Password",
-      "privacyNotice": "🔒 Your password is processed locally and never sent to any server.",
+      "privacyNotice": "ðŸ”’ Your password is processed locally and never sent to any server.",
       "passwordLabel": "PDF Password",
       "passwordPlaceholder": "Enter the PDF password",
       "passwordHint": "Leave empty if the PDF only has owner password restrictions.",
@@ -1082,9 +1082,9 @@
       "rotateButton": "Rotate PDF",
       "successMessage": "PDF pages rotated successfully! Click the download button to save your file.",
       "angle": "Angle",
-      "rotateRight": "Rotate Right 90°",
-      "rotateLeft": "Rotate Left 90°",
-      "rotate180": "Rotate 180°",
+      "rotateRight": "Rotate Right 90Â°",
+      "rotateLeft": "Rotate Left 90Â°",
+      "rotate180": "Rotate 180Â°",
       "applyTo": "Apply to",
       "allPages": "All Pages",
       "oddPages": "Odd Pages",
@@ -1111,10 +1111,10 @@
       "pageSize": "Page Size",
       "addButton": "Add Blank Pages",
       "successMessage": "Blank pages added successfully! Click the download button to save your file.",
-      "positionStart": "ドキュメントの先頭",
-      "positionEnd": "ドキュメントの末尾",
-      "positionAfterEach": "各ページの直後",
-      "matchSource": "元のファイルに合わせる"
+      "positionStart": "ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã®å…ˆé ­",
+      "positionEnd": "ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã®æœ«å°¾",
+      "positionAfterEach": "å„ãƒšãƒ¼ã‚¸ã®ç›´å¾Œ",
+      "matchSource": "å…ƒã®ãƒ•ã‚¡ã‚¤ãƒ«ã«åˆã‚ã›ã‚‹"
     },
     "reversePages": {
       "uploadLabel": "Upload PDF File",
@@ -1125,73 +1125,73 @@
       "successMessage": "Page order reversed successfully! Click the download button to save your file."
     },
     "nUpPdf": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをここにドラッグ＆ドロップするか、クリックして参照してください。",
-      "optionsTitle": "N-Upオプション",
-      "layout": "レイアウト",
-      "pagesPerSheet": "1シートあたりのページ数",
-      "pageSize": "出力ページサイズ",
-      "orientation": "向き",
-      "useMargins": "余白とガターを追加",
-      "addBorder": "ページの周りに枠線を追加",
-      "borderColor": "枠線の色",
-      "previewInfo": "{pages}ページが{sheets}シートに{perSheet}ページずつ配置されます。",
-      "layoutDirection": "レイアウト方向",
-      "layoutHorizontal": "横並び（左から右）",
-      "layoutVertical": "縦並び（上から下）",
-      "layoutHorizontalDesc": "ページは横に並べて配置されます（左から右）",
-      "layoutVerticalDesc": "ページは縦に積み重ねて配置されます（上から下）",
-      "customLayout": "カスタム...",
-      "columns": "列",
-      "rows": "行",
-      "layoutPreview": "レイアウトプレビュー",
-      "gridLayoutInfo": "グリッド: {cols} × {rows} ({perSheet}ページ/シート)",
-      "readingOrder": "読み順",
-      "topToBottom": "↓ 上から下へ",
-      "leftToRight": "→ 左から右へ、次に↓下へ",
-      "createButton": "N-Up PDFを作成",
-      "createCustomButton": "{cols}×{rows} PDFを作成",
-      "gridLabel": "グリッドレイアウト",
-      "outputPages": "出力シート数",
-      "pagesLabel": "ページ",
-      "sheetsLabel": "シート",
-      "perSheetLabel": "ページ/シート",
-      "successMessage": "N-Up PDFが正常に作成されました！ダウンロードボタンをクリックしてファイルを保存してください。"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦å‚ç…§ã—ã¦ãã ã•ã„ã€‚",
+      "optionsTitle": "N-Upã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "layout": "ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆ",
+      "pagesPerSheet": "1ã‚·ãƒ¼ãƒˆã‚ãŸã‚Šã®ãƒšãƒ¼ã‚¸æ•°",
+      "pageSize": "å‡ºåŠ›ãƒšãƒ¼ã‚¸ã‚µã‚¤ã‚º",
+      "orientation": "å‘ã",
+      "useMargins": "ä½™ç™½ã¨ã‚¬ã‚¿ãƒ¼ã‚’è¿½åŠ ",
+      "addBorder": "ãƒšãƒ¼ã‚¸ã®å‘¨ã‚Šã«æž ç·šã‚’è¿½åŠ ",
+      "borderColor": "æž ç·šã®è‰²",
+      "previewInfo": "{pages}ãƒšãƒ¼ã‚¸ãŒ{sheets}ã‚·ãƒ¼ãƒˆã«{perSheet}ãƒšãƒ¼ã‚¸ãšã¤é…ç½®ã•ã‚Œã¾ã™ã€‚",
+      "layoutDirection": "ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆæ–¹å‘",
+      "layoutHorizontal": "æ¨ªä¸¦ã³ï¼ˆå·¦ã‹ã‚‰å³ï¼‰",
+      "layoutVertical": "ç¸¦ä¸¦ã³ï¼ˆä¸Šã‹ã‚‰ä¸‹ï¼‰",
+      "layoutHorizontalDesc": "ãƒšãƒ¼ã‚¸ã¯æ¨ªã«ä¸¦ã¹ã¦é…ç½®ã•ã‚Œã¾ã™ï¼ˆå·¦ã‹ã‚‰å³ï¼‰",
+      "layoutVerticalDesc": "ãƒšãƒ¼ã‚¸ã¯ç¸¦ã«ç©ã¿é‡ã­ã¦é…ç½®ã•ã‚Œã¾ã™ï¼ˆä¸Šã‹ã‚‰ä¸‹ï¼‰",
+      "customLayout": "ã‚«ã‚¹ã‚¿ãƒ ...",
+      "columns": "åˆ—",
+      "rows": "è¡Œ",
+      "layoutPreview": "ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼",
+      "gridLayoutInfo": "ã‚°ãƒªãƒƒãƒ‰: {cols} Ã— {rows} ({perSheet}ãƒšãƒ¼ã‚¸/ã‚·ãƒ¼ãƒˆ)",
+      "readingOrder": "èª­ã¿é †",
+      "topToBottom": "â†“ ä¸Šã‹ã‚‰ä¸‹ã¸",
+      "leftToRight": "â†’ å·¦ã‹ã‚‰å³ã¸ã€æ¬¡ã«â†“ä¸‹ã¸",
+      "createButton": "N-Up PDFã‚’ä½œæˆ",
+      "createCustomButton": "{cols}Ã—{rows} PDFã‚’ä½œæˆ",
+      "gridLabel": "ã‚°ãƒªãƒƒãƒ‰ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆ",
+      "outputPages": "å‡ºåŠ›ã‚·ãƒ¼ãƒˆæ•°",
+      "pagesLabel": "ãƒšãƒ¼ã‚¸",
+      "sheetsLabel": "ã‚·ãƒ¼ãƒˆ",
+      "perSheetLabel": "ãƒšãƒ¼ã‚¸/ã‚·ãƒ¼ãƒˆ",
+      "successMessage": "N-Up PDFãŒæ­£å¸¸ã«ä½œæˆã•ã‚Œã¾ã—ãŸï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¿å­˜ã—ã¦ãã ã•ã„ã€‚"
     },
     "gridCombine": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "複数のPDFファイルをここにドラッグ＆ドロップしてください。",
-      "filesTitle": "結合するファイル",
-      "reorderHint": "ドラッグ＆ドロップで並べ替え。",
-      "optionsTitle": "レイアウトオプション",
-      "gridLayout": "グリッドレイアウト",
-      "pageSize": "ページサイズ",
-      "orientation": "向き",
-      "spacing": "間隔",
-      "useMargins": "マージンを追加",
-      "addBorder": "枠線を追加",
-      "borderColor": "枠線の色",
-      "combineButton": "PDFを結合",
-      "successMessage": "PDFが正常に結合されました！ダウンロードボタンをクリックして保存してください。",
-      "layoutPreview": "レイアウトプレビュー",
-      "columns": "列",
-      "rows": "行",
-      "pageMode": "ページモード",
-      "firstPageOnly": "最初のページのみ",
-      "allPages": "すべてのページ",
-      "firstPageOnlyHint": "各PDFの最初のページのみを使用します。",
-      "allPagesHint": "各PDFのすべてのページをグリッドに含めます。",
-      "fillMode": "埋め込みモード",
-      "leaveEmpty": "セルを空のままにする",
-      "repeat": "最初から繰り返す",
-      "stretchLast": "最後のページを繰り返す",
-      "fillModeHint": "セルの数よりファイルが少ない場合の空セルの処理。",
-      "cells": "セル",
-      "page": "ページ",
-      "pages": "ページ",
-      "previewInfoAllPages": "{fileCount}個のPDF（合計{totalPages}ページ）が、{outputPages}ページの{layout}グリッドに配置されます。",
-      "previewInfoFirstPage": "{fileCount}個のPDFが、{outputPages}ページの{layout}グリッドに配置されます。",
-      "minFilesError": "結合するには少なくとも2つのPDFファイルを追加してください。"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "è¤‡æ•°ã®PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦ãã ã•ã„ã€‚",
+      "filesTitle": "çµåˆã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«",
+      "reorderHint": "ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã§ä¸¦ã¹æ›¿ãˆã€‚",
+      "optionsTitle": "ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "gridLayout": "ã‚°ãƒªãƒƒãƒ‰ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆ",
+      "pageSize": "ãƒšãƒ¼ã‚¸ã‚µã‚¤ã‚º",
+      "orientation": "å‘ã",
+      "spacing": "é–“éš”",
+      "useMargins": "ãƒžãƒ¼ã‚¸ãƒ³ã‚’è¿½åŠ ",
+      "addBorder": "æž ç·šã‚’è¿½åŠ ",
+      "borderColor": "æž ç·šã®è‰²",
+      "combineButton": "PDFã‚’çµåˆ",
+      "successMessage": "PDFãŒæ­£å¸¸ã«çµåˆã•ã‚Œã¾ã—ãŸï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ä¿å­˜ã—ã¦ãã ã•ã„ã€‚",
+      "layoutPreview": "ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼",
+      "columns": "åˆ—",
+      "rows": "è¡Œ",
+      "pageMode": "ãƒšãƒ¼ã‚¸ãƒ¢ãƒ¼ãƒ‰",
+      "firstPageOnly": "æœ€åˆã®ãƒšãƒ¼ã‚¸ã®ã¿",
+      "allPages": "ã™ã¹ã¦ã®ãƒšãƒ¼ã‚¸",
+      "firstPageOnlyHint": "å„PDFã®æœ€åˆã®ãƒšãƒ¼ã‚¸ã®ã¿ã‚’ä½¿ç”¨ã—ã¾ã™ã€‚",
+      "allPagesHint": "å„PDFã®ã™ã¹ã¦ã®ãƒšãƒ¼ã‚¸ã‚’ã‚°ãƒªãƒƒãƒ‰ã«å«ã‚ã¾ã™ã€‚",
+      "fillMode": "åŸ‹ã‚è¾¼ã¿ãƒ¢ãƒ¼ãƒ‰",
+      "leaveEmpty": "ã‚»ãƒ«ã‚’ç©ºã®ã¾ã¾ã«ã™ã‚‹",
+      "repeat": "æœ€åˆã‹ã‚‰ç¹°ã‚Šè¿”ã™",
+      "stretchLast": "æœ€å¾Œã®ãƒšãƒ¼ã‚¸ã‚’ç¹°ã‚Šè¿”ã™",
+      "fillModeHint": "ã‚»ãƒ«ã®æ•°ã‚ˆã‚Šãƒ•ã‚¡ã‚¤ãƒ«ãŒå°‘ãªã„å ´åˆã®ç©ºã‚»ãƒ«ã®å‡¦ç†ã€‚",
+      "cells": "ã‚»ãƒ«",
+      "page": "ãƒšãƒ¼ã‚¸",
+      "pages": "ãƒšãƒ¼ã‚¸",
+      "previewInfoAllPages": "{fileCount}å€‹ã®PDFï¼ˆåˆè¨ˆ{totalPages}ãƒšãƒ¼ã‚¸ï¼‰ãŒã€{outputPages}ãƒšãƒ¼ã‚¸ã®{layout}ã‚°ãƒªãƒƒãƒ‰ã«é…ç½®ã•ã‚Œã¾ã™ã€‚",
+      "previewInfoFirstPage": "{fileCount}å€‹ã®PDFãŒã€{outputPages}ãƒšãƒ¼ã‚¸ã®{layout}ã‚°ãƒªãƒƒãƒ‰ã«é…ç½®ã•ã‚Œã¾ã™ã€‚",
+      "minFilesError": "çµåˆã™ã‚‹ã«ã¯å°‘ãªãã¨ã‚‚2ã¤ã®PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„ã€‚"
     },
     "alternateMerge": {
       "uploadLabel": "Upload PDF Files",
@@ -1344,44 +1344,44 @@
       "successMessage": "JSON converted to PDF successfully!"
     },
     "pdfToImage": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "変換するPDFファイルをドラッグ＆ドロップしてください。",
-      "optionsTitle": "変換オプション",
-      "format": "画像形式",
-      "quality": "品質",
-      "dpi": "解像度 (DPI)",
-      "resolution": "解像度",
-      "pageRange": "ページ範囲",
-      "pageRangePlaceholder": "例: 1-3, 5, 7",
-      "pageRangeHint": "すべてのページの場合は空のままにします",
-      "layoutTitle": "ページレイアウト",
-      "customLayout": "カスタム",
-      "columns": "列数",
-      "rows": "行数",
-      "skipFirstPage": "表紙なし",
-      "skipFirstPageHint": "最初のページ（表紙）は別の画像としてレンダリングされます",
-      "layoutPreview": "レイアウトプレビュー",
-      "pagesPerImage": "ページ/画像",
-      "layoutHint": "選択したグリッドレイアウトで複数のPDFページを1つの画像に結合します。",
-      "convertButton": "画像に変換",
-      "downloadZip": "ZIPとしてすべてダウンロード",
-      "previewTitle": "変換された画像",
-      "successMessage": "PDFが正常に画像に変換されました！"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "å¤‰æ›ã™ã‚‹PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦ãã ã•ã„ã€‚",
+      "optionsTitle": "å¤‰æ›ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "format": "ç”»åƒå½¢å¼",
+      "quality": "å“è³ª",
+      "dpi": "è§£åƒåº¦ (DPI)",
+      "resolution": "è§£åƒåº¦",
+      "pageRange": "ãƒšãƒ¼ã‚¸ç¯„å›²",
+      "pageRangePlaceholder": "ä¾‹: 1-3, 5, 7",
+      "pageRangeHint": "ã™ã¹ã¦ã®ãƒšãƒ¼ã‚¸ã®å ´åˆã¯ç©ºã®ã¾ã¾ã«ã—ã¾ã™",
+      "layoutTitle": "ãƒšãƒ¼ã‚¸ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆ",
+      "customLayout": "ã‚«ã‚¹ã‚¿ãƒ ",
+      "columns": "åˆ—æ•°",
+      "rows": "è¡Œæ•°",
+      "skipFirstPage": "è¡¨ç´™ãªã—",
+      "skipFirstPageHint": "æœ€åˆã®ãƒšãƒ¼ã‚¸ï¼ˆè¡¨ç´™ï¼‰ã¯åˆ¥ã®ç”»åƒã¨ã—ã¦ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã•ã‚Œã¾ã™",
+      "layoutPreview": "ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼",
+      "pagesPerImage": "ãƒšãƒ¼ã‚¸/ç”»åƒ",
+      "layoutHint": "é¸æŠžã—ãŸã‚°ãƒªãƒƒãƒ‰ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã§è¤‡æ•°ã®PDFãƒšãƒ¼ã‚¸ã‚’1ã¤ã®ç”»åƒã«çµåˆã—ã¾ã™ã€‚",
+      "convertButton": "ç”»åƒã«å¤‰æ›",
+      "downloadZip": "ZIPã¨ã—ã¦ã™ã¹ã¦ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰",
+      "previewTitle": "å¤‰æ›ã•ã‚ŒãŸç”»åƒ",
+      "successMessage": "PDFãŒæ­£å¸¸ã«ç”»åƒã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼"
     },
     "pdfToSvg": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをドラッグ＆ドロップしてSVGに変換します。",
-      "optionsTitle": "変換オプション",
-      "resolution": "解像度",
-      "resolutionHint": "解像度が高いほど、SVGファイルのサイズが大きくなり、詳細になります。",
-      "pageRange": "ページ範囲",
-      "pageRangePlaceholder": "例: 1-3, 5, 7",
-      "pageRangeHint": "すべてのページの場合は空のままにします",
-      "convertButton": "SVGに変換",
-      "downloadZip": "ZIPとしてすべてダウンロード",
-      "previewTitle": "変換されたSVG",
-      "previewPage": "ページ",
-      "successMessage": "PDFが正常にSVGに変換されました！サムネイルをクリックしてプレビューするか、個別のファイルをダウンロードしてください。"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦SVGã«å¤‰æ›ã—ã¾ã™ã€‚",
+      "optionsTitle": "å¤‰æ›ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "resolution": "è§£åƒåº¦",
+      "resolutionHint": "è§£åƒåº¦ãŒé«˜ã„ã»ã©ã€SVGãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚µã‚¤ã‚ºãŒå¤§ãããªã‚Šã€è©³ç´°ã«ãªã‚Šã¾ã™ã€‚",
+      "pageRange": "ãƒšãƒ¼ã‚¸ç¯„å›²",
+      "pageRangePlaceholder": "ä¾‹: 1-3, 5, 7",
+      "pageRangeHint": "ã™ã¹ã¦ã®ãƒšãƒ¼ã‚¸ã®å ´åˆã¯ç©ºã®ã¾ã¾ã«ã—ã¾ã™",
+      "convertButton": "SVGã«å¤‰æ›",
+      "downloadZip": "ZIPã¨ã—ã¦ã™ã¹ã¦ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰",
+      "previewTitle": "å¤‰æ›ã•ã‚ŒãŸSVG",
+      "previewPage": "ãƒšãƒ¼ã‚¸",
+      "successMessage": "PDFãŒæ­£å¸¸ã«SVGã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼ã‚µãƒ ãƒã‚¤ãƒ«ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã™ã‚‹ã‹ã€å€‹åˆ¥ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ã¦ãã ã•ã„ã€‚"
     },
     "pdfToGreyscale": {
       "uploadLabel": "Upload PDF File",
@@ -1515,9 +1515,9 @@
       "uploadDescription": "Drag and drop a PDF file to flatten.",
       "flattenButton": "Flatten PDF",
       "successMessage": "PDF flattened successfully!",
-      "optionsTitle": "フラット化オプション",
-      "flattenForms": "フォームフィールドをフラット化",
-      "flattenAnnotations": "注釈をフラット化"
+      "optionsTitle": "ãƒ•ãƒ©ãƒƒãƒˆåŒ–ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "flattenForms": "ãƒ•ã‚©ãƒ¼ãƒ ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’ãƒ•ãƒ©ãƒƒãƒˆåŒ–",
+      "flattenAnnotations": "æ³¨é‡ˆã‚’ãƒ•ãƒ©ãƒƒãƒˆåŒ–"
     },
     "removeMetadata": {
       "uploadLabel": "Upload PDF File",
@@ -1543,7 +1543,7 @@
       "uploadDescription": "Drag and drop a PDF file here, or click to browse.",
       "optionsTitle": "Document Permissions",
       "passwordTitle": "Password Settings",
-      "privacyNotice": "🔒 Your passwords are processed locally and never sent to any server.",
+      "privacyNotice": "ðŸ”’ Your passwords are processed locally and never sent to any server.",
       "currentPasswordLabel": "Current Password (if PDF is encrypted)",
       "currentPasswordPlaceholder": "Enter current password",
       "currentPasswordHint": "Required if the PDF is already password-protected.",
@@ -1610,56 +1610,56 @@
       "bookmarksTitle": "Bookmarks",
       "addBookmark": "Add Bookmark",
       "noBookmarks": "No bookmarks yet. Click 'Add Bookmark' to create one.",
-      "hint": "Click a bookmark to preview its page. Use +/✎/× to add child, edit, or delete.",
+      "hint": "Click a bookmark to preview its page. Use +/âœŽ/Ã— to add child, edit, or delete.",
       "saveButton": "Save Bookmarks",
       "successMessage": "Bookmarks saved successfully!"
     },
     "pageNumbers": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをドラッグ＆ドロップ。",
-      "optionsTitle": "ページ番号オプション",
-      "positionTitle": "位置",
-      "formatTitle": "形式",
-      "formatNumber": "数字 (1, 2, 3)",
-      "formatRoman": "ローマ数字 (I, II, III)",
-      "formatPageOfTotal": "X / Y ページ",
-      "styleTitle": "スタイル",
-      "style": "スタイル",
-      "startNumber": "開始番号",
-      "customFormat": "カスタム形式",
-      "customFormatHint": "{page} と {total} をプレースホルダーとして使用",
-      "prefix": "接頭辞",
-      "suffix": "接尾辞",
-      "fontSize": "フォントサイズ",
-      "margin": "余白",
-      "color": "色",
-      "skipFirstPage": "最初のページをスキップ（表紙）",
-      "preview": "プレビュー",
-      "pageOf": "{current} / {total} ページ",
-      "firstPageSkipped": "最初のページはスキップされます",
-      "previewText": "プレビュー：「{text}」",
-      "addButton": "ページ番号を追加",
-      "successMessage": "ページ番号が正常に追加されました！",
-      "zoomIn": "拡大",
-      "zoomOut": "縮小",
-      "zoomReset": "ズームをリセット",
-      "oddEvenTitle": "奇数/偶数ページ設定",
-      "pageMode": "ページモード",
-      "modeAll": "すべてのページ",
-      "modeOddOnly": "奇数ページのみ（1, 3, 5...）",
-      "modeEvenOnly": "偶数ページのみ（2, 4, 6...）",
-      "modeDifferent": "奇数/偶数で異なる位置",
-      "oddPosition": "奇数ページの位置",
-      "evenPosition": "偶数ページの位置",
-      "oddPositionHint": "1、3、5...ページ",
-      "evenPositionHint": "2、4、6...ページ",
-      "differentModeHint": "このモードは、各ページの外側端にページ番号を配置したい両面印刷に便利です。",
-      "posBottomLeft": "左下",
-      "posBottomCenter": "下中央",
-      "posBottomRight": "右下",
-      "posTopLeft": "左上",
-      "posTopCenter": "上中央",
-      "posTopRight": "右上"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã€‚",
+      "optionsTitle": "ãƒšãƒ¼ã‚¸ç•ªå·ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "positionTitle": "ä½ç½®",
+      "formatTitle": "å½¢å¼",
+      "formatNumber": "æ•°å­— (1, 2, 3)",
+      "formatRoman": "ãƒ­ãƒ¼ãƒžæ•°å­— (I, II, III)",
+      "formatPageOfTotal": "X / Y ãƒšãƒ¼ã‚¸",
+      "styleTitle": "ã‚¹ã‚¿ã‚¤ãƒ«",
+      "style": "ã‚¹ã‚¿ã‚¤ãƒ«",
+      "startNumber": "é–‹å§‹ç•ªå·",
+      "customFormat": "ã‚«ã‚¹ã‚¿ãƒ å½¢å¼",
+      "customFormatHint": "{page} ã¨ {total} ã‚’ãƒ—ãƒ¬ãƒ¼ã‚¹ãƒ›ãƒ«ãƒ€ãƒ¼ã¨ã—ã¦ä½¿ç”¨",
+      "prefix": "æŽ¥é ­è¾ž",
+      "suffix": "æŽ¥å°¾è¾ž",
+      "fontSize": "ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º",
+      "margin": "ä½™ç™½",
+      "color": "è‰²",
+      "skipFirstPage": "æœ€åˆã®ãƒšãƒ¼ã‚¸ã‚’ã‚¹ã‚­ãƒƒãƒ—ï¼ˆè¡¨ç´™ï¼‰",
+      "preview": "ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼",
+      "pageOf": "{current} / {total} ãƒšãƒ¼ã‚¸",
+      "firstPageSkipped": "æœ€åˆã®ãƒšãƒ¼ã‚¸ã¯ã‚¹ã‚­ãƒƒãƒ—ã•ã‚Œã¾ã™",
+      "previewText": "ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ï¼šã€Œ{text}ã€",
+      "addButton": "ãƒšãƒ¼ã‚¸ç•ªå·ã‚’è¿½åŠ ",
+      "successMessage": "ãƒšãƒ¼ã‚¸ç•ªå·ãŒæ­£å¸¸ã«è¿½åŠ ã•ã‚Œã¾ã—ãŸï¼",
+      "zoomIn": "æ‹¡å¤§",
+      "zoomOut": "ç¸®å°",
+      "zoomReset": "ã‚ºãƒ¼ãƒ ã‚’ãƒªã‚»ãƒƒãƒˆ",
+      "oddEvenTitle": "å¥‡æ•°/å¶æ•°ãƒšãƒ¼ã‚¸è¨­å®š",
+      "pageMode": "ãƒšãƒ¼ã‚¸ãƒ¢ãƒ¼ãƒ‰",
+      "modeAll": "ã™ã¹ã¦ã®ãƒšãƒ¼ã‚¸",
+      "modeOddOnly": "å¥‡æ•°ãƒšãƒ¼ã‚¸ã®ã¿ï¼ˆ1, 3, 5...ï¼‰",
+      "modeEvenOnly": "å¶æ•°ãƒšãƒ¼ã‚¸ã®ã¿ï¼ˆ2, 4, 6...ï¼‰",
+      "modeDifferent": "å¥‡æ•°/å¶æ•°ã§ç•°ãªã‚‹ä½ç½®",
+      "oddPosition": "å¥‡æ•°ãƒšãƒ¼ã‚¸ã®ä½ç½®",
+      "evenPosition": "å¶æ•°ãƒšãƒ¼ã‚¸ã®ä½ç½®",
+      "oddPositionHint": "1ã€3ã€5...ãƒšãƒ¼ã‚¸",
+      "evenPositionHint": "2ã€4ã€6...ãƒšãƒ¼ã‚¸",
+      "differentModeHint": "ã“ã®ãƒ¢ãƒ¼ãƒ‰ã¯ã€å„ãƒšãƒ¼ã‚¸ã®å¤–å´ç«¯ã«ãƒšãƒ¼ã‚¸ç•ªå·ã‚’é…ç½®ã—ãŸã„ä¸¡é¢å°åˆ·ã«ä¾¿åˆ©ã§ã™ã€‚",
+      "posBottomLeft": "å·¦ä¸‹",
+      "posBottomCenter": "ä¸‹ä¸­å¤®",
+      "posBottomRight": "å³ä¸‹",
+      "posTopLeft": "å·¦ä¸Š",
+      "posTopCenter": "ä¸Šä¸­å¤®",
+      "posTopRight": "å³ä¸Š"
     },
     "watermark": {
       "uploadLabel": "Upload PDF File",
@@ -1679,19 +1679,19 @@
       "failed": "Failed to add watermark.",
       "addButton": "Add Watermark",
       "successMessage": "Watermark added successfully!",
-      "repeatTitle": "透かし繰り返し",
-      "repeatEnable": "ページ全体に透かしをタイル配置",
-      "repeatSpacingX": "水平間隔",
-      "repeatSpacingY": "垂直間隔",
-      "type": "タイプ",
-      "position": "位置",
-      "posCenter": "中央",
-      "posDiagonal": "対角線",
-      "posTopLeft": "左上",
-      "posTopRight": "右上",
-      "posBottomLeft": "左下",
-      "posBottomRight": "右下",
-      "textPlaceholder": "例: CONFIDENTIAL"
+      "repeatTitle": "é€ã‹ã—ç¹°ã‚Šè¿”ã—",
+      "repeatEnable": "ãƒšãƒ¼ã‚¸å…¨ä½“ã«é€ã‹ã—ã‚’ã‚¿ã‚¤ãƒ«é…ç½®",
+      "repeatSpacingX": "æ°´å¹³é–“éš”",
+      "repeatSpacingY": "åž‚ç›´é–“éš”",
+      "type": "ã‚¿ã‚¤ãƒ—",
+      "position": "ä½ç½®",
+      "posCenter": "ä¸­å¤®",
+      "posDiagonal": "å¯¾è§’ç·š",
+      "posTopLeft": "å·¦ä¸Š",
+      "posTopRight": "å³ä¸Š",
+      "posBottomLeft": "å·¦ä¸‹",
+      "posBottomRight": "å³ä¸‹",
+      "textPlaceholder": "ä¾‹: CONFIDENTIAL"
     },
     "headerFooter": {
       "uploadLabel": "Upload PDF File",
@@ -1703,12 +1703,12 @@
       "previewHint": "Enter header or footer text to see preview",
       "addButton": "Add Header & Footer",
       "successMessage": "Header & footer added successfully!",
-      "headerText": "ヘッダーテキスト",
-      "headerTextPlaceholder": "ヘッダーテキストを入力...",
-      "footerText": "フッターテキスト",
-      "footerTextPlaceholder": "フッターテキストを入力...",
-      "fontSize": "フォントサイズ",
-      "fontColor": "フォントの色"
+      "headerText": "ãƒ˜ãƒƒãƒ€ãƒ¼ãƒ†ã‚­ã‚¹ãƒˆ",
+      "headerTextPlaceholder": "ãƒ˜ãƒƒãƒ€ãƒ¼ãƒ†ã‚­ã‚¹ãƒˆã‚’å…¥åŠ›...",
+      "footerText": "ãƒ•ãƒƒã‚¿ãƒ¼ãƒ†ã‚­ã‚¹ãƒˆ",
+      "footerTextPlaceholder": "ãƒ•ãƒƒã‚¿ãƒ¼ãƒ†ã‚­ã‚¹ãƒˆã‚’å…¥åŠ›...",
+      "fontSize": "ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º",
+      "fontColor": "ãƒ•ã‚©ãƒ³ãƒˆã®è‰²"
     },
     "invertColors": {
       "uploadLabel": "Upload PDF File",
@@ -1755,9 +1755,9 @@
       "optionsTitle": "Removal Options",
       "removeButton": "Remove Annotations",
       "successMessage": "Annotations removed successfully!",
-      "removeComments": "コメントを削除",
-      "removeHighlights": "ハイライトを削除",
-      "removeLinks": "リンクを削除"
+      "removeComments": "ã‚³ãƒ¡ãƒ³ãƒˆã‚’å‰Šé™¤",
+      "removeHighlights": "ãƒã‚¤ãƒ©ã‚¤ãƒˆã‚’å‰Šé™¤",
+      "removeLinks": "ãƒªãƒ³ã‚¯ã‚’å‰Šé™¤"
     },
     "formFiller": {
       "uploadLabel": "Upload PDF File",
@@ -1766,112 +1766,112 @@
       "successMessage": "Form saved successfully!"
     },
     "formCreator": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをここにドラッグ＆ドロップしてください。",
-      "toolbarTitle": "ツールバー",
-      "selectTool": "選択",
-      "textFieldTool": "テキストフィールド",
-      "checkboxTool": "チェックボックス",
-      "dropdownTool": "ドロップダウン",
-      "radioTool": "ラジオボタン",
-      "deleteTool": "削除",
-      "pageNavigation": "ページ {current} / {total}",
-      "selectHint": "フィールドをクリックして選択、ドラッグで移動、角をドラッグでサイズ変更",
-      "addFieldHint": "PDFをクリックして{type}フィールドを追加",
-      "fieldProperties": "フィールドプロパティ",
-      "fieldName": "名前",
-      "fieldType": "タイプ",
-      "fieldX": "X座標",
-      "fieldY": "Y座標",
-      "fieldWidth": "幅",
-      "fieldHeight": "高さ",
-      "multiline": "複数行",
-      "options": "オプション（1行に1つ）",
-      "deleteField": "フィールドを削除",
-      "noFieldSelected": "フィールドを選択してプロパティを編集するか、ツールバーを使用して新しいフィールドを追加してください。",
-      "allFields": "すべてのフィールド ({count})",
-      "noFieldsYet": "まだフィールドがありません。PDFをクリックしてフォームフィールドを追加してください。",
-      "page": "ページ {number}",
-      "createButton": "フォームを作成",
-      "successMessage": "フォームが正常に作成されました！",
-      "createBlankPdfTitle": "空白PDFを作成",
-      "pageSize": "ページサイズ",
-      "pageCount": "ページ数",
-      "blankPdfNote": "フォームフィールドを追加するための空白PDFが作成されます。",
-      "addBlankPage": "空白ページを追加",
-      "addPageBefore": "現在のページの前",
-      "addPageAfter": "現在のページの後",
-      "addPageEnd": "最後に",
-      "templateHint": "またはテンプレートを選択して素早く開始",
-      "templates": "テンプレート",
-      "selectTemplate": "選択...",
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦ãã ã•ã„ã€‚",
+      "toolbarTitle": "ãƒ„ãƒ¼ãƒ«ãƒãƒ¼",
+      "selectTool": "é¸æŠž",
+      "textFieldTool": "ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰",
+      "checkboxTool": "ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹",
+      "dropdownTool": "ãƒ‰ãƒ­ãƒƒãƒ—ãƒ€ã‚¦ãƒ³",
+      "radioTool": "ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³",
+      "deleteTool": "å‰Šé™¤",
+      "pageNavigation": "ãƒšãƒ¼ã‚¸ {current} / {total}",
+      "selectHint": "ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦é¸æŠžã€ãƒ‰ãƒ©ãƒƒã‚°ã§ç§»å‹•ã€è§’ã‚’ãƒ‰ãƒ©ãƒƒã‚°ã§ã‚µã‚¤ã‚ºå¤‰æ›´",
+      "addFieldHint": "PDFã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦{type}ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’è¿½åŠ ",
+      "fieldProperties": "ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£",
+      "fieldName": "åå‰",
+      "fieldType": "ã‚¿ã‚¤ãƒ—",
+      "fieldX": "Xåº§æ¨™",
+      "fieldY": "Yåº§æ¨™",
+      "fieldWidth": "å¹…",
+      "fieldHeight": "é«˜ã•",
+      "multiline": "è¤‡æ•°è¡Œ",
+      "options": "ã‚ªãƒ—ã‚·ãƒ§ãƒ³ï¼ˆ1è¡Œã«1ã¤ï¼‰",
+      "deleteField": "ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’å‰Šé™¤",
+      "noFieldSelected": "ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’é¸æŠžã—ã¦ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚’ç·¨é›†ã™ã‚‹ã‹ã€ãƒ„ãƒ¼ãƒ«ãƒãƒ¼ã‚’ä½¿ç”¨ã—ã¦æ–°ã—ã„ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’è¿½åŠ ã—ã¦ãã ã•ã„ã€‚",
+      "allFields": "ã™ã¹ã¦ã®ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ ({count})",
+      "noFieldsYet": "ã¾ã ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ãŒã‚ã‚Šã¾ã›ã‚“ã€‚PDFã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ãƒ•ã‚©ãƒ¼ãƒ ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’è¿½åŠ ã—ã¦ãã ã•ã„ã€‚",
+      "page": "ãƒšãƒ¼ã‚¸ {number}",
+      "createButton": "ãƒ•ã‚©ãƒ¼ãƒ ã‚’ä½œæˆ",
+      "successMessage": "ãƒ•ã‚©ãƒ¼ãƒ ãŒæ­£å¸¸ã«ä½œæˆã•ã‚Œã¾ã—ãŸï¼",
+      "createBlankPdfTitle": "ç©ºç™½PDFã‚’ä½œæˆ",
+      "pageSize": "ãƒšãƒ¼ã‚¸ã‚µã‚¤ã‚º",
+      "pageCount": "ãƒšãƒ¼ã‚¸æ•°",
+      "blankPdfNote": "ãƒ•ã‚©ãƒ¼ãƒ ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’è¿½åŠ ã™ã‚‹ãŸã‚ã®ç©ºç™½PDFãŒä½œæˆã•ã‚Œã¾ã™ã€‚",
+      "addBlankPage": "ç©ºç™½ãƒšãƒ¼ã‚¸ã‚’è¿½åŠ ",
+      "addPageBefore": "ç¾åœ¨ã®ãƒšãƒ¼ã‚¸ã®å‰",
+      "addPageAfter": "ç¾åœ¨ã®ãƒšãƒ¼ã‚¸ã®å¾Œ",
+      "addPageEnd": "æœ€å¾Œã«",
+      "templateHint": "ã¾ãŸã¯ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚’é¸æŠžã—ã¦ç´ æ—©ãé–‹å§‹",
+      "templates": "ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ",
+      "selectTemplate": "é¸æŠž...",
       "template": {
-        "contact": "お問い合わせフォーム",
-        "registration": "登録フォーム",
-        "feedback": "フィードバック",
-        "order": "注文フォーム",
-        "consent": "同意書",
-        "invoice": "請求書"
+        "contact": "ãŠå•ã„åˆã‚ã›ãƒ•ã‚©ãƒ¼ãƒ ",
+        "registration": "ç™»éŒ²ãƒ•ã‚©ãƒ¼ãƒ ",
+        "feedback": "ãƒ•ã‚£ãƒ¼ãƒ‰ãƒãƒƒã‚¯",
+        "order": "æ³¨æ–‡ãƒ•ã‚©ãƒ¼ãƒ ",
+        "consent": "åŒæ„æ›¸",
+        "invoice": "è«‹æ±‚æ›¸"
       },
-      "fieldLabel": "ラベル",
-      "fieldLabelPlaceholder": "ラベルテキストを入力...",
-      "labelPosition": "位置",
-      "labelAbove": "上",
-      "labelLeft": "左",
-      "formOptions": "フォームオプション",
-      "flattenForm": "フォームをフラット化",
-      "flattenFormHint": "フォームフィールドを編集不可にする（静的なコンテンツに変換）",
-      "projectManagement": "プロジェクト管理",
-      "saveProject": "プロジェクトを保存",
-      "savedProjects": "保存したプロジェクト",
-      "loadProject": "読み込む",
-      "deleteProject": "削除",
-      "saveProjectTitle": "プロジェクトを保存",
-      "projectName": "プロジェクト名",
-      "projectNamePlaceholder": "プロジェクト名を入力...",
-      "saveInfo": "{fields} 個のフォームフィールドが保存されます。",
-      "saveNote": "プロジェクトはブラウザにローカル保存されます。",
-      "undo": "元に戻す (Ctrl+Z)",
-      "redo": "やり直し (Ctrl+Y)",
-      "duplicate": "複製 (Ctrl+D)",
-      "align": "整列",
-      "alignLeft": "左揃え",
-      "alignCenter": "中央揃え",
-      "alignRight": "右揃え",
-      "alignTop": "上揃え",
-      "alignMiddle": "上下中央揃え",
-      "alignBottom": "下揃え",
-      "defaultValue": "デフォルト値",
-      "defaultValuePlaceholder": "デフォルトテキストを入力...",
-      "defaultChecked": "デフォルトでチェック",
-      "defaultSelection": "デフォルトの選択項目",
-      "noDefault": "-- なし --",
-      "required": "必須項目",
-      "shortcutsHint": "ショートカット: Ctrl+Z (戻る) | Ctrl+Y (進む) | Ctrl+D (複製) | Ctrl+A (全選択) | Delete (削除)",
-      "buttonTool": "ボタン",
-      "signatureTool": "署名",
-      "dateTool": "日付",
-      "listboxTool": "リストボックス",
-      "buttonLabel": "ボタンラベル",
-      "buttonLabelPlaceholder": "送信",
-      "signatureLabel": "署名ラベル",
-      "signatureLabelPlaceholder": "ここに署名",
-      "dateFormat": "日付形式",
-      "defaultDate": "デフォルトの日付",
-      "multiSelect": "複数選択を許可",
-      "basicTools": "基本",
-      "advancedTools": "詳細",
-      "properties": "プロパティ",
-      "fieldsTab": "フィールド",
-      "optionsTab": "オプション",
-      "addField": "追加",
-      "clickToAdd": "PDFをクリックしてフィールドを追加",
-      "pages": "ページ",
-      "processingButton": "処理中...",
-      "cancelButton": "キャンセル",
-      "saveButton": "保存",
-      "orCreateBlank": "または",
-      "createBlankPdf": "白紙のPDFを作成"
+      "fieldLabel": "ãƒ©ãƒ™ãƒ«",
+      "fieldLabelPlaceholder": "ãƒ©ãƒ™ãƒ«ãƒ†ã‚­ã‚¹ãƒˆã‚’å…¥åŠ›...",
+      "labelPosition": "ä½ç½®",
+      "labelAbove": "ä¸Š",
+      "labelLeft": "å·¦",
+      "formOptions": "ãƒ•ã‚©ãƒ¼ãƒ ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "flattenForm": "ãƒ•ã‚©ãƒ¼ãƒ ã‚’ãƒ•ãƒ©ãƒƒãƒˆåŒ–",
+      "flattenFormHint": "ãƒ•ã‚©ãƒ¼ãƒ ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’ç·¨é›†ä¸å¯ã«ã™ã‚‹ï¼ˆé™çš„ãªã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã«å¤‰æ›ï¼‰",
+      "projectManagement": "ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆç®¡ç†",
+      "saveProject": "ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã‚’ä¿å­˜",
+      "savedProjects": "ä¿å­˜ã—ãŸãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆ",
+      "loadProject": "èª­ã¿è¾¼ã‚€",
+      "deleteProject": "å‰Šé™¤",
+      "saveProjectTitle": "ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã‚’ä¿å­˜",
+      "projectName": "ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå",
+      "projectNamePlaceholder": "ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆåã‚’å…¥åŠ›...",
+      "saveInfo": "{fields} å€‹ã®ãƒ•ã‚©ãƒ¼ãƒ ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ãŒä¿å­˜ã•ã‚Œã¾ã™ã€‚",
+      "saveNote": "ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã¯ãƒ–ãƒ©ã‚¦ã‚¶ã«ãƒ­ãƒ¼ã‚«ãƒ«ä¿å­˜ã•ã‚Œã¾ã™ã€‚",
+      "undo": "å…ƒã«æˆ»ã™ (Ctrl+Z)",
+      "redo": "ã‚„ã‚Šç›´ã— (Ctrl+Y)",
+      "duplicate": "è¤‡è£½ (Ctrl+D)",
+      "align": "æ•´åˆ—",
+      "alignLeft": "å·¦æƒãˆ",
+      "alignCenter": "ä¸­å¤®æƒãˆ",
+      "alignRight": "å³æƒãˆ",
+      "alignTop": "ä¸Šæƒãˆ",
+      "alignMiddle": "ä¸Šä¸‹ä¸­å¤®æƒãˆ",
+      "alignBottom": "ä¸‹æƒãˆ",
+      "defaultValue": "ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤",
+      "defaultValuePlaceholder": "ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãƒ†ã‚­ã‚¹ãƒˆã‚’å…¥åŠ›...",
+      "defaultChecked": "ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ãƒã‚§ãƒƒã‚¯",
+      "defaultSelection": "ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®é¸æŠžé …ç›®",
+      "noDefault": "-- ãªã— --",
+      "required": "å¿…é ˆé …ç›®",
+      "shortcutsHint": "ã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆ: Ctrl+Z (æˆ»ã‚‹) | Ctrl+Y (é€²ã‚€) | Ctrl+D (è¤‡è£½) | Ctrl+A (å…¨é¸æŠž) | Delete (å‰Šé™¤)",
+      "buttonTool": "ãƒœã‚¿ãƒ³",
+      "signatureTool": "ç½²å",
+      "dateTool": "æ—¥ä»˜",
+      "listboxTool": "ãƒªã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹",
+      "buttonLabel": "ãƒœã‚¿ãƒ³ãƒ©ãƒ™ãƒ«",
+      "buttonLabelPlaceholder": "é€ä¿¡",
+      "signatureLabel": "ç½²åãƒ©ãƒ™ãƒ«",
+      "signatureLabelPlaceholder": "ã“ã“ã«ç½²å",
+      "dateFormat": "æ—¥ä»˜å½¢å¼",
+      "defaultDate": "ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®æ—¥ä»˜",
+      "multiSelect": "è¤‡æ•°é¸æŠžã‚’è¨±å¯",
+      "basicTools": "åŸºæœ¬",
+      "advancedTools": "è©³ç´°",
+      "properties": "ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£",
+      "fieldsTab": "ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰",
+      "optionsTab": "ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "addField": "è¿½åŠ ",
+      "clickToAdd": "PDFã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’è¿½åŠ ",
+      "pages": "ãƒšãƒ¼ã‚¸",
+      "processingButton": "å‡¦ç†ä¸­...",
+      "cancelButton": "ã‚­ãƒ£ãƒ³ã‚»ãƒ«",
+      "saveButton": "ä¿å­˜",
+      "orCreateBlank": "ã¾ãŸã¯",
+      "createBlankPdf": "ç™½ç´™ã®PDFã‚’ä½œæˆ"
     },
     "removeBlankPages": {
       "uploadLabel": "Upload PDF File",
@@ -1894,371 +1894,371 @@
       "bookmarkRequired": "This tool generates a clickable table of contents from existing PDF bookmarks. Please ensure your PDF has bookmarks before using this tool. You can add bookmarks using the Edit Bookmarks tool.",
       "generate": "Generate Table of Contents",
       "success": "Table of contents generated successfully!",
-      "tocTitlePlaceholder": "目次のタイトルを入力..."
+      "tocTitlePlaceholder": "ç›®æ¬¡ã®ã‚¿ã‚¤ãƒˆãƒ«ã‚’å…¥åŠ›..."
     },
     "pdfToDocx": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをここにドラッグ＆ドロップするか、クリックして参照してください。",
-      "convertButton": "DOCXに変換",
-      "successMessage": "PDFが正常にDOCXに変換されました！ダウンロードボタンをクリックして保存してください。"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦å‚ç…§ã—ã¦ãã ã•ã„ã€‚",
+      "convertButton": "DOCXã«å¤‰æ›",
+      "successMessage": "PDFãŒæ­£å¸¸ã«DOCXã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ä¿å­˜ã—ã¦ãã ã•ã„ã€‚"
     },
     "pdfToExcel": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをここにドラッグ＆ドロップするか、クリックして参照してください。",
-      "extractNote": "各ページの表はExcelファイルの個別のシートに抽出されます。",
-      "convertButton": "Excelに変換",
-      "successTitle": "変換成功！",
-      "successMessage": "PDFの表がExcelに抽出されました。"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦å‚ç…§ã—ã¦ãã ã•ã„ã€‚",
+      "extractNote": "å„ãƒšãƒ¼ã‚¸ã®è¡¨ã¯Excelãƒ•ã‚¡ã‚¤ãƒ«ã®å€‹åˆ¥ã®ã‚·ãƒ¼ãƒˆã«æŠ½å‡ºã•ã‚Œã¾ã™ã€‚",
+      "convertButton": "Excelã«å¤‰æ›",
+      "successTitle": "å¤‰æ›æˆåŠŸï¼",
+      "successMessage": "PDFã®è¡¨ãŒExcelã«æŠ½å‡ºã•ã‚Œã¾ã—ãŸã€‚"
     },
     "pdfToPptx": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをここにドラッグ＆ドロップするか、クリックして参照してください。",
-      "optionsTitle": "変換オプション",
-      "dpiLabel": "画像品質 (DPI)",
-      "dpiHint": "DPIが高いほどスライドの解像度は上がりますが、ファイルサイズは大きくなります。",
-      "lowSet": "低 (72 DPI - 軽量)",
-      "mediumSet": "中 (150 DPI - 標準)",
-      "highSet": "高 (200 DPI - 高画質)",
-      "veryHighSet": "最高 (300 DPI - 最高品質)",
-      "convertButton": "PowerPointに変換",
-      "successTitle": "変換成功！",
-      "successMessage": "PDFがPowerPointプレゼンテーションに変換されました。"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦å‚ç…§ã—ã¦ãã ã•ã„ã€‚",
+      "optionsTitle": "å¤‰æ›ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "dpiLabel": "ç”»åƒå“è³ª (DPI)",
+      "dpiHint": "DPIãŒé«˜ã„ã»ã©ã‚¹ãƒ©ã‚¤ãƒ‰ã®è§£åƒåº¦ã¯ä¸ŠãŒã‚Šã¾ã™ãŒã€ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºã¯å¤§ãããªã‚Šã¾ã™ã€‚",
+      "lowSet": "ä½Ž (72 DPI - è»½é‡)",
+      "mediumSet": "ä¸­ (150 DPI - æ¨™æº–)",
+      "highSet": "é«˜ (200 DPI - é«˜ç”»è³ª)",
+      "veryHighSet": "æœ€é«˜ (300 DPI - æœ€é«˜å“è³ª)",
+      "convertButton": "PowerPointã«å¤‰æ›",
+      "successTitle": "å¤‰æ›æˆåŠŸï¼",
+      "successMessage": "PDFãŒPowerPointãƒ—ãƒ¬ã‚¼ãƒ³ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã«å¤‰æ›ã•ã‚Œã¾ã—ãŸã€‚"
     },
     "wordToPdf": {
-      "uploadLabel": "Word文書をアップロード",
-      "uploadDescription": "Word文書(.docx)をここにドラッグ＆ドロップするか、クリックして選択してください。",
-      "convertButton": "PDFに変換",
-      "successMessage": "Word文書がPDFに正常に変換されました！"
+      "uploadLabel": "Wordæ–‡æ›¸ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "Wordæ–‡æ›¸(.docx)ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦é¸æŠžã—ã¦ãã ã•ã„ã€‚",
+      "convertButton": "PDFã«å¤‰æ›",
+      "successMessage": "Wordæ–‡æ›¸ãŒPDFã«æ­£å¸¸ã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼"
     },
     "psdToPdf": {
-      "uploadLabel": "PSDファイルをアップロード",
-      "uploadDescription": "PSD（Photoshop）ファイルをここにドラッグ＆ドロップするか、クリックして参照してください。",
-      "convertButton": "PDFに変換",
-      "successMessage": "PSDが正常にPDFに変換されました！ダウンロードボタンをクリックして保存してください。"
+      "uploadLabel": "PSDãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PSDï¼ˆPhotoshopï¼‰ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦å‚ç…§ã—ã¦ãã ã•ã„ã€‚",
+      "convertButton": "PDFã«å¤‰æ›",
+      "successMessage": "PSDãŒæ­£å¸¸ã«PDFã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ä¿å­˜ã—ã¦ãã ã•ã„ã€‚"
     },
     "excelToPdf": {
-      "uploadLabel": "Excelファイルをアップロード",
-      "uploadDescription": "Excelファイル(.xlsx)をここにドラッグ＆ドロップするか、クリックして選択してください。",
-      "convertButton": "PDFに変換",
-      "successMessage": "ExcelファイルがPDFに正常に変換されました！"
+      "uploadLabel": "Excelãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "Excelãƒ•ã‚¡ã‚¤ãƒ«(.xlsx)ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦é¸æŠžã—ã¦ãã ã•ã„ã€‚",
+      "convertButton": "PDFã«å¤‰æ›",
+      "successMessage": "Excelãƒ•ã‚¡ã‚¤ãƒ«ãŒPDFã«æ­£å¸¸ã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼"
     },
     "pptxToPdf": {
-      "uploadLabel": "PowerPointファイルをアップロード",
-      "uploadDescription": "PowerPointファイル(.pptx)をここにドラッグ＆ドロップするか、クリックして選択してください。",
-      "convertButton": "PDFに変換",
-      "successMessage": "PowerPointファイルがPDFに正常に変換されました！"
+      "uploadLabel": "PowerPointãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PowerPointãƒ•ã‚¡ã‚¤ãƒ«(.pptx)ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦é¸æŠžã—ã¦ãã ã•ã„ã€‚",
+      "convertButton": "PDFã«å¤‰æ›",
+      "successMessage": "PowerPointãƒ•ã‚¡ã‚¤ãƒ«ãŒPDFã«æ­£å¸¸ã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼"
     },
     "xpsToPdf": {
-      "uploadLabel": "XPSファイルをアップロード",
-      "uploadDescription": "XPSファイルをここにドラッグ＆ドロップするか、クリックして選択してください。",
-      "convertButton": "PDFに変換",
-      "successMessage": "XPSファイルがPDFに正常に変換されました！"
+      "uploadLabel": "XPSãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "XPSãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦é¸æŠžã—ã¦ãã ã•ã„ã€‚",
+      "convertButton": "PDFã«å¤‰æ›",
+      "successMessage": "XPSãƒ•ã‚¡ã‚¤ãƒ«ãŒPDFã«æ­£å¸¸ã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼"
     },
     "rtfToPdf": {
-      "uploadLabel": "RTFファイルをアップロード",
-      "uploadDescription": "RTFファイルをここにドラッグ＆ドロップするか、クリックして選択してください。",
-      "convertButton": "PDFに変換",
-      "successMessage": "RTFファイルがPDFに正常に変換されました！"
+      "uploadLabel": "RTFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "RTFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦é¸æŠžã—ã¦ãã ã•ã„ã€‚",
+      "convertButton": "PDFã«å¤‰æ›",
+      "successMessage": "RTFãƒ•ã‚¡ã‚¤ãƒ«ãŒPDFã«æ­£å¸¸ã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼"
     },
     "epubToPdf": {
-      "uploadLabel": "EPUBファイルをアップロード",
-      "uploadDescription": "EPUB電子書籍ファイルをここにドラッグ＆ドロップするか、クリックして選択してください。",
-      "convertButton": "PDFに変換",
-      "successMessage": "EPUBファイルがPDFに正常に変換されました！"
+      "uploadLabel": "EPUBãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "EPUBé›»å­æ›¸ç±ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦é¸æŠžã—ã¦ãã ã•ã„ã€‚",
+      "convertButton": "PDFã«å¤‰æ›",
+      "successMessage": "EPUBãƒ•ã‚¡ã‚¤ãƒ«ãŒPDFã«æ­£å¸¸ã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼"
     },
     "mobiToPdf": {
-      "uploadLabel": "MOBIファイルをアップロード",
-      "uploadDescription": "MOBI/AZW電子書籍ファイルをここにドラッグ＆ドロップするか、クリックして選択してください。",
-      "convertButton": "PDFに変換",
-      "successMessage": "MOBIファイルがPDFに正常に変換されました！"
+      "uploadLabel": "MOBIãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "MOBI/AZWé›»å­æ›¸ç±ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦é¸æŠžã—ã¦ãã ã•ã„ã€‚",
+      "convertButton": "PDFã«å¤‰æ›",
+      "successMessage": "MOBIãƒ•ã‚¡ã‚¤ãƒ«ãŒPDFã«æ­£å¸¸ã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼"
     },
     "fb2ToPdf": {
-      "uploadLabel": "FB2ファイルをアップロード",
-      "uploadDescription": "FB2電子書籍ファイルをここにドラッグ＆ドロップするか、クリックして選択してください。複数ファイル対応。",
-      "convertButton": "PDFに変換",
-      "successMessage": "FB2ファイルがPDFに正常に変換されました！"
+      "uploadLabel": "FB2ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "FB2é›»å­æ›¸ç±ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦é¸æŠžã—ã¦ãã ã•ã„ã€‚è¤‡æ•°ãƒ•ã‚¡ã‚¤ãƒ«å¯¾å¿œã€‚",
+      "convertButton": "PDFã«å¤‰æ›",
+      "successMessage": "FB2ãƒ•ã‚¡ã‚¤ãƒ«ãŒPDFã«æ­£å¸¸ã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼"
     },
     "djvuToPdf": {
-      "uploadLabel": "DJVUファイルをアップロード",
-      "uploadDescription": "DJVUファイルをここにドラッグ＆ドロップしてください。",
-      "optionsTitle": "変換オプション",
-      "dpiLabel": "出力DPI",
-      "dpiHint": "高DPI = ファイルサイズ大、品質向上",
-      "qualityLabel": "画像品質",
-      "qualityHint": "ページのJPEG圧縮品質",
-      "convertButton": "PDFに変換",
-      "successTitle": "変換成功！",
-      "successMessage": "DJVUファイルがPDFに正常に変換されました！"
+      "uploadLabel": "DJVUãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "DJVUãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦ãã ã•ã„ã€‚",
+      "optionsTitle": "å¤‰æ›ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "dpiLabel": "å‡ºåŠ›DPI",
+      "dpiHint": "é«˜DPI = ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºå¤§ã€å“è³ªå‘ä¸Š",
+      "qualityLabel": "ç”»åƒå“è³ª",
+      "qualityHint": "ãƒšãƒ¼ã‚¸ã®JPEGåœ§ç¸®å“è³ª",
+      "convertButton": "PDFã«å¤‰æ›",
+      "successTitle": "å¤‰æ›æˆåŠŸï¼",
+      "successMessage": "DJVUãƒ•ã‚¡ã‚¤ãƒ«ãŒPDFã«æ­£å¸¸ã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼"
     },
     "deskewPdf": {
-      "uploadLabel": "スキャンされたPDFファイルをアップロード",
-      "uploadDescription": "ここにPDFファイルをドラッグ＆ドロップしてください。一度に最大10ファイルまで処理できます。",
-      "filesTitle": "傾き補正するファイル",
-      "optionsTitle": "傾き補正オプション",
-      "thresholdLabel": "検出しきい値",
-      "thresholdDesc": "値が高いほど、より微妙な傾き角度を検出します。デフォルト：10",
-      "dpiLabel": "分析DPI",
-      "dpiDesc": "DPIが高いほど正確な検出が可能になりますが、時間がかかります。",
-      "processButton": "PDFの傾きを補正",
-      "downloadAllZip": "すべてをZIPでダウンロード",
-      "successMessage": "PDFファイルの傾き補正が正常に完了しました！"
+      "uploadLabel": "ã‚¹ã‚­ãƒ£ãƒ³ã•ã‚ŒãŸPDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "ã“ã“ã«PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦ãã ã•ã„ã€‚ä¸€åº¦ã«æœ€å¤§10ãƒ•ã‚¡ã‚¤ãƒ«ã¾ã§å‡¦ç†ã§ãã¾ã™ã€‚",
+      "filesTitle": "å‚¾ãè£œæ­£ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«",
+      "optionsTitle": "å‚¾ãè£œæ­£ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "thresholdLabel": "æ¤œå‡ºã—ãã„å€¤",
+      "thresholdDesc": "å€¤ãŒé«˜ã„ã»ã©ã€ã‚ˆã‚Šå¾®å¦™ãªå‚¾ãè§’åº¦ã‚’æ¤œå‡ºã—ã¾ã™ã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆï¼š10",
+      "dpiLabel": "åˆ†æžDPI",
+      "dpiDesc": "DPIãŒé«˜ã„ã»ã©æ­£ç¢ºãªæ¤œå‡ºãŒå¯èƒ½ã«ãªã‚Šã¾ã™ãŒã€æ™‚é–“ãŒã‹ã‹ã‚Šã¾ã™ã€‚",
+      "processButton": "PDFã®å‚¾ãã‚’è£œæ­£",
+      "downloadAllZip": "ã™ã¹ã¦ã‚’ZIPã§ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰",
+      "successMessage": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã®å‚¾ãè£œæ­£ãŒæ­£å¸¸ã«å®Œäº†ã—ã¾ã—ãŸï¼"
     },
     "pdfBooklet": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをドラッグ＆ドロップして小冊子レイアウトを作成します。",
-      "optionsTitle": "小冊子オプション",
-      "gridModeLabel": "グリッドモード",
-      "gridModeDesc": "小冊子の標準は1x2です。用紙を節約するには、より大きなグリッドを使用してください。",
-      "paperSizeLabel": "用紙サイズ",
-      "orientationLabel": "向き",
-      "rotationLabel": "ページの回転",
-      "paddingLabel": "パディング",
-      "previewLabel": "レイアウトプレビュー",
-      "previewDesc": "このプレビューは、各シートにページがどのように配置されるかを示します。",
-      "createButton": "小冊子を作成",
-      "successMessage": "小冊子が正常に作成されました！ダウンロードをクリックして保存してください。"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦å°å†Šå­ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã‚’ä½œæˆã—ã¾ã™ã€‚",
+      "optionsTitle": "å°å†Šå­ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "gridModeLabel": "ã‚°ãƒªãƒƒãƒ‰ãƒ¢ãƒ¼ãƒ‰",
+      "gridModeDesc": "å°å†Šå­ã®æ¨™æº–ã¯1x2ã§ã™ã€‚ç”¨ç´™ã‚’ç¯€ç´„ã™ã‚‹ã«ã¯ã€ã‚ˆã‚Šå¤§ããªã‚°ãƒªãƒƒãƒ‰ã‚’ä½¿ç”¨ã—ã¦ãã ã•ã„ã€‚",
+      "paperSizeLabel": "ç”¨ç´™ã‚µã‚¤ã‚º",
+      "orientationLabel": "å‘ã",
+      "rotationLabel": "ãƒšãƒ¼ã‚¸ã®å›žè»¢",
+      "paddingLabel": "ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°",
+      "previewLabel": "ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼",
+      "previewDesc": "ã“ã®ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã¯ã€å„ã‚·ãƒ¼ãƒˆã«ãƒšãƒ¼ã‚¸ãŒã©ã®ã‚ˆã†ã«é…ç½®ã•ã‚Œã‚‹ã‹ã‚’ç¤ºã—ã¾ã™ã€‚",
+      "createButton": "å°å†Šå­ã‚’ä½œæˆ",
+      "successMessage": "å°å†Šå­ãŒæ­£å¸¸ã«ä½œæˆã•ã‚Œã¾ã—ãŸï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ä¿å­˜ã—ã¦ãã ã•ã„ã€‚"
     },
     "rasterizePdf": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをドラッグ＆ドロップして画像または新しいPDFにラスタライズします。",
-      "optionsTitle": "出力オプション",
-      "dpiLabel": "解像度 (DPI)",
-      "formatLabel": "出力形式",
-      "qualityLabel": "品質",
-      "pageRangeLabel": "ページ範囲 (任意)",
-      "pageRangeDesc": "すべてのページを変換する場合は空のままにしてください。",
-      "bgColorLabel": "背景色",
-      "convertButton": "ラスタライズ",
-      "successMessage": "ラスタライズ完了！ダウンロードをクリックしてファイルを保存してください。"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦ç”»åƒã¾ãŸã¯æ–°ã—ã„PDFã«ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚ºã—ã¾ã™ã€‚",
+      "optionsTitle": "å‡ºåŠ›ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "dpiLabel": "è§£åƒåº¦ (DPI)",
+      "formatLabel": "å‡ºåŠ›å½¢å¼",
+      "qualityLabel": "å“è³ª",
+      "pageRangeLabel": "ãƒšãƒ¼ã‚¸ç¯„å›² (ä»»æ„)",
+      "pageRangeDesc": "ã™ã¹ã¦ã®ãƒšãƒ¼ã‚¸ã‚’å¤‰æ›ã™ã‚‹å ´åˆã¯ç©ºã®ã¾ã¾ã«ã—ã¦ãã ã•ã„ã€‚",
+      "bgColorLabel": "èƒŒæ™¯è‰²",
+      "convertButton": "ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚º",
+      "successMessage": "ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚ºå®Œäº†ï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¿å­˜ã—ã¦ãã ã•ã„ã€‚"
     },
     "markdownToPdf": {
-      "uploadLabel": "Markdownファイルをアップロード",
-      "uploadDescription": ".mdまたは.markdownファイルをドラッグ＆ドロップしてPDFに変換します。",
-      "manualInput": "Markdownを書く",
-      "uploadFile": "ファイルをアップロード",
-      "editorLabel": "Markdownエディタ",
-      "previewLabel": "プレビュー",
-      "showPreview": "プレビューを表示",
-      "hidePreview": "プレビューを非表示",
-      "optionsTitle": "変換オプション",
-      "themeLabel": "テーマ",
-      "pageSizeLabel": "ページサイズ",
-      "gfmLabel": "GitHub Flavored Markdownを有効にする（テーブル、タスクリストなど）",
-      "syntaxHighlightLabel": "コードブロックの構文ハイライトを有効にする",
-      "convertButton": "PDFに変換",
-      "successMessage": "PDFが正常に作成されました！ダウンロードをクリックして保存してください。"
+      "uploadLabel": "Markdownãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": ".mdã¾ãŸã¯.markdownãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦PDFã«å¤‰æ›ã—ã¾ã™ã€‚",
+      "manualInput": "Markdownã‚’æ›¸ã",
+      "uploadFile": "ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "editorLabel": "Markdownã‚¨ãƒ‡ã‚£ã‚¿",
+      "previewLabel": "ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼",
+      "showPreview": "ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’è¡¨ç¤º",
+      "hidePreview": "ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’éžè¡¨ç¤º",
+      "optionsTitle": "å¤‰æ›ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "themeLabel": "ãƒ†ãƒ¼ãƒž",
+      "pageSizeLabel": "ãƒšãƒ¼ã‚¸ã‚µã‚¤ã‚º",
+      "gfmLabel": "GitHub Flavored Markdownã‚’æœ‰åŠ¹ã«ã™ã‚‹ï¼ˆãƒ†ãƒ¼ãƒ–ãƒ«ã€ã‚¿ã‚¹ã‚¯ãƒªã‚¹ãƒˆãªã©ï¼‰",
+      "syntaxHighlightLabel": "ã‚³ãƒ¼ãƒ‰ãƒ–ãƒ­ãƒƒã‚¯ã®æ§‹æ–‡ãƒã‚¤ãƒ©ã‚¤ãƒˆã‚’æœ‰åŠ¹ã«ã™ã‚‹",
+      "convertButton": "PDFã«å¤‰æ›",
+      "successMessage": "PDFãŒæ­£å¸¸ã«ä½œæˆã•ã‚Œã¾ã—ãŸï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ä¿å­˜ã—ã¦ãã ã•ã„ã€‚"
     },
     "emailToPdf": {
-      "uploadLabel": "メールファイルをアップロード",
-      "uploadDescription": "メールファイル (.eml) をドラッグ＆ドロップしてPDFに変換します。",
-      "optionsTitle": "変換オプション",
-      "pageSizeLabel": "ページサイズ",
-      "includeCcBccLabel": "CC/BCCフィールドを含める",
-      "includeAttachmentsLabel": "添付ファイルリストを含める",
-      "timezoneLabel": "タイムゾーン",
-      "convertButton": "PDFに変換",
-      "successMessage": "メールが正常に変換されました！"
+      "uploadLabel": "ãƒ¡ãƒ¼ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "ãƒ¡ãƒ¼ãƒ«ãƒ•ã‚¡ã‚¤ãƒ« (.eml) ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦PDFã«å¤‰æ›ã—ã¾ã™ã€‚",
+      "optionsTitle": "å¤‰æ›ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "pageSizeLabel": "ãƒšãƒ¼ã‚¸ã‚µã‚¤ã‚º",
+      "includeCcBccLabel": "CC/BCCãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚’å«ã‚ã‚‹",
+      "includeAttachmentsLabel": "æ·»ä»˜ãƒ•ã‚¡ã‚¤ãƒ«ãƒªã‚¹ãƒˆã‚’å«ã‚ã‚‹",
+      "timezoneLabel": "ã‚¿ã‚¤ãƒ ã‚¾ãƒ¼ãƒ³",
+      "convertButton": "PDFã«å¤‰æ›",
+      "successMessage": "ãƒ¡ãƒ¼ãƒ«ãŒæ­£å¸¸ã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼"
     },
     "cbzToPdf": {
-      "uploadLabel": "CBZファイルをアップロード",
-      "uploadDescription": "コミックアーカイブ (.cbz) をドラッグ＆ドロップしてPDFに変換します。",
-      "optionsTitle": "変換オプション",
-      "pageSizeLabel": "ページサイズ",
-      "qualityLabel": "画像品質",
-      "preserveAspectLabel": "アスペクト比を維持",
-      "convertButton": "PDFに変換",
-      "successMessage": "コミックが正常に変換されました！"
+      "uploadLabel": "CBZãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "ã‚³ãƒŸãƒƒã‚¯ã‚¢ãƒ¼ã‚«ã‚¤ãƒ– (.cbz) ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦PDFã«å¤‰æ›ã—ã¾ã™ã€‚",
+      "optionsTitle": "å¤‰æ›ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "pageSizeLabel": "ãƒšãƒ¼ã‚¸ã‚µã‚¤ã‚º",
+      "qualityLabel": "ç”»åƒå“è³ª",
+      "preserveAspectLabel": "ã‚¢ã‚¹ãƒšã‚¯ãƒˆæ¯”ã‚’ç¶­æŒ",
+      "convertButton": "PDFã«å¤‰æ›",
+      "successMessage": "ã‚³ãƒŸãƒƒã‚¯ãŒæ­£å¸¸ã«å¤‰æ›ã•ã‚Œã¾ã—ãŸï¼"
     },
     "pdfToPdfa": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをドラッグ＆ドロップしてPDF/A形式に変換します。",
-      "filesTitle": "変換するファイル",
-      "optionsTitle": "PDF/Aオプション",
-      "levelLabel": "PDF/Aレベル",
-      "embedFontsLabel": "すべてのフォントを埋め込む",
-      "flattenTransparencyLabel": "透明度をフラット化（PDF/A-1bに必要）",
-      "convertButton": "PDF/Aに変換",
-      "downloadAllZip": "すべてをZIPでダウンロード",
-      "successMessage": "ファイルを正常にPDF/Aに変換しました！"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦PDF/Aå½¢å¼ã«å¤‰æ›ã—ã¾ã™ã€‚",
+      "filesTitle": "å¤‰æ›ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«",
+      "optionsTitle": "PDF/Aã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "levelLabel": "PDF/Aãƒ¬ãƒ™ãƒ«",
+      "embedFontsLabel": "ã™ã¹ã¦ã®ãƒ•ã‚©ãƒ³ãƒˆã‚’åŸ‹ã‚è¾¼ã‚€",
+      "flattenTransparencyLabel": "é€æ˜Žåº¦ã‚’ãƒ•ãƒ©ãƒƒãƒˆåŒ–ï¼ˆPDF/A-1bã«å¿…è¦ï¼‰",
+      "convertButton": "PDF/Aã«å¤‰æ›",
+      "downloadAllZip": "ã™ã¹ã¦ã‚’ZIPã§ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰",
+      "successMessage": "ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ­£å¸¸ã«PDF/Aã«å¤‰æ›ã—ã¾ã—ãŸï¼"
     },
     "fontToOutline": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをドラッグ＆ドロップしてフォントをアウトラインに変換します。",
-      "filesTitle": "ファイル",
-      "optionsTitle": "オプション",
-      "dpiLabel": "ラスタライズDPI",
-      "convertButton": "フォントをアウトラインに変換",
-      "downloadAllZip": "すべてをZIPでダウンロード",
-      "successMessage": "ファイルを正常に変換しました！"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦ãƒ•ã‚©ãƒ³ãƒˆã‚’ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã«å¤‰æ›ã—ã¾ã™ã€‚",
+      "filesTitle": "ãƒ•ã‚¡ã‚¤ãƒ«",
+      "optionsTitle": "ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "dpiLabel": "ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚ºDPI",
+      "convertButton": "ãƒ•ã‚©ãƒ³ãƒˆã‚’ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã«å¤‰æ›",
+      "downloadAllZip": "ã™ã¹ã¦ã‚’ZIPã§ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰",
+      "successMessage": "ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ­£å¸¸ã«å¤‰æ›ã—ã¾ã—ãŸï¼"
     },
     "extractTables": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをドラッグ＆ドロップしてテーブルを抽出します。",
-      "optionsTitle": "抽出オプション",
-      "formatLabel": "出力形式",
-      "pageRangeLabel": "ページ範囲 (任意)",
-      "minColumnsLabel": "最小列数",
-      "minRowsLabel": "最小行数",
-      "includePageNumbersLabel": "出力にページ番号を含める",
-      "extractButton": "テーブルを抽出",
-      "successMessage": "テーブルが正常に抽出されました！ダウンロードをクリックして保存してください。"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’æŠ½å‡ºã—ã¾ã™ã€‚",
+      "optionsTitle": "æŠ½å‡ºã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "formatLabel": "å‡ºåŠ›å½¢å¼",
+      "pageRangeLabel": "ãƒšãƒ¼ã‚¸ç¯„å›² (ä»»æ„)",
+      "minColumnsLabel": "æœ€å°åˆ—æ•°",
+      "minRowsLabel": "æœ€å°è¡Œæ•°",
+      "includePageNumbersLabel": "å‡ºåŠ›ã«ãƒšãƒ¼ã‚¸ç•ªå·ã‚’å«ã‚ã‚‹",
+      "extractButton": "ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’æŠ½å‡º",
+      "successMessage": "ãƒ†ãƒ¼ãƒ–ãƒ«ãŒæ­£å¸¸ã«æŠ½å‡ºã•ã‚Œã¾ã—ãŸï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ä¿å­˜ã—ã¦ãã ã•ã„ã€‚"
     },
     "ocgManager": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFをドラッグ＆ドロップしてレイヤー (OCG) を管理します。",
-      "layersTitle": "PDFレイヤー",
-      "noLayers": "このPDFにはレイヤー (OCG) がありません。",
-      "addLayerLabel": "新しいレイヤーを追加",
-      "successMessage": "レイヤーの変更が正常に保存されました！"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦ãƒ¬ã‚¤ãƒ¤ãƒ¼ (OCG) ã‚’ç®¡ç†ã—ã¾ã™ã€‚",
+      "layersTitle": "PDFãƒ¬ã‚¤ãƒ¤ãƒ¼",
+      "noLayers": "ã“ã®PDFã«ã¯ãƒ¬ã‚¤ãƒ¤ãƒ¼ (OCG) ãŒã‚ã‚Šã¾ã›ã‚“ã€‚",
+      "addLayerLabel": "æ–°ã—ã„ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’è¿½åŠ ",
+      "successMessage": "ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å¤‰æ›´ãŒæ­£å¸¸ã«ä¿å­˜ã•ã‚Œã¾ã—ãŸï¼"
     },
     "pdfReader": {
-      "uploadLabel": "PDFファイルを開く",
-      "uploadDescription": "PDFファイルを開いて閲覧します。"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã„ã¦é–²è¦§ã—ã¾ã™ã€‚"
     },
     "pdfToMarkdown": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをここにドラッグ＆ドロップするか、クリックして選択してください。",
-      "optionsTitle": "変換オプション",
-      "pageRange": "ページ範囲",
-      "pageRangePlaceholder": "例: 1-3, 5, 7",
-      "pageRangeHint": "空の場合は全ページを変換",
-      "includePageNumbers": "ページ番号を見出しとして含める",
-      "preserveLineBreaks": "改行を維持する",
-      "convertButton": "Markdownに変換",
-      "previewTab": "プレビュー",
-      "sourceTab": "Markdownソース",
-      "successMessage": "PDFのMarkdown変換が成功しました！ダウンロードボタンをクリックしてファイルを保存してください。",
-      "failed": "PDFからMarkdownへの変換に失敗しました。"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã“ã“ã«ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã™ã‚‹ã‹ã€ã‚¯ãƒªãƒƒã‚¯ã—ã¦é¸æŠžã—ã¦ãã ã•ã„ã€‚",
+      "optionsTitle": "å¤‰æ›ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "pageRange": "ãƒšãƒ¼ã‚¸ç¯„å›²",
+      "pageRangePlaceholder": "ä¾‹: 1-3, 5, 7",
+      "pageRangeHint": "ç©ºã®å ´åˆã¯å…¨ãƒšãƒ¼ã‚¸ã‚’å¤‰æ›",
+      "includePageNumbers": "ãƒšãƒ¼ã‚¸ç•ªå·ã‚’è¦‹å‡ºã—ã¨ã—ã¦å«ã‚ã‚‹",
+      "preserveLineBreaks": "æ”¹è¡Œã‚’ç¶­æŒã™ã‚‹",
+      "convertButton": "Markdownã«å¤‰æ›",
+      "previewTab": "ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼",
+      "sourceTab": "Markdownã‚½ãƒ¼ã‚¹",
+      "successMessage": "PDFã®Markdownå¤‰æ›ãŒæˆåŠŸã—ã¾ã—ãŸï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¿å­˜ã—ã¦ãã ã•ã„ã€‚",
+      "failed": "PDFã‹ã‚‰Markdownã¸ã®å¤‰æ›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚"
     },
     "findAndRedact": {
-      "uploadLabel": "PDFファイルをアップロード",
-      "uploadDescription": "PDFファイルをドラッグ＆ドロップしてテキストを検索・墨消しします。",
-      "searchTitle": "テキスト検索",
-      "searchTermLabel": "検索語",
-      "searchTermPlaceholder": "検索するテキストを入力（例：口座番号、名前など）...",
-      "searchInputPlaceholder": "検索語を入力（カンマ区切り）...",
-      "searchInputHelp": "ヒント：複数の検索語はカンマ(,)で区切ってください",
-      "multipleTermsPlaceholder": "検索語を入力（1行に1つ、またはカンマ区切り）...\n例：\n山田太郎\naccount123\n555-1234",
-      "termsCount": "{count} 個の検索語",
-      "searchButton": "検索",
-      "searching": "検索中...",
-      "caseSensitive": "大文字・小文字を区別",
-      "wholeWord": "単語単位で検索",
-      "useRegex": "正規表現を使用",
-      "enterSearchTerm": "検索語を少なくとも1つ入力してください。",
-      "noMatchesFound": "一致するテキストが見つかりませんでした。",
-      "searchFailed": "PDFの検索に失敗しました。",
-      "matchesFound": "{count} 件の一致が見つかりました",
-      "filterByPage": "ページでフィルタ",
-      "allPages": "すべてのページ",
-      "pageNumber": "{page} ページ",
-      "pageInfo": "{page} ページ",
-      "selectedCount": "{total} 件中 {selected} 件を選択済み",
-      "selectMatchesToRedact": "墨消しする箇所を少なくとも1つ選択してください。",
-      "redactionOptions": "墨消しオプション",
-      "redactionColor": "墨消しの色",
-      "replacementText": "代替テキスト（オプション）",
-      "replacementTextPlaceholder": "例：[墨消し済み]",
-      "addBorder": "墨消し領域に枠線を追加",
-      "warningTitle": "警告",
-      "warningText": "墨消しは恒久的です。適用すると、元の内容は復元できません。",
-      "redactButton": "選択した {count} 件を墨消し",
-      "redactFailed": "墨消しの適用に失敗しました。",
-      "successMessage": "選択したテキストを正常に墨消ししました！ダウンロードして保存してください。",
-      "previewTitle": "プレビュー",
-      "pagesWithMatches": "一致するページ：",
-      "selectedMatch": "選択済み",
-      "unselectedMatch": "未選択"
+      "uploadLabel": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰",
+      "uploadDescription": "PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ©ãƒƒã‚°ï¼†ãƒ‰ãƒ­ãƒƒãƒ—ã—ã¦ãƒ†ã‚­ã‚¹ãƒˆã‚’æ¤œç´¢ãƒ»å¢¨æ¶ˆã—ã—ã¾ã™ã€‚",
+      "searchTitle": "ãƒ†ã‚­ã‚¹ãƒˆæ¤œç´¢",
+      "searchTermLabel": "æ¤œç´¢èªž",
+      "searchTermPlaceholder": "æ¤œç´¢ã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆã‚’å…¥åŠ›ï¼ˆä¾‹ï¼šå£åº§ç•ªå·ã€åå‰ãªã©ï¼‰...",
+      "searchInputPlaceholder": "æ¤œç´¢èªžã‚’å…¥åŠ›ï¼ˆã‚«ãƒ³ãƒžåŒºåˆ‡ã‚Šï¼‰...",
+      "searchInputHelp": "ãƒ’ãƒ³ãƒˆï¼šè¤‡æ•°ã®æ¤œç´¢èªžã¯ã‚«ãƒ³ãƒž(,)ã§åŒºåˆ‡ã£ã¦ãã ã•ã„",
+      "multipleTermsPlaceholder": "æ¤œç´¢èªžã‚’å…¥åŠ›ï¼ˆ1è¡Œã«1ã¤ã€ã¾ãŸã¯ã‚«ãƒ³ãƒžåŒºåˆ‡ã‚Šï¼‰...\nä¾‹ï¼š\nå±±ç”°å¤ªéƒŽ\naccount123\n555-1234",
+      "termsCount": "{count} å€‹ã®æ¤œç´¢èªž",
+      "searchButton": "æ¤œç´¢",
+      "searching": "æ¤œç´¢ä¸­...",
+      "caseSensitive": "å¤§æ–‡å­—ãƒ»å°æ–‡å­—ã‚’åŒºåˆ¥",
+      "wholeWord": "å˜èªžå˜ä½ã§æ¤œç´¢",
+      "useRegex": "æ­£è¦è¡¨ç¾ã‚’ä½¿ç”¨",
+      "enterSearchTerm": "æ¤œç´¢èªžã‚’å°‘ãªãã¨ã‚‚1ã¤å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚",
+      "noMatchesFound": "ä¸€è‡´ã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã§ã—ãŸã€‚",
+      "searchFailed": "PDFã®æ¤œç´¢ã«å¤±æ•—ã—ã¾ã—ãŸã€‚",
+      "matchesFound": "{count} ä»¶ã®ä¸€è‡´ãŒè¦‹ã¤ã‹ã‚Šã¾ã—ãŸ",
+      "filterByPage": "ãƒšãƒ¼ã‚¸ã§ãƒ•ã‚£ãƒ«ã‚¿",
+      "allPages": "ã™ã¹ã¦ã®ãƒšãƒ¼ã‚¸",
+      "pageNumber": "{page} ãƒšãƒ¼ã‚¸",
+      "pageInfo": "{page} ãƒšãƒ¼ã‚¸",
+      "selectedCount": "{total} ä»¶ä¸­ {selected} ä»¶ã‚’é¸æŠžæ¸ˆã¿",
+      "selectMatchesToRedact": "å¢¨æ¶ˆã—ã™ã‚‹ç®‡æ‰€ã‚’å°‘ãªãã¨ã‚‚1ã¤é¸æŠžã—ã¦ãã ã•ã„ã€‚",
+      "redactionOptions": "å¢¨æ¶ˆã—ã‚ªãƒ—ã‚·ãƒ§ãƒ³",
+      "redactionColor": "å¢¨æ¶ˆã—ã®è‰²",
+      "replacementText": "ä»£æ›¿ãƒ†ã‚­ã‚¹ãƒˆï¼ˆã‚ªãƒ—ã‚·ãƒ§ãƒ³ï¼‰",
+      "replacementTextPlaceholder": "ä¾‹ï¼š[å¢¨æ¶ˆã—æ¸ˆã¿]",
+      "addBorder": "å¢¨æ¶ˆã—é ˜åŸŸã«æž ç·šã‚’è¿½åŠ ",
+      "warningTitle": "è­¦å‘Š",
+      "warningText": "å¢¨æ¶ˆã—ã¯æ’ä¹…çš„ã§ã™ã€‚é©ç”¨ã™ã‚‹ã¨ã€å…ƒã®å†…å®¹ã¯å¾©å…ƒã§ãã¾ã›ã‚“ã€‚",
+      "redactButton": "é¸æŠžã—ãŸ {count} ä»¶ã‚’å¢¨æ¶ˆã—",
+      "redactFailed": "å¢¨æ¶ˆã—ã®é©ç”¨ã«å¤±æ•—ã—ã¾ã—ãŸã€‚",
+      "successMessage": "é¸æŠžã—ãŸãƒ†ã‚­ã‚¹ãƒˆã‚’æ­£å¸¸ã«å¢¨æ¶ˆã—ã—ã¾ã—ãŸï¼ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ã¦ä¿å­˜ã—ã¦ãã ã•ã„ã€‚",
+      "previewTitle": "ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼",
+      "pagesWithMatches": "ä¸€è‡´ã™ã‚‹ãƒšãƒ¼ã‚¸ï¼š",
+      "selectedMatch": "é¸æŠžæ¸ˆã¿",
+      "unselectedMatch": "æœªé¸æŠž"
     }
   },
   "faqPage": {
-    "title": "よくある質問",
-    "subtitle": "{brand}に関するよくある質問と回答を掲載しています",
-    "searchPlaceholder": "質問を検索...",
-    "noResults": "該当する質問が見つかりませんでした。",
-    "expandAll": "すべて展開",
-    "collapseAll": "すべて折りたたむ",
+    "title": "ã‚ˆãã‚ã‚‹è³ªå•",
+    "subtitle": "{brand}ã«é–¢ã™ã‚‹ã‚ˆãã‚ã‚‹è³ªå•ã¨å›žç­”ã‚’æŽ²è¼‰ã—ã¦ã„ã¾ã™",
+    "searchPlaceholder": "è³ªå•ã‚’æ¤œç´¢...",
+    "noResults": "è©²å½“ã™ã‚‹è³ªå•ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã§ã—ãŸã€‚",
+    "expandAll": "ã™ã¹ã¦å±•é–‹",
+    "collapseAll": "ã™ã¹ã¦æŠ˜ã‚ŠãŸãŸã‚€",
     "categories": {
-      "all": "すべて",
-      "general": "全般",
-      "privacy": "プライバシーとセキュリティ",
-      "features": "機能",
-      "technical": "技術的な質問",
-      "languages": "言語"
+      "all": "ã™ã¹ã¦",
+      "general": "å…¨èˆ¬",
+      "privacy": "ãƒ—ãƒ©ã‚¤ãƒã‚·ãƒ¼ã¨ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£",
+      "features": "æ©Ÿèƒ½",
+      "technical": "æŠ€è¡“çš„ãªè³ªå•",
+      "languages": "è¨€èªž"
     },
     "sections": {
       "general": {
         "whatIs": {
-          "question": "OpenToolsKitとは何ですか？",
-          "answer": "OpenToolsKitは、ブラウザ上で完全に動作する、プライバシーに配慮した無料のPDFツールキットです。PDFの編集、変換、結合、分割、暗号化など、{count}種類以上のプロフェッショナルなツールを、サーバーにファイルをアップロードすることなく提供します。"
+          "question": "OpenToolsKitã¨ã¯ä½•ã§ã™ã‹ï¼Ÿ",
+          "answer": "OpenToolsKitã¯ã€ãƒ–ãƒ©ã‚¦ã‚¶ä¸Šã§å®Œå…¨ã«å‹•ä½œã™ã‚‹ã€ãƒ—ãƒ©ã‚¤ãƒã‚·ãƒ¼ã«é…æ…®ã—ãŸç„¡æ–™ã®PDFãƒ„ãƒ¼ãƒ«ã‚­ãƒƒãƒˆã§ã™ã€‚PDFã®ç·¨é›†ã€å¤‰æ›ã€çµåˆã€åˆ†å‰²ã€æš—å·åŒ–ãªã©ã€{count}ç¨®é¡žä»¥ä¸Šã®ãƒ—ãƒ­ãƒ•ã‚§ãƒƒã‚·ãƒ§ãƒŠãƒ«ãªãƒ„ãƒ¼ãƒ«ã‚’ã€ã‚µãƒ¼ãƒãƒ¼ã«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ã™ã‚‹ã“ã¨ãªãæä¾›ã—ã¾ã™ã€‚"
         },
         "isFree": {
-          "question": "OpenToolsKitは本当に無料ですか？",
-          "answer": "はい、OpenToolsKitは完全に無料です。隠れた費用やプレミアムサブスクリプション、登録は一切必要ありません。すべての機能をどなたでもご利用いただけます。"
+          "question": "OpenToolsKitã¯æœ¬å½“ã«ç„¡æ–™ã§ã™ã‹ï¼Ÿ",
+          "answer": "ã¯ã„ã€OpenToolsKitã¯å®Œå…¨ã«ç„¡æ–™ã§ã™ã€‚éš ã‚ŒãŸè²»ç”¨ã‚„ãƒ—ãƒ¬ãƒŸã‚¢ãƒ ã‚µãƒ–ã‚¹ã‚¯ãƒªãƒ—ã‚·ãƒ§ãƒ³ã€ç™»éŒ²ã¯ä¸€åˆ‡å¿…è¦ã‚ã‚Šã¾ã›ã‚“ã€‚ã™ã¹ã¦ã®æ©Ÿèƒ½ã‚’ã©ãªãŸã§ã‚‚ã”åˆ©ç”¨ã„ãŸã ã‘ã¾ã™ã€‚"
         },
         "account": {
-          "question": "アカウントを作成する必要はありますか？",
-          "answer": "いいえ、OpenToolsKitを利用するためにアカウント作成や登録は不要です。ウェブサイトにアクセスするだけで、すぐにツールを使い始めることができます。"
+          "question": "ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã‚’ä½œæˆã™ã‚‹å¿…è¦ã¯ã‚ã‚Šã¾ã™ã‹ï¼Ÿ",
+          "answer": "ã„ã„ãˆã€OpenToolsKitã‚’åˆ©ç”¨ã™ã‚‹ãŸã‚ã«ã‚¢ã‚«ã‚¦ãƒ³ãƒˆä½œæˆã‚„ç™»éŒ²ã¯ä¸è¦ã§ã™ã€‚ã‚¦ã‚§ãƒ–ã‚µã‚¤ãƒˆã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ã ã‘ã§ã€ã™ãã«ãƒ„ãƒ¼ãƒ«ã‚’ä½¿ã„å§‹ã‚ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚"
         }
       },
       "privacy": {
         "uploaded": {
-          "question": "ファイルはサーバーにアップロードされますか？",
-          "answer": "いいえ、ファイルがサーバーにアップロードされることはありません。すべてのPDF処理は、JavaScriptとWebAssemblyを使用してブラウザ内でローカルに実行されます。ファイルがデバイスから送信されることはありません。"
+          "question": "ãƒ•ã‚¡ã‚¤ãƒ«ã¯ã‚µãƒ¼ãƒãƒ¼ã«ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ã•ã‚Œã¾ã™ã‹ï¼Ÿ",
+          "answer": "ã„ã„ãˆã€ãƒ•ã‚¡ã‚¤ãƒ«ãŒã‚µãƒ¼ãƒãƒ¼ã«ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ã•ã‚Œã‚‹ã“ã¨ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚ã™ã¹ã¦ã®PDFå‡¦ç†ã¯ã€JavaScriptã¨WebAssemblyã‚’ä½¿ç”¨ã—ã¦ãƒ–ãƒ©ã‚¦ã‚¶å†…ã§ãƒ­ãƒ¼ã‚«ãƒ«ã«å®Ÿè¡Œã•ã‚Œã¾ã™ã€‚ãƒ•ã‚¡ã‚¤ãƒ«ãŒãƒ‡ãƒã‚¤ã‚¹ã‹ã‚‰é€ä¿¡ã•ã‚Œã‚‹ã“ã¨ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚"
         },
         "safe": {
-          "question": "機密文書にOpenToolsKitを使用しても安全ですか？",
-          "answer": "はい、OpenToolsKitはプライバシーを最優先に設計されています。すべての処理がブラウザ内でローカルに行われるため、機密文書はデバイス内に留まり、インターネット経由で送信されることはありません。"
+          "question": "æ©Ÿå¯†æ–‡æ›¸ã«OpenToolsKitã‚’ä½¿ç”¨ã—ã¦ã‚‚å®‰å…¨ã§ã™ã‹ï¼Ÿ",
+          "answer": "ã¯ã„ã€OpenToolsKitã¯ãƒ—ãƒ©ã‚¤ãƒã‚·ãƒ¼ã‚’æœ€å„ªå…ˆã«è¨­è¨ˆã•ã‚Œã¦ã„ã¾ã™ã€‚ã™ã¹ã¦ã®å‡¦ç†ãŒãƒ–ãƒ©ã‚¦ã‚¶å†…ã§ãƒ­ãƒ¼ã‚«ãƒ«ã«è¡Œã‚ã‚Œã‚‹ãŸã‚ã€æ©Ÿå¯†æ–‡æ›¸ã¯ãƒ‡ãƒã‚¤ã‚¹å†…ã«ç•™ã¾ã‚Šã€ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆçµŒç”±ã§é€ä¿¡ã•ã‚Œã‚‹ã“ã¨ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚"
         },
         "storage": {
-          "question": "処理後のファイルはどうなりますか？",
-          "answer": "ファイルは処理中にブラウザのメモリに一時的に保存されます。ブラウザのタブを閉じるかページを離れると、すべてのファイルデータは自動的に消去されます。当社がお客様のファイルを保存することはありません。"
+          "question": "å‡¦ç†å¾Œã®ãƒ•ã‚¡ã‚¤ãƒ«ã¯ã©ã†ãªã‚Šã¾ã™ã‹ï¼Ÿ",
+          "answer": "ãƒ•ã‚¡ã‚¤ãƒ«ã¯å‡¦ç†ä¸­ã«ãƒ–ãƒ©ã‚¦ã‚¶ã®ãƒ¡ãƒ¢ãƒªã«ä¸€æ™‚çš„ã«ä¿å­˜ã•ã‚Œã¾ã™ã€‚ãƒ–ãƒ©ã‚¦ã‚¶ã®ã‚¿ãƒ–ã‚’é–‰ã˜ã‚‹ã‹ãƒšãƒ¼ã‚¸ã‚’é›¢ã‚Œã‚‹ã¨ã€ã™ã¹ã¦ã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‡ãƒ¼ã‚¿ã¯è‡ªå‹•çš„ã«æ¶ˆåŽ»ã•ã‚Œã¾ã™ã€‚å½“ç¤¾ãŒãŠå®¢æ§˜ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¿å­˜ã™ã‚‹ã“ã¨ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚"
         }
       },
       "features": {
         "operations": {
-          "question": "どのようなPDF操作が可能ですか？",
-          "answer": "OpenToolsKitは、結合、分割、圧縮、変換（画像、テキスト、JSONとの相互変換）、編集、注釈、署名、透かし追加、暗号化/復号、OCRなど、{count}種類以上のツールを提供しています。"
+          "question": "ã©ã®ã‚ˆã†ãªPDFæ“ä½œãŒå¯èƒ½ã§ã™ã‹ï¼Ÿ",
+          "answer": "OpenToolsKitã¯ã€çµåˆã€åˆ†å‰²ã€åœ§ç¸®ã€å¤‰æ›ï¼ˆç”»åƒã€ãƒ†ã‚­ã‚¹ãƒˆã€JSONã¨ã®ç›¸äº’å¤‰æ›ï¼‰ã€ç·¨é›†ã€æ³¨é‡ˆã€ç½²åã€é€ã‹ã—è¿½åŠ ã€æš—å·åŒ–/å¾©å·ã€OCRãªã©ã€{count}ç¨®é¡žä»¥ä¸Šã®ãƒ„ãƒ¼ãƒ«ã‚’æä¾›ã—ã¦ã„ã¾ã™ã€‚"
         },
         "merge": {
-          "question": "複数のPDFファイルを結合できますか？",
-          "answer": "はい、複数のPDFファイルを1つに結合できます。「PDF結合」ツールを使用し、ファイルをアップロードして希望の順序に並べ、結合をクリックするだけです。"
+          "question": "è¤‡æ•°ã®PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’çµåˆã§ãã¾ã™ã‹ï¼Ÿ",
+          "answer": "ã¯ã„ã€è¤‡æ•°ã®PDFãƒ•ã‚¡ã‚¤ãƒ«ã‚’1ã¤ã«çµåˆã§ãã¾ã™ã€‚ã€ŒPDFçµåˆã€ãƒ„ãƒ¼ãƒ«ã‚’ä½¿ç”¨ã—ã€ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ã—ã¦å¸Œæœ›ã®é †åºã«ä¸¦ã¹ã€çµåˆã‚’ã‚¯ãƒªãƒƒã‚¯ã™ã‚‹ã ã‘ã§ã™ã€‚"
         },
         "images": {
-          "question": "画像をPDFに変換できますか？",
-          "answer": "はい、OpenToolsKitは様々な画像形式（JPG、PNG、WebP、BMP、TIFF、SVG、HEIC）のPDF変換をサポートしています。1枚、または複数の画像を一度に変換できます。"
+          "question": "ç”»åƒã‚’PDFã«å¤‰æ›ã§ãã¾ã™ã‹ï¼Ÿ",
+          "answer": "ã¯ã„ã€OpenToolsKitã¯æ§˜ã€…ãªç”»åƒå½¢å¼ï¼ˆJPGã€PNGã€WebPã€BMPã€TIFFã€SVGã€HEICï¼‰ã®PDFå¤‰æ›ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¦ã„ã¾ã™ã€‚1æžšã€ã¾ãŸã¯è¤‡æ•°ã®ç”»åƒã‚’ä¸€åº¦ã«å¤‰æ›ã§ãã¾ã™ã€‚"
         },
         "edit": {
-          "question": "PDFのテキストを編集できますか？",
-          "answer": "OpenToolsKitは、ハイライト、テキスト追加、図形、画像、署名などの注釈・編集ツールを提供しています。詳細なテキスト編集については、PDFエディターツールで包括的な注釈機能をご利用いただけます。"
+          "question": "PDFã®ãƒ†ã‚­ã‚¹ãƒˆã‚’ç·¨é›†ã§ãã¾ã™ã‹ï¼Ÿ",
+          "answer": "OpenToolsKitã¯ã€ãƒã‚¤ãƒ©ã‚¤ãƒˆã€ãƒ†ã‚­ã‚¹ãƒˆè¿½åŠ ã€å›³å½¢ã€ç”»åƒã€ç½²åãªã©ã®æ³¨é‡ˆãƒ»ç·¨é›†ãƒ„ãƒ¼ãƒ«ã‚’æä¾›ã—ã¦ã„ã¾ã™ã€‚è©³ç´°ãªãƒ†ã‚­ã‚¹ãƒˆç·¨é›†ã«ã¤ã„ã¦ã¯ã€PDFã‚¨ãƒ‡ã‚£ã‚¿ãƒ¼ãƒ„ãƒ¼ãƒ«ã§åŒ…æ‹¬çš„ãªæ³¨é‡ˆæ©Ÿèƒ½ã‚’ã”åˆ©ç”¨ã„ãŸã ã‘ã¾ã™ã€‚"
         }
       },
       "technical": {
         "browsers": {
-          "question": "どのブラウザをサポートしていますか？",
-          "answer": "OpenToolsKitは、Chrome、Firefox、Safari、Edgeなどの主要な最新ブラウザで動作します。最適な体験のために、ブラウザの最新バージョンを使用することをお勧めします。"
+          "question": "ã©ã®ãƒ–ãƒ©ã‚¦ã‚¶ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¦ã„ã¾ã™ã‹ï¼Ÿ",
+          "answer": "OpenToolsKitã¯ã€Chromeã€Firefoxã€Safariã€Edgeãªã©ã®ä¸»è¦ãªæœ€æ–°ãƒ–ãƒ©ã‚¦ã‚¶ã§å‹•ä½œã—ã¾ã™ã€‚æœ€é©ãªä½“é¨“ã®ãŸã‚ã«ã€ãƒ–ãƒ©ã‚¦ã‚¶ã®æœ€æ–°ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’ä½¿ç”¨ã™ã‚‹ã“ã¨ã‚’ãŠå‹§ã‚ã—ã¾ã™ã€‚"
         },
         "sizeLimit": {
-          "question": "ファイルサイズに制限はありますか？",
-          "answer": "ほとんどのツールは最大100MBまでのファイルをサポートしており、結合や圧縮などのツールは最大500MBまで対応しています。これらの制限は、ブラウザでのスムーズな動作を保証するために設けられています。"
+          "question": "ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºã«åˆ¶é™ã¯ã‚ã‚Šã¾ã™ã‹ï¼Ÿ",
+          "answer": "ã»ã¨ã‚“ã©ã®ãƒ„ãƒ¼ãƒ«ã¯æœ€å¤§100MBã¾ã§ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¦ãŠã‚Šã€çµåˆã‚„åœ§ç¸®ãªã©ã®ãƒ„ãƒ¼ãƒ«ã¯æœ€å¤§500MBã¾ã§å¯¾å¿œã—ã¦ã„ã¾ã™ã€‚ã“ã‚Œã‚‰ã®åˆ¶é™ã¯ã€ãƒ–ãƒ©ã‚¦ã‚¶ã§ã®ã‚¹ãƒ ãƒ¼ã‚ºãªå‹•ä½œã‚’ä¿è¨¼ã™ã‚‹ãŸã‚ã«è¨­ã‘ã‚‰ã‚Œã¦ã„ã¾ã™ã€‚"
         },
         "slow": {
-          "question": "大きなファイルの処理が遅いのはなぜですか？",
-          "answer": "すべての処理がブラウザ内で行われるため、パフォーマンスはデバイスのスペックに依存します。大きなファイルはより多くのメモリと処理能力を必要とします。最良の結果を得るには、他のタブやアプリケーションを閉じてください。"
+          "question": "å¤§ããªãƒ•ã‚¡ã‚¤ãƒ«ã®å‡¦ç†ãŒé…ã„ã®ã¯ãªãœã§ã™ã‹ï¼Ÿ",
+          "answer": "ã™ã¹ã¦ã®å‡¦ç†ãŒãƒ–ãƒ©ã‚¦ã‚¶å†…ã§è¡Œã‚ã‚Œã‚‹ãŸã‚ã€ãƒ‘ãƒ•ã‚©ãƒ¼ãƒžãƒ³ã‚¹ã¯ãƒ‡ãƒã‚¤ã‚¹ã®ã‚¹ãƒšãƒƒã‚¯ã«ä¾å­˜ã—ã¾ã™ã€‚å¤§ããªãƒ•ã‚¡ã‚¤ãƒ«ã¯ã‚ˆã‚Šå¤šãã®ãƒ¡ãƒ¢ãƒªã¨å‡¦ç†èƒ½åŠ›ã‚’å¿…è¦ã¨ã—ã¾ã™ã€‚æœ€è‰¯ã®çµæžœã‚’å¾—ã‚‹ã«ã¯ã€ä»–ã®ã‚¿ãƒ–ã‚„ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚’é–‰ã˜ã¦ãã ã•ã„ã€‚"
         },
         "offline": {
-          "question": "OpenToolsKitはオフラインで動作しますか？",
-          "answer": "現在、OpenToolsKitの初期読み込みにはインターネット接続が必要です。ただし、一度読み込まれると、PDF処理自体はローカルで行われ、接続は不要です。"
+          "question": "OpenToolsKitã¯ã‚ªãƒ•ãƒ©ã‚¤ãƒ³ã§å‹•ä½œã—ã¾ã™ã‹ï¼Ÿ",
+          "answer": "ç¾åœ¨ã€OpenToolsKitã®åˆæœŸèª­ã¿è¾¼ã¿ã«ã¯ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆæŽ¥ç¶šãŒå¿…è¦ã§ã™ã€‚ãŸã ã—ã€ä¸€åº¦èª­ã¿è¾¼ã¾ã‚Œã‚‹ã¨ã€PDFå‡¦ç†è‡ªä½“ã¯ãƒ­ãƒ¼ã‚«ãƒ«ã§è¡Œã‚ã‚Œã€æŽ¥ç¶šã¯ä¸è¦ã§ã™ã€‚"
         }
       },
       "languages": {
         "supported": {
-          "question": "どの言語をサポートしていますか？",
-          "answer": "OpenToolsKitは、英語、日本語、韓国語、スペイン語、フランス語、ドイツ語、中国語、ポルトガル語、アラビア語（右から左への記述をサポート）の9言語に対応しています。"
+          "question": "ã©ã®è¨€èªžã‚’ã‚µãƒãƒ¼ãƒˆã—ã¦ã„ã¾ã™ã‹ï¼Ÿ",
+          "answer": "OpenToolsKitã¯ã€è‹±èªžã€æ—¥æœ¬èªžã€éŸ“å›½èªžã€ã‚¹ãƒšã‚¤ãƒ³èªžã€ãƒ•ãƒ©ãƒ³ã‚¹èªžã€ãƒ‰ã‚¤ãƒ„èªžã€ä¸­å›½èªžã€ãƒãƒ«ãƒˆã‚¬ãƒ«èªžã€ã‚¢ãƒ©ãƒ“ã‚¢èªžï¼ˆå³ã‹ã‚‰å·¦ã¸ã®è¨˜è¿°ã‚’ã‚µãƒãƒ¼ãƒˆï¼‰ã®9è¨€èªžã«å¯¾å¿œã—ã¦ã„ã¾ã™ã€‚"
         },
         "change": {
-          "question": "言語を変更するにはどうすればよいですか？",
-          "answer": "ページ上部の言語セレクターから言語を変更できます。選択した設定は次回の訪問時のために保存されます。"
+          "question": "è¨€èªžã‚’å¤‰æ›´ã™ã‚‹ã«ã¯ã©ã†ã™ã‚Œã°ã‚ˆã„ã§ã™ã‹ï¼Ÿ",
+          "answer": "ãƒšãƒ¼ã‚¸ä¸Šéƒ¨ã®è¨€èªžã‚»ãƒ¬ã‚¯ã‚¿ãƒ¼ã‹ã‚‰è¨€èªžã‚’å¤‰æ›´ã§ãã¾ã™ã€‚é¸æŠžã—ãŸè¨­å®šã¯æ¬¡å›žã®è¨ªå•æ™‚ã®ãŸã‚ã«ä¿å­˜ã•ã‚Œã¾ã™ã€‚"
         }
       }
     },
@@ -2269,63 +2269,63 @@
     }
   },
   "aboutPage": {
-    "title": "{brand}について",
+    "title": "{brand}ã«ã¤ã„ã¦",
     "description": "{brand} is an open-source browser tool platform that launches with {count}+ PDF tools, a workflow editor, and public source distribution.",
     "mission": {
-      "title": "私たちの使命",
+      "title": "ç§ãŸã¡ã®ä½¿å‘½",
       "p1": "We believe private browser tools should stay accessible, inspectable, and useful beyond a single file format. That is why {brand} has been shaped into a broader browser-tool platform.",
       "p2": "Unlike traditional services that depend on remote processing for routine document work, {brand} keeps core flows in the browser where applicable and keeps source availability visible through a public AGPL repository.",
-      "p3": "Phase 1 focuses on the PDF suite, workflow editor, and extension, while preparing the platform for additional tool families."
+      "p3": "The current public site focuses on PDF tools, workflow editing, and source-visible browser utilities while preparing the platform for additional tool families."
     },
     "values": {
-      "title": "私たちの価値観",
+      "title": "ç§ãŸã¡ã®ä¾¡å€¤è¦³",
       "privacy": {
-        "title": "プライバシー第一",
-        "description": "ファイルがデバイスから離れることはありません。すべての処理がブラウザ内でローカルに行われるため、完全なプライバシーとセキュリティが確保されます。"
+        "title": "ãƒ—ãƒ©ã‚¤ãƒã‚·ãƒ¼ç¬¬ä¸€",
+        "description": "ãƒ•ã‚¡ã‚¤ãƒ«ãŒãƒ‡ãƒã‚¤ã‚¹ã‹ã‚‰é›¢ã‚Œã‚‹ã“ã¨ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚ã™ã¹ã¦ã®å‡¦ç†ãŒãƒ–ãƒ©ã‚¦ã‚¶å†…ã§ãƒ­ãƒ¼ã‚«ãƒ«ã«è¡Œã‚ã‚Œã‚‹ãŸã‚ã€å®Œå…¨ãªãƒ—ãƒ©ã‚¤ãƒã‚·ãƒ¼ã¨ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ãŒç¢ºä¿ã•ã‚Œã¾ã™ã€‚"
       },
       "fast": {
-        "title": "迅速かつ効率的",
-        "description": "最新のWebテクノロジーを活用し、OpenToolsKitはアップロードやダウンロードを必要とせずに、非常に高速なPDF処理を実現します。"
+        "title": "è¿…é€Ÿã‹ã¤åŠ¹çŽ‡çš„",
+        "description": "æœ€æ–°ã®Webãƒ†ã‚¯ãƒŽãƒ­ã‚¸ãƒ¼ã‚’æ´»ç”¨ã—ã€OpenToolsKitã¯ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ã‚„ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã‚’å¿…è¦ã¨ã›ãšã«ã€éžå¸¸ã«é«˜é€ŸãªPDFå‡¦ç†ã‚’å®Ÿç¾ã—ã¾ã™ã€‚"
       },
       "accessible": {
-        "title": "どこでも利用可能",
-        "description": "9つの言語で利用可能で、最新のブラウザを搭載したあらゆるデバイスで動作します。インストールは不要です。"
+        "title": "ã©ã“ã§ã‚‚åˆ©ç”¨å¯èƒ½",
+        "description": "9ã¤ã®è¨€èªžã§åˆ©ç”¨å¯èƒ½ã§ã€æœ€æ–°ã®ãƒ–ãƒ©ã‚¦ã‚¶ã‚’æ­è¼‰ã—ãŸã‚ã‚‰ã‚†ã‚‹ãƒ‡ãƒã‚¤ã‚¹ã§å‹•ä½œã—ã¾ã™ã€‚ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¯ä¸è¦ã§ã™ã€‚"
       },
       "free": {
-        "title": "永久無料",
-        "description": "OpenToolsKitは完全に無料で使用でき、隠れた費用や登録の必要はなく、使用制限もありません。"
+        "title": "æ°¸ä¹…ç„¡æ–™",
+        "description": "OpenToolsKitã¯å®Œå…¨ã«ç„¡æ–™ã§ä½¿ç”¨ã§ãã€éš ã‚ŒãŸè²»ç”¨ã‚„ç™»éŒ²ã®å¿…è¦ã¯ãªãã€ä½¿ç”¨åˆ¶é™ã‚‚ã‚ã‚Šã¾ã›ã‚“ã€‚"
       },
       "openSource": {
-        "title": "オープンソース",
-        "description": "透明性を念頭に置いて構築されています。私たちのコードはオープンソースであり、誰でも私たちのプライバシーへの主張を検証できます。"
+        "title": "ã‚ªãƒ¼ãƒ—ãƒ³ã‚½ãƒ¼ã‚¹",
+        "description": "é€æ˜Žæ€§ã‚’å¿µé ­ã«ç½®ã„ã¦æ§‹ç¯‰ã•ã‚Œã¦ã„ã¾ã™ã€‚ç§ãŸã¡ã®ã‚³ãƒ¼ãƒ‰ã¯ã‚ªãƒ¼ãƒ—ãƒ³ã‚½ãƒ¼ã‚¹ã§ã‚ã‚Šã€èª°ã§ã‚‚ç§ãŸã¡ã®ãƒ—ãƒ©ã‚¤ãƒã‚·ãƒ¼ã¸ã®ä¸»å¼µã‚’æ¤œè¨¼ã§ãã¾ã™ã€‚"
       },
       "community": {
-        "title": "コミュニティ主導",
-        "description": "世界中のユーザーからのフィードバックを受けて開発されています。私たちはあなたのニーズに基づいて継続的に改善を行っています。"
+        "title": "ã‚³ãƒŸãƒ¥ãƒ‹ãƒ†ã‚£ä¸»å°Ž",
+        "description": "ä¸–ç•Œä¸­ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‹ã‚‰ã®ãƒ•ã‚£ãƒ¼ãƒ‰ãƒãƒƒã‚¯ã‚’å—ã‘ã¦é–‹ç™ºã•ã‚Œã¦ã„ã¾ã™ã€‚ç§ãŸã¡ã¯ã‚ãªãŸã®ãƒ‹ãƒ¼ã‚ºã«åŸºã¥ã„ã¦ç¶™ç¶šçš„ã«æ”¹å–„ã‚’è¡Œã£ã¦ã„ã¾ã™ã€‚"
       }
     },
     "technology": {
-      "title": "最新のテクノロジーで構築",
-      "description": "{brand}は、最高の体験を提供するために最先端のWebテクノロジーを使用して構築されています：",
+      "title": "æœ€æ–°ã®ãƒ†ã‚¯ãƒŽãƒ­ã‚¸ãƒ¼ã§æ§‹ç¯‰",
+      "description": "{brand}ã¯ã€æœ€é«˜ã®ä½“é¨“ã‚’æä¾›ã™ã‚‹ãŸã‚ã«æœ€å…ˆç«¯ã®Webãƒ†ã‚¯ãƒŽãƒ­ã‚¸ãƒ¼ã‚’ä½¿ç”¨ã—ã¦æ§‹ç¯‰ã•ã‚Œã¦ã„ã¾ã™ï¼š",
       "list": {
-        "nextjs": "<strong1>Next.js</strong1> - 高速でSEOに配慮したページレンダリングのため",
-        "wasm": "<strong1>WebAssembly</strong1> - ネイティブに近いPDF処理パフォーマンスのため",
-        "workers": "<strong1>Web Workers</strong1> - 非ブロッキングのバックグラウンド処理のため",
-        "pdflib": "<strong1>pdf-lib & PDF.js</strong1> - 業界標準のPDF操作ライブラリ",
-        "indexeddb": "<strong1>IndexedDB</strong1> - 作業内容の安全なローカルストレージのため"
+        "nextjs": "<strong1>Next.js</strong1> - é«˜é€Ÿã§SEOã«é…æ…®ã—ãŸãƒšãƒ¼ã‚¸ãƒ¬ãƒ³ãƒ€ãƒªãƒ³ã‚°ã®ãŸã‚",
+        "wasm": "<strong1>WebAssembly</strong1> - ãƒã‚¤ãƒ†ã‚£ãƒ–ã«è¿‘ã„PDFå‡¦ç†ãƒ‘ãƒ•ã‚©ãƒ¼ãƒžãƒ³ã‚¹ã®ãŸã‚",
+        "workers": "<strong1>Web Workers</strong1> - éžãƒ–ãƒ­ãƒƒã‚­ãƒ³ã‚°ã®ãƒãƒƒã‚¯ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰å‡¦ç†ã®ãŸã‚",
+        "pdflib": "<strong1>pdf-lib & PDF.js</strong1> - æ¥­ç•Œæ¨™æº–ã®PDFæ“ä½œãƒ©ã‚¤ãƒ–ãƒ©ãƒª",
+        "indexeddb": "<strong1>IndexedDB</strong1> - ä½œæ¥­å†…å®¹ã®å®‰å…¨ãªãƒ­ãƒ¼ã‚«ãƒ«ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ã®ãŸã‚"
       },
-      "summary": "This stack supports launch-ready browser tools, static export, local processing, and public-source trust surfaces without forcing a server-bound editing model."
+      "summary": "This stack supports browser tools, static export, local processing, and public-source trust surfaces without forcing a server-bound editing model."
     },
     "cta": {
-      "title": "準備はできましたか？",
-      "description": "Explore our {count}+ launch tools and see how {brand} handles private browser workflows.",
-      "button": "すべてのツールを見る"
+      "title": "æº–å‚™ã¯ã§ãã¾ã—ãŸã‹ï¼Ÿ",
+      "description": "Explore {count}+ tools and see how {brand} handles private browser workflows.",
+      "button": "ã™ã¹ã¦ã®ãƒ„ãƒ¼ãƒ«ã‚’è¦‹ã‚‹"
     }
   },
   "contactPage": {
     "hero": {
       "title": "Support & Source",
-      "description": "Use GitHub for source access, issue reporting, and AGPL attribution."
+      "description": "Use email for general support and GitHub for developer-facing issues, source access, and AGPL attribution."
     },
     "methods": {
       "email": {
@@ -2354,27 +2354,27 @@
       },
       "fields": {
         "name": {
-          "label": "お名前",
-          "placeholder": "あなたのお名前"
+          "label": "ãŠåå‰",
+          "placeholder": "ã‚ãªãŸã®ãŠåå‰"
         },
         "email": {
-          "label": "メールアドレス",
+          "label": "ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹",
           "placeholder": "your@email.com"
         },
         "subject": {
-          "label": "件名",
-          "placeholder": "件名を選択してください",
+          "label": "ä»¶å",
+          "placeholder": "ä»¶åã‚’é¸æŠžã—ã¦ãã ã•ã„",
           "options": {
-            "general": "一般的なお問い合わせ",
-            "bug": "バグ報告",
-            "feature": "機能リクエスト",
-            "feedback": "フィードバック",
-            "other": "その他"
+            "general": "ä¸€èˆ¬çš„ãªãŠå•ã„åˆã‚ã›",
+            "bug": "ãƒã‚°å ±å‘Š",
+            "feature": "æ©Ÿèƒ½ãƒªã‚¯ã‚¨ã‚¹ãƒˆ",
+            "feedback": "ãƒ•ã‚£ãƒ¼ãƒ‰ãƒãƒƒã‚¯",
+            "other": "ãã®ä»–"
           }
         },
         "message": {
-          "label": "メッセージ",
-          "placeholder": "お問い合わせ内容の詳細を教えてください..."
+          "label": "ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸",
+          "placeholder": "ãŠå•ã„åˆã‚ã›å†…å®¹ã®è©³ç´°ã‚’æ•™ãˆã¦ãã ã•ã„..."
         }
       },
       "error": "Use the public GitHub support routes instead.",

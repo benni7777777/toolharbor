@@ -6,6 +6,7 @@
  */
 
 import { siteConfig } from '@/config/site';
+import { getCanonicalUrl } from '@/lib/seo/metadata';
 import type { Tool, ToolContent, FAQ, HowToStep } from '@/types/tool';
 import type { Locale } from '@/lib/i18n/config';
 
@@ -151,7 +152,7 @@ export function generateSoftwareApplicationSchema(
     '@type': 'SoftwareApplication',
     name: content.title,
     description: content.metaDescription,
-    url: `${siteConfig.url}/${locale}/tools/${tool.slug}`,
+    url: getCanonicalUrl(locale, `/tools/${tool.slug}`),
     applicationCategory: tool.toolFamily === 'pdf' ? 'UtilitiesApplication' : 'BusinessApplication',
     operatingSystem: 'Web Browser',
     offers: {
@@ -199,7 +200,7 @@ export function generateHowToSchema(
       position: step.step,
       name: step.title,
       text: step.description,
-      url: `${siteConfig.url}/${locale}/tools/${tool.slug}#step-${step.step}`,
+      url: `${getCanonicalUrl(locale, `/tools/${tool.slug}`)}#step-${step.step}`,
     })),
   };
 }
@@ -233,7 +234,7 @@ export function generateWebPageSchema(
     '@type': 'WebPage',
     name: content.title,
     description: content.metaDescription,
-    url: `${siteConfig.url}/${locale}/tools/${tool.slug}`,
+    url: getCanonicalUrl(locale, `/tools/${tool.slug}`),
     inLanguage: languageMap[locale] || 'en-US',
     isPartOf: {
       '@type': 'WebSite',
@@ -277,7 +278,7 @@ export function generateWebSiteSchema(locale: Locale): WebSiteSchema {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: siteConfig.name,
-    url: `${siteConfig.url}/${locale}`,
+    url: getCanonicalUrl(locale),
     description: siteConfig.description,
   };
 }
@@ -325,7 +326,7 @@ export function generateBasicWebPageSchema(options: {
     '@type': options.type || 'WebPage',
     name: options.name,
     description: options.description,
-    url: `${siteConfig.url}/${options.locale}${options.path}`,
+    url: getCanonicalUrl(options.locale, options.path),
     inLanguage: languageMap[options.locale] || 'en-US',
     isPartOf: {
       '@type': 'WebSite',
@@ -368,7 +369,7 @@ export function generateBreadcrumbSchema(
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `${siteConfig.url}/${locale}${item.path}`,
+      item: getCanonicalUrl(locale, item.path),
     })),
   };
 }
@@ -383,11 +384,11 @@ export function generateItemListSchema(options: {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: options.name,
-    url: `${siteConfig.url}/${options.locale}${options.path}`,
+    url: getCanonicalUrl(options.locale, options.path),
     itemListElement: options.items.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      url: `${siteConfig.url}/${options.locale}${item.path}`,
+      url: getCanonicalUrl(options.locale, item.path),
       name: item.name,
     })),
   };

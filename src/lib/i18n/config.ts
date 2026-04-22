@@ -59,10 +59,8 @@ export function getLocaleFromPath(path: string): Locale | null {
  * Generate localized path
  */
 export function getLocalizedPath(path: string, locale: Locale): string {
-  // Remove any existing locale prefix (must be followed by / or end of string)
   const cleanPath = path.replace(/^\/(en|ja|ko|es|fr|de|zh-TW|zh|pt|ar|it|id|vi)(\/|$)/, '/');
-  // Normalize the path - ensure it starts with / and handle empty paths
   const normalizedPath = cleanPath === '/' ? '/' : cleanPath.replace(/^\/+/, '/');
-  // Add the new locale prefix
-  return `/${locale}${normalizedPath === '/' ? '/' : normalizedPath}`;
+  const localizedPath = `/${locale}${normalizedPath === '/' ? '/' : normalizedPath}`;
+  return localizedPath.endsWith('/') ? localizedPath : `${localizedPath}/`;
 }

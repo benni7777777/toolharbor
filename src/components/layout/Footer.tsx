@@ -19,6 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
   const currentYear = new Date().getFullYear();
   const router = useRouter();
   const pathname = usePathname();
+  const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
 
   const handleLanguageChange = (newLocale: Locale) => {
     saveLanguagePreference(newLocale);
@@ -30,7 +31,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
       <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-[1.3fr_0.9fr_0.9fr_1fr]">
           <div className="space-y-5">
-            <Link href={`/${locale}`} className="inline-flex items-center gap-3">
+            <Link href={`/${locale}/`} className="inline-flex items-center gap-3">
               <BrandMark className="h-11 w-11" />
               <div>
                 <div className="text-xs font-black uppercase tracking-[0.22em] text-[hsl(var(--color-accent-strong))]">
@@ -54,7 +55,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                 <div className="space-y-1">
                   <p className="text-sm font-semibold text-[hsl(var(--color-foreground))]">Private by design</p>
                   <p className="text-sm text-[hsl(var(--color-muted-foreground))]">
-                    Files stay in your browser where applicable. Advertising and partner offers keep the service free, and the live source remains public under AGPL-3.0.
+                    Files stay in your browser where applicable, and the live source remains public under AGPL-3.0.
                   </p>
                 </div>
               </div>
@@ -65,18 +66,33 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
             <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-accent-strong))]">Trust</h3>
             <ul className="space-y-3 text-sm text-[hsl(var(--color-muted-foreground))]">
               <li>
-                <Link href={`/${locale}/privacy`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                <Link href={`/${locale}/privacy/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
                   {t('navigation.privacy')}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/about`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                <Link href={`/${locale}/terms/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                  Terms
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/editorial/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                  Editorial policy
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/about/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
                   {t('navigation.about')}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/faq`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                <Link href={`/${locale}/faq/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
                   {t('navigation.faq')}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/contact/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                  Support
                 </Link>
               </li>
               <li>
@@ -96,37 +112,37 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
             <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-accent-strong))]">Popular PDF tasks</h3>
             <ul className="space-y-3 text-sm text-[hsl(var(--color-muted-foreground))]">
               <li>
-                <Link href={`/${locale}/tools/merge-pdf`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                <Link href={`/${locale}/tools/merge-pdf/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
                   Merge PDF files
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/tools/compress-pdf`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                <Link href={`/${locale}/tools/compress-pdf/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
                   Compress a PDF for upload limits
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/tools/jpg-to-pdf`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                <Link href={`/${locale}/tools/jpg-to-pdf/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
                   Convert JPG to PDF
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/tools/pdf-to-jpg`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                <Link href={`/${locale}/tools/pdf-to-jpg/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
                   Convert PDF pages to JPG
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/tools/sign-pdf`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                <Link href={`/${locale}/tools/sign-pdf/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
                   Sign a PDF in your browser
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/tools/encrypt-pdf`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                <Link href={`/${locale}/tools/encrypt-pdf/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
                   Encrypt a PDF
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/workflow`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                <Link href={`/${locale}/workflow/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
                   Build a PDF workflow
                 </Link>
               </li>
@@ -157,9 +173,11 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
               <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
                 {siteConfig.legal.noticeSummary}
               </p>
-              <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
-                {siteConfig.ads.disclosureSummary} {siteConfig.sponsorship.disclosure}
-              </p>
+              {showMonetizationDisclosure && (
+                <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
+                  {siteConfig.ads.disclosureSummary} {siteConfig.sponsorship.disclosure}
+                </p>
+              )}
               <p className="text-xs leading-5 text-[hsl(var(--color-muted-foreground))]">
                 Source code for the live service is publicly available under {siteConfig.legal.license}.
               </p>

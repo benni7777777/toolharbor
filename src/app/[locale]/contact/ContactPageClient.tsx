@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Github, Gavel, ShieldCheck, ExternalLink, GitPullRequest, ScrollText } from 'lucide-react';
+import { Github, Gavel, ShieldCheck, ExternalLink, GitPullRequest, Mail, MessageCircle, ScrollText } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
@@ -21,7 +21,41 @@ interface ContactPageClientProps {
 
 export default function ContactPageClient({ locale }: ContactPageClientProps) {
   const monetizationProfile = useMonetizationProfile();
+  const showInfoNativeAd =
+    monetizationProfile.allowNativeUnits && siteConfig.ads.placements.infoPages.nativeBanner;
+  const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
+  const supportEmailHref = `mailto:${siteConfig.links.supportEmail}`;
   const supportCards = [
+    {
+      icon: Mail,
+      title: 'Email support',
+      description:
+        'Use email for general questions, account-free help, privacy requests, and non-developer support.',
+      href: supportEmailHref,
+      action: siteConfig.links.supportEmail,
+      external: false,
+    },
+    {
+      icon: MessageCircle,
+      title: 'General help',
+      description:
+        'Start with the FAQ for privacy, file handling, browser limits, language support, and tool behavior.',
+      href: `/${locale}/faq/`,
+      action: 'Open FAQ',
+      external: false,
+    },
+    {
+      icon: Github,
+      title: 'Developer issues',
+      description:
+        'Use GitHub Issues for bugs, regressions, feature requests, reproducible tool reports, and source review.',
+      href: siteConfig.links.githubIssues,
+      action: 'Open issues',
+      external: true,
+    },
+  ];
+
+  const sourceCards = [
     {
       icon: Github,
       title: 'Source code',
@@ -65,14 +99,14 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
             <div className="mx-auto max-w-4xl text-center">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] px-4 py-2 text-sm text-[hsl(var(--color-muted-foreground))]">
                 <ShieldCheck className="h-4 w-4 text-[hsl(var(--color-accent-strong))]" aria-hidden="true" />
-                <span>GitHub-first support and public source access</span>
+                <span>User support and public source access</span>
               </div>
               <h1 className="text-4xl font-bold text-[hsl(var(--color-foreground))] md:text-5xl">
-                Support, source, and trust surfaces
+                Contact and support
               </h1>
               <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-[hsl(var(--color-muted-foreground))]">
-                OpenToolsKit does not offer email support. The live product, issue tracking, AGPL notice,
-                and source distribution are all routed through the public GitHub project instead.
+                For general help, privacy questions, or feedback about the public tool site, use the support email
+                or FAQ. GitHub remains available for developer-facing bug reports and source review.
               </p>
             </div>
           </div>
@@ -84,8 +118,7 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
               {supportCards.map((card) => {
                 const Icon = card.icon;
 
-                return (
-                  <a key={card.title} href={card.href} target="_blank" rel="noopener noreferrer" className="block">
+                const content = (
                     <Card className="h-full p-6" hover>
                       <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[hsl(var(--color-primary)/0.1)]">
                         <Icon className="h-6 w-6 text-[hsl(var(--color-primary))]" />
@@ -98,37 +131,52 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
                       </p>
                       <span className="inline-flex items-center gap-2 text-sm font-medium text-[hsl(var(--color-primary))]">
                         {card.action}
-                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                        {card.external && <ExternalLink className="h-4 w-4" aria-hidden="true" />}
                       </span>
                     </Card>
-                  </a>
+                );
+
+                if (card.external) {
+                  return (
+                    <a key={card.title} href={card.href} target="_blank" rel="noopener noreferrer" className="block">
+                      {content}
+                    </a>
+                  );
+                }
+
+                return (
+                  <Link key={card.title} href={card.href} className="block">
+                    {content}
+                  </Link>
                 );
               })}
             </div>
           </div>
         </section>
 
-        <section className="py-4">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-5xl">
-              {monetizationProfile.allowNativeUnits && (
+        {showInfoNativeAd && (
+          <section className="py-4">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-5xl">
                 <AdsterraNativeBanner
                   slotName="info-native"
                   description="This support page may show a third-party native placement. Core tools and downloads remain unaffected."
                   collapseOnNoFill
                 />
-              )}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        <section className="py-6">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-5xl">
-              <MonetizationDisclosureCard locale={locale} />
+        {showMonetizationDisclosure && (
+          <section className="py-6">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-5xl">
+                <MonetizationDisclosureCard locale={locale} />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         <section className="py-12 bg-[hsl(var(--color-muted)/0.3)]">
           <div className="container mx-auto px-4">
@@ -148,11 +196,12 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
                     and sponsor architecture.
                   </p>
                   <p>
-                    Files are processed locally where applicable. Ads and partner offers are supplied by third-party
-                    networks, and OpenToolsKit does not individually author every ad creative or destination page.
+                    Files are processed locally where applicable. The public source, license, attribution, and support
+                    paths are kept visible so users and reviewers can verify the project boundaries.
                   </p>
                   <p>
-                    Sponsor interaction is optional. Results remain available without clicking any ad or partner link.
+                    Optional advertising or partner surfaces, when enabled outside review mode, are separate from the
+                    core file-processing flow.
                   </p>
                 </div>
               </Card>
@@ -172,13 +221,48 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
                       View source code
                     </Button>
                   </a>
-                  <Link href={`/${locale}/faq`}>
+                  <a href={supportEmailHref}>
+                    <Button variant="outline" className="w-full justify-center">
+                      Email support
+                    </Button>
+                  </a>
+                  <Link href={`/${locale}/faq/`}>
                     <Button variant="ghost" className="w-full justify-center">
                       Review FAQ
                     </Button>
                   </Link>
                 </div>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-12">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+              {sourceCards.map((card) => {
+                const Icon = card.icon;
+
+                return (
+                  <a key={card.title} href={card.href} target="_blank" rel="noopener noreferrer" className="block">
+                    <Card className="h-full p-6" hover>
+                      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[hsl(var(--color-muted))]">
+                        <Icon className="h-6 w-6 text-[hsl(var(--color-muted-foreground))]" />
+                      </div>
+                      <h2 className="mb-3 text-lg font-semibold text-[hsl(var(--color-foreground))]">
+                        {card.title}
+                      </h2>
+                      <p className="mb-5 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                        {card.description}
+                      </p>
+                      <span className="inline-flex items-center gap-2 text-sm font-medium text-[hsl(var(--color-primary))]">
+                        {card.action}
+                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                      </span>
+                    </Card>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </section>

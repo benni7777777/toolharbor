@@ -119,7 +119,7 @@ export const GROWTH_CLUSTERS: readonly GrowthCluster[] = [
   },
   {
     id: 'metadata-seo-publishing-launch-tools',
-    name: 'Metadata, SEO, and publishing launch tools',
+    name: 'Metadata, SEO, and publishing tools',
     status: 'planned',
     priority: 4,
     liveRouteFamilies: [],

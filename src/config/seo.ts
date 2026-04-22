@@ -81,15 +81,15 @@ export const STATIC_PAGE_SEO: Record<StaticPageKey, StaticPageSeo> = {
   },
   privacy: {
     title: 'Privacy Policy - Browser-Side File Processing | OpenToolsKit',
-    description: 'Review the OpenToolsKit privacy policy covering browser-side file handling, advertising disclosures, and public AGPL source code availability.',
+    description: 'Review the OpenToolsKit privacy policy covering browser-side file handling, support paths, optional partner surfaces, and public AGPL source availability.',
     primaryQuery: 'browser side file processing privacy policy',
     secondaryQueries: ['opentoolskit privacy policy', 'local pdf processing privacy', 'pdf tools privacy'],
   },
   contact: {
-    title: 'GitHub Support, Source Code, and AGPL Notice | OpenToolsKit',
-    description: 'Use GitHub for OpenToolsKit support, issue reporting, source review, and AGPL attribution details that correspond to the live service.',
+    title: 'Contact and Support | OpenToolsKit',
+    description: 'Contact OpenToolsKit for general support, privacy questions, bug reports, source review, and AGPL attribution details for the live service.',
     primaryQuery: 'opentoolskit support',
-    secondaryQueries: ['opentoolskit github', 'opentoolskit source code', 'agpl source availability'],
+    secondaryQueries: ['opentoolskit contact', 'opentoolskit github', 'opentoolskit source code', 'agpl source availability'],
   },
 };
 

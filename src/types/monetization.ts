@@ -57,6 +57,7 @@ export type MonetizationBlockedReason =
   | 'missing-secret'
   | 'hard-gate-disabled'
   | 'passive-popunder-disabled'
+  | 'placement-disabled'
   | 'profile-loading'
   | 'untrusted-event';
 

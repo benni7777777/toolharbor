@@ -3,6 +3,18 @@
 # Enable rewrite engine
 RewriteEngine On
 
+# Canonical host and default-locale redirects
+RewriteCond %{HTTP_HOST} ^opentoolskit\.com$ [NC]
+RewriteRule ^(.*)$ https://www.opentoolskit.com/$1 [R=301,L]
+
+RewriteRule ^$ /en/ [R=302,L]
+RewriteRule ^(support|source)/?$ /en/contact/ [R=301,L]
+RewriteRule ^pdf-tools/?$ /en/tools/ [R=301,L]
+RewriteRule ^tools/?$ /en/tools/ [R=301,L]
+RewriteRule ^tools/(.*)$ /en/tools/$1 [R=301,L]
+RewriteRule ^(workflow|about|faq|privacy|terms|editorial|contact)/?$ /en/$1/ [R=301,L]
+RewriteRule ^(merge-pdf|split-pdf|compress-pdf|jpg-to-pdf|pdf-to-jpg|sign-pdf|encrypt-pdf)/?$ /en/tools/$1/ [R=301,L]
+
 # Handle trailing slash routing (matches Next.js trailingSlash: true config)
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !/$
@@ -25,6 +37,8 @@ AddType font/woff .woff
 AddType font/woff2 .woff2
 AddType font/ttf .ttf
 AddType application/vnd.ms-fontobject .eot
+AddType text/plain .txt
+AddType application/xml .xml
 
 # ==========================================
 # Compression (mod_deflate)
@@ -104,6 +118,16 @@ AddType application/vnd.ms-fontobject .eot
 
     <FilesMatch "manifest\.json$">
         Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+
+    <FilesMatch "^(ads|robots)\.txt$">
+        Header set Content-Type "text/plain; charset=utf-8"
+        Header set Cache-Control "public, max-age=300, must-revalidate"
+    </FilesMatch>
+
+    <FilesMatch "^sitemap\.xml$">
+        Header set Content-Type "application/xml; charset=utf-8"
+        Header set Cache-Control "public, max-age=300, must-revalidate"
     </FilesMatch>
 </IfModule>
 

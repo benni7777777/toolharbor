@@ -85,12 +85,12 @@ export { RemoveMetadataTool, type RemoveMetadataToolProps } from './remove-metad
 export { ChangePermissionsTool, type ChangePermissionsToolProps } from './change-permissions';
 export { FindAndRedactTool, type FindAndRedactToolProps } from './find-and-redact';
 
-// New Tools - Phase 1
+// Additional PDF tools
 export { DeskewPDFTool, type DeskewPDFToolProps } from './deskew';
 export { PDFBookletTool, type PDFBookletToolProps } from './pdf-booklet';
 export { RasterizePDFTool, type RasterizePDFToolProps } from './rasterize';
 
-// New Tools - Phase 2 (Conversion)
+// Additional conversion tools
 export { MarkdownToPDFTool, type MarkdownToPDFToolProps } from './markdown-to-pdf';
 export { EmailToPDFTool, type EmailToPDFToolProps } from './email-to-pdf';
 export { CBZToPDFTool, type CBZToPDFToolProps } from './cbz-to-pdf';

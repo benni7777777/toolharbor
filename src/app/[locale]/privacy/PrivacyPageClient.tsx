@@ -21,6 +21,9 @@ interface PrivacyPageClientProps {
 export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
   const t = useTranslations();
   const monetizationProfile = useMonetizationProfile();
+  const showInfoNativeAd =
+    monetizationProfile.allowNativeUnits && siteConfig.ads.placements.infoPages.nativeBanner;
+  const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
 
   const privacyHighlights = [
     {
@@ -41,7 +44,7 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
     {
       icon: Eye,
       title: 'Clear Boundaries',
-      description: 'Ads and partner offers are labeled and controlled by frequency, geo, and disclosure rules that stay separate from file processing.',
+      description: 'Support, source, advertising, and partner surfaces stay separate from file processing and are labeled when present.',
     },
   ];
 
@@ -101,7 +104,7 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto prose prose-lg">
               <p className="text-sm text-[hsl(var(--color-muted-foreground))] mb-8">
-                Last updated: April 12, 2026
+                Last updated: April 22, 2026
               </p>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">1. Introduction</h2>
@@ -132,7 +135,7 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
               <h3 className="text-xl font-semibold text-[hsl(var(--color-foreground))] mt-6 mb-3">3.2 Usage signals</h3>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
                 We may rely on limited browser-side state to support language preference, theme choice, recent history,
-                and ad frequency caps such as “show once per session.”
+                and frequency caps such as &quot;show once per session.&quot;
               </p>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">4. Local storage and session state</h2>
@@ -147,13 +150,13 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">5. Ads and partner offers</h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                OpenToolsKit may show labeled ad placements or partner suggestions on non-tool-action pages and after a
-                successful result. These surfaces help fund the open-source service.
+                OpenToolsKit may show labeled ad placements or partner suggestions outside AdSense review mode. These
+                surfaces help fund the open-source service, but they are separate from the browser-side file tools.
               </p>
               <ul className="list-disc pl-6 space-y-2 text-[hsl(var(--color-muted-foreground))] mb-4">
-                <li>Some eligible downloads may show a clearly labeled timed sponsor gate before the file unlocks</li>
-                <li>Partner links are labeled and open away from the current tool flow</li>
-                <li>Third-party networks may deliver creatives, links, and landing pages</li>
+                <li>Core tool results remain available without clicking an ad or partner link</li>
+                <li>Partner links, when enabled, are labeled and open away from the current tool flow</li>
+                <li>Third-party networks may deliver creatives, links, landing pages, and their own tracking technologies</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">6. Third-party services</h2>
@@ -171,34 +174,36 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">8. Contact and support</h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                OpenToolsKit does not provide direct email support. For privacy questions, bug reports, and source review,
-                use the public support page and GitHub issue tracker.
+                For privacy questions, support requests, bug reports, and source review, use the contact page. General
+                users can email support, and developer-facing reports can use the public GitHub issue tracker.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="py-4">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-5xl">
-              {monetizationProfile.allowNativeUnits && (
+        {showInfoNativeAd && (
+          <section className="py-4">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-5xl">
                 <AdsterraNativeBanner
                   slotName="info-native"
                   description="This privacy page may carry a labeled native ad placement on behalf of a third-party network. It does not affect file processing or downloads."
                   collapseOnNoFill
                 />
-              )}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        <section className="py-6">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-5xl">
-              <MonetizationDisclosureCard locale={locale} />
+        {showMonetizationDisclosure && (
+          <section className="py-6">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-5xl">
+                <MonetizationDisclosureCard locale={locale} />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         <section className="py-12 bg-[hsl(var(--color-muted)/0.3)]">
           <div className="container mx-auto px-4">

@@ -8,7 +8,7 @@
 import type { Metadata } from 'next';
 import { getCategorySeo, getStaticPageSeo } from '@/config/seo';
 import { siteConfig } from '@/config/site';
-import { type Locale, locales } from '@/lib/i18n/config';
+import { defaultLocale, type Locale, locales } from '@/lib/i18n/config';
 import { getToolSeoProfile } from '@/lib/seo/profiles';
 import type { Tool, ToolContent } from '@/types/tool';
 import type { ToolCategory } from '@/types/tool';
@@ -43,24 +43,42 @@ export interface ToolMetadataOptions extends BaseMetadataOptions {
 /**
  * Generate the canonical URL for a page
  */
-export function getCanonicalUrl(locale: Locale, path: string = ''): string {
+export function withTrailingSlash(value: string): string {
+  if (!value || value.endsWith('/') || value.endsWith('.txt') || value.endsWith('.xml')) {
+    return value;
+  }
+
+  const [withoutHash, hash] = value.split('#');
+  const normalized = withoutHash.endsWith('/') ? withoutHash : `${withoutHash}/`;
+  return hash ? `${normalized}#${hash}` : normalized;
+}
+
+function normalizePagePath(path: string = ''): string {
+  if (!path || path === '/') {
+    return '';
+  }
+
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  return `${siteConfig.url}/${locale}${cleanPath}`;
+  return withTrailingSlash(cleanPath);
+}
+
+export function getCanonicalUrl(locale: Locale, path: string = ''): string {
+  const cleanPath = normalizePagePath(path);
+  return withTrailingSlash(`${siteConfig.url}/${locale}${cleanPath}`);
 }
 
 /**
  * Generate alternate language URLs for hreflang tags
  */
 export function getAlternateUrls(path: string = ''): Record<string, string> {
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
   const alternates: Record<string, string> = {};
 
   for (const locale of locales) {
-    alternates[locale] = `${siteConfig.url}/${locale}${cleanPath}`;
+    alternates[locale] = getCanonicalUrl(locale, path);
   }
 
-  // Add x-default pointing to English
-  alternates['x-default'] = `${siteConfig.url}/en${cleanPath}`;
+  // Root is the x-default language chooser and redirects to the canonical English route.
+  alternates['x-default'] = normalizePagePath(path) ? getCanonicalUrl(defaultLocale, path) : `${siteConfig.url}/`;
 
   return alternates;
 }
@@ -92,7 +110,7 @@ export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
     creator: siteConfig.creator,
     publisher: siteConfig.name,
     robots: noIndex
-      ? { index: false, follow: false }
+      ? { index: false, follow: true }
       : {
         index: true,
         follow: true,

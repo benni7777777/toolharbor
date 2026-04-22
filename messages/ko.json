@@ -6,60 +6,60 @@
     },
     "tools": {
       "title": "OpenToolsKit Tools",
-      "description": "Browse the OpenToolsKit launch catalog for browser-based PDF tools, workflow automation, and multilingual utility pages."
+      "description": "Browse the OpenToolsKit catalog for browser-based PDF tools, workflow automation, and multilingual utility pages."
     },
     "about": {
-      "title": "회사 소개",
+      "title": "íšŒì‚¬ ì†Œê°œ",
       "description": "Learn how OpenToolsKit turns private browser utilities into an open-source tool platform."
     },
     "faq": {
-      "title": "자주 묻는 질문",
+      "title": "ìžì£¼ ë¬»ëŠ” ì§ˆë¬¸",
       "description": "Find answers about OpenToolsKit, the workflow editor, browser extension, and source code."
     },
     "privacy": {
-      "title": "개인정보 보호정책",
-      "description": "OpenToolsKit 개인정보 보호정책. 파일은 장치를 떠나지 않습니다 - 모든 처리는 로컬 브라우저에서 이루어집니다."
+      "title": "ê°œì¸ì •ë³´ ë³´í˜¸ì •ì±…",
+      "description": "OpenToolsKit ê°œì¸ì •ë³´ ë³´í˜¸ì •ì±…. íŒŒì¼ì€ ìž¥ì¹˜ë¥¼ ë– ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤ - ëª¨ë“  ì²˜ë¦¬ëŠ” ë¡œì»¬ ë¸Œë¼ìš°ì €ì—ì„œ ì´ë£¨ì–´ì§‘ë‹ˆë‹¤."
     },
     "contact": {
       "title": "Support & Source",
       "description": "Open-source support, issue reporting, and AGPL source links for OpenToolsKit."
     },
     "keywords": {
-      "pdfTools": "PDF 도구",
-      "mergePdf": "PDF 병합",
-      "splitPdf": "PDF 분할",
-      "compressPdf": "PDF 압축",
-      "convertPdf": "PDF 변환",
-      "freePdfTools": "무료 PDF 도구",
-      "onlinePdfEditor": "온라인 PDF 편집기"
+      "pdfTools": "PDF ë„êµ¬",
+      "mergePdf": "PDF ë³‘í•©",
+      "splitPdf": "PDF ë¶„í• ",
+      "compressPdf": "PDF ì••ì¶•",
+      "convertPdf": "PDF ë³€í™˜",
+      "freePdfTools": "ë¬´ë£Œ PDF ë„êµ¬",
+      "onlinePdfEditor": "ì˜¨ë¼ì¸ PDF íŽ¸ì§‘ê¸°"
     }
   },
   "common": {
     "brand": "OpenToolsKit",
     "tagline": "Open-source browser tools - private by default",
     "navigation": {
-      "home": "홈",
-      "tools": "도구",
-      "about": "소개",
-      "faq": "자주 묻는 질문",
-      "privacy": "개인정보",
+      "home": "í™ˆ",
+      "tools": "ë„êµ¬",
+      "about": "ì†Œê°œ",
+      "faq": "ìžì£¼ ë¬»ëŠ” ì§ˆë¬¸",
+      "privacy": "ê°œì¸ì •ë³´",
       "contact": "Support",
-      "workflow": "워크플로"
+      "workflow": "ì›Œí¬í”Œë¡œ"
     },
     "buttons": {
-      "upload": "파일 업로드",
-      "download": "다운로드",
-      "process": "처리",
-      "cancel": "취소",
-      "reset": "초기화",
-      "selectLanguage": "언어 선택",
-      "close": "닫기",
-      "save": "저장",
-      "delete": "삭제",
-      "edit": "편집",
-      "back": "뒤로",
-      "next": "다음",
-      "submit": "제출",
+      "upload": "íŒŒì¼ ì—…ë¡œë“œ",
+      "download": "ë‹¤ìš´ë¡œë“œ",
+      "process": "ì²˜ë¦¬",
+      "cancel": "ì·¨ì†Œ",
+      "reset": "ì´ˆê¸°í™”",
+      "selectLanguage": "ì–¸ì–´ ì„ íƒ",
+      "close": "ë‹«ê¸°",
+      "save": "ì €ìž¥",
+      "delete": "ì‚­ì œ",
+      "edit": "íŽ¸ì§‘",
+      "back": "ë’¤ë¡œ",
+      "next": "ë‹¤ìŒ",
+      "submit": "ì œì¶œ",
       "clear": "Clear",
       "previous": "Previous",
       "clearAll": "Clear All",
@@ -71,72 +71,72 @@
       "insertAtEnd": "Insert at End",
       "rotateAllLeft": "Rotate All Left",
       "rotateAllRight": "Rotate All Right",
-      "confirm": "확인",
-      "add": "추가"
+      "confirm": "í™•ì¸",
+      "add": "ì¶”ê°€"
     },
     "status": {
-      "idle": "준비됨",
-      "uploading": "업로드 중...",
-      "processing": "처리 중...",
-      "complete": "완료",
-      "error": "오류",
-      "loading": "로딩 중..."
+      "idle": "ì¤€ë¹„ë¨",
+      "uploading": "ì—…ë¡œë“œ ì¤‘...",
+      "processing": "ì²˜ë¦¬ ì¤‘...",
+      "complete": "ì™„ë£Œ",
+      "error": "ì˜¤ë¥˜",
+      "loading": "ë¡œë”© ì¤‘..."
     },
     "footer": {
-      "copyright": "© {year} OpenToolsKit. All rights reserved.",
-      "privacyBadge": "100% 프라이빗 - 파일이 기기를 떠나지 않습니다",
-      "footer": "© 2025 OpenToolsKit. All rights reserved.",
+      "copyright": "Â© {year} OpenToolsKit. All rights reserved.",
+      "privacyBadge": "100% í”„ë¼ì´ë¹— - íŒŒì¼ì´ ê¸°ê¸°ë¥¼ ë– ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤",
+      "footer": "Â© 2025 OpenToolsKit. All rights reserved.",
       "madeWith": "Made with <Heart /> and <Nextjs />"
     },
     "recentFiles": {
-      "title": "최근 파일",
-      "empty": "최근 파일 없음",
-      "clearAll": "모두 지우기",
-      "processedWith": "처리 도구:"
+      "title": "ìµœê·¼ íŒŒì¼",
+      "empty": "ìµœê·¼ íŒŒì¼ ì—†ìŒ",
+      "clearAll": "ëª¨ë‘ ì§€ìš°ê¸°",
+      "processedWith": "ì²˜ë¦¬ ë„êµ¬:"
     },
     "savedProjects": {
-      "title": "저장된 프로젝트",
-      "empty": "저장된 프로젝트 없음",
-      "clearAll": "모두 지우기",
-      "resume": "재개",
-      "delete": "삭제",
-      "inProgress": "진행 중",
-      "paused": "일시 중지",
-      "completed": "완료",
-      "progress": "진행률",
-      "files": "파일"
+      "title": "ì €ìž¥ëœ í”„ë¡œì íŠ¸",
+      "empty": "ì €ìž¥ëœ í”„ë¡œì íŠ¸ ì—†ìŒ",
+      "clearAll": "ëª¨ë‘ ì§€ìš°ê¸°",
+      "resume": "ìž¬ê°œ",
+      "delete": "ì‚­ì œ",
+      "inProgress": "ì§„í–‰ ì¤‘",
+      "paused": "ì¼ì‹œ ì¤‘ì§€",
+      "completed": "ì™„ë£Œ",
+      "progress": "ì§„í–‰ë¥ ",
+      "files": "íŒŒì¼"
     },
     "batchProcessing": {
-      "title": "일괄 처리",
-      "addFiles": "파일을 드롭하거나 클릭하여 추가",
-      "clearAll": "모두 지우기",
-      "startProcessing": "처리 시작",
-      "cancelProcessing": "취소",
-      "downloadAll": "모두 다운로드",
-      "downloadZip": "ZIP으로 다운로드",
-      "pending": "대기 중",
-      "processing": "처리 중...",
-      "completed": "완료",
-      "error": "오류",
-      "progress": "전체 진행률",
-      "filesSelected": "파일 선택됨",
-      "noFiles": "아직 파일이 추가되지 않았습니다. 일괄 처리를 시작하려면 파일을 추가하세요."
+      "title": "ì¼ê´„ ì²˜ë¦¬",
+      "addFiles": "íŒŒì¼ì„ ë“œë¡­í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì¶”ê°€",
+      "clearAll": "ëª¨ë‘ ì§€ìš°ê¸°",
+      "startProcessing": "ì²˜ë¦¬ ì‹œìž‘",
+      "cancelProcessing": "ì·¨ì†Œ",
+      "downloadAll": "ëª¨ë‘ ë‹¤ìš´ë¡œë“œ",
+      "downloadZip": "ZIPìœ¼ë¡œ ë‹¤ìš´ë¡œë“œ",
+      "pending": "ëŒ€ê¸° ì¤‘",
+      "processing": "ì²˜ë¦¬ ì¤‘...",
+      "completed": "ì™„ë£Œ",
+      "error": "ì˜¤ë¥˜",
+      "progress": "ì „ì²´ ì§„í–‰ë¥ ",
+      "filesSelected": "íŒŒì¼ ì„ íƒë¨",
+      "noFiles": "ì•„ì§ íŒŒì¼ì´ ì¶”ê°€ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤. ì¼ê´„ ì²˜ë¦¬ë¥¼ ì‹œìž‘í•˜ë ¤ë©´ íŒŒì¼ì„ ì¶”ê°€í•˜ì„¸ìš”."
     },
     "guidedTour": {
-      "startTour": "투어 시작",
-      "next": "다음",
-      "prev": "이전",
-      "finish": "완료",
-      "skip": "건너뛰기",
+      "startTour": "íˆ¬ì–´ ì‹œìž‘",
+      "next": "ë‹¤ìŒ",
+      "prev": "ì´ì „",
+      "finish": "ì™„ë£Œ",
+      "skip": "ê±´ë„ˆë›°ê¸°",
       "stepOf": "/",
-      "welcomeTitle": "OpenToolsKit에 오신 것을 환영합니다!",
-      "welcomeMessage": "PDF 도구 사용법을 배우는 빠른 투어를 원하시나요? 1분 정도 소요됩니다.",
-      "helpButton": "도움말 투어"
+      "welcomeTitle": "OpenToolsKitì— ì˜¤ì‹  ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤!",
+      "welcomeMessage": "PDF ë„êµ¬ ì‚¬ìš©ë²•ì„ ë°°ìš°ëŠ” ë¹ ë¥¸ íˆ¬ì–´ë¥¼ ì›í•˜ì‹œë‚˜ìš”? 1ë¶„ ì •ë„ ì†Œìš”ë©ë‹ˆë‹¤.",
+      "helpButton": "ë„ì›€ë§ íˆ¬ì–´"
     },
     "search": {
-      "placeholder": "도구 검색...",
-      "hint": "Enter로 선택, ↑↓로 이동",
-      "noResults": "도구를 찾을 수 없습니다"
+      "placeholder": "ë„êµ¬ ê²€ìƒ‰...",
+      "hint": "Enterë¡œ ì„ íƒ, â†‘â†“ë¡œ ì´ë™",
+      "noResults": "ë„êµ¬ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤"
     },
     "faqPage": {
       "title": "Frequently Asked Questions",
@@ -157,7 +157,7 @@
         "general": {
           "whatIs": {
             "question": "What is OpenToolsKit?",
-            "answer": "OpenToolsKit is a free, privacy-focused PDF toolkit that runs entirely in your browser. It offers 67+ professional tools for editing, converting, merging, splitting, and securing PDF files without uploading them to any server."
+            "answer": "OpenToolsKit is a free, privacy-focused PDF toolkit that runs entirely in your browser. It offers 95+ professional tools for editing, converting, merging, splitting, and securing PDF files without uploading them to any server."
           },
           "isFree": {
             "question": "Is OpenToolsKit really free?",
@@ -185,7 +185,7 @@
         "features": {
           "operations": {
             "question": "What PDF operations can I perform?",
-            "answer": "OpenToolsKit offers 67+ tools including: merge, split, compress, convert (to/from images, text, JSON), edit, annotate, sign, add watermarks, encrypt/decrypt, OCR, and many more."
+            "answer": "OpenToolsKit offers 95+ tools including: merge, split, compress, convert (to/from images, text, JSON), edit, annotate, sign, add watermarks, encrypt/decrypt, OCR, and many more."
           },
           "merge": {
             "question": "Can I merge multiple PDF files?",
@@ -221,7 +221,7 @@
         "languages": {
           "supported": {
             "question": "What languages are supported?",
-            "answer": "OpenToolsKit is available in 9 languages: English, Japanese, Korean, Spanish, French, German, Chinese, Portuguese, and Arabic (with RTL support)."
+            "answer": "OpenToolsKit is available in 13 locales: English, Japanese, Korean, Spanish, French, German, Chinese, Portuguese, and Arabic (with RTL support)."
           },
           "change": {
             "question": "How do I change the language?",
@@ -240,7 +240,7 @@
       "description": "{brand} is a free, privacy-focused PDF toolkit that runs entirely in your browser. With {count}+ professional tools, you can edit, convert, merge, split, and secure your PDF files without ever uploading them to a server.",
       "mission": {
         "title": "Our Mission",
-        "p1": "We believe that everyone should have access to powerful PDF tools without compromising their privacy or paying expensive subscription fees. That's why we created {brand} – a comprehensive PDF toolkit that puts your privacy first.",
+        "p1": "We believe that everyone should have access to powerful PDF tools without compromising their privacy or paying expensive subscription fees. That's why we created {brand} â€“ a comprehensive PDF toolkit that puts your privacy first.",
         "p2": "Unlike traditional PDF services that require you to upload your files to remote servers, {brand} processes everything locally in your browser. Your sensitive documents never leave your device, giving you complete control over your data.",
         "p3": "Whether you're a student, professional, or casual user, {brand} provides all the tools you need to work with PDFs efficiently and securely."
       },
@@ -256,7 +256,7 @@
         },
         "accessible": {
           "title": "Accessible Everywhere",
-          "description": "Available in 9 languages and works on any device with a modern browser. No installation required."
+          "description": "Available in 13 locales and works on any device with a modern browser. No installation required."
         },
         "free": {
           "title": "Free Forever",
@@ -291,69 +291,69 @@
     },
     "contactPage": {
       "hero": {
-        "title": "문의하기",
-        "description": "질문이나 제안 사항이 있거나 버그를 발견하셨나요? 여러분의 의견을 기다립니다."
+        "title": "ë¬¸ì˜í•˜ê¸°",
+        "description": "ì§ˆë¬¸ì´ë‚˜ ì œì•ˆ ì‚¬í•­ì´ ìžˆê±°ë‚˜ ë²„ê·¸ë¥¼ ë°œê²¬í•˜ì…¨ë‚˜ìš”? ì—¬ëŸ¬ë¶„ì˜ ì˜ê²¬ì„ ê¸°ë‹¤ë¦½ë‹ˆë‹¤."
       },
       "methods": {
         "email": {
-          "title": "이메일",
-          "description": "이메일을 보내주시면 24-48시간 이내에 답변해 드립니다.",
+          "title": "ì´ë©”ì¼",
+          "description": "ì´ë©”ì¼ì„ ë³´ë‚´ì£¼ì‹œë©´ 24-48ì‹œê°„ ì´ë‚´ì— ë‹µë³€í•´ ë“œë¦½ë‹ˆë‹¤.",
           "action": "Open repository"
         },
         "github": {
           "title": "GitHub",
-          "description": "버그 신고, 기능 요청 또는 프로젝트 기여.",
-          "action": "GitHub에서 보기"
+          "description": "ë²„ê·¸ ì‹ ê³ , ê¸°ëŠ¥ ìš”ì²­ ë˜ëŠ” í”„ë¡œì íŠ¸ ê¸°ì—¬.",
+          "action": "GitHubì—ì„œ ë³´ê¸°"
         },
         "twitter": {
           "title": "Twitter",
-          "description": "업데이트 및 공지 사항 팔로우.",
+          "description": "ì—…ë°ì´íŠ¸ ë° ê³µì§€ ì‚¬í•­ íŒ”ë¡œìš°.",
           "action": "@OpenToolsKit"
         }
       },
       "form": {
-        "title": "메시지 보내기",
-        "description": "아래 양식을 작성해 주시면 가능한 한 빨리 연락드리겠습니다.",
+        "title": "ë©”ì‹œì§€ ë³´ë‚´ê¸°",
+        "description": "ì•„ëž˜ ì–‘ì‹ì„ ìž‘ì„±í•´ ì£¼ì‹œë©´ ê°€ëŠ¥í•œ í•œ ë¹¨ë¦¬ ì—°ë½ë“œë¦¬ê² ìŠµë‹ˆë‹¤.",
         "success": {
-          "title": "메시지 전송됨!",
-          "description": "연락해 주셔서 감사합니다. 24-48시간 이내에 답변드리겠습니다.",
-          "button": "새 메시지 보내기"
+          "title": "ë©”ì‹œì§€ ì „ì†¡ë¨!",
+          "description": "ì—°ë½í•´ ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤. 24-48ì‹œê°„ ì´ë‚´ì— ë‹µë³€ë“œë¦¬ê² ìŠµë‹ˆë‹¤.",
+          "button": "ìƒˆ ë©”ì‹œì§€ ë³´ë‚´ê¸°"
         },
         "fields": {
           "name": {
-            "label": "이름",
-            "placeholder": "이름 입력"
+            "label": "ì´ë¦„",
+            "placeholder": "ì´ë¦„ ìž…ë ¥"
           },
           "email": {
-            "label": "이메일",
+            "label": "ì´ë©”ì¼",
             "placeholder": "your@email.com"
           },
           "subject": {
-            "label": "주제",
-            "placeholder": "주제 선택",
+            "label": "ì£¼ì œ",
+            "placeholder": "ì£¼ì œ ì„ íƒ",
             "options": {
-              "general": "일반 문의",
-              "bug": "버그 신고",
-              "feature": "기능 요청",
-              "feedback": "피드백",
-              "other": "기타"
+              "general": "ì¼ë°˜ ë¬¸ì˜",
+              "bug": "ë²„ê·¸ ì‹ ê³ ",
+              "feature": "ê¸°ëŠ¥ ìš”ì²­",
+              "feedback": "í”¼ë“œë°±",
+              "other": "ê¸°íƒ€"
             }
           },
           "message": {
-            "label": "메시지",
-            "placeholder": "문의 내용에 대해 자세히 알려주세요..."
+            "label": "ë©”ì‹œì§€",
+            "placeholder": "ë¬¸ì˜ ë‚´ìš©ì— ëŒ€í•´ ìžì„¸ížˆ ì•Œë ¤ì£¼ì„¸ìš”..."
           }
         },
-        "error": "문제가 발생했습니다. 다시 시도하거나 이메일로 직접 문의해 주세요.",
+        "error": "ë¬¸ì œê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•˜ê±°ë‚˜ ì´ë©”ì¼ë¡œ ì§ì ‘ ë¬¸ì˜í•´ ì£¼ì„¸ìš”.",
         "submit": {
-          "loading": "전송 중...",
-          "default": "메시지 보내기"
+          "loading": "ì „ì†¡ ì¤‘...",
+          "default": "ë©”ì‹œì§€ ë³´ë‚´ê¸°"
         }
       },
       "faq": {
-        "title": "빠른 답변을 찾고 계신가요?",
-        "description": "{brand}에 대한 자주 묻는 질문은 FAQ 페이지를 확인하세요.",
-        "button": "FAQ 보기"
+        "title": "ë¹ ë¥¸ ë‹µë³€ì„ ì°¾ê³  ê³„ì‹ ê°€ìš”?",
+        "description": "{brand}ì— ëŒ€í•œ ìžì£¼ ë¬»ëŠ” ì§ˆë¬¸ì€ FAQ íŽ˜ì´ì§€ë¥¼ í™•ì¸í•˜ì„¸ìš”.",
+        "button": "FAQ ë³´ê¸°"
       }
     },
     "accessibility": {
@@ -382,24 +382,24 @@
     }
   },
   "errors": {
-    "fileTooLarge": "파일이 너무 큽니다. 최대 크기는 {maxSize}MB입니다.",
-    "fileTypeInvalid": "잘못된 파일 형식입니다. {acceptedTypes} 파일을 업로드해 주세요.",
-    "fileCorrupted": "파일이 손상되었거나 읽을 수 없습니다.",
-    "fileEmpty": "파일이 비어 있습니다.",
-    "fileNotPdf": "파일이 유효한 PDF가 아닙니다.",
-    "processingFailed": "처리에 실패했습니다. 다시 시도해 주세요.",
-    "processingCancelled": "작업이 취소되었습니다.",
-    "networkError": "네트워크 오류. 연결을 확인해 주세요.",
-    "pdfEncrypted": "이 PDF는 비밀번호로 보호되어 있습니다. 먼저 암호를 해제해 주세요.",
-    "pdfMalformed": "PDF 구조가 잘못되었습니다. 먼저 복구 도구를 사용해 보세요.",
-    "processingTimeout": "작업 시간이 너무 오래 걸렸습니다. 더 작은 파일로 시도해 주세요.",
-    "memoryExceeded": "브라우저 메모리가 부족합니다. 다른 탭을 닫고 다시 시도해 주세요.",
-    "workerFailed": "처리 워커가 충돌했습니다. 페이지를 새로고침하고 다시 시도해 주세요.",
-    "browserNotSupported": "브라우저가 이 기능을 지원하지 않습니다.",
-    "invalidPageRange": "잘못된 페이지 범위가 지정되었습니다.",
-    "invalidOptions": "잘못된 옵션이 제공되었습니다.",
-    "invalidPassword": "입력한 비밀번호가 올바르지 않습니다. 확인 후 다시 시도해 주세요.",
-    "unknown": "예기치 않은 오류가 발생했습니다. 다시 시도해 주세요.",
+    "fileTooLarge": "íŒŒì¼ì´ ë„ˆë¬´ í½ë‹ˆë‹¤. ìµœëŒ€ í¬ê¸°ëŠ” {maxSize}MBìž…ë‹ˆë‹¤.",
+    "fileTypeInvalid": "ìž˜ëª»ëœ íŒŒì¼ í˜•ì‹ìž…ë‹ˆë‹¤. {acceptedTypes} íŒŒì¼ì„ ì—…ë¡œë“œí•´ ì£¼ì„¸ìš”.",
+    "fileCorrupted": "íŒŒì¼ì´ ì†ìƒë˜ì—ˆê±°ë‚˜ ì½ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.",
+    "fileEmpty": "íŒŒì¼ì´ ë¹„ì–´ ìžˆìŠµë‹ˆë‹¤.",
+    "fileNotPdf": "íŒŒì¼ì´ ìœ íš¨í•œ PDFê°€ ì•„ë‹™ë‹ˆë‹¤.",
+    "processingFailed": "ì²˜ë¦¬ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.",
+    "processingCancelled": "ìž‘ì—…ì´ ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.",
+    "networkError": "ë„¤íŠ¸ì›Œí¬ ì˜¤ë¥˜. ì—°ê²°ì„ í™•ì¸í•´ ì£¼ì„¸ìš”.",
+    "pdfEncrypted": "ì´ PDFëŠ” ë¹„ë°€ë²ˆí˜¸ë¡œ ë³´í˜¸ë˜ì–´ ìžˆìŠµë‹ˆë‹¤. ë¨¼ì € ì•”í˜¸ë¥¼ í•´ì œí•´ ì£¼ì„¸ìš”.",
+    "pdfMalformed": "PDF êµ¬ì¡°ê°€ ìž˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤. ë¨¼ì € ë³µêµ¬ ë„êµ¬ë¥¼ ì‚¬ìš©í•´ ë³´ì„¸ìš”.",
+    "processingTimeout": "ìž‘ì—… ì‹œê°„ì´ ë„ˆë¬´ ì˜¤ëž˜ ê±¸ë ¸ìŠµë‹ˆë‹¤. ë” ìž‘ì€ íŒŒì¼ë¡œ ì‹œë„í•´ ì£¼ì„¸ìš”.",
+    "memoryExceeded": "ë¸Œë¼ìš°ì € ë©”ëª¨ë¦¬ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤. ë‹¤ë¥¸ íƒ­ì„ ë‹«ê³  ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.",
+    "workerFailed": "ì²˜ë¦¬ ì›Œì»¤ê°€ ì¶©ëŒí–ˆìŠµë‹ˆë‹¤. íŽ˜ì´ì§€ë¥¼ ìƒˆë¡œê³ ì¹¨í•˜ê³  ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.",
+    "browserNotSupported": "ë¸Œë¼ìš°ì €ê°€ ì´ ê¸°ëŠ¥ì„ ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.",
+    "invalidPageRange": "ìž˜ëª»ëœ íŽ˜ì´ì§€ ë²”ìœ„ê°€ ì§€ì •ë˜ì—ˆìŠµë‹ˆë‹¤.",
+    "invalidOptions": "ìž˜ëª»ëœ ì˜µì…˜ì´ ì œê³µë˜ì—ˆìŠµë‹ˆë‹¤.",
+    "invalidPassword": "ìž…ë ¥í•œ ë¹„ë°€ë²ˆí˜¸ê°€ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤. í™•ì¸ í›„ ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.",
+    "unknown": "ì˜ˆê¸°ì¹˜ ì•Šì€ ì˜¤ë¥˜ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.",
     "toolNotFound": "Tool Not Found"
   },
   "home": {
@@ -407,244 +407,244 @@
       "title": "Browser Tools for",
       "highlight": "Private Workflows",
       "subtitle": "Open-source, multilingual, and browser-first utility workflows",
-      "cta": "시작하기"
+      "cta": "ì‹œìž‘í•˜ê¸°"
     },
     "features": {
       "privacy": {
-        "title": "100% 비공개",
-        "description": "모든 처리는 브라우저에서 이루어집니다. 파일은 기기를 벗어나지 않습니다."
+        "title": "100% ë¹„ê³µê°œ",
+        "description": "ëª¨ë“  ì²˜ë¦¬ëŠ” ë¸Œë¼ìš°ì €ì—ì„œ ì´ë£¨ì–´ì§‘ë‹ˆë‹¤. íŒŒì¼ì€ ê¸°ê¸°ë¥¼ ë²—ì–´ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤."
       },
       "free": {
-        "title": "완전 무료",
-        "description": "등록 없음, 제한 없음, 숨겨진 비용 없음."
+        "title": "ì™„ì „ ë¬´ë£Œ",
+        "description": "ë“±ë¡ ì—†ìŒ, ì œí•œ ì—†ìŒ, ìˆ¨ê²¨ì§„ ë¹„ìš© ì—†ìŒ."
       },
       "powerful": {
-        "title": "Launch-ready suite",
-        "description": "Phase 1 ships the PDF suite, workflow editor, extension, and visible source links."
+        "title": "Useful browser tools",
+        "description": "PDF tools, workflow editing, and visible source links stay available without account gates."
       }
     },
     "popularTools": {
-      "badge": "가장 인기 있는",
-      "title": "Popular launch tools",
-      "description": "작업을 더 빨리 완료하는 데 도움이 되는 가장 많이 사용되는 도구입니다."
+      "badge": "ê°€ìž¥ ì¸ê¸° ìžˆëŠ”",
+      "title": "Popular tools",
+      "description": "ìž‘ì—…ì„ ë” ë¹¨ë¦¬ ì™„ë£Œí•˜ëŠ” ë° ë„ì›€ì´ ë˜ëŠ” ê°€ìž¥ ë§Žì´ ì‚¬ìš©ë˜ëŠ” ë„êµ¬ìž…ë‹ˆë‹¤."
     },
     "categoriesSection": {
-      "title": "모든 도구 카테고리 탐색",
-      "description": "{count}+ launch tools organized by category",
-      "toolsCount": "{count}개 도구"
+      "title": "ëª¨ë“  ë„êµ¬ ì¹´í…Œê³ ë¦¬ íƒìƒ‰",
+      "description": "{count}+ tools organized by category",
+      "toolsCount": "{count}ê°œ ë„êµ¬"
     },
     "categoriesDescription": {
-      "editAnnotate": "PDF 콘텐츠 편집, 주석 및 수정",
-      "convertToPdf": "다양한 형식을 PDF로 변환",
-      "convertFromPdf": "PDF를 다른 형식으로 변환",
-      "organizeManage": "PDF 페이지 정리, 병합, 분할 및 관리",
-      "optimizeRepair": "PDF 파일 압축, 최적화 및 복구",
-      "securePdf": "PDF 파일 암호화, 복호화 및 보안"
+      "editAnnotate": "PDF ì½˜í…ì¸  íŽ¸ì§‘, ì£¼ì„ ë° ìˆ˜ì •",
+      "convertToPdf": "ë‹¤ì–‘í•œ í˜•ì‹ì„ PDFë¡œ ë³€í™˜",
+      "convertFromPdf": "PDFë¥¼ ë‹¤ë¥¸ í˜•ì‹ìœ¼ë¡œ ë³€í™˜",
+      "organizeManage": "PDF íŽ˜ì´ì§€ ì •ë¦¬, ë³‘í•©, ë¶„í•  ë° ê´€ë¦¬",
+      "optimizeRepair": "PDF íŒŒì¼ ì••ì¶•, ìµœì í™” ë° ë³µêµ¬",
+      "securePdf": "PDF íŒŒì¼ ì•”í˜¸í™”, ë³µí˜¸í™” ë° ë³´ì•ˆ"
     },
     "stats": {
-      "pdfTools": "PDF 도구",
-      "freeToUse": "무료 사용",
-      "languages": "언어",
-      "filesUploaded": "파일 업로드됨"
+      "pdfTools": "PDF ë„êµ¬",
+      "freeToUse": "ë¬´ë£Œ ì‚¬ìš©",
+      "languages": "ì–¸ì–´",
+      "filesUploaded": "íŒŒì¼ ì—…ë¡œë“œë¨"
     },
     "categories": {
-      "popular": "인기 도구",
-      "editAnnotate": "편집 및 주석",
-      "convertToPdf": "PDF로 변환",
-      "convertFromPdf": "PDF에서 변환",
-      "organizeManage": "정리 및 관리",
-      "optimizeRepair": "최적화 및 복구",
-      "securePdf": "PDF 보안"
+      "popular": "ì¸ê¸° ë„êµ¬",
+      "editAnnotate": "íŽ¸ì§‘ ë° ì£¼ì„",
+      "convertToPdf": "PDFë¡œ ë³€í™˜",
+      "convertFromPdf": "PDFì—ì„œ ë³€í™˜",
+      "organizeManage": "ì •ë¦¬ ë° ê´€ë¦¬",
+      "optimizeRepair": "ìµœì í™” ë° ë³µêµ¬",
+      "securePdf": "PDF ë³´ì•ˆ"
     }
   },
   "workflow": {
-    "title": "PDF 워크플로우 편집기",
-    "subtitle": "도구를 연결하여 맞춤형 PDF 처리 파이프라인 생성",
-    "metaTitle": "PDF 워크플로우 편집기 - OpenToolsKit",
-    "metaDescription": "도구를 시각적으로 연결하여 맞춤형 PDF 처리 파이프라인을 생성하세요. 워크플로우를 구축, 저장 및 재사용하세요.",
-    "toolbox": "도구 상자",
-    "dragToAdd": "워크플로우에 도구를 드래그하여 추가",
-    "searchTools": "도구 검색...",
-    "toolsAvailable": "개의 도구 사용 가능",
-    "templates": "템플릿",
-    "saved": "저장됨",
-    "favorites": "즐겨찾기",
-    "allCategories": "모두",
-    "common": "일반",
-    "conversion": "변환",
-    "optimization": "최적화",
-    "security": "보안",
-    "noSavedWorkflows": "저장된 워크플로우가 없습니다",
-    "saveWorkflowHint": "첫 번째 워크플로우를 생성하고 저장하세요",
-    "noFavorites": "즐겨찾기 워크플로우가 없습니다",
-    "favoriteHint": "워크플로우에 별표를 표시하여 여기에 추가",
-    "selectFiles": "파일 선택",
-    "filesSelected": "개 파일 선택됨",
-    "execute": "실행",
-    "running": "실행 중",
-    "complete": "완료",
-    "error": "오류",
-    "issues": "개의 문제",
-    "stop": "중지",
-    "validationErrors": "검증 오류",
-    "warnings": "경고",
-    "executionFailed": "워크플로 실행 실패",
-    "retry": "재시도",
-    "nodes": "개 노드",
-    "import": "가져오기",
-    "clear": "지우기",
-    "saveWorkflow": "워크플로우 저장",
-    "workflowName": "워크플로우 이름",
-    "enterName": "워크플로우 이름 입력...",
-    "description": "설명",
-    "optional": "선택사항",
-    "enterDescription": "설명 입력...",
-    "workflowComplete": "워크플로우가 성공적으로 완료되었습니다!",
-    "downloadResults": "결과 다운로드",
-    "emptyTitle": "워크플로우 만들기",
-    "emptyDescription": "사이드바에서 도구를 드래그하여 PDF 처리 파이프라인을 구축하세요. 노드를 연결하여 처리 순서를 정의하세요.",
-    "clickHint": "노드를 클릭하여 설정 구성",
-    "undo": "실행 취소",
-    "redo": "다시 실행",
-    "noSettings": "이 도구에 대한 구성 가능한 설정이 없습니다",
-    "reset": "재설정",
-    "cancel": "취소",
-    "apply": "적용",
-    "preview": "미리보기",
-    "showPreview": "미리보기 표시",
-    "noFilesForPreview": "미리보기할 파일을 선택하세요",
-    "generatingPreview": "미리보기 생성 중...",
-    "noPreviewAvailable": "미리보기를 사용할 수 없습니다",
-    "selectedFiles": "선택된 파일",
-    "filesCount": "파일",
-    "viewEditFiles": "파일 보기/편집",
-    "moveUp": "위로 이동",
-    "moveDown": "아래로 이동",
-    "removeFile": "삭제",
-    "clearAll": "모두 지우기",
-    "previewNotAvailable": "이 파일 유형은 미리보기를 사용할 수 없습니다",
-    "confirm": "확인",
-    "collapseSidebar": "사이드바 접기",
-    "expandSidebar": "사이드바 펼치기",
-    "library": "라이브러리",
-    "connections": "연결",
-    "history": "기록",
-    "executionHistory": "실행 기록",
-    "totalExecutions": "전체 실행 횟수",
-    "successRate": "성공률",
-    "avgDuration": "평균 소요 시간",
-    "noHistory": "아직 실행 기록이 없습니다",
-    "noHistoryHint": "워크플로를 실행하면 여기에 기록이 표시됩니다",
-    "confirmDelete": "이 기록을 삭제하시겠습니까?",
-    "confirmClearAllHistory": "모든 기록을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.",
-    "unnamedWorkflow": "이름 없는 워크플로",
-    "nodesSuccess": "개 노드 성공",
-    "nodesFailed": "실패",
-    "loadWorkflow": "워크플로 불러오기",
-    "viewDetails": "상세 보기",
-    "detailsInConsole": "상세 내용이 콘솔(F12)에 기록되었습니다",
+    "title": "PDF ì›Œí¬í”Œë¡œìš° íŽ¸ì§‘ê¸°",
+    "subtitle": "ë„êµ¬ë¥¼ ì—°ê²°í•˜ì—¬ ë§žì¶¤í˜• PDF ì²˜ë¦¬ íŒŒì´í”„ë¼ì¸ ìƒì„±",
+    "metaTitle": "PDF ì›Œí¬í”Œë¡œìš° íŽ¸ì§‘ê¸° - OpenToolsKit",
+    "metaDescription": "ë„êµ¬ë¥¼ ì‹œê°ì ìœ¼ë¡œ ì—°ê²°í•˜ì—¬ ë§žì¶¤í˜• PDF ì²˜ë¦¬ íŒŒì´í”„ë¼ì¸ì„ ìƒì„±í•˜ì„¸ìš”. ì›Œí¬í”Œë¡œìš°ë¥¼ êµ¬ì¶•, ì €ìž¥ ë° ìž¬ì‚¬ìš©í•˜ì„¸ìš”.",
+    "toolbox": "ë„êµ¬ ìƒìž",
+    "dragToAdd": "ì›Œí¬í”Œë¡œìš°ì— ë„êµ¬ë¥¼ ë“œëž˜ê·¸í•˜ì—¬ ì¶”ê°€",
+    "searchTools": "ë„êµ¬ ê²€ìƒ‰...",
+    "toolsAvailable": "ê°œì˜ ë„êµ¬ ì‚¬ìš© ê°€ëŠ¥",
+    "templates": "í…œí”Œë¦¿",
+    "saved": "ì €ìž¥ë¨",
+    "favorites": "ì¦ê²¨ì°¾ê¸°",
+    "allCategories": "ëª¨ë‘",
+    "common": "ì¼ë°˜",
+    "conversion": "ë³€í™˜",
+    "optimization": "ìµœì í™”",
+    "security": "ë³´ì•ˆ",
+    "noSavedWorkflows": "ì €ìž¥ëœ ì›Œí¬í”Œë¡œìš°ê°€ ì—†ìŠµë‹ˆë‹¤",
+    "saveWorkflowHint": "ì²« ë²ˆì§¸ ì›Œí¬í”Œë¡œìš°ë¥¼ ìƒì„±í•˜ê³  ì €ìž¥í•˜ì„¸ìš”",
+    "noFavorites": "ì¦ê²¨ì°¾ê¸° ì›Œí¬í”Œë¡œìš°ê°€ ì—†ìŠµë‹ˆë‹¤",
+    "favoriteHint": "ì›Œí¬í”Œë¡œìš°ì— ë³„í‘œë¥¼ í‘œì‹œí•˜ì—¬ ì—¬ê¸°ì— ì¶”ê°€",
+    "selectFiles": "íŒŒì¼ ì„ íƒ",
+    "filesSelected": "ê°œ íŒŒì¼ ì„ íƒë¨",
+    "execute": "ì‹¤í–‰",
+    "running": "ì‹¤í–‰ ì¤‘",
+    "complete": "ì™„ë£Œ",
+    "error": "ì˜¤ë¥˜",
+    "issues": "ê°œì˜ ë¬¸ì œ",
+    "stop": "ì¤‘ì§€",
+    "validationErrors": "ê²€ì¦ ì˜¤ë¥˜",
+    "warnings": "ê²½ê³ ",
+    "executionFailed": "ì›Œí¬í”Œë¡œ ì‹¤í–‰ ì‹¤íŒ¨",
+    "retry": "ìž¬ì‹œë„",
+    "nodes": "ê°œ ë…¸ë“œ",
+    "import": "ê°€ì ¸ì˜¤ê¸°",
+    "clear": "ì§€ìš°ê¸°",
+    "saveWorkflow": "ì›Œí¬í”Œë¡œìš° ì €ìž¥",
+    "workflowName": "ì›Œí¬í”Œë¡œìš° ì´ë¦„",
+    "enterName": "ì›Œí¬í”Œë¡œìš° ì´ë¦„ ìž…ë ¥...",
+    "description": "ì„¤ëª…",
+    "optional": "ì„ íƒì‚¬í•­",
+    "enterDescription": "ì„¤ëª… ìž…ë ¥...",
+    "workflowComplete": "ì›Œí¬í”Œë¡œìš°ê°€ ì„±ê³µì ìœ¼ë¡œ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤!",
+    "downloadResults": "ê²°ê³¼ ë‹¤ìš´ë¡œë“œ",
+    "emptyTitle": "ì›Œí¬í”Œë¡œìš° ë§Œë“¤ê¸°",
+    "emptyDescription": "ì‚¬ì´ë“œë°”ì—ì„œ ë„êµ¬ë¥¼ ë“œëž˜ê·¸í•˜ì—¬ PDF ì²˜ë¦¬ íŒŒì´í”„ë¼ì¸ì„ êµ¬ì¶•í•˜ì„¸ìš”. ë…¸ë“œë¥¼ ì—°ê²°í•˜ì—¬ ì²˜ë¦¬ ìˆœì„œë¥¼ ì •ì˜í•˜ì„¸ìš”.",
+    "clickHint": "ë…¸ë“œë¥¼ í´ë¦­í•˜ì—¬ ì„¤ì • êµ¬ì„±",
+    "undo": "ì‹¤í–‰ ì·¨ì†Œ",
+    "redo": "ë‹¤ì‹œ ì‹¤í–‰",
+    "noSettings": "ì´ ë„êµ¬ì— ëŒ€í•œ êµ¬ì„± ê°€ëŠ¥í•œ ì„¤ì •ì´ ì—†ìŠµë‹ˆë‹¤",
+    "reset": "ìž¬ì„¤ì •",
+    "cancel": "ì·¨ì†Œ",
+    "apply": "ì ìš©",
+    "preview": "ë¯¸ë¦¬ë³´ê¸°",
+    "showPreview": "ë¯¸ë¦¬ë³´ê¸° í‘œì‹œ",
+    "noFilesForPreview": "ë¯¸ë¦¬ë³´ê¸°í•  íŒŒì¼ì„ ì„ íƒí•˜ì„¸ìš”",
+    "generatingPreview": "ë¯¸ë¦¬ë³´ê¸° ìƒì„± ì¤‘...",
+    "noPreviewAvailable": "ë¯¸ë¦¬ë³´ê¸°ë¥¼ ì‚¬ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤",
+    "selectedFiles": "ì„ íƒëœ íŒŒì¼",
+    "filesCount": "íŒŒì¼",
+    "viewEditFiles": "íŒŒì¼ ë³´ê¸°/íŽ¸ì§‘",
+    "moveUp": "ìœ„ë¡œ ì´ë™",
+    "moveDown": "ì•„ëž˜ë¡œ ì´ë™",
+    "removeFile": "ì‚­ì œ",
+    "clearAll": "ëª¨ë‘ ì§€ìš°ê¸°",
+    "previewNotAvailable": "ì´ íŒŒì¼ ìœ í˜•ì€ ë¯¸ë¦¬ë³´ê¸°ë¥¼ ì‚¬ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤",
+    "confirm": "í™•ì¸",
+    "collapseSidebar": "ì‚¬ì´ë“œë°” ì ‘ê¸°",
+    "expandSidebar": "ì‚¬ì´ë“œë°” íŽ¼ì¹˜ê¸°",
+    "library": "ë¼ì´ë¸ŒëŸ¬ë¦¬",
+    "connections": "ì—°ê²°",
+    "history": "ê¸°ë¡",
+    "executionHistory": "ì‹¤í–‰ ê¸°ë¡",
+    "totalExecutions": "ì „ì²´ ì‹¤í–‰ íšŸìˆ˜",
+    "successRate": "ì„±ê³µë¥ ",
+    "avgDuration": "í‰ê·  ì†Œìš” ì‹œê°„",
+    "noHistory": "ì•„ì§ ì‹¤í–‰ ê¸°ë¡ì´ ì—†ìŠµë‹ˆë‹¤",
+    "noHistoryHint": "ì›Œí¬í”Œë¡œë¥¼ ì‹¤í–‰í•˜ë©´ ì—¬ê¸°ì— ê¸°ë¡ì´ í‘œì‹œë©ë‹ˆë‹¤",
+    "confirmDelete": "ì´ ê¸°ë¡ì„ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?",
+    "confirmClearAllHistory": "ëª¨ë“  ê¸°ë¡ì„ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ? ì´ ìž‘ì—…ì€ ë˜ëŒë¦´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.",
+    "unnamedWorkflow": "ì´ë¦„ ì—†ëŠ” ì›Œí¬í”Œë¡œ",
+    "nodesSuccess": "ê°œ ë…¸ë“œ ì„±ê³µ",
+    "nodesFailed": "ì‹¤íŒ¨",
+    "loadWorkflow": "ì›Œí¬í”Œë¡œ ë¶ˆëŸ¬ì˜¤ê¸°",
+    "viewDetails": "ìƒì„¸ ë³´ê¸°",
+    "detailsInConsole": "ìƒì„¸ ë‚´ìš©ì´ ì½˜ì†”(F12)ì— ê¸°ë¡ë˜ì—ˆìŠµë‹ˆë‹¤",
     "workflowTemplates": {
       "mergeCompress": {
-        "name": "병합 및 압축",
-        "description": "여러 PDF를 병합하고 결과를 압축하여 파일 크기를 줄입니다"
+        "name": "ë³‘í•© ë° ì••ì¶•",
+        "description": "ì—¬ëŸ¬ PDFë¥¼ ë³‘í•©í•˜ê³  ê²°ê³¼ë¥¼ ì••ì¶•í•˜ì—¬ íŒŒì¼ í¬ê¸°ë¥¼ ì¤„ìž…ë‹ˆë‹¤"
       },
       "imagesToWatermarkedPdf": {
-        "name": "이미지를 워터마크 PDF로",
-        "description": "이미지를 PDF로 변환하고 사용자 정의 워터마크를 추가합니다"
+        "name": "ì´ë¯¸ì§€ë¥¼ ì›Œí„°ë§ˆí¬ PDFë¡œ",
+        "description": "ì´ë¯¸ì§€ë¥¼ PDFë¡œ ë³€í™˜í•˜ê³  ì‚¬ìš©ìž ì •ì˜ ì›Œí„°ë§ˆí¬ë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤"
       },
       "pdfToImages": {
-        "name": "PDF를 압축 이미지로",
-        "description": "PDF 페이지를 JPG 이미지로 변환합니다"
+        "name": "PDFë¥¼ ì••ì¶• ì´ë¯¸ì§€ë¡œ",
+        "description": "PDF íŽ˜ì´ì§€ë¥¼ JPG ì´ë¯¸ì§€ë¡œ ë³€í™˜í•©ë‹ˆë‹¤"
       },
       "securePdf": {
-        "name": "보안 PDF 생성",
-        "description": "PDF를 병합하고 워터마크를 추가하며 비밀번호로 암호화합니다"
+        "name": "ë³´ì•ˆ PDF ìƒì„±",
+        "description": "PDFë¥¼ ë³‘í•©í•˜ê³  ì›Œí„°ë§ˆí¬ë¥¼ ì¶”ê°€í•˜ë©° ë¹„ë°€ë²ˆí˜¸ë¡œ ì•”í˜¸í™”í•©ë‹ˆë‹¤"
       },
       "documentPrep": {
-        "name": "문서 준비",
-        "description": "PDF를 병합하고 페이지 번호와 머리글/바닥글을 추가합니다"
+        "name": "ë¬¸ì„œ ì¤€ë¹„",
+        "description": "PDFë¥¼ ë³‘í•©í•˜ê³  íŽ˜ì´ì§€ ë²ˆí˜¸ì™€ ë¨¸ë¦¬ê¸€/ë°”ë‹¥ê¸€ì„ ì¶”ê°€í•©ë‹ˆë‹¤"
       },
       "optimizeForWeb": {
-        "name": "웹 최적화",
-        "description": "빠른 웹 보기를 위해 PDF를 압축하고 선형화합니다"
+        "name": "ì›¹ ìµœì í™”",
+        "description": "ë¹ ë¥¸ ì›¹ ë³´ê¸°ë¥¼ ìœ„í•´ PDFë¥¼ ì••ì¶•í•˜ê³  ì„ í˜•í™”í•©ë‹ˆë‹¤"
       },
       "splitAndWatermark": {
-        "name": "분할 및 워터마크",
-        "description": "PDF를 개별 페이지로 분할하고 각 페이지에 워터마크를 추가합니다"
+        "name": "ë¶„í•  ë° ì›Œí„°ë§ˆí¬",
+        "description": "PDFë¥¼ ê°œë³„ íŽ˜ì´ì§€ë¡œ ë¶„í• í•˜ê³  ê° íŽ˜ì´ì§€ì— ì›Œí„°ë§ˆí¬ë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤"
       },
       "officeToMergedPdf": {
-        "name": "Office 파일을 하나의 PDF로",
-        "description": "Word 문서를 PDF로 변환하고 병합합니다"
+        "name": "Office íŒŒì¼ì„ í•˜ë‚˜ì˜ PDFë¡œ",
+        "description": "Word ë¬¸ì„œë¥¼ PDFë¡œ ë³€í™˜í•˜ê³  ë³‘í•©í•©ë‹ˆë‹¤"
       },
       "rotateAndNumber": {
-        "name": "회전 및 페이지 번호 추가",
-        "description": "PDF 페이지를 회전하고 페이지 번호를 추가합니다"
+        "name": "íšŒì „ ë° íŽ˜ì´ì§€ ë²ˆí˜¸ ì¶”ê°€",
+        "description": "PDF íŽ˜ì´ì§€ë¥¼ íšŒì „í•˜ê³  íŽ˜ì´ì§€ ë²ˆí˜¸ë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤"
       },
       "printReady": {
-        "name": "인쇄용 문서",
-        "description": "페이지 번호를 추가하고 평탄화하여 인쇄용 PDF를 준비합니다"
+        "name": "ì¸ì‡„ìš© ë¬¸ì„œ",
+        "description": "íŽ˜ì´ì§€ ë²ˆí˜¸ë¥¼ ì¶”ê°€í•˜ê³  í‰íƒ„í™”í•˜ì—¬ ì¸ì‡„ìš© PDFë¥¼ ì¤€ë¹„í•©ë‹ˆë‹¤"
       },
       "grayscaleCompress": {
-        "name": "회색조 및 압축",
-        "description": "회색조로 변환하고 파일 크기를 줄이기 위해 압축합니다"
+        "name": "íšŒìƒ‰ì¡° ë° ì••ì¶•",
+        "description": "íšŒìƒ‰ì¡°ë¡œ ë³€í™˜í•˜ê³  íŒŒì¼ í¬ê¸°ë¥¼ ì¤„ì´ê¸° ìœ„í•´ ì••ì¶•í•©ë‹ˆë‹¤"
       },
       "extractAndMerge": {
-        "name": "페이지 추출 및 병합",
-        "description": "특정 페이지를 추출하여 새 문서로 병합합니다"
+        "name": "íŽ˜ì´ì§€ ì¶”ì¶œ ë° ë³‘í•©",
+        "description": "íŠ¹ì • íŽ˜ì´ì§€ë¥¼ ì¶”ì¶œí•˜ì—¬ ìƒˆ ë¬¸ì„œë¡œ ë³‘í•©í•©ë‹ˆë‹¤"
       },
       "confidentialDocument": {
-        "name": "기밀 문서",
-        "description": "기밀 워터마크를 추가하고 PDF를 암호화합니다"
+        "name": "ê¸°ë°€ ë¬¸ì„œ",
+        "description": "ê¸°ë°€ ì›Œí„°ë§ˆí¬ë¥¼ ì¶”ê°€í•˜ê³  PDFë¥¼ ì•”í˜¸í™”í•©ë‹ˆë‹¤"
       },
       "pdfToEditableDoc": {
-        "name": "PDF를 편집 가능 문서로",
-        "description": "편집을 위해 PDF를 Word 문서로 변환합니다"
+        "name": "PDFë¥¼ íŽ¸ì§‘ ê°€ëŠ¥ ë¬¸ì„œë¡œ",
+        "description": "íŽ¸ì§‘ì„ ìœ„í•´ PDFë¥¼ Word ë¬¸ì„œë¡œ ë³€í™˜í•©ë‹ˆë‹¤"
       },
       "fullOptimization": {
-        "name": "전체 문서 최적화",
-        "description": "최적의 성능을 위해 압축, 평탄화 및 선형화를 수행합니다"
+        "name": "ì „ì²´ ë¬¸ì„œ ìµœì í™”",
+        "description": "ìµœì ì˜ ì„±ëŠ¥ì„ ìœ„í•´ ì••ì¶•, í‰íƒ„í™” ë° ì„ í˜•í™”ë¥¼ ìˆ˜í–‰í•©ë‹ˆë‹¤"
       },
       "pdfToPresentation": {
-        "name": "PDF를 PowerPoint로",
-        "description": "PDF를 편집 가능한 PowerPoint 프레젠테이션으로 변환합니다"
+        "name": "PDFë¥¼ PowerPointë¡œ",
+        "description": "PDFë¥¼ íŽ¸ì§‘ ê°€ëŠ¥í•œ PowerPoint í”„ë ˆì  í…Œì´ì…˜ìœ¼ë¡œ ë³€í™˜í•©ë‹ˆë‹¤"
       },
       "unlockAndEdit": {
-        "name": "PDF 잠금 해제 및 편집",
-        "description": "편집을 위해 보호된 PDF를 복호화합니다"
+        "name": "PDF ìž ê¸ˆ í•´ì œ ë° íŽ¸ì§‘",
+        "description": "íŽ¸ì§‘ì„ ìœ„í•´ ë³´í˜¸ëœ PDFë¥¼ ë³µí˜¸í™”í•©ë‹ˆë‹¤"
       },
       "ebookConvert": {
-        "name": "eBook을 PDF로",
-        "description": "EPUB 전자책을 PDF 형식으로 변환합니다"
+        "name": "eBookì„ PDFë¡œ",
+        "description": "EPUB ì „ìžì±…ì„ PDF í˜•ì‹ìœ¼ë¡œ ë³€í™˜í•©ë‹ˆë‹¤"
       },
       "batchWatermark": {
-        "name": "일괄 워터마크",
-        "description": "여러 PDF 파일에 한 번에 워터마크를 추가합니다"
+        "name": "ì¼ê´„ ì›Œí„°ë§ˆí¬",
+        "description": "ì—¬ëŸ¬ PDF íŒŒì¼ì— í•œ ë²ˆì— ì›Œí„°ë§ˆí¬ë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤"
       },
       "archivePrep": {
-        "name": "아카이브 준비",
-        "description": "메타 데이터를 삭제하고 평탄화 및 압축하여 장기 보관을 준비합니다"
+        "name": "ì•„ì¹´ì´ë¸Œ ì¤€ë¹„",
+        "description": "ë©”íƒ€ ë°ì´í„°ë¥¼ ì‚­ì œí•˜ê³  í‰íƒ„í™” ë° ì••ì¶•í•˜ì—¬ ìž¥ê¸° ë³´ê´€ì„ ì¤€ë¹„í•©ë‹ˆë‹¤"
       },
       "reportAssembly": {
-        "name": "보고서 작성",
-        "description": "문서를 병합하고 페이지 번호, 머리글/바닥글 및 목차를 추가합니다"
+        "name": "ë³´ê³ ì„œ ìž‘ì„±",
+        "description": "ë¬¸ì„œë¥¼ ë³‘í•©í•˜ê³  íŽ˜ì´ì§€ ë²ˆí˜¸, ë¨¸ë¦¬ê¸€/ë°”ë‹¥ê¸€ ë° ëª©ì°¨ë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤"
       },
       "invoiceProcessing": {
-        "name": "송장 처리",
-        "description": "페이지를 추출하고 워터마크를 추가하며 이메일용으로 압축합니다"
+        "name": "ì†¡ìž¥ ì²˜ë¦¬",
+        "description": "íŽ˜ì´ì§€ë¥¼ ì¶”ì¶œí•˜ê³  ì›Œí„°ë§ˆí¬ë¥¼ ì¶”ê°€í•˜ë©° ì´ë©”ì¼ìš©ìœ¼ë¡œ ì••ì¶•í•©ë‹ˆë‹¤"
       },
       "photoAlbum": {
-        "name": "포토 앨범 생성기",
-        "description": "이미지를 페이지 번호가 포함된 PDF로 변환합니다"
+        "name": "í¬í†  ì•¨ë²” ìƒì„±ê¸°",
+        "description": "ì´ë¯¸ì§€ë¥¼ íŽ˜ì´ì§€ ë²ˆí˜¸ê°€ í¬í•¨ëœ PDFë¡œ ë³€í™˜í•©ë‹ˆë‹¤"
       },
       "cropAndResize": {
-        "name": "자르기 및 크기 조정",
-        "description": "PDF 페이지를 자르고 페이지 크기를 조정합니다"
+        "name": "ìžë¥´ê¸° ë° í¬ê¸° ì¡°ì •",
+        "description": "PDF íŽ˜ì´ì§€ë¥¼ ìžë¥´ê³  íŽ˜ì´ì§€ í¬ê¸°ë¥¼ ì¡°ì •í•©ë‹ˆë‹¤"
       }
     }
   },
   "toolsPage": {
-    "title": "OpenToolsKit Launch Tools",
-    "subtitle": "{count}+ browser-based launch tools for PDF workflows, editing, conversion, and secure document handling.",
+    "title": "OpenToolsKit Tools",
+    "subtitle": "{count}+ browser-based tools for PDF workflows, editing, conversion, and secure document handling.",
     "filters": "Filters",
     "allTools": "All Tools",
     "clearAll": "Clear all",
@@ -657,30 +657,30 @@
   },
   "tools": {
     "search": {
-      "placeholder": "도구 검색...",
-      "noResults": "\"{query}\"에 대한 도구를 찾을 수 없습니다"
+      "placeholder": "ë„êµ¬ ê²€ìƒ‰...",
+      "noResults": "\"{query}\"ì— ëŒ€í•œ ë„êµ¬ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤"
     },
-    "relatedTools": "관련 도구",
-    "about": "이 도구에 대하여",
-    "howToUse": "사용 방법",
-    "useCases": "활용 사례",
-    "faq": "자주 묻는 질문",
-    "comingSoon": "이 도구는 곧 공개될 예정입니다.",
-    "successTitle": "변환 성공!",
+    "relatedTools": "ê´€ë ¨ ë„êµ¬",
+    "about": "ì´ ë„êµ¬ì— ëŒ€í•˜ì—¬",
+    "howToUse": "ì‚¬ìš© ë°©ë²•",
+    "useCases": "í™œìš© ì‚¬ë¡€",
+    "faq": "ìžì£¼ ë¬»ëŠ” ì§ˆë¬¸",
+    "comingSoon": "ì´ ë„êµ¬ëŠ” ê³§ ê³µê°œë  ì˜ˆì •ìž…ë‹ˆë‹¤.",
+    "successTitle": "ë³€í™˜ ì„±ê³µ!",
     "favorite": {
-      "add": "즐겨찾기에 추가",
-      "remove": "즐겨찾기에서 제거",
-      "saved": "저장됨",
-      "title": "즐겨찾기 도구",
-      "empty": "즐겨찾기 도구가 아직 없습니다",
-      "hint": "도구의 별 아이콘을 클릭하면 빠른 액세스를 위해 여기에 저장됩니다."
+      "add": "ì¦ê²¨ì°¾ê¸°ì— ì¶”ê°€",
+      "remove": "ì¦ê²¨ì°¾ê¸°ì—ì„œ ì œê±°",
+      "saved": "ì €ìž¥ë¨",
+      "title": "ì¦ê²¨ì°¾ê¸° ë„êµ¬",
+      "empty": "ì¦ê²¨ì°¾ê¸° ë„êµ¬ê°€ ì•„ì§ ì—†ìŠµë‹ˆë‹¤",
+      "hint": "ë„êµ¬ì˜ ë³„ ì•„ì´ì½˜ì„ í´ë¦­í•˜ë©´ ë¹ ë¥¸ ì•¡ì„¸ìŠ¤ë¥¼ ìœ„í•´ ì—¬ê¸°ì— ì €ìž¥ë©ë‹ˆë‹¤."
     },
     "quality": {
-      "title": "출력 품질",
-      "low": "낮음",
-      "medium": "중간",
-      "high": "높음",
-      "hint": "품질이 높을수록 파일 크기가 커지고 변환 시간이 오래 걸립니다."
+      "title": "ì¶œë ¥ í’ˆì§ˆ",
+      "low": "ë‚®ìŒ",
+      "medium": "ì¤‘ê°„",
+      "high": "ë†’ìŒ",
+      "hint": "í’ˆì§ˆì´ ë†’ì„ìˆ˜ë¡ íŒŒì¼ í¬ê¸°ê°€ ì»¤ì§€ê³  ë³€í™˜ ì‹œê°„ì´ ì˜¤ëž˜ ê±¸ë¦½ë‹ˆë‹¤."
     },
     "mergePdf": {
       "uploadLabel": "Upload PDF Files",
@@ -693,36 +693,36 @@
       "successMessage": "PDFs merged successfully! Click the download button to save your file."
     },
     "splitPdf": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "PDF 파일을 여기에 드래그 앤 드롭하거나 클릭하여 찾아보세요.",
-      "splitModeTitle": "분할 방법",
-      "splitModeLabel": "분할 모드",
-      "modeRanges": "페이지 범위로 추출 (기본값)",
-      "modeEvenOdd": "짝수/홀수 페이지로 분할",
-      "modeEveryPage": "모든 페이지를 개별 파일로 분할",
-      "modeVisual": "시각적으로 페이지 선택",
-      "modeBookmarks": "북마크로 분할",
-      "modeNTimes": "N분할",
-      "rangeInputLabel": "페이지 범위",
-      "rangeInputHint": "쉼표로 구분된 페이지 번호 또는 범위를 입력하세요. 각 범위가 별도의 파일이 됩니다.",
-      "evenOddLabel": "페이지 추출",
-      "oddPagesOnly": "홀수 페이지만",
-      "evenPagesOnly": "짝수 페이지만",
-      "bothSeparate": "둘 다 (별도 파일)",
-      "evenOddHint": "홀수 페이지: 1, 3, 5... 짝수 페이지: 2, 4, 6...",
-      "everyPageInfo": "각 페이지가 개별 PDF 파일로 추출됩니다. {count}개의 파일이 생성됩니다.",
-      "visualInfo": "아래 썸네일을 클릭하여 추출할 페이지를 선택하세요. 선택한 페이지는 단일 PDF로 결합되거나 개별 파일로 분할됩니다.",
-      "bookmarksNotice": "참고: 북마크로 분할하려면 PDF에 북마크가 있어야 합니다. 북마크가 없으면 전체 PDF가 단일 파일로 반환됩니다.",
-      "splitCountLabel": "분할 수",
-      "splitCountHint": "{count}등분으로 분할 (각 약 {pages}페이지)",
-      "pagePreviewTitle": "페이지 선택",
-      "splitButton": "PDF 분할",
-      "resultsTitle": "분할 결과",
-      "successMessage": "PDF가 성공적으로 분할되었습니다! 다운로드 버튼을 클릭하여 파일을 저장하세요.",
-      "modeVisualShort": "시각적 선택",
-      "modeBookmarksShort": "북마크",
-      "modeNTimesShort": "N분할",
-      "downloadZip": "ZIP으로 모두 다운로드"
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "PDF íŒŒì¼ì„ ì—¬ê¸°ì— ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì°¾ì•„ë³´ì„¸ìš”.",
+      "splitModeTitle": "ë¶„í•  ë°©ë²•",
+      "splitModeLabel": "ë¶„í•  ëª¨ë“œ",
+      "modeRanges": "íŽ˜ì´ì§€ ë²”ìœ„ë¡œ ì¶”ì¶œ (ê¸°ë³¸ê°’)",
+      "modeEvenOdd": "ì§ìˆ˜/í™€ìˆ˜ íŽ˜ì´ì§€ë¡œ ë¶„í• ",
+      "modeEveryPage": "ëª¨ë“  íŽ˜ì´ì§€ë¥¼ ê°œë³„ íŒŒì¼ë¡œ ë¶„í• ",
+      "modeVisual": "ì‹œê°ì ìœ¼ë¡œ íŽ˜ì´ì§€ ì„ íƒ",
+      "modeBookmarks": "ë¶ë§ˆí¬ë¡œ ë¶„í• ",
+      "modeNTimes": "Në¶„í• ",
+      "rangeInputLabel": "íŽ˜ì´ì§€ ë²”ìœ„",
+      "rangeInputHint": "ì‰¼í‘œë¡œ êµ¬ë¶„ëœ íŽ˜ì´ì§€ ë²ˆí˜¸ ë˜ëŠ” ë²”ìœ„ë¥¼ ìž…ë ¥í•˜ì„¸ìš”. ê° ë²”ìœ„ê°€ ë³„ë„ì˜ íŒŒì¼ì´ ë©ë‹ˆë‹¤.",
+      "evenOddLabel": "íŽ˜ì´ì§€ ì¶”ì¶œ",
+      "oddPagesOnly": "í™€ìˆ˜ íŽ˜ì´ì§€ë§Œ",
+      "evenPagesOnly": "ì§ìˆ˜ íŽ˜ì´ì§€ë§Œ",
+      "bothSeparate": "ë‘˜ ë‹¤ (ë³„ë„ íŒŒì¼)",
+      "evenOddHint": "í™€ìˆ˜ íŽ˜ì´ì§€: 1, 3, 5... ì§ìˆ˜ íŽ˜ì´ì§€: 2, 4, 6...",
+      "everyPageInfo": "ê° íŽ˜ì´ì§€ê°€ ê°œë³„ PDF íŒŒì¼ë¡œ ì¶”ì¶œë©ë‹ˆë‹¤. {count}ê°œì˜ íŒŒì¼ì´ ìƒì„±ë©ë‹ˆë‹¤.",
+      "visualInfo": "ì•„ëž˜ ì¸ë„¤ì¼ì„ í´ë¦­í•˜ì—¬ ì¶”ì¶œí•  íŽ˜ì´ì§€ë¥¼ ì„ íƒí•˜ì„¸ìš”. ì„ íƒí•œ íŽ˜ì´ì§€ëŠ” ë‹¨ì¼ PDFë¡œ ê²°í•©ë˜ê±°ë‚˜ ê°œë³„ íŒŒì¼ë¡œ ë¶„í• ë©ë‹ˆë‹¤.",
+      "bookmarksNotice": "ì°¸ê³ : ë¶ë§ˆí¬ë¡œ ë¶„í• í•˜ë ¤ë©´ PDFì— ë¶ë§ˆí¬ê°€ ìžˆì–´ì•¼ í•©ë‹ˆë‹¤. ë¶ë§ˆí¬ê°€ ì—†ìœ¼ë©´ ì „ì²´ PDFê°€ ë‹¨ì¼ íŒŒì¼ë¡œ ë°˜í™˜ë©ë‹ˆë‹¤.",
+      "splitCountLabel": "ë¶„í•  ìˆ˜",
+      "splitCountHint": "{count}ë“±ë¶„ìœ¼ë¡œ ë¶„í•  (ê° ì•½ {pages}íŽ˜ì´ì§€)",
+      "pagePreviewTitle": "íŽ˜ì´ì§€ ì„ íƒ",
+      "splitButton": "PDF ë¶„í• ",
+      "resultsTitle": "ë¶„í•  ê²°ê³¼",
+      "successMessage": "PDFê°€ ì„±ê³µì ìœ¼ë¡œ ë¶„í• ë˜ì—ˆìŠµë‹ˆë‹¤! ë‹¤ìš´ë¡œë“œ ë²„íŠ¼ì„ í´ë¦­í•˜ì—¬ íŒŒì¼ì„ ì €ìž¥í•˜ì„¸ìš”.",
+      "modeVisualShort": "ì‹œê°ì  ì„ íƒ",
+      "modeBookmarksShort": "ë¶ë§ˆí¬",
+      "modeNTimesShort": "Në¶„í• ",
+      "downloadZip": "ZIPìœ¼ë¡œ ëª¨ë‘ ë‹¤ìš´ë¡œë“œ"
     },
     "deletePages": {
       "uploadLabel": "Upload PDF File",
@@ -733,8 +733,8 @@
       "warningText": "Selected pages will be permanently removed from the PDF. At least one page must remain.",
       "deleteButton": "Delete Pages",
       "successMessage": "Pages deleted successfully! Click the download button to save your file.",
-      "pageRange": "페이지 범위",
-      "pageRangePlaceholder": "예: 1, 3-5, 8"
+      "pageRange": "íŽ˜ì´ì§€ ë²”ìœ„",
+      "pageRangePlaceholder": "ì˜ˆ: 1, 3-5, 8"
     },
     "extractPages": {
       "uploadLabel": "Upload PDF File",
@@ -743,8 +743,8 @@
       "selectHint": "Click pages to select them, or enter page numbers/ranges above.",
       "extractButton": "Extract Pages",
       "successMessage": "Pages extracted successfully! Click the download button to save your file.",
-      "pageRange": "페이지 범위",
-      "pageRangePlaceholder": "예: 1-5, 8, 10-12"
+      "pageRange": "íŽ˜ì´ì§€ ë²”ìœ„",
+      "pageRangePlaceholder": "ì˜ˆ: 1-5, 8, 10-12"
     },
     "posterizePdf": {
       "uploadLabel": "Upload PDF File",
@@ -760,38 +760,38 @@
       "fill": "Fill (may crop)",
       "pageRange": "Page Range (optional)",
       "pageRangePlaceholder": "e.g., 1-5, 8, 10-15 (leave empty for all pages)",
-      "previewInfo": "Each page will be split into {rows}×{cols} = {total} tiles.",
+      "previewInfo": "Each page will be split into {rows}Ã—{cols} = {total} tiles.",
       "createButton": "Posterize PDF",
       "successMessage": "PDF posterized successfully! Click the download button to save your file."
     },
     "pdfMultiTool": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "PDF 파일을 여기에 드래그 앤 드롭하거나 클릭하여 찾아보세요. 여러 파일을 업로드할 수 있습니다.",
-      "addMoreFiles": "PDF 파일 더 추가",
-      "organize": "정리",
-      "delete": "삭제",
-      "rotate": "회전",
-      "duplicate": "복제",
-      "addBlank": "빈 페이지 추가",
-      "organizeHint": "페이지를 드래그 앤 드롭하여 순서 변경.",
-      "deleteHint": "삭제할 페이지를 클릭하세요.",
-      "rotateHint": "페이지의 회전 버튼을 클릭하거나 모두 회전:",
-      "duplicateHint": "복제 버튼을 클릭하여 페이지를 복사하세요.",
-      "reset": "재설정",
-      "undo": "실행 취소",
-      "redo": "다시 실행",
-      "selectAll": "모두 선택",
-      "deselectAll": "선택 해제",
-      "rotateLeft": "왼쪽 회전",
-      "rotateRight": "오른쪽 회전",
-      "exportPDF": "PDF 내보내기",
-      "downloadSelected": "선택 항목 다운로드",
-      "clearAll": "모두 지우기",
-      "addBlankPageTitle": "빈 페이지 추가",
-      "numberOfPages": "페이지 수",
-      "insertPosition": "삽입 위치",
-      "processButton": "변경 사항 적용",
-      "successMessage": "PDF 처리 완료! 다운로드 버튼을 클릭하여 파일을 저장하세요."
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "PDF íŒŒì¼ì„ ì—¬ê¸°ì— ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì°¾ì•„ë³´ì„¸ìš”. ì—¬ëŸ¬ íŒŒì¼ì„ ì—…ë¡œë“œí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.",
+      "addMoreFiles": "PDF íŒŒì¼ ë” ì¶”ê°€",
+      "organize": "ì •ë¦¬",
+      "delete": "ì‚­ì œ",
+      "rotate": "íšŒì „",
+      "duplicate": "ë³µì œ",
+      "addBlank": "ë¹ˆ íŽ˜ì´ì§€ ì¶”ê°€",
+      "organizeHint": "íŽ˜ì´ì§€ë¥¼ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì—¬ ìˆœì„œ ë³€ê²½.",
+      "deleteHint": "ì‚­ì œí•  íŽ˜ì´ì§€ë¥¼ í´ë¦­í•˜ì„¸ìš”.",
+      "rotateHint": "íŽ˜ì´ì§€ì˜ íšŒì „ ë²„íŠ¼ì„ í´ë¦­í•˜ê±°ë‚˜ ëª¨ë‘ íšŒì „:",
+      "duplicateHint": "ë³µì œ ë²„íŠ¼ì„ í´ë¦­í•˜ì—¬ íŽ˜ì´ì§€ë¥¼ ë³µì‚¬í•˜ì„¸ìš”.",
+      "reset": "ìž¬ì„¤ì •",
+      "undo": "ì‹¤í–‰ ì·¨ì†Œ",
+      "redo": "ë‹¤ì‹œ ì‹¤í–‰",
+      "selectAll": "ëª¨ë‘ ì„ íƒ",
+      "deselectAll": "ì„ íƒ í•´ì œ",
+      "rotateLeft": "ì™¼ìª½ íšŒì „",
+      "rotateRight": "ì˜¤ë¥¸ìª½ íšŒì „",
+      "exportPDF": "PDF ë‚´ë³´ë‚´ê¸°",
+      "downloadSelected": "ì„ íƒ í•­ëª© ë‹¤ìš´ë¡œë“œ",
+      "clearAll": "ëª¨ë‘ ì§€ìš°ê¸°",
+      "addBlankPageTitle": "ë¹ˆ íŽ˜ì´ì§€ ì¶”ê°€",
+      "numberOfPages": "íŽ˜ì´ì§€ ìˆ˜",
+      "insertPosition": "ì‚½ìž… ìœ„ì¹˜",
+      "processButton": "ë³€ê²½ ì‚¬í•­ ì ìš©",
+      "successMessage": "PDF ì²˜ë¦¬ ì™„ë£Œ! ë‹¤ìš´ë¡œë“œ ë²„íŠ¼ì„ í´ë¦­í•˜ì—¬ íŒŒì¼ì„ ì €ìž¥í•˜ì„¸ìš”."
     },
     "viewMetadata": {
       "uploadLabel": "Upload PDF File",
@@ -841,7 +841,7 @@
       "uploadLabel": "Upload PDF to Edit",
       "uploadDescription": "Drag and drop a PDF file here, or click to browse.",
       "instructions": "How to use",
-      "instructionsText": "Use the toolbar above the PDF to add text, draw, highlight, or add images. Click the download button (💾) in the toolbar to save your edited PDF.",
+      "instructionsText": "Use the toolbar above the PDF to add text, draw, highlight, or add images. Click the download button (ðŸ’¾) in the toolbar to save your edited PDF.",
       "saveButton": "Save PDF",
       "saveDownload": "Save & Download",
       "saveError": "Failed to save PDF. Please use the export button in the toolbar.",
@@ -900,12 +900,12 @@
       "svgQualityHigh": "High (3x - better quality)",
       "svgQualityVeryHigh": "Very High (4x - best quality)",
       "svgQualityHint": "Higher quality produces sharper images but larger file sizes.",
-      "batchMode": "여러 PDF로 분할",
-      "imagesPerPdf": "PDF당 이미지 수",
-      "batchModeHint": "{pdfCount}개의 PDF 파일이 생성되어 ZIP 아카이브로 패키징됩니다.",
-      "batchSuccessMessage": "{imageCount}개의 이미지에서 {pdfCount}개의 PDF 파일을 성공적으로 생성했습니다! 다운로드 버튼을 클릭하여 ZIP 아카이브를 저장하세요.",
+      "batchMode": "ì—¬ëŸ¬ PDFë¡œ ë¶„í• ",
+      "imagesPerPdf": "PDFë‹¹ ì´ë¯¸ì§€ ìˆ˜",
+      "batchModeHint": "{pdfCount}ê°œì˜ PDF íŒŒì¼ì´ ìƒì„±ë˜ì–´ ZIP ì•„ì¹´ì´ë¸Œë¡œ íŒ¨í‚¤ì§•ë©ë‹ˆë‹¤.",
+      "batchSuccessMessage": "{imageCount}ê°œì˜ ì´ë¯¸ì§€ì—ì„œ {pdfCount}ê°œì˜ PDF íŒŒì¼ì„ ì„±ê³µì ìœ¼ë¡œ ìƒì„±í–ˆìŠµë‹ˆë‹¤! ë‹¤ìš´ë¡œë“œ ë²„íŠ¼ì„ í´ë¦­í•˜ì—¬ ZIP ì•„ì¹´ì´ë¸Œë¥¼ ì €ìž¥í•˜ì„¸ìš”.",
       "successMessage": "Images converted to PDF successfully! Click the download button to save your file.",
-      "fitToImage": "이미지 크기에 맞춤"
+      "fitToImage": "ì´ë¯¸ì§€ í¬ê¸°ì— ë§žì¶¤"
     },
     "compressPdf": {
       "uploadLabel": "Upload PDF Files",
@@ -931,16 +931,16 @@
       "originalSize": "Original:",
       "compressedSize": "Compressed:",
       "saved": "Saved:",
-      "algorithmLabel": "압축 알고리즘",
-      "algorithmStandard": "표준",
-      "algorithmCondense": "응축",
+      "algorithmLabel": "ì••ì¶• ì•Œê³ ë¦¬ì¦˜",
+      "algorithmStandard": "í‘œì¤€",
+      "algorithmCondense": "ì‘ì¶•",
       "algorithmPhoton": "Photon",
-      "algorithmStandardDesc": "객체 스트림을 사용한 범용 압축",
-      "algorithmCondenseDesc": "상호작용성을 유지하면서 구조 최적화",
-      "algorithmPhotonDesc": "페이지를 래스터화함 — 이미지가 많은 PDF에 적합",
-      "photonWarning": "참고: Photon은 페이지를 이미지로 변환하므로 텍스트 품질이 저하되거나 상호작용성(링크, 양식)이 손실될 수 있습니다.",
-      "photonDpiLabel": "출력 DPI",
-      "photonDpiDesc": "DPI가 높을수록 품질은 좋아지나 파일 크기는 커짐"
+      "algorithmStandardDesc": "ê°ì²´ ìŠ¤íŠ¸ë¦¼ì„ ì‚¬ìš©í•œ ë²”ìš© ì••ì¶•",
+      "algorithmCondenseDesc": "ìƒí˜¸ìž‘ìš©ì„±ì„ ìœ ì§€í•˜ë©´ì„œ êµ¬ì¡° ìµœì í™”",
+      "algorithmPhotonDesc": "íŽ˜ì´ì§€ë¥¼ ëž˜ìŠ¤í„°í™”í•¨ â€” ì´ë¯¸ì§€ê°€ ë§Žì€ PDFì— ì í•©",
+      "photonWarning": "ì°¸ê³ : Photonì€ íŽ˜ì´ì§€ë¥¼ ì´ë¯¸ì§€ë¡œ ë³€í™˜í•˜ë¯€ë¡œ í…ìŠ¤íŠ¸ í’ˆì§ˆì´ ì €í•˜ë˜ê±°ë‚˜ ìƒí˜¸ìž‘ìš©ì„±(ë§í¬, ì–‘ì‹)ì´ ì†ì‹¤ë  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.",
+      "photonDpiLabel": "ì¶œë ¥ DPI",
+      "photonDpiDesc": "DPIê°€ ë†’ì„ìˆ˜ë¡ í’ˆì§ˆì€ ì¢‹ì•„ì§€ë‚˜ íŒŒì¼ í¬ê¸°ëŠ” ì»¤ì§"
     },
     "signPdf": {
       "uploadLabel": "Upload PDF File",
@@ -972,21 +972,21 @@
       "marginLeft": "Margin Left",
       "marginRight": "Margin Right",
       "optionsTitle": "Crop Options",
-      "page": "페이지"
+      "page": "íŽ˜ì´ì§€"
     },
     "organizePdf": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "페이지를 정리하려면 PDF 파일을 드래그 앤 드롭하세요.",
-      "reorderTitle": "드래그하여 페이지 순서 변경",
-      "reverseOrder": "순서 뒤집기",
-      "resetOrder": "순서 초기화",
-      "reorderHint": "페이지를 드래그 앤 드롭하여 순서를 변경합니다. 화살표를 사용하여 페이지를 위아래로 이동할 수 있습니다.",
-      "orderChanged": "페이지 순서가 변경되었습니다. \"변경 사항 적용\"을 클릭하여 저장하세요.",
-      "applyButton": "변경 사항 적용",
-      "successMessage": "PDF 페이지가 성공적으로 재정렬되었습니다! 다운로드 버튼을 클릭하여 파일을 저장하세요.",
-      "duplicatePage": "복제",
-      "deletePage": "삭제",
-      "cannotDeleteLast": "마지막 페이지는 삭제할 수 없습니다"
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "íŽ˜ì´ì§€ë¥¼ ì •ë¦¬í•˜ë ¤ë©´ PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì„¸ìš”.",
+      "reorderTitle": "ë“œëž˜ê·¸í•˜ì—¬ íŽ˜ì´ì§€ ìˆœì„œ ë³€ê²½",
+      "reverseOrder": "ìˆœì„œ ë’¤ì§‘ê¸°",
+      "resetOrder": "ìˆœì„œ ì´ˆê¸°í™”",
+      "reorderHint": "íŽ˜ì´ì§€ë¥¼ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì—¬ ìˆœì„œë¥¼ ë³€ê²½í•©ë‹ˆë‹¤. í™”ì‚´í‘œë¥¼ ì‚¬ìš©í•˜ì—¬ íŽ˜ì´ì§€ë¥¼ ìœ„ì•„ëž˜ë¡œ ì´ë™í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.",
+      "orderChanged": "íŽ˜ì´ì§€ ìˆœì„œê°€ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤. \"ë³€ê²½ ì‚¬í•­ ì ìš©\"ì„ í´ë¦­í•˜ì—¬ ì €ìž¥í•˜ì„¸ìš”.",
+      "applyButton": "ë³€ê²½ ì‚¬í•­ ì ìš©",
+      "successMessage": "PDF íŽ˜ì´ì§€ê°€ ì„±ê³µì ìœ¼ë¡œ ìž¬ì •ë ¬ë˜ì—ˆìŠµë‹ˆë‹¤! ë‹¤ìš´ë¡œë“œ ë²„íŠ¼ì„ í´ë¦­í•˜ì—¬ íŒŒì¼ì„ ì €ìž¥í•˜ì„¸ìš”.",
+      "duplicatePage": "ë³µì œ",
+      "deletePage": "ì‚­ì œ",
+      "cannotDeleteLast": "ë§ˆì§€ë§‰ íŽ˜ì´ì§€ëŠ” ì‚­ì œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤"
     },
     "repairPdf": {
       "uploadLabel": "Upload PDF Files",
@@ -1002,45 +1002,45 @@
       "divisionType": "Division Type",
       "vertical": "Vertical",
       "horizontal": "Horizontal",
-      "grid2x2": "2×2 Grid",
-      "grid3x3": "3×3 Grid",
+      "grid2x2": "2Ã—2 Grid",
+      "grid3x3": "3Ã—3 Grid",
       "previewInfo": "Each page will be divided based on the selected option.",
       "divideButton": "Divide Pages",
       "successMessage": "Pages divided successfully!"
     },
     "extractAttachments": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "첨부 파일을 추출할 PDF 파일을 선택하세요.",
-      "filesTitle": "선택된 파일",
-      "extractButton": "첨부 파일 추출",
-      "extractedTitle": "추출된 첨부 파일",
-      "downloadAll": "모두 다운로드",
-      "successMessage": "첨부 파일이 성공적으로 추출되었습니다!"
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "ì²¨ë¶€ íŒŒì¼ì„ ì¶”ì¶œí•  PDF íŒŒì¼ì„ ì„ íƒí•˜ì„¸ìš”.",
+      "filesTitle": "ì„ íƒëœ íŒŒì¼",
+      "extractButton": "ì²¨ë¶€ íŒŒì¼ ì¶”ì¶œ",
+      "extractedTitle": "ì¶”ì¶œëœ ì²¨ë¶€ íŒŒì¼",
+      "downloadAll": "ëª¨ë‘ ë‹¤ìš´ë¡œë“œ",
+      "successMessage": "ì²¨ë¶€ íŒŒì¼ì´ ì„±ê³µì ìœ¼ë¡œ ì¶”ì¶œë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "extractImages": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "이미지를 추출할 PDF 파일을 선택하세요.",
-      "filesTitle": "선택된 파일",
-      "filterTitle": "필터 옵션",
-      "filterDescription": "작은 이미지 필터링 (아이콘, 장식 등)",
-      "minWidth": "최소 너비 (px)",
-      "minHeight": "최소 높이 (px)",
-      "minSizeKB": "최소 크기 (KB)",
-      "extractButton": "이미지 추출",
-      "extractedTitle": "추출된 이미지",
-      "downloadAll": "모두 다운로드",
-      "downloadZip": "ZIP으로 다운로드",
-      "page": "페이지",
-      "successMessage": "이미지가 성공적으로 추출되었습니다! 개별 이미지를 클릭하여 다운로드하거나 \"ZIP으로 다운로드\"를 사용하세요.",
-      "optionsTitle": "설정",
-      "format": "출력 형식",
-      "minSize": "최소 크기 (px)"
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "ì´ë¯¸ì§€ë¥¼ ì¶”ì¶œí•  PDF íŒŒì¼ì„ ì„ íƒí•˜ì„¸ìš”.",
+      "filesTitle": "ì„ íƒëœ íŒŒì¼",
+      "filterTitle": "í•„í„° ì˜µì…˜",
+      "filterDescription": "ìž‘ì€ ì´ë¯¸ì§€ í•„í„°ë§ (ì•„ì´ì½˜, ìž¥ì‹ ë“±)",
+      "minWidth": "ìµœì†Œ ë„ˆë¹„ (px)",
+      "minHeight": "ìµœì†Œ ë†’ì´ (px)",
+      "minSizeKB": "ìµœì†Œ í¬ê¸° (KB)",
+      "extractButton": "ì´ë¯¸ì§€ ì¶”ì¶œ",
+      "extractedTitle": "ì¶”ì¶œëœ ì´ë¯¸ì§€",
+      "downloadAll": "ëª¨ë‘ ë‹¤ìš´ë¡œë“œ",
+      "downloadZip": "ZIPìœ¼ë¡œ ë‹¤ìš´ë¡œë“œ",
+      "page": "íŽ˜ì´ì§€",
+      "successMessage": "ì´ë¯¸ì§€ê°€ ì„±ê³µì ìœ¼ë¡œ ì¶”ì¶œë˜ì—ˆìŠµë‹ˆë‹¤! ê°œë³„ ì´ë¯¸ì§€ë¥¼ í´ë¦­í•˜ì—¬ ë‹¤ìš´ë¡œë“œí•˜ê±°ë‚˜ \"ZIPìœ¼ë¡œ ë‹¤ìš´ë¡œë“œ\"ë¥¼ ì‚¬ìš©í•˜ì„¸ìš”.",
+      "optionsTitle": "ì„¤ì •",
+      "format": "ì¶œë ¥ í˜•ì‹",
+      "minSize": "ìµœì†Œ í¬ê¸° (px)"
     },
     "encryptPdf": {
       "uploadLabel": "Upload PDF File",
       "uploadDescription": "Drag and drop a PDF file here, or click to browse.",
       "passwordTitle": "Password Settings",
-      "privacyNotice": "🔒 Your passwords are processed locally and never sent to any server.",
+      "privacyNotice": "ðŸ”’ Your passwords are processed locally and never sent to any server.",
       "userPasswordLabel": "User Password (to open document)",
       "userPasswordPlaceholder": "Enter password to open PDF",
       "userPasswordHint": "Required to open and view the PDF.",
@@ -1063,7 +1063,7 @@
       "uploadLabel": "Upload PDF File",
       "uploadDescription": "Drag and drop an encrypted PDF file.",
       "passwordTitle": "Enter Password",
-      "privacyNotice": "🔒 Your password is processed locally and never sent to any server.",
+      "privacyNotice": "ðŸ”’ Your password is processed locally and never sent to any server.",
       "passwordLabel": "PDF Password",
       "passwordPlaceholder": "Enter the PDF password",
       "passwordHint": "Leave empty if the PDF only has owner password restrictions.",
@@ -1082,9 +1082,9 @@
       "rotateButton": "Rotate PDF",
       "successMessage": "PDF pages rotated successfully! Click the download button to save your file.",
       "angle": "Angle",
-      "rotateRight": "Rotate Right 90°",
-      "rotateLeft": "Rotate Left 90°",
-      "rotate180": "Rotate 180°",
+      "rotateRight": "Rotate Right 90Â°",
+      "rotateLeft": "Rotate Left 90Â°",
+      "rotate180": "Rotate 180Â°",
       "applyTo": "Apply to",
       "allPages": "All Pages",
       "oddPages": "Odd Pages",
@@ -1111,10 +1111,10 @@
       "pageSize": "Page Size",
       "addButton": "Add Blank Pages",
       "successMessage": "Blank pages added successfully! Click the download button to save your file.",
-      "positionStart": "문서 시작 부분",
-      "positionEnd": "문서 끝 부분",
-      "positionAfterEach": "각 페이지 다음",
-      "matchSource": "원본 파일에 맞춤"
+      "positionStart": "ë¬¸ì„œ ì‹œìž‘ ë¶€ë¶„",
+      "positionEnd": "ë¬¸ì„œ ë ë¶€ë¶„",
+      "positionAfterEach": "ê° íŽ˜ì´ì§€ ë‹¤ìŒ",
+      "matchSource": "ì›ë³¸ íŒŒì¼ì— ë§žì¶¤"
     },
     "reversePages": {
       "uploadLabel": "Upload PDF File",
@@ -1125,73 +1125,73 @@
       "successMessage": "Page order reversed successfully! Click the download button to save your file."
     },
     "nUpPdf": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "PDF 파일을 여기에 드래그 앤 드롭하거나 클릭하여 찾아보세요.",
-      "optionsTitle": "N-Up 옵션",
-      "layout": "레이아웃",
-      "pagesPerSheet": "시트당 페이지 수",
-      "pageSize": "출력 페이지 크기",
-      "orientation": "방향",
-      "useMargins": "여백 및 거터 추가",
-      "addBorder": "페이지 주위에 테두리 추가",
-      "borderColor": "테두리 색상",
-      "previewInfo": "{pages}페이지가 시트당 {perSheet}페이지씩 {sheets}장에 배치됩니다.",
-      "layoutDirection": "레이아웃 방향",
-      "layoutHorizontal": "가로 (나란히)",
-      "layoutVertical": "세로 (위아래)",
-      "layoutHorizontalDesc": "페이지가 나란히 배치됩니다 (왼쪽에서 오른쪽)",
-      "layoutVerticalDesc": "페이지가 위에서 아래로 쌓입니다",
-      "customLayout": "사용자 정의...",
-      "columns": "열",
-      "rows": "행",
-      "layoutPreview": "레이아웃 미리보기",
-      "gridLayoutInfo": "격자: {cols} × {rows} (시트당 {perSheet}페이지)",
-      "readingOrder": "읽기 순서",
-      "topToBottom": "↓ 위에서 아래로",
-      "leftToRight": "→ 왼쪽에서 오른쪽으로, 그 다음 ↓ 아래로",
-      "createButton": "N-Up PDF 만들기",
-      "createCustomButton": "{cols}×{rows} PDF 만들기",
-      "gridLabel": "격자 레이아웃",
-      "outputPages": "출력 시트",
-      "pagesLabel": "페이지",
-      "sheetsLabel": "장",
-      "perSheetLabel": "페이지/장",
-      "successMessage": "N-Up PDF가 성공적으로 생성되었습니다! 다운로드 버튼을 클릭하여 파일을 저장하세요."
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "PDF íŒŒì¼ì„ ì—¬ê¸°ì— ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì°¾ì•„ë³´ì„¸ìš”.",
+      "optionsTitle": "N-Up ì˜µì…˜",
+      "layout": "ë ˆì´ì•„ì›ƒ",
+      "pagesPerSheet": "ì‹œíŠ¸ë‹¹ íŽ˜ì´ì§€ ìˆ˜",
+      "pageSize": "ì¶œë ¥ íŽ˜ì´ì§€ í¬ê¸°",
+      "orientation": "ë°©í–¥",
+      "useMargins": "ì—¬ë°± ë° ê±°í„° ì¶”ê°€",
+      "addBorder": "íŽ˜ì´ì§€ ì£¼ìœ„ì— í…Œë‘ë¦¬ ì¶”ê°€",
+      "borderColor": "í…Œë‘ë¦¬ ìƒ‰ìƒ",
+      "previewInfo": "{pages}íŽ˜ì´ì§€ê°€ ì‹œíŠ¸ë‹¹ {perSheet}íŽ˜ì´ì§€ì”© {sheets}ìž¥ì— ë°°ì¹˜ë©ë‹ˆë‹¤.",
+      "layoutDirection": "ë ˆì´ì•„ì›ƒ ë°©í–¥",
+      "layoutHorizontal": "ê°€ë¡œ (ë‚˜ëž€ížˆ)",
+      "layoutVertical": "ì„¸ë¡œ (ìœ„ì•„ëž˜)",
+      "layoutHorizontalDesc": "íŽ˜ì´ì§€ê°€ ë‚˜ëž€ížˆ ë°°ì¹˜ë©ë‹ˆë‹¤ (ì™¼ìª½ì—ì„œ ì˜¤ë¥¸ìª½)",
+      "layoutVerticalDesc": "íŽ˜ì´ì§€ê°€ ìœ„ì—ì„œ ì•„ëž˜ë¡œ ìŒ“ìž…ë‹ˆë‹¤",
+      "customLayout": "ì‚¬ìš©ìž ì •ì˜...",
+      "columns": "ì—´",
+      "rows": "í–‰",
+      "layoutPreview": "ë ˆì´ì•„ì›ƒ ë¯¸ë¦¬ë³´ê¸°",
+      "gridLayoutInfo": "ê²©ìž: {cols} Ã— {rows} (ì‹œíŠ¸ë‹¹ {perSheet}íŽ˜ì´ì§€)",
+      "readingOrder": "ì½ê¸° ìˆœì„œ",
+      "topToBottom": "â†“ ìœ„ì—ì„œ ì•„ëž˜ë¡œ",
+      "leftToRight": "â†’ ì™¼ìª½ì—ì„œ ì˜¤ë¥¸ìª½ìœ¼ë¡œ, ê·¸ ë‹¤ìŒ â†“ ì•„ëž˜ë¡œ",
+      "createButton": "N-Up PDF ë§Œë“¤ê¸°",
+      "createCustomButton": "{cols}Ã—{rows} PDF ë§Œë“¤ê¸°",
+      "gridLabel": "ê²©ìž ë ˆì´ì•„ì›ƒ",
+      "outputPages": "ì¶œë ¥ ì‹œíŠ¸",
+      "pagesLabel": "íŽ˜ì´ì§€",
+      "sheetsLabel": "ìž¥",
+      "perSheetLabel": "íŽ˜ì´ì§€/ìž¥",
+      "successMessage": "N-Up PDFê°€ ì„±ê³µì ìœ¼ë¡œ ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤! ë‹¤ìš´ë¡œë“œ ë²„íŠ¼ì„ í´ë¦­í•˜ì—¬ íŒŒì¼ì„ ì €ìž¥í•˜ì„¸ìš”."
     },
     "gridCombine": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "여러 PDF 파일을 여기에 드래그 앤 드롭하세요.",
-      "filesTitle": "병합할 파일",
-      "reorderHint": "드래그 앤 드롭으로 순서 변경.",
-      "optionsTitle": "레이아웃 옵션",
-      "gridLayout": "격자 레이아웃",
-      "pageSize": "페이지 크기",
-      "orientation": "방향",
-      "spacing": "간격",
-      "useMargins": "여백 추가",
-      "addBorder": "테두리 추가",
-      "borderColor": "테두리 색상",
-      "combineButton": "PDF 병합",
-      "successMessage": "PDF가 성공적으로 병합되었습니다! 다운로드 버튼을 클릭하여 파일을 저장하세요.",
-      "layoutPreview": "레이아웃 미리보기",
-      "columns": "열",
-      "rows": "행",
-      "pageMode": "페이지 모드",
-      "firstPageOnly": "첫 페이지만",
-      "allPages": "모든 페이지",
-      "firstPageOnlyHint": "각 PDF의 첫 페이지만 사용합니다.",
-      "allPagesHint": "각 PDF의 모든 페이지를 격자에 포함합니다.",
-      "fillMode": "채우기 모드",
-      "leaveEmpty": "셀 비워두기",
-      "repeat": "처음부터 반복",
-      "stretchLast": "마지막 페이지 반복",
-      "fillModeHint": "파일 수가 셀 수보다 적을 때 빈 셀을 채우는 방법.",
-      "cells": "셀",
-      "page": "페이지",
-      "pages": "페이지",
-      "previewInfoAllPages": "{fileCount}개의 PDF(총 {totalPages} 페이지)가 {outputPages}장의 {layout} 격자에 배치됩니다.",
-      "previewInfoFirstPage": "{fileCount}개의 PDF가 {outputPages}장의 {layout} 격자에 배치됩니다.",
-      "minFilesError": "병합할 PDF 파일을 최소 2개 이상 추가해 주세요."
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "ì—¬ëŸ¬ PDF íŒŒì¼ì„ ì—¬ê¸°ì— ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì„¸ìš”.",
+      "filesTitle": "ë³‘í•©í•  íŒŒì¼",
+      "reorderHint": "ë“œëž˜ê·¸ ì•¤ ë“œë¡­ìœ¼ë¡œ ìˆœì„œ ë³€ê²½.",
+      "optionsTitle": "ë ˆì´ì•„ì›ƒ ì˜µì…˜",
+      "gridLayout": "ê²©ìž ë ˆì´ì•„ì›ƒ",
+      "pageSize": "íŽ˜ì´ì§€ í¬ê¸°",
+      "orientation": "ë°©í–¥",
+      "spacing": "ê°„ê²©",
+      "useMargins": "ì—¬ë°± ì¶”ê°€",
+      "addBorder": "í…Œë‘ë¦¬ ì¶”ê°€",
+      "borderColor": "í…Œë‘ë¦¬ ìƒ‰ìƒ",
+      "combineButton": "PDF ë³‘í•©",
+      "successMessage": "PDFê°€ ì„±ê³µì ìœ¼ë¡œ ë³‘í•©ë˜ì—ˆìŠµë‹ˆë‹¤! ë‹¤ìš´ë¡œë“œ ë²„íŠ¼ì„ í´ë¦­í•˜ì—¬ íŒŒì¼ì„ ì €ìž¥í•˜ì„¸ìš”.",
+      "layoutPreview": "ë ˆì´ì•„ì›ƒ ë¯¸ë¦¬ë³´ê¸°",
+      "columns": "ì—´",
+      "rows": "í–‰",
+      "pageMode": "íŽ˜ì´ì§€ ëª¨ë“œ",
+      "firstPageOnly": "ì²« íŽ˜ì´ì§€ë§Œ",
+      "allPages": "ëª¨ë“  íŽ˜ì´ì§€",
+      "firstPageOnlyHint": "ê° PDFì˜ ì²« íŽ˜ì´ì§€ë§Œ ì‚¬ìš©í•©ë‹ˆë‹¤.",
+      "allPagesHint": "ê° PDFì˜ ëª¨ë“  íŽ˜ì´ì§€ë¥¼ ê²©ìžì— í¬í•¨í•©ë‹ˆë‹¤.",
+      "fillMode": "ì±„ìš°ê¸° ëª¨ë“œ",
+      "leaveEmpty": "ì…€ ë¹„ì›Œë‘ê¸°",
+      "repeat": "ì²˜ìŒë¶€í„° ë°˜ë³µ",
+      "stretchLast": "ë§ˆì§€ë§‰ íŽ˜ì´ì§€ ë°˜ë³µ",
+      "fillModeHint": "íŒŒì¼ ìˆ˜ê°€ ì…€ ìˆ˜ë³´ë‹¤ ì ì„ ë•Œ ë¹ˆ ì…€ì„ ì±„ìš°ëŠ” ë°©ë²•.",
+      "cells": "ì…€",
+      "page": "íŽ˜ì´ì§€",
+      "pages": "íŽ˜ì´ì§€",
+      "previewInfoAllPages": "{fileCount}ê°œì˜ PDF(ì´ {totalPages} íŽ˜ì´ì§€)ê°€ {outputPages}ìž¥ì˜ {layout} ê²©ìžì— ë°°ì¹˜ë©ë‹ˆë‹¤.",
+      "previewInfoFirstPage": "{fileCount}ê°œì˜ PDFê°€ {outputPages}ìž¥ì˜ {layout} ê²©ìžì— ë°°ì¹˜ë©ë‹ˆë‹¤.",
+      "minFilesError": "ë³‘í•©í•  PDF íŒŒì¼ì„ ìµœì†Œ 2ê°œ ì´ìƒ ì¶”ê°€í•´ ì£¼ì„¸ìš”."
     },
     "alternateMerge": {
       "uploadLabel": "Upload PDF Files",
@@ -1344,44 +1344,44 @@
       "successMessage": "JSON converted to PDF successfully!"
     },
     "pdfToImage": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "변환할 PDF 파일을 드래그 앤 드롭하세요.",
-      "optionsTitle": "변환 옵션",
-      "format": "이미지 형식",
-      "quality": "품질",
-      "dpi": "해상도 (DPI)",
-      "resolution": "해상도",
-      "pageRange": "페이지 범위",
-      "pageRangePlaceholder": "예: 1-3, 5, 7",
-      "pageRangeHint": "모든 페이지를 원하면 비워두세요",
-      "layoutTitle": "페이지 레이아웃",
-      "customLayout": "사용자 정의",
-      "columns": "열",
-      "rows": "행",
-      "skipFirstPage": "첫 페이지/표지 제외",
-      "skipFirstPageHint": "첫 페이지(표지)는 별도 이미지로 렌더링됩니다",
-      "layoutPreview": "레이아웃 미리보기",
-      "pagesPerImage": "페이지/이미지",
-      "layoutHint": "선택한 그리드 레이아웃으로 여러 PDF 페이지를 하나의 이미지로 결합합니다.",
-      "convertButton": "이미지로 변환",
-      "downloadZip": "모두 ZIP으로 다운로드",
-      "previewTitle": "변환된 이미지",
-      "successMessage": "PDF가 성공적으로 이미지로 변환되었습니다!"
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "ë³€í™˜í•  PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì„¸ìš”.",
+      "optionsTitle": "ë³€í™˜ ì˜µì…˜",
+      "format": "ì´ë¯¸ì§€ í˜•ì‹",
+      "quality": "í’ˆì§ˆ",
+      "dpi": "í•´ìƒë„ (DPI)",
+      "resolution": "í•´ìƒë„",
+      "pageRange": "íŽ˜ì´ì§€ ë²”ìœ„",
+      "pageRangePlaceholder": "ì˜ˆ: 1-3, 5, 7",
+      "pageRangeHint": "ëª¨ë“  íŽ˜ì´ì§€ë¥¼ ì›í•˜ë©´ ë¹„ì›Œë‘ì„¸ìš”",
+      "layoutTitle": "íŽ˜ì´ì§€ ë ˆì´ì•„ì›ƒ",
+      "customLayout": "ì‚¬ìš©ìž ì •ì˜",
+      "columns": "ì—´",
+      "rows": "í–‰",
+      "skipFirstPage": "ì²« íŽ˜ì´ì§€/í‘œì§€ ì œì™¸",
+      "skipFirstPageHint": "ì²« íŽ˜ì´ì§€(í‘œì§€)ëŠ” ë³„ë„ ì´ë¯¸ì§€ë¡œ ë Œë”ë§ë©ë‹ˆë‹¤",
+      "layoutPreview": "ë ˆì´ì•„ì›ƒ ë¯¸ë¦¬ë³´ê¸°",
+      "pagesPerImage": "íŽ˜ì´ì§€/ì´ë¯¸ì§€",
+      "layoutHint": "ì„ íƒí•œ ê·¸ë¦¬ë“œ ë ˆì´ì•„ì›ƒìœ¼ë¡œ ì—¬ëŸ¬ PDF íŽ˜ì´ì§€ë¥¼ í•˜ë‚˜ì˜ ì´ë¯¸ì§€ë¡œ ê²°í•©í•©ë‹ˆë‹¤.",
+      "convertButton": "ì´ë¯¸ì§€ë¡œ ë³€í™˜",
+      "downloadZip": "ëª¨ë‘ ZIPìœ¼ë¡œ ë‹¤ìš´ë¡œë“œ",
+      "previewTitle": "ë³€í™˜ëœ ì´ë¯¸ì§€",
+      "successMessage": "PDFê°€ ì„±ê³µì ìœ¼ë¡œ ì´ë¯¸ì§€ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "pdfToSvg": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "SVG로 변환할 PDF 파일을 드래그 앤 드롭하세요.",
-      "optionsTitle": "변환 옵션",
-      "resolution": "해상도",
-      "resolutionHint": "해상도가 높을수록 더 크고 상세한 SVG 파일이 생성됩니다.",
-      "pageRange": "페이지 범위",
-      "pageRangePlaceholder": "예: 1-3, 5, 7",
-      "pageRangeHint": "모든 페이지를 원하면 비워두세요",
-      "convertButton": "SVG로 변환",
-      "downloadZip": "모두 ZIP으로 다운로드",
-      "previewTitle": "변환된 SVG",
-      "previewPage": "페이지",
-      "successMessage": "PDF가 SVG로 성공적으로 변환되었습니다! 썸네일을 클릭하여 미리 보거나 개별 파일을 다운로드하세요."
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "SVGë¡œ ë³€í™˜í•  PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì„¸ìš”.",
+      "optionsTitle": "ë³€í™˜ ì˜µì…˜",
+      "resolution": "í•´ìƒë„",
+      "resolutionHint": "í•´ìƒë„ê°€ ë†’ì„ìˆ˜ë¡ ë” í¬ê³  ìƒì„¸í•œ SVG íŒŒì¼ì´ ìƒì„±ë©ë‹ˆë‹¤.",
+      "pageRange": "íŽ˜ì´ì§€ ë²”ìœ„",
+      "pageRangePlaceholder": "ì˜ˆ: 1-3, 5, 7",
+      "pageRangeHint": "ëª¨ë“  íŽ˜ì´ì§€ë¥¼ ì›í•˜ë©´ ë¹„ì›Œë‘ì„¸ìš”",
+      "convertButton": "SVGë¡œ ë³€í™˜",
+      "downloadZip": "ëª¨ë‘ ZIPìœ¼ë¡œ ë‹¤ìš´ë¡œë“œ",
+      "previewTitle": "ë³€í™˜ëœ SVG",
+      "previewPage": "íŽ˜ì´ì§€",
+      "successMessage": "PDFê°€ SVGë¡œ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤! ì¸ë„¤ì¼ì„ í´ë¦­í•˜ì—¬ ë¯¸ë¦¬ ë³´ê±°ë‚˜ ê°œë³„ íŒŒì¼ì„ ë‹¤ìš´ë¡œë“œí•˜ì„¸ìš”."
     },
     "pdfToGreyscale": {
       "uploadLabel": "Upload PDF File",
@@ -1515,9 +1515,9 @@
       "uploadDescription": "Drag and drop a PDF file to flatten.",
       "flattenButton": "Flatten PDF",
       "successMessage": "PDF flattened successfully!",
-      "optionsTitle": "평탄화 옵션",
-      "flattenForms": "양식 필드 평탄화",
-      "flattenAnnotations": "주석 평탄화"
+      "optionsTitle": "í‰íƒ„í™” ì˜µì…˜",
+      "flattenForms": "ì–‘ì‹ í•„ë“œ í‰íƒ„í™”",
+      "flattenAnnotations": "ì£¼ì„ í‰íƒ„í™”"
     },
     "removeMetadata": {
       "uploadLabel": "Upload PDF File",
@@ -1543,7 +1543,7 @@
       "uploadDescription": "Drag and drop a PDF file here, or click to browse.",
       "optionsTitle": "Document Permissions",
       "passwordTitle": "Password Settings",
-      "privacyNotice": "🔒 Your passwords are processed locally and never sent to any server.",
+      "privacyNotice": "ðŸ”’ Your passwords are processed locally and never sent to any server.",
       "currentPasswordLabel": "Current Password (if PDF is encrypted)",
       "currentPasswordPlaceholder": "Enter current password",
       "currentPasswordHint": "Required if the PDF is already password-protected.",
@@ -1610,56 +1610,56 @@
       "bookmarksTitle": "Bookmarks",
       "addBookmark": "Add Bookmark",
       "noBookmarks": "No bookmarks yet. Click 'Add Bookmark' to create one.",
-      "hint": "Click a bookmark to preview its page. Use +/✎/× to add child, edit, or delete.",
+      "hint": "Click a bookmark to preview its page. Use +/âœŽ/Ã— to add child, edit, or delete.",
       "saveButton": "Save Bookmarks",
       "successMessage": "Bookmarks saved successfully!"
     },
     "pageNumbers": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "PDF 파일을 드래그 앤 드롭하세요.",
-      "optionsTitle": "페이지 번호 옵션",
-      "positionTitle": "위치",
-      "formatTitle": "형식",
-      "formatNumber": "숫자 (1, 2, 3)",
-      "formatRoman": "로마숫자 (I, II, III)",
-      "formatPageOfTotal": "X / Y 페이지",
-      "styleTitle": "스타일",
-      "style": "스타일",
-      "startNumber": "시작 번호",
-      "customFormat": "사용자 정의 형식",
-      "customFormatHint": "{page}와 {total}을 자리 표시자로 사용",
-      "prefix": "접두사",
-      "suffix": "접미사",
-      "fontSize": "글꼴 크기",
-      "margin": "여백",
-      "color": "색상",
-      "skipFirstPage": "첫 페이지 건너뛰기 (표지)",
-      "preview": "미리보기",
-      "pageOf": "{current} / {total} 페이지",
-      "firstPageSkipped": "첫 페이지는 건너뜁니다",
-      "previewText": "미리보기: \"{text}\"",
-      "addButton": "페이지 번호 추가",
-      "successMessage": "페이지 번호가 성공적으로 추가되었습니다!",
-      "zoomIn": "확대",
-      "zoomOut": "축소",
-      "zoomReset": "확대/축소 초기화",
-      "oddEvenTitle": "홀수/짝수 페이지 설정",
-      "pageMode": "페이지 모드",
-      "modeAll": "모든 페이지",
-      "modeOddOnly": "홀수 페이지만 (1, 3, 5...)",
-      "modeEvenOnly": "짝수 페이지만 (2, 4, 6...)",
-      "modeDifferent": "홀수/짝수 다른 위치",
-      "oddPosition": "홀수 페이지 위치",
-      "evenPosition": "짝수 페이지 위치",
-      "oddPositionHint": "1, 3, 5... 페이지",
-      "evenPositionHint": "2, 4, 6... 페이지",
-      "differentModeHint": "이 모드는 각 페이지의 바깥쪽 가장자리에 페이지 번호를 배치하려는 양면 인쇄에 유용합니다.",
-      "posBottomLeft": "왼쪽 하단",
-      "posBottomCenter": "하단 중앙",
-      "posBottomRight": "오른쪽 하단",
-      "posTopLeft": "왼쪽 상단",
-      "posTopCenter": "상단 중앙",
-      "posTopRight": "오른쪽 상단"
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì„¸ìš”.",
+      "optionsTitle": "íŽ˜ì´ì§€ ë²ˆí˜¸ ì˜µì…˜",
+      "positionTitle": "ìœ„ì¹˜",
+      "formatTitle": "í˜•ì‹",
+      "formatNumber": "ìˆ«ìž (1, 2, 3)",
+      "formatRoman": "ë¡œë§ˆìˆ«ìž (I, II, III)",
+      "formatPageOfTotal": "X / Y íŽ˜ì´ì§€",
+      "styleTitle": "ìŠ¤íƒ€ì¼",
+      "style": "ìŠ¤íƒ€ì¼",
+      "startNumber": "ì‹œìž‘ ë²ˆí˜¸",
+      "customFormat": "ì‚¬ìš©ìž ì •ì˜ í˜•ì‹",
+      "customFormatHint": "{page}ì™€ {total}ì„ ìžë¦¬ í‘œì‹œìžë¡œ ì‚¬ìš©",
+      "prefix": "ì ‘ë‘ì‚¬",
+      "suffix": "ì ‘ë¯¸ì‚¬",
+      "fontSize": "ê¸€ê¼´ í¬ê¸°",
+      "margin": "ì—¬ë°±",
+      "color": "ìƒ‰ìƒ",
+      "skipFirstPage": "ì²« íŽ˜ì´ì§€ ê±´ë„ˆë›°ê¸° (í‘œì§€)",
+      "preview": "ë¯¸ë¦¬ë³´ê¸°",
+      "pageOf": "{current} / {total} íŽ˜ì´ì§€",
+      "firstPageSkipped": "ì²« íŽ˜ì´ì§€ëŠ” ê±´ë„ˆëœë‹ˆë‹¤",
+      "previewText": "ë¯¸ë¦¬ë³´ê¸°: \"{text}\"",
+      "addButton": "íŽ˜ì´ì§€ ë²ˆí˜¸ ì¶”ê°€",
+      "successMessage": "íŽ˜ì´ì§€ ë²ˆí˜¸ê°€ ì„±ê³µì ìœ¼ë¡œ ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤!",
+      "zoomIn": "í™•ëŒ€",
+      "zoomOut": "ì¶•ì†Œ",
+      "zoomReset": "í™•ëŒ€/ì¶•ì†Œ ì´ˆê¸°í™”",
+      "oddEvenTitle": "í™€ìˆ˜/ì§ìˆ˜ íŽ˜ì´ì§€ ì„¤ì •",
+      "pageMode": "íŽ˜ì´ì§€ ëª¨ë“œ",
+      "modeAll": "ëª¨ë“  íŽ˜ì´ì§€",
+      "modeOddOnly": "í™€ìˆ˜ íŽ˜ì´ì§€ë§Œ (1, 3, 5...)",
+      "modeEvenOnly": "ì§ìˆ˜ íŽ˜ì´ì§€ë§Œ (2, 4, 6...)",
+      "modeDifferent": "í™€ìˆ˜/ì§ìˆ˜ ë‹¤ë¥¸ ìœ„ì¹˜",
+      "oddPosition": "í™€ìˆ˜ íŽ˜ì´ì§€ ìœ„ì¹˜",
+      "evenPosition": "ì§ìˆ˜ íŽ˜ì´ì§€ ìœ„ì¹˜",
+      "oddPositionHint": "1, 3, 5... íŽ˜ì´ì§€",
+      "evenPositionHint": "2, 4, 6... íŽ˜ì´ì§€",
+      "differentModeHint": "ì´ ëª¨ë“œëŠ” ê° íŽ˜ì´ì§€ì˜ ë°”ê¹¥ìª½ ê°€ìž¥ìžë¦¬ì— íŽ˜ì´ì§€ ë²ˆí˜¸ë¥¼ ë°°ì¹˜í•˜ë ¤ëŠ” ì–‘ë©´ ì¸ì‡„ì— ìœ ìš©í•©ë‹ˆë‹¤.",
+      "posBottomLeft": "ì™¼ìª½ í•˜ë‹¨",
+      "posBottomCenter": "í•˜ë‹¨ ì¤‘ì•™",
+      "posBottomRight": "ì˜¤ë¥¸ìª½ í•˜ë‹¨",
+      "posTopLeft": "ì™¼ìª½ ìƒë‹¨",
+      "posTopCenter": "ìƒë‹¨ ì¤‘ì•™",
+      "posTopRight": "ì˜¤ë¥¸ìª½ ìƒë‹¨"
     },
     "watermark": {
       "uploadLabel": "Upload PDF File",
@@ -1679,19 +1679,19 @@
       "failed": "Failed to add watermark.",
       "addButton": "Add Watermark",
       "successMessage": "Watermark added successfully!",
-      "repeatTitle": "워터마크 반복",
-      "repeatEnable": "전체 페이지에 워터마크 타일 배치",
-      "repeatSpacingX": "가로 간격",
-      "repeatSpacingY": "세로 간격",
-      "type": "유형",
-      "position": "위치",
-      "posCenter": "중앙",
-      "posDiagonal": "대각선",
-      "posTopLeft": "왼쪽 상단",
-      "posTopRight": "오른쪽 상단",
-      "posBottomLeft": "왼쪽 하단",
-      "posBottomRight": "오른쪽 하단",
-      "textPlaceholder": "예: 기밀(CONFIDENTIAL)"
+      "repeatTitle": "ì›Œí„°ë§ˆí¬ ë°˜ë³µ",
+      "repeatEnable": "ì „ì²´ íŽ˜ì´ì§€ì— ì›Œí„°ë§ˆí¬ íƒ€ì¼ ë°°ì¹˜",
+      "repeatSpacingX": "ê°€ë¡œ ê°„ê²©",
+      "repeatSpacingY": "ì„¸ë¡œ ê°„ê²©",
+      "type": "ìœ í˜•",
+      "position": "ìœ„ì¹˜",
+      "posCenter": "ì¤‘ì•™",
+      "posDiagonal": "ëŒ€ê°ì„ ",
+      "posTopLeft": "ì™¼ìª½ ìƒë‹¨",
+      "posTopRight": "ì˜¤ë¥¸ìª½ ìƒë‹¨",
+      "posBottomLeft": "ì™¼ìª½ í•˜ë‹¨",
+      "posBottomRight": "ì˜¤ë¥¸ìª½ í•˜ë‹¨",
+      "textPlaceholder": "ì˜ˆ: ê¸°ë°€(CONFIDENTIAL)"
     },
     "headerFooter": {
       "uploadLabel": "Upload PDF File",
@@ -1703,12 +1703,12 @@
       "previewHint": "Enter header or footer text to see preview",
       "addButton": "Add Header & Footer",
       "successMessage": "Header & footer added successfully!",
-      "headerText": "머리글 텍스트",
-      "headerTextPlaceholder": "머리글 입력...",
-      "footerText": "바닥글 텍스트",
-      "footerTextPlaceholder": "바닥글 입력...",
-      "fontSize": "글꼴 크기",
-      "fontColor": "글꼴 색상"
+      "headerText": "ë¨¸ë¦¬ê¸€ í…ìŠ¤íŠ¸",
+      "headerTextPlaceholder": "ë¨¸ë¦¬ê¸€ ìž…ë ¥...",
+      "footerText": "ë°”ë‹¥ê¸€ í…ìŠ¤íŠ¸",
+      "footerTextPlaceholder": "ë°”ë‹¥ê¸€ ìž…ë ¥...",
+      "fontSize": "ê¸€ê¼´ í¬ê¸°",
+      "fontColor": "ê¸€ê¼´ ìƒ‰ìƒ"
     },
     "invertColors": {
       "uploadLabel": "Upload PDF File",
@@ -1755,9 +1755,9 @@
       "optionsTitle": "Removal Options",
       "removeButton": "Remove Annotations",
       "successMessage": "Annotations removed successfully!",
-      "removeComments": "댓글 제거",
-      "removeHighlights": "하이라이트 제거",
-      "removeLinks": "링크 제거"
+      "removeComments": "ëŒ“ê¸€ ì œê±°",
+      "removeHighlights": "í•˜ì´ë¼ì´íŠ¸ ì œê±°",
+      "removeLinks": "ë§í¬ ì œê±°"
     },
     "formFiller": {
       "uploadLabel": "Upload PDF File",
@@ -1766,112 +1766,112 @@
       "successMessage": "Form saved successfully!"
     },
     "formCreator": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "PDF 파일을 여기에 드래그 앤 드롭하세요.",
-      "toolbarTitle": "도구 모음",
-      "selectTool": "선택",
-      "textFieldTool": "텍스트 필드",
-      "checkboxTool": "체크박스",
-      "dropdownTool": "드롭다운",
-      "radioTool": "라디오 버튼",
-      "deleteTool": "삭제",
-      "pageNavigation": "페이지 {current} / {total}",
-      "selectHint": "필드를 클릭하여 선택, 드래그하여 이동, 모서리로 크기 조절",
-      "addFieldHint": "PDF를 클릭하여 {type} 필드 추가",
-      "fieldProperties": "필드 속성",
-      "fieldName": "이름",
-      "fieldType": "유형",
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "PDF íŒŒì¼ì„ ì—¬ê¸°ì— ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì„¸ìš”.",
+      "toolbarTitle": "ë„êµ¬ ëª¨ìŒ",
+      "selectTool": "ì„ íƒ",
+      "textFieldTool": "í…ìŠ¤íŠ¸ í•„ë“œ",
+      "checkboxTool": "ì²´í¬ë°•ìŠ¤",
+      "dropdownTool": "ë“œë¡­ë‹¤ìš´",
+      "radioTool": "ë¼ë””ì˜¤ ë²„íŠ¼",
+      "deleteTool": "ì‚­ì œ",
+      "pageNavigation": "íŽ˜ì´ì§€ {current} / {total}",
+      "selectHint": "í•„ë“œë¥¼ í´ë¦­í•˜ì—¬ ì„ íƒ, ë“œëž˜ê·¸í•˜ì—¬ ì´ë™, ëª¨ì„œë¦¬ë¡œ í¬ê¸° ì¡°ì ˆ",
+      "addFieldHint": "PDFë¥¼ í´ë¦­í•˜ì—¬ {type} í•„ë“œ ì¶”ê°€",
+      "fieldProperties": "í•„ë“œ ì†ì„±",
+      "fieldName": "ì´ë¦„",
+      "fieldType": "ìœ í˜•",
       "fieldX": "X",
       "fieldY": "Y",
-      "fieldWidth": "너비",
-      "fieldHeight": "높이",
-      "multiline": "여러 줄",
-      "options": "옵션 (줄당 하나)",
-      "deleteField": "필드 삭제",
-      "noFieldSelected": "필드를 선택하여 속성을 편집하거나 도구 모음을 사용하여 새 필드를 추가하세요.",
-      "allFields": "모든 필드 ({count})",
-      "noFieldsYet": "아직 필드가 없습니다. PDF를 클릭하여 양식 필드를 추가하세요.",
-      "page": "페이지 {number}",
-      "createButton": "양식 만들기",
-      "successMessage": "양식이 성공적으로 생성되었습니다!",
-      "createBlankPdfTitle": "빈 PDF 만들기",
-      "pageSize": "페이지 크기",
-      "pageCount": "페이지 수",
-      "blankPdfNote": "양식 필드를 추가할 빈 PDF가 생성됩니다.",
-      "addBlankPage": "빈 페이지 추가",
-      "addPageBefore": "현재 페이지 앞",
-      "addPageAfter": "현재 페이지 뒤",
-      "addPageEnd": "맨 끝에",
-      "templateHint": "또는 템플릿을 선택하여 빠르게 시작하세요",
-      "templates": "템플릿",
-      "selectTemplate": "선택...",
+      "fieldWidth": "ë„ˆë¹„",
+      "fieldHeight": "ë†’ì´",
+      "multiline": "ì—¬ëŸ¬ ì¤„",
+      "options": "ì˜µì…˜ (ì¤„ë‹¹ í•˜ë‚˜)",
+      "deleteField": "í•„ë“œ ì‚­ì œ",
+      "noFieldSelected": "í•„ë“œë¥¼ ì„ íƒí•˜ì—¬ ì†ì„±ì„ íŽ¸ì§‘í•˜ê±°ë‚˜ ë„êµ¬ ëª¨ìŒì„ ì‚¬ìš©í•˜ì—¬ ìƒˆ í•„ë“œë¥¼ ì¶”ê°€í•˜ì„¸ìš”.",
+      "allFields": "ëª¨ë“  í•„ë“œ ({count})",
+      "noFieldsYet": "ì•„ì§ í•„ë“œê°€ ì—†ìŠµë‹ˆë‹¤. PDFë¥¼ í´ë¦­í•˜ì—¬ ì–‘ì‹ í•„ë“œë¥¼ ì¶”ê°€í•˜ì„¸ìš”.",
+      "page": "íŽ˜ì´ì§€ {number}",
+      "createButton": "ì–‘ì‹ ë§Œë“¤ê¸°",
+      "successMessage": "ì–‘ì‹ì´ ì„±ê³µì ìœ¼ë¡œ ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤!",
+      "createBlankPdfTitle": "ë¹ˆ PDF ë§Œë“¤ê¸°",
+      "pageSize": "íŽ˜ì´ì§€ í¬ê¸°",
+      "pageCount": "íŽ˜ì´ì§€ ìˆ˜",
+      "blankPdfNote": "ì–‘ì‹ í•„ë“œë¥¼ ì¶”ê°€í•  ë¹ˆ PDFê°€ ìƒì„±ë©ë‹ˆë‹¤.",
+      "addBlankPage": "ë¹ˆ íŽ˜ì´ì§€ ì¶”ê°€",
+      "addPageBefore": "í˜„ìž¬ íŽ˜ì´ì§€ ì•ž",
+      "addPageAfter": "í˜„ìž¬ íŽ˜ì´ì§€ ë’¤",
+      "addPageEnd": "ë§¨ ëì—",
+      "templateHint": "ë˜ëŠ” í…œí”Œë¦¿ì„ ì„ íƒí•˜ì—¬ ë¹ ë¥´ê²Œ ì‹œìž‘í•˜ì„¸ìš”",
+      "templates": "í…œí”Œë¦¿",
+      "selectTemplate": "ì„ íƒ...",
       "template": {
-        "contact": "연락처 양식",
-        "registration": "등록",
-        "feedback": "피드백",
-        "order": "주문 양식",
-        "consent": "동의서",
-        "invoice": "청구서"
+        "contact": "ì—°ë½ì²˜ ì–‘ì‹",
+        "registration": "ë“±ë¡",
+        "feedback": "í”¼ë“œë°±",
+        "order": "ì£¼ë¬¸ ì–‘ì‹",
+        "consent": "ë™ì˜ì„œ",
+        "invoice": "ì²­êµ¬ì„œ"
       },
-      "fieldLabel": "레이블",
-      "fieldLabelPlaceholder": "레이블 텍스트 입력...",
-      "labelPosition": "위치",
-      "labelAbove": "위",
-      "labelLeft": "왼쪽",
-      "formOptions": "양식 옵션",
-      "flattenForm": "양식 평탄화",
-      "flattenFormHint": "양식 필드를 편집할 수 없게 만듦 (정적 콘텐츠로 변환)",
-      "projectManagement": "프로젝트 관리",
-      "saveProject": "프로젝트 저장",
-      "savedProjects": "저장된 프로젝트",
-      "loadProject": "불러오기",
-      "deleteProject": "삭제",
-      "saveProjectTitle": "프로젝트 저장",
-      "projectName": "프로젝트 이름",
-      "projectNamePlaceholder": "프로젝트 이름 입력...",
-      "saveInfo": "{fields}개의 양식 필드가 저장됩니다.",
-      "saveNote": "프로젝트는 브라우저 내 로컬에 저장됩니다.",
-      "undo": "되돌리기 (Ctrl+Z)",
-      "redo": "다시 실행 (Ctrl+Y)",
-      "duplicate": "복제 (Ctrl+D)",
-      "align": "정렬",
-      "alignLeft": "왼쪽 정렬",
-      "alignCenter": "가운데 정렬",
-      "alignRight": "오른쪽 정렬",
-      "alignTop": "위쪽 정렬",
-      "alignMiddle": "수직 가운데 정렬",
-      "alignBottom": "아래쪽 정렬",
-      "defaultValue": "기본값",
-      "defaultValuePlaceholder": "기본 텍스트 입력...",
-      "defaultChecked": "기본적으로 선택됨",
-      "defaultSelection": "기본 선택 항목",
-      "noDefault": "-- 없음 --",
-      "required": "필수 필드",
-      "shortcutsHint": "단축키: Ctrl+Z (되돌리기) | Ctrl+Y (다시 실행) | Ctrl+D (복제) | Ctrl+A (전체 선택) | Delete (삭제)",
-      "buttonTool": "버튼",
-      "signatureTool": "서명",
-      "dateTool": "날짜",
-      "listboxTool": "리스트 박스",
-      "buttonLabel": "버튼 라벨",
-      "buttonLabelPlaceholder": "제출",
-      "signatureLabel": "서명 라벨",
-      "signatureLabelPlaceholder": "여기에 서명",
-      "dateFormat": "날짜 형식",
-      "defaultDate": "기본 날짜",
-      "multiSelect": "다중 선택 허용",
-      "basicTools": "기본",
-      "advancedTools": "추가",
-      "properties": "속성",
-      "fieldsTab": "필드",
-      "optionsTab": "옵션",
-      "addField": "추가",
-      "clickToAdd": "PDF를 클릭하여 필드 추가",
-      "pages": "페이지",
-      "processingButton": "처리 중...",
-      "cancelButton": "취소",
-      "saveButton": "저장",
-      "orCreateBlank": "또는",
-      "createBlankPdf": "빈 PDF 생성"
+      "fieldLabel": "ë ˆì´ë¸”",
+      "fieldLabelPlaceholder": "ë ˆì´ë¸” í…ìŠ¤íŠ¸ ìž…ë ¥...",
+      "labelPosition": "ìœ„ì¹˜",
+      "labelAbove": "ìœ„",
+      "labelLeft": "ì™¼ìª½",
+      "formOptions": "ì–‘ì‹ ì˜µì…˜",
+      "flattenForm": "ì–‘ì‹ í‰íƒ„í™”",
+      "flattenFormHint": "ì–‘ì‹ í•„ë“œë¥¼ íŽ¸ì§‘í•  ìˆ˜ ì—†ê²Œ ë§Œë“¦ (ì •ì  ì½˜í…ì¸ ë¡œ ë³€í™˜)",
+      "projectManagement": "í”„ë¡œì íŠ¸ ê´€ë¦¬",
+      "saveProject": "í”„ë¡œì íŠ¸ ì €ìž¥",
+      "savedProjects": "ì €ìž¥ëœ í”„ë¡œì íŠ¸",
+      "loadProject": "ë¶ˆëŸ¬ì˜¤ê¸°",
+      "deleteProject": "ì‚­ì œ",
+      "saveProjectTitle": "í”„ë¡œì íŠ¸ ì €ìž¥",
+      "projectName": "í”„ë¡œì íŠ¸ ì´ë¦„",
+      "projectNamePlaceholder": "í”„ë¡œì íŠ¸ ì´ë¦„ ìž…ë ¥...",
+      "saveInfo": "{fields}ê°œì˜ ì–‘ì‹ í•„ë“œê°€ ì €ìž¥ë©ë‹ˆë‹¤.",
+      "saveNote": "í”„ë¡œì íŠ¸ëŠ” ë¸Œë¼ìš°ì € ë‚´ ë¡œì»¬ì— ì €ìž¥ë©ë‹ˆë‹¤.",
+      "undo": "ë˜ëŒë¦¬ê¸° (Ctrl+Z)",
+      "redo": "ë‹¤ì‹œ ì‹¤í–‰ (Ctrl+Y)",
+      "duplicate": "ë³µì œ (Ctrl+D)",
+      "align": "ì •ë ¬",
+      "alignLeft": "ì™¼ìª½ ì •ë ¬",
+      "alignCenter": "ê°€ìš´ë° ì •ë ¬",
+      "alignRight": "ì˜¤ë¥¸ìª½ ì •ë ¬",
+      "alignTop": "ìœ„ìª½ ì •ë ¬",
+      "alignMiddle": "ìˆ˜ì§ ê°€ìš´ë° ì •ë ¬",
+      "alignBottom": "ì•„ëž˜ìª½ ì •ë ¬",
+      "defaultValue": "ê¸°ë³¸ê°’",
+      "defaultValuePlaceholder": "ê¸°ë³¸ í…ìŠ¤íŠ¸ ìž…ë ¥...",
+      "defaultChecked": "ê¸°ë³¸ì ìœ¼ë¡œ ì„ íƒë¨",
+      "defaultSelection": "ê¸°ë³¸ ì„ íƒ í•­ëª©",
+      "noDefault": "-- ì—†ìŒ --",
+      "required": "í•„ìˆ˜ í•„ë“œ",
+      "shortcutsHint": "ë‹¨ì¶•í‚¤: Ctrl+Z (ë˜ëŒë¦¬ê¸°) | Ctrl+Y (ë‹¤ì‹œ ì‹¤í–‰) | Ctrl+D (ë³µì œ) | Ctrl+A (ì „ì²´ ì„ íƒ) | Delete (ì‚­ì œ)",
+      "buttonTool": "ë²„íŠ¼",
+      "signatureTool": "ì„œëª…",
+      "dateTool": "ë‚ ì§œ",
+      "listboxTool": "ë¦¬ìŠ¤íŠ¸ ë°•ìŠ¤",
+      "buttonLabel": "ë²„íŠ¼ ë¼ë²¨",
+      "buttonLabelPlaceholder": "ì œì¶œ",
+      "signatureLabel": "ì„œëª… ë¼ë²¨",
+      "signatureLabelPlaceholder": "ì—¬ê¸°ì— ì„œëª…",
+      "dateFormat": "ë‚ ì§œ í˜•ì‹",
+      "defaultDate": "ê¸°ë³¸ ë‚ ì§œ",
+      "multiSelect": "ë‹¤ì¤‘ ì„ íƒ í—ˆìš©",
+      "basicTools": "ê¸°ë³¸",
+      "advancedTools": "ì¶”ê°€",
+      "properties": "ì†ì„±",
+      "fieldsTab": "í•„ë“œ",
+      "optionsTab": "ì˜µì…˜",
+      "addField": "ì¶”ê°€",
+      "clickToAdd": "PDFë¥¼ í´ë¦­í•˜ì—¬ í•„ë“œ ì¶”ê°€",
+      "pages": "íŽ˜ì´ì§€",
+      "processingButton": "ì²˜ë¦¬ ì¤‘...",
+      "cancelButton": "ì·¨ì†Œ",
+      "saveButton": "ì €ìž¥",
+      "orCreateBlank": "ë˜ëŠ”",
+      "createBlankPdf": "ë¹ˆ PDF ìƒì„±"
     },
     "removeBlankPages": {
       "uploadLabel": "Upload PDF File",
@@ -1894,371 +1894,371 @@
       "bookmarkRequired": "This tool generates a clickable table of contents from existing PDF bookmarks. Please ensure your PDF has bookmarks before using this tool. You can add bookmarks using the Edit Bookmarks tool.",
       "generate": "Generate Table of Contents",
       "success": "Table of contents generated successfully!",
-      "tocTitlePlaceholder": "목차 제목 입력..."
+      "tocTitlePlaceholder": "ëª©ì°¨ ì œëª© ìž…ë ¥..."
     },
     "pdfToDocx": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "여기에 PDF 파일을 드래그 앤 드롭하거나 클릭하여 찾아보세요.",
-      "convertButton": "DOCX로 변환",
-      "successMessage": "PDF가 성공적으로 DOCX로 변환되었습니다! 다운로드 버튼을 클릭하여 파일을 저장하세요."
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "ì—¬ê¸°ì— PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì°¾ì•„ë³´ì„¸ìš”.",
+      "convertButton": "DOCXë¡œ ë³€í™˜",
+      "successMessage": "PDFê°€ ì„±ê³µì ìœ¼ë¡œ DOCXë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤! ë‹¤ìš´ë¡œë“œ ë²„íŠ¼ì„ í´ë¦­í•˜ì—¬ íŒŒì¼ì„ ì €ìž¥í•˜ì„¸ìš”."
     },
     "pdfToExcel": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "여기에 PDF 파일을 드래그 앤 드롭하거나 클릭하여 찾아보세요.",
-      "extractNote": "각 페이지의 표가 Excel 파일의 별도 시트로 추출됩니다.",
-      "convertButton": "Excel로 변환",
-      "successTitle": "변환 성공!",
-      "successMessage": "PDF 표가 Excel로 추출되었습니다."
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "ì—¬ê¸°ì— PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì°¾ì•„ë³´ì„¸ìš”.",
+      "extractNote": "ê° íŽ˜ì´ì§€ì˜ í‘œê°€ Excel íŒŒì¼ì˜ ë³„ë„ ì‹œíŠ¸ë¡œ ì¶”ì¶œë©ë‹ˆë‹¤.",
+      "convertButton": "Excelë¡œ ë³€í™˜",
+      "successTitle": "ë³€í™˜ ì„±ê³µ!",
+      "successMessage": "PDF í‘œê°€ Excelë¡œ ì¶”ì¶œë˜ì—ˆìŠµë‹ˆë‹¤."
     },
     "pdfToPptx": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "여기에 PDF 파일을 드래그 앤 드롭하거나 클릭하여 찾아보세요.",
-      "optionsTitle": "변환 옵션",
-      "dpiLabel": "이미지 품질 (DPI)",
-      "dpiHint": "DPI가 높을수록 슬라이드 품질은 좋아지지만 파일 크기가 커집니다.",
-      "lowSet": "낮음 (72 DPI - 파일 최소)",
-      "mediumSet": "중간 (150 DPI - 표준)",
-      "highSet": "높음 (200 DPI - 고화질)",
-      "veryHighSet": "최고 (300 DPI - 인쇄 품질)",
-      "convertButton": "PowerPoint로 변환",
-      "successTitle": "변환 성공!",
-      "successMessage": "PDF가 PowerPoint 프레젠테이션으로 변환되었습니다."
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "ì—¬ê¸°ì— PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì°¾ì•„ë³´ì„¸ìš”.",
+      "optionsTitle": "ë³€í™˜ ì˜µì…˜",
+      "dpiLabel": "ì´ë¯¸ì§€ í’ˆì§ˆ (DPI)",
+      "dpiHint": "DPIê°€ ë†’ì„ìˆ˜ë¡ ìŠ¬ë¼ì´ë“œ í’ˆì§ˆì€ ì¢‹ì•„ì§€ì§€ë§Œ íŒŒì¼ í¬ê¸°ê°€ ì»¤ì§‘ë‹ˆë‹¤.",
+      "lowSet": "ë‚®ìŒ (72 DPI - íŒŒì¼ ìµœì†Œ)",
+      "mediumSet": "ì¤‘ê°„ (150 DPI - í‘œì¤€)",
+      "highSet": "ë†’ìŒ (200 DPI - ê³ í™”ì§ˆ)",
+      "veryHighSet": "ìµœê³  (300 DPI - ì¸ì‡„ í’ˆì§ˆ)",
+      "convertButton": "PowerPointë¡œ ë³€í™˜",
+      "successTitle": "ë³€í™˜ ì„±ê³µ!",
+      "successMessage": "PDFê°€ PowerPoint í”„ë ˆì  í…Œì´ì…˜ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤."
     },
     "wordToPdf": {
-      "uploadLabel": "Word 문서 업로드",
-      "uploadDescription": "Word 문서(.docx)를 여기로 드래그하거나 클릭하여 선택하세요.",
-      "convertButton": "PDF로 변환",
-      "successMessage": "Word 문서가 PDF로 성공적으로 변환되었습니다!"
+      "uploadLabel": "Word ë¬¸ì„œ ì—…ë¡œë“œ",
+      "uploadDescription": "Word ë¬¸ì„œ(.docx)ë¥¼ ì—¬ê¸°ë¡œ ë“œëž˜ê·¸í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì„ íƒí•˜ì„¸ìš”.",
+      "convertButton": "PDFë¡œ ë³€í™˜",
+      "successMessage": "Word ë¬¸ì„œê°€ PDFë¡œ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "psdToPdf": {
-      "uploadLabel": "PSD 파일 업로드",
-      "uploadDescription": "PSD(Photoshop) 파일을 여기로 드래그 앤 드롭하거나 클릭하여 찾아보세요.",
-      "convertButton": "PDF로 변환",
-      "successMessage": "PSD가 PDF로 성공적으로 변환되었습니다! 파일을 저장하려면 다운로드 버튼을 클릭하세요."
+      "uploadLabel": "PSD íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "PSD(Photoshop) íŒŒì¼ì„ ì—¬ê¸°ë¡œ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì°¾ì•„ë³´ì„¸ìš”.",
+      "convertButton": "PDFë¡œ ë³€í™˜",
+      "successMessage": "PSDê°€ PDFë¡œ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤! íŒŒì¼ì„ ì €ìž¥í•˜ë ¤ë©´ ë‹¤ìš´ë¡œë“œ ë²„íŠ¼ì„ í´ë¦­í•˜ì„¸ìš”."
     },
     "excelToPdf": {
-      "uploadLabel": "Excel 파일 업로드",
-      "uploadDescription": "Excel 파일(.xlsx)을 여기로 드래그하거나 클릭하여 선택하세요.",
-      "convertButton": "PDF로 변환",
-      "successMessage": "Excel 파일이 PDF로 성공적으로 변환되었습니다!"
+      "uploadLabel": "Excel íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "Excel íŒŒì¼(.xlsx)ì„ ì—¬ê¸°ë¡œ ë“œëž˜ê·¸í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì„ íƒí•˜ì„¸ìš”.",
+      "convertButton": "PDFë¡œ ë³€í™˜",
+      "successMessage": "Excel íŒŒì¼ì´ PDFë¡œ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "pptxToPdf": {
-      "uploadLabel": "PowerPoint 파일 업로드",
-      "uploadDescription": "PowerPoint 파일(.pptx)을 여기로 드래그하거나 클릭하여 선택하세요.",
-      "convertButton": "PDF로 변환",
-      "successMessage": "PowerPoint 파일이 PDF로 성공적으로 변환되었습니다!"
+      "uploadLabel": "PowerPoint íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "PowerPoint íŒŒì¼(.pptx)ì„ ì—¬ê¸°ë¡œ ë“œëž˜ê·¸í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì„ íƒí•˜ì„¸ìš”.",
+      "convertButton": "PDFë¡œ ë³€í™˜",
+      "successMessage": "PowerPoint íŒŒì¼ì´ PDFë¡œ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "xpsToPdf": {
-      "uploadLabel": "XPS 파일 업로드",
-      "uploadDescription": "XPS 파일을 여기로 드래그하거나 클릭하여 선택하세요.",
-      "convertButton": "PDF로 변환",
-      "successMessage": "XPS 파일이 PDF로 성공적으로 변환되었습니다!"
+      "uploadLabel": "XPS íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "XPS íŒŒì¼ì„ ì—¬ê¸°ë¡œ ë“œëž˜ê·¸í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì„ íƒí•˜ì„¸ìš”.",
+      "convertButton": "PDFë¡œ ë³€í™˜",
+      "successMessage": "XPS íŒŒì¼ì´ PDFë¡œ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "rtfToPdf": {
-      "uploadLabel": "RTF 파일 업로드",
-      "uploadDescription": "RTF 파일을 여기로 드래그하거나 클릭하여 선택하세요.",
-      "convertButton": "PDF로 변환",
-      "successMessage": "RTF 파일이 PDF로 성공적으로 변환되었습니다!"
+      "uploadLabel": "RTF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "RTF íŒŒì¼ì„ ì—¬ê¸°ë¡œ ë“œëž˜ê·¸í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì„ íƒí•˜ì„¸ìš”.",
+      "convertButton": "PDFë¡œ ë³€í™˜",
+      "successMessage": "RTF íŒŒì¼ì´ PDFë¡œ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "epubToPdf": {
-      "uploadLabel": "EPUB 파일 업로드",
-      "uploadDescription": "EPUB 전자책 파일을 여기로 드래그하거나 클릭하여 선택하세요.",
-      "convertButton": "PDF로 변환",
-      "successMessage": "EPUB 파일이 PDF로 성공적으로 변환되었습니다!"
+      "uploadLabel": "EPUB íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "EPUB ì „ìžì±… íŒŒì¼ì„ ì—¬ê¸°ë¡œ ë“œëž˜ê·¸í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì„ íƒí•˜ì„¸ìš”.",
+      "convertButton": "PDFë¡œ ë³€í™˜",
+      "successMessage": "EPUB íŒŒì¼ì´ PDFë¡œ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "mobiToPdf": {
-      "uploadLabel": "MOBI 파일 업로드",
-      "uploadDescription": "MOBI/AZW 전자책 파일을 여기로 드래그하거나 클릭하여 선택하세요.",
-      "convertButton": "PDF로 변환",
-      "successMessage": "MOBI 파일이 PDF로 성공적으로 변환되었습니다!"
+      "uploadLabel": "MOBI íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "MOBI/AZW ì „ìžì±… íŒŒì¼ì„ ì—¬ê¸°ë¡œ ë“œëž˜ê·¸í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì„ íƒí•˜ì„¸ìš”.",
+      "convertButton": "PDFë¡œ ë³€í™˜",
+      "successMessage": "MOBI íŒŒì¼ì´ PDFë¡œ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "fb2ToPdf": {
-      "uploadLabel": "FB2 파일 업로드",
-      "uploadDescription": "FB2 전자책 파일을 여기로 드래그하거나 클릭하여 선택하세요. 여러 파일 지원.",
-      "convertButton": "PDF로 변환",
-      "successMessage": "FB2 파일이 PDF로 성공적으로 변환되었습니다!"
+      "uploadLabel": "FB2 íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "FB2 ì „ìžì±… íŒŒì¼ì„ ì—¬ê¸°ë¡œ ë“œëž˜ê·¸í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ì„ íƒí•˜ì„¸ìš”. ì—¬ëŸ¬ íŒŒì¼ ì§€ì›.",
+      "convertButton": "PDFë¡œ ë³€í™˜",
+      "successMessage": "FB2 íŒŒì¼ì´ PDFë¡œ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "djvuToPdf": {
-      "uploadLabel": "DJVU 파일 업로드",
-      "uploadDescription": "DJVU 파일을 여기로 드래그하거나 클릭하세요.",
-      "optionsTitle": "변환 옵션",
-      "dpiLabel": "출력 DPI",
-      "dpiHint": "높은 DPI = 더 큰 파일, 더 좋은 품질",
-      "qualityLabel": "이미지 품질",
-      "qualityHint": "페이지의 JPEG 압축 품질",
-      "convertButton": "PDF로 변환",
-      "successTitle": "변환 성공!",
-      "successMessage": "DJVU 파일이 PDF로 성공적으로 변환되었습니다!"
+      "uploadLabel": "DJVU íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "DJVU íŒŒì¼ì„ ì—¬ê¸°ë¡œ ë“œëž˜ê·¸í•˜ê±°ë‚˜ í´ë¦­í•˜ì„¸ìš”.",
+      "optionsTitle": "ë³€í™˜ ì˜µì…˜",
+      "dpiLabel": "ì¶œë ¥ DPI",
+      "dpiHint": "ë†’ì€ DPI = ë” í° íŒŒì¼, ë” ì¢‹ì€ í’ˆì§ˆ",
+      "qualityLabel": "ì´ë¯¸ì§€ í’ˆì§ˆ",
+      "qualityHint": "íŽ˜ì´ì§€ì˜ JPEG ì••ì¶• í’ˆì§ˆ",
+      "convertButton": "PDFë¡œ ë³€í™˜",
+      "successTitle": "ë³€í™˜ ì„±ê³µ!",
+      "successMessage": "DJVU íŒŒì¼ì´ PDFë¡œ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "deskewPdf": {
-      "uploadLabel": "스캔된 PDF 파일 업로드",
-      "uploadDescription": "여기에 PDF 파일을 드래그 앤 드롭하세요. 한 번에 최대 10개의 파일을 처리할 수 있습니다.",
-      "filesTitle": "기울기 보정할 파일",
-      "optionsTitle": "기울기 보정 옵션",
-      "thresholdLabel": "감지 임계값",
-      "thresholdDesc": "값이 높을수록 더 미세한 기울기 각도를 감지합니다. 기본값: 10",
-      "dpiLabel": "분석 DPI",
-      "dpiDesc": "DPI가 높을수록 더 정확한 감지가 가능하지만 시간이 더 오래 걸립니다.",
-      "processButton": "PDF 기울기 보정",
-      "downloadAllZip": "모두 ZIP으로 다운로드",
-      "successMessage": "PDF 파일의 기울기 보정이 성공적으로 완료되었습니다!"
+      "uploadLabel": "ìŠ¤ìº”ëœ PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "ì—¬ê¸°ì— PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì„¸ìš”. í•œ ë²ˆì— ìµœëŒ€ 10ê°œì˜ íŒŒì¼ì„ ì²˜ë¦¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.",
+      "filesTitle": "ê¸°ìš¸ê¸° ë³´ì •í•  íŒŒì¼",
+      "optionsTitle": "ê¸°ìš¸ê¸° ë³´ì • ì˜µì…˜",
+      "thresholdLabel": "ê°ì§€ ìž„ê³„ê°’",
+      "thresholdDesc": "ê°’ì´ ë†’ì„ìˆ˜ë¡ ë” ë¯¸ì„¸í•œ ê¸°ìš¸ê¸° ê°ë„ë¥¼ ê°ì§€í•©ë‹ˆë‹¤. ê¸°ë³¸ê°’: 10",
+      "dpiLabel": "ë¶„ì„ DPI",
+      "dpiDesc": "DPIê°€ ë†’ì„ìˆ˜ë¡ ë” ì •í™•í•œ ê°ì§€ê°€ ê°€ëŠ¥í•˜ì§€ë§Œ ì‹œê°„ì´ ë” ì˜¤ëž˜ ê±¸ë¦½ë‹ˆë‹¤.",
+      "processButton": "PDF ê¸°ìš¸ê¸° ë³´ì •",
+      "downloadAllZip": "ëª¨ë‘ ZIPìœ¼ë¡œ ë‹¤ìš´ë¡œë“œ",
+      "successMessage": "PDF íŒŒì¼ì˜ ê¸°ìš¸ê¸° ë³´ì •ì´ ì„±ê³µì ìœ¼ë¡œ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "pdfBooklet": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "소책자 레이아웃을 만들려면 PDF 파일을 드래그 앤 드롭하세요.",
-      "optionsTitle": "소책자 옵션",
-      "gridModeLabel": "그리드 모드",
-      "gridModeDesc": "1x2가 소책자의 표준입니다. 종이를 절약하려면 더 큰 그리드를 사용하세요.",
-      "paperSizeLabel": "용지 크기",
-      "orientationLabel": "방향",
-      "rotationLabel": "페이지 회전",
-      "paddingLabel": "여백",
-      "previewLabel": "레이아웃 미리보기",
-      "previewDesc": "이 미리보기는 각 시트에 페이지가 어떻게 배치되는지 보여줍니다.",
-      "createButton": "소책자 만들기",
-      "successMessage": "소책자가 성공적으로 생성되었습니다! 저장하려면 다운로드를 클릭하세요."
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "ì†Œì±…ìž ë ˆì´ì•„ì›ƒì„ ë§Œë“¤ë ¤ë©´ PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì„¸ìš”.",
+      "optionsTitle": "ì†Œì±…ìž ì˜µì…˜",
+      "gridModeLabel": "ê·¸ë¦¬ë“œ ëª¨ë“œ",
+      "gridModeDesc": "1x2ê°€ ì†Œì±…ìžì˜ í‘œì¤€ìž…ë‹ˆë‹¤. ì¢…ì´ë¥¼ ì ˆì•½í•˜ë ¤ë©´ ë” í° ê·¸ë¦¬ë“œë¥¼ ì‚¬ìš©í•˜ì„¸ìš”.",
+      "paperSizeLabel": "ìš©ì§€ í¬ê¸°",
+      "orientationLabel": "ë°©í–¥",
+      "rotationLabel": "íŽ˜ì´ì§€ íšŒì „",
+      "paddingLabel": "ì—¬ë°±",
+      "previewLabel": "ë ˆì´ì•„ì›ƒ ë¯¸ë¦¬ë³´ê¸°",
+      "previewDesc": "ì´ ë¯¸ë¦¬ë³´ê¸°ëŠ” ê° ì‹œíŠ¸ì— íŽ˜ì´ì§€ê°€ ì–´ë–»ê²Œ ë°°ì¹˜ë˜ëŠ”ì§€ ë³´ì—¬ì¤ë‹ˆë‹¤.",
+      "createButton": "ì†Œì±…ìž ë§Œë“¤ê¸°",
+      "successMessage": "ì†Œì±…ìžê°€ ì„±ê³µì ìœ¼ë¡œ ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤! ì €ìž¥í•˜ë ¤ë©´ ë‹¤ìš´ë¡œë“œë¥¼ í´ë¦­í•˜ì„¸ìš”."
     },
     "rasterizePdf": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "PDF 파일을 드래그 앤 드롭하여 이미지 또는 새 PDF로 래스터화하세요.",
-      "optionsTitle": "출력 옵션",
-      "dpiLabel": "해상도 (DPI)",
-      "formatLabel": "출력 형식",
-      "qualityLabel": "품질",
-      "pageRangeLabel": "페이지 범위 (선택 사항)",
-      "pageRangeDesc": "모든 페이지를 변환하려면 비워 두세요.",
-      "bgColorLabel": "배경색",
-      "convertButton": "래스터화",
-      "successMessage": "래스터화 완료! 파일을 저장하려면 다운로드를 클릭하세요."
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì—¬ ì´ë¯¸ì§€ ë˜ëŠ” ìƒˆ PDFë¡œ ëž˜ìŠ¤í„°í™”í•˜ì„¸ìš”.",
+      "optionsTitle": "ì¶œë ¥ ì˜µì…˜",
+      "dpiLabel": "í•´ìƒë„ (DPI)",
+      "formatLabel": "ì¶œë ¥ í˜•ì‹",
+      "qualityLabel": "í’ˆì§ˆ",
+      "pageRangeLabel": "íŽ˜ì´ì§€ ë²”ìœ„ (ì„ íƒ ì‚¬í•­)",
+      "pageRangeDesc": "ëª¨ë“  íŽ˜ì´ì§€ë¥¼ ë³€í™˜í•˜ë ¤ë©´ ë¹„ì›Œ ë‘ì„¸ìš”.",
+      "bgColorLabel": "ë°°ê²½ìƒ‰",
+      "convertButton": "ëž˜ìŠ¤í„°í™”",
+      "successMessage": "ëž˜ìŠ¤í„°í™” ì™„ë£Œ! íŒŒì¼ì„ ì €ìž¥í•˜ë ¤ë©´ ë‹¤ìš´ë¡œë“œë¥¼ í´ë¦­í•˜ì„¸ìš”."
     },
     "markdownToPdf": {
-      "uploadLabel": "Markdown 파일 업로드",
-      "uploadDescription": ".md 또는 .markdown 파일을 드래그 앤 드롭하여 PDF로 변환하세요.",
-      "manualInput": "Markdown 작성",
-      "uploadFile": "파일 업로드",
-      "editorLabel": "Markdown 에디터",
-      "previewLabel": "미리보기",
-      "showPreview": "미리보기 표시",
-      "hidePreview": "미리보기 숨기기",
-      "optionsTitle": "변환 옵션",
-      "themeLabel": "테마",
-      "pageSizeLabel": "페이지 크기",
-      "gfmLabel": "GitHub Flavored Markdown 활성화 (표, 작업 목록 등)",
-      "syntaxHighlightLabel": "코드 블록에 대한 구문 강조 활성화",
-      "convertButton": "PDF로 변환",
-      "successMessage": "PDF가 성공적으로 생성되었습니다! 저장하려면 다운로드를 클릭하세요."
+      "uploadLabel": "Markdown íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": ".md ë˜ëŠ” .markdown íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì—¬ PDFë¡œ ë³€í™˜í•˜ì„¸ìš”.",
+      "manualInput": "Markdown ìž‘ì„±",
+      "uploadFile": "íŒŒì¼ ì—…ë¡œë“œ",
+      "editorLabel": "Markdown ì—ë””í„°",
+      "previewLabel": "ë¯¸ë¦¬ë³´ê¸°",
+      "showPreview": "ë¯¸ë¦¬ë³´ê¸° í‘œì‹œ",
+      "hidePreview": "ë¯¸ë¦¬ë³´ê¸° ìˆ¨ê¸°ê¸°",
+      "optionsTitle": "ë³€í™˜ ì˜µì…˜",
+      "themeLabel": "í…Œë§ˆ",
+      "pageSizeLabel": "íŽ˜ì´ì§€ í¬ê¸°",
+      "gfmLabel": "GitHub Flavored Markdown í™œì„±í™” (í‘œ, ìž‘ì—… ëª©ë¡ ë“±)",
+      "syntaxHighlightLabel": "ì½”ë“œ ë¸”ë¡ì— ëŒ€í•œ êµ¬ë¬¸ ê°•ì¡° í™œì„±í™”",
+      "convertButton": "PDFë¡œ ë³€í™˜",
+      "successMessage": "PDFê°€ ì„±ê³µì ìœ¼ë¡œ ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤! ì €ìž¥í•˜ë ¤ë©´ ë‹¤ìš´ë¡œë“œë¥¼ í´ë¦­í•˜ì„¸ìš”."
     },
     "emailToPdf": {
-      "uploadLabel": "이메일 파일 업로드",
-      "uploadDescription": "이메일 파일(.eml)을 드래그 앤 드롭하여 PDF로 변환하세요.",
-      "optionsTitle": "변환 옵션",
-      "pageSizeLabel": "페이지 크기",
-      "includeCcBccLabel": "CC/BCC 필드 포함",
-      "includeAttachmentsLabel": "첨부 파일 목록 포함",
-      "timezoneLabel": "시간대",
-      "convertButton": "PDF로 변환",
-      "successMessage": "이메일이 성공적으로 변환되었습니다!"
+      "uploadLabel": "ì´ë©”ì¼ íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "ì´ë©”ì¼ íŒŒì¼(.eml)ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì—¬ PDFë¡œ ë³€í™˜í•˜ì„¸ìš”.",
+      "optionsTitle": "ë³€í™˜ ì˜µì…˜",
+      "pageSizeLabel": "íŽ˜ì´ì§€ í¬ê¸°",
+      "includeCcBccLabel": "CC/BCC í•„ë“œ í¬í•¨",
+      "includeAttachmentsLabel": "ì²¨ë¶€ íŒŒì¼ ëª©ë¡ í¬í•¨",
+      "timezoneLabel": "ì‹œê°„ëŒ€",
+      "convertButton": "PDFë¡œ ë³€í™˜",
+      "successMessage": "ì´ë©”ì¼ì´ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "cbzToPdf": {
-      "uploadLabel": "CBZ 파일 업로드",
-      "uploadDescription": "만화책 아카이브(.cbz)를 드래그 앤 드롭하여 PDF로 변환하세요.",
-      "optionsTitle": "변환 옵션",
-      "pageSizeLabel": "페이지 크기",
-      "qualityLabel": "이미지 품질",
-      "preserveAspectLabel": "가로세로 비율 유지",
-      "convertButton": "PDF로 변환",
-      "successMessage": "만화책이 성공적으로 변환되었습니다!"
+      "uploadLabel": "CBZ íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "ë§Œí™”ì±… ì•„ì¹´ì´ë¸Œ(.cbz)ë¥¼ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì—¬ PDFë¡œ ë³€í™˜í•˜ì„¸ìš”.",
+      "optionsTitle": "ë³€í™˜ ì˜µì…˜",
+      "pageSizeLabel": "íŽ˜ì´ì§€ í¬ê¸°",
+      "qualityLabel": "ì´ë¯¸ì§€ í’ˆì§ˆ",
+      "preserveAspectLabel": "ê°€ë¡œì„¸ë¡œ ë¹„ìœ¨ ìœ ì§€",
+      "convertButton": "PDFë¡œ ë³€í™˜",
+      "successMessage": "ë§Œí™”ì±…ì´ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "pdfToPdfa": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "PDF 파일을 드래그 앤 드롭하여 PDF/A 형식으로 변환하세요.",
-      "filesTitle": "변환할 파일",
-      "optionsTitle": "PDF/A 옵션",
-      "levelLabel": "PDF/A 레벨",
-      "embedFontsLabel": "모든 글꼴 포함",
-      "flattenTransparencyLabel": "투명도 병합 (PDF/A-1b에 필요)",
-      "convertButton": "PDF/A로 변환",
-      "downloadAllZip": "모두 ZIP으로 다운로드",
-      "successMessage": "파일을 성공적으로 PDF/A로 변환했습니다!"
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì—¬ PDF/A í˜•ì‹ìœ¼ë¡œ ë³€í™˜í•˜ì„¸ìš”.",
+      "filesTitle": "ë³€í™˜í•  íŒŒì¼",
+      "optionsTitle": "PDF/A ì˜µì…˜",
+      "levelLabel": "PDF/A ë ˆë²¨",
+      "embedFontsLabel": "ëª¨ë“  ê¸€ê¼´ í¬í•¨",
+      "flattenTransparencyLabel": "íˆ¬ëª…ë„ ë³‘í•© (PDF/A-1bì— í•„ìš”)",
+      "convertButton": "PDF/Aë¡œ ë³€í™˜",
+      "downloadAllZip": "ëª¨ë‘ ZIPìœ¼ë¡œ ë‹¤ìš´ë¡œë“œ",
+      "successMessage": "íŒŒì¼ì„ ì„±ê³µì ìœ¼ë¡œ PDF/Aë¡œ ë³€í™˜í–ˆìŠµë‹ˆë‹¤!"
     },
     "fontToOutline": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "PDF 파일을 드래그 앤 드롭하여 글꼴을 윤곽선으로 변환하세요.",
-      "filesTitle": "파일",
-      "optionsTitle": "옵션",
-      "dpiLabel": "래스터화 DPI",
-      "convertButton": "글꼴을 윤곽선으로 변환",
-      "downloadAllZip": "모두 ZIP으로 다운로드",
-      "successMessage": "파일이 성공적으로 변환되었습니다!"
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì—¬ ê¸€ê¼´ì„ ìœ¤ê³½ì„ ìœ¼ë¡œ ë³€í™˜í•˜ì„¸ìš”.",
+      "filesTitle": "íŒŒì¼",
+      "optionsTitle": "ì˜µì…˜",
+      "dpiLabel": "ëž˜ìŠ¤í„°í™” DPI",
+      "convertButton": "ê¸€ê¼´ì„ ìœ¤ê³½ì„ ìœ¼ë¡œ ë³€í™˜",
+      "downloadAllZip": "ëª¨ë‘ ZIPìœ¼ë¡œ ë‹¤ìš´ë¡œë“œ",
+      "successMessage": "íŒŒì¼ì´ ì„±ê³µì ìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "extractTables": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "표를 추출할 PDF 파일을 드래그 앤 드롭하세요.",
-      "optionsTitle": "추출 옵션",
-      "formatLabel": "출력 형식",
-      "pageRangeLabel": "페이지 범위 (선택 사항)",
-      "minColumnsLabel": "최소 열 수",
-      "minRowsLabel": "최소 행 수",
-      "includePageNumbersLabel": "출력에 페이지 번호 포함",
-      "extractButton": "표 추출",
-      "successMessage": "표가 성공적으로 추출되었습니다! 저장하려면 다운로드를 클릭하세요."
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "í‘œë¥¼ ì¶”ì¶œí•  PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì„¸ìš”.",
+      "optionsTitle": "ì¶”ì¶œ ì˜µì…˜",
+      "formatLabel": "ì¶œë ¥ í˜•ì‹",
+      "pageRangeLabel": "íŽ˜ì´ì§€ ë²”ìœ„ (ì„ íƒ ì‚¬í•­)",
+      "minColumnsLabel": "ìµœì†Œ ì—´ ìˆ˜",
+      "minRowsLabel": "ìµœì†Œ í–‰ ìˆ˜",
+      "includePageNumbersLabel": "ì¶œë ¥ì— íŽ˜ì´ì§€ ë²ˆí˜¸ í¬í•¨",
+      "extractButton": "í‘œ ì¶”ì¶œ",
+      "successMessage": "í‘œê°€ ì„±ê³µì ìœ¼ë¡œ ì¶”ì¶œë˜ì—ˆìŠµë‹ˆë‹¤! ì €ìž¥í•˜ë ¤ë©´ ë‹¤ìš´ë¡œë“œë¥¼ í´ë¦­í•˜ì„¸ìš”."
     },
     "ocgManager": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "PDF를 드래그 앤 드롭하여 레이어(OCG)를 관리하세요.",
-      "layersTitle": "PDF 레이어",
-      "noLayers": "이 PDF에는 레이어(OCG)가 없습니다.",
-      "addLayerLabel": "새 레이어 추가",
-      "successMessage": "레이어 변경 사항이 성공적으로 저장되었습니다!"
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "PDFë¥¼ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì—¬ ë ˆì´ì–´(OCG)ë¥¼ ê´€ë¦¬í•˜ì„¸ìš”.",
+      "layersTitle": "PDF ë ˆì´ì–´",
+      "noLayers": "ì´ PDFì—ëŠ” ë ˆì´ì–´(OCG)ê°€ ì—†ìŠµë‹ˆë‹¤.",
+      "addLayerLabel": "ìƒˆ ë ˆì´ì–´ ì¶”ê°€",
+      "successMessage": "ë ˆì´ì–´ ë³€ê²½ ì‚¬í•­ì´ ì„±ê³µì ìœ¼ë¡œ ì €ìž¥ë˜ì—ˆìŠµë‹ˆë‹¤!"
     },
     "pdfReader": {
-      "uploadLabel": "PDF 파일 열기",
-      "uploadDescription": "PDF 파일을 열어서 읽고 봅니다."
+      "uploadLabel": "PDF íŒŒì¼ ì—´ê¸°",
+      "uploadDescription": "PDF íŒŒì¼ì„ ì—´ì–´ì„œ ì½ê³  ë´…ë‹ˆë‹¤."
     },
     "pdfToMarkdown": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "PDF 파일을 여기로 드래그하거나 클릭하여 브라우징하세요.",
-      "optionsTitle": "변환 옵션",
-      "pageRange": "페이지 범위",
-      "pageRangePlaceholder": "예: 1-3, 5, 7",
-      "pageRangeHint": "비워두면 모든 페이지 변환",
-      "includePageNumbers": "페이지 번호를 헤더로 포함",
-      "preserveLineBreaks": "줄 바꿈 유지",
-      "convertButton": "Markdown으로 변환",
-      "previewTab": "미리보기",
-      "sourceTab": "Markdown 소스",
-      "successMessage": "PDF가 성공적으로 Markdown으로 변환되었습니다! 다운로드 버튼을 클릭해 파일을 저장하세요.",
-      "failed": "PDF를 Markdown으로 변환하는 데 실패했습니다."
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "PDF íŒŒì¼ì„ ì—¬ê¸°ë¡œ ë“œëž˜ê·¸í•˜ê±°ë‚˜ í´ë¦­í•˜ì—¬ ë¸Œë¼ìš°ì§•í•˜ì„¸ìš”.",
+      "optionsTitle": "ë³€í™˜ ì˜µì…˜",
+      "pageRange": "íŽ˜ì´ì§€ ë²”ìœ„",
+      "pageRangePlaceholder": "ì˜ˆ: 1-3, 5, 7",
+      "pageRangeHint": "ë¹„ì›Œë‘ë©´ ëª¨ë“  íŽ˜ì´ì§€ ë³€í™˜",
+      "includePageNumbers": "íŽ˜ì´ì§€ ë²ˆí˜¸ë¥¼ í—¤ë”ë¡œ í¬í•¨",
+      "preserveLineBreaks": "ì¤„ ë°”ê¿ˆ ìœ ì§€",
+      "convertButton": "Markdownìœ¼ë¡œ ë³€í™˜",
+      "previewTab": "ë¯¸ë¦¬ë³´ê¸°",
+      "sourceTab": "Markdown ì†ŒìŠ¤",
+      "successMessage": "PDFê°€ ì„±ê³µì ìœ¼ë¡œ Markdownìœ¼ë¡œ ë³€í™˜ë˜ì—ˆìŠµë‹ˆë‹¤! ë‹¤ìš´ë¡œë“œ ë²„íŠ¼ì„ í´ë¦­í•´ íŒŒì¼ì„ ì €ìž¥í•˜ì„¸ìš”.",
+      "failed": "PDFë¥¼ Markdownìœ¼ë¡œ ë³€í™˜í•˜ëŠ” ë° ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤."
     },
     "findAndRedact": {
-      "uploadLabel": "PDF 파일 업로드",
-      "uploadDescription": "텍스트를 검색하고 수정하려면 PDF 파일을 드래그 앤 드롭하세요.",
-      "searchTitle": "텍스트 검색",
-      "searchTermLabel": "검색어",
-      "searchTermPlaceholder": "검색할 텍스트 입력 (예: 계좌 번호, 이름)...",
-      "searchInputPlaceholder": "검색어를 입력하세요 (쉼표로 구분)...",
-      "searchInputHelp": "팁: 여러 검색어는 쉼표(,)로 구분하세요",
-      "multipleTermsPlaceholder": "검색어 입력 (한 줄에 하나 또는 쉼표로 구분)...\n예:\n홍길동\naccount123\n555-1234",
-      "termsCount": "{count}개 검색어",
-      "searchButton": "검색",
-      "searching": "검색 중...",
-      "caseSensitive": "대소문자 구분",
-      "wholeWord": "전체 단어만",
-      "useRegex": "정규 표현식 사용",
-      "enterSearchTerm": "적어도 하나의 검색어를 입력하세요.",
-      "noMatchesFound": "검색어에 대한 일치 항목을 찾을 수 없습니다.",
-      "searchFailed": "PDF 검색 실패.",
-      "matchesFound": "{count}개 일치 항목 발견",
-      "filterByPage": "페이지별 필터",
-      "allPages": "모든 페이지",
-      "pageNumber": "{page} 페이지",
-      "pageInfo": "{page} 페이지",
-      "selectedCount": "{total}개 중 {selected}개 선택됨",
-      "selectMatchesToRedact": "수정할 일치 항목을 하나 이상 선택하세요.",
-      "redactionOptions": "수정 옵션",
-      "redactionColor": "수정 색상",
-      "replacementText": "대체 텍스트 (선택 사항)",
-      "replacementTextPlaceholder": "예: [수정됨]",
-      "addBorder": "수정된 영역 주위에 테두리 추가",
-      "warningTitle": "경고",
-      "warningText": "수정은 영구적입니다. 적용된 후에는 원본 콘텐츠를 복구할 수 없습니다.",
-      "redactButton": "선택된 {count}개 수정",
-      "redactFailed": "수정 적용 실패.",
-      "successMessage": "선택한 텍스트가 성공적으로 수정되었습니다! 저장을 위해 다운로드를 클릭하세요.",
-      "previewTitle": "미리보기",
-      "pagesWithMatches": "일치하는 페이지:",
-      "selectedMatch": "선택됨",
-      "unselectedMatch": "선택되지 않음"
+      "uploadLabel": "PDF íŒŒì¼ ì—…ë¡œë“œ",
+      "uploadDescription": "í…ìŠ¤íŠ¸ë¥¼ ê²€ìƒ‰í•˜ê³  ìˆ˜ì •í•˜ë ¤ë©´ PDF íŒŒì¼ì„ ë“œëž˜ê·¸ ì•¤ ë“œë¡­í•˜ì„¸ìš”.",
+      "searchTitle": "í…ìŠ¤íŠ¸ ê²€ìƒ‰",
+      "searchTermLabel": "ê²€ìƒ‰ì–´",
+      "searchTermPlaceholder": "ê²€ìƒ‰í•  í…ìŠ¤íŠ¸ ìž…ë ¥ (ì˜ˆ: ê³„ì¢Œ ë²ˆí˜¸, ì´ë¦„)...",
+      "searchInputPlaceholder": "ê²€ìƒ‰ì–´ë¥¼ ìž…ë ¥í•˜ì„¸ìš” (ì‰¼í‘œë¡œ êµ¬ë¶„)...",
+      "searchInputHelp": "íŒ: ì—¬ëŸ¬ ê²€ìƒ‰ì–´ëŠ” ì‰¼í‘œ(,)ë¡œ êµ¬ë¶„í•˜ì„¸ìš”",
+      "multipleTermsPlaceholder": "ê²€ìƒ‰ì–´ ìž…ë ¥ (í•œ ì¤„ì— í•˜ë‚˜ ë˜ëŠ” ì‰¼í‘œë¡œ êµ¬ë¶„)...\nì˜ˆ:\ní™ê¸¸ë™\naccount123\n555-1234",
+      "termsCount": "{count}ê°œ ê²€ìƒ‰ì–´",
+      "searchButton": "ê²€ìƒ‰",
+      "searching": "ê²€ìƒ‰ ì¤‘...",
+      "caseSensitive": "ëŒ€ì†Œë¬¸ìž êµ¬ë¶„",
+      "wholeWord": "ì „ì²´ ë‹¨ì–´ë§Œ",
+      "useRegex": "ì •ê·œ í‘œí˜„ì‹ ì‚¬ìš©",
+      "enterSearchTerm": "ì ì–´ë„ í•˜ë‚˜ì˜ ê²€ìƒ‰ì–´ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.",
+      "noMatchesFound": "ê²€ìƒ‰ì–´ì— ëŒ€í•œ ì¼ì¹˜ í•­ëª©ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.",
+      "searchFailed": "PDF ê²€ìƒ‰ ì‹¤íŒ¨.",
+      "matchesFound": "{count}ê°œ ì¼ì¹˜ í•­ëª© ë°œê²¬",
+      "filterByPage": "íŽ˜ì´ì§€ë³„ í•„í„°",
+      "allPages": "ëª¨ë“  íŽ˜ì´ì§€",
+      "pageNumber": "{page} íŽ˜ì´ì§€",
+      "pageInfo": "{page} íŽ˜ì´ì§€",
+      "selectedCount": "{total}ê°œ ì¤‘ {selected}ê°œ ì„ íƒë¨",
+      "selectMatchesToRedact": "ìˆ˜ì •í•  ì¼ì¹˜ í•­ëª©ì„ í•˜ë‚˜ ì´ìƒ ì„ íƒí•˜ì„¸ìš”.",
+      "redactionOptions": "ìˆ˜ì • ì˜µì…˜",
+      "redactionColor": "ìˆ˜ì • ìƒ‰ìƒ",
+      "replacementText": "ëŒ€ì²´ í…ìŠ¤íŠ¸ (ì„ íƒ ì‚¬í•­)",
+      "replacementTextPlaceholder": "ì˜ˆ: [ìˆ˜ì •ë¨]",
+      "addBorder": "ìˆ˜ì •ëœ ì˜ì—­ ì£¼ìœ„ì— í…Œë‘ë¦¬ ì¶”ê°€",
+      "warningTitle": "ê²½ê³ ",
+      "warningText": "ìˆ˜ì •ì€ ì˜êµ¬ì ìž…ë‹ˆë‹¤. ì ìš©ëœ í›„ì—ëŠ” ì›ë³¸ ì½˜í…ì¸ ë¥¼ ë³µêµ¬í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.",
+      "redactButton": "ì„ íƒëœ {count}ê°œ ìˆ˜ì •",
+      "redactFailed": "ìˆ˜ì • ì ìš© ì‹¤íŒ¨.",
+      "successMessage": "ì„ íƒí•œ í…ìŠ¤íŠ¸ê°€ ì„±ê³µì ìœ¼ë¡œ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤! ì €ìž¥ì„ ìœ„í•´ ë‹¤ìš´ë¡œë“œë¥¼ í´ë¦­í•˜ì„¸ìš”.",
+      "previewTitle": "ë¯¸ë¦¬ë³´ê¸°",
+      "pagesWithMatches": "ì¼ì¹˜í•˜ëŠ” íŽ˜ì´ì§€:",
+      "selectedMatch": "ì„ íƒë¨",
+      "unselectedMatch": "ì„ íƒë˜ì§€ ì•ŠìŒ"
     }
   },
   "faqPage": {
-    "title": "자주 묻는 질문",
-    "subtitle": "{brand}에 대해 가장 자주 묻는 질문과 답변을 확인하세요",
-    "searchPlaceholder": "질문 검색...",
-    "noResults": "검색 결과가 없습니다.",
-    "expandAll": "모두 펼치기",
-    "collapseAll": "모두 접기",
+    "title": "ìžì£¼ ë¬»ëŠ” ì§ˆë¬¸",
+    "subtitle": "{brand}ì— ëŒ€í•´ ê°€ìž¥ ìžì£¼ ë¬»ëŠ” ì§ˆë¬¸ê³¼ ë‹µë³€ì„ í™•ì¸í•˜ì„¸ìš”",
+    "searchPlaceholder": "ì§ˆë¬¸ ê²€ìƒ‰...",
+    "noResults": "ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.",
+    "expandAll": "ëª¨ë‘ íŽ¼ì¹˜ê¸°",
+    "collapseAll": "ëª¨ë‘ ì ‘ê¸°",
     "categories": {
-      "all": "전체",
-      "general": "일반",
-      "privacy": "개인정보 및 보안",
-      "features": "기능",
-      "technical": "기술",
-      "languages": "언어"
+      "all": "ì „ì²´",
+      "general": "ì¼ë°˜",
+      "privacy": "ê°œì¸ì •ë³´ ë° ë³´ì•ˆ",
+      "features": "ê¸°ëŠ¥",
+      "technical": "ê¸°ìˆ ",
+      "languages": "ì–¸ì–´"
     },
     "sections": {
       "general": {
         "whatIs": {
-          "question": "OpenToolsKit란 무엇인가요?",
-          "answer": "OpenToolsKit는 브라우저에서 완전히 실행되는 개인정보 보호형 무료 PDF 툴킷입니다. 서버에 파일을 업로드하지 않고도 PDF 편집, 변환, 병합, 분할, 암호화 등 {count}개 이상의 전문적인 도구를 제공합니다."
+          "question": "OpenToolsKitëž€ ë¬´ì—‡ì¸ê°€ìš”?",
+          "answer": "OpenToolsKitëŠ” ë¸Œë¼ìš°ì €ì—ì„œ ì™„ì „ížˆ ì‹¤í–‰ë˜ëŠ” ê°œì¸ì •ë³´ ë³´í˜¸í˜• ë¬´ë£Œ PDF íˆ´í‚·ìž…ë‹ˆë‹¤. ì„œë²„ì— íŒŒì¼ì„ ì—…ë¡œë“œí•˜ì§€ ì•Šê³ ë„ PDF íŽ¸ì§‘, ë³€í™˜, ë³‘í•©, ë¶„í• , ì•”í˜¸í™” ë“± {count}ê°œ ì´ìƒì˜ ì „ë¬¸ì ì¸ ë„êµ¬ë¥¼ ì œê³µí•©ë‹ˆë‹¤."
         },
         "isFree": {
-          "question": "OpenToolsKit는 정말 무료인가요?",
-          "answer": "네, OpenToolsKit는 완전히 무료입니다. 숨겨진 비용이나 프리미엄 구독, 가입이 필요하지 않습니다. 모든 기능을 누구나 자유롭게 이용할 수 있습니다."
+          "question": "OpenToolsKitëŠ” ì •ë§ ë¬´ë£Œì¸ê°€ìš”?",
+          "answer": "ë„¤, OpenToolsKitëŠ” ì™„ì „ížˆ ë¬´ë£Œìž…ë‹ˆë‹¤. ìˆ¨ê²¨ì§„ ë¹„ìš©ì´ë‚˜ í”„ë¦¬ë¯¸ì—„ êµ¬ë…, ê°€ìž…ì´ í•„ìš”í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ëª¨ë“  ê¸°ëŠ¥ì„ ëˆ„êµ¬ë‚˜ ìžìœ ë¡­ê²Œ ì´ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤."
         },
         "account": {
-          "question": "계정을 만들어야 하나요?",
-          "answer": "아니요, OpenToolsKit를 사용하기 위해 계정을 만들거나 등록할 필요가 없습니다. 웹사이트에 접속하기만 하면 즉시 모든 도구를 사용할 수 있습니다."
+          "question": "ê³„ì •ì„ ë§Œë“¤ì–´ì•¼ í•˜ë‚˜ìš”?",
+          "answer": "ì•„ë‹ˆìš”, OpenToolsKitë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•´ ê³„ì •ì„ ë§Œë“¤ê±°ë‚˜ ë“±ë¡í•  í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤. ì›¹ì‚¬ì´íŠ¸ì— ì ‘ì†í•˜ê¸°ë§Œ í•˜ë©´ ì¦‰ì‹œ ëª¨ë“  ë„êµ¬ë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤."
         }
       },
       "privacy": {
         "uploaded": {
-          "question": "제 파일이 서버에 업로드되나요?",
-          "answer": "아니요, 귀하의 파일은 절대 서버에 업로드되지 않습니다. 모든 PDF 처리는 JavaScript와 WebAssembly를 사용하여 브라우저 내에서 로컬로 수행됩니다. 파일은 귀하의 장치를 절대 떠나지 않습니다."
+          "question": "ì œ íŒŒì¼ì´ ì„œë²„ì— ì—…ë¡œë“œë˜ë‚˜ìš”?",
+          "answer": "ì•„ë‹ˆìš”, ê·€í•˜ì˜ íŒŒì¼ì€ ì ˆëŒ€ ì„œë²„ì— ì—…ë¡œë“œë˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ëª¨ë“  PDF ì²˜ë¦¬ëŠ” JavaScriptì™€ WebAssemblyë¥¼ ì‚¬ìš©í•˜ì—¬ ë¸Œë¼ìš°ì € ë‚´ì—ì„œ ë¡œì»¬ë¡œ ìˆ˜í–‰ë©ë‹ˆë‹¤. íŒŒì¼ì€ ê·€í•˜ì˜ ìž¥ì¹˜ë¥¼ ì ˆëŒ€ ë– ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤."
         },
         "safe": {
-          "question": "민감한 문서에 OpenToolsKit를 사용해도 안전한가요?",
-          "answer": "네, OpenToolsKit는 개인정보 보호를 최우선으로 설계되었습니다. 모든 작업이 브라우저 내에서 로컬로 처리되므로 민감한 문서는 장치에 그대로 유지되며 인터넷을 통해 전송되지 않습니다."
+          "question": "ë¯¼ê°í•œ ë¬¸ì„œì— OpenToolsKitë¥¼ ì‚¬ìš©í•´ë„ ì•ˆì „í•œê°€ìš”?",
+          "answer": "ë„¤, OpenToolsKitëŠ” ê°œì¸ì •ë³´ ë³´í˜¸ë¥¼ ìµœìš°ì„ ìœ¼ë¡œ ì„¤ê³„ë˜ì—ˆìŠµë‹ˆë‹¤. ëª¨ë“  ìž‘ì—…ì´ ë¸Œë¼ìš°ì € ë‚´ì—ì„œ ë¡œì»¬ë¡œ ì²˜ë¦¬ë˜ë¯€ë¡œ ë¯¼ê°í•œ ë¬¸ì„œëŠ” ìž¥ì¹˜ì— ê·¸ëŒ€ë¡œ ìœ ì§€ë˜ë©° ì¸í„°ë„·ì„ í†µí•´ ì „ì†¡ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤."
         },
         "storage": {
-          "question": "처리 후 파일은 어떻게 되나요?",
-          "answer": "파일은 처리되는 동안 브라우저 메모리에 임시로 저장됩니다. 브라우저 탭을 닫거나 페이지를 벗어나면 모든 파일 데이터가 자동으로 삭제됩니다. 당사는 어떠한 파일도 저장하지 않습니다."
+          "question": "ì²˜ë¦¬ í›„ íŒŒì¼ì€ ì–´ë–»ê²Œ ë˜ë‚˜ìš”?",
+          "answer": "íŒŒì¼ì€ ì²˜ë¦¬ë˜ëŠ” ë™ì•ˆ ë¸Œë¼ìš°ì € ë©”ëª¨ë¦¬ì— ìž„ì‹œë¡œ ì €ìž¥ë©ë‹ˆë‹¤. ë¸Œë¼ìš°ì € íƒ­ì„ ë‹«ê±°ë‚˜ íŽ˜ì´ì§€ë¥¼ ë²—ì–´ë‚˜ë©´ ëª¨ë“  íŒŒì¼ ë°ì´í„°ê°€ ìžë™ìœ¼ë¡œ ì‚­ì œë©ë‹ˆë‹¤. ë‹¹ì‚¬ëŠ” ì–´ë– í•œ íŒŒì¼ë„ ì €ìž¥í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤."
         }
       },
       "features": {
         "operations": {
-          "question": "어떤 PDF 작업을 할 수 있나요?",
-          "answer": "OpenToolsKit는 병합, 분할, 압축, 변환(이미지, 텍스트, JSON 등), 편집, 주석 추가, 서명, 워터마크, 암호화/복호화, OCR 등 {count}개 이상의 도구를 제공합니다."
+          "question": "ì–´ë–¤ PDF ìž‘ì—…ì„ í•  ìˆ˜ ìžˆë‚˜ìš”?",
+          "answer": "OpenToolsKitëŠ” ë³‘í•©, ë¶„í• , ì••ì¶•, ë³€í™˜(ì´ë¯¸ì§€, í…ìŠ¤íŠ¸, JSON ë“±), íŽ¸ì§‘, ì£¼ì„ ì¶”ê°€, ì„œëª…, ì›Œí„°ë§ˆí¬, ì•”í˜¸í™”/ë³µí˜¸í™”, OCR ë“± {count}ê°œ ì´ìƒì˜ ë„êµ¬ë¥¼ ì œê³µí•©ë‹ˆë‹¤."
         },
         "merge": {
-          "question": "여러 PDF 파일을 하나로 합칠 수 있나요?",
-          "answer": "네, 여러 PDF 파일을 하나로 병합할 수 있습니다. PDF 병합 도구를 사용해 파일을 업로드하고 원하는 순서로 정렬한 다음 병합을 클릭하세요."
+          "question": "ì—¬ëŸ¬ PDF íŒŒì¼ì„ í•˜ë‚˜ë¡œ í•©ì¹  ìˆ˜ ìžˆë‚˜ìš”?",
+          "answer": "ë„¤, ì—¬ëŸ¬ PDF íŒŒì¼ì„ í•˜ë‚˜ë¡œ ë³‘í•©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. PDF ë³‘í•© ë„êµ¬ë¥¼ ì‚¬ìš©í•´ íŒŒì¼ì„ ì—…ë¡œë“œí•˜ê³  ì›í•˜ëŠ” ìˆœì„œë¡œ ì •ë ¬í•œ ë‹¤ìŒ ë³‘í•©ì„ í´ë¦­í•˜ì„¸ìš”."
         },
         "images": {
-          "question": "이미지를 PDF로 변환할 수 있나요?",
-          "answer": "네, OpenToolsKit는 다양한 이미지 형식(JPG, PNG, WebP, BMP, TIFF, SVG, HEIC)의 PDF 변환을 지원합니다. 한 장 또는 여러 장의 이미지를 동시에 변환할 수 있습니다."
+          "question": "ì´ë¯¸ì§€ë¥¼ PDFë¡œ ë³€í™˜í•  ìˆ˜ ìžˆë‚˜ìš”?",
+          "answer": "ë„¤, OpenToolsKitëŠ” ë‹¤ì–‘í•œ ì´ë¯¸ì§€ í˜•ì‹(JPG, PNG, WebP, BMP, TIFF, SVG, HEIC)ì˜ PDF ë³€í™˜ì„ ì§€ì›í•©ë‹ˆë‹¤. í•œ ìž¥ ë˜ëŠ” ì—¬ëŸ¬ ìž¥ì˜ ì´ë¯¸ì§€ë¥¼ ë™ì‹œì— ë³€í™˜í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤."
         },
         "edit": {
-          "question": "PDF 텍스트를 수정할 수 있나요?",
-          "answer": "OpenToolsKit는 하이라이트, 텍스트 추가, 도형, 이미지, 서명 등 주석 및 편집 도구를 제공합니다. 상세한 텍스트 편집을 원하신다면 PDF 편집기 도구에서 포괄적인 주석 기능을 사용해 보세요."
+          "question": "PDF í…ìŠ¤íŠ¸ë¥¼ ìˆ˜ì •í•  ìˆ˜ ìžˆë‚˜ìš”?",
+          "answer": "OpenToolsKitëŠ” í•˜ì´ë¼ì´íŠ¸, í…ìŠ¤íŠ¸ ì¶”ê°€, ë„í˜•, ì´ë¯¸ì§€, ì„œëª… ë“± ì£¼ì„ ë° íŽ¸ì§‘ ë„êµ¬ë¥¼ ì œê³µí•©ë‹ˆë‹¤. ìƒì„¸í•œ í…ìŠ¤íŠ¸ íŽ¸ì§‘ì„ ì›í•˜ì‹ ë‹¤ë©´ PDF íŽ¸ì§‘ê¸° ë„êµ¬ì—ì„œ í¬ê´„ì ì¸ ì£¼ì„ ê¸°ëŠ¥ì„ ì‚¬ìš©í•´ ë³´ì„¸ìš”."
         }
       },
       "technical": {
         "browsers": {
-          "question": "어떤 브라우저를 지원하나요?",
-          "answer": "OpenToolsKit는 Chrome, Firefox, Safari, Edge 등 모든 최신 브라우저에서 작동합니다. 최적의 경험을 위해 최신 버전의 브라우저를 사용하실 것을 권장합니다."
+          "question": "ì–´ë–¤ ë¸Œë¼ìš°ì €ë¥¼ ì§€ì›í•˜ë‚˜ìš”?",
+          "answer": "OpenToolsKitëŠ” Chrome, Firefox, Safari, Edge ë“± ëª¨ë“  ìµœì‹  ë¸Œë¼ìš°ì €ì—ì„œ ìž‘ë™í•©ë‹ˆë‹¤. ìµœì ì˜ ê²½í—˜ì„ ìœ„í•´ ìµœì‹  ë²„ì „ì˜ ë¸Œë¼ìš°ì €ë¥¼ ì‚¬ìš©í•˜ì‹¤ ê²ƒì„ ê¶Œìž¥í•©ë‹ˆë‹¤."
         },
         "sizeLimit": {
-          "question": "파일 크기 제한이 있나요?",
-          "answer": "대부분의 도구는 최대 100MB의 파일을 지원하며, 병합 및 압축과 같은 일부 도구는 최대 500MB까지 지원합니다. 이는 브라우저에서의 원활한 동작을 보장하기 위한 제한입니다."
+          "question": "íŒŒì¼ í¬ê¸° ì œí•œì´ ìžˆë‚˜ìš”?",
+          "answer": "ëŒ€ë¶€ë¶„ì˜ ë„êµ¬ëŠ” ìµœëŒ€ 100MBì˜ íŒŒì¼ì„ ì§€ì›í•˜ë©°, ë³‘í•© ë° ì••ì¶•ê³¼ ê°™ì€ ì¼ë¶€ ë„êµ¬ëŠ” ìµœëŒ€ 500MBê¹Œì§€ ì§€ì›í•©ë‹ˆë‹¤. ì´ëŠ” ë¸Œë¼ìš°ì €ì—ì„œì˜ ì›í™œí•œ ë™ìž‘ì„ ë³´ìž¥í•˜ê¸° ìœ„í•œ ì œí•œìž…ë‹ˆë‹¤."
         },
         "slow": {
-          "question": "대용량 파일의 처리 속도가 느린 이유는 무엇인가요?",
-          "answer": "모든 처리가 브라우저 내에서 이루어지기 때문에 성능은 장치 사양에 달려 있습니다. 큰 파일은 더 많은 메모리와 처리 능력을 필요로 합니다. 더 나은 결과를 위해 다른 탭이나 프로그램을 닫아주세요."
+          "question": "ëŒ€ìš©ëŸ‰ íŒŒì¼ì˜ ì²˜ë¦¬ ì†ë„ê°€ ëŠë¦° ì´ìœ ëŠ” ë¬´ì—‡ì¸ê°€ìš”?",
+          "answer": "ëª¨ë“  ì²˜ë¦¬ê°€ ë¸Œë¼ìš°ì € ë‚´ì—ì„œ ì´ë£¨ì–´ì§€ê¸° ë•Œë¬¸ì— ì„±ëŠ¥ì€ ìž¥ì¹˜ ì‚¬ì–‘ì— ë‹¬ë ¤ ìžˆìŠµë‹ˆë‹¤. í° íŒŒì¼ì€ ë” ë§Žì€ ë©”ëª¨ë¦¬ì™€ ì²˜ë¦¬ ëŠ¥ë ¥ì„ í•„ìš”ë¡œ í•©ë‹ˆë‹¤. ë” ë‚˜ì€ ê²°ê³¼ë¥¼ ìœ„í•´ ë‹¤ë¥¸ íƒ­ì´ë‚˜ í”„ë¡œê·¸ëž¨ì„ ë‹«ì•„ì£¼ì„¸ìš”."
         },
         "offline": {
-          "question": "OpenToolsKit를 오프라인에서 사용할 수 있나요?",
-          "answer": "현재 초기 앱 로딩을 위해서는 인터넷 연결이 필요합니다. 하지만 로드된 후에는 PDF 처리 자체가 로컬에서 진행되므로 별도의 인터넷 연결 없이도 작업이 가능합니다."
+          "question": "OpenToolsKitë¥¼ ì˜¤í”„ë¼ì¸ì—ì„œ ì‚¬ìš©í•  ìˆ˜ ìžˆë‚˜ìš”?",
+          "answer": "í˜„ìž¬ ì´ˆê¸° ì•± ë¡œë”©ì„ ìœ„í•´ì„œëŠ” ì¸í„°ë„· ì—°ê²°ì´ í•„ìš”í•©ë‹ˆë‹¤. í•˜ì§€ë§Œ ë¡œë“œëœ í›„ì—ëŠ” PDF ì²˜ë¦¬ ìžì²´ê°€ ë¡œì»¬ì—ì„œ ì§„í–‰ë˜ë¯€ë¡œ ë³„ë„ì˜ ì¸í„°ë„· ì—°ê²° ì—†ì´ë„ ìž‘ì—…ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤."
         }
       },
       "languages": {
         "supported": {
-          "question": "어떤 언어를 지원하나요?",
-          "answer": "OpenToolsKit는 영어, 일본어, 한국어, 스페인어, 프랑스어, 독일어, 중국어, 포르투갈어, 아랍어(RTL 지원 포함) 등 9개 언어를 지원합니다."
+          "question": "ì–´ë–¤ ì–¸ì–´ë¥¼ ì§€ì›í•˜ë‚˜ìš”?",
+          "answer": "OpenToolsKitëŠ” ì˜ì–´, ì¼ë³¸ì–´, í•œêµ­ì–´, ìŠ¤íŽ˜ì¸ì–´, í”„ëž‘ìŠ¤ì–´, ë…ì¼ì–´, ì¤‘êµ­ì–´, í¬ë¥´íˆ¬ê°ˆì–´, ì•„ëžì–´(RTL ì§€ì› í¬í•¨) ë“± 9ê°œ ì–¸ì–´ë¥¼ ì§€ì›í•©ë‹ˆë‹¤."
         },
         "change": {
-          "question": "언어를 어떻게 변경하나요?",
-          "answer": "페이지 상단의 언어 선택기를 사용해 언어를 변경할 수 있습니다. 선택하신 설정은 다음 방문을 위해 저장됩니다."
+          "question": "ì–¸ì–´ë¥¼ ì–´ë–»ê²Œ ë³€ê²½í•˜ë‚˜ìš”?",
+          "answer": "íŽ˜ì´ì§€ ìƒë‹¨ì˜ ì–¸ì–´ ì„ íƒê¸°ë¥¼ ì‚¬ìš©í•´ ì–¸ì–´ë¥¼ ë³€ê²½í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ì„ íƒí•˜ì‹  ì„¤ì •ì€ ë‹¤ìŒ ë°©ë¬¸ì„ ìœ„í•´ ì €ìž¥ë©ë‹ˆë‹¤."
         }
       }
     },
@@ -2269,63 +2269,63 @@
     }
   },
   "aboutPage": {
-    "title": "{brand} 소개",
+    "title": "{brand} ì†Œê°œ",
     "description": "{brand} is an open-source browser tool platform that launches with {count}+ PDF tools, a workflow editor, and public source distribution.",
     "mission": {
-      "title": "우리의 임무",
+      "title": "ìš°ë¦¬ì˜ ìž„ë¬´",
       "p1": "We believe private browser tools should stay accessible, inspectable, and useful beyond a single file format. That is why {brand} has been shaped into a broader browser-tool platform.",
       "p2": "Unlike traditional services that depend on remote processing for routine document work, {brand} keeps core flows in the browser where applicable and keeps source availability visible through a public AGPL repository.",
-      "p3": "Phase 1 focuses on the PDF suite, workflow editor, and extension, while preparing the platform for additional tool families."
+      "p3": "The current public site focuses on PDF tools, workflow editing, and source-visible browser utilities while preparing the platform for additional tool families."
     },
     "values": {
-      "title": "우리의 가치",
+      "title": "ìš°ë¦¬ì˜ ê°€ì¹˜",
       "privacy": {
-        "title": "개인정보 최우선",
-        "description": "파일은 절대로 장치를 떠나지 않습니다. 모든 처리는 브라우저 내에서 로컬로 이루어져 완전한 개인정보 보호와 보안을 보장합니다."
+        "title": "ê°œì¸ì •ë³´ ìµœìš°ì„ ",
+        "description": "íŒŒì¼ì€ ì ˆëŒ€ë¡œ ìž¥ì¹˜ë¥¼ ë– ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ëª¨ë“  ì²˜ë¦¬ëŠ” ë¸Œë¼ìš°ì € ë‚´ì—ì„œ ë¡œì»¬ë¡œ ì´ë£¨ì–´ì ¸ ì™„ì „í•œ ê°œì¸ì •ë³´ ë³´í˜¸ì™€ ë³´ì•ˆì„ ë³´ìž¥í•©ë‹ˆë‹¤."
       },
       "fast": {
-        "title": "빠르고 효율적",
-        "description": "최신 웹 기술을 기반으로 하는 OpenToolsKit는 업로드나 다운로드 없이 번개처럼 빠른 PDF 처리를 제공합니다."
+        "title": "ë¹ ë¥´ê³  íš¨ìœ¨ì ",
+        "description": "ìµœì‹  ì›¹ ê¸°ìˆ ì„ ê¸°ë°˜ìœ¼ë¡œ í•˜ëŠ” OpenToolsKitëŠ” ì—…ë¡œë“œë‚˜ ë‹¤ìš´ë¡œë“œ ì—†ì´ ë²ˆê°œì²˜ëŸ¼ ë¹ ë¥¸ PDF ì²˜ë¦¬ë¥¼ ì œê³µí•©ë‹ˆë‹¤."
       },
       "accessible": {
-        "title": "교통이 편리한",
-        "description": "9개 언어로 제공되며 최신 브라우저가 있는 모든 장치에서 작동합니다. 설치가 필요하지 않습니다."
+        "title": "êµí†µì´ íŽ¸ë¦¬í•œ",
+        "description": "9ê°œ ì–¸ì–´ë¡œ ì œê³µë˜ë©° ìµœì‹  ë¸Œë¼ìš°ì €ê°€ ìžˆëŠ” ëª¨ë“  ìž¥ì¹˜ì—ì„œ ìž‘ë™í•©ë‹ˆë‹¤. ì„¤ì¹˜ê°€ í•„ìš”í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤."
       },
       "free": {
-        "title": "영원히 무료",
-        "description": "OpenToolsKit는 숨겨진 비용, 등록 절차, 사용 제한 없이 완전히 무료로 사용할 수 있습니다."
+        "title": "ì˜ì›ížˆ ë¬´ë£Œ",
+        "description": "OpenToolsKitëŠ” ìˆ¨ê²¨ì§„ ë¹„ìš©, ë“±ë¡ ì ˆì°¨, ì‚¬ìš© ì œí•œ ì—†ì´ ì™„ì „ížˆ ë¬´ë£Œë¡œ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤."
       },
       "openSource": {
-        "title": "오픈 소스",
-        "description": "투명성을 염두에 두고 구축되었습니다. 당사의 코드는 오픈 소스이므로 누구나 당사의 개인정보 보호 주장을 검증할 수 있습니다."
+        "title": "ì˜¤í”ˆ ì†ŒìŠ¤",
+        "description": "íˆ¬ëª…ì„±ì„ ì—¼ë‘ì— ë‘ê³  êµ¬ì¶•ë˜ì—ˆìŠµë‹ˆë‹¤. ë‹¹ì‚¬ì˜ ì½”ë“œëŠ” ì˜¤í”ˆ ì†ŒìŠ¤ì´ë¯€ë¡œ ëˆ„êµ¬ë‚˜ ë‹¹ì‚¬ì˜ ê°œì¸ì •ë³´ ë³´í˜¸ ì£¼ìž¥ì„ ê²€ì¦í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤."
       },
       "community": {
-        "title": "커뮤니티 중심",
-        "description": "전 세계 사용자의 피드백을 바탕으로 개발되었습니다. 우리는 사용자의 요구에 따라 지속적으로 개선해 나갑니다."
+        "title": "ì»¤ë®¤ë‹ˆí‹° ì¤‘ì‹¬",
+        "description": "ì „ ì„¸ê³„ ì‚¬ìš©ìžì˜ í”¼ë“œë°±ì„ ë°”íƒ•ìœ¼ë¡œ ê°œë°œë˜ì—ˆìŠµë‹ˆë‹¤. ìš°ë¦¬ëŠ” ì‚¬ìš©ìžì˜ ìš”êµ¬ì— ë”°ë¼ ì§€ì†ì ìœ¼ë¡œ ê°œì„ í•´ ë‚˜ê°‘ë‹ˆë‹¤."
       }
     },
     "technology": {
-      "title": "현대 기술로 구축",
-      "description": "{brand}는 가능한 최고의 경험을 보장하기 위해 최첨단 웹 기술을 사용하여 구축되었습니다.",
+      "title": "í˜„ëŒ€ ê¸°ìˆ ë¡œ êµ¬ì¶•",
+      "description": "{brand}ëŠ” ê°€ëŠ¥í•œ ìµœê³ ì˜ ê²½í—˜ì„ ë³´ìž¥í•˜ê¸° ìœ„í•´ ìµœì²¨ë‹¨ ì›¹ ê¸°ìˆ ì„ ì‚¬ìš©í•˜ì—¬ êµ¬ì¶•ë˜ì—ˆìŠµë‹ˆë‹¤.",
       "list": {
-        "nextjs": "<strong1>Next.js</strong1> - 빠르고 SEO에 친숙한 페이지 렌더링을 위해",
-        "wasm": "<strong1>WebAssembly</strong1> - 네이티브에 가까운 PDF 처리 성능을 위해",
-        "workers": "<strong1>Web Workers</strong1> - 비차단 백그라운드 처리를 위해",
-        "pdflib": "<strong1>pdf-lib & PDF.js</strong1> - 업계 표준 PDF 조작 라이브러리",
-        "indexeddb": "<strong1>IndexedDB</strong1> - 작업물의 안전한 로컬 저장소를 위해"
+        "nextjs": "<strong1>Next.js</strong1> - ë¹ ë¥´ê³  SEOì— ì¹œìˆ™í•œ íŽ˜ì´ì§€ ë Œë”ë§ì„ ìœ„í•´",
+        "wasm": "<strong1>WebAssembly</strong1> - ë„¤ì´í‹°ë¸Œì— ê°€ê¹Œìš´ PDF ì²˜ë¦¬ ì„±ëŠ¥ì„ ìœ„í•´",
+        "workers": "<strong1>Web Workers</strong1> - ë¹„ì°¨ë‹¨ ë°±ê·¸ë¼ìš´ë“œ ì²˜ë¦¬ë¥¼ ìœ„í•´",
+        "pdflib": "<strong1>pdf-lib & PDF.js</strong1> - ì—…ê³„ í‘œì¤€ PDF ì¡°ìž‘ ë¼ì´ë¸ŒëŸ¬ë¦¬",
+        "indexeddb": "<strong1>IndexedDB</strong1> - ìž‘ì—…ë¬¼ì˜ ì•ˆì „í•œ ë¡œì»¬ ì €ìž¥ì†Œë¥¼ ìœ„í•´"
       },
-      "summary": "This stack supports launch-ready browser tools, static export, local processing, and public-source trust surfaces without forcing a server-bound editing model."
+      "summary": "This stack supports browser tools, static export, local processing, and public-source trust surfaces without forcing a server-bound editing model."
     },
     "cta": {
-      "title": "시작할 준비가 되셨나요?",
-      "description": "Explore our {count}+ launch tools and see how {brand} handles private browser workflows.",
-      "button": "모든 도구 탐색"
+      "title": "ì‹œìž‘í•  ì¤€ë¹„ê°€ ë˜ì…¨ë‚˜ìš”?",
+      "description": "Explore {count}+ tools and see how {brand} handles private browser workflows.",
+      "button": "ëª¨ë“  ë„êµ¬ íƒìƒ‰"
     }
   },
   "contactPage": {
     "hero": {
       "title": "Support & Source",
-      "description": "Use GitHub for source access, issue reporting, and AGPL attribution."
+      "description": "Use email for general support and GitHub for developer-facing issues, source access, and AGPL attribution."
     },
     "methods": {
       "email": {
@@ -2354,27 +2354,27 @@
       },
       "fields": {
         "name": {
-          "label": "이름",
-          "placeholder": "귀하의 이름"
+          "label": "ì´ë¦„",
+          "placeholder": "ê·€í•˜ì˜ ì´ë¦„"
         },
         "email": {
-          "label": "이메일",
+          "label": "ì´ë©”ì¼",
           "placeholder": "your@email.com"
         },
         "subject": {
-          "label": "제목",
-          "placeholder": "제목 선택",
+          "label": "ì œëª©",
+          "placeholder": "ì œëª© ì„ íƒ",
           "options": {
-            "general": "일반 문의",
-            "bug": "버그 보고",
-            "feature": "기능 요청",
-            "feedback": "피드백",
-            "other": "기타"
+            "general": "ì¼ë°˜ ë¬¸ì˜",
+            "bug": "ë²„ê·¸ ë³´ê³ ",
+            "feature": "ê¸°ëŠ¥ ìš”ì²­",
+            "feedback": "í”¼ë“œë°±",
+            "other": "ê¸°íƒ€"
           }
         },
         "message": {
-          "label": "메시지",
-          "placeholder": "문의 내용에 대해 더 자세히 알려주세요..."
+          "label": "ë©”ì‹œì§€",
+          "placeholder": "ë¬¸ì˜ ë‚´ìš©ì— ëŒ€í•´ ë” ìžì„¸ížˆ ì•Œë ¤ì£¼ì„¸ìš”..."
         }
       },
       "error": "Use the public GitHub support routes instead.",

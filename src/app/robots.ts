@@ -22,6 +22,14 @@ export default function robots(): MetadataRoute.Robots {
           '/go/',
         ],
       },
+      {
+        userAgent: 'AdsBot-Google',
+        allow: ['/', '/ads.txt', '/robots.txt', '/sitemap.xml'],
+      },
+      {
+        userAgent: 'Mediapartners-Google',
+        allow: ['/', '/ads.txt', '/robots.txt', '/sitemap.xml'],
+      },
     ],
     host: siteConfig.canonicalHost,
     sitemap: `${siteConfig.url}/sitemap.xml`,

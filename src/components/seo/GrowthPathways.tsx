@@ -77,7 +77,7 @@ export function GrowthPathways({ tool, locale, relatedTools, localizedRelatedToo
               return (
                 <Link
                   key={relatedTool.id}
-                  href={`/${locale}/tools/${relatedTool.slug}`}
+                  href={`/${locale}/tools/${relatedTool.slug}/`}
                   className="inline-flex min-h-10 items-center rounded-full border border-[hsl(var(--color-border))] px-4 text-sm font-medium text-[hsl(var(--color-foreground))] transition-colors hover:border-[hsl(var(--color-primary)/0.55)] hover:text-[hsl(var(--color-primary))]"
                 >
                   {name}

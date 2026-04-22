@@ -1,33 +1,33 @@
-# OpenToolsKit
+﻿# OpenToolsKit
 
 <div align="center">
   <img src="public/images/logo.png" alt="OpenToolsKit Logo" width="120" height="120" />
   <h1>Open-source browser tools for documents and utility workflows</h1>
   <p><strong>Private by default. Browser-first. AGPL-licensed.</strong></p>
   <p>
-    OpenToolsKit launches with a multilingual PDF suite, workflow editor, browser extension,
-    Cloudflare Pages deployment path, and a post-result sponsor model that never blocks downloads.
+    OpenToolsKit provides a multilingual PDF suite, workflow editor, browser extension,
+    Cloudflare Pages deployment path, and review-mode controls for optional monetization surfaces.
   </p>
 </div>
 
 <div align="center">
 
-[Website](https://www.opentoolskit.com/en/) • [Source Code](https://github.com/benni7777777/toolharbor) • [Issues](https://github.com/benni7777777/toolharbor/issues)
+[Website](https://www.opentoolskit.com/en/) | [Source Code](https://github.com/benni7777777/toolharbor) | [Issues](https://github.com/benni7777777/toolharbor/issues)
 
 </div>
 
 ## Overview
 
-OpenToolsKit is a browser-first tool platform built for private document work and broader utility workflows. Phase 1 ships the replatformed PDF suite, workflow editor, and extension under a distinct OpenToolsKit product shell. Phase 2 is intended to expand the shared tool registry with additional non-PDF tool families.
+OpenToolsKit is a browser-first tool platform built for private document work and broader utility workflows. The current public site ships the replatformed PDF suite, workflow editor, and extension under a distinct OpenToolsKit product shell, with room to expand the shared tool registry into additional non-PDF tool families.
 
-Core launch characteristics:
+Core characteristics:
 
 - Local browser processing where applicable
 - Public AGPL-3.0 source availability
 - Multilingual static export for Cloudflare Pages
 - Workflow editor and browser extension included in scope
 - Explicit light, dark, and system theme support
-- Post-result partner suggestions with no forced wait or blocked download
+- Optional post-result partner suggestions that are disabled during AdSense review mode
 
 ## How OpenToolsKit differs
 
@@ -110,8 +110,9 @@ The Cloudflare Pages launch build excludes the large LibreOffice WASM payload th
 
 ## Support
 
-There is no email support address in this project. Support and transparency are handled through:
+General user support is available through the public contact page and support email configured by `NEXT_PUBLIC_SUPPORT_EMAIL`. Developer-facing support and transparency are handled through:
 
+- [Contact](https://www.opentoolskit.com/en/contact/)
 - [Source Code](https://github.com/benni7777777/toolharbor)
 - [GitHub Issues](https://github.com/benni7777777/toolharbor/issues)
 - [`NOTICE.md`](NOTICE.md)

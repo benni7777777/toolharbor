@@ -13,6 +13,10 @@ export function MonetizationDisclosureCard({
   locale,
   className = '',
 }: MonetizationDisclosureCardProps) {
+  if (!siteConfig.ads.enabled && !siteConfig.sponsorship.enabled) {
+    return null;
+  }
+
   return (
     <Card className={`border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-6 ${className}`.trim()}>
       <div className="space-y-3">
@@ -38,13 +42,13 @@ export function MonetizationDisclosureCard({
             Source Code
           </a>
           <Link
-            href={`/${locale}/privacy`}
+            href={`/${locale}/privacy/`}
             className="text-[hsl(var(--color-primary))] transition-colors hover:text-[hsl(var(--color-accent-strong))]"
           >
             Privacy
           </Link>
           <Link
-            href={`/${locale}/contact`}
+            href={`/${locale}/contact/`}
             className="text-[hsl(var(--color-primary))] transition-colors hover:text-[hsl(var(--color-accent-strong))]"
           >
             Support

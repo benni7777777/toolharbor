@@ -12,8 +12,13 @@ export type ToolFamily =
 
 type AdsterraAtOptions = Record<string, string | number | boolean | Record<string, unknown>>;
 
-function readPublicEnv(name: string) {
-  return process.env[name]?.trim() ?? '';
+function readPublicEnv(name: string, testFallback = '') {
+  const value = process.env[name]?.trim() ?? '';
+  if (value) {
+    return value;
+  }
+
+  return process.env.NODE_ENV === 'test' ? testFallback : '';
 }
 
 function parseAdsterraAtOptions(raw: string | undefined) {
@@ -101,13 +106,31 @@ function buildDisplayBannerConfig({
   };
 }
 
+const adsterraNativeScriptSrc = readPublicEnv(
+  'NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT_SRC',
+  'https://ads.example/native.js',
+);
+const adsterraNativeContainerId = readPublicEnv(
+  'NEXT_PUBLIC_ADSTERRA_NATIVE_CONTAINER_ID',
+  'container-test-native-banner',
+) || 'otk-adsterra-native-banner';
+const adsterraPopunderScriptSrc = readPublicEnv(
+  'NEXT_PUBLIC_ADSTERRA_POPUNDER_SCRIPT_SRC',
+  'https://ads.example/popunder.js',
+);
+const adsterraSocialBarScriptSrc = readPublicEnv(
+  'NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT_SRC',
+  'https://ads.example/socialbar.js',
+);
+const supportEmail = readPublicEnv('NEXT_PUBLIC_SUPPORT_EMAIL') || 'support@opentoolskit.com';
+
 export const siteConfig = {
   name: 'OpenToolsKit',
   shortName: 'OTK',
   description:
-    'Open-source browser tools for PDF, image, text, publishing, developer, calculator, and social workflows. Private by default, fast by design, and built to teach future web developers how transparent website monetization can work in public-source projects.',
+    'Open-source browser tools for PDF and document workflows. Private by default, fast in the browser, and built with visible AGPL source availability.',
   launchDescription:
-    'Private, browser-first tools for PDFs today and a broader OpenToolsKit platform tomorrow.',
+    'Private, browser-first document tools with public source, clear attribution, and practical support paths.',
   url: 'https://www.opentoolskit.com',
   canonicalHost: 'www.opentoolskit.com',
   apexHost: 'opentoolskit.com',
@@ -118,6 +141,7 @@ export const siteConfig = {
     github: 'https://github.com/benni7777777/toolharbor',
     githubIssues: 'https://github.com/benni7777777/toolharbor/issues',
     githubDiscussions: '',
+    supportEmail,
     x: 'https://x.com/OpenToolsKit',
     source: 'https://github.com/benni7777777/toolharbor',
   },
@@ -164,18 +188,18 @@ export const siteConfig = {
       adsterra: {
         enabled: monetizationRuntime.adsterraEnabled,
         nativeBanner: {
-          scriptSrc:
-            'https://pl29133190.profitablecpmratenetwork.com/13abb80829d1e16b339d390deb70c6a5/invoke.js',
-          containerId: 'container-13abb80829d1e16b339d390deb70c6a5',
+          enabled: monetizationRuntime.adsterraEnabled && Boolean(adsterraNativeScriptSrc),
+          scriptSrc: adsterraNativeScriptSrc,
+          containerId: adsterraNativeContainerId,
         },
         popunder: {
-          scriptSrc:
-            'https://pl29133188.profitablecpmratenetwork.com/61/f4/91/61f491d249763152efe5f91b4bc03b34.js',
+          enabled: monetizationRuntime.adsterraEnabled && Boolean(adsterraPopunderScriptSrc),
+          scriptSrc: adsterraPopunderScriptSrc,
           cooldownStorageKey: 'opentoolskit-adsterra-popunder-last-fired',
         },
         socialBar: {
-          scriptSrc:
-            'https://pl29133189.profitablecpmratenetwork.com/e9/36/e3/e936e3ac148536d9b73ee692803490a2.js',
+          enabled: monetizationRuntime.adsterraEnabled && Boolean(adsterraSocialBarScriptSrc),
+          scriptSrc: adsterraSocialBarScriptSrc,
           cooldownStorageKey: 'opentoolskit-adsterra-socialbar-last-fired',
         },
         displayBanners: {
@@ -319,15 +343,17 @@ export const siteConfig = {
 
 export const navConfig = {
   mainNav: [
-    { title: 'Home', href: '/' },
-    { title: 'Tools', href: '/tools' },
-    { title: 'Workflow', href: '/workflow' },
-    { title: 'About', href: '/about' },
-    { title: 'FAQ', href: '/faq' },
+    { title: 'Home', href: '/en/' },
+    { title: 'Tools', href: '/en/tools/' },
+    { title: 'Workflow', href: '/en/workflow/' },
+    { title: 'About', href: '/en/about/' },
+    { title: 'FAQ', href: '/en/faq/' },
   ],
   footerNav: [
-    { title: 'Privacy', href: '/privacy' },
-    { title: 'Support', href: '/contact' },
+    { title: 'Privacy', href: '/en/privacy/' },
+    { title: 'Terms', href: '/en/terms/' },
+    { title: 'Editorial policy', href: '/en/editorial/' },
+    { title: 'Support', href: '/en/contact/' },
     { title: 'Source', href: siteConfig.links.source },
   ],
 } as const;

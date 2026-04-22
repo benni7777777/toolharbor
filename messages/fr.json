@@ -6,19 +6,19 @@
     },
     "tools": {
       "title": "OpenToolsKit Tools",
-      "description": "Browse the OpenToolsKit launch catalog for browser-based PDF tools, workflow automation, and multilingual utility pages."
+      "description": "Browse the OpenToolsKit catalog for browser-based PDF tools, workflow automation, and multilingual utility pages."
     },
     "about": {
-      "title": "À Propos",
+      "title": "Ã€ Propos",
       "description": "Learn how OpenToolsKit turns private browser utilities into an open-source tool platform."
     },
     "faq": {
-      "title": "Questions Fréquentes",
+      "title": "Questions FrÃ©quentes",
       "description": "Find answers about OpenToolsKit, the workflow editor, browser extension, and source code."
     },
     "privacy": {
-      "title": "Politique de Confidentialité",
-      "description": "Politique de confidentialité de OpenToolsKit. Vos fichiers ne quittent jamais votre appareil - tout le traitement se fait localement dans votre navigateur."
+      "title": "Politique de ConfidentialitÃ©",
+      "description": "Politique de confidentialitÃ© de OpenToolsKit. Vos fichiers ne quittent jamais votre appareil - tout le traitement se fait localement dans votre navigateur."
     },
     "contact": {
       "title": "Support & Source",
@@ -31,7 +31,7 @@
       "compressPdf": "compresser PDF",
       "convertPdf": "convertir PDF",
       "freePdfTools": "outils PDF gratuits",
-      "onlinePdfEditor": "éditeur PDF en ligne"
+      "onlinePdfEditor": "Ã©diteur PDF en ligne"
     }
   },
   "common": {
@@ -40,19 +40,19 @@
     "navigation": {
       "home": "Accueil",
       "tools": "Outils",
-      "about": "À propos",
+      "about": "Ã€ propos",
       "faq": "FAQ",
-      "privacy": "Confidentialité",
+      "privacy": "ConfidentialitÃ©",
       "contact": "Support",
       "workflow": "Workflow"
     },
     "buttons": {
-      "upload": "Télécharger des fichiers",
-      "download": "Télécharger",
+      "upload": "TÃ©lÃ©charger des fichiers",
+      "download": "TÃ©lÃ©charger",
       "process": "Traiter",
       "cancel": "Annuler",
-      "reset": "Réinitialiser",
-      "selectLanguage": "Sélectionner la langue",
+      "reset": "RÃ©initialiser",
+      "selectLanguage": "SÃ©lectionner la langue",
       "close": "Fermer",
       "save": "Enregistrer",
       "delete": "Supprimer",
@@ -75,68 +75,68 @@
       "add": "Ajouter"
     },
     "status": {
-      "idle": "Prêt",
-      "uploading": "Téléchargement...",
+      "idle": "PrÃªt",
+      "uploading": "TÃ©lÃ©chargement...",
       "processing": "Traitement...",
-      "complete": "Terminé",
+      "complete": "TerminÃ©",
       "error": "Erreur",
       "loading": "Chargement..."
     },
     "footer": {
-      "copyright": "© {year} OpenToolsKit. Tous droits réservés.",
-      "privacyBadge": "100% Privé - Les fichiers ne quittent jamais votre appareil",
-      "footer": "© 2025 OpenToolsKit. All rights reserved.",
+      "copyright": "Â© {year} OpenToolsKit. Tous droits rÃ©servÃ©s.",
+      "privacyBadge": "100% PrivÃ© - Les fichiers ne quittent jamais votre appareil",
+      "footer": "Â© 2025 OpenToolsKit. All rights reserved.",
       "madeWith": "Made with <Heart /> and <Nextjs />"
     },
     "recentFiles": {
-      "title": "Fichiers Récents",
-      "empty": "Aucun fichier récent",
+      "title": "Fichiers RÃ©cents",
+      "empty": "Aucun fichier rÃ©cent",
       "clearAll": "Tout Effacer",
-      "processedWith": "Traité avec"
+      "processedWith": "TraitÃ© avec"
     },
     "savedProjects": {
-      "title": "Projets Enregistrés",
-      "empty": "Aucun projet enregistré",
+      "title": "Projets EnregistrÃ©s",
+      "empty": "Aucun projet enregistrÃ©",
       "clearAll": "Tout Effacer",
       "resume": "Reprendre",
       "delete": "Supprimer",
       "inProgress": "En Cours",
       "paused": "En Pause",
-      "completed": "Terminé",
+      "completed": "TerminÃ©",
       "progress": "Progression",
       "files": "fichiers"
     },
     "batchProcessing": {
       "title": "Traitement par Lots",
-      "addFiles": "Déposez des fichiers ici ou cliquez pour ajouter",
+      "addFiles": "DÃ©posez des fichiers ici ou cliquez pour ajouter",
       "clearAll": "Tout Effacer",
-      "startProcessing": "Démarrer le Traitement",
+      "startProcessing": "DÃ©marrer le Traitement",
       "cancelProcessing": "Annuler",
-      "downloadAll": "Tout Télécharger",
-      "downloadZip": "Télécharger en ZIP",
+      "downloadAll": "Tout TÃ©lÃ©charger",
+      "downloadZip": "TÃ©lÃ©charger en ZIP",
       "pending": "En Attente",
       "processing": "Traitement...",
-      "completed": "Terminé",
+      "completed": "TerminÃ©",
       "error": "Erreur",
       "progress": "Progression Globale",
-      "filesSelected": "fichiers sélectionnés",
-      "noFiles": "Aucun fichier ajouté. Ajoutez des fichiers pour démarrer le traitement par lots."
+      "filesSelected": "fichiers sÃ©lectionnÃ©s",
+      "noFiles": "Aucun fichier ajoutÃ©. Ajoutez des fichiers pour dÃ©marrer le traitement par lots."
     },
     "guidedTour": {
-      "startTour": "Démarrer la Visite",
+      "startTour": "DÃ©marrer la Visite",
       "next": "Suivant",
-      "prev": "Précédent",
+      "prev": "PrÃ©cÃ©dent",
       "finish": "Terminer",
       "skip": "Passer",
       "stepOf": "sur",
       "welcomeTitle": "Bienvenue sur OpenToolsKit !",
-      "welcomeMessage": "Souhaitez-vous une visite rapide pour apprendre à utiliser nos outils PDF ? Cela ne prend qu'une minute.",
-      "helpButton": "Visite Guidée"
+      "welcomeMessage": "Souhaitez-vous une visite rapide pour apprendre Ã  utiliser nos outils PDF ? Cela ne prend qu'une minute.",
+      "helpButton": "Visite GuidÃ©e"
     },
     "search": {
       "placeholder": "Rechercher des outils...",
-      "hint": "Entrée pour sélectionner, ↑↓ pour naviguer",
-      "noResults": "Aucun outil trouvé"
+      "hint": "EntrÃ©e pour sÃ©lectionner, â†‘â†“ pour naviguer",
+      "noResults": "Aucun outil trouvÃ©"
     },
     "faqPage": {
       "title": "Frequently Asked Questions",
@@ -157,7 +157,7 @@
         "general": {
           "whatIs": {
             "question": "What is OpenToolsKit?",
-            "answer": "OpenToolsKit is a free, privacy-focused PDF toolkit that runs entirely in your browser. It offers 67+ professional tools for editing, converting, merging, splitting, and securing PDF files without uploading them to any server."
+            "answer": "OpenToolsKit is a free, privacy-focused PDF toolkit that runs entirely in your browser. It offers 95+ professional tools for editing, converting, merging, splitting, and securing PDF files without uploading them to any server."
           },
           "isFree": {
             "question": "Is OpenToolsKit really free?",
@@ -185,7 +185,7 @@
         "features": {
           "operations": {
             "question": "What PDF operations can I perform?",
-            "answer": "OpenToolsKit offers 67+ tools including: merge, split, compress, convert (to/from images, text, JSON), edit, annotate, sign, add watermarks, encrypt/decrypt, OCR, and many more."
+            "answer": "OpenToolsKit offers 95+ tools including: merge, split, compress, convert (to/from images, text, JSON), edit, annotate, sign, add watermarks, encrypt/decrypt, OCR, and many more."
           },
           "merge": {
             "question": "Can I merge multiple PDF files?",
@@ -221,7 +221,7 @@
         "languages": {
           "supported": {
             "question": "What languages are supported?",
-            "answer": "OpenToolsKit is available in 9 languages: English, Japanese, Korean, Spanish, French, German, Chinese, Portuguese, and Arabic (with RTL support)."
+            "answer": "OpenToolsKit is available in 13 locales: English, Japanese, Korean, Spanish, French, German, Chinese, Portuguese, and Arabic (with RTL support)."
           },
           "change": {
             "question": "How do I change the language?",
@@ -240,7 +240,7 @@
       "description": "{brand} is a free, privacy-focused PDF toolkit that runs entirely in your browser. With {count}+ professional tools, you can edit, convert, merge, split, and secure your PDF files without ever uploading them to a server.",
       "mission": {
         "title": "Our Mission",
-        "p1": "We believe that everyone should have access to powerful PDF tools without compromising their privacy or paying expensive subscription fees. That's why we created {brand} – a comprehensive PDF toolkit that puts your privacy first.",
+        "p1": "We believe that everyone should have access to powerful PDF tools without compromising their privacy or paying expensive subscription fees. That's why we created {brand} â€“ a comprehensive PDF toolkit that puts your privacy first.",
         "p2": "Unlike traditional PDF services that require you to upload your files to remote servers, {brand} processes everything locally in your browser. Your sensitive documents never leave your device, giving you complete control over your data.",
         "p3": "Whether you're a student, professional, or casual user, {brand} provides all the tools you need to work with PDFs efficiently and securely."
       },
@@ -256,7 +256,7 @@
         },
         "accessible": {
           "title": "Accessible Everywhere",
-          "description": "Available in 9 languages and works on any device with a modern browser. No installation required."
+          "description": "Available in 13 locales and works on any device with a modern browser. No installation required."
         },
         "free": {
           "title": "Free Forever",
@@ -292,31 +292,31 @@
     "contactPage": {
       "hero": {
         "title": "Contactez-nous",
-        "description": "Vous avez une question, une suggestion ou trouvé un bug ? Nous serions ravis de vous entendre."
+        "description": "Vous avez une question, une suggestion ou trouvÃ© un bug ? Nous serions ravis de vous entendre."
       },
       "methods": {
         "email": {
           "title": "E-mail",
-          "description": "Envoyez-nous un e-mail et nous vous répondrons dans les 24-48 heures.",
+          "description": "Envoyez-nous un e-mail et nous vous rÃ©pondrons dans les 24-48 heures.",
           "action": "Open repository"
         },
         "github": {
           "title": "GitHub",
-          "description": "Signaler des bugs, demander des fonctionnalités ou contribuer au projet.",
+          "description": "Signaler des bugs, demander des fonctionnalitÃ©s ou contribuer au projet.",
           "action": "Voir sur GitHub"
         },
         "twitter": {
           "title": "Twitter",
-          "description": "Suivez-nous pour les mises à jour et les annonces.",
+          "description": "Suivez-nous pour les mises Ã  jour et les annonces.",
           "action": "@OpenToolsKit"
         }
       },
       "form": {
         "title": "Envoyez-nous un message",
-        "description": "Remplissez le formulaire ci-dessous et nous vous répondrons dès que possible.",
+        "description": "Remplissez le formulaire ci-dessous et nous vous rÃ©pondrons dÃ¨s que possible.",
         "success": {
-          "title": "Message envoyé !",
-          "description": "Merci de nous avoir contactés. Nous répondrons dans les 24-48 heures.",
+          "title": "Message envoyÃ© !",
+          "description": "Merci de nous avoir contactÃ©s. Nous rÃ©pondrons dans les 24-48 heures.",
           "button": "Envoyer un autre message"
         },
         "fields": {
@@ -330,11 +330,11 @@
           },
           "subject": {
             "label": "Sujet",
-            "placeholder": "Sélectionnez un sujet",
+            "placeholder": "SÃ©lectionnez un sujet",
             "options": {
-              "general": "Demande générale",
+              "general": "Demande gÃ©nÃ©rale",
               "bug": "Signaler un bug",
-              "feature": "Demande de fonctionnalité",
+              "feature": "Demande de fonctionnalitÃ©",
               "feedback": "Retour d'information",
               "other": "Autre"
             }
@@ -344,15 +344,15 @@
             "placeholder": "Dites-nous en plus sur votre demande..."
           }
         },
-        "error": "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement par e-mail.",
+        "error": "Une erreur s'est produite. Veuillez rÃ©essayer ou nous contacter directement par e-mail.",
         "submit": {
           "loading": "Envoi...",
           "default": "Envoyer le message"
         }
       },
       "faq": {
-        "title": "Vous cherchez des réponses rapides ?",
-        "description": "Consultez notre page FAQ pour les réponses aux questions courantes sur {brand}.",
+        "title": "Vous cherchez des rÃ©ponses rapides ?",
+        "description": "Consultez notre page FAQ pour les rÃ©ponses aux questions courantes sur {brand}.",
         "button": "Voir la FAQ"
       }
     },
@@ -383,23 +383,23 @@
   },
   "errors": {
     "fileTooLarge": "Le fichier est trop volumineux. La taille maximale est de {maxSize}Mo.",
-    "fileTypeInvalid": "Type de fichier invalide. Veuillez télécharger un fichier {acceptedTypes}.",
-    "fileCorrupted": "Le fichier semble être corrompu ou illisible.",
+    "fileTypeInvalid": "Type de fichier invalide. Veuillez tÃ©lÃ©charger un fichier {acceptedTypes}.",
+    "fileCorrupted": "Le fichier semble Ãªtre corrompu ou illisible.",
     "fileEmpty": "Le fichier est vide.",
     "fileNotPdf": "Le fichier n'est pas un PDF valide.",
-    "processingFailed": "Le traitement a échoué. Veuillez réessayer.",
-    "processingCancelled": "L'opération a été annulée.",
-    "networkError": "Erreur réseau. Veuillez vérifier votre connexion.",
-    "pdfEncrypted": "Ce PDF est protégé par mot de passe. Veuillez d'abord le déchiffrer.",
-    "pdfMalformed": "La structure du PDF est invalide. Essayez d'abord l'outil de réparation.",
-    "processingTimeout": "L'opération a pris trop de temps. Essayez avec un fichier plus petit.",
-    "memoryExceeded": "Le navigateur manque de mémoire. Fermez d'autres onglets et réessayez.",
-    "workerFailed": "Le processeur a planté. Veuillez actualiser la page et réessayer.",
-    "browserNotSupported": "Votre navigateur ne prend pas en charge cette fonctionnalité.",
-    "invalidPageRange": "Plage de pages invalide spécifiée.",
+    "processingFailed": "Le traitement a Ã©chouÃ©. Veuillez rÃ©essayer.",
+    "processingCancelled": "L'opÃ©ration a Ã©tÃ© annulÃ©e.",
+    "networkError": "Erreur rÃ©seau. Veuillez vÃ©rifier votre connexion.",
+    "pdfEncrypted": "Ce PDF est protÃ©gÃ© par mot de passe. Veuillez d'abord le dÃ©chiffrer.",
+    "pdfMalformed": "La structure du PDF est invalide. Essayez d'abord l'outil de rÃ©paration.",
+    "processingTimeout": "L'opÃ©ration a pris trop de temps. Essayez avec un fichier plus petit.",
+    "memoryExceeded": "Le navigateur manque de mÃ©moire. Fermez d'autres onglets et rÃ©essayez.",
+    "workerFailed": "Le processeur a plantÃ©. Veuillez actualiser la page et rÃ©essayer.",
+    "browserNotSupported": "Votre navigateur ne prend pas en charge cette fonctionnalitÃ©.",
+    "invalidPageRange": "Plage de pages invalide spÃ©cifiÃ©e.",
     "invalidOptions": "Options invalides fournies.",
-    "invalidPassword": "Le mot de passe saisi est incorrect. Vérifiez-le puis réessayez.",
-    "unknown": "Une erreur inattendue s'est produite. Veuillez réessayer.",
+    "invalidPassword": "Le mot de passe saisi est incorrect. VÃ©rifiez-le puis rÃ©essayez.",
+    "unknown": "Une erreur inattendue s'est produite. Veuillez rÃ©essayer.",
     "toolNotFound": "Tool Not Found"
   },
   "home": {
@@ -411,86 +411,86 @@
     },
     "features": {
       "privacy": {
-        "title": "100% Privé",
+        "title": "100% PrivÃ©",
         "description": "Tout le traitement se fait dans votre navigateur. Vos fichiers ne quittent jamais votre appareil."
       },
       "free": {
-        "title": "Complètement Gratuit",
-        "description": "Pas d'inscription, pas de limites, pas de frais cachés."
+        "title": "ComplÃ¨tement Gratuit",
+        "description": "Pas d'inscription, pas de limites, pas de frais cachÃ©s."
       },
       "powerful": {
-        "title": "Launch-ready suite",
-        "description": "Phase 1 ships the PDF suite, workflow editor, extension, and visible source links."
+        "title": "Useful browser tools",
+        "description": "PDF tools, workflow editing, and visible source links stay available without account gates."
       }
     },
     "popularTools": {
       "badge": "Le plus populaire",
-      "title": "Popular launch tools",
-      "description": "Nos outils les plus utilisés pour vous aider à travailler plus rapidement."
+      "title": "Popular tools",
+      "description": "Nos outils les plus utilisÃ©s pour vous aider Ã  travailler plus rapidement."
     },
     "categoriesSection": {
-      "title": "Explorer toutes les catégories",
-      "description": "{count}+ launch tools organized by category",
+      "title": "Explorer toutes les catÃ©gories",
+      "description": "{count}+ tools organized by category",
       "toolsCount": "{count} outils"
     },
     "categoriesDescription": {
-      "editAnnotate": "Éditer, annoter et modifier le contenu PDF",
+      "editAnnotate": "Ã‰diter, annoter et modifier le contenu PDF",
       "convertToPdf": "Convertir divers formats en PDF",
       "convertFromPdf": "Convertir PDF en d'autres formats",
-      "organizeManage": "Organiser, fusionner, diviser et gérer les pages PDF",
-      "optimizeRepair": "Compresser, optimiser et réparer les fichiers PDF",
-      "securePdf": "Chiffrer, déchiffrer et sécuriser les fichiers PDF"
+      "organizeManage": "Organiser, fusionner, diviser et gÃ©rer les pages PDF",
+      "optimizeRepair": "Compresser, optimiser et rÃ©parer les fichiers PDF",
+      "securePdf": "Chiffrer, dÃ©chiffrer et sÃ©curiser les fichiers PDF"
     },
     "stats": {
       "pdfTools": "Outils PDF",
-      "freeToUse": "Gratuit à utiliser",
+      "freeToUse": "Gratuit Ã  utiliser",
       "languages": "Langues",
-      "filesUploaded": "Fichiers téléchargés"
+      "filesUploaded": "Fichiers tÃ©lÃ©chargÃ©s"
     },
     "categories": {
       "popular": "Outils Populaires",
-      "editAnnotate": "Éditer et Annoter",
+      "editAnnotate": "Ã‰diter et Annoter",
       "convertToPdf": "Convertir en PDF",
       "convertFromPdf": "Convertir depuis PDF",
-      "organizeManage": "Organiser et Gérer",
-      "optimizeRepair": "Optimiser et Réparer",
-      "securePdf": "PDF Sécurisé"
+      "organizeManage": "Organiser et GÃ©rer",
+      "optimizeRepair": "Optimiser et RÃ©parer",
+      "securePdf": "PDF SÃ©curisÃ©"
     }
   },
   "workflow": {
-    "title": "Éditeur de Flux de Travail PDF",
-    "subtitle": "Créez des pipelines de traitement PDF personnalisés en connectant des outils",
-    "metaTitle": "Éditeur de Flux de Travail PDF - OpenToolsKit",
-    "metaDescription": "Créez des pipelines de traitement PDF personnalisés en connectant visuellement des outils. Construisez, enregistrez et réutilisez vos flux de travail.",
-    "toolbox": "Boîte à Outils",
+    "title": "Ã‰diteur de Flux de Travail PDF",
+    "subtitle": "CrÃ©ez des pipelines de traitement PDF personnalisÃ©s en connectant des outils",
+    "metaTitle": "Ã‰diteur de Flux de Travail PDF - OpenToolsKit",
+    "metaDescription": "CrÃ©ez des pipelines de traitement PDF personnalisÃ©s en connectant visuellement des outils. Construisez, enregistrez et rÃ©utilisez vos flux de travail.",
+    "toolbox": "BoÃ®te Ã  Outils",
     "dragToAdd": "Faites glisser les outils pour les ajouter au flux de travail",
     "searchTools": "Rechercher des outils...",
     "toolsAvailable": "outils disponibles",
-    "templates": "Modèles",
-    "saved": "Enregistrés",
+    "templates": "ModÃ¨les",
+    "saved": "EnregistrÃ©s",
     "favorites": "Favoris",
     "allCategories": "Tous",
     "common": "Courants",
     "conversion": "Conversion",
     "optimization": "Optimisation",
-    "security": "Sécurité",
-    "noSavedWorkflows": "Aucun flux de travail enregistré",
-    "saveWorkflowHint": "Créez et enregistrez votre premier flux de travail",
+    "security": "SÃ©curitÃ©",
+    "noSavedWorkflows": "Aucun flux de travail enregistrÃ©",
+    "saveWorkflowHint": "CrÃ©ez et enregistrez votre premier flux de travail",
     "noFavorites": "Aucun flux de travail favori",
-    "favoriteHint": "Marquez les flux de travail avec une étoile pour les ajouter ici",
-    "selectFiles": "Sélectionner les Fichiers",
-    "filesSelected": "fichiers sélectionnés",
-    "execute": "Exécuter",
+    "favoriteHint": "Marquez les flux de travail avec une Ã©toile pour les ajouter ici",
+    "selectFiles": "SÃ©lectionner les Fichiers",
+    "filesSelected": "fichiers sÃ©lectionnÃ©s",
+    "execute": "ExÃ©cuter",
     "running": "En cours",
-    "complete": "Terminé",
+    "complete": "TerminÃ©",
     "error": "Erreur",
-    "issues": "problèmes",
-    "stop": "Arrêter",
+    "issues": "problÃ¨mes",
+    "stop": "ArrÃªter",
     "validationErrors": "Erreurs de Validation",
     "warnings": "Avertissements",
-    "executionFailed": "Échec de l'exécution du flux de travail",
-    "retry": "Réessayer",
-    "nodes": "nœuds",
+    "executionFailed": "Ã‰chec de l'exÃ©cution du flux de travail",
+    "retry": "RÃ©essayer",
+    "nodes": "nÅ“uds",
     "import": "Importer",
     "clear": "Effacer",
     "saveWorkflow": "Enregistrer le Flux de Travail",
@@ -499,98 +499,98 @@
     "description": "Description",
     "optional": "optionnel",
     "enterDescription": "Entrez la description...",
-    "workflowComplete": "Flux de travail terminé avec succès !",
-    "downloadResults": "Télécharger les Résultats",
-    "emptyTitle": "Créez Votre Flux de Travail",
-    "emptyDescription": "Faites glisser les outils depuis la barre latérale pour construire votre pipeline de traitement PDF. Connectez les nœuds pour définir l'ordre de traitement.",
-    "clickHint": "Cliquez sur un nœud pour configurer ses paramètres",
+    "workflowComplete": "Flux de travail terminÃ© avec succÃ¨s !",
+    "downloadResults": "TÃ©lÃ©charger les RÃ©sultats",
+    "emptyTitle": "CrÃ©ez Votre Flux de Travail",
+    "emptyDescription": "Faites glisser les outils depuis la barre latÃ©rale pour construire votre pipeline de traitement PDF. Connectez les nÅ“uds pour dÃ©finir l'ordre de traitement.",
+    "clickHint": "Cliquez sur un nÅ“ud pour configurer ses paramÃ¨tres",
     "undo": "Annuler",
-    "redo": "Rétablir",
-    "noSettings": "Aucun paramètre configurable pour cet outil",
-    "reset": "Réinitialiser",
+    "redo": "RÃ©tablir",
+    "noSettings": "Aucun paramÃ¨tre configurable pour cet outil",
+    "reset": "RÃ©initialiser",
     "cancel": "Annuler",
     "apply": "Appliquer",
-    "preview": "Aperçu",
-    "showPreview": "Afficher l'Aperçu",
-    "noFilesForPreview": "Sélectionnez des fichiers pour voir l'aperçu",
-    "generatingPreview": "Génération de l'aperçu...",
-    "noPreviewAvailable": "Aperçu non disponible",
-    "selectedFiles": "Fichiers sélectionnés",
+    "preview": "AperÃ§u",
+    "showPreview": "Afficher l'AperÃ§u",
+    "noFilesForPreview": "SÃ©lectionnez des fichiers pour voir l'aperÃ§u",
+    "generatingPreview": "GÃ©nÃ©ration de l'aperÃ§u...",
+    "noPreviewAvailable": "AperÃ§u non disponible",
+    "selectedFiles": "Fichiers sÃ©lectionnÃ©s",
     "filesCount": "fichiers",
     "viewEditFiles": "Voir/Modifier les fichiers",
     "moveUp": "Monter",
     "moveDown": "Descendre",
     "removeFile": "Supprimer",
     "clearAll": "Tout effacer",
-    "previewNotAvailable": "Aperçu non disponible pour ce type de fichier",
+    "previewNotAvailable": "AperÃ§u non disponible pour ce type de fichier",
     "confirm": "Confirmer",
-    "collapseSidebar": "Réduire la barre latérale",
-    "expandSidebar": "Développer la barre latérale",
-    "library": "Bibliothèque",
+    "collapseSidebar": "RÃ©duire la barre latÃ©rale",
+    "expandSidebar": "DÃ©velopper la barre latÃ©rale",
+    "library": "BibliothÃ¨que",
     "connections": "connexions",
     "history": "Historique",
-    "executionHistory": "Historique d'exécution",
-    "totalExecutions": "Exécutions totales",
-    "successRate": "Taux de réussite",
-    "avgDuration": "Durée moyenne",
-    "noHistory": "Aucun historique d'exécution pour le moment",
-    "noHistoryHint": "Exécutez un workflow pour voir l'historique ici",
-    "confirmDelete": "Êtes-vous sûr de vouloir supprimer cet enregistrement de l'historique ?",
-    "confirmClearAllHistory": "Êtes-vous sûr de vouloir effacer tout l'historique ? Cette opération est irréversible.",
+    "executionHistory": "Historique d'exÃ©cution",
+    "totalExecutions": "ExÃ©cutions totales",
+    "successRate": "Taux de rÃ©ussite",
+    "avgDuration": "DurÃ©e moyenne",
+    "noHistory": "Aucun historique d'exÃ©cution pour le moment",
+    "noHistoryHint": "ExÃ©cutez un workflow pour voir l'historique ici",
+    "confirmDelete": "ÃŠtes-vous sÃ»r de vouloir supprimer cet enregistrement de l'historique ?",
+    "confirmClearAllHistory": "ÃŠtes-vous sÃ»r de vouloir effacer tout l'historique ? Cette opÃ©ration est irrÃ©versible.",
     "unnamedWorkflow": "Workflow sans nom",
-    "nodesSuccess": "nœuds réussis",
-    "nodesFailed": "échoué",
+    "nodesSuccess": "nÅ“uds rÃ©ussis",
+    "nodesFailed": "Ã©chouÃ©",
     "loadWorkflow": "Charger le Workflow",
-    "viewDetails": "Voir les détails",
-    "detailsInConsole": "Détails enregistrés dans la console (F12)",
+    "viewDetails": "Voir les dÃ©tails",
+    "detailsInConsole": "DÃ©tails enregistrÃ©s dans la console (F12)",
     "workflowTemplates": {
       "mergeCompress": {
         "name": "Fusionner & Compresser",
-        "description": "Fusionner plusieurs PDF et compresser le résultat pour réduire la taille du fichier"
+        "description": "Fusionner plusieurs PDF et compresser le rÃ©sultat pour rÃ©duire la taille du fichier"
       },
       "imagesToWatermarkedPdf": {
         "name": "Images vers PDF avec filigrane",
-        "description": "Convertir des images en PDF et ajouter un filigrane personnalisé"
+        "description": "Convertir des images en PDF et ajouter un filigrane personnalisÃ©"
       },
       "pdfToImages": {
-        "name": "PDF vers images compressées",
+        "name": "PDF vers images compressÃ©es",
         "description": "Convertir les pages d'un PDF en images JPG"
       },
       "securePdf": {
-        "name": "Créer un PDF sécurisé",
+        "name": "CrÃ©er un PDF sÃ©curisÃ©",
         "description": "Fusionner des PDF, ajouter un filigrane et crypter avec un mot de passe"
       },
       "documentPrep": {
-        "name": "Préparation de document",
-        "description": "Fusionner des PDF, ajouter les numéros de page et ajouter un en-tête/pied de page"
+        "name": "PrÃ©paration de document",
+        "description": "Fusionner des PDF, ajouter les numÃ©ros de page et ajouter un en-tÃªte/pied de page"
       },
       "optimizeForWeb": {
         "name": "Optimiser pour le Web",
-        "description": "Compresser et linéariser le PDF pour un affichage Web rapide"
+        "description": "Compresser et linÃ©ariser le PDF pour un affichage Web rapide"
       },
       "splitAndWatermark": {
         "name": "Diviser & Filigraner",
-        "description": "Diviser le PDF en pages et ajouter un filigrane à chacune"
+        "description": "Diviser le PDF en pages et ajouter un filigrane Ã  chacune"
       },
       "officeToMergedPdf": {
         "name": "Documents Office vers un seul PDF",
         "description": "Convertir des documents Word en PDF et les fusionner"
       },
       "rotateAndNumber": {
-        "name": "Pivoter & Ajouter les numéros de page",
-        "description": "Faire pivoter les pages d'un PDF et ajouter les numéros de page"
+        "name": "Pivoter & Ajouter les numÃ©ros de page",
+        "description": "Faire pivoter les pages d'un PDF et ajouter les numÃ©ros de page"
       },
       "printReady": {
-        "name": "Document prêt pour l'impression",
-        "description": "Préparer le PDF pour l'impression avec numéros de page et aplatissement"
+        "name": "Document prÃªt pour l'impression",
+        "description": "PrÃ©parer le PDF pour l'impression avec numÃ©ros de page et aplatissement"
       },
       "grayscaleCompress": {
         "name": "Gris & Compresser",
-        "description": "Convertir en niveaux de gris et compresser pour une taille réduite"
+        "description": "Convertir en niveaux de gris et compresser pour une taille rÃ©duite"
       },
       "extractAndMerge": {
         "name": "Extraire & Fusionner les pages",
-        "description": "Extraire des pages spécifiques et les fusionner dans un nouveau document"
+        "description": "Extraire des pages spÃ©cifiques et les fusionner dans un nouveau document"
       },
       "confidentialDocument": {
         "name": "Document confidentiel",
@@ -598,19 +598,19 @@
       },
       "pdfToEditableDoc": {
         "name": "PDF vers document modifiable",
-        "description": "Convertir un PDF en document Word pour édition"
+        "description": "Convertir un PDF en document Word pour Ã©dition"
       },
       "fullOptimization": {
-        "name": "Optimisation complète de document",
-        "description": "Compresser, aplatir et linéariser pour des performances optimales"
+        "name": "Optimisation complÃ¨te de document",
+        "description": "Compresser, aplatir et linÃ©ariser pour des performances optimales"
       },
       "pdfToPresentation": {
         "name": "PDF vers PowerPoint",
-        "description": "Convertir un PDF en présentation PowerPoint modifiable"
+        "description": "Convertir un PDF en prÃ©sentation PowerPoint modifiable"
       },
       "unlockAndEdit": {
-        "name": "Déverrouiller & Éditer un PDF",
-        "description": "Décrypter un PDF protégé pour modification"
+        "name": "DÃ©verrouiller & Ã‰diter un PDF",
+        "description": "DÃ©crypter un PDF protÃ©gÃ© pour modification"
       },
       "ebookConvert": {
         "name": "eBook vers PDF",
@@ -618,23 +618,23 @@
       },
       "batchWatermark": {
         "name": "Filigrane par lots",
-        "description": "Ajouter des filigranes à plusieurs fichiers PDF à la fois"
+        "description": "Ajouter des filigranes Ã  plusieurs fichiers PDF Ã  la fois"
       },
       "archivePrep": {
-        "name": "Préparation pour archivage",
-        "description": "Supprimer les métadonnées, aplatir et compresser pour le stockage à long terme"
+        "name": "PrÃ©paration pour archivage",
+        "description": "Supprimer les mÃ©tadonnÃ©es, aplatir et compresser pour le stockage Ã  long terme"
       },
       "reportAssembly": {
         "name": "Assemblage de rapport",
-        "description": "Fusionner des documents, ajouter numéros de page, en-tête/pied de page et table des matières"
+        "description": "Fusionner des documents, ajouter numÃ©ros de page, en-tÃªte/pied de page et table des matiÃ¨res"
       },
       "invoiceProcessing": {
         "name": "Traitement de facture",
         "description": "Extraire des pages, ajouter un filigrane et compresser pour l'envoi par e-mail"
       },
       "photoAlbum": {
-        "name": "Créateur d'album photo",
-        "description": "Convertir des images en PDF avec numéros de page"
+        "name": "CrÃ©ateur d'album photo",
+        "description": "Convertir des images en PDF avec numÃ©ros de page"
       },
       "cropAndResize": {
         "name": "Recadrer & Redimensionner",
@@ -643,8 +643,8 @@
     }
   },
   "toolsPage": {
-    "title": "OpenToolsKit Launch Tools",
-    "subtitle": "{count}+ browser-based launch tools for PDF workflows, editing, conversion, and secure document handling.",
+    "title": "OpenToolsKit Tools",
+    "subtitle": "{count}+ browser-based tools for PDF workflows, editing, conversion, and secure document handling.",
     "filters": "Filters",
     "allTools": "All Tools",
     "clearAll": "Clear all",
@@ -658,29 +658,29 @@
   "tools": {
     "search": {
       "placeholder": "Rechercher des outils...",
-      "noResults": "Aucun outil trouvé pour \"{query}\""
+      "noResults": "Aucun outil trouvÃ© pour \"{query}\""
     },
     "relatedTools": "Vous aimerez aussi",
-    "about": "À propos de cet outil",
+    "about": "Ã€ propos de cet outil",
     "howToUse": "Comment utiliser",
     "useCases": "Cas d'utilisation",
     "faq": "Foire aux questions",
-    "comingSoon": "Cet outil sera bientôt disponible.",
-    "successTitle": "Conversion réussie !",
+    "comingSoon": "Cet outil sera bientÃ´t disponible.",
+    "successTitle": "Conversion rÃ©ussie !",
     "favorite": {
       "add": "Ajouter aux favoris",
       "remove": "Retirer des favoris",
-      "saved": "Enregistré",
+      "saved": "EnregistrÃ©",
       "title": "Outils favoris",
       "empty": "Pas encore d'outils favoris",
-      "hint": "Cliquez sur l'icône étoile sur n'importe quel outil pour l'enregistrer ici pour un accès rapide."
+      "hint": "Cliquez sur l'icÃ´ne Ã©toile sur n'importe quel outil pour l'enregistrer ici pour un accÃ¨s rapide."
     },
     "quality": {
-      "title": "Qualité de sortie",
+      "title": "QualitÃ© de sortie",
       "low": "Basse",
       "medium": "Moyenne",
       "high": "Haute",
-      "hint": "Une qualité plus élevée produit des fichiers plus volumineux et prend plus de temps à convertir."
+      "hint": "Une qualitÃ© plus Ã©levÃ©e produit des fichiers plus volumineux et prend plus de temps Ã  convertir."
     },
     "mergePdf": {
       "uploadLabel": "Upload PDF Files",
@@ -693,36 +693,36 @@
       "successMessage": "PDFs merged successfully! Click the download button to save your file."
     },
     "splitPdf": {
-      "uploadLabel": "Télécharger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF ici, ou cliquez pour parcourir.",
-      "splitModeTitle": "Méthode de division",
+      "uploadLabel": "TÃ©lÃ©charger un fichier PDF",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF ici, ou cliquez pour parcourir.",
+      "splitModeTitle": "MÃ©thode de division",
       "splitModeLabel": "Mode de division",
-      "modeRanges": "Extraire par plage de pages (Par défaut)",
+      "modeRanges": "Extraire par plage de pages (Par dÃ©faut)",
       "modeEvenOdd": "Diviser par pages paires/impaires",
-      "modeEveryPage": "Diviser toutes les pages en fichiers séparés",
-      "modeVisual": "Sélectionner les pages visuellement",
+      "modeEveryPage": "Diviser toutes les pages en fichiers sÃ©parÃ©s",
+      "modeVisual": "SÃ©lectionner les pages visuellement",
       "modeBookmarks": "Diviser par signets",
       "modeNTimes": "Diviser N fois",
       "rangeInputLabel": "Plages de pages",
-      "rangeInputHint": "Entrez les numéros de page ou les plages séparés par des virgules. Chaque plage crée un fichier séparé.",
+      "rangeInputHint": "Entrez les numÃ©ros de page ou les plages sÃ©parÃ©s par des virgules. Chaque plage crÃ©e un fichier sÃ©parÃ©.",
       "evenOddLabel": "Extraire les pages",
       "oddPagesOnly": "Pages impaires uniquement",
       "evenPagesOnly": "Pages paires uniquement",
-      "bothSeparate": "Les deux (fichiers séparés)",
+      "bothSeparate": "Les deux (fichiers sÃ©parÃ©s)",
       "evenOddHint": "Pages impaires : 1, 3, 5... Pages paires : 2, 4, 6...",
-      "everyPageInfo": "Chaque page sera extraite comme un fichier PDF séparé. Cela créera {count} fichiers.",
-      "visualInfo": "Cliquez sur les vignettes de page ci-dessous pour sélectionner les pages à extraire. Les pages sélectionnées seront combinées en un seul PDF ou divisées en fichiers individuels.",
-      "bookmarksNotice": "Remarque : La division par signets nécessite que le PDF contienne des signets. Si aucun signet n'est trouvé, le PDF entier sera retourné comme un seul fichier.",
+      "everyPageInfo": "Chaque page sera extraite comme un fichier PDF sÃ©parÃ©. Cela crÃ©era {count} fichiers.",
+      "visualInfo": "Cliquez sur les vignettes de page ci-dessous pour sÃ©lectionner les pages Ã  extraire. Les pages sÃ©lectionnÃ©es seront combinÃ©es en un seul PDF ou divisÃ©es en fichiers individuels.",
+      "bookmarksNotice": "Remarque : La division par signets nÃ©cessite que le PDF contienne des signets. Si aucun signet n'est trouvÃ©, le PDF entier sera retournÃ© comme un seul fichier.",
       "splitCountLabel": "Nombre de parties",
-      "splitCountHint": "Diviser en {count} parties égales (~{pages} pages chacune)",
-      "pagePreviewTitle": "Sélectionner les pages",
+      "splitCountHint": "Diviser en {count} parties Ã©gales (~{pages} pages chacune)",
+      "pagePreviewTitle": "SÃ©lectionner les pages",
       "splitButton": "Diviser le PDF",
-      "resultsTitle": "Résultats de la division",
-      "successMessage": "PDF divisé avec succès ! Cliquez sur les boutons de téléchargement pour enregistrer vos fichiers.",
-      "modeVisualShort": "Sélection Visuelle",
+      "resultsTitle": "RÃ©sultats de la division",
+      "successMessage": "PDF divisÃ© avec succÃ¨s ! Cliquez sur les boutons de tÃ©lÃ©chargement pour enregistrer vos fichiers.",
+      "modeVisualShort": "SÃ©lection Visuelle",
       "modeBookmarksShort": "Signets",
       "modeNTimesShort": "N Parties",
-      "downloadZip": "Tout télécharger en ZIP"
+      "downloadZip": "Tout tÃ©lÃ©charger en ZIP"
     },
     "deletePages": {
       "uploadLabel": "Upload PDF File",
@@ -760,38 +760,38 @@
       "fill": "Fill (may crop)",
       "pageRange": "Page Range (optional)",
       "pageRangePlaceholder": "e.g., 1-5, 8, 10-15 (leave empty for all pages)",
-      "previewInfo": "Each page will be split into {rows}×{cols} = {total} tiles.",
+      "previewInfo": "Each page will be split into {rows}Ã—{cols} = {total} tiles.",
       "createButton": "Posterize PDF",
       "successMessage": "PDF posterized successfully! Click the download button to save your file."
     },
     "pdfMultiTool": {
-      "uploadLabel": "Télécharger des fichiers PDF",
-      "uploadDescription": "Glissez-déposez des fichiers PDF ici, ou cliquez pour parcourir. Vous pouvez télécharger plusieurs fichiers.",
+      "uploadLabel": "TÃ©lÃ©charger des fichiers PDF",
+      "uploadDescription": "Glissez-dÃ©posez des fichiers PDF ici, ou cliquez pour parcourir. Vous pouvez tÃ©lÃ©charger plusieurs fichiers.",
       "addMoreFiles": "Ajouter d'autres fichiers PDF",
       "organize": "Organiser",
       "delete": "Supprimer",
       "rotate": "Pivoter",
       "duplicate": "Dupliquer",
       "addBlank": "Ajouter page blanche",
-      "organizeHint": "Glissez-déposez les pages pour les réorganiser.",
-      "deleteHint": "Cliquez sur les pages pour les marquer à supprimer.",
+      "organizeHint": "Glissez-dÃ©posez les pages pour les rÃ©organiser.",
+      "deleteHint": "Cliquez sur les pages pour les marquer Ã  supprimer.",
       "rotateHint": "Cliquez sur les boutons de rotation sur les pages, ou pivotez tout :",
       "duplicateHint": "Cliquez sur le bouton dupliquer pour copier les pages.",
-      "reset": "Réinitialiser",
+      "reset": "RÃ©initialiser",
       "undo": "Annuler",
-      "redo": "Rétablir",
-      "selectAll": "Tout sélectionner",
-      "deselectAll": "Désélectionner",
-      "rotateLeft": "Pivoter à gauche",
-      "rotateRight": "Pivoter à droite",
+      "redo": "RÃ©tablir",
+      "selectAll": "Tout sÃ©lectionner",
+      "deselectAll": "DÃ©sÃ©lectionner",
+      "rotateLeft": "Pivoter Ã  gauche",
+      "rotateRight": "Pivoter Ã  droite",
       "exportPDF": "Exporter PDF",
-      "downloadSelected": "Télécharger la sélection",
+      "downloadSelected": "TÃ©lÃ©charger la sÃ©lection",
       "clearAll": "Tout effacer",
       "addBlankPageTitle": "Ajouter des pages blanches",
       "numberOfPages": "Nombre de pages",
       "insertPosition": "Position d'insertion",
       "processButton": "Appliquer les modifications",
-      "successMessage": "PDF traité avec succès ! Cliquez sur le bouton de téléchargement pour enregistrer votre fichier."
+      "successMessage": "PDF traitÃ© avec succÃ¨s ! Cliquez sur le bouton de tÃ©lÃ©chargement pour enregistrer votre fichier."
     },
     "viewMetadata": {
       "uploadLabel": "Upload PDF File",
@@ -841,7 +841,7 @@
       "uploadLabel": "Upload PDF to Edit",
       "uploadDescription": "Drag and drop a PDF file here, or click to browse.",
       "instructions": "How to use",
-      "instructionsText": "Use the toolbar above the PDF to add text, draw, highlight, or add images. Click the download button (💾) in the toolbar to save your edited PDF.",
+      "instructionsText": "Use the toolbar above the PDF to add text, draw, highlight, or add images. Click the download button (ðŸ’¾) in the toolbar to save your edited PDF.",
       "saveButton": "Save PDF",
       "saveDownload": "Save & Download",
       "saveError": "Failed to save PDF. Please use the export button in the toolbar.",
@@ -902,10 +902,10 @@
       "svgQualityHint": "Higher quality produces sharper images but larger file sizes.",
       "batchMode": "Diviser en plusieurs PDFs",
       "imagesPerPdf": "Images par PDF",
-      "batchModeHint": "{pdfCount} fichier(s) PDF seront créés, regroupés dans une archive ZIP.",
-      "batchSuccessMessage": "Création réussie de {pdfCount} fichiers PDF à partir de {imageCount} images ! Cliquez sur le bouton de téléchargement pour enregistrer votre archive ZIP.",
+      "batchModeHint": "{pdfCount} fichier(s) PDF seront crÃ©Ã©s, regroupÃ©s dans une archive ZIP.",
+      "batchSuccessMessage": "CrÃ©ation rÃ©ussie de {pdfCount} fichiers PDF Ã  partir de {imageCount} images ! Cliquez sur le bouton de tÃ©lÃ©chargement pour enregistrer votre archive ZIP.",
       "successMessage": "Images converted to PDF successfully! Click the download button to save your file.",
-      "fitToImage": "Ajuster à l'image"
+      "fitToImage": "Ajuster Ã  l'image"
     },
     "compressPdf": {
       "uploadLabel": "Upload PDF Files",
@@ -933,14 +933,14 @@
       "saved": "Saved:",
       "algorithmLabel": "Algorithme de compression",
       "algorithmStandard": "Standard",
-      "algorithmCondense": "Condensé",
+      "algorithmCondense": "CondensÃ©",
       "algorithmPhoton": "Photon",
-      "algorithmStandardDesc": "Compression d'usage général utilisant les flux d'objets",
-      "algorithmCondenseDesc": "Optimise la structure tout en préservant l'interactivité",
-      "algorithmPhotonDesc": "Rastérisation des pages — idéal pour les PDF riches en images",
-      "photonWarning": "Remarque : Photon convertit les pages en images, ce qui peut réduire la qualité du texte et supprimer l'interactivité (liens, formulaires).",
+      "algorithmStandardDesc": "Compression d'usage gÃ©nÃ©ral utilisant les flux d'objets",
+      "algorithmCondenseDesc": "Optimise la structure tout en prÃ©servant l'interactivitÃ©",
+      "algorithmPhotonDesc": "RastÃ©risation des pages â€” idÃ©al pour les PDF riches en images",
+      "photonWarning": "Remarque : Photon convertit les pages en images, ce qui peut rÃ©duire la qualitÃ© du texte et supprimer l'interactivitÃ© (liens, formulaires).",
       "photonDpiLabel": "DPI de sortie",
-      "photonDpiDesc": "DPI élevé = meilleure qualité, fichier plus lourd"
+      "photonDpiDesc": "DPI Ã©levÃ© = meilleure qualitÃ©, fichier plus lourd"
     },
     "signPdf": {
       "uploadLabel": "Upload PDF File",
@@ -975,18 +975,18 @@
       "page": "Page"
     },
     "organizePdf": {
-      "uploadLabel": "Télécharger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF pour organiser les pages.",
-      "reorderTitle": "Glissez pour réorganiser les pages",
+      "uploadLabel": "TÃ©lÃ©charger un fichier PDF",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF pour organiser les pages.",
+      "reorderTitle": "Glissez pour rÃ©organiser les pages",
       "reverseOrder": "Inverser l'ordre",
-      "resetOrder": "Réinitialiser l'ordre",
-      "reorderHint": "Glissez-déposez les pages pour les réorganiser. Utilisez les flèches pour déplacer les pages vers le haut ou le bas.",
-      "orderChanged": "L'ordre des pages a été modifié. Cliquez sur \"Appliquer les modifications\" pour enregistrer.",
+      "resetOrder": "RÃ©initialiser l'ordre",
+      "reorderHint": "Glissez-dÃ©posez les pages pour les rÃ©organiser. Utilisez les flÃ¨ches pour dÃ©placer les pages vers le haut ou le bas.",
+      "orderChanged": "L'ordre des pages a Ã©tÃ© modifiÃ©. Cliquez sur \"Appliquer les modifications\" pour enregistrer.",
       "applyButton": "Appliquer les modifications",
-      "successMessage": "Pages PDF réorganisées avec succès ! Cliquez sur le bouton de téléchargement pour enregistrer votre fichier.",
+      "successMessage": "Pages PDF rÃ©organisÃ©es avec succÃ¨s ! Cliquez sur le bouton de tÃ©lÃ©chargement pour enregistrer votre fichier.",
       "duplicatePage": "Dupliquer",
       "deletePage": "Supprimer",
-      "cannotDeleteLast": "Impossible de supprimer la dernière page"
+      "cannotDeleteLast": "Impossible de supprimer la derniÃ¨re page"
     },
     "repairPdf": {
       "uploadLabel": "Upload PDF Files",
@@ -1002,37 +1002,37 @@
       "divisionType": "Division Type",
       "vertical": "Vertical",
       "horizontal": "Horizontal",
-      "grid2x2": "2×2 Grid",
-      "grid3x3": "3×3 Grid",
+      "grid2x2": "2Ã—2 Grid",
+      "grid3x3": "3Ã—3 Grid",
       "previewInfo": "Each page will be divided based on the selected option.",
       "divideButton": "Divide Pages",
       "successMessage": "Pages divided successfully!"
     },
     "extractAttachments": {
-      "uploadLabel": "Télécharger des fichiers PDF",
-      "uploadDescription": "Sélectionnez des fichiers PDF pour extraire les pièces jointes.",
-      "filesTitle": "Fichiers sélectionnés",
-      "extractButton": "Extraire les pièces jointes",
-      "extractedTitle": "Pièces jointes extraites",
-      "downloadAll": "Tout télécharger",
-      "successMessage": "Pièces jointes extraites avec succès !"
+      "uploadLabel": "TÃ©lÃ©charger des fichiers PDF",
+      "uploadDescription": "SÃ©lectionnez des fichiers PDF pour extraire les piÃ¨ces jointes.",
+      "filesTitle": "Fichiers sÃ©lectionnÃ©s",
+      "extractButton": "Extraire les piÃ¨ces jointes",
+      "extractedTitle": "PiÃ¨ces jointes extraites",
+      "downloadAll": "Tout tÃ©lÃ©charger",
+      "successMessage": "PiÃ¨ces jointes extraites avec succÃ¨s !"
     },
     "extractImages": {
-      "uploadLabel": "Télécharger des fichiers PDF",
-      "uploadDescription": "Sélectionnez des fichiers PDF pour extraire les images.",
-      "filesTitle": "Fichiers sélectionnés",
+      "uploadLabel": "TÃ©lÃ©charger des fichiers PDF",
+      "uploadDescription": "SÃ©lectionnez des fichiers PDF pour extraire les images.",
+      "filesTitle": "Fichiers sÃ©lectionnÃ©s",
       "filterTitle": "Options de filtre",
-      "filterDescription": "Filtrer les petites images (icônes, décorations, etc.)",
+      "filterDescription": "Filtrer les petites images (icÃ´nes, dÃ©corations, etc.)",
       "minWidth": "Largeur min. (px)",
       "minHeight": "Hauteur min. (px)",
       "minSizeKB": "Taille min. (Ko)",
       "extractButton": "Extraire les images",
       "extractedTitle": "Images extraites",
-      "downloadAll": "Tout télécharger",
-      "downloadZip": "Télécharger en ZIP",
+      "downloadAll": "Tout tÃ©lÃ©charger",
+      "downloadZip": "TÃ©lÃ©charger en ZIP",
       "page": "Page",
-      "successMessage": "Images extraites avec succès ! Cliquez pour télécharger des images individuelles ou utilisez « Télécharger en ZIP ».",
-      "optionsTitle": "Réglages",
+      "successMessage": "Images extraites avec succÃ¨s ! Cliquez pour tÃ©lÃ©charger des images individuelles ou utilisez Â« TÃ©lÃ©charger en ZIP Â».",
+      "optionsTitle": "RÃ©glages",
       "format": "Format de sortie",
       "minSize": "Taille minimale (px)"
     },
@@ -1040,7 +1040,7 @@
       "uploadLabel": "Upload PDF File",
       "uploadDescription": "Drag and drop a PDF file here, or click to browse.",
       "passwordTitle": "Password Settings",
-      "privacyNotice": "🔒 Your passwords are processed locally and never sent to any server.",
+      "privacyNotice": "ðŸ”’ Your passwords are processed locally and never sent to any server.",
       "userPasswordLabel": "User Password (to open document)",
       "userPasswordPlaceholder": "Enter password to open PDF",
       "userPasswordHint": "Required to open and view the PDF.",
@@ -1063,7 +1063,7 @@
       "uploadLabel": "Upload PDF File",
       "uploadDescription": "Drag and drop an encrypted PDF file.",
       "passwordTitle": "Enter Password",
-      "privacyNotice": "🔒 Your password is processed locally and never sent to any server.",
+      "privacyNotice": "ðŸ”’ Your password is processed locally and never sent to any server.",
       "passwordLabel": "PDF Password",
       "passwordPlaceholder": "Enter the PDF password",
       "passwordHint": "Leave empty if the PDF only has owner password restrictions.",
@@ -1082,9 +1082,9 @@
       "rotateButton": "Rotate PDF",
       "successMessage": "PDF pages rotated successfully! Click the download button to save your file.",
       "angle": "Angle",
-      "rotateRight": "Rotate Right 90°",
-      "rotateLeft": "Rotate Left 90°",
-      "rotate180": "Rotate 180°",
+      "rotateRight": "Rotate Right 90Â°",
+      "rotateLeft": "Rotate Left 90Â°",
+      "rotate180": "Rotate 180Â°",
       "applyTo": "Apply to",
       "allPages": "All Pages",
       "oddPages": "Odd Pages",
@@ -1111,9 +1111,9 @@
       "pageSize": "Page Size",
       "addButton": "Add Blank Pages",
       "successMessage": "Blank pages added successfully! Click the download button to save your file.",
-      "positionStart": "Début du document",
+      "positionStart": "DÃ©but du document",
       "positionEnd": "Fin du document",
-      "positionAfterEach": "Après chaque page",
+      "positionAfterEach": "AprÃ¨s chaque page",
       "matchSource": "Identique au fichier source"
     },
     "reversePages": {
@@ -1125,44 +1125,44 @@
       "successMessage": "Page order reversed successfully! Click the download button to save your file."
     },
     "nUpPdf": {
-      "uploadLabel": "Télécharger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF ici, ou cliquez pour parcourir.",
+      "uploadLabel": "TÃ©lÃ©charger un fichier PDF",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF ici, ou cliquez pour parcourir.",
       "optionsTitle": "Options N-Up",
       "layout": "Mise en page",
       "pagesPerSheet": "Pages par feuille",
       "pageSize": "Taille de la page de sortie",
       "orientation": "Orientation",
-      "useMargins": "Ajouter des marges et des gouttières",
+      "useMargins": "Ajouter des marges et des gouttiÃ¨res",
       "addBorder": "Ajouter une bordure autour des pages",
       "borderColor": "Couleur de la bordure",
-      "previewInfo": "{pages} pages seront disposées en {sheets} feuille(s) avec {perSheet} pages par feuille.",
+      "previewInfo": "{pages} pages seront disposÃ©es en {sheets} feuille(s) avec {perSheet} pages par feuille.",
       "layoutDirection": "Direction de mise en page",
-      "layoutHorizontal": "Horizontal (côte à côte)",
-      "layoutVertical": "Vertical (empilé)",
-      "layoutHorizontalDesc": "Les pages sont placées côte à côte (gauche-droite)",
-      "layoutVerticalDesc": "Les pages sont empilées de haut en bas",
-      "customLayout": "Personnalisé...",
+      "layoutHorizontal": "Horizontal (cÃ´te Ã  cÃ´te)",
+      "layoutVertical": "Vertical (empilÃ©)",
+      "layoutHorizontalDesc": "Les pages sont placÃ©es cÃ´te Ã  cÃ´te (gauche-droite)",
+      "layoutVerticalDesc": "Les pages sont empilÃ©es de haut en bas",
+      "customLayout": "PersonnalisÃ©...",
       "columns": "Colonnes",
       "rows": "Lignes",
-      "layoutPreview": "Aperçu de la mise en page",
-      "gridLayoutInfo": "Grille : {cols} × {rows} ({perSheet} pages par feuille)",
+      "layoutPreview": "AperÃ§u de la mise en page",
+      "gridLayoutInfo": "Grille : {cols} Ã— {rows} ({perSheet} pages par feuille)",
       "readingOrder": "Ordre de lecture",
-      "topToBottom": "↓ De haut en bas",
-      "leftToRight": "→ De gauche à droite, puis ↓ vers le bas",
-      "createButton": "Créer le PDF N-Up",
-      "createCustomButton": "Créer PDF {cols}×{rows}",
+      "topToBottom": "â†“ De haut en bas",
+      "leftToRight": "â†’ De gauche Ã  droite, puis â†“ vers le bas",
+      "createButton": "CrÃ©er le PDF N-Up",
+      "createCustomButton": "CrÃ©er PDF {cols}Ã—{rows}",
       "gridLabel": "Disposition en grille",
       "outputPages": "Feuilles de sortie",
       "pagesLabel": "pages",
       "sheetsLabel": "feuilles",
       "perSheetLabel": "par feuille",
-      "successMessage": "PDF N-Up créé avec succès ! Cliquez sur le bouton de téléchargement pour enregistrer votre fichier."
+      "successMessage": "PDF N-Up crÃ©Ã© avec succÃ¨s ! Cliquez sur le bouton de tÃ©lÃ©chargement pour enregistrer votre fichier."
     },
     "gridCombine": {
-      "uploadLabel": "Téléverser des fichiers PDF",
-      "uploadDescription": "Glissez et déposez plusieurs fichiers PDF ici.",
-      "filesTitle": "Fichiers à combiner",
-      "reorderHint": "Glisser-déposer pour réorganiser.",
+      "uploadLabel": "TÃ©lÃ©verser des fichiers PDF",
+      "uploadDescription": "Glissez et dÃ©posez plusieurs fichiers PDF ici.",
+      "filesTitle": "Fichiers Ã  combiner",
+      "reorderHint": "Glisser-dÃ©poser pour rÃ©organiser.",
       "optionsTitle": "Options de mise en page",
       "gridLayout": "Disposition en grille",
       "pageSize": "Taille de page",
@@ -1172,26 +1172,26 @@
       "addBorder": "Ajouter des bordures",
       "borderColor": "Couleur de bordure",
       "combineButton": "Combiner PDFs",
-      "successMessage": "PDFs combinés avec succès ! Cliquez sur le bouton de téléchargement pour enregistrer votre fichier.",
-      "layoutPreview": "Aperçu de la mise en page",
+      "successMessage": "PDFs combinÃ©s avec succÃ¨s ! Cliquez sur le bouton de tÃ©lÃ©chargement pour enregistrer votre fichier.",
+      "layoutPreview": "AperÃ§u de la mise en page",
       "columns": "colonnes",
       "rows": "lignes",
       "pageMode": "Mode de page",
-      "firstPageOnly": "Première page seulement",
+      "firstPageOnly": "PremiÃ¨re page seulement",
       "allPages": "Toutes les pages",
-      "firstPageOnlyHint": "Utiliser seulement la première page de chaque PDF.",
+      "firstPageOnlyHint": "Utiliser seulement la premiÃ¨re page de chaque PDF.",
       "allPagesHint": "Inclure toutes les pages de chaque PDF dans la grille.",
       "fillMode": "Mode de remplissage",
       "leaveEmpty": "Laisser les cellules vides",
-      "repeat": "Répéter depuis le début",
-      "stretchLast": "Répéter la dernière page",
+      "repeat": "RÃ©pÃ©ter depuis le dÃ©but",
+      "stretchLast": "RÃ©pÃ©ter la derniÃ¨re page",
       "fillModeHint": "Comment remplir les cellules vides lorsqu'il y a moins de fichiers que de cellules.",
       "cells": "cellules",
       "page": "page",
       "pages": "pages",
-      "previewInfoAllPages": "{fileCount} PDF(s) avec {totalPages} pages au total seront organisés dans une grille {layout} sur {outputPages} page(s) de sortie.",
-      "previewInfoFirstPage": "{fileCount} PDF(s) seront organisés dans une grille {layout} sur {outputPages} page(s).",
-      "minFilesError": "Veuillez ajouter au moins 2 fichiers PDF à combiner."
+      "previewInfoAllPages": "{fileCount} PDF(s) avec {totalPages} pages au total seront organisÃ©s dans une grille {layout} sur {outputPages} page(s) de sortie.",
+      "previewInfoFirstPage": "{fileCount} PDF(s) seront organisÃ©s dans une grille {layout} sur {outputPages} page(s).",
+      "minFilesError": "Veuillez ajouter au moins 2 fichiers PDF Ã  combiner."
     },
     "alternateMerge": {
       "uploadLabel": "Upload PDF Files",
@@ -1344,44 +1344,44 @@
       "successMessage": "JSON converted to PDF successfully!"
     },
     "pdfToImage": {
-      "uploadLabel": "Télécharger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF pour le convertir.",
+      "uploadLabel": "TÃ©lÃ©charger un fichier PDF",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF pour le convertir.",
       "optionsTitle": "Options de conversion",
       "format": "Format d'image",
-      "quality": "Qualité",
-      "dpi": "Résolution (DPI)",
-      "resolution": "Résolution",
+      "quality": "QualitÃ©",
+      "dpi": "RÃ©solution (DPI)",
+      "resolution": "RÃ©solution",
       "pageRange": "Plage de pages",
       "pageRangePlaceholder": "ex : 1-3, 5, 7",
       "pageRangeHint": "Laisser vide pour toutes les pages",
       "layoutTitle": "Mise en page",
-      "customLayout": "Personnalisé",
+      "customLayout": "PersonnalisÃ©",
       "columns": "Colonnes",
       "rows": "Lignes",
-      "skipFirstPage": "Sans première page/couverture",
-      "skipFirstPageHint": "La première page (couverture) sera rendue comme image séparée",
-      "layoutPreview": "Aperçu de la mise en page",
+      "skipFirstPage": "Sans premiÃ¨re page/couverture",
+      "skipFirstPageHint": "La premiÃ¨re page (couverture) sera rendue comme image sÃ©parÃ©e",
+      "layoutPreview": "AperÃ§u de la mise en page",
       "pagesPerImage": "pages par image",
-      "layoutHint": "Combinez plusieurs pages PDF en une seule image avec la disposition en grille sélectionnée.",
+      "layoutHint": "Combinez plusieurs pages PDF en une seule image avec la disposition en grille sÃ©lectionnÃ©e.",
       "convertButton": "Convertir en images",
-      "downloadZip": "Tout télécharger en ZIP",
+      "downloadZip": "Tout tÃ©lÃ©charger en ZIP",
       "previewTitle": "Images converties",
-      "successMessage": "PDF converti en images avec succès !"
+      "successMessage": "PDF converti en images avec succÃ¨s !"
     },
     "pdfToSvg": {
-      "uploadLabel": "Télécharger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF pour le convertir en SVG.",
+      "uploadLabel": "TÃ©lÃ©charger un fichier PDF",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF pour le convertir en SVG.",
       "optionsTitle": "Options de conversion",
-      "resolution": "Résolution",
-      "resolutionHint": "Une résolution plus élevée produit des fichiers SVG plus volumineux et plus détaillés.",
+      "resolution": "RÃ©solution",
+      "resolutionHint": "Une rÃ©solution plus Ã©levÃ©e produit des fichiers SVG plus volumineux et plus dÃ©taillÃ©s.",
       "pageRange": "Plage de pages",
       "pageRangePlaceholder": "ex : 1-3, 5, 7",
       "pageRangeHint": "Laisser vide pour toutes les pages",
       "convertButton": "Convertir en SVG",
-      "downloadZip": "Tout télécharger en ZIP",
+      "downloadZip": "Tout tÃ©lÃ©charger en ZIP",
       "previewTitle": "SVG convertis",
       "previewPage": "Page",
-      "successMessage": "PDF converti en SVG avec succès ! Cliquez sur les vignettes pour prévisualiser ou télécharger des fichiers individuels."
+      "successMessage": "PDF converti en SVG avec succÃ¨s ! Cliquez sur les vignettes pour prÃ©visualiser ou tÃ©lÃ©charger des fichiers individuels."
     },
     "pdfToGreyscale": {
       "uploadLabel": "Upload PDF File",
@@ -1543,7 +1543,7 @@
       "uploadDescription": "Drag and drop a PDF file here, or click to browse.",
       "optionsTitle": "Document Permissions",
       "passwordTitle": "Password Settings",
-      "privacyNotice": "🔒 Your passwords are processed locally and never sent to any server.",
+      "privacyNotice": "ðŸ”’ Your passwords are processed locally and never sent to any server.",
       "currentPasswordLabel": "Current Password (if PDF is encrypted)",
       "currentPasswordPlaceholder": "Enter current password",
       "currentPasswordHint": "Required if the PDF is already password-protected.",
@@ -1610,56 +1610,56 @@
       "bookmarksTitle": "Bookmarks",
       "addBookmark": "Add Bookmark",
       "noBookmarks": "No bookmarks yet. Click 'Add Bookmark' to create one.",
-      "hint": "Click a bookmark to preview its page. Use +/✎/× to add child, edit, or delete.",
+      "hint": "Click a bookmark to preview its page. Use +/âœŽ/Ã— to add child, edit, or delete.",
       "saveButton": "Save Bookmarks",
       "successMessage": "Bookmarks saved successfully!"
     },
     "pageNumbers": {
-      "uploadLabel": "Télécharger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF.",
-      "optionsTitle": "Options de numérotation",
+      "uploadLabel": "TÃ©lÃ©charger un fichier PDF",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF.",
+      "optionsTitle": "Options de numÃ©rotation",
       "positionTitle": "Position",
       "formatTitle": "Format",
-      "formatNumber": "Numéro (1, 2, 3)",
+      "formatNumber": "NumÃ©ro (1, 2, 3)",
       "formatRoman": "Romain (I, II, III)",
       "formatPageOfTotal": "Page X sur Y",
       "styleTitle": "Style",
       "style": "Style",
-      "startNumber": "Numéro de départ",
-      "customFormat": "Format personnalisé",
+      "startNumber": "NumÃ©ro de dÃ©part",
+      "customFormat": "Format personnalisÃ©",
       "customFormatHint": "Utilisez {page} et {total} comme marqueurs",
-      "prefix": "Préfixe",
+      "prefix": "PrÃ©fixe",
       "suffix": "Suffixe",
       "fontSize": "Taille de police",
       "margin": "Marge",
       "color": "Couleur",
-      "skipFirstPage": "Ignorer la première page (couverture)",
-      "preview": "Aperçu",
+      "skipFirstPage": "Ignorer la premiÃ¨re page (couverture)",
+      "preview": "AperÃ§u",
       "pageOf": "Page {current} sur {total}",
-      "firstPageSkipped": "La première page sera ignorée",
-      "previewText": "Aperçu : \"{text}\"",
-      "addButton": "Ajouter les numéros de page",
-      "successMessage": "Numéros de page ajoutés avec succès !",
+      "firstPageSkipped": "La premiÃ¨re page sera ignorÃ©e",
+      "previewText": "AperÃ§u : \"{text}\"",
+      "addButton": "Ajouter les numÃ©ros de page",
+      "successMessage": "NumÃ©ros de page ajoutÃ©s avec succÃ¨s !",
       "zoomIn": "Agrandir",
-      "zoomOut": "Réduire",
-      "zoomReset": "Réinitialiser le zoom",
-      "oddEvenTitle": "Paramètres pages paires/impaires",
+      "zoomOut": "RÃ©duire",
+      "zoomReset": "RÃ©initialiser le zoom",
+      "oddEvenTitle": "ParamÃ¨tres pages paires/impaires",
       "pageMode": "Mode de page",
       "modeAll": "Toutes les pages",
       "modeOddOnly": "Pages impaires uniquement (1, 3, 5...)",
       "modeEvenOnly": "Pages paires uniquement (2, 4, 6...)",
-      "modeDifferent": "Positions différentes pour paires/impaires",
+      "modeDifferent": "Positions diffÃ©rentes pour paires/impaires",
       "oddPosition": "Position pages impaires",
       "evenPosition": "Position pages paires",
       "oddPositionHint": "Pages 1, 3, 5...",
       "evenPositionHint": "Pages 2, 4, 6...",
-      "differentModeHint": "Ce mode est utile pour l'impression recto-verso où vous souhaitez que les numéros de page soient sur le bord extérieur de chaque page.",
-      "posBottomLeft": "En bas à gauche",
+      "differentModeHint": "Ce mode est utile pour l'impression recto-verso oÃ¹ vous souhaitez que les numÃ©ros de page soient sur le bord extÃ©rieur de chaque page.",
+      "posBottomLeft": "En bas Ã  gauche",
       "posBottomCenter": "En bas au centre",
-      "posBottomRight": "En bas à droite",
-      "posTopLeft": "En haut à gauche",
+      "posBottomRight": "En bas Ã  droite",
+      "posTopLeft": "En haut Ã  gauche",
       "posTopCenter": "En haut au centre",
-      "posTopRight": "En haut à droite"
+      "posTopRight": "En haut Ã  droite"
     },
     "watermark": {
       "uploadLabel": "Upload PDF File",
@@ -1679,8 +1679,8 @@
       "failed": "Failed to add watermark.",
       "addButton": "Add Watermark",
       "successMessage": "Watermark added successfully!",
-      "repeatTitle": "Répéter le filigrane",
-      "repeatEnable": "Répéter le filigrane sur toute la page",
+      "repeatTitle": "RÃ©pÃ©ter le filigrane",
+      "repeatEnable": "RÃ©pÃ©ter le filigrane sur toute la page",
       "repeatSpacingX": "Espacement horizontal",
       "repeatSpacingY": "Espacement vertical",
       "type": "Type",
@@ -1703,8 +1703,8 @@
       "previewHint": "Enter header or footer text to see preview",
       "addButton": "Add Header & Footer",
       "successMessage": "Header & footer added successfully!",
-      "headerText": "Texte d'en-tête",
-      "headerTextPlaceholder": "Saisir le texte d'en-tête...",
+      "headerText": "Texte d'en-tÃªte",
+      "headerTextPlaceholder": "Saisir le texte d'en-tÃªte...",
       "footerText": "Texte de pied de page",
       "footerTextPlaceholder": "Saisir le texte de pied de page...",
       "fontSize": "Taille de police",
@@ -1766,19 +1766,19 @@
       "successMessage": "Form saved successfully!"
     },
     "formCreator": {
-      "uploadLabel": "Télécharger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF ici.",
+      "uploadLabel": "TÃ©lÃ©charger un fichier PDF",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF ici.",
       "toolbarTitle": "Barre d'outils",
-      "selectTool": "Sélectionner",
+      "selectTool": "SÃ©lectionner",
       "textFieldTool": "Champ de texte",
-      "checkboxTool": "Case à cocher",
-      "dropdownTool": "Menu déroulant",
+      "checkboxTool": "Case Ã  cocher",
+      "dropdownTool": "Menu dÃ©roulant",
       "radioTool": "Bouton radio",
       "deleteTool": "Supprimer",
       "pageNavigation": "Page {current} / {total}",
-      "selectHint": "Cliquez sur un champ pour sélectionner, faites glisser pour déplacer, utilisez le coin pour redimensionner",
+      "selectHint": "Cliquez sur un champ pour sÃ©lectionner, faites glisser pour dÃ©placer, utilisez le coin pour redimensionner",
       "addFieldHint": "Cliquez sur le PDF pour ajouter un champ {type}",
-      "fieldProperties": "Propriétés du champ",
+      "fieldProperties": "PropriÃ©tÃ©s du champ",
       "fieldName": "Nom",
       "fieldType": "Type",
       "fieldX": "X",
@@ -1788,23 +1788,23 @@
       "multiline": "Multiligne",
       "options": "Options (une par ligne)",
       "deleteField": "Supprimer le champ",
-      "noFieldSelected": "Sélectionnez un champ pour modifier ses propriétés, ou utilisez la barre d'outils pour ajouter de nouveaux champs.",
+      "noFieldSelected": "SÃ©lectionnez un champ pour modifier ses propriÃ©tÃ©s, ou utilisez la barre d'outils pour ajouter de nouveaux champs.",
       "allFields": "Tous les champs ({count})",
-      "noFieldsYet": "Aucun champ ajouté. Cliquez sur le PDF pour ajouter des champs de formulaire.",
+      "noFieldsYet": "Aucun champ ajoutÃ©. Cliquez sur le PDF pour ajouter des champs de formulaire.",
       "page": "Page {number}",
-      "createButton": "Créer le formulaire",
-      "successMessage": "Formulaire créé avec succès !",
-      "createBlankPdfTitle": "Créer un PDF vierge",
+      "createButton": "CrÃ©er le formulaire",
+      "successMessage": "Formulaire crÃ©Ã© avec succÃ¨s !",
+      "createBlankPdfTitle": "CrÃ©er un PDF vierge",
       "pageSize": "Taille de page",
       "pageCount": "Nombre de pages",
-      "blankPdfNote": "Un PDF vierge sera créé pour ajouter des champs de formulaire.",
+      "blankPdfNote": "Un PDF vierge sera crÃ©Ã© pour ajouter des champs de formulaire.",
       "addBlankPage": "Ajouter une page vierge",
       "addPageBefore": "Avant la page actuelle",
-      "addPageAfter": "Après la page actuelle",
-      "addPageEnd": "À la fin",
-      "templateHint": "Ou choisissez un modèle pour démarrer rapidement",
-      "templates": "Modèle",
-      "selectTemplate": "Sélectionner...",
+      "addPageAfter": "AprÃ¨s la page actuelle",
+      "addPageEnd": "Ã€ la fin",
+      "templateHint": "Ou choisissez un modÃ¨le pour dÃ©marrer rapidement",
+      "templates": "ModÃ¨le",
+      "selectTemplate": "SÃ©lectionner...",
       "template": {
         "contact": "Formulaire de contact",
         "registration": "Inscription",
@@ -1813,55 +1813,55 @@
         "consent": "Formulaire de consentement",
         "invoice": "Facture"
       },
-      "fieldLabel": "Libellé",
-      "fieldLabelPlaceholder": "Entrez le texte du libellé...",
+      "fieldLabel": "LibellÃ©",
+      "fieldLabelPlaceholder": "Entrez le texte du libellÃ©...",
       "labelPosition": "Position",
       "labelAbove": "Au-dessus",
-      "labelLeft": "À gauche",
+      "labelLeft": "Ã€ gauche",
       "formOptions": "Options du formulaire",
       "flattenForm": "Aplatir le formulaire",
       "flattenFormHint": "Rendre les champs de formulaire non modifiables (convertit en contenu statique)",
       "projectManagement": "Gestion de projet",
       "saveProject": "Enregistrer le projet",
-      "savedProjects": "Projets enregistrés",
+      "savedProjects": "Projets enregistrÃ©s",
       "loadProject": "Charger",
       "deleteProject": "Supprimer",
       "saveProjectTitle": "Enregistrer le projet",
       "projectName": "Nom du projet",
       "projectNamePlaceholder": "Saisir le nom du projet...",
-      "saveInfo": "{fields} champ(s) de formulaire seront enregistrés.",
-      "saveNote": "Les projets sont enregistrés localement dans votre navigateur.",
+      "saveInfo": "{fields} champ(s) de formulaire seront enregistrÃ©s.",
+      "saveNote": "Les projets sont enregistrÃ©s localement dans votre navigateur.",
       "undo": "Annuler (Ctrl+Z)",
-      "redo": "Rétablir (Ctrl+Y)",
+      "redo": "RÃ©tablir (Ctrl+Y)",
       "duplicate": "Dupliquer (Ctrl+D)",
       "align": "Aligner",
-      "alignLeft": "Aligner à gauche",
+      "alignLeft": "Aligner Ã  gauche",
       "alignCenter": "Aligner au centre",
-      "alignRight": "Aligner à droite",
+      "alignRight": "Aligner Ã  droite",
       "alignTop": "Aligner en haut",
       "alignMiddle": "Aligner au milieu",
       "alignBottom": "Aligner en bas",
-      "defaultValue": "Valeur par défaut",
-      "defaultValuePlaceholder": "Saisir le texte par défaut...",
-      "defaultChecked": "Coché par défaut",
-      "defaultSelection": "Sélection par défaut",
+      "defaultValue": "Valeur par dÃ©faut",
+      "defaultValuePlaceholder": "Saisir le texte par dÃ©faut...",
+      "defaultChecked": "CochÃ© par dÃ©faut",
+      "defaultSelection": "SÃ©lection par dÃ©faut",
       "noDefault": "-- Aucun --",
       "required": "Champ obligatoire",
-      "shortcutsHint": "Raccourcis : Ctrl+Z (Annuler) | Ctrl+Y (Rétablir) | Ctrl+D (Dupliquer) | Ctrl+A (Tout sélectionner) | Delete (Supprimer)",
+      "shortcutsHint": "Raccourcis : Ctrl+Z (Annuler) | Ctrl+Y (RÃ©tablir) | Ctrl+D (Dupliquer) | Ctrl+A (Tout sÃ©lectionner) | Delete (Supprimer)",
       "buttonTool": "Bouton",
       "signatureTool": "Signature",
       "dateTool": "Date",
-      "listboxTool": "Boîte de liste",
-      "buttonLabel": "Libellé du bouton",
+      "listboxTool": "BoÃ®te de liste",
+      "buttonLabel": "LibellÃ© du bouton",
       "buttonLabelPlaceholder": "Envoyer",
-      "signatureLabel": "Libellé de signature",
+      "signatureLabel": "LibellÃ© de signature",
       "signatureLabelPlaceholder": "Signer ici",
       "dateFormat": "Format de date",
-      "defaultDate": "Date par défaut",
-      "multiSelect": "Autoriser la sélection multiple",
+      "defaultDate": "Date par dÃ©faut",
+      "multiSelect": "Autoriser la sÃ©lection multiple",
       "basicTools": "Basique",
       "advancedTools": "Plus",
-      "properties": "Propriétés",
+      "properties": "PropriÃ©tÃ©s",
       "fieldsTab": "Champs",
       "optionsTab": "Options",
       "addField": "Ajouter",
@@ -1871,7 +1871,7 @@
       "cancelButton": "Annuler",
       "saveButton": "Saugardar",
       "orCreateBlank": "Ou",
-      "createBlankPdf": "Créer un PDF vierge"
+      "createBlankPdf": "CrÃ©er un PDF vierge"
     },
     "removeBlankPages": {
       "uploadLabel": "Upload PDF File",
@@ -1894,295 +1894,295 @@
       "bookmarkRequired": "This tool generates a clickable table of contents from existing PDF bookmarks. Please ensure your PDF has bookmarks before using this tool. You can add bookmarks using the Edit Bookmarks tool.",
       "generate": "Generate Table of Contents",
       "success": "Table of contents generated successfully!",
-      "tocTitlePlaceholder": "Saisir le titre de la table des matières..."
+      "tocTitlePlaceholder": "Saisir le titre de la table des matiÃ¨res..."
     },
     "pdfToDocx": {
       "uploadLabel": "Charger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF ici, ou cliquez pour parcourir.",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF ici, ou cliquez pour parcourir.",
       "convertButton": "Convertir en DOCX",
-      "successMessage": "Votre PDF a été converti en DOCX avec succès ! Cliquez sur le bouton de téléchargement pour enregistrer votre fichier."
+      "successMessage": "Votre PDF a Ã©tÃ© converti en DOCX avec succÃ¨s ! Cliquez sur le bouton de tÃ©lÃ©chargement pour enregistrer votre fichier."
     },
     "pdfToExcel": {
       "uploadLabel": "Charger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF ici, ou cliquez pour parcourir.",
-      "extractNote": "Les tableaux de chaque page seront extraits dans des feuilles séparées du fichier Excel.",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF ici, ou cliquez pour parcourir.",
+      "extractNote": "Les tableaux de chaque page seront extraits dans des feuilles sÃ©parÃ©es du fichier Excel.",
       "convertButton": "Convertir en Excel",
-      "successTitle": "Conversion réussie !",
-      "successMessage": "Les tableaux de votre PDF ont été extraits vers Excel."
+      "successTitle": "Conversion rÃ©ussie !",
+      "successMessage": "Les tableaux de votre PDF ont Ã©tÃ© extraits vers Excel."
     },
     "pdfToPptx": {
       "uploadLabel": "Charger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF ici, ou cliquez pour parcourir.",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF ici, ou cliquez pour parcourir.",
       "optionsTitle": "Options de conversion",
-      "dpiLabel": "Qualité d'image (DPI)",
-      "dpiHint": "Un DPI plus élevé signifie une meilleure qualité mais une taille de fichier plus importante.",
-      "lowSet": "Basse (72 DPI - fichier léger)",
+      "dpiLabel": "QualitÃ© d'image (DPI)",
+      "dpiHint": "Un DPI plus Ã©levÃ© signifie une meilleure qualitÃ© mais une taille de fichier plus importante.",
+      "lowSet": "Basse (72 DPI - fichier lÃ©ger)",
       "mediumSet": "Moyenne (150 DPI - standard)",
-      "highSet": "Haute (200 DPI - haute qualité)",
-      "veryHighSet": "Très haute (300 DPI - qualité impression)",
+      "highSet": "Haute (200 DPI - haute qualitÃ©)",
+      "veryHighSet": "TrÃ¨s haute (300 DPI - qualitÃ© impression)",
       "convertButton": "Convertir en PowerPoint",
-      "successTitle": "Conversion réussie !",
-      "successMessage": "Votre PDF a été converti en présentation PowerPoint."
+      "successTitle": "Conversion rÃ©ussie !",
+      "successMessage": "Votre PDF a Ã©tÃ© converti en prÃ©sentation PowerPoint."
     },
     "wordToPdf": {
-      "uploadLabel": "Télécharger un document Word",
-      "uploadDescription": "Glissez-déposez un document Word (.docx) ici ou cliquez pour sélectionner.",
+      "uploadLabel": "TÃ©lÃ©charger un document Word",
+      "uploadDescription": "Glissez-dÃ©posez un document Word (.docx) ici ou cliquez pour sÃ©lectionner.",
       "convertButton": "Convertir en PDF",
-      "successMessage": "Votre document Word a été converti en PDF avec succès !"
+      "successMessage": "Votre document Word a Ã©tÃ© converti en PDF avec succÃ¨s !"
     },
     "psdToPdf": {
-      "uploadLabel": "Télécharger un fichier PSD",
-      "uploadDescription": "Glissez-déposez un fichier PSD (Photoshop) ici, ou cliquez pour parcourir.",
+      "uploadLabel": "TÃ©lÃ©charger un fichier PSD",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PSD (Photoshop) ici, ou cliquez pour parcourir.",
       "convertButton": "Convertir en PDF",
-      "successMessage": "PSD converti en PDF avec succès ! Cliquez sur le bouton de téléchargement pour enregistrer votre fichier."
+      "successMessage": "PSD converti en PDF avec succÃ¨s ! Cliquez sur le bouton de tÃ©lÃ©chargement pour enregistrer votre fichier."
     },
     "excelToPdf": {
-      "uploadLabel": "Télécharger un fichier Excel",
-      "uploadDescription": "Glissez-déposez un fichier Excel (.xlsx) ici ou cliquez pour sélectionner.",
+      "uploadLabel": "TÃ©lÃ©charger un fichier Excel",
+      "uploadDescription": "Glissez-dÃ©posez un fichier Excel (.xlsx) ici ou cliquez pour sÃ©lectionner.",
       "convertButton": "Convertir en PDF",
-      "successMessage": "Votre fichier Excel a été converti en PDF avec succès !"
+      "successMessage": "Votre fichier Excel a Ã©tÃ© converti en PDF avec succÃ¨s !"
     },
     "pptxToPdf": {
-      "uploadLabel": "Télécharger un fichier PowerPoint",
-      "uploadDescription": "Glissez-déposez un fichier PowerPoint (.pptx) ici ou cliquez pour sélectionner.",
+      "uploadLabel": "TÃ©lÃ©charger un fichier PowerPoint",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PowerPoint (.pptx) ici ou cliquez pour sÃ©lectionner.",
       "convertButton": "Convertir en PDF",
-      "successMessage": "Votre fichier PowerPoint a été converti en PDF avec succès !"
+      "successMessage": "Votre fichier PowerPoint a Ã©tÃ© converti en PDF avec succÃ¨s !"
     },
     "xpsToPdf": {
-      "uploadLabel": "Télécharger un fichier XPS",
-      "uploadDescription": "Glissez-déposez un fichier XPS ici ou cliquez pour sélectionner.",
+      "uploadLabel": "TÃ©lÃ©charger un fichier XPS",
+      "uploadDescription": "Glissez-dÃ©posez un fichier XPS ici ou cliquez pour sÃ©lectionner.",
       "convertButton": "Convertir en PDF",
-      "successMessage": "Votre fichier XPS a été converti en PDF avec succès !"
+      "successMessage": "Votre fichier XPS a Ã©tÃ© converti en PDF avec succÃ¨s !"
     },
     "rtfToPdf": {
-      "uploadLabel": "Télécharger un fichier RTF",
-      "uploadDescription": "Glissez-déposez un fichier RTF ici ou cliquez pour sélectionner.",
+      "uploadLabel": "TÃ©lÃ©charger un fichier RTF",
+      "uploadDescription": "Glissez-dÃ©posez un fichier RTF ici ou cliquez pour sÃ©lectionner.",
       "convertButton": "Convertir en PDF",
-      "successMessage": "Votre fichier RTF a été converti en PDF avec succès !"
+      "successMessage": "Votre fichier RTF a Ã©tÃ© converti en PDF avec succÃ¨s !"
     },
     "epubToPdf": {
-      "uploadLabel": "Télécharger un fichier EPUB",
-      "uploadDescription": "Glissez-déposez un fichier EPUB de livre électronique ici ou cliquez pour sélectionner.",
+      "uploadLabel": "TÃ©lÃ©charger un fichier EPUB",
+      "uploadDescription": "Glissez-dÃ©posez un fichier EPUB de livre Ã©lectronique ici ou cliquez pour sÃ©lectionner.",
       "convertButton": "Convertir en PDF",
-      "successMessage": "Votre fichier EPUB a été converti en PDF avec succès !"
+      "successMessage": "Votre fichier EPUB a Ã©tÃ© converti en PDF avec succÃ¨s !"
     },
     "mobiToPdf": {
-      "uploadLabel": "Télécharger un fichier MOBI",
-      "uploadDescription": "Glissez-déposez un fichier MOBI/AZW de livre électronique ici ou cliquez pour sélectionner.",
+      "uploadLabel": "TÃ©lÃ©charger un fichier MOBI",
+      "uploadDescription": "Glissez-dÃ©posez un fichier MOBI/AZW de livre Ã©lectronique ici ou cliquez pour sÃ©lectionner.",
       "convertButton": "Convertir en PDF",
-      "successMessage": "Votre fichier MOBI a été converti en PDF avec succès !"
+      "successMessage": "Votre fichier MOBI a Ã©tÃ© converti en PDF avec succÃ¨s !"
     },
     "fb2ToPdf": {
-      "uploadLabel": "Télécharger des fichiers FB2",
-      "uploadDescription": "Glissez-déposez des fichiers FB2 de livres électroniques ici ou cliquez pour sélectionner. Prend en charge plusieurs fichiers.",
+      "uploadLabel": "TÃ©lÃ©charger des fichiers FB2",
+      "uploadDescription": "Glissez-dÃ©posez des fichiers FB2 de livres Ã©lectroniques ici ou cliquez pour sÃ©lectionner. Prend en charge plusieurs fichiers.",
       "convertButton": "Convertir en PDF",
-      "successMessage": "Votre/Vos fichier(s) FB2 a/ont été converti(s) en PDF avec succès !"
+      "successMessage": "Votre/Vos fichier(s) FB2 a/ont Ã©tÃ© converti(s) en PDF avec succÃ¨s !"
     },
     "djvuToPdf": {
-      "uploadLabel": "Télécharger un fichier DJVU",
-      "uploadDescription": "Glissez-déposez un fichier DJVU ici ou cliquez.",
+      "uploadLabel": "TÃ©lÃ©charger un fichier DJVU",
+      "uploadDescription": "Glissez-dÃ©posez un fichier DJVU ici ou cliquez.",
       "optionsTitle": "Options de conversion",
       "dpiLabel": "DPI de sortie",
-      "dpiHint": "DPI plus élevé = fichier plus grand, meilleure qualité",
-      "qualityLabel": "Qualité d'image",
-      "qualityHint": "Qualité de compression JPEG pour les pages",
+      "dpiHint": "DPI plus Ã©levÃ© = fichier plus grand, meilleure qualitÃ©",
+      "qualityLabel": "QualitÃ© d'image",
+      "qualityHint": "QualitÃ© de compression JPEG pour les pages",
       "convertButton": "Convertir en PDF",
-      "successTitle": "Conversion réussie !",
-      "successMessage": "Votre fichier DJVU a été converti en PDF avec succès !"
+      "successTitle": "Conversion rÃ©ussie !",
+      "successMessage": "Votre fichier DJVU a Ã©tÃ© converti en PDF avec succÃ¨s !"
     },
     "deskewPdf": {
-      "uploadLabel": "Charger des fichiers PDF scannés",
-      "uploadDescription": "Glissez-déposez des fichiers PDF ici. Vous pouvez traiter jusqu'à 10 fichiers à la fois.",
-      "filesTitle": "Fichiers à redresser",
+      "uploadLabel": "Charger des fichiers PDF scannÃ©s",
+      "uploadDescription": "Glissez-dÃ©posez des fichiers PDF ici. Vous pouvez traiter jusqu'Ã  10 fichiers Ã  la fois.",
+      "filesTitle": "Fichiers Ã  redresser",
       "optionsTitle": "Options de redressement",
-      "thresholdLabel": "Seuil de détection",
-      "thresholdDesc": "Des valeurs plus élevées détectent des angles d'inclinaison plus subtils. Par défaut : 10",
+      "thresholdLabel": "Seuil de dÃ©tection",
+      "thresholdDesc": "Des valeurs plus Ã©levÃ©es dÃ©tectent des angles d'inclinaison plus subtils. Par dÃ©faut : 10",
       "dpiLabel": "DPI d'analyse",
-      "dpiDesc": "Un DPI plus élevé permet une détection plus précise mais prend plus de temps.",
+      "dpiDesc": "Un DPI plus Ã©levÃ© permet une dÃ©tection plus prÃ©cise mais prend plus de temps.",
       "processButton": "Redresser les PDF",
-      "downloadAllZip": "Tout télécharger en ZIP",
-      "successMessage": "Fichier(s) PDF redressé(s) avec succès !"
+      "downloadAllZip": "Tout tÃ©lÃ©charger en ZIP",
+      "successMessage": "Fichier(s) PDF redressÃ©(s) avec succÃ¨s !"
     },
     "pdfBooklet": {
       "uploadLabel": "Charger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF pour créer une mise en page de livret.",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF pour crÃ©er une mise en page de livret.",
       "optionsTitle": "Options de livret",
       "gridModeLabel": "Mode grille",
-      "gridModeDesc": "1x2 est le standard pour les livrets. Utilisez des grilles plus grandes pour économiser du papier.",
+      "gridModeDesc": "1x2 est le standard pour les livrets. Utilisez des grilles plus grandes pour Ã©conomiser du papier.",
       "paperSizeLabel": "Taille du papier",
       "orientationLabel": "Orientation",
       "rotationLabel": "Rotation des pages",
       "paddingLabel": "Marge interne",
-      "previewLabel": "Aperçu de la mise en page",
-      "previewDesc": "Cet aperçu montre comment les pages seront disposées sur chaque feuille.",
-      "createButton": "Créer le livret",
-      "successMessage": "Livret créé avec succès ! Cliquez sur télécharger pour enregistrer."
+      "previewLabel": "AperÃ§u de la mise en page",
+      "previewDesc": "Cet aperÃ§u montre comment les pages seront disposÃ©es sur chaque feuille.",
+      "createButton": "CrÃ©er le livret",
+      "successMessage": "Livret crÃ©Ã© avec succÃ¨s ! Cliquez sur tÃ©lÃ©charger pour enregistrer."
     },
     "rasterizePdf": {
       "uploadLabel": "Charger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF pour le rastériser en images ou un nouveau PDF.",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF pour le rastÃ©riser en images ou un nouveau PDF.",
       "optionsTitle": "Options de sortie",
-      "dpiLabel": "Résolution (DPI)",
+      "dpiLabel": "RÃ©solution (DPI)",
       "formatLabel": "Format des images",
-      "qualityLabel": "Qualité",
+      "qualityLabel": "QualitÃ©",
       "pageRangeLabel": "Plage de pages (optionnel)",
       "pageRangeDesc": "Laissez vide pour convertir toutes les pages.",
       "bgColorLabel": "Couleur de fond",
-      "convertButton": "Rastériser",
-      "successMessage": "Rastérisation terminée ! Cliquez sur télécharger pour enregistrer votre fichier."
+      "convertButton": "RastÃ©riser",
+      "successMessage": "RastÃ©risation terminÃ©e ! Cliquez sur tÃ©lÃ©charger pour enregistrer votre fichier."
     },
     "markdownToPdf": {
       "uploadLabel": "Charger un fichier Markdown",
-      "uploadDescription": "Glissez-déposez un fichier .md ou .markdown pour le convertir en PDF.",
-      "manualInput": "Écrire du Markdown",
+      "uploadDescription": "Glissez-dÃ©posez un fichier .md ou .markdown pour le convertir en PDF.",
+      "manualInput": "Ã‰crire du Markdown",
       "uploadFile": "Charger un fichier",
-      "editorLabel": "Éditeur Markdown",
-      "previewLabel": "Aperçu",
-      "showPreview": "Afficher l'aperçu",
-      "hidePreview": "Masquer l'aperçu",
+      "editorLabel": "Ã‰diteur Markdown",
+      "previewLabel": "AperÃ§u",
+      "showPreview": "Afficher l'aperÃ§u",
+      "hidePreview": "Masquer l'aperÃ§u",
       "optionsTitle": "Options de conversion",
-      "themeLabel": "Thème",
+      "themeLabel": "ThÃ¨me",
       "pageSizeLabel": "Taille de page",
-      "gfmLabel": "Activer le GitHub Flavored Markdown (tableaux, listes de tâches, etc.)",
+      "gfmLabel": "Activer le GitHub Flavored Markdown (tableaux, listes de tÃ¢ches, etc.)",
       "syntaxHighlightLabel": "Activer la coloration syntaxique pour les blocs de code",
       "convertButton": "Convertir en PDF",
-      "successMessage": "PDF créé avec succès ! Cliquez sur télécharger pour enregistrer."
+      "successMessage": "PDF crÃ©Ã© avec succÃ¨s ! Cliquez sur tÃ©lÃ©charger pour enregistrer."
     },
     "emailToPdf": {
       "uploadLabel": "Charger un e-mail",
-      "uploadDescription": "Glissez-déposez un fichier d'e-mail (.eml) pour le convertir en PDF.",
+      "uploadDescription": "Glissez-dÃ©posez un fichier d'e-mail (.eml) pour le convertir en PDF.",
       "optionsTitle": "Options de conversion",
       "pageSizeLabel": "Taille de page",
       "includeCcBccLabel": "Incluer les champs CC/BCC",
-      "includeAttachmentsLabel": "Inclure la liste des pièces jointes",
+      "includeAttachmentsLabel": "Inclure la liste des piÃ¨ces jointes",
       "timezoneLabel": "Fuseau horaire",
       "convertButton": "Convertir en PDF",
-      "successMessage": "E-mail converti avec succès !"
+      "successMessage": "E-mail converti avec succÃ¨s !"
     },
     "cbzToPdf": {
       "uploadLabel": "Charger un fichier CBZ",
-      "uploadDescription": "Glissez-déposez une archive de bande dessinée (.cbz) pour la convertir en PDF.",
+      "uploadDescription": "Glissez-dÃ©posez une archive de bande dessinÃ©e (.cbz) pour la convertir en PDF.",
       "optionsTitle": "Options de conversion",
       "pageSizeLabel": "Taille de page",
-      "qualityLabel": "Qualité d'image",
-      "preserveAspectLabel": "Préserver le ratio d'aspect",
+      "qualityLabel": "QualitÃ© d'image",
+      "preserveAspectLabel": "PrÃ©server le ratio d'aspect",
       "convertButton": "Convertir en PDF",
-      "successMessage": "Bande dessinée convertie avec succès !"
+      "successMessage": "Bande dessinÃ©e convertie avec succÃ¨s !"
     },
     "pdfToPdfa": {
       "uploadLabel": "Charger des fichiers PDF",
-      "uploadDescription": "Glissez-déposez des fichiers PDF pour les convertir au format PDF/A.",
-      "filesTitle": "Fichiers à convertir",
+      "uploadDescription": "Glissez-dÃ©posez des fichiers PDF pour les convertir au format PDF/A.",
+      "filesTitle": "Fichiers Ã  convertir",
       "optionsTitle": "Options PDF/A",
       "levelLabel": "Niveau PDF/A",
       "embedFontsLabel": "Incorporer toutes les polices",
       "flattenTransparencyLabel": "Aplatir la transparence (requis pour PDF/A-1b)",
       "convertButton": "Convertir en PDF/A",
-      "downloadAllZip": "Tout télécharger en ZIP",
-      "successMessage": "Fichier(s) converti(s) en PDF/A avec succès !"
+      "downloadAllZip": "Tout tÃ©lÃ©charger en ZIP",
+      "successMessage": "Fichier(s) converti(s) en PDF/A avec succÃ¨s !"
     },
     "fontToOutline": {
       "uploadLabel": "Charger des fichiers PDF",
-      "uploadDescription": "Glissez-déposez des fichiers PDF pour convertir les polices en tracés.",
+      "uploadDescription": "Glissez-dÃ©posez des fichiers PDF pour convertir les polices en tracÃ©s.",
       "filesTitle": "Fichiers",
       "optionsTitle": "Options",
-      "dpiLabel": "DPI de rastérisation",
-      "convertButton": "Convertir les polices en tracés",
-      "downloadAllZip": "Tout télécharger en ZIP",
-      "successMessage": "Fichier(s) converti(s) avec succès !"
+      "dpiLabel": "DPI de rastÃ©risation",
+      "convertButton": "Convertir les polices en tracÃ©s",
+      "downloadAllZip": "Tout tÃ©lÃ©charger en ZIP",
+      "successMessage": "Fichier(s) converti(s) avec succÃ¨s !"
     },
     "extractTables": {
       "uploadLabel": "Charger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF pour en extraire les tableaux.",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF pour en extraire les tableaux.",
       "optionsTitle": "Options d'extraction",
       "formatLabel": "Format de sortie",
       "pageRangeLabel": "Plage de pages (optionnel)",
       "minColumnsLabel": "Colonnes min",
       "minRowsLabel": "Lignes min",
-      "includePageNumbersLabel": "Inclure les numéros de page dans la sortie",
+      "includePageNumbersLabel": "Inclure les numÃ©ros de page dans la sortie",
       "extractButton": "Extraire les tableaux",
-      "successMessage": "Tableaux extraits avec succès ! Cliquez sur télécharger pour enregistrer."
+      "successMessage": "Tableaux extraits avec succÃ¨s ! Cliquez sur tÃ©lÃ©charger pour enregistrer."
     },
     "ocgManager": {
       "uploadLabel": "Charger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un PDF pour gérer ses calques (OCG).",
+      "uploadDescription": "Glissez-dÃ©posez un PDF pour gÃ©rer ses calques (OCG).",
       "layersTitle": "Calques PDF",
       "noLayers": "Ce PDF n'a pas de calques (OCG).",
       "addLayerLabel": "Ajouter un nouveau calque",
-      "successMessage": "Modifications des calques enregistrées avec succès !"
+      "successMessage": "Modifications des calques enregistrÃ©es avec succÃ¨s !"
     },
     "pdfReader": {
       "uploadLabel": "Ouvrir un fichier PDF",
       "uploadDescription": "Ouvrez un fichier PDF pour le lire et le consulter."
     },
     "pdfToMarkdown": {
-      "uploadLabel": "Télécharger un fichier PDF",
+      "uploadLabel": "TÃ©lÃ©charger un fichier PDF",
       "uploadDescription": "Faites glisser un fichier PDF ici ou cliquez pour parcourir.",
       "optionsTitle": "Options de conversion",
       "pageRange": "Plage de pages",
       "pageRangePlaceholder": "ex: 1-3, 5, 7",
       "pageRangeHint": "Laisser vide pour toutes les pages",
-      "includePageNumbers": "Inclure les numéros de page comme titres",
+      "includePageNumbers": "Inclure les numÃ©ros de page comme titres",
       "preserveLineBreaks": "Conserver les sauts de ligne",
       "convertButton": "Convertir en Markdown",
-      "previewTab": "Aperçu",
+      "previewTab": "AperÃ§u",
       "sourceTab": "Source Markdown",
-      "successMessage": "Votre PDF a été converti en Markdown avec succès ! Cliquez sur le bouton de téléchargement pour enregistrer votre fichier.",
-      "failed": "Échec de la conversion du PDF en Markdown."
+      "successMessage": "Votre PDF a Ã©tÃ© converti en Markdown avec succÃ¨s ! Cliquez sur le bouton de tÃ©lÃ©chargement pour enregistrer votre fichier.",
+      "failed": "Ã‰chec de la conversion du PDF en Markdown."
     },
     "findAndRedact": {
-      "uploadLabel": "Télécharger un fichier PDF",
-      "uploadDescription": "Glissez-déposez un fichier PDF pour rechercher et biffer du texte.",
+      "uploadLabel": "TÃ©lÃ©charger un fichier PDF",
+      "uploadDescription": "Glissez-dÃ©posez un fichier PDF pour rechercher et biffer du texte.",
       "searchTitle": "Rechercher du texte",
       "searchTermLabel": "Termes de recherche",
-      "searchTermPlaceholder": "Entrez le texte à rechercher (ex. numéro de compte, nom)...",
-      "searchInputPlaceholder": "Entrez les termes de recherche, séparés par des virgules...",
-      "searchInputHelp": "Astuce : Séparez plusieurs termes par des virgules (,)",
-      "multipleTermsPlaceholder": "Entrez les termes de recherche (un par ligne ou séparés par des virgules)...\nExemple :\nJean Dupont\ncompte123\n555-1234",
+      "searchTermPlaceholder": "Entrez le texte Ã  rechercher (ex. numÃ©ro de compte, nom)...",
+      "searchInputPlaceholder": "Entrez les termes de recherche, sÃ©parÃ©s par des virgules...",
+      "searchInputHelp": "Astuce : SÃ©parez plusieurs termes par des virgules (,)",
+      "multipleTermsPlaceholder": "Entrez les termes de recherche (un par ligne ou sÃ©parÃ©s par des virgules)...\nExemple :\nJean Dupont\ncompte123\n555-1234",
       "termsCount": "{count} terme(s) de recherche",
       "searchButton": "Rechercher",
       "searching": "Recherche en cours...",
-      "caseSensitive": "Sensible à la casse",
+      "caseSensitive": "Sensible Ã  la casse",
       "wholeWord": "Mots entiers uniquement",
-      "useRegex": "Utiliser des expressions régulières",
+      "useRegex": "Utiliser des expressions rÃ©guliÃ¨res",
       "enterSearchTerm": "Veuillez entrer au moins un terme de recherche.",
-      "noMatchesFound": "Aucune correspondance trouvée pour les termes de recherche.",
-      "searchFailed": "Échec de la recherche dans le PDF.",
-      "matchesFound": "{count} correspondances trouvées",
+      "noMatchesFound": "Aucune correspondance trouvÃ©e pour les termes de recherche.",
+      "searchFailed": "Ã‰chec de la recherche dans le PDF.",
+      "matchesFound": "{count} correspondances trouvÃ©es",
       "filterByPage": "Filtrer par page",
       "allPages": "Toutes les pages",
       "pageNumber": "Page {page}",
       "pageInfo": "Page {page}",
-      "selectedCount": "{selected} sur {total} sélectionné(s)",
-      "selectMatchesToRedact": "Veuillez sélectionner au moins une correspondance à biffer.",
+      "selectedCount": "{selected} sur {total} sÃ©lectionnÃ©(s)",
+      "selectMatchesToRedact": "Veuillez sÃ©lectionner au moins une correspondance Ã  biffer.",
       "redactionOptions": "Options de biffure",
       "redactionColor": "Couleur de biffure",
       "replacementText": "Texte de remplacement (optionnel)",
-      "replacementTextPlaceholder": "ex., [BIF biffé]",
-      "addBorder": "Ajouter une bordure autour des zones biffées",
+      "replacementTextPlaceholder": "ex., [BIF biffÃ©]",
+      "addBorder": "Ajouter une bordure autour des zones biffÃ©es",
       "warningTitle": "Avertissement",
-      "warningText": "La biffure est permanente. Une fois appliquée, le contenu original ne peut pas être récupéré.",
-      "redactButton": "Biffer {count} sélectionné(s)",
-      "redactFailed": "Échec de l'application des biffures.",
-      "successMessage": "Texte sélectionné biffé avec succès ! Cliquez sur télécharger pour enregistrer.",
-      "previewTitle": "Aperçu",
+      "warningText": "La biffure est permanente. Une fois appliquÃ©e, le contenu original ne peut pas Ãªtre rÃ©cupÃ©rÃ©.",
+      "redactButton": "Biffer {count} sÃ©lectionnÃ©(s)",
+      "redactFailed": "Ã‰chec de l'application des biffures.",
+      "successMessage": "Texte sÃ©lectionnÃ© biffÃ© avec succÃ¨s ! Cliquez sur tÃ©lÃ©charger pour enregistrer.",
+      "previewTitle": "AperÃ§u",
       "pagesWithMatches": "Pages avec correspondances :",
-      "selectedMatch": "Sélectionné",
-      "unselectedMatch": "Non sélectionné"
+      "selectedMatch": "SÃ©lectionnÃ©",
+      "unselectedMatch": "Non sÃ©lectionnÃ©"
     }
   },
   "faqPage": {
     "title": "Foire Aux Questions",
-    "subtitle": "Trouvez les réponses aux questions les plus fréquentes sur {brand}",
+    "subtitle": "Trouvez les rÃ©ponses aux questions les plus frÃ©quentes sur {brand}",
     "searchPlaceholder": "Rechercher une question...",
-    "noResults": "Aucune question trouvée.",
-    "expandAll": "Tout développer",
-    "collapseAll": "Tout réduire",
+    "noResults": "Aucune question trouvÃ©e.",
+    "expandAll": "Tout dÃ©velopper",
+    "collapseAll": "Tout rÃ©duire",
     "categories": {
       "all": "Toutes",
-      "general": "Général",
-      "privacy": "Confidentialité et Sécurité",
-      "features": "Fonctionnalités",
+      "general": "GÃ©nÃ©ral",
+      "privacy": "ConfidentialitÃ© et SÃ©curitÃ©",
+      "features": "FonctionnalitÃ©s",
       "technical": "Technique",
       "languages": "Langues"
     },
@@ -2190,75 +2190,75 @@
       "general": {
         "whatIs": {
           "question": "Qu'est-ce que OpenToolsKit ?",
-          "answer": "OpenToolsKit est une boîte à outils PDF gratuite et respectueuse de la vie privée qui s'exécute entièrement dans votre navigateur. Elle offre plus de {count} outils professionnels pour éditer, convertir, fusionner, diviser et crypter des fichiers PDF sans jamais les télécharger sur un serveur."
+          "answer": "OpenToolsKit est une boÃ®te Ã  outils PDF gratuite et respectueuse de la vie privÃ©e qui s'exÃ©cute entiÃ¨rement dans votre navigateur. Elle offre plus de {count} outils professionnels pour Ã©diter, convertir, fusionner, diviser et crypter des fichiers PDF sans jamais les tÃ©lÃ©charger sur un serveur."
         },
         "isFree": {
           "question": "OpenToolsKit est-il vraiment gratuit ?",
-          "answer": "Oui, OpenToolsKit est totalement gratuit. Il n'y a pas de frais cachés, pas d'abonnement premium et aucune inscription n'est requise. Toutes les fonctionnalités sont accessibles à tous."
+          "answer": "Oui, OpenToolsKit est totalement gratuit. Il n'y a pas de frais cachÃ©s, pas d'abonnement premium et aucune inscription n'est requise. Toutes les fonctionnalitÃ©s sont accessibles Ã  tous."
         },
         "account": {
-          "question": "Dois-je créer un compte ?",
-          "answer": "Non, vous n'avez pas besoin de créer un compte ou de vous inscrire pour utiliser OpenToolsKit. Il vous suffit de visiter le site web pour commencer à utiliser n'importe quel outil immédiatement."
+          "question": "Dois-je crÃ©er un compte ?",
+          "answer": "Non, vous n'avez pas besoin de crÃ©er un compte ou de vous inscrire pour utiliser OpenToolsKit. Il vous suffit de visiter le site web pour commencer Ã  utiliser n'importe quel outil immÃ©diatement."
         }
       },
       "privacy": {
         "uploaded": {
-          "question": "Mes fichiers sont-ils téléchargés sur un serveur ?",
-          "answer": "Non, vos fichiers ne sont jamais téléchargés sur un serveur. Tout le traitement PDF se fait localement dans votre navigateur en utilisant JavaScript et WebAssembly. Vos fichiers ne quittent jamais votre appareil."
+          "question": "Mes fichiers sont-ils tÃ©lÃ©chargÃ©s sur un serveur ?",
+          "answer": "Non, vos fichiers ne sont jamais tÃ©lÃ©chargÃ©s sur un serveur. Tout le traitement PDF se fait localement dans votre navigateur en utilisant JavaScript et WebAssembly. Vos fichiers ne quittent jamais votre appareil."
         },
         "safe": {
-          "question": "Est-il sûr d'utiliser OpenToolsKit pour des documents sensibles ?",
-          "answer": "Oui, OpenToolsKit est conçu avec la confidentialité comme priorité. Comme tout le traitement s'effectue localement dans votre navigateur, vos documents sensibles restent sur votre appareil et ne sont jamais transmis sur Internet."
+          "question": "Est-il sÃ»r d'utiliser OpenToolsKit pour des documents sensibles ?",
+          "answer": "Oui, OpenToolsKit est conÃ§u avec la confidentialitÃ© comme prioritÃ©. Comme tout le traitement s'effectue localement dans votre navigateur, vos documents sensibles restent sur votre appareil et ne sont jamais transmis sur Internet."
         },
         "storage": {
-          "question": "Qu'advient-il de mes fichiers après le traitement ?",
-          "answer": "Vos fichiers sont temporairement stockés dans la mémoire de votre navigateur pendant le traitement. Une fois que vous fermez l'onglet du navigateur ou quittez la page, toutes les données des fichiers sont automatiquement effacées. Nous ne stockons aucun de vos fichiers."
+          "question": "Qu'advient-il de mes fichiers aprÃ¨s le traitement ?",
+          "answer": "Vos fichiers sont temporairement stockÃ©s dans la mÃ©moire de votre navigateur pendant le traitement. Une fois que vous fermez l'onglet du navigateur ou quittez la page, toutes les donnÃ©es des fichiers sont automatiquement effacÃ©es. Nous ne stockons aucun de vos fichiers."
         }
       },
       "features": {
         "operations": {
-          "question": "Quelles opérations PDF puis-je effectuer ?",
-          "answer": "OpenToolsKit propose plus de {count} outils, notamment : fusionner, diviser, compresser, convertir (vers/depuis des images, texte, JSON), éditer, annoter, signer, ajouter des filigranes, crypter/décrypter, OCR, et bien plus encore."
+          "question": "Quelles opÃ©rations PDF puis-je effectuer ?",
+          "answer": "OpenToolsKit propose plus de {count} outils, notamment : fusionner, diviser, compresser, convertir (vers/depuis des images, texte, JSON), Ã©diter, annoter, signer, ajouter des filigranes, crypter/dÃ©crypter, OCR, et bien plus encore."
         },
         "merge": {
           "question": "Puis-je fusionner plusieurs fichiers PDF ?",
-          "answer": "Oui, vous pouvez fusionner plusieurs fichiers PDF en un seul. Utilisez l'outil Fusionner PDF, téléchargez vos fichiers, organisez-les dans l'ordre souhaité et cliquez sur Fusionner."
+          "answer": "Oui, vous pouvez fusionner plusieurs fichiers PDF en un seul. Utilisez l'outil Fusionner PDF, tÃ©lÃ©chargez vos fichiers, organisez-les dans l'ordre souhaitÃ© et cliquez sur Fusionner."
         },
         "images": {
           "question": "Puis-je convertir des images en PDF ?",
-          "answer": "Oui, OpenToolsKit permet de convertir divers formats d'image (JPG, PNG, WebP, BMP, TIFF, SVG, HEIC) en PDF. Vous pouvez convertir une seule ou plusieurs images à la fois."
+          "answer": "Oui, OpenToolsKit permet de convertir divers formats d'image (JPG, PNG, WebP, BMP, TIFF, SVG, HEIC) en PDF. Vous pouvez convertir une seule ou plusieurs images Ã  la fois."
         },
         "edit": {
           "question": "Puis-je modifier le texte d'un PDF ?",
-          "answer": "OpenToolsKit propose des outils d'annotation et d'édition comprenant le surlignage, l'ajout de texte, de formes, d'images et de signatures. Pour une édition complète du texte, l'outil Éditeur PDF fournit des fonctionnalités d'annotation complètes."
+          "answer": "OpenToolsKit propose des outils d'annotation et d'Ã©dition comprenant le surlignage, l'ajout de texte, de formes, d'images et de signatures. Pour une Ã©dition complÃ¨te du texte, l'outil Ã‰diteur PDF fournit des fonctionnalitÃ©s d'annotation complÃ¨tes."
         }
       },
       "technical": {
         "browsers": {
           "question": "Quels navigateurs sont pris en charge ?",
-          "answer": "OpenToolsKit fonctionne dans tous les navigateurs modernes, notamment Chrome, Firefox, Safari et Edge. Nous recommandons d'utiliser la dernière version de votre navigateur pour une expérience optimale."
+          "answer": "OpenToolsKit fonctionne dans tous les navigateurs modernes, notamment Chrome, Firefox, Safari et Edge. Nous recommandons d'utiliser la derniÃ¨re version de votre navigateur pour une expÃ©rience optimale."
         },
         "sizeLimit": {
           "question": "Y a-t-il une limite de taille de fichier ?",
-          "answer": "La plupart des outils prennent en charge des fichiers allant jusqu'à 100 Mo, et des outils comme Fusionner et Compresser supportent jusqu'à 500 Mo. Ces limites sont en place pour garantir des performances fluides dans le navigateur."
+          "answer": "La plupart des outils prennent en charge des fichiers allant jusqu'Ã  100 Mo, et des outils comme Fusionner et Compresser supportent jusqu'Ã  500 Mo. Ces limites sont en place pour garantir des performances fluides dans le navigateur."
         },
         "slow": {
           "question": "Pourquoi le traitement est-il lent avec de gros fichiers ?",
-          "answer": "Comme tout le traitement s'effectue dans le navigateur, les performances dépendent des capacités de votre appareil. Les fichiers volumineux nécessitent plus de mémoire et de puissance de traitement. Pour de meilleurs résultats, fermez les autres onglets et applications."
+          "answer": "Comme tout le traitement s'effectue dans le navigateur, les performances dÃ©pendent des capacitÃ©s de votre appareil. Les fichiers volumineux nÃ©cessitent plus de mÃ©moire et de puissance de traitement. Pour de meilleurs rÃ©sultats, fermez les autres onglets et applications."
         },
         "offline": {
           "question": "OpenToolsKit peut-il fonctionner hors ligne ?",
-          "answer": "Actuellement, OpenToolsKit nécessite une connexion Internet pour charger l'application initiale. Cependant, une fois chargée, le traitement PDF lui-même se fait localement et ne nécessite pas de connexion."
+          "answer": "Actuellement, OpenToolsKit nÃ©cessite une connexion Internet pour charger l'application initiale. Cependant, une fois chargÃ©e, le traitement PDF lui-mÃªme se fait localement et ne nÃ©cessite pas de connexion."
         }
       },
       "languages": {
         "supported": {
           "question": "Quelles langues sont prises en charge ?",
-          "answer": "OpenToolsKit est disponible en 9 langues : anglais, japonais, coréen, espagnol, français, allemand, chinois, portugais et arabe (avec support de droite à gauche)."
+          "answer": "OpenToolsKit est disponible en 9 langues : anglais, japonais, corÃ©en, espagnol, franÃ§ais, allemand, chinois, portugais et arabe (avec support de droite Ã  gauche)."
         },
         "change": {
           "question": "Comment puis-je changer de langue ?",
-          "answer": "Vous pouvez changer de langue en utilisant le sélecteur de langue en haut de la page. Votre préférence sera enregistrée pour vos prochaines visites."
+          "answer": "Vous pouvez changer de langue en utilisant le sÃ©lecteur de langue en haut de la page. Votre prÃ©fÃ©rence sera enregistrÃ©e pour vos prochaines visites."
         }
       }
     },
@@ -2269,63 +2269,63 @@
     }
   },
   "aboutPage": {
-    "title": "À propos de {brand}",
+    "title": "Ã€ propos de {brand}",
     "description": "{brand} is an open-source browser tool platform that launches with {count}+ PDF tools, a workflow editor, and public source distribution.",
     "mission": {
       "title": "Notre Mission",
       "p1": "We believe private browser tools should stay accessible, inspectable, and useful beyond a single file format. That is why {brand} has been shaped into a broader browser-tool platform.",
       "p2": "Unlike traditional services that depend on remote processing for routine document work, {brand} keeps core flows in the browser where applicable and keeps source availability visible through a public AGPL repository.",
-      "p3": "Phase 1 focuses on the PDF suite, workflow editor, and extension, while preparing the platform for additional tool families."
+      "p3": "The current public site focuses on PDF tools, workflow editing, and source-visible browser utilities while preparing the platform for additional tool families."
     },
     "values": {
       "title": "Nos Valeurs",
       "privacy": {
-        "title": "La Vie Privée Avant Tout",
-        "description": "Vos fichiers ne quittent jamais votre appareil. Tout le traitement se fait localement dans votre navigateur, garantissant une confidentialité et une sécurité totales."
+        "title": "La Vie PrivÃ©e Avant Tout",
+        "description": "Vos fichiers ne quittent jamais votre appareil. Tout le traitement se fait localement dans votre navigateur, garantissant une confidentialitÃ© et une sÃ©curitÃ© totales."
       },
       "fast": {
         "title": "Rapide et Efficace",
-        "description": "Propulsé par des technologies Web modernes, OpenToolsKit offre un traitement PDF ultra-rapide sans avoir besoin de téléchargements montants ou descendants."
+        "description": "PropulsÃ© par des technologies Web modernes, OpenToolsKit offre un traitement PDF ultra-rapide sans avoir besoin de tÃ©lÃ©chargements montants ou descendants."
       },
       "accessible": {
         "title": "Accessible Partout",
-        "description": "Disponible en 9 langues et fonctionne sur n'importe quel appareil doté d'un navigateur moderne. Aucune installation requise."
+        "description": "Disponible en 9 langues et fonctionne sur n'importe quel appareil dotÃ© d'un navigateur moderne. Aucune installation requise."
       },
       "free": {
         "title": "Gratuit pour Toujours",
-        "description": "OpenToolsKit est totalement gratuit, sans frais cachés, sans inscription requise et sans limites d'utilisation."
+        "description": "OpenToolsKit est totalement gratuit, sans frais cachÃ©s, sans inscription requise et sans limites d'utilisation."
       },
       "openSource": {
         "title": "Open Source",
-        "description": "Conçu dans un esprit de transparence. Notre code est open source, ce qui permet à quiconque de vérifier nos engagements en matière de confidentialité."
+        "description": "ConÃ§u dans un esprit de transparence. Notre code est open source, ce qui permet Ã  quiconque de vÃ©rifier nos engagements en matiÃ¨re de confidentialitÃ©."
       },
       "community": {
-        "title": "Axé sur la Communauté",
-        "description": "Développé grâce aux retours des utilisateurs du monde entier. Nous nous améliorons continuellement en fonction de vos besoins."
+        "title": "AxÃ© sur la CommunautÃ©",
+        "description": "DÃ©veloppÃ© grÃ¢ce aux retours des utilisateurs du monde entier. Nous nous amÃ©liorons continuellement en fonction de vos besoins."
       }
     },
     "technology": {
       "title": "Construit avec des Technologies Modernes",
-      "description": "{brand} est construit à l'aide de technologies Web de pointe pour garantir la meilleure expérience possible :",
+      "description": "{brand} est construit Ã  l'aide de technologies Web de pointe pour garantir la meilleure expÃ©rience possible :",
       "list": {
-        "nextjs": "<strong1>Next.js</strong1> - Pour un rendu de page rapide et optimisé pour le SEO",
+        "nextjs": "<strong1>Next.js</strong1> - Pour un rendu de page rapide et optimisÃ© pour le SEO",
         "wasm": "<strong1>WebAssembly</strong1> - Pour des performances de traitement PDF proches du natif",
-        "workers": "<strong1>Web Workers</strong1> - Pour un traitement en arrière-plan non bloquant",
-        "pdflib": "<strong1>pdf-lib & PDF.js</strong1> - Bibliothèques de manipulation PDF standard du secteur",
-        "indexeddb": "<strong1>IndexedDB</strong1> - Pour un stockage local sécurisé de votre travail"
+        "workers": "<strong1>Web Workers</strong1> - Pour un traitement en arriÃ¨re-plan non bloquant",
+        "pdflib": "<strong1>pdf-lib & PDF.js</strong1> - BibliothÃ¨ques de manipulation PDF standard du secteur",
+        "indexeddb": "<strong1>IndexedDB</strong1> - Pour un stockage local sÃ©curisÃ© de votre travail"
       },
-      "summary": "This stack supports launch-ready browser tools, static export, local processing, and public-source trust surfaces without forcing a server-bound editing model."
+      "summary": "This stack supports browser tools, static export, local processing, and public-source trust surfaces without forcing a server-bound editing model."
     },
     "cta": {
-      "title": "Prêt à Commencer ?",
-      "description": "Explore our {count}+ launch tools and see how {brand} handles private browser workflows.",
+      "title": "PrÃªt Ã  Commencer ?",
+      "description": "Explore {count}+ tools and see how {brand} handles private browser workflows.",
       "button": "Parcourir Tous les Outils"
     }
   },
   "contactPage": {
     "hero": {
       "title": "Support & Source",
-      "description": "Use GitHub for source access, issue reporting, and AGPL attribution."
+      "description": "Use email for general support and GitHub for developer-facing issues, source access, and AGPL attribution."
     },
     "methods": {
       "email": {
@@ -2363,11 +2363,11 @@
         },
         "subject": {
           "label": "Sujet",
-          "placeholder": "Sélectionnez un sujet",
+          "placeholder": "SÃ©lectionnez un sujet",
           "options": {
-            "general": "Demande Générale",
+            "general": "Demande GÃ©nÃ©rale",
             "bug": "Rapport de Bug",
-            "feature": "Demande de Fonctionnalité",
+            "feature": "Demande de FonctionnalitÃ©",
             "feedback": "Commentaires",
             "other": "Autre"
           }

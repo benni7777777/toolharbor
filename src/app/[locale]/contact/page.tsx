@@ -42,16 +42,16 @@ export default async function ContactPage({ params }: ContactPageProps) {
         data={generateBasicWebPageSchema({
           locale: localeValue,
           path: '/contact',
-          name: 'Support, Source Code, and AGPL Notice',
-          description: 'GitHub support, source code links, and AGPL notice for OpenToolsKit.',
-          aboutName: 'Support and source code',
+          name: 'Contact and Support',
+          description: 'User support, privacy contact, source code links, and AGPL notice for OpenToolsKit.',
+          aboutName: 'Contact and support',
         })}
       />
       <JsonLd
         data={generateBreadcrumbSchema(
           [
             { name: 'Home', path: '' },
-            { name: 'Support', path: '/contact' },
+            { name: 'Contact', path: '/contact' },
           ],
           localeValue
         )}

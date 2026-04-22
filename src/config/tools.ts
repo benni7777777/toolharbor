@@ -1,7 +1,6 @@
 /**
  * Tools configuration file
- * Contains all 67 PDF tools with their properties, categories, and related tools
- * Launch PDF registry for OpenToolsKit phase 1
+ * Contains the OpenToolsKit PDF tool registry with properties, categories, and related tools.
  */
 
 import { Tool, ToolCategory } from '@/types/tool';

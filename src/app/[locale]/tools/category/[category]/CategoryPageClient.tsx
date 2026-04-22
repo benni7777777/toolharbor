@@ -30,6 +30,9 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
     const monetizationProfile = useMonetizationProfile();
     const tools = getToolsByCategory(category);
     const categorySeo = getCategorySeo(category);
+    const showCategoryNativeAd = monetizationProfile.allowNativeUnits && siteConfig.ads.placements.categoryHub.nativeBanner;
+    const showInlineAd = monetizationProfile.allowAggressiveUnits;
+    const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
 
     // Map categories to translation keys (matching ToolsPage structure)
     const categoryTranslationKeys: Record<ToolCategory, string> = {
@@ -58,7 +61,7 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
                     {/* Breadcrumb Navigation */}
                     <nav aria-label="Breadcrumb" className="mb-4 flex items-center text-sm text-[hsl(var(--color-muted-foreground))] animate-in fade-in slide-in-from-top-4 duration-500 delay-100">
                         <Link
-                            href={`/${locale}`}
+                            href={`/${locale}/`}
                             className="flex items-center hover:text-[hsl(var(--color-primary))] transition-colors"
                             title={t('common.navigation.home')}
                         >
@@ -66,7 +69,7 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
                         </Link>
                         <ChevronRight className="w-4 h-4 mx-2 text-[hsl(var(--color-border))]" />
                         <Link
-                            href={`/${locale}/tools`}
+                            href={`/${locale}/tools/`}
                             className="hover:text-[hsl(var(--color-primary))] transition-colors"
                         >
                             {t('common.navigation.tools')}
@@ -110,16 +113,16 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
                                 Related paths
                             </h2>
                             <div className="mt-4 space-y-3 text-sm">
-                                <Link href={`/${locale}/tools`} className="block text-[hsl(var(--color-primary))] hover:underline">
+                                <Link href={`/${locale}/tools/`} className="block text-[hsl(var(--color-primary))] hover:underline">
                                     Browse the full PDF tool directory
                                 </Link>
-                                <Link href={`/${locale}/workflow`} className="block text-[hsl(var(--color-primary))] hover:underline">
+                                <Link href={`/${locale}/workflow/`} className="block text-[hsl(var(--color-primary))] hover:underline">
                                     Open the PDF workflow builder
                                 </Link>
                                 {categorySeo.adjacentCategories.map((adjacentCategory) => (
                                     <Link
                                         key={adjacentCategory}
-                                        href={`/${locale}/tools/category/${adjacentCategory}`}
+                                        href={`/${locale}/tools/category/${adjacentCategory}/`}
                                         className="block text-[hsl(var(--color-primary))] hover:underline"
                                     >
                                         {t(`home.categories.${categoryTranslationKeys[adjacentCategory]}`)} tools
@@ -129,17 +132,17 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
                         </aside>
                     </section>
 
-                    <div className="mb-8">
-                        {monetizationProfile.allowNativeUnits && (
+                    {showCategoryNativeAd && (
+                        <div className="mb-8">
                             <AdsterraNativeBanner
                                 slotName="category-native"
                                 description="This category page may contain a labeled native ad placement from a third-party network. It does not appear inside the core tool action row."
                                 collapseOnNoFill
                             />
-                        )}
-                    </div>
+                        </div>
+                    )}
 
-                    {monetizationProfile.allowAggressiveUnits && (
+                    {showInlineAd && (
                         <AdsterraInlineBanner className="mb-8" />
                     )}
 
@@ -152,9 +155,11 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
                         allowAggressiveUnits={monetizationProfile.allowAggressiveUnits}
                     />
 
-                    <div className="mt-8">
-                        <MonetizationDisclosureCard locale={locale} />
-                    </div>
+                    {showMonetizationDisclosure && (
+                        <div className="mt-8">
+                            <MonetizationDisclosureCard locale={locale} />
+                        </div>
+                    )}
                 </div>
             </main>
 

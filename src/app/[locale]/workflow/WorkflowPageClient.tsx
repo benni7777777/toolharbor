@@ -40,32 +40,32 @@ export default function WorkflowPageClient({ locale }: WorkflowPageClientProps) 
     ];
     const featuredRoutes = [
         {
-            href: `/${locale}/tools/category/organize-manage`,
+    href: `/${locale}/tools/category/organize-manage/`,
             title: 'Organize and combine PDF files',
             description: 'Best for merge, split, delete, extract, and reorder flows that often start the workflow chain.',
         },
         {
-            href: `/${locale}/tools/category/optimize-repair`,
+    href: `/${locale}/tools/category/optimize-repair/`,
             title: 'Compress and repair before delivery',
             description: 'Useful when the workflow needs a smaller, cleaner, or more reliable PDF output at the end.',
         },
         {
-            href: `/${locale}/tools/category/secure-pdf`,
+    href: `/${locale}/tools/category/secure-pdf/`,
             title: 'Add security as the final step',
             description: 'Use encryption, metadata cleanup, or redaction after the structural work is finished.',
         },
         {
-            href: `/${locale}/tools/merge-pdf`,
+    href: `/${locale}/tools/merge-pdf/`,
             title: 'Start with Merge PDF',
             description: 'High-intent route for combining several source files before the rest of the workflow runs.',
         },
         {
-            href: `/${locale}/tools/compress-pdf`,
+    href: `/${locale}/tools/compress-pdf/`,
             title: 'Finish with Compress PDF',
             description: 'A common final step when the result needs to pass upload limits or email constraints.',
         },
         {
-            href: `/${locale}/tools/sign-pdf`,
+    href: `/${locale}/tools/sign-pdf/`,
             title: 'Route into Sign PDF',
             description: 'Useful when the finished file still needs a visible signature before export.',
         },
@@ -76,7 +76,7 @@ export default function WorkflowPageClient({ locale }: WorkflowPageClientProps) 
             <header className="h-12 flex-shrink-0 border-b border-[hsl(var(--color-border))] bg-[hsl(var(--color-background))] px-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                     <Link
-                        href={`/${locale}`}
+            href={`/${locale}/`}
                         className="flex items-center gap-2 text-[hsl(var(--color-foreground))] hover:text-[hsl(var(--color-primary))] transition-colors"
                     >
                         <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] shadow-sm">
@@ -108,28 +108,28 @@ export default function WorkflowPageClient({ locale }: WorkflowPageClientProps) 
 
                 <nav className="flex items-center gap-1">
                     <Link
-                        href={`/${locale}`}
+            href={`/${locale}/`}
                         className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-muted))] rounded-md transition-colors"
                     >
                         <Home className="w-3.5 h-3.5" />
                         <span className="hidden md:inline">{t('navigation.home')}</span>
                     </Link>
                     <Link
-                        href={`/${locale}/tools`}
+            href={`/${locale}/tools/`}
                         className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-muted))] rounded-md transition-colors"
                     >
                         <Wrench className="w-3.5 h-3.5" />
                         <span className="hidden md:inline">{t('navigation.tools')}</span>
                     </Link>
                     <Link
-                        href={`/${locale}/about`}
+            href={`/${locale}/about/`}
                         className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-muted))] rounded-md transition-colors"
                     >
                         <FileText className="w-3.5 h-3.5" />
                         <span className="hidden md:inline">{t('navigation.about')}</span>
                     </Link>
                     <Link
-                        href={`/${locale}/faq`}
+            href={`/${locale}/faq/`}
                         className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-muted))] rounded-md transition-colors"
                     >
                         <HelpCircle className="w-3.5 h-3.5" />

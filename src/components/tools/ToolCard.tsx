@@ -46,7 +46,7 @@ export function ToolCard({
   allowAggressiveUnits = false,
 }: ToolCardProps) {
   const t = useSafeTranslations();
-  const toolUrl = `/${locale}/tools/${tool.slug}`;
+  const toolUrl = `/${locale}/tools/${tool.slug}/`;
 
   // Get a human-readable name from the tool ID
   // Use localized title if available, otherwise fallback to formatting the ID

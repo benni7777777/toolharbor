@@ -3,14 +3,18 @@ import RootRedirectClient from './RootRedirectClient';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'Locale Redirect | OpenToolsKit',
-  description: 'Redirect helper for the localized OpenToolsKit experience.',
+  title: 'OpenToolsKit',
+  description: 'OpenToolsKit redirects visitors to the localized browser-tool experience.',
   alternates: {
-    canonical: `${siteConfig.url}/${siteConfig.defaultLocale}`,
+    canonical: `${siteConfig.url}/${siteConfig.defaultLocale}/`,
+    languages: {
+      'x-default': `${siteConfig.url}/`,
+      en: `${siteConfig.url}/en/`,
+    },
   },
   robots: {
     index: false,
-    follow: false,
+    follow: true,
   },
 };
 

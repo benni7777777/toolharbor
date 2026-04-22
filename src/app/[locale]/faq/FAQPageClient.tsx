@@ -32,13 +32,15 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
   const t = useTranslations('faqPage');
   const tCommon = useTranslations('common');
   const monetizationProfile = useMonetizationProfile();
+  const showInfoNativeAd =
+    monetizationProfile.allowNativeUnits && siteConfig.ads.placements.infoPages.nativeBanner;
+  const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   // Helper to get FAQs for a category
   const getCategoryFaqs = (categoryKey: string, categoryLabel: string): FAQItem[] => {
-    const items = ['whatIs', 'isFree', 'account', 'uploaded', 'safe', 'storage', 'operations', 'merge', 'images', 'edit', 'browsers', 'sizeLimit', 'slow', 'offline', 'supported', 'change'];
     const categoryMapping: Record<string, string[]> = {
       'general': ['whatIs', 'isFree', 'account'],
       'privacy': ['uploaded', 'safe', 'storage'],
@@ -215,27 +217,29 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
           </div>
         </section>
 
-        <section className="py-4">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-5xl">
-              {monetizationProfile.allowNativeUnits && (
+        {showInfoNativeAd && (
+          <section className="py-4">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-5xl">
                 <AdsterraNativeBanner
                   slotName="info-native"
                   description="This FAQ page may include a labeled native placement from a third-party network. It is separate from the core tool flow."
                   collapseOnNoFill
                 />
-              )}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        <section className="py-6">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-5xl">
-              <MonetizationDisclosureCard locale={locale} />
+        {showMonetizationDisclosure && (
+          <section className="py-6">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-5xl">
+                <MonetizationDisclosureCard locale={locale} />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Contact CTA */}
         <section className="py-12 bg-[hsl(var(--color-muted)/0.3)]">
@@ -247,7 +251,7 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
               <p className="text-[hsl(var(--color-muted-foreground))] mb-6">
                 {t('cta.description')}
               </p>
-              <Link href={`/${locale}/contact`}>
+              <Link href={`/${locale}/contact/`}>
                 <Button variant="primary">
                   {t('cta.button')}
                   <ArrowRight className="ml-2 h-4 w-4" />

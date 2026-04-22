@@ -36,10 +36,11 @@ export default async function ToolsPage({ params }: ToolsPageProps) {
   setRequestLocale(locale);
 
   // Get localized content for tools
-  const { tools } = await import('@/config/tools');
+  const { getAllTools } = await import('@/config/tools');
   const { getToolContent } = await import('@/config/tool-content');
+  const activeTools = getAllTools();
 
-  const localizedToolContent = tools.reduce((acc, tool) => {
+  const localizedToolContent = activeTools.reduce((acc, tool) => {
     const content = getToolContent(locale as Locale, tool.id);
     if (content) {
       acc[tool.id] = {
@@ -55,7 +56,7 @@ export default async function ToolsPage({ params }: ToolsPageProps) {
     locale: localeValue,
     path: '/tools',
     name: 'OpenToolsKit PDF Tools',
-    items: tools.map((tool) => ({
+    items: activeTools.map((tool) => ({
       name: localizedToolContent[tool.id]?.title || tool.slug,
       path: `/tools/${tool.slug}`,
     })),

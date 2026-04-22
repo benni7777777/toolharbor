@@ -68,7 +68,11 @@ export function AdsterraNativeBanner({
       return cleanupWhenDetached;
     }
 
-    if (!siteConfig.ads.enabled || !siteConfig.ads.providers.adsterra.enabled) {
+    if (
+      !siteConfig.ads.enabled
+      || !siteConfig.ads.providers.adsterra.enabled
+      || !siteConfig.ads.providers.adsterra.nativeBanner.enabled
+    ) {
       return;
     }
 
@@ -108,7 +112,11 @@ export function AdsterraNativeBanner({
     });
   }, [collapseOnNoFill, showNetworkFallback, slotName, status]);
 
-  if (!siteConfig.ads.enabled || !siteConfig.ads.providers.adsterra.enabled) {
+  if (
+    !siteConfig.ads.enabled
+    || !siteConfig.ads.providers.adsterra.enabled
+    || !siteConfig.ads.providers.adsterra.nativeBanner.enabled
+  ) {
     return null;
   }
 

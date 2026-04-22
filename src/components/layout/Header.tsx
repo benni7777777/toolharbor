@@ -99,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
 
   const navigateToTool = useCallback(
     (slug: string) => {
-      router.push(`/${locale}/tools/${slug}`);
+      router.push(`/${locale}/tools/${slug}/`);
       setIsSearchOpen(false);
       setSearchQuery('');
       setSearchResults([]);
@@ -133,11 +133,11 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
 
   const navItems = useMemo(
     () => [
-      { href: `/${locale}`, label: t('navigation.home') },
-      { href: `/${locale}/tools`, label: t('navigation.tools') },
-      { href: `/${locale}/workflow`, label: t('navigation.workflow') || 'Workflow' },
-      { href: `/${locale}/about`, label: t('navigation.about') },
-      { href: `/${locale}/faq`, label: t('navigation.faq') },
+      { href: `/${locale}/`, label: t('navigation.home') },
+      { href: `/${locale}/tools/`, label: t('navigation.tools') },
+      { href: `/${locale}/workflow/`, label: t('navigation.workflow') || 'Workflow' },
+      { href: `/${locale}/about/`, label: t('navigation.about') },
+      { href: `/${locale}/faq/`, label: t('navigation.faq') },
     ],
     [locale, t]
   );
@@ -155,7 +155,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
         <div className="grid gap-3 lg:grid-cols-[auto_1fr_auto] lg:items-center">
           <div className="flex items-center justify-between gap-3">
             <Link
-              href={`/${locale}`}
+              href={`/${locale}/`}
               className="group inline-flex items-center gap-3 rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))/0.82] px-3 py-2 shadow-[var(--shadow-sm)] transition-transform hover:-translate-y-0.5"
               aria-label={`${t('brand')} - ${t('navigation.home')}`}
             >

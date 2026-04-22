@@ -67,6 +67,7 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
   const showRectangleAd = monetizationProfile.allowAggressiveUnits
     && siteConfig.ads.providers.adsterra.displayBanners.rectangle.enabled
     && !rectangleCollapsed;
+  const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
 
   // Get tool display name
   const toolDisplayName = content.title || tool.id
@@ -84,7 +85,7 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
             {/* Breadcrumb Navigation */}
             <nav aria-label="Breadcrumb" className="mb-4 flex items-center text-sm text-[hsl(var(--color-muted-foreground))] animate-in fade-in slide-in-from-top-4 duration-500 delay-100">
               <Link
-                href={`/${locale}`}
+                href={`/${locale}/`}
                 className="flex items-center hover:text-[hsl(var(--color-primary))] transition-colors"
                 title={t('common.navigation.home')}
               >
@@ -92,14 +93,14 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
               </Link>
               <ChevronRight className="w-4 h-4 mx-2 text-[hsl(var(--color-border))]" />
               <Link
-                href={`/${locale}/tools`}
+                href={`/${locale}/tools/`}
                 className="hover:text-[hsl(var(--color-primary))] transition-colors"
               >
                 {t('common.navigation.tools')}
               </Link>
               <ChevronRight className="w-4 h-4 mx-2 text-[hsl(var(--color-border))]" />
               <Link
-                href={`/${locale}/tools/category/${tool.category}`}
+                href={`/${locale}/tools/category/${tool.category}/`}
                 className="hover:text-[hsl(var(--color-primary))] transition-colors"
               >
                 {t(`home.categories.${categoryTranslationKeys[tool.category]}`)}
@@ -122,26 +123,30 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
               {children}
             </section>
 
-            <section
-              className={`mt-8 grid gap-6 ${showRectangleAd ? 'lg:grid-cols-[minmax(0,1fr)_320px]' : ''}`.trim()}
-              aria-label="Monetization surfaces"
-            >
-              <div className="space-y-4">
-                <MonetizationDisclosureCard locale={locale} />
-              </div>
-
-              {showRectangleAd && (
-                <aside className="hidden lg:block">
-                  <div className="sticky top-28 space-y-4">
-                    <AdsterraDisplayBanner
-                      slot="rectangle"
-                      className="rounded-[1.75rem]"
-                      onCollapse={handleRectangleCollapse}
-                    />
+            {(showMonetizationDisclosure || showRectangleAd) && (
+              <section
+                className={`mt-8 grid gap-6 ${showRectangleAd ? 'lg:grid-cols-[minmax(0,1fr)_320px]' : ''}`.trim()}
+                aria-label="Monetization surfaces"
+              >
+                {showMonetizationDisclosure && (
+                  <div className="space-y-4">
+                    <MonetizationDisclosureCard locale={locale} />
                   </div>
-                </aside>
-              )}
-            </section>
+                )}
+
+                {showRectangleAd && (
+                  <aside className="hidden lg:block">
+                    <div className="sticky top-28 space-y-4">
+                      <AdsterraDisplayBanner
+                        slot="rectangle"
+                        className="rounded-[1.75rem]"
+                        onCollapse={handleRectangleCollapse}
+                      />
+                    </div>
+                  </aside>
+                )}
+              </section>
+            )}
 
             <QuickAnswerSection
               tool={tool}
@@ -290,13 +295,13 @@ function QuickAnswerSection({ tool, locale, primaryQuery, bestFor }: QuickAnswer
           Related paths
         </h2>
         <div className="mt-4 space-y-3 text-sm">
-          <Link href={`/${locale}/tools/category/${tool.category}`} className="block text-[hsl(var(--color-primary))] hover:underline">
+          <Link href={`/${locale}/tools/category/${tool.category}/`} className="block text-[hsl(var(--color-primary))] hover:underline">
             Open the {tool.category.replace(/-/g, ' ')} hub
           </Link>
-          <Link href={`/${locale}/workflow`} className="block text-[hsl(var(--color-primary))] hover:underline">
+          <Link href={`/${locale}/workflow/`} className="block text-[hsl(var(--color-primary))] hover:underline">
             Use this tool inside the workflow builder
           </Link>
-          <Link href={`/${locale}/tools`} className="block text-[hsl(var(--color-primary))] hover:underline">
+          <Link href={`/${locale}/tools/`} className="block text-[hsl(var(--color-primary))] hover:underline">
             Browse the full PDF tool directory
           </Link>
         </div>
@@ -535,7 +540,7 @@ function ComparisonSection({ currentTool, tools, locale, localizedRelatedTools }
                 the job is narrower or more direct than <span className="font-medium text-[hsl(var(--color-foreground))]">{toolName}</span>.
                 Switch to {toolName} if your problem is actually about its broader workflow or output.
               </p>
-              <Link href={`/${locale}/tools/${tool.slug}`} className="mt-4 inline-block text-sm font-medium text-[hsl(var(--color-primary))] hover:underline">
+            <Link href={`/${locale}/tools/${tool.slug}/`} className="mt-4 inline-block text-sm font-medium text-[hsl(var(--color-primary))] hover:underline">
                 Compare with {toolName}
               </Link>
             </Card>
@@ -708,7 +713,7 @@ function RelatedToolsSection({ currentTool, tools, locale, localizedRelatedTools
           return (
             <a
               key={tool.id}
-              href={`/${locale}/tools/${tool.slug}`}
+                    href={`/${locale}/tools/${tool.slug}/`}
               className="block group"
             >
               <Card hover clickable className="h-full glass-card transition-all duration-300 group-hover:-translate-y-1">

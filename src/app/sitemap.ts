@@ -6,10 +6,10 @@
  */
 
 import { MetadataRoute } from 'next';
-import { siteConfig } from '@/config/site';
 import { locales, type Locale } from '@/lib/i18n/config';
 import { getAllTools } from '@/config/tools';
 import { TOOL_CATEGORIES } from '@/types/tool';
+import { getCanonicalUrl } from '@/lib/seo/metadata';
 
 // Required for static export
 export const dynamic = 'force-static';
@@ -48,6 +48,8 @@ const STATIC_PAGES = [
   { path: '/about', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static },
   { path: '/faq', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static },
   { path: '/privacy', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static },
+  { path: '/terms', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static },
+  { path: '/editorial', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static },
   { path: '/contact', priority: PRIORITY.static, changeFrequency: CHANGE_FREQUENCY.static },
 ];
 
@@ -60,7 +62,7 @@ function generateLocaleEntries(locale: Locale, lastModified: Date): MetadataRout
   // Add static pages
   for (const page of STATIC_PAGES) {
     entries.push({
-      url: `${siteConfig.url}/${locale}${page.path}`,
+      url: getCanonicalUrl(locale, page.path),
       lastModified,
       changeFrequency: page.changeFrequency as 'daily' | 'weekly' | 'monthly',
       priority: page.priority,
@@ -69,7 +71,7 @@ function generateLocaleEntries(locale: Locale, lastModified: Date): MetadataRout
 
   for (const category of TOOL_CATEGORIES) {
     entries.push({
-      url: `${siteConfig.url}/${locale}/tools/category/${category}`,
+      url: getCanonicalUrl(locale, `/tools/category/${category}`),
       lastModified,
       changeFrequency: CHANGE_FREQUENCY.category,
       priority: PRIORITY.category,
@@ -80,7 +82,7 @@ function generateLocaleEntries(locale: Locale, lastModified: Date): MetadataRout
   const tools = getAllTools();
   for (const tool of tools) {
     entries.push({
-      url: `${siteConfig.url}/${locale}/tools/${tool.slug}`,
+      url: getCanonicalUrl(locale, `/tools/${tool.slug}`),
       lastModified,
       changeFrequency: CHANGE_FREQUENCY.toolPage,
       priority: PRIORITY.toolPage,

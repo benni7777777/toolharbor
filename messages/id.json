@@ -6,7 +6,7 @@
     },
     "tools": {
       "title": "OpenToolsKit Tools",
-      "description": "Browse the OpenToolsKit launch catalog for browser-based PDF tools, workflow automation, and multilingual utility pages."
+      "description": "Browse the OpenToolsKit catalog for browser-based PDF tools, workflow automation, and multilingual utility pages."
     },
     "about": {
       "title": "Tentang",
@@ -83,8 +83,8 @@
       "loading": "Memuat..."
     },
     "footer": {
-      "footer": "© 2025 OpenToolsKit. Seluruh hak cipta dilindungi undang-undang.",
-      "copyright": "© {year} OpenToolsKit. Seluruh hak cipta dilindungi undang-undang.",
+      "footer": "Â© 2025 OpenToolsKit. Seluruh hak cipta dilindungi undang-undang.",
+      "copyright": "Â© {year} OpenToolsKit. Seluruh hak cipta dilindungi undang-undang.",
       "privacyBadge": "100% Pribadi - File tidak pernah meninggalkan perangkat Anda",
       "madeWith": "Dibuat dengan <Heart /> dan <Nextjs />"
     },
@@ -135,7 +135,7 @@
     },
     "search": {
       "placeholder": "Cari alat...",
-      "hint": "Tekan Enter untuk memilih, ↑↓ untuk menavigasi",
+      "hint": "Tekan Enter untuk memilih, â†‘â†“ untuk menavigasi",
       "noResults": "Alat tidak ditemukan"
     },
     "fileUploader": {
@@ -170,8 +170,8 @@
     }
   },
   "toolsPage": {
-    "title": "OpenToolsKit Launch Tools",
-    "subtitle": "{count}+ browser-based launch tools for PDF workflows, editing, conversion, and secure document handling.",
+    "title": "OpenToolsKit Tools",
+    "subtitle": "{count}+ browser-based tools for PDF workflows, editing, conversion, and secure document handling.",
     "filters": "Filter",
     "allTools": "Semua Alat",
     "clearAll": "Bersihkan semua",
@@ -201,7 +201,7 @@
       "general": {
         "whatIs": {
           "question": "Apa itu OpenToolsKit?",
-          "answer": "OpenToolsKit adalah toolkit PDF gratis yang berfokus pada privasi yang berjalan sepenuhnya di browser Anda. Kami menawarkan 80+ alat profesional untuk mengedit, mengonversi, menggabung, memisah, dan mengamankan file PDF tanpa mengunggahnya ke server mana pun."
+          "answer": "OpenToolsKit adalah toolkit PDF gratis yang berfokus pada privasi yang berjalan sepenuhnya di browser Anda. Kami menawarkan 95+ alat profesional untuk mengedit, mengonversi, menggabung, memisah, dan mengamankan file PDF tanpa mengunggahnya ke server mana pun."
         },
         "isFree": {
           "question": "Apakah OpenToolsKit benar-benar gratis?",
@@ -229,7 +229,7 @@
       "features": {
         "operations": {
           "question": "Operasi PDF apa saja yang bisa saya lakukan?",
-          "answer": "OpenToolsKit menawarkan 67+ alat termasuk: gabung, pisah, kompres, konversi (ke/dari gambar, teks, JSON), edit, anotasi, tanda tangan, tambah watermark, enkripsi/dekripsi, OCR, dan banyak lagi."
+          "answer": "OpenToolsKit menawarkan 95+ alat termasuk: gabung, pisah, kompres, konversi (ke/dari gambar, teks, JSON), edit, anotasi, tanda tangan, tambah watermark, enkripsi/dekripsi, OCR, dan banyak lagi."
         },
         "merge": {
           "question": "Bisakah saya menggabungkan beberapa file PDF?",
@@ -286,7 +286,7 @@
       "title": "Misi Kami",
       "p1": "We believe private browser tools should stay accessible, inspectable, and useful beyond a single file format. That is why {brand} has been shaped into a broader browser-tool platform.",
       "p2": "Unlike traditional services that depend on remote processing for routine document work, {brand} keeps core flows in the browser where applicable and keeps source availability visible through a public AGPL repository.",
-      "p3": "Phase 1 focuses on the PDF suite, workflow editor, and extension, while preparing the platform for additional tool families."
+      "p3": "The current public site focuses on PDF tools, workflow editing, and source-visible browser utilities while preparing the platform for additional tool families."
     },
     "values": {
       "title": "Nilai-Nilai Kami",
@@ -325,18 +325,18 @@
         "pdflib": "<strong1>pdf-lib & PDF.js</strong1> - Pustaka manipulasi PDF standar industri",
         "indexeddb": "<strong1>IndexedDB</strong1> - Untuk penyimpanan lokal yang aman bagi pekerjaan Anda"
       },
-      "summary": "This stack supports launch-ready browser tools, static export, local processing, and public-source trust surfaces without forcing a server-bound editing model."
+      "summary": "This stack supports browser tools, static export, local processing, and public-source trust surfaces without forcing a server-bound editing model."
     },
     "cta": {
       "title": "Siap untuk Memulai?",
-      "description": "Explore our {count}+ launch tools and see how {brand} handles private browser workflows.",
+      "description": "Explore {count}+ tools and see how {brand} handles private browser workflows.",
       "button": "Lihat Semua Alat"
     }
   },
   "contactPage": {
     "hero": {
       "title": "Support & Source",
-      "description": "Use GitHub for source access, issue reporting, and AGPL attribution."
+      "description": "Use email for general support and GitHub for developer-facing issues, source access, and AGPL attribution."
     },
     "methods": {
       "email": {
@@ -441,18 +441,18 @@
         "description": "Tanpa registrasi, tanpa batasan, tanpa biaya tersembunyi."
       },
       "powerful": {
-        "title": "Launch-ready suite",
-        "description": "Phase 1 ships the PDF suite, workflow editor, extension, and visible source links."
+        "title": "Useful browser tools",
+        "description": "PDF tools, workflow editing, and visible source links stay available without account gates."
       }
     },
     "popularTools": {
       "badge": "Paling Populer",
-      "title": "Popular launch tools",
+      "title": "Popular tools",
       "description": "Alat yang paling sering digunakan untuk membantu Anda menyelesaikan pekerjaan lebih cepat."
     },
     "categoriesSection": {
       "title": "Jelajahi Semua Kategori Alat",
-      "description": "{count}+ launch tools organized by category",
+      "description": "{count}+ tools organized by category",
       "toolsCount": "{count} alat"
     },
     "categoriesDescription": {
@@ -755,13 +755,13 @@
       "addBorder": "Tambah batas di sekitar halaman",
       "borderColor": "Warna Batas",
       "layoutPreview": "Pratinjau Tata Letak",
-      "gridLayoutInfo": "Grid: {cols} × {rows} ({perSheet} halaman per lembar)",
-      "previewInfo": "{pages} halaman → {sheets} lembar output",
+      "gridLayoutInfo": "Grid: {cols} Ã— {rows} ({perSheet} halaman per lembar)",
+      "previewInfo": "{pages} halaman â†’ {sheets} lembar output",
       "readingOrder": "Urutan baca",
-      "topToBottom": "↓ Atas ke bawah",
-      "leftToRight": "→ Kiri ke kanan, lalu ↓ ke bawah",
+      "topToBottom": "â†“ Atas ke bawah",
+      "leftToRight": "â†’ Kiri ke kanan, lalu â†“ ke bawah",
       "createButton": "Buat PDF {pages}-Up",
-      "createCustomButton": "Buat PDF {cols}×{rows}",
+      "createCustomButton": "Buat PDF {cols}Ã—{rows}",
       "gridLabel": "Tata Letak Grid",
       "outputPages": "Lembar Output",
       "pagesLabel": "halaman",
@@ -841,7 +841,7 @@
       "fill": "Isi (mungkin terpotong)",
       "pageRange": "Rentang Halaman (opsional)",
       "pageRangePlaceholder": "misal, 1-5, 8, 10-15 (biarkan kosong untuk semua halaman)",
-      "previewInfo": "Setiap halaman akan dipisah menjadi {rows}×{cols} = {total} ubin.",
+      "previewInfo": "Setiap halaman akan dipisah menjadi {rows}Ã—{cols} = {total} ubin.",
       "createButton": "Posterize PDF",
       "successMessage": "PDF berhasil di-posterize! Klik tombol unduh untuk menyimpan file Anda."
     },

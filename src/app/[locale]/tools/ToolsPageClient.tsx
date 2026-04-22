@@ -12,7 +12,6 @@ import {
 } from '@/components/ads/DynamicAdsterraComponents';
 import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { ToolGrid } from '@/components/tools/ToolGrid';
-import { ToolCard } from '@/components/tools/ToolCard';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { getAllTools, getToolsByCategory, getToolById } from '@/config/tools';
@@ -35,6 +34,9 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
   const monetizationProfile = useMonetizationProfile();
   const allTools = getAllTools();
   const { favorites, isLoaded: favoritesLoaded, favoritesCount } = useFavorites();
+  const showToolsNativeAd = monetizationProfile.allowNativeUnits && siteConfig.ads.placements.toolsIndex.nativeBanner;
+  const showInlineAd = monetizationProfile.allowAggressiveUnits;
+  const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
 
   const categoryTranslationKeys: Record<ToolCategory, string> = {
     'edit-annotate': 'editAnnotate',
@@ -84,7 +86,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
     }
 
     return tools;
-  }, [allTools, selectedCategory, searchQuery, favorites]);
+  }, [allTools, selectedCategory, searchQuery, favorites, localizedToolContent]);
 
   // Category options
   const categories: { value: CategoryFilter; label: string; icon?: React.ReactNode }[] = [
@@ -103,32 +105,32 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
   ];
   const highIntentStartingPoints = [
     {
-      href: `/${locale}/tools/merge-pdf`,
+      href: `/${locale}/tools/merge-pdf/`,
       title: 'Merge PDF files',
       description: 'Combine several PDFs into one ordered output when a portal or client expects a single file.',
     },
     {
-      href: `/${locale}/tools/compress-pdf`,
+      href: `/${locale}/tools/compress-pdf/`,
       title: 'Compress a PDF for upload limits',
       description: 'Reduce file size before email, government portals, or job applications reject the document.',
     },
     {
-      href: `/${locale}/tools/jpg-to-pdf`,
+      href: `/${locale}/tools/jpg-to-pdf/`,
       title: 'Turn JPG images into one PDF',
       description: 'Useful for scanned pages, receipts, and camera photos that need a shareable PDF.',
     },
     {
-      href: `/${locale}/tools/pdf-to-jpg`,
+      href: `/${locale}/tools/pdf-to-jpg/`,
       title: 'Export PDF pages as JPG',
       description: 'Use when an upload form accepts images but the source document is still a PDF.',
     },
     {
-      href: `/${locale}/tools/sign-pdf`,
+      href: `/${locale}/tools/sign-pdf/`,
       title: 'Sign a PDF in your browser',
       description: 'Add a visible signature before sending a form, approval, or agreement onward.',
     },
     {
-      href: `/${locale}/tools/encrypt-pdf`,
+      href: `/${locale}/tools/encrypt-pdf/`,
       title: 'Encrypt a PDF before sharing',
       description: 'Password-protect the final file when the next step requires tighter access control.',
     },
@@ -210,7 +212,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                 {(Object.keys(CATEGORY_INFO) as ToolCategory[]).map((categoryKey) => (
                   <Link
                     key={categoryKey}
-                    href={`/${locale}/tools/category/${categoryKey}`}
+                    href={`/${locale}/tools/category/${categoryKey}/`}
                     className="rounded-[1.5rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-5 shadow-[var(--shadow-sm)] transition-transform hover:-translate-y-0.5"
                   >
                     <div className="flex items-start justify-between gap-4">
@@ -336,19 +338,17 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
               </p>
             </div>
 
-            {siteConfig.ads.placements.toolsIndex.nativeBanner && (
+            {showToolsNativeAd && (
               <div className="mb-8">
-                {monetizationProfile.allowNativeUnits && (
-                  <AdsterraNativeBanner
-                    slotName="tools-index-native"
-                    description="This catalog page may include a labeled native placement. Tool discovery stays separate from processing and download actions."
-                    collapseOnNoFill
-                  />
-                )}
+                <AdsterraNativeBanner
+                  slotName="tools-index-native"
+                  description="This catalog page may include a labeled native placement. Tool discovery stays separate from processing and download actions."
+                  collapseOnNoFill
+                />
               </div>
             )}
 
-            {monetizationProfile.allowAggressiveUnits && (
+            {showInlineAd && (
               <AdsterraInlineBanner className="mb-8" />
             )}
 
@@ -412,9 +412,11 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
               </Card>
             )}
 
-            <div className="mt-8">
-              <MonetizationDisclosureCard locale={locale} />
-            </div>
+            {showMonetizationDisclosure && (
+              <div className="mt-8">
+                <MonetizationDisclosureCard locale={locale} />
+              </div>
+            )}
           </div>
         </section>
       </main>

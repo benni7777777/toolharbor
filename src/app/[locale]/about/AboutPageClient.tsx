@@ -26,6 +26,8 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
   const tCommon = useTranslations('common');
   const monetizationProfile = useMonetizationProfile();
   const allTools = getAllTools();
+  const showInfoNativeAd = monetizationProfile.allowNativeUnits && siteConfig.ads.placements.infoPages.nativeBanner;
+  const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
 
   const values = [
     {
@@ -108,19 +110,19 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
           </div>
         </section>
 
-        <section className="py-6">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-5xl">
-              {monetizationProfile.allowNativeUnits && (
+        {showInfoNativeAd && (
+          <section className="py-6">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-5xl">
                 <AdsterraNativeBanner
                   slotName="info-native"
                   description="OpenToolsKit may show a native placement on informational pages. The ad inventory is supplied by third-party networks and never blocks the product itself."
                   collapseOnNoFill
                 />
-              )}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Values Section */}
         <section className="py-16 bg-[hsl(var(--color-muted)/0.3)]">
@@ -195,22 +197,24 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
                 </p>
               </Card>
               <Card className="p-6">
-                <h3 className="mb-3 text-lg font-semibold text-[hsl(var(--color-foreground))]">Monetized without blocking results</h3>
+                <h3 className="mb-3 text-lg font-semibold text-[hsl(var(--color-foreground))]">Clear project boundaries</h3>
                 <p className="text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
-                  Ads and partner suggestions may appear on non-tool-action surfaces and after successful results. This open-source project also teaches future web developers how monetization can work on public-source websites without hiding the implementation. Where monetization gates are used, they are labeled, limited, and tied to strict session and geo safety rules.
+                  The site separates browser-side file processing, public source obligations, support paths, and optional funding surfaces so users can understand what each part of the project does.
                 </p>
               </Card>
             </div>
           </div>
         </section>
 
-        <section className="py-6">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-5xl">
-              <MonetizationDisclosureCard locale={locale} />
+        {showMonetizationDisclosure && (
+          <section className="py-6">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-5xl">
+                <MonetizationDisclosureCard locale={locale} />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* CTA Section */}
         <section className="py-16 bg-[hsl(var(--color-primary)/0.05)]">
@@ -222,7 +226,7 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
               <p className="text-[hsl(var(--color-muted-foreground))] mb-8">
                 {t('cta.description', { brand: tCommon('brand'), count: allTools.length })}
               </p>
-              <Link href={`/${locale}/tools`}>
+              <Link href={`/${locale}/tools/`}>
                 <Button variant="primary" size="lg">
                   {t('cta.button')}
                   <ArrowRight className="ml-2 h-5 w-5" />
