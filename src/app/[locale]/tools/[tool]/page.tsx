@@ -96,7 +96,7 @@ import { generateToolMetadata } from '@/lib/seo/metadata';
 import { JsonLd } from '@/components/seo/JsonLd';
 import {
   generateSoftwareApplicationSchema,
-  generateFAQPageSchema,
+  generateFAQSchema,
   generateHowToSchema,
   generateWebPageSchema,
   generateBreadcrumbSchema
@@ -185,9 +185,7 @@ export default async function ToolPageRoute({ params }: ToolPageParams) {
 
   // Generate structured data
   const toolStructuredData = generateSoftwareApplicationSchema(tool, content, locale);
-  const faqStructuredData = content.faq && content.faq.length > 0
-    ? generateFAQPageSchema(content.faq)
-    : null;
+  const faqStructuredData = generateFAQSchema(content.faq);
   const howToStructuredData = generateHowToSchema(tool, content, locale);
   const webPageStructuredData = generateWebPageSchema(tool, content, locale);
   const breadcrumbStructuredData = generateBreadcrumbSchema(

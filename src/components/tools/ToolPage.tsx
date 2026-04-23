@@ -632,8 +632,6 @@ function FAQSection({ faq }: FAQSectionProps) {
       className="mt-10"
       data-testid="tool-page-faq"
       aria-labelledby="faq-heading"
-      itemScope
-      itemType="https://schema.org/FAQPage"
     >
       <h2
         id="faq-heading"
@@ -648,15 +646,12 @@ function FAQSection({ faq }: FAQSectionProps) {
             variant="outlined"
             className="glass-card"
             data-testid={`faq-item-${index}`}
-            itemScope
-            itemProp="mainEntity"
-            itemType="https://schema.org/Question"
           >
-            <h3 className="font-semibold text-[hsl(var(--color-foreground))]" itemProp="name">
+            <h3 className="font-semibold text-[hsl(var(--color-foreground))]">
               {item.question}
             </h3>
-            <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-              <p className="mt-2 text-sm text-[hsl(var(--color-muted-foreground))]" itemProp="text">
+            <div>
+              <p className="mt-2 text-sm text-[hsl(var(--color-muted-foreground))]">
                 {item.answer}
               </p>
             </div>

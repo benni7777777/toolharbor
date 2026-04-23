@@ -37,7 +37,6 @@ export function JsonLd({ data }: JsonLdProps) {
  */
 interface ToolPageJsonLdProps {
   softwareApplication: object;
-  faqPage?: object | null;
   breadcrumb?: object;
 }
 
@@ -46,14 +45,9 @@ interface ToolPageJsonLdProps {
  */
 export function ToolPageJsonLd({ 
   softwareApplication, 
-  faqPage, 
   breadcrumb 
 }: ToolPageJsonLdProps) {
   const schemas: object[] = [softwareApplication];
-  
-  if (faqPage) {
-    schemas.push(faqPage);
-  }
   
   if (breadcrumb) {
     schemas.push(breadcrumb);

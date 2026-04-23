@@ -252,21 +252,63 @@ export function generateWebPageSchema(
   };
 }
 
+export interface FAQSchemaQuestion {
+  question: string;
+  answer: string;
+}
+
 /**
- * Generate FAQPage schema from FAQ items
+ * Generate one FAQPage schema from every visible FAQ item on a page.
+ * Returns null for empty input so pages without visible FAQs do not emit FAQ schema.
  */
-export function generateFAQPageSchema(faqs: FAQ[]): FAQPageSchema {
+export function generateFAQSchema(questions: FAQSchemaQuestion[] = []): FAQPageSchema | null {
+  const seen = new Set<string>();
+  const mainEntity = questions.flatMap((faq) => {
+    const question = faq.question?.trim();
+    const answer = faq.answer?.trim();
+
+    if (!question || !answer) {
+      return [];
+    }
+
+    const dedupeKey = `${question}\n${answer}`.toLocaleLowerCase();
+    if (seen.has(dedupeKey)) {
+      return [];
+    }
+
+    seen.add(dedupeKey);
+
+    return [
+      {
+        '@type': 'Question' as const,
+        name: question,
+        acceptedAnswer: {
+          '@type': 'Answer' as const,
+          text: answer,
+        },
+      },
+    ];
+  });
+
+  if (mainEntity.length === 0) {
+    return null;
+  }
+
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
+    mainEntity,
+  };
+}
+
+/**
+ * @deprecated Use generateFAQSchema and handle the null case at page level.
+ */
+export function generateFAQPageSchema(faqs: FAQ[]): FAQPageSchema {
+  return generateFAQSchema(faqs) ?? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [],
   };
 }
 
@@ -412,10 +454,7 @@ export function generateToolPageStructuredData(
   const howTo = generateHowToSchema(tool, content, locale);
   const webPage = generateWebPageSchema(tool, content, locale);
 
-  // Only generate FAQ schema if there are FAQs
-  const faqPage = content.faq && content.faq.length > 0
-    ? generateFAQPageSchema(content.faq)
-    : null;
+  const faqPage = generateFAQSchema(content.faq);
 
   const breadcrumb = generateBreadcrumbSchema(
     [

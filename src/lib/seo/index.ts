@@ -31,6 +31,7 @@ export { getStaticPageSeo, getCategorySeo } from '@/config/seo';
 // Structured data generation
 export {
   generateSoftwareApplicationSchema,
+  generateFAQSchema,
   generateFAQPageSchema,
   generateWebSiteSchema,
   generateOrganizationSchema,
@@ -44,6 +45,7 @@ export {
   validateSoftwareApplicationSchema,
   validateFAQPageSchema,
   type SoftwareApplicationSchema,
+  type FAQSchemaQuestion,
   type FAQPageSchema,
   type WebSiteSchema,
   type OrganizationSchema,

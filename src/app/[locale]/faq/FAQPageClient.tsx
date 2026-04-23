@@ -16,16 +16,10 @@ import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureC
 import { type Locale } from '@/lib/i18n/config';
 import { siteConfig } from '@/config/site';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
+import { getFAQPageCategories, getFAQPageItems } from './faq-items';
 
 interface FAQPageClientProps {
   locale: Locale;
-}
-
-interface FAQItem {
-  question: string;
-  answer: string;
-  category: string;
-  categoryLabel: string; // Display label
 }
 
 export default function FAQPageClient({ locale }: FAQPageClientProps) {
@@ -39,44 +33,8 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  // Helper to get FAQs for a category
-  const getCategoryFaqs = (categoryKey: string, categoryLabel: string): FAQItem[] => {
-    const categoryMapping: Record<string, string[]> = {
-      'general': ['whatIs', 'isFree', 'account'],
-      'privacy': ['uploaded', 'safe', 'storage'],
-      'features': ['operations', 'merge', 'images', 'edit'],
-      'technical': ['browsers', 'sizeLimit', 'slow', 'offline'],
-      'languages': ['supported', 'change']
-    };
-
-    const keys = categoryMapping[categoryKey] || [];
-
-    return keys.map(key => ({
-      category: categoryKey,
-      categoryLabel: categoryLabel,
-      question: t(`sections.${categoryKey}.${key}.question`),
-      answer: t(`sections.${categoryKey}.${key}.answer`)
-    }));
-  };
-
-  // Construct FAQ data dynamically
-  const faqs: FAQItem[] = [
-    ...getCategoryFaqs('general', t('categories.general')),
-    ...getCategoryFaqs('privacy', t('categories.privacy')),
-    ...getCategoryFaqs('features', t('categories.features')),
-    ...getCategoryFaqs('technical', t('categories.technical')),
-    ...getCategoryFaqs('languages', t('categories.languages')),
-  ];
-
-  // Get unique categories for filter buttons
-  const categories = [
-    { key: 'all', label: t('categories.all') },
-    { key: 'general', label: t('categories.general') },
-    { key: 'privacy', label: t('categories.privacy') },
-    { key: 'features', label: t('categories.features') },
-    { key: 'technical', label: t('categories.technical') },
-    { key: 'languages', label: t('categories.languages') },
-  ];
+  const faqs = getFAQPageItems(t);
+  const categories = getFAQPageCategories(t);
 
   // Filter FAQs
   const filteredFaqs = faqs.filter(faq => {

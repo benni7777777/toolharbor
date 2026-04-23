@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { locales, type Locale } from '@/lib/i18n/config';
-import { generateFaqMetadata, generateBasicWebPageSchema, generateBreadcrumbSchema } from '@/lib/seo';
+import { generateFAQSchema, generateFaqMetadata, generateBasicWebPageSchema, generateBreadcrumbSchema } from '@/lib/seo';
 import { JsonLd } from '@/components/seo/JsonLd';
 import FAQPageClient from './FAQPageClient';
+import { getFAQPageItems } from './faq-items';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -35,6 +36,8 @@ export default async function FAQPage({ params }: FAQPageProps) {
   setRequestLocale(locale);
 
   const localeValue = locale as Locale;
+  const tFaq = await getTranslations({ locale: localeValue, namespace: 'faqPage' });
+  const faqStructuredData = generateFAQSchema(getFAQPageItems(tFaq));
 
   return (
     <>
@@ -56,6 +59,7 @@ export default async function FAQPage({ params }: FAQPageProps) {
           localeValue
         )}
       />
+      {faqStructuredData && <JsonLd data={faqStructuredData} />}
       <FAQPageClient locale={localeValue} />
     </>
   );
