@@ -28,7 +28,6 @@ export async function generateMetadata({
     title: 'Terms of Use',
     description:
       'Terms for using OpenToolsKit browser tools, public source code, optional partner links, and support surfaces.',
-    keywords: ['opentoolskit terms', 'browser tools terms', 'agpl source terms'],
   });
 }
 

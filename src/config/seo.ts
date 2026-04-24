@@ -12,16 +12,12 @@ export type StaticPageKey =
 export interface StaticPageSeo {
   title: string;
   description: string;
-  primaryQuery: string;
-  secondaryQueries: string[];
 }
 
 export interface CategorySeoProfile {
   title: string;
   h1: string;
   description: string;
-  primaryQuery: string;
-  secondaryQueries: string[];
   intro: string;
   bestFor: string[];
   adjacentCategories: ToolCategory[];
@@ -34,8 +30,6 @@ export interface ToolSeoExample {
 }
 
 export interface ToolSeoOverride {
-  primaryQuery: string;
-  secondaryQueries: string[];
   pageTitle: string;
   h1: string;
   metaDescription: string;
@@ -52,44 +46,30 @@ export const STATIC_PAGE_SEO: Record<StaticPageKey, StaticPageSeo> = {
   home: {
     title: 'Browser PDF Tools That Keep Files Local | OpenToolsKit',
     description: 'Use browser-side PDF tools for merging, splitting, compressing, converting, signing, and repairing files without uploading them to a server.',
-    primaryQuery: 'browser pdf tools',
-    secondaryQueries: ['private pdf tools', 'local pdf tools', 'pdf tools without upload'],
   },
   tools: {
     title: 'PDF Tool Directory - Merge, Split, Compress, Convert | OpenToolsKit',
     description: 'Browse the OpenToolsKit PDF tool directory for browser-side workflows covering merge, split, compress, convert, redact, repair, and secure PDF jobs.',
-    primaryQuery: 'pdf tool directory',
-    secondaryQueries: ['pdf tools list', 'online pdf tools without upload', 'browser pdf toolkit'],
   },
   workflow: {
     title: 'PDF Workflow Builder - Chain Merge, Compress, And Secure Steps | OpenToolsKit',
     description: 'Build repeatable browser-side PDF workflows by chaining merge, split, compress, edit, and security steps into one reusable sequence.',
-    primaryQuery: 'pdf workflow builder',
-    secondaryQueries: ['browser pdf workflow', 'repeat pdf tasks', 'client side pdf workflow'],
   },
   about: {
     title: 'About OpenToolsKit - Browser-Side Utility Platform',
     description: 'Learn how OpenToolsKit runs practical browser-side file tools, keeps AGPL source availability visible, and prioritizes private, task-first workflows.',
-    primaryQuery: 'about opentoolskit',
-    secondaryQueries: ['opentoolskit agpl', 'browser side file tools', 'private utility platform'],
   },
   faq: {
     title: 'OpenToolsKit FAQ - Browser PDF Tools, Privacy, and Limits',
     description: 'Read practical answers about OpenToolsKit privacy, browser-side processing, supported PDF tasks, workflow limits, and open-source source availability.',
-    primaryQuery: 'opentoolskit faq',
-    secondaryQueries: ['browser pdf tools faq', 'pdf privacy faq', 'local pdf processing questions'],
   },
   privacy: {
     title: 'Privacy Policy - Browser-Side File Processing | OpenToolsKit',
     description: 'Review the OpenToolsKit privacy policy covering browser-side file handling, support paths, optional partner surfaces, and public AGPL source availability.',
-    primaryQuery: 'browser side file processing privacy policy',
-    secondaryQueries: ['opentoolskit privacy policy', 'local pdf processing privacy', 'pdf tools privacy'],
   },
   contact: {
     title: 'Contact and Support | OpenToolsKit',
     description: 'Contact OpenToolsKit for general support, privacy questions, bug reports, source review, and AGPL attribution details for the live service.',
-    primaryQuery: 'opentoolskit support',
-    secondaryQueries: ['opentoolskit contact', 'opentoolskit github', 'opentoolskit source code', 'agpl source availability'],
   },
 };
 
@@ -98,8 +78,6 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
     title: 'Organize PDF Pages - Merge, Split, Reorder, Extract | OpenToolsKit',
     h1: 'Organize PDF pages in your browser',
     description: 'Organize PDF pages in the browser with merge, split, reorder, extract, delete, rotate, booklet, and batch page-management tools.',
-    primaryQuery: 'organize pdf pages',
-    secondaryQueries: ['merge split reorder pdf', 'extract pdf pages', 'manage pdf pages'],
     intro: 'Use the organize and manage hub when the job is about page order, document grouping, extraction, or file structure rather than visual editing or security settings.',
     bestFor: [
       'Combining multiple PDFs into one final document.',
@@ -112,8 +90,6 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
     title: 'Edit PDF Online - Annotate, Sign, Watermark, Fill Forms | OpenToolsKit',
     h1: 'Edit and annotate PDFs in your browser',
     description: 'Edit PDF pages in the browser with tools for annotations, signatures, watermarks, form filling, page numbering, headers, and visual cleanup.',
-    primaryQuery: 'edit pdf online browser',
-    secondaryQueries: ['annotate pdf in browser', 'sign and watermark pdf', 'fill pdf forms online without upload'],
     intro: 'Use the edit and annotate hub when you need to change how a PDF looks, reads, or behaves on the page itself.',
     bestFor: [
       'Adding signatures, comments, highlights, stamps, and form values.',
@@ -126,8 +102,6 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
     title: 'Convert Files to PDF - Images, Text, Office, Ebook | OpenToolsKit',
     h1: 'Convert files to PDF in your browser',
     description: 'Convert images, text, JSON, ebooks, email, and supported document formats to PDF in a browser-first workflow with private local handling.',
-    primaryQuery: 'convert files to pdf browser',
-    secondaryQueries: ['image to pdf browser', 'text to pdf online private', 'office to pdf browser'],
     intro: 'Use the convert-to-PDF hub when the source file is not already a PDF and the goal is to create a shareable PDF output.',
     bestFor: [
       'Turning images, text files, and structured content into a PDF.',
@@ -140,8 +114,6 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
     title: 'Convert PDF to Images, DOCX, Excel, JSON, Markdown | OpenToolsKit',
     h1: 'Convert PDF files into other formats',
     description: 'Convert PDF files into images, DOCX, PowerPoint, Excel, JSON, SVG, Markdown, and other practical export formats in the browser.',
-    primaryQuery: 'convert pdf to other formats',
-    secondaryQueries: ['pdf to image browser', 'pdf to docx browser', 'pdf export tools'],
     intro: 'Use the convert-from-PDF hub when the PDF is your source and you need reusable text, images, tables, or another output format.',
     bestFor: [
       'Exporting PDF pages as images for design, support tickets, or upload portals.',
@@ -154,8 +126,6 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
     title: 'Compress, Repair, and Optimize PDF Files | OpenToolsKit',
     h1: 'Compress, repair, and optimize PDF files',
     description: 'Reduce PDF size, repair broken files, improve loading behavior, deskew scans, flatten layers, and clean metadata with browser-side optimization tools.',
-    primaryQuery: 'optimize pdf file',
-    secondaryQueries: ['compress pdf in browser', 'repair pdf file', 'reduce pdf size without upload'],
     intro: 'Use the optimize and repair hub when the problem is file size, loading behavior, printability, scanner cleanup, or a broken PDF rather than page content.',
     bestFor: [
       'Reducing PDF size for portals, email limits, or faster loading.',
@@ -168,8 +138,6 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
     title: 'Secure PDF Files - Encrypt, Decrypt, Redact, Remove Metadata | OpenToolsKit',
     h1: 'Secure PDF files in your browser',
     description: 'Protect PDF files with browser-side security tools for encryption, permission changes, restriction removal, metadata cleanup, redaction, and signature checks.',
-    primaryQuery: 'secure pdf files',
-    secondaryQueries: ['encrypt pdf browser', 'remove pdf metadata', 'redact pdf browser'],
     intro: 'Use the secure PDF hub when the job involves permissions, privacy, access control, or hiding sensitive information before sharing a document.',
     bestFor: [
       'Encrypting PDFs or changing permissions before distribution.',
@@ -182,8 +150,6 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
 
 export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
   'merge-pdf': {
-    primaryQuery: 'merge pdf files',
-    secondaryQueries: ['combine pdf files', 'join pdf documents', 'merge pdf in browser'],
     pageTitle: 'Merge PDF Files - Combine Documents In Your Browser',
     h1: 'Merge PDF files in your browser',
     metaDescription: 'Combine multiple PDF files into one ordered document in your browser. Use OpenToolsKit to merge PDFs locally without sign-up or file uploads.',
@@ -206,8 +172,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['split-pdf', 'organize-pdf', 'pdf-multi-tool'],
   },
   'split-pdf': {
-    primaryQuery: 'split pdf pages',
-    secondaryQueries: ['extract pages from pdf', 'separate pdf pages', 'split pdf in browser'],
     pageTitle: 'Split PDF Pages - Separate A PDF Into Smaller Files',
     h1: 'Split PDF pages into separate files',
     metaDescription: 'Split a PDF into page ranges or separate files in your browser. Use OpenToolsKit to break large PDFs into smaller outputs without uploading them.',
@@ -230,8 +194,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['extract-pages', 'organize-pdf', 'merge-pdf'],
   },
   'compress-pdf': {
-    primaryQuery: 'compress pdf file',
-    secondaryQueries: ['reduce pdf size', 'pdf too large for upload', 'shrink pdf in browser'],
     pageTitle: 'Compress PDF File - Reduce PDF Size For Uploads',
     h1: 'Compress a PDF file for upload limits',
     metaDescription: 'Reduce PDF size in your browser for upload portals, email limits, and faster sharing. Compress PDFs locally with OpenToolsKit without sign-up.',
@@ -254,8 +216,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['linearize-pdf', 'repair-pdf', 'sanitize-pdf'],
   },
   'pdf-multi-tool': {
-    primaryQuery: 'pdf multi tool',
-    secondaryQueries: ['all in one pdf tool', 'pdf editor and organizer', 'browser pdf workspace'],
     pageTitle: 'PDF Multi Tool - Merge, Split, Reorder, Rotate In One Workspace',
     h1: 'Use multiple PDF page actions in one workspace',
     metaDescription: 'Open one PDF workspace for merging, splitting, reordering, deleting, rotating, and extracting pages without switching tools.',
@@ -278,8 +238,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['merge-pdf', 'split-pdf', 'organize-pdf'],
   },
   'organize-pdf': {
-    primaryQuery: 'organize pdf pages',
-    secondaryQueries: ['reorder pdf pages', 'delete pdf pages', 'arrange pdf pages'],
     pageTitle: 'Organize PDF Pages - Reorder, Delete, Duplicate, Rotate',
     h1: 'Organize PDF pages before you export',
     metaDescription: 'Reorder, duplicate, rotate, and delete PDF pages in your browser. Use OpenToolsKit to organize a PDF before saving the cleaned output.',
@@ -302,8 +260,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['merge-pdf', 'split-pdf', 'delete-pages'],
   },
   'edit-pdf': {
-    primaryQuery: 'edit pdf in browser',
-    secondaryQueries: ['annotate pdf online', 'add notes to pdf', 'mark up pdf locally'],
     pageTitle: 'Edit PDF In Browser - Annotate, Highlight, Comment',
     h1: 'Edit and annotate a PDF in your browser',
     metaDescription: 'Annotate, highlight, comment, draw, and mark up PDFs in your browser. Use OpenToolsKit for local PDF editing without sending files away.',
@@ -326,8 +282,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['sign-pdf', 'form-filler', 'organize-pdf'],
   },
   'sign-pdf': {
-    primaryQuery: 'sign pdf in browser',
-    secondaryQueries: ['add signature to pdf', 'draw signature on pdf', 'pdf signature tool'],
     pageTitle: 'Sign PDF In Browser - Draw, Type, Or Upload A Signature',
     h1: 'Sign a PDF in your browser',
     metaDescription: 'Add a signature to a PDF by drawing, typing, or uploading it in your browser. Use OpenToolsKit for local PDF signing without sign-up.',
@@ -350,8 +304,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['edit-pdf', 'digital-sign-pdf', 'form-filler'],
   },
   'jpg-to-pdf': {
-    primaryQuery: 'jpg to pdf',
-    secondaryQueries: ['convert jpg to pdf', 'images to pdf', 'photo to pdf in browser'],
     pageTitle: 'JPG To PDF - Convert Photos To A PDF In Browser',
     h1: 'Convert JPG images to a PDF',
     metaDescription: 'Convert JPG images into a PDF in your browser. Turn photos or scanned image pages into one shareable PDF without sign-up or upload.',
@@ -374,8 +326,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['image-to-pdf', 'png-to-pdf', 'pdf-to-jpg'],
   },
   'image-to-pdf': {
-    primaryQuery: 'image to pdf',
-    secondaryQueries: ['convert images to pdf', 'photo to pdf browser', 'multiple images to pdf'],
     pageTitle: 'Image To PDF - Convert Photos And Graphics To PDF',
     h1: 'Convert images to a PDF in your browser',
     metaDescription: 'Convert image files into a PDF in your browser. Use OpenToolsKit to combine photos and graphics into one PDF output without upload.',
@@ -398,8 +348,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['jpg-to-pdf', 'png-to-pdf', 'merge-pdf'],
   },
   'pdf-to-jpg': {
-    primaryQuery: 'pdf to jpg',
-    secondaryQueries: ['convert pdf to image', 'extract pdf pages as jpg', 'pdf page to jpg'],
     pageTitle: 'PDF To JPG - Export PDF Pages As Images',
     h1: 'Convert PDF pages to JPG images',
     metaDescription: 'Export PDF pages as JPG images in your browser. Convert a PDF into image files for uploads, previews, or reuse in other tools.',
@@ -422,8 +370,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['pdf-to-png', 'pdf-to-svg', 'jpg-to-pdf'],
   },
   'pdf-to-docx': {
-    primaryQuery: 'pdf to docx',
-    secondaryQueries: ['convert pdf to word', 'pdf to editable document', 'pdf to docx browser'],
     pageTitle: 'PDF To DOCX - Convert A PDF Into An Editable Word File',
     h1: 'Convert a PDF into DOCX',
     metaDescription: 'Convert a PDF into DOCX in your browser when you need editable document output. Export PDF content into a Word-friendly file with OpenToolsKit.',
@@ -446,8 +392,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['pdf-to-markdown', 'ocr-pdf', 'pdf-to-json'],
   },
   'ocr-pdf': {
-    primaryQuery: 'ocr pdf',
-    secondaryQueries: ['searchable pdf from scan', 'extract text from scanned pdf', 'recognize text in pdf'],
     pageTitle: 'OCR PDF - Recognize Text In A Scanned PDF',
     h1: 'Run OCR on a scanned PDF',
     metaDescription: 'Recognize text in a scanned PDF and make document content searchable in your browser. Use OCR PDF when a PDF is image-based instead of selectable text.',
@@ -470,8 +414,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['pdf-to-docx', 'pdf-to-markdown', 'repair-pdf'],
   },
   'encrypt-pdf': {
-    primaryQuery: 'encrypt pdf',
-    secondaryQueries: ['password protect pdf', 'secure pdf with password', 'pdf encryption browser'],
     pageTitle: 'Encrypt PDF - Password Protect A PDF In Browser',
     h1: 'Encrypt a PDF with password protection',
     metaDescription: 'Password protect a PDF in your browser with OpenToolsKit. Use Encrypt PDF when a file needs controlled access before sharing or storage.',
@@ -494,8 +436,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['decrypt-pdf', 'change-permissions', 'find-and-redact'],
   },
   'remove-metadata': {
-    primaryQuery: 'remove pdf metadata',
-    secondaryQueries: ['clean pdf metadata', 'strip document metadata', 'pdf privacy cleanup'],
     pageTitle: 'Remove PDF Metadata - Clean Document Metadata Before Sharing',
     h1: 'Remove PDF metadata before sharing',
     metaDescription: 'Strip PDF metadata in your browser before sending or publishing a document. Use OpenToolsKit to remove identifying document metadata locally.',
@@ -518,8 +458,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['sanitize-pdf', 'find-and-redact', 'encrypt-pdf'],
   },
   'find-and-redact': {
-    primaryQuery: 'redact pdf',
-    secondaryQueries: ['remove sensitive text from pdf', 'pdf redaction tool', 'find and redact pdf'],
     pageTitle: 'Redact PDF - Find And Remove Sensitive PDF Content',
     h1: 'Find and redact sensitive content in a PDF',
     metaDescription: 'Find and redact sensitive content in a PDF in your browser. Use OpenToolsKit to hide visible information before sharing a document.',
@@ -542,8 +480,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['remove-metadata', 'sanitize-pdf', 'encrypt-pdf'],
   },
   'repair-pdf': {
-    primaryQuery: 'repair pdf file',
-    secondaryQueries: ['fix broken pdf', 'corrupt pdf repair', 'pdf wont open fix'],
     pageTitle: 'Repair PDF File - Fix Broken Or Corrupt PDFs',
     h1: 'Repair a broken or corrupt PDF',
     metaDescription: 'Repair a broken or corrupt PDF in your browser when a file will not open or behaves incorrectly. Use OpenToolsKit to recover a healthier PDF output.',
@@ -566,8 +502,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['compress-pdf', 'sanitize-pdf', 'linearize-pdf'],
   },
   'delete-pages': {
-    primaryQuery: 'delete pdf pages',
-    secondaryQueries: ['remove pages from pdf', 'delete pages from pdf online', 'trim pdf pages'],
     pageTitle: 'Delete PDF Pages - Remove Unwanted Pages Before Export',
     h1: 'Delete pages from a PDF in your browser',
     metaDescription: 'Remove unwanted pages from a PDF in your browser before saving the final file. Use OpenToolsKit to delete PDF pages locally without upload.',
@@ -590,8 +524,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['extract-pages', 'organize-pdf', 'split-pdf'],
   },
   'extract-pages': {
-    primaryQuery: 'extract pages from pdf',
-    secondaryQueries: ['save selected pdf pages', 'extract pdf pages into new file', 'pull pages from pdf'],
     pageTitle: 'Extract Pages From PDF - Save Selected Pages As New Files',
     h1: 'Extract selected pages from a PDF',
     metaDescription: 'Extract selected pages from a PDF in your browser and save them as new files. Use OpenToolsKit when only part of a document needs to move forward.',
@@ -614,8 +546,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['split-pdf', 'delete-pages', 'organize-pdf'],
   },
   'add-watermark': {
-    primaryQuery: 'add watermark to pdf',
-    secondaryQueries: ['watermark pdf in browser', 'add text watermark pdf', 'add image watermark pdf'],
     pageTitle: 'Add Watermark To PDF - Place Text Or Image Watermarks',
     h1: 'Add a watermark to a PDF in your browser',
     metaDescription: 'Add text or image watermarks to a PDF in your browser. Use OpenToolsKit to mark drafts, confidential files, or branded documents locally.',
@@ -638,8 +568,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['page-numbers', 'header-footer', 'add-stamps'],
   },
   'form-filler': {
-    primaryQuery: 'fill pdf form online',
-    secondaryQueries: ['fill pdf form in browser', 'complete pdf form without printing', 'type into pdf form'],
     pageTitle: 'Fill PDF Form Online - Complete A PDF Form In Your Browser',
     h1: 'Fill a PDF form in your browser',
     metaDescription: 'Fill a PDF form in your browser without printing or scanning. Use OpenToolsKit to type into interactive PDF forms and export the completed file locally.',
@@ -662,8 +590,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['sign-pdf', 'form-creator', 'flatten-pdf'],
   },
   'pdf-to-png': {
-    primaryQuery: 'pdf to png',
-    secondaryQueries: ['convert pdf to png', 'save pdf page as png', 'pdf page to transparent image'],
     pageTitle: 'PDF To PNG - Export PDF Pages As PNG Images',
     h1: 'Convert PDF pages to PNG images',
     metaDescription: 'Export PDF pages as PNG images in your browser. Use OpenToolsKit when a PDF page needs image output with cleaner quality or transparency handling.',
@@ -686,8 +612,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['pdf-to-jpg', 'pdf-to-svg', 'jpg-to-pdf'],
   },
   'pdf-to-excel': {
-    primaryQuery: 'pdf to excel',
-    secondaryQueries: ['extract pdf table to excel', 'convert pdf tables to xlsx', 'pdf spreadsheet export'],
     pageTitle: 'PDF To Excel - Extract Tables Into A Spreadsheet',
     h1: 'Convert PDF tables to Excel',
     metaDescription: 'Convert PDF tables to Excel in your browser when you need spreadsheet-ready output. Use OpenToolsKit to move PDF table data into editable worksheets.',
@@ -710,8 +634,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['extract-tables', 'pdf-to-json', 'ocr-pdf'],
   },
   'decrypt-pdf': {
-    primaryQuery: 'decrypt pdf',
-    secondaryQueries: ['remove password from pdf', 'unlock pdf in browser', 'open protected pdf'],
     pageTitle: 'Decrypt PDF - Remove A PDF Password In Your Browser',
     h1: 'Decrypt a PDF and remove its password',
     metaDescription: 'Remove a PDF password in your browser when you already have permission to unlock the file. Use OpenToolsKit to decrypt PDFs locally before editing or sharing.',
@@ -734,8 +656,6 @@ export const TOOL_SEO_OVERRIDES: Record<string, ToolSeoOverride> = {
     comparisonToolIds: ['encrypt-pdf', 'remove-restrictions', 'change-permissions'],
   },
   'digital-sign-pdf': {
-    primaryQuery: 'digitally sign pdf',
-    secondaryQueries: ['certificate sign pdf', 'x509 pdf signature', 'sign pdf with certificate'],
     pageTitle: 'Digitally Sign PDF - Sign A PDF With A Certificate',
     h1: 'Digitally sign a PDF with a certificate',
     metaDescription: 'Digitally sign a PDF in your browser with a certificate-based signature. Use OpenToolsKit when a visible signature is not enough and document integrity matters.',

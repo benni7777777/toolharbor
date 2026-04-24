@@ -5,8 +5,6 @@ export interface ToolSeoProfile {
   pageTitle: string;
   h1: string;
   metaDescription: string;
-  primaryQuery: string;
-  secondaryQueries: string[];
   fastAnswer: string;
   bestFor: string[];
   inputs: string[];
@@ -79,16 +77,13 @@ export function getToolSeoProfile(tool: Tool, content: ToolContent): ToolSeoProf
   }
 
   const toolName = content.title || titleizeToolId(tool.id);
-  const primaryQuery = toolName.toLowerCase();
-  const secondaryQueries = tool.features.slice(0, 3).map((feature) => `${feature.replace(/-/g, ' ')} pdf`);
+  const normalizedToolName = toolName.toLowerCase();
 
   return {
     pageTitle: `${toolName} - Browser-Side PDF Workflow | OpenToolsKit`,
     h1: toolName,
     metaDescription: content.metaDescription || `Use ${toolName} in your browser for a private PDF workflow without uploads or sign-up.`,
-    primaryQuery,
-    secondaryQueries,
-    fastAnswer: `Use ${toolName} when the job is ${primaryQuery} and you want the result handled locally in your browser.`,
+    fastAnswer: `Use ${toolName} when the job is ${normalizedToolName} and you want the result handled locally in your browser.`,
     bestFor: buildFallbackBestFor(tool, tool.category),
     inputs: buildFallbackInputs(tool),
     outputs: buildFallbackOutputs(tool),

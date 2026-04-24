@@ -108,7 +108,7 @@ describe('Tool Component Property Tests', () => {
             const { unmount } = render(<ToolCard tool={tool} locale={locale} />);
             
             const linkElement = screen.getByTestId('tool-card');
-            const expectedUrl = `/${locale}/tools/${tool.slug}`;
+            const expectedUrl = `/${locale}/tools/${tool.slug}/`;
             
             expect(linkElement).toHaveAttribute('href', expectedUrl);
             
@@ -210,7 +210,6 @@ function generateValidToolContent(tool: typeof tools[0]): ToolContent {
   return {
     title: toolName,
     metaDescription: `${toolName} - Process your PDF files easily and securely`,
-    keywords: [tool.id, 'pdf', 'tool', ...tool.features.slice(0, 3)],
     description: `<p>${toolName} is a powerful tool for processing PDF files. ${tool.features.map(f => f.replace(/-/g, ' ')).join(', ')}.</p>`,
     howToUse,
     useCases,

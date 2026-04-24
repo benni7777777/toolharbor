@@ -158,18 +158,6 @@ export const siteConfig = {
     defaultTitle: 'OpenToolsKit | Browser Tools For PDF, Image, Text, Publishing, and SEO',
     twitterHandle: '@OpenToolsKit',
     locale: 'en_US',
-    keywords: [
-      'OpenToolsKit',
-      'open source tools',
-      'browser PDF tools',
-      'image tools',
-      'text tools',
-      'SEO tools',
-      'developer utilities',
-      'social media tools',
-      'private online tools',
-      'client-side processing',
-    ],
   },
   theme: {
     storageKey: 'opentoolskit-theme-preference',

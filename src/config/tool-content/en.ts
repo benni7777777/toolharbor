@@ -15,7 +15,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-multi-tool': {
     title: 'PDF Multi Tool',
     metaDescription: 'All-in-one PDF editor: merge, split, organize, delete, rotate, and extract pages in one powerful tool.',
-    keywords: ['pdf multi tool', 'pdf editor', 'merge pdf', 'split pdf', 'organize pdf', 'all in one pdf'],
     description: `
       <p>The PDF Multi Tool is your comprehensive solution for all PDF page management tasks. This powerful all-in-one tool combines multiple PDF operations into a single, intuitive interface, saving you time and effort.</p>
       <p>Whether you need to merge multiple documents, split a large PDF into smaller files, reorganize pages, delete unwanted content, rotate pages, or extract specific sections, this tool handles it all without switching between different applications.</p>
@@ -42,7 +41,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'merge-pdf': {
     title: 'Merge PDF',
     metaDescription: 'Combine multiple PDF files into one document. Free online PDF merger with drag-and-drop reordering.',
-    keywords: ['merge pdf', 'combine pdf', 'join pdf', 'pdf merger', 'concatenate pdf'],
     description: `
       <p>Merge PDF allows you to combine multiple PDF documents into a single file quickly and easily. Whether you're consolidating reports, combining scanned documents, or assembling a presentation, this tool makes the process seamless.</p>
       <p>Simply upload your files, arrange them in your desired order using drag-and-drop, and merge them into one cohesive document. The tool preserves the quality of your original files and can optionally maintain bookmarks from each source document.</p>
@@ -68,7 +66,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'rotate-custom': {
     title: 'Rotate by Custom Degrees',
     metaDescription: 'Rotate PDF pages by any angle. Precise custom rotation for straightening scanned documents.',
-    keywords: ['rotate pdf custom angle', 'straighten pdf', 'deskew pdf', 'pdf custom rotation'],
     description: `
       <p>Rotate by Custom Degrees gives you precise control over your PDF page orientation. Unlike standard rotation tools that only support 90-degree increments, this tool allows you to rotate pages by any specific angle.</p>
       <p>Perfect for straightening scanned documents that were fed slightly askew, or adjusting diagrams and charts to their correct orientation. You can correct individual pages or apply the same rotation to the entire document.</p>
@@ -95,7 +92,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'grid-combine': {
     title: 'Grid Combine PDF',
     metaDescription: 'Combine multiple PDF files onto single pages with a flexible grid layout. Arrange 2, 4, 6, 9 or more PDFs per page with borders and spacing.',
-    keywords: ['grid combine', 'merge pdf grid', 'pdf collage', 'multiple pdfs one page', 'pdf n-up', 'combine pdfs grid'],
     description: `
       <p>The Grid Combine tool offers a unique way to merge multiple separate PDF files onto single pages. Unlike the standard "Merge PDF" tool which simply appends pages, or the "N-Up" tool which rearranges pages from a single document, Grid Combine takes multiple input files and arranges them side-by-side in a customizable grid layout.</p>
       <p>You can choose from various grid configurations such as 2x1, 2x2, 3x3, etc. This is perfect for comparing multiple documents, creating handouts from different sources, or printing compact versions of several files.</p>
@@ -122,7 +118,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'split-pdf': {
     title: 'Split PDF',
     metaDescription: 'Split PDF files into multiple documents. Extract specific pages or divide by page ranges.',
-    keywords: ['split pdf', 'divide pdf', 'separate pdf', 'extract pages', 'pdf splitter'],
     description: `
       <p>Split PDF enables you to divide a single PDF document into multiple smaller files. This is perfect for extracting specific chapters, separating combined documents, or creating individual files from a multi-page PDF.</p>
       <p>You can split by specific page ranges, extract individual pages, or divide the document at regular intervals. The tool provides a visual preview of your pages, making it easy to select exactly what you need.</p>
@@ -149,7 +144,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'compress-pdf': {
     title: 'Compress PDF',
     metaDescription: 'Reduce PDF file size while maintaining quality. Free online PDF compressor for smaller files.',
-    keywords: ['compress pdf', 'reduce pdf size', 'pdf compressor', 'shrink pdf', 'optimize pdf'],
     description: `
       <p>Compress PDF reduces the file size of your PDF documents while maintaining acceptable quality. This is essential for email attachments, web uploads, or saving storage space.</p>
       <p>The tool offers multiple compression levels to balance between file size reduction and quality preservation. You can choose aggressive compression for maximum size reduction or light compression to maintain higher quality.</p>
@@ -175,7 +169,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'edit-pdf': {
     title: 'Edit PDF',
     metaDescription: 'Edit PDF files online. Add text, images, annotations, highlights, and shapes to your documents.',
-    keywords: ['edit pdf', 'pdf editor', 'annotate pdf', 'add text to pdf', 'pdf markup'],
     description: `
       <p>Edit PDF provides a comprehensive set of tools for modifying and annotating your PDF documents. Add text, images, shapes, highlights, comments, and more without needing expensive desktop software.</p>
       <p>The intuitive editor interface makes it easy to mark up documents for review, add notes for collaboration, redact sensitive information, or enhance documents with additional content.</p>
@@ -202,7 +195,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'jpg-to-pdf': {
     title: 'JPG to PDF',
     metaDescription: 'Convert JPG images to PDF. Combine multiple JPG files into a single PDF document.',
-    keywords: ['jpg to pdf', 'jpeg to pdf', 'convert jpg', 'image to pdf', 'photo to pdf'],
     description: `
       <p>JPG to PDF converts your JPEG images into PDF documents quickly and easily. Whether you have a single photo or multiple images, this tool creates professional-looking PDF files.</p>
       <p>You can combine multiple JPG files into a single PDF, arrange them in any order, and customize page size and orientation. The conversion preserves image quality while creating compact, shareable PDF files.</p>
@@ -228,7 +220,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'sign-pdf': {
     title: 'Sign PDF',
     metaDescription: 'Add electronic signatures to PDF documents. Draw, type, or upload your signature.',
-    keywords: ['sign pdf', 'electronic signature', 'e-signature', 'pdf signature', 'digital signature'],
     description: `
       <p>Sign PDF allows you to add electronic signatures to your PDF documents quickly and securely. Create your signature by drawing, typing, or uploading an image, then place it anywhere on your document.</p>
       <p>You can add multiple signatures to a single document, resize and position them precisely, and save your signature for future use. The tool is perfect for contracts, agreements, forms, and any document requiring your signature.</p>
@@ -255,7 +246,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'crop-pdf': {
     title: 'Crop PDF',
     metaDescription: 'Crop PDF pages to remove margins and unwanted areas. Trim PDF documents precisely.',
-    keywords: ['crop pdf', 'trim pdf', 'cut pdf margins', 'resize pdf pages', 'pdf cropper'],
     description: `
       <p>Crop PDF allows you to trim margins and remove unwanted areas from your PDF pages. This is useful for removing excess whitespace, focusing on specific content areas, or standardizing page dimensions.</p>
       <p>You can crop all pages uniformly or adjust each page individually. The visual interface shows exactly what will be kept, making it easy to achieve precise results.</p>
@@ -282,7 +272,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'extract-pages': {
     title: 'Extract Pages',
     metaDescription: 'Extract specific pages from PDF files. Select and save individual pages as new documents.',
-    keywords: ['extract pdf pages', 'save pdf pages', 'copy pdf pages', 'pdf page extractor'],
     description: `
       <p>Extract Pages allows you to select and save specific pages from a PDF document as new files. This is perfect for pulling out relevant sections, creating excerpts, or separating combined documents.</p>
       <p>You can extract individual pages, page ranges, or multiple non-consecutive pages. The visual page preview makes it easy to identify and select exactly the pages you need.</p>
@@ -308,7 +297,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'organize-pdf': {
     title: 'Organize PDF',
     metaDescription: 'Reorder, duplicate, and delete PDF pages. Drag and drop to reorganize your documents.',
-    keywords: ['organize pdf', 'reorder pdf pages', 'rearrange pdf', 'pdf page organizer'],
     description: `
       <p>Organize PDF provides an intuitive drag-and-drop interface for rearranging pages in your PDF documents. Reorder pages, duplicate important sections, or remove unwanted pages with ease.</p>
       <p>The visual page thumbnails make it easy to identify content and arrange pages exactly as you need them. Perfect for restructuring documents, creating custom page orders, or cleaning up scanned files.</p>
@@ -334,7 +322,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'delete-pages': {
     title: 'Delete Pages',
     metaDescription: 'Remove unwanted pages from PDF files. Select and delete specific pages easily.',
-    keywords: ['delete pdf pages', 'remove pdf pages', 'pdf page remover', 'delete pages from pdf'],
     description: `
       <p>Delete Pages allows you to remove unwanted pages from your PDF documents quickly and easily. Whether you need to remove blank pages, outdated content, or sensitive information, this tool makes it simple.</p>
       <p>Visual page thumbnails help you identify exactly which pages to remove. You can delete individual pages or multiple pages at once.</p>
@@ -362,7 +349,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'bookmark': {
     title: 'Edit Bookmarks',
     metaDescription: 'Add, edit, and manage PDF bookmarks. Create navigation structure for your documents.',
-    keywords: ['pdf bookmarks', 'edit bookmarks', 'add bookmarks', 'pdf navigation', 'table of contents'],
     description: `
       <p>Edit Bookmarks allows you to create, modify, and organize bookmarks in your PDF documents. Bookmarks provide quick navigation to specific sections, making long documents easier to use.</p>
       <p>You can add new bookmarks, edit existing ones, reorganize the bookmark hierarchy, or import bookmarks from external sources. This tool is essential for creating professional, navigable documents.</p>
@@ -388,7 +374,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'table-of-contents': {
     title: 'Table of Contents',
     metaDescription: 'Generate a table of contents for your PDF. Create clickable navigation from bookmarks.',
-    keywords: ['pdf table of contents', 'toc generator', 'pdf index', 'document navigation'],
     description: `
       <p>Table of Contents generates a navigable table of contents page for your PDF documents. The TOC can be created from existing bookmarks or custom entries, providing readers with an overview and quick navigation.</p>
       <p>Customize the appearance with different styles, fonts, and layouts. The generated TOC includes clickable links that jump directly to the referenced pages.</p>
@@ -414,7 +399,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'page-numbers': {
     title: 'Page Numbers',
     metaDescription: 'Add page numbers to PDF documents. Customize position, format, and starting number.',
-    keywords: ['add page numbers', 'pdf page numbers', 'number pdf pages', 'pdf pagination'],
     description: `
       <p>Page Numbers adds customizable page numbering to your PDF documents. Choose from various formats, positions, and styles to match your document's design.</p>
       <p>You can set the starting number, skip certain pages, and use different numbering formats (1, 2, 3 or i, ii, iii). Perfect for creating professional documents with proper pagination.</p>
@@ -440,7 +424,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'add-watermark': {
     title: 'Add Watermark',
     metaDescription: 'Add text or image watermarks to PDF files. Protect and brand your documents.',
-    keywords: ['add watermark', 'pdf watermark', 'stamp pdf', 'brand pdf', 'protect pdf'],
     description: `
       <p>Add Watermark allows you to place text or image watermarks on your PDF documents. Watermarks can indicate document status (Draft, Confidential), add branding, or deter unauthorized copying.</p>
       <p>Customize the watermark's position, size, opacity, rotation, and color. Apply to all pages or select specific pages. The tool supports both text watermarks and image watermarks.</p>
@@ -466,7 +449,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'header-footer': {
     title: 'Header & Footer',
     metaDescription: 'Add headers and footers to PDF documents. Include page numbers, dates, and custom text.',
-    keywords: ['pdf header', 'pdf footer', 'add header footer', 'pdf letterhead'],
     description: `
       <p>Header & Footer adds customizable headers and footers to your PDF documents. Include page numbers, dates, document titles, or any custom text in the header or footer areas.</p>
       <p>Position content on the left, center, or right of the header/footer. Use different content for odd and even pages if needed. Perfect for creating professional documents with consistent formatting.</p>
@@ -492,7 +474,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'invert-colors': {
     title: 'Invert Colors',
     metaDescription: 'Invert PDF colors for dark mode reading. Convert documents to negative colors.',
-    keywords: ['invert pdf colors', 'pdf dark mode', 'negative pdf', 'reverse colors'],
     description: `
       <p>Invert Colors reverses the colors in your PDF documents, creating a negative image effect. This is particularly useful for creating dark mode versions of documents for easier reading in low-light conditions.</p>
       <p>The tool can invert all colors or selectively preserve certain elements like images. Perfect for reducing eye strain when reading documents at night.</p>
@@ -518,7 +499,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'background-color': {
     title: 'Background Color',
     metaDescription: 'Change PDF background color. Add colored backgrounds to document pages.',
-    keywords: ['pdf background color', 'change pdf background', 'colored pdf', 'pdf page color'],
     description: `
       <p>Background Color allows you to change or add background colors to your PDF pages. This can improve readability, add visual interest, or match your branding requirements.</p>
       <p>Choose any color for the background and apply it to all pages or selected pages. The tool preserves all existing content while adding the background layer.</p>
@@ -544,7 +524,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'text-color': {
     title: 'Change Text Color',
     metaDescription: 'Change text color in PDF documents. Modify the color of all text content.',
-    keywords: ['change pdf text color', 'pdf text color', 'modify text color', 'recolor pdf text'],
     description: `
       <p>Change Text Color allows you to modify the color of text in your PDF documents. This is useful for improving contrast, matching branding, or creating visual variations of documents.</p>
       <p>Select a new color and apply it to all text in the document. The tool processes text elements while preserving images and other content.</p>
@@ -570,7 +549,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'add-stamps': {
     title: 'Add Stamps',
     metaDescription: 'Add stamps to PDF documents. Use preset or custom stamps for approval, review, and more.',
-    keywords: ['pdf stamps', 'add stamp', 'approval stamp', 'pdf rubber stamp'],
     description: `
       <p>Add Stamps allows you to place stamp images on your PDF documents. Use preset stamps like "Approved", "Rejected", "Draft", or upload custom stamp images.</p>
       <p>Position stamps anywhere on the page, resize them, and apply to single or multiple pages. Perfect for document workflows, approvals, and status indicators.</p>
@@ -596,7 +574,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'remove-annotations': {
     title: 'Remove Annotations',
     metaDescription: 'Remove annotations from PDF files. Delete comments, highlights, and markup.',
-    keywords: ['remove pdf annotations', 'delete comments', 'remove highlights', 'clean pdf'],
     description: `
       <p>Remove Annotations strips comments, highlights, sticky notes, and other annotations from your PDF documents. This creates a clean version of the document without markup.</p>
       <p>You can remove all annotations or selectively remove specific types. Perfect for creating final versions of reviewed documents or removing sensitive comments.</p>
@@ -622,7 +599,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'form-filler': {
     title: 'Form Filler',
     metaDescription: 'Fill PDF forms online. Complete interactive PDF forms without printing.',
-    keywords: ['fill pdf form', 'pdf form filler', 'complete pdf form', 'interactive pdf'],
     description: `
       <p>Form Filler allows you to complete interactive PDF forms directly in your browser. Fill text fields, check boxes, select options, and add signatures without printing the document.</p>
       <p>The tool supports standard PDF forms and XFA forms. Your filled data can be saved and the form can be flattened to prevent further editing.</p>
@@ -648,7 +624,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'form-creator': {
     title: 'Form Creator',
     metaDescription: 'Create fillable PDF forms. Add text fields, checkboxes, and dropdowns to documents.',
-    keywords: ['create pdf form', 'pdf form creator', 'fillable pdf', 'add form fields'],
     description: `
       <p>Form Creator transforms static PDF documents into interactive fillable forms. Add text fields, checkboxes, radio buttons, dropdowns, and more to create professional forms.</p>
       <p>Drag and drop form elements onto your document, configure field properties, and create forms that can be filled electronically. Perfect for creating applications, surveys, and data collection forms.</p>
@@ -674,7 +649,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'remove-blank-pages': {
     title: 'Remove Blank Pages',
     metaDescription: 'Automatically detect and remove blank pages from PDF documents.',
-    keywords: ['remove blank pages', 'delete empty pages', 'clean pdf', 'pdf blank page remover'],
     description: `
       <p>Remove Blank Pages automatically detects and removes empty pages from your PDF documents. This is useful for cleaning up scanned documents, removing separator pages, or eliminating accidentally included blank pages.</p>
       <p>The tool uses intelligent detection to identify truly blank pages while preserving pages with minimal content. You can adjust the sensitivity threshold to control what counts as "blank".</p>
@@ -700,7 +674,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'image-to-pdf': {
     title: 'Image to PDF',
     metaDescription: 'Convert any image to PDF. Support for JPG, PNG, WebP, BMP, TIFF, SVG, and HEIC formats.',
-    keywords: ['image to pdf', 'convert image', 'photo to pdf', 'picture to pdf'],
     description: `
       <p>Image to PDF converts images of any format into PDF documents. Support for JPG, PNG, WebP, BMP, TIFF, SVG, and HEIC formats makes this the universal image converter.</p>
       <p>Combine multiple images into a single PDF, arrange them in any order, and customize page size and orientation. Perfect for creating photo albums, document archives, or portfolios.</p>
@@ -726,7 +699,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'png-to-pdf': {
     title: 'PNG to PDF',
     metaDescription: 'Convert PNG images to PDF. Preserve transparency and combine multiple PNG files.',
-    keywords: ['png to pdf', 'convert png', 'png converter', 'transparent image to pdf'],
     description: `
       <p>PNG to PDF converts your PNG images into PDF documents while preserving transparency. Perfect for graphics, logos, screenshots, and images with transparent backgrounds.</p>
       <p>Combine multiple PNG files into a single PDF, arrange them in any order, and customize page settings. The conversion maintains the high quality of your original images.</p>
@@ -752,7 +724,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'webp-to-pdf': {
     title: 'WebP to PDF',
     metaDescription: 'Convert WebP images to PDF. Modern image format conversion with quality preservation.',
-    keywords: ['webp to pdf', 'convert webp', 'webp converter', 'web image to pdf'],
     description: `
       <p>WebP to PDF converts modern WebP images into PDF documents. WebP is a popular web image format, and this tool makes it easy to convert these images for printing or archiving.</p>
       <p>Combine multiple WebP files into a single PDF with customizable page settings. The conversion preserves image quality while creating compact PDF files.</p>
@@ -778,7 +749,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'svg-to-pdf': {
     title: 'SVG to PDF',
     metaDescription: 'Convert SVG vector graphics to PDF. Preserve scalability and quality.',
-    keywords: ['svg to pdf', 'convert svg', 'vector to pdf', 'scalable graphics to pdf'],
     description: `
       <p>SVG to PDF converts scalable vector graphics into PDF documents while preserving their vector quality. SVG files remain sharp at any size, and this quality is maintained in the PDF output.</p>
       <p>Perfect for converting logos, icons, illustrations, and technical drawings. The resulting PDF maintains the scalability of the original vector graphics.</p>
@@ -804,7 +774,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'bmp-to-pdf': {
     title: 'BMP to PDF',
     metaDescription: 'Convert BMP bitmap images to PDF. Legacy format support with quality preservation.',
-    keywords: ['bmp to pdf', 'convert bmp', 'bitmap to pdf', 'bmp converter'],
     description: `
       <p>BMP to PDF converts bitmap images into PDF documents. BMP is a legacy image format commonly used in Windows environments, and this tool makes it easy to convert these files to modern PDF format.</p>
       <p>Combine multiple BMP files into a single PDF with customizable settings. The conversion compresses the typically large BMP files while maintaining image quality.</p>
@@ -830,7 +799,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'psd-to-pdf': {
     title: 'PSD to PDF',
     metaDescription: 'Convert Adobe Photoshop (PSD) files to PDF format. Supports multiple files and preserves image quality.',
-    keywords: ['psd to pdf', 'convert psd', 'photoshop to pdf', 'psd converter', 'adobe psd to pdf'],
     description: `
       <p>PSD to PDF converts Adobe Photoshop (PSD) files into PDF documents. This tool allows you to view and share PSD designs without needing Photoshop installed.</p>
       <p>You can convert multiple PSD files at once and combine them into a single PDF document. The tool processes each PSD file, rendering the visible layers into high-quality PDF pages.</p>
@@ -856,7 +824,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'heic-to-pdf': {
     title: 'HEIC to PDF',
     metaDescription: 'Convert iPhone HEIC photos to PDF. Apple image format conversion made easy.',
-    keywords: ['heic to pdf', 'convert heic', 'iphone photo to pdf', 'apple image to pdf'],
     description: `
       <p>HEIC to PDF converts Apple's High Efficiency Image Format photos into PDF documents. HEIC is the default photo format on iPhones and iPads, and this tool makes sharing these photos easy.</p>
       <p>Combine multiple HEIC photos into a single PDF, perfect for creating photo albums or document archives from your iPhone photos.</p>
@@ -882,7 +849,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'tiff-to-pdf': {
     title: 'TIFF to PDF',
     metaDescription: 'Convert TIFF images to PDF. Support for multi-page TIFF files and high-quality conversion.',
-    keywords: ['tiff to pdf', 'convert tiff', 'tif to pdf', 'multi-page tiff'],
     description: `
       <p>TIFF to PDF converts TIFF images, including multi-page TIFF files, into PDF documents. TIFF is commonly used for high-quality scans and professional graphics.</p>
       <p>Multi-page TIFF files are automatically converted to multi-page PDFs. The conversion preserves the high quality of your original images.</p>
@@ -908,7 +874,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'txt-to-pdf': {
     title: 'Text to PDF',
     metaDescription: 'Convert plain text files to PDF. Customize fonts, margins, and page layout.',
-    keywords: ['txt to pdf', 'text to pdf', 'convert text file', 'plain text to pdf'],
     description: `
       <p>Text to PDF converts plain text files into formatted PDF documents. Customize fonts, sizes, margins, and page layout to create professional-looking documents from simple text.</p>
       <p>Perfect for converting code files, logs, notes, or any plain text content into shareable PDF format.</p>
@@ -934,7 +899,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'json-to-pdf': {
     title: 'JSON to PDF',
     metaDescription: 'Convert JSON files to formatted PDF. Syntax highlighting and structured output.',
-    keywords: ['json to pdf', 'convert json', 'json viewer', 'json formatter'],
     description: `
       <p>JSON to PDF converts JSON data files into formatted, readable PDF documents. The output includes syntax highlighting and proper indentation for easy reading.</p>
       <p>Perfect for documenting API responses, configuration files, or any JSON data that needs to be shared or archived in a readable format.</p>
@@ -960,7 +924,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'word-to-pdf': {
     title: 'Word to PDF',
     metaDescription: 'Convert Word documents (DOCX) to PDF. Preserve formatting and layout in your converted documents.',
-    keywords: ['word to pdf', 'docx to pdf', 'convert word', 'word converter', 'microsoft word to pdf'],
     description: `
       <p>Word to PDF converts Microsoft Word documents into PDF format while preserving the original formatting, layout, and content structure.</p>
       <p>Upload your DOCX files and get high-quality PDF output suitable for sharing, printing, or archiving. The conversion maintains text formatting, paragraph styles, and basic document structure.</p>
@@ -986,7 +949,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'excel-to-pdf': {
     title: 'Excel to PDF',
     metaDescription: 'Convert Excel spreadsheets (XLSX) to PDF. Preserve tables and data in your converted documents.',
-    keywords: ['excel to pdf', 'xlsx to pdf', 'convert excel', 'spreadsheet to pdf', 'microsoft excel to pdf'],
     description: `
       <p>Excel to PDF converts Microsoft Excel spreadsheets into PDF format while preserving table structure and data organization.</p>
       <p>Upload your XLSX files and get clean PDF output with properly formatted tables. Each sheet in your workbook becomes a separate section in the PDF.</p>
@@ -1012,7 +974,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pptx-to-pdf': {
     title: 'PowerPoint to PDF',
     metaDescription: 'Convert PowerPoint presentations (PPTX) to PDF. Preserve slides and content for easy sharing.',
-    keywords: ['powerpoint to pdf', 'pptx to pdf', 'convert pptx', 'presentation to pdf', 'slides to pdf'],
     description: `
       <p>PowerPoint to PDF converts Microsoft PowerPoint presentations into PDF format, preserving slide content and text for easy sharing and viewing.</p>
       <p>Each slide becomes a page in the PDF, maintaining the presentation flow. Perfect for sharing presentations with people who don't have PowerPoint installed.</p>
@@ -1038,7 +999,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'xps-to-pdf': {
     title: 'XPS to PDF',
     metaDescription: 'Convert XPS documents to PDF format. High-fidelity conversion preserving layout and graphics.',
-    keywords: ['xps to pdf', 'convert xps', 'xps converter', 'microsoft xps to pdf', 'oxps to pdf'],
     description: `
       <p>XPS to PDF converts Microsoft XPS (XML Paper Specification) documents into PDF format while preserving the original layout, text, and vector graphics.</p>
       <p>XPS is a fixed-document format similar to PDF. This tool provides high-fidelity conversion using native XPS parsing, ensuring accurate reproduction of your documents.</p>
@@ -1064,7 +1024,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'rtf-to-pdf': {
     title: 'RTF to PDF',
     metaDescription: 'Convert RTF (Rich Text Format) files to PDF. Preserve text formatting in your documents.',
-    keywords: ['rtf to pdf', 'convert rtf', 'rich text to pdf', 'rtf converter'],
     description: `
       <p>RTF to PDF converts Rich Text Format files into PDF documents. RTF is a widely supported text format that includes basic formatting like fonts, colors, and styles.</p>
       <p>Upload your RTF files and get clean PDF output while preserving text content and basic formatting. Perfect for converting legacy documents to modern PDF format.</p>
@@ -1090,7 +1049,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'epub-to-pdf': {
     title: 'EPUB to PDF',
     metaDescription: 'Convert EPUB e-books to PDF. Preserve formatting, images, and chapter structure.',
-    keywords: ['epub to pdf', 'convert epub', 'ebook to pdf', 'epub converter'],
     description: `
       <p>EPUB to PDF converts electronic book files into high-quality PDF documents. EPUB is the most popular e-book format, used by most e-readers and digital libraries.</p>
       <p>This tool preserves text formatting, images, and the chapter structure of your e-books. Perfect for printing, archiving, or sharing e-books in a universally viewable format.</p>
@@ -1116,7 +1074,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'mobi-to-pdf': {
     title: 'MOBI to PDF',
     metaDescription: 'Convert MOBI e-books to PDF. Support for Kindle format with high-quality rendering.',
-    keywords: ['mobi to pdf', 'convert mobi', 'kindle to pdf', 'azw to pdf', 'mobi converter'],
     description: `
       <p>MOBI to PDF converts Amazon Kindle e-book files into high-quality PDF documents. MOBI format (including AZW and AZW3) is Amazon's proprietary e-book format used on Kindle devices.</p>
       <p>This tool preserves text formatting, images, and the structure of your Kindle books. Perfect for printing, archiving, or reading on devices that don't support MOBI format.</p>
@@ -1142,7 +1099,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'djvu-to-pdf': {
     title: 'DJVU to PDF',
     metaDescription: 'Convert DJVU document files to PDF. High-quality rendering for scanned documents and books.',
-    keywords: ['djvu to pdf', 'convert djvu', 'djvu converter', 'djvu pdf', 'djv to pdf'],
     description: `
       <p>DJVU to PDF converts DjVu document files into high-quality PDF documents. DjVu is a computer file format designed primarily to store scanned documents, especially those containing a combination of text, line drawings, and photographs.</p>
       <p>This tool renders each page of your DJVU file at your chosen DPI (dots per inch) and combines them into a searchable PDF document. Perfect for converting scanned books, technical manuals, and archival documents.</p>
@@ -1168,7 +1124,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'fb2-to-pdf': {
     title: 'FB2 to PDF',
     metaDescription: 'Convert FictionBook (FB2) e-books to PDF. Supports multiple files with high-quality rendering.',
-    keywords: ['fb2 to pdf', 'convert fb2', 'fictionbook to pdf', 'fb2 converter', 'fb2.zip to pdf'],
     description: `
       <p>FB2 to PDF converts FictionBook (FB2) e-book files into high-quality PDF documents. FB2 is a popular XML-based e-book format widely used in Russia and Eastern Europe.</p>
       <p>This tool supports both .fb2 and .fb2.zip files, and can process multiple files at once. It preserves text formatting, images, and the chapter structure of your e-books.</p>
@@ -1196,7 +1151,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-jpg': {
     title: 'PDF to JPG',
     metaDescription: 'Convert PDF pages to JPG images. High-quality extraction with customizable resolution.',
-    keywords: ['pdf to jpg', 'pdf to jpeg', 'convert pdf to image', 'extract pdf images'],
     description: `
       <p>PDF to JPG converts PDF document pages into high-quality JPG images. Extract all pages or select specific pages to convert, with customizable resolution and quality settings.</p>
       <p>Perfect for extracting images from PDFs, creating thumbnails, or converting documents for web use.</p>
@@ -1222,7 +1176,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-png': {
     title: 'PDF to PNG',
     metaDescription: 'Convert PDF pages to PNG images. Lossless quality with transparency support.',
-    keywords: ['pdf to png', 'convert pdf to png', 'pdf image extraction', 'lossless pdf conversion'],
     description: `
       <p>PDF to PNG converts PDF document pages into high-quality PNG images with lossless compression. PNG format preserves image quality perfectly and supports transparency.</p>
       <p>Ideal for extracting graphics, diagrams, or any content where quality preservation is critical.</p>
@@ -1248,7 +1201,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-webp': {
     title: 'PDF to WebP',
     metaDescription: 'Convert PDF pages to WebP images. Modern format with excellent compression.',
-    keywords: ['pdf to webp', 'convert pdf to webp', 'modern image format', 'web optimized images'],
     description: `
       <p>PDF to WebP converts PDF document pages into WebP images, Google's modern image format that offers excellent compression with high quality.</p>
       <p>WebP images are smaller than JPG or PNG while maintaining comparable quality, making them ideal for web use.</p>
@@ -1274,7 +1226,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-bmp': {
     title: 'PDF to BMP',
     metaDescription: 'Convert PDF pages to BMP bitmap images. Uncompressed format for maximum compatibility.',
-    keywords: ['pdf to bmp', 'convert pdf to bitmap', 'uncompressed images', 'legacy format'],
     description: `
       <p>PDF to BMP converts PDF document pages into BMP bitmap images. BMP is an uncompressed format that ensures maximum compatibility with legacy systems and applications.</p>
       <p>While BMP files are larger than compressed formats, they offer perfect quality and universal compatibility.</p>
@@ -1300,7 +1251,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-tiff': {
     title: 'PDF to TIFF',
     metaDescription: 'Convert PDF to TIFF images. Professional quality with multi-page support.',
-    keywords: ['pdf to tiff', 'convert pdf to tiff', 'professional images', 'multi-page tiff'],
     description: `
       <p>PDF to TIFF converts PDF documents into high-quality TIFF images. TIFF is the preferred format for professional printing and archiving due to its lossless compression.</p>
       <p>Create single-page TIFFs or combine all pages into a multi-page TIFF file. Perfect for professional and archival purposes.</p>
@@ -1326,7 +1276,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-svg': {
     title: 'PDF to SVG',
     metaDescription: 'Convert PDF pages to SVG vector graphics. Perfect scalability at any size with individual page export.',
-    keywords: ['pdf to svg', 'convert pdf to svg', 'vector graphics', 'scalable pdf', 'svg converter'],
     description: `
       <p>PDF to SVG converts each page of your PDF document into a scalable vector graphic (SVG). SVG is a vector format that maintains perfect quality at any zoom level or print size.</p>
       <p>Unlike raster formats (JPG, PNG), SVG graphics never become pixelated when scaled. This makes them ideal for logos, diagrams, technical drawings, and any content that needs to be displayed at different sizes.</p>
@@ -1355,7 +1304,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-greyscale': {
     title: 'PDF to Greyscale',
     metaDescription: 'Convert color PDF to greyscale. Reduce file size and prepare for black-and-white printing.',
-    keywords: ['pdf to greyscale', 'grayscale pdf', 'black and white pdf', 'remove colors'],
     description: `
       <p>PDF to Greyscale converts color PDF documents to greyscale (black and white). This reduces file size and prepares documents for black-and-white printing.</p>
       <p>The conversion preserves text clarity and image detail while removing color information. Perfect for draft printing or creating printer-friendly versions.</p>
@@ -1381,7 +1329,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-json': {
     title: 'PDF to JSON',
     metaDescription: 'Extract PDF content to JSON format. Get structured data from PDF documents.',
-    keywords: ['pdf to json', 'extract pdf data', 'pdf parser', 'structured pdf data'],
     description: `
       <p>PDF to JSON extracts content from PDF documents into structured JSON format. Extract text, metadata, page information, and document structure for programmatic use.</p>
       <p>Perfect for data extraction, document analysis, or integrating PDF content into applications and workflows.</p>
@@ -1407,7 +1354,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-pptx': {
     title: 'PDF to PowerPoint',
     metaDescription: 'Convert PDF to PowerPoint presentation. Each page becomes a high-quality slide.',
-    keywords: ['pdf to pptx', 'pdf to powerpoint', 'convert pdf slides', 'pdf presentation'],
     description: `
       <p>PDF to PowerPoint converts your PDF documents into editable PowerPoint presentations (PPTX). Each PDF page is transformed into a high-quality slide, preserving the visual layout perfectly.</p>
       <p>This tool is ideal for converting reports, handouts, or any PDF content into presentation format. You can choose the image quality (DPI) to balance between file size and visual clarity.</p>
@@ -1433,7 +1379,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-excel': {
     title: 'PDF to Excel',
     metaDescription: 'Convert PDF to Excel spreadsheet. Extract tables to XLSX format.',
-    keywords: ['pdf to excel', 'pdf to xlsx', 'convert pdf tables', 'extract tables'],
     description: `
       <p>PDF to Excel converts your PDF documents into editable Microsoft Excel spreadsheets (XLSX). The tool automatically detects tables in your PDF and extracts them into separate sheets.</p>
       <p>This tool is ideal for analyzing financial reports, invoices, or any data presented in tables. Each page's tables are organized into sheets for easy data manipulation.</p>
@@ -1460,7 +1405,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'ocr-pdf': {
     title: 'OCR PDF',
     metaDescription: 'Make scanned PDFs searchable with OCR. Extract text from images and scanned documents.',
-    keywords: ['ocr pdf', 'searchable pdf', 'text recognition', 'scan to text'],
     description: `
       <p>OCR PDF uses Optical Character Recognition to extract text from scanned documents and images within PDFs. Convert image-based PDFs into searchable, selectable text documents.</p>
       <p>Support for multiple languages ensures accurate text recognition regardless of the document's language. The original layout is preserved while adding a searchable text layer.</p>
@@ -1486,7 +1430,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'alternate-merge': {
     title: 'Alternate Merge',
     metaDescription: 'Merge PDFs by alternating pages. Combine front and back scans into one document.',
-    keywords: ['alternate merge', 'interleave pdf', 'combine scans', 'front back merge'],
     description: `
       <p>Alternate Merge combines two PDFs by interleaving their pages alternately. This is perfect for combining separately scanned front and back pages into a single document.</p>
       <p>Upload two PDFs and the tool will merge them by taking one page from each alternately. You can also reverse the order of one document for back-to-front scanning.</p>
@@ -1512,7 +1455,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'add-attachments': {
     title: 'Add Attachments',
     metaDescription: 'Embed files in PDF documents. Attach any file type to your PDFs.',
-    keywords: ['pdf attachments', 'embed files', 'attach to pdf', 'pdf portfolio'],
     description: `
       <p>Add Attachments embeds files of any type into your PDF documents. Attach spreadsheets, images, source files, or any other documents to create comprehensive PDF packages.</p>
       <p>Attachments are embedded within the PDF and can be extracted by recipients using any PDF reader. Perfect for distributing related files together.</p>
@@ -1538,7 +1480,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'extract-attachments': {
     title: 'Extract Attachments',
     metaDescription: 'Extract embedded files from PDFs. Download all attachments from PDF documents.',
-    keywords: ['extract attachments', 'pdf attachments', 'download embedded files', 'pdf extraction'],
     description: `
       <p>Extract Attachments retrieves all embedded files from PDF documents. Download attachments individually or as a ZIP archive containing all files.</p>
       <p>Perfect for accessing source files, data, or supplementary materials embedded in PDF packages.</p>
@@ -1564,7 +1505,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'extract-images': {
     title: 'Extract Images from PDF',
     metaDescription: 'Extract all embedded images from PDF files. Download individually or as a ZIP archive. Filter small images automatically.',
-    keywords: ['extract pdf images', 'pdf image extraction', 'get images from pdf', 'download pdf images', 'pdf to images'],
     description: `
       <p>Extract Images from PDF retrieves all embedded images from your PDF documents. Download high-quality images individually or as a convenient ZIP archive.</p>
       <p>The tool automatically filters out small images like icons and decorations based on customizable size thresholds. Process multiple PDFs at once for efficient batch extraction.</p>
@@ -1591,7 +1531,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'edit-attachments': {
     title: 'Edit Attachments',
     metaDescription: 'Manage PDF attachments. View, rename, and remove embedded files.',
-    keywords: ['edit attachments', 'manage pdf files', 'remove attachments', 'rename attachments'],
     description: `
       <p>Edit Attachments lets you manage embedded files in PDF documents. View all attachments, rename them, or remove unwanted files from the PDF.</p>
       <p>Perfect for cleaning up PDF packages or updating attachment information before distribution.</p>
@@ -1617,7 +1556,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'divide-pages': {
     title: 'Divide Pages',
     metaDescription: 'Split PDF pages into multiple sections. Divide pages horizontally or vertically.',
-    keywords: ['divide pdf pages', 'split page', 'cut pdf page', 'page sections'],
     description: `
       <p>Divide Pages splits individual PDF pages into multiple sections. Cut pages horizontally, vertically, or into a grid to create multiple pages from one.</p>
       <p>Perfect for splitting scanned documents with multiple items per page, or dividing large format pages into standard sizes.</p>
@@ -1643,7 +1581,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'add-blank-page': {
     title: 'Add Blank Page',
     metaDescription: 'Insert blank pages into PDF documents. Add empty pages at any position.',
-    keywords: ['add blank page', 'insert page', 'empty page', 'pdf page insertion'],
     description: `
       <p>Add Blank Page inserts empty pages into your PDF documents at any position. Add pages before, after, or between existing pages with customizable page size.</p>
       <p>Perfect for adding space for notes, creating section dividers, or preparing documents for printing.</p>
@@ -1669,7 +1606,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'reverse-pages': {
     title: 'Reverse Pages',
     metaDescription: 'Reverse PDF page order. Flip document pages from last to first.',
-    keywords: ['reverse pdf', 'flip page order', 'invert pages', 'reverse document'],
     description: `
       <p>Reverse Pages flips the order of pages in your PDF document, putting the last page first and the first page last. Useful for documents scanned in reverse order or for specific printing needs.</p>
       <p>The tool processes the entire document or selected page ranges, maintaining all content and formatting.</p>
@@ -1695,7 +1631,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'rotate-pdf': {
     title: 'Rotate PDF',
     metaDescription: 'Rotate PDF pages. Turn pages 90, 180, or 270 degrees.',
-    keywords: ['rotate pdf', 'turn pdf pages', 'pdf rotation', 'fix orientation'],
     description: `
       <p>Rotate PDF turns pages in your document by 90, 180, or 270 degrees. Fix incorrectly oriented scans, rotate landscape pages, or adjust page orientation for viewing.</p>
       <p>Rotate all pages uniformly or select specific pages to rotate individually. The tool preserves all content and formatting.</p>
@@ -1721,7 +1656,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'n-up-pdf': {
     title: 'N-Up PDF',
     metaDescription: 'Print multiple PDF pages per sheet. Create 2-up, 4-up, or custom layouts.',
-    keywords: ['n-up pdf', 'multiple pages per sheet', '2-up printing', 'page imposition'],
     description: `
       <p>N-Up PDF arranges multiple pages onto single sheets, creating 2-up, 4-up, 6-up, 9-up, or custom layouts. Perfect for saving paper when printing or creating handouts.</p>
       <p>Choose from preset layouts or create custom arrangements. The tool automatically scales and positions pages for optimal results.</p>
@@ -1747,7 +1681,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'combine-single-page': {
     title: 'Combine to Single Page',
     metaDescription: 'Stitch PDF pages into one continuous page. Create scrollable single-page documents.',
-    keywords: ['combine pages', 'single page pdf', 'stitch pages', 'continuous scroll'],
     description: `
       <p>Combine to Single Page stitches all PDF pages into one continuous page. Create scrollable documents perfect for web viewing or continuous reading.</p>
       <p>Pages are joined vertically with customizable spacing. The result is a single long page containing all content.</p>
@@ -1773,7 +1706,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'view-metadata': {
     title: 'View Metadata',
     metaDescription: 'View PDF document properties. See author, title, dates, and other metadata.',
-    keywords: ['pdf metadata', 'document properties', 'pdf info', 'view pdf details'],
     description: `
       <p>View Metadata displays all document properties and metadata from your PDF files. See author, title, subject, keywords, creation date, modification date, and more.</p>
       <p>Useful for auditing documents, checking file information, or verifying document authenticity.</p>
@@ -1799,7 +1731,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'edit-metadata': {
     title: 'Edit Metadata',
     metaDescription: 'Edit PDF document properties. Change title, author, subject, and keywords.',
-    keywords: ['edit pdf metadata', 'change pdf properties', 'pdf author', 'document info'],
     description: `
       <p>Edit Metadata allows you to modify document properties in your PDF files. Change the title, author, subject, keywords, and other metadata fields.</p>
       <p>Perfect for correcting document information, adding proper attribution, or preparing files for distribution.</p>
@@ -1825,7 +1756,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-zip': {
     title: 'PDFs to ZIP',
     metaDescription: 'Package multiple PDFs into a ZIP archive. Compress and bundle PDF files.',
-    keywords: ['pdf to zip', 'compress pdfs', 'bundle pdfs', 'archive pdfs'],
     description: `
       <p>PDFs to ZIP packages multiple PDF files into a single ZIP archive. Compress and bundle your PDFs for easier sharing, storage, or backup.</p>
       <p>The tool creates a compressed archive containing all your PDF files, reducing total size and simplifying file management.</p>
@@ -1851,7 +1781,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'compare-pdfs': {
     title: 'Compare PDFs',
     metaDescription: 'Compare two PDF documents. Highlight differences between versions.',
-    keywords: ['compare pdfs', 'pdf diff', 'document comparison', 'version comparison'],
     description: `
       <p>Compare PDFs analyzes two PDF documents and highlights the differences between them. Perfect for reviewing document revisions, checking contract changes, or verifying edits.</p>
       <p>View documents side-by-side or in overlay mode with differences highlighted. The tool identifies text changes, additions, and deletions.</p>
@@ -1877,7 +1806,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'posterize-pdf': {
     title: 'Posterize PDF',
     metaDescription: 'Split large PDF pages into printable tiles. Create posters from PDF pages.',
-    keywords: ['posterize pdf', 'tile pdf', 'large format printing', 'pdf poster'],
     description: `
       <p>Posterize PDF splits large PDF pages into smaller tiles that can be printed on standard paper and assembled into posters. Perfect for printing large diagrams, maps, or artwork.</p>
       <p>Configure the grid size and overlap for easy assembly. The tool automatically calculates tile dimensions for your target output size.</p>
@@ -1904,7 +1832,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'fix-page-size': {
     title: 'Fix Page Size',
     metaDescription: 'Standardize PDF page sizes. Convert all pages to uniform dimensions.',
-    keywords: ['fix page size', 'standardize pdf', 'uniform pages', 'resize pdf pages'],
     description: `
       <p>Fix Page Size standardizes all pages in your PDF to uniform dimensions. Convert mixed-size documents to consistent page sizes for professional presentation or printing.</p>
       <p>Choose from standard sizes (A4, Letter, etc.) or set custom dimensions. Content is scaled or positioned to fit the new page size.</p>
@@ -1930,7 +1857,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'linearize-pdf': {
     title: 'Linearize PDF',
     metaDescription: 'Optimize PDF for fast web viewing. Enable progressive loading.',
-    keywords: ['linearize pdf', 'fast web view', 'optimize pdf', 'progressive pdf'],
     description: `
       <p>Linearize PDF optimizes your documents for fast web viewing. Linearized PDFs can begin displaying before the entire file is downloaded, improving user experience.</p>
       <p>Also known as "Fast Web View," this optimization reorganizes the PDF structure for progressive loading in web browsers.</p>
@@ -1956,7 +1882,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'page-dimensions': {
     title: 'Page Dimensions',
     metaDescription: 'Analyze PDF page sizes. View dimensions of all pages in your document.',
-    keywords: ['pdf page size', 'page dimensions', 'pdf measurements', 'document size'],
     description: `
       <p>Page Dimensions analyzes and displays the size of every page in your PDF document. View dimensions in various units (inches, mm, points) and identify pages with non-standard sizes.</p>
       <p>Useful for print preparation, document analysis, or identifying inconsistent page sizes.</p>
@@ -1982,7 +1907,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'remove-restrictions': {
     title: 'Remove Restrictions',
     metaDescription: 'Remove PDF restrictions. Unlock printing, copying, and editing permissions.',
-    keywords: ['remove pdf restrictions', 'unlock pdf', 'pdf permissions', 'unrestrict pdf'],
     description: `
       <p>Remove Restrictions unlocks PDFs that have permission restrictions preventing printing, copying, or editing. This tool removes owner password restrictions while preserving document content.</p>
       <p>Note: This tool cannot remove user passwords that prevent opening the document. Use Decrypt PDF for password-protected files.</p>
@@ -2008,7 +1932,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'repair-pdf': {
     title: 'Repair PDF',
     metaDescription: 'Fix corrupted PDF files. Recover and repair damaged documents.',
-    keywords: ['repair pdf', 'fix pdf', 'recover pdf', 'corrupted pdf'],
     description: `
       <p>Repair PDF attempts to fix corrupted or damaged PDF files. The tool analyzes the document structure and rebuilds it to recover as much content as possible.</p>
       <p>Useful for recovering files that won't open, display errors, or have missing content due to corruption.</p>
@@ -2035,7 +1958,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'encrypt-pdf': {
     title: 'Encrypt PDF',
     metaDescription: 'Password protect PDF files. Add encryption and set permissions.',
-    keywords: ['encrypt pdf', 'password protect pdf', 'secure pdf', 'pdf encryption'],
     description: `
       <p>Encrypt PDF adds password protection and encryption to your PDF documents. Set user passwords to prevent opening, and owner passwords to control permissions like printing and copying.</p>
       <p>Choose from different encryption levels (128-bit or 256-bit AES) for varying security needs.</p>
@@ -2061,7 +1983,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'sanitize-pdf': {
     title: 'Sanitize PDF',
     metaDescription: 'Remove hidden data from PDFs. Clean metadata, scripts, and sensitive information.',
-    keywords: ['sanitize pdf', 'clean pdf', 'remove hidden data', 'pdf privacy'],
     description: `
       <p>Sanitize PDF removes hidden data and potentially sensitive information from your documents. Strip metadata, embedded scripts, attachments, comments, and other hidden content.</p>
       <p>Essential for preparing documents for public distribution or when privacy is a concern.</p>
@@ -2087,7 +2008,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'find-and-redact': {
     title: 'Find and Redact',
     metaDescription: 'Search and redact text across all pages of a PDF. Batch redact sensitive information like account numbers, names, and more.',
-    keywords: ['redact pdf', 'find and redact', 'batch redact', 'remove text', 'pdf censorship', 'hide sensitive data'],
     description: `
       <p>Find and Redact allows you to search for specific text, numbers, or patterns across all pages of your PDF and redact all matching occurrences at once. Perfect for removing sensitive information like account numbers, names, addresses, or any confidential data.</p>
       <p>Preview all matches before applying redactions, and selectively choose which occurrences to redact. Supports case-sensitive search, whole word matching, and regular expressions for advanced pattern matching.</p>
@@ -2116,7 +2036,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'decrypt-pdf': {
     title: 'Decrypt PDF',
     metaDescription: 'Remove password from PDF files. Unlock password-protected documents.',
-    keywords: ['decrypt pdf', 'remove pdf password', 'unlock pdf', 'pdf password remover'],
     description: `
       <p>Decrypt PDF removes password protection from PDF documents. Enter the current password to unlock the file and create an unprotected copy.</p>
       <p>This tool requires you to know the current password. It cannot crack or bypass unknown passwords.</p>
@@ -2142,7 +2061,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'flatten-pdf': {
     title: 'Flatten PDF',
     metaDescription: 'Flatten PDF forms and annotations. Make content non-editable.',
-    keywords: ['flatten pdf', 'flatten forms', 'flatten annotations', 'non-editable pdf'],
     description: `
       <p>Flatten PDF converts interactive elements like form fields and annotations into static content. The flattened PDF looks the same but can no longer be edited.</p>
       <p>Perfect for finalizing filled forms, preserving annotations, or creating non-editable document versions.</p>
@@ -2168,7 +2086,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'remove-metadata': {
     title: 'Remove Metadata',
     metaDescription: 'Strip metadata from PDF files. Remove author, dates, and document properties.',
-    keywords: ['remove pdf metadata', 'strip metadata', 'pdf privacy', 'anonymous pdf'],
     description: `
       <p>Remove Metadata strips all document properties and metadata from your PDF files. Remove author names, creation dates, software information, and other identifying data.</p>
       <p>Essential for privacy when sharing documents or when metadata could reveal sensitive information.</p>
@@ -2194,7 +2111,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'change-permissions': {
     title: 'Change Permissions',
     metaDescription: 'Modify PDF permissions. Control printing, copying, and editing access.',
-    keywords: ['pdf permissions', 'change pdf access', 'restrict pdf', 'pdf security'],
     description: `
       <p>Change Permissions modifies the access controls on your PDF documents. Enable or disable printing, copying, editing, and annotation permissions.</p>
       <p>Set an owner password to enforce these restrictions. Recipients can view the document but are limited in what actions they can perform.</p>
@@ -2220,7 +2136,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-docx': {
     title: 'PDF to Word',
     metaDescription: 'Convert PDF to editable Word (DOCX) documents. Preserve formatting and layout.',
-    keywords: ['pdf to word', 'convert pdf to docx', 'pdf to doc', 'editable pdf'],
     description: `
       <p>PDF to Word converts your PDF documents into editable Microsoft Word (DOCX) files. The tool preserves the original layout, formatting, images, and text flow.</p>
       <p>Easily edit your PDF content in Word without retyping. Perfect for contracts, reports, and resumes.</p>
@@ -2246,7 +2161,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-markdown': {
     title: 'PDF to Markdown',
     metaDescription: 'Convert PDF to Markdown format. Extract text and preserve formatting like headings and lists.',
-    keywords: ['pdf to markdown', 'convert pdf to md', 'pdf text extraction', 'markdown converter', 'pdf to text'],
     description: `
       <p>PDF to Markdown converts your PDF documents into clean, well-structured Markdown files. The tool intelligently extracts text content and attempts to preserve formatting like headings, lists, and paragraphs.</p>
       <p>Perfect for converting PDF documents to editable formats for documentation, note-taking, or content management systems that support Markdown.</p>
@@ -2273,7 +2187,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'deskew-pdf': {
     title: 'Deskew PDF',
     metaDescription: 'Automatically straighten scanned or tilted PDF pages. Fix skewed documents with precision angle detection.',
-    keywords: ['deskew pdf', 'straighten pdf', 'fix tilted scan', 'auto rotate pdf', 'correct pdf angle'],
     description: `
       <p>Deskew PDF automatically detects and corrects tilted or skewed pages in your PDF documents using advanced projection profile variance analysis. This is essential for scanned documents that were fed into the scanner at an angle.</p>
       <p>The tool analyzes the text and content alignment at different angles to find the optimal rotation, then applies the correction. You can adjust the sensitivity threshold (1-30) and DPI settings (72-300) for optimal results.</p>
@@ -2290,7 +2203,7 @@ export const toolContentEn: Record<string, ToolContent> = {
       { title: 'Archive Restoration', description: 'Straighten old scanned archives for better readability.', icon: 'archive' },
     ],
     faq: [
-      { question: 'How accurate is the angle detection?', answer: 'The tool uses projection profile variance analysis to detect skew angles up to ±10 degrees with high accuracy. It automatically skips pages with angles less than 0.3 degrees.' },
+      { question: 'How accurate is the angle detection?', answer: 'The tool uses projection profile variance analysis to detect skew angles up to Â±10 degrees with high accuracy. It automatically skips pages with angles less than 0.3 degrees.' },
       { question: 'Will text quality be affected?', answer: 'For rotations at multiples of 90 degrees, no quality loss occurs. For other angles, the tool rounds to the nearest degree and maintains good quality.' },
       { question: 'Can I deskew specific pages only?', answer: 'The tool analyzes all pages but only corrects those with detected skew above the sensitivity threshold. Pages with minimal skew are left unchanged.' },
       { question: 'What is the sensitivity threshold?', answer: 'Values 1-10 correct obvious tilts only, 11-20 detect moderate skew, and 21-30 catch subtle angles. Default is 10 for balanced detection.' },
@@ -2301,7 +2214,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-booklet': {
     title: 'PDF Booklet Creator',
     metaDescription: 'Create booklet layouts from PDF for printing. Arrange pages for saddle-stitch binding with multiple grid options.',
-    keywords: ['pdf booklet', 'booklet creator', 'print booklet', 'saddle stitch', 'imposition'],
     description: `
       <p>PDF Booklet Creator arranges your PDF pages into booklet layouts ready for print-and-fold production. Perfect for creating brochures, zines, booklets, and saddle-stitched publications.</p>
       <p>Choose from various grid modes (1x2, 2x2, 2x4, 4x4), paper sizes, and orientation options. The tool automatically handles page imposition for proper folding sequence.</p>
@@ -2327,7 +2239,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'rasterize-pdf': {
     title: 'Rasterize PDF',
     metaDescription: 'Convert PDF pages to high-quality images. Export as PNG, JPEG, or WebP with custom DPI settings.',
-    keywords: ['rasterize pdf', 'pdf to image', 'pdf to png', 'pdf to jpeg', 'convert pdf pages'],
     description: `
       <p>Rasterize PDF converts your PDF pages into high-quality raster images. Choose from PNG, JPEG, or WebP output formats with full control over DPI and quality settings.</p>
       <p>Perfect for creating thumbnails, social media graphics, or archiving PDF content as images. Supports page range selection and batch processing.</p>
@@ -2353,7 +2264,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'markdown-to-pdf': {
     title: 'Markdown to PDF',
     metaDescription: 'Convert Markdown files to beautifully formatted PDF documents. Support for GitHub Flavored Markdown and syntax highlighting.',
-    keywords: ['markdown to pdf', 'md to pdf', 'convert markdown', 'gfm to pdf', 'markdown converter'],
     description: `
       <p>Markdown to PDF converts your Markdown files into professionally styled PDF documents. Support for CommonMark and GitHub Flavored Markdown (GFM) including tables, task lists, and code blocks.</p>
       <p>Choose from multiple themes (light, dark, GitHub) and customize page size and margins. Code blocks are syntax-highlighted for better readability.</p>
@@ -2379,7 +2289,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'email-to-pdf': {
     title: 'Email to PDF',
     metaDescription: 'Convert email files (.eml, .msg) to PDF documents. Preserve formatting, inline images, clickable links, and embed attachments.',
-    keywords: ['email to pdf', 'eml to pdf', 'msg to pdf', 'convert email', 'email converter', 'save email as pdf', 'outlook to pdf'],
     description: `
       <p>Email to PDF converts your email files (.eml and .msg formats) into well-formatted PDF documents. The tool preserves the email header information, body content, inline images with CID replacement, clickable links, and embeds attachments directly into the PDF.</p>
       <p>Customize output options including page size (A4, Letter, Legal), date formatting with timezone support, and whether to include CC/BCC fields and attachment information.</p>
@@ -2407,7 +2316,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'cbz-to-pdf': {
     title: 'CBZ to PDF',
     metaDescription: 'Convert comic book archives (CBZ) to PDF. Preserve image order and quality for digital comics.',
-    keywords: ['cbz to pdf', 'comic to pdf', 'convert cbz', 'comic book converter', 'cbz converter'],
     description: `
       <p>CBZ to PDF converts Comic Book Archive files into PDF documents. The tool extracts all images from the CBZ archive and compiles them into a PDF while maintaining the correct reading order.</p>
       <p>Choose from various page size options including original image dimensions or standardized comic book sizes. Perfect for reading comics on devices that support PDF but not CBZ.</p>
@@ -2433,7 +2341,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-to-pdfa': {
     title: 'PDF to PDF/A',
     metaDescription: 'Convert PDF to PDF/A archival format. Ensure long-term document preservation with ISO standards.',
-    keywords: ['pdf to pdfa', 'pdfa converter', 'archive pdf', 'pdf archival', 'long term preservation'],
     description: `
       <p>PDF to PDF/A converts your PDF documents to PDF/A format, the ISO standard for long-term document archiving. PDF/A ensures that documents will be viewable and reproducible for decades.</p>
       <p>Choose from PDF/A-1b (basic conformance), PDF/A-2b (recommended, supports transparency), or PDF/A-3b (allows embedded files). The tool embeds fonts and flattens transparency as needed.</p>
@@ -2459,7 +2366,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'font-to-outline': {
     title: 'Font to Outline',
     metaDescription: 'Remove font dependencies from PDF documents by converting pages to high-quality images. Ensures compatibility across all systems.',
-    keywords: ['font to outline', 'outline fonts', 'remove fonts', 'font compatibility', 'flatten pdf fonts', 'pdf font removal'],
     description: `
       <p>Font to Outline removes all font dependencies from your PDF by converting each page into high-quality rasterized content. This ensures your document looks exactly the same on any system, even if the original fonts are not installed.</p>
       <p>The tool renders each page at your chosen DPI (150-600), removing embedded fonts while preserving the exact visual appearance. Optionally, you can add an invisible text layer to maintain searchability.</p>
@@ -2488,7 +2394,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'extract-tables': {
     title: 'Extract Tables from PDF',
     metaDescription: 'Detect and extract tables from PDF documents. Export to JSON, Markdown, or CSV formats.',
-    keywords: ['extract tables', 'pdf table extraction', 'pdf to csv', 'pdf to excel', 'table detection'],
     description: `
       <p>Extract Tables from PDF detects tabular data within your PDF documents and exports it in structured formats. Choose JSON for data integration, Markdown for documentation, or CSV for spreadsheets.</p>
       <p>The tool uses intelligent detection algorithms to identify table structures even in complex documents. Specify page ranges and adjust detection parameters for optimal results.</p>
@@ -2514,7 +2419,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'ocg-manager': {
     title: 'PDF Layer Manager (OCG)',
     metaDescription: 'Manage PDF layers (Optional Content Groups). View, toggle, add, delete, and rename layers in your PDF documents.',
-    keywords: ['pdf layers', 'ocg manager', 'optional content groups', 'pdf layer visibility', 'manage pdf layers'],
     description: `
       <p>PDF Layer Manager allows you to view and manage Optional Content Groups (OCG) in your PDF documents. OCG layers are used in technical drawings, maps, and complex documents to organize content into toggleable layers.</p>
       <p>View all layers in your PDF, toggle their visibility, add new layers, delete unwanted ones, or rename existing layers. This tool is essential for working with layered PDFs like architectural plans, CAD exports, and print-ready documents.</p>
@@ -2541,7 +2445,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'pdf-reader': {
     title: 'PDF Reader',
     metaDescription: 'Free online PDF reader. View, navigate, zoom, rotate, and print PDF documents directly in your browser.',
-    keywords: ['pdf reader', 'pdf viewer', 'view pdf online', 'read pdf', 'pdf browser viewer'],
     description: `
       <p>PDF Reader is a full-featured PDF viewer that lets you read and navigate PDF documents directly in your browser. No software installation required - just upload your PDF and start reading.</p>
       <p>Navigate between pages, zoom in and out, rotate the view, and use fullscreen mode for distraction-free reading. You can also print documents or download them for offline access.</p>
@@ -2568,7 +2471,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'digital-sign-pdf': {
     title: 'Digital Signature',
     metaDescription: 'Add X.509 digital signatures to PDF documents. Sign PDFs with PFX, P12, or PEM certificates for legal validity.',
-    keywords: ['digital signature pdf', 'x509 certificate', 'pfx sign pdf', 'p12 sign pdf', 'pem sign pdf', 'legally sign pdf'],
     description: `
       <p>Digital Signature allows you to add cryptographic X.509 digital signatures to PDF documents. Unlike simple drawn signatures, digital signatures provide legal validity and document integrity verification.</p>
       <p>Upload your certificate file (PFX, P12, or PEM format), enter the password, and sign your PDF. You can add visible signatures with custom text, images, and positioning, or invisible signatures for document integrity only.</p>
@@ -2595,7 +2497,6 @@ export const toolContentEn: Record<string, ToolContent> = {
   'validate-signature': {
     title: 'Validate Signature',
     metaDescription: 'Verify digital signatures in PDF documents. Check certificate validity, signer information, and document integrity.',
-    keywords: ['validate pdf signature', 'verify digital signature', 'check pdf certificate', 'signature verification'],
     description: `
       <p>Validate Signature allows you to verify digital signatures in PDF documents. Check if signatures are valid, view certificate information, and confirm document integrity.</p>
       <p>Upload a signed PDF to see all signatures, their validity status, signer information, and whether the document has been modified after signing.</p>
@@ -2619,4 +2520,3 @@ export const toolContentEn: Record<string, ToolContent> = {
     ],
   },
 };
-

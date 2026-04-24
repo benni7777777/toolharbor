@@ -27,7 +27,6 @@ export interface BaseMetadataOptions {
 export interface PageMetadataOptions extends BaseMetadataOptions {
   title: string;
   description: string;
-  keywords?: string[];
   image?: string;
   noIndex?: boolean;
 }
@@ -87,7 +86,7 @@ export function getAlternateUrls(path: string = ''): Record<string, string> {
  * Generate base metadata for any page
  */
 export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
-  const { locale, path = '', title, description, keywords = [], image, noIndex = false } = options;
+  const { locale, path = '', title, description, image, noIndex = false } = options;
 
   const fullTitle = title.includes(siteConfig.name)
     ? title
@@ -105,7 +104,6 @@ export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
   return {
     title: fullTitle,
     description: optimizedDescription,
-    keywords: [...new Set([...keywords, 'OpenToolsKit', 'browser tools', 'private tools', siteConfig.name])],
     authors: [{ name: siteConfig.creator }],
     creator: siteConfig.creator,
     publisher: siteConfig.name,
@@ -168,21 +166,11 @@ export function generateToolMetadata(options: ToolMetadataOptions): Metadata {
   const path = `/tools/${tool.slug}`;
   const seoProfile = getToolSeoProfile(tool, content);
 
-  const enhancedKeywords = [
-    seoProfile.primaryQuery,
-    ...seoProfile.secondaryQueries,
-    ...content.keywords,
-    'browser-based',
-    'client-side',
-    'no sign up',
-  ];
-
   return generateBaseMetadata({
     locale,
     path,
     title: seoProfile.pageTitle,
     description: seoProfile.metaDescription,
-    keywords: enhancedKeywords,
   });
 }
 
@@ -197,7 +185,6 @@ export function generateHomeMetadata(locale: Locale, translations?: { title: str
     path: '',
     title: locale === 'en' ? pageSeo.title : translations?.title || pageSeo.title,
     description: locale === 'en' ? pageSeo.description : translations?.description || pageSeo.description,
-    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries, ...siteConfig.seo.keywords],
   });
 }
 
@@ -211,7 +198,6 @@ export function generateToolsListMetadata(locale: Locale, translations?: { title
     path: '/tools',
     title: locale === 'en' ? pageSeo.title : translations?.title || pageSeo.title,
     description: locale === 'en' ? pageSeo.description : translations?.description || pageSeo.description,
-    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries],
   });
 }
 
@@ -225,7 +211,6 @@ export function generateAboutMetadata(locale: Locale, translations?: { title: st
     path: '/about',
     title: locale === 'en' ? pageSeo.title : translations?.title || pageSeo.title,
     description: locale === 'en' ? pageSeo.description : translations?.description || pageSeo.description,
-    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries],
   });
 }
 
@@ -239,7 +224,6 @@ export function generateFaqMetadata(locale: Locale, translations?: { title: stri
     path: '/faq',
     title: locale === 'en' ? pageSeo.title : translations?.title || pageSeo.title,
     description: locale === 'en' ? pageSeo.description : translations?.description || pageSeo.description,
-    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries],
   });
 }
 
@@ -253,7 +237,6 @@ export function generatePrivacyMetadata(locale: Locale, translations?: { title: 
     path: '/privacy',
     title: locale === 'en' ? pageSeo.title : translations?.title || pageSeo.title,
     description: locale === 'en' ? pageSeo.description : translations?.description || pageSeo.description,
-    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries],
   });
 }
 
@@ -267,7 +250,6 @@ export function generateContactMetadata(locale: Locale, translations?: { title: 
     path: '/contact',
     title: locale === 'en' ? pageSeo.title : translations?.title || pageSeo.title,
     description: locale === 'en' ? pageSeo.description : translations?.description || pageSeo.description,
-    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries],
   });
 }
 
@@ -278,7 +260,6 @@ export function generateWorkflowMetadata(locale: Locale): Metadata {
     path: '/workflow',
     title: pageSeo.title,
     description: pageSeo.description,
-    keywords: [pageSeo.primaryQuery, ...pageSeo.secondaryQueries],
   });
 }
 
@@ -289,7 +270,6 @@ export function generateCategoryMetadata(locale: Locale, category: ToolCategory)
     path: `/tools/category/${category}`,
     title: categorySeo.title,
     description: categorySeo.description,
-    keywords: [categorySeo.primaryQuery, ...categorySeo.secondaryQueries],
   });
 }
 

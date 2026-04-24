@@ -30,7 +30,6 @@ export interface SoftwareApplicationSchema {
   featureList?: string[];
   screenshot?: string;
   softwareVersion?: string;
-  keywords?: string;
 }
 
 /**
@@ -160,7 +159,6 @@ export function generateSoftwareApplicationSchema(
       price: '0',
       priceCurrency: 'USD',
     },
-    keywords: content.keywords ? content.keywords.join(', ') : undefined,
   };
 
   // Add feature list if available

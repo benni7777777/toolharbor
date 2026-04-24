@@ -144,7 +144,6 @@ export interface FAQ {
 export interface ToolContent {
   title: string;
   metaDescription: string;
-  keywords: string[];
   description: string;
   howToUse: HowToStep[];
   useCases: UseCase[];

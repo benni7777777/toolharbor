@@ -28,7 +28,6 @@ export async function generateMetadata({
     title: 'Editorial Policy',
     description:
       'How OpenToolsKit keeps tool descriptions, support information, source attribution, and optional monetization disclosures accurate.',
-    keywords: ['opentoolskit editorial policy', 'tool descriptions', 'source attribution'],
   });
 }
 

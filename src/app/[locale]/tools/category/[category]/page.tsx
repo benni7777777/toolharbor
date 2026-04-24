@@ -68,7 +68,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ local
         name: categorySeo.h1,
         description: categorySeo.description,
         type: 'CollectionPage',
-        aboutName: categorySeo.primaryQuery,
+        aboutName: categorySeo.h1,
     });
 
     const itemList = generateItemListSchema({

@@ -13,7 +13,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'pdf-multi-tool': {
     title: 'Multi-Ferramenta PDF',
     metaDescription: 'Editor PDF tudo-em-um: juntar, dividir, organizar, excluir, girar e extrair páginas em uma única ferramenta poderosa.',
-    keywords: ['multi ferramenta pdf', 'editor pdf online', 'juntar pdf', 'dividir pdf', 'organizar pdf', 'tudo em um pdf'],
     description: `
       <p>A Multi-Ferramenta PDF é sua solução completa para todas as tarefas de gerenciamento de páginas PDF. Esta poderosa ferramenta combina múltiplas operações em uma interface única e intuitiva, economizando seu tempo e esforço.</p>
       <p>Seja para mesclar vários documentos, dividir um PDF grande em arquivos menores, reorganizar páginas, excluir conteúdo indesejado, girar páginas ou extrair seções específicas, esta ferramenta faz tudo sem que você precise alternar entre diferentes aplicativos.</p>
@@ -40,7 +39,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'merge-pdf': {
     title: 'Juntar PDF',
     metaDescription: 'Combine vários arquivos PDF em um único documento. Mesclador de PDF online gratuito com reordenação por arrastar e soltar.',
-    keywords: ['juntar pdf', 'combinar pdf', 'mesclar pdf', 'unir pdf', 'agrupar pdf'],
     description: `
       <p>Juntar PDF permite combinar vários documentos PDF em um único arquivo de forma rápida e fácil. Seja para consolidar relatórios ou montar uma apresentação, esta ferramenta torna o processo perfeito.</p>
       <p>Basta carregar seus arquivos, organizá-los na ordem desejada e mesclá-los. A ferramenta preserva a qualidade original e mantém os marcadores de cada documento fonte.</p>
@@ -65,7 +63,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'split-pdf': {
     title: 'Dividir PDF',
     metaDescription: 'Divida arquivos PDF em vários documentos. Extraia páginas específicas ou divida por intervalos.',
-    keywords: ['dividir pdf', 'separar pdf', 'extrair páginas pdf', 'cortar pdf'],
     description: `
       <p>Dividir PDF permite separar um único documento em vários arquivos menores. Perfeito para extrair capítulos específicos ou separar documentos que foram digitalizados juntos.</p>
     `,
@@ -89,7 +86,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'compress-pdf': {
     title: 'Comprimir PDF',
     metaDescription: 'Reduza o tamanho do arquivo PDF mantendo a qualidade. Compressor de PDF online gratuito para arquivos menores.',
-    keywords: ['comprimir pdf', 'reduzir tamanho pdf', 'otimizar pdf', 'diminuir arquivo pdf'],
     description: `
       <p>Comprimir PDF reduz o tamanho dos seus documentos, ideal para anexos de e-mail ou uploads na web. Oferecemos vários níveis de compressão para equilibrar tamanho e qualidade.</p>
     `,
@@ -113,7 +109,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'edit-pdf': {
     title: 'Editar PDF',
     metaDescription: 'Edite arquivos PDF online. Adicione texto, imagens, anotações e formas aos seus documentos.',
-    keywords: ['editar pdf', 'editor pdf online gratuito', 'escrever no pdf', 'anotar pdf'],
     description: `
       <p>Nosso editor de PDF oferece ferramentas para modificar e anotar seus documentos sem software caro. Adicione texto, imagens, formas e destaques facilmente.</p>
     `,
@@ -136,7 +131,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'invert-colors': {
     title: 'Inverter Cores',
     metaDescription: 'Inverta as cores do PDF para o modo escuro. Transforme documentos em cores negativas para facilitar a leitura.',
-    keywords: ['inverter cores pdf', 'modo escuro pdf', 'pdf negativo', 'reduzir fadiga ocular'],
     description: `
       <p>Inverta as cores de seus documentos PDF para criar um efeito de negativo. Isso é extremamente útil para leitura em ambientes com pouca luz (Modo Escuro), ajudando a reduzir a fadiga ocular.</p>
       <p>A ferramenta permite inverter todas as cores ou preservar elementos específicos, como imagens. Perfeito para quem passa horas lendo documentos técnicos ou acadêmicos na tela.</p>
@@ -161,7 +155,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'background-color': {
     title: 'Cor de Fundo',
     metaDescription: 'Altere a cor de fundo do PDF. Adicione fundos coloridos às páginas do seu documento.',
-    keywords: ['cor de fundo pdf', 'mudar cor pdf', 'fundo colorido pdf', 'personalizar pdf'],
     description: `
       <p>Altere ou adicione uma cor de fundo às suas páginas PDF. Isso pode melhorar a legibilidade, adicionar um toque visual profissional ou alinhar o documento à sua identidade visual.</p>
       <p>Escolha qualquer cor e aplique-a a todo o documento. A ferramenta preserva todo o conteúdo existente enquanto adiciona a camada de cor por baixo.</p>
@@ -186,7 +179,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'text-color': {
     title: 'Mudar Cor do Texto',
     metaDescription: 'Altere a cor do texto em documentos PDF. Modifique a cor de todo o conteúdo de texto globalmente.',
-    keywords: ['mudar cor texto pdf', 'cor da fonte pdf', 'alterar texto pdf', 'recolorir pdf'],
     description: `
       <p>Modifique a cor de todo o texto no seu PDF de uma só vez. Útil para melhorar o contraste, alinhar com diretrizes de marca ou preparar documentos para apresentações visuais.</p>
     `,
@@ -210,7 +202,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'add-stamps': {
     title: 'Adicionar Carimbos',
     metaDescription: 'Adicione carimbos a documentos PDF. Use modelos predefinidos ou carimbos personalizados.',
-    keywords: ['carimbo pdf', 'carimbos prontos pdf', 'marcar pdf', 'carimbo digital'],
     description: `
       <p>Coloque carimbos digitais em seus PDFs. Utilize modelos clássicos como "APROVADO", "REPROVADO", "RASCUNHO" ou envie sua própria imagem para carimbar o documento.</p>
     `,
@@ -234,7 +225,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'remove-annotations': {
     title: 'Remover Anotações',
     metaDescription: 'Remova anotações de arquivos PDF. Limpe comentários, realces e marcações.',
-    keywords: ['remover comentários pdf', 'limpar anotações pdf', 'pdf limpo', 'excluir marcações'],
     description: `
       <p>Remova todos os comentários, destaques e notas adesivas de seu PDF. Crie uma versão "limpa" para publicação final ou compartilhamento externo sem marcas de revisão.</p>
     `,
@@ -258,7 +248,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'remove-blank-pages': {
     title: 'Remover Páginas Brancas',
     metaDescription: 'Detecte e remova automaticamente páginas em branco de documentos PDF.',
-    keywords: ['remover páginas vazias pdf', 'deletar páginas em branco', 'limpar scan pdf'],
     description: `
       <p>Esta ferramenta inteligente detecta e elimina automaticamente páginas vazias. Ideal para limpar digitalizações ou remover divisores após mesclar vários documentos.</p>
     `,
@@ -281,7 +270,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'image-to-pdf': {
     title: 'Imagem para PDF',
     metaDescription: 'Converta qualquer imagem em PDF. Suporte para JPG, PNG, WebP, BMP, TIFF, SVG e HEIC.',
-    keywords: ['imagem para pdf', 'converter foto em pdf', 'transformar imagem em pdf', 'unir fotos em pdf'],
     description: `
       <p>Transforme fotos e gráficos de qualquer formato em documentos PDF profissionais. Com suporte para JPG, PNG, WebP, BMP, TIFF, SVG e HEIC, esta é a sua ferramenta universal de conversão de imagem.</p>
       <p>Combine várias imagens em um único arquivo PDF, organize-as na ordem que desejar e personalize o tamanho da página e a orientação conforme sua necessidade.</p>
@@ -306,7 +294,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'png-to-pdf': {
     title: 'PNG para PDF',
     metaDescription: 'Converta imagens PNG em PDF. Preserve transparências e combine vários arquivos PNG.',
-    keywords: ['png para pdf', 'converter png em pdf', 'imagem transparente para pdf', 'print para pdf'],
     description: `
       <p>Converta arquivos PNG para PDF mantendo a transparência. Ideal para gráficos, logotipos e capturas de tela (screenshots) que possuem fundo transparente.</p>
     `,
@@ -330,7 +317,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'webp-to-pdf': {
     title: 'WebP para PDF',
     metaDescription: 'Converter imagens WebP para PDF. Transforme o formato moderno do Google para impressão e arquivamento.',
-    keywords: ['webp para pdf', 'converter webp em pdf', 'transformar webp', 'formato webp pdf'],
     description: `
       <p>Converta imagens modernas no formato WebP para o padrão universal PDF. Ideal para preparar imagens baixadas da web para impressão ou arquivamento de longo prazo.</p>
     `,
@@ -354,7 +340,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'svg-to-pdf': {
     title: 'SVG para PDF',
     metaDescription: 'Converter gráficos vetoriais SVG para PDF. Preserve a escalabilidade e a qualidade sem perdas.',
-    keywords: ['svg para pdf', 'vetor para pdf', 'converter svg em pdf', 'logo vetorial pdf'],
     description: `
       <p>Converta gráficos vetoriais escaláveis (SVG) em PDF sem perder a nitidez. Como o PDF também suporta vetores, seu design permanecerá nítido em qualquer nível de zoom.</p>
     `,
@@ -378,7 +363,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'heic-to-pdf': {
     title: 'HEIC para PDF',
     metaDescription: 'Converter fotos HEIC do iPhone para PDF. Torne fotos da Apple compatíveis com Windows e Android.',
-    keywords: ['heic para pdf', 'converter foto iphone', 'heic em pdf', 'apple heic converter'],
     description: `
       <p>Converta fotos HEIC do seu iPhone ou iPad diretamente para PDF. Embora o HEIC ofereça boa compressão, ele não é legível em todos os lugares — o PDF, por outro lado, sim.</p>
     `,
@@ -402,7 +386,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'txt-to-pdf': {
     title: 'Texto para PDF',
     metaDescription: 'Converter arquivos de texto (TXT) em PDF formatado. Personalize fontes e layout.',
-    keywords: ['txt para pdf', 'converter texto em pdf', 'texto para documento', 'arquivo txt pdf'],
     description: `
       <p>Transforme arquivos de texto simples (.txt) em documentos PDF formatados. Personalize fontes, margens e layout para transformar notas simples em documentos profissionais.</p>
     `,
@@ -426,7 +409,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'json-to-pdf': {
     title: 'JSON para PDF',
     metaDescription: 'Converter arquivos JSON em PDF formatado. Com realce de sintaxe e saída estruturada.',
-    keywords: ['json para pdf', 'visualizar json', 'converter dados api', 'formatar json pdf'],
     description: `
       <p>Transforme dados JSON em um PDF legível e bem formatado. A ferramenta oferece realce de sintaxe automático e recuos para visualizar estruturas de dados complexas.</p>
     `,
@@ -449,7 +431,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'pdf-to-jpg': {
     title: 'PDF para JPG',
     metaDescription: 'Converta páginas de PDF em imagens JPG. Extração de alta qualidade com resolução personalizável.',
-    keywords: ['pdf para jpg', 'pdf em jpeg', 'converter pdf para imagem', 'extrair páginas pdf'],
     description: `
       <p>Converta as páginas do seu documento PDF em imagens JPG de alta qualidade. Você pode converter todas as páginas ou selecionar páginas específicas, ajustando a resolução (DPI) e a qualidade da imagem conforme necessário.</p>
       <p>Ideal para criar prévias de documentos, compartilhar conteúdos em redes sociais ou utilizar páginas de PDF em editores de imagem.</p>
@@ -474,7 +455,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'pdf-to-png': {
     title: 'PDF para PNG',
     metaDescription: 'Converta páginas de PDF em imagens PNG. Qualidade sem perdas com suporte a transparência.',
-    keywords: ['pdf para png', 'pdf para imagem sem perda', 'extração de gráficos pdf', 'transparência pdf'],
     description: `
       <p>Converta documentos PDF para o formato PNG sem perda de qualidade. Ao contrário do JPG, o PNG oferece uma qualidade de imagem perfeita, sem artefatos de compressão, e suporta fundos transparentes.</p>
       <p>Especialmente indicado para PDFs que contêm diagramas, logotipos ou textos que precisam permanecer extremamente nítidos.</p>
@@ -499,7 +479,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'pdf-to-webp': {
     title: 'PDF para WebP',
     metaDescription: 'Converta páginas de PDF em imagens WebP. Formato moderno com excelente compressão para web.',
-    keywords: ['pdf para webp', 'formato de imagem moderno', 'imagens otimizadas para web', 'pdf converter'],
     description: `
       <p>Transforme páginas de PDF no formato WebP da Google. O WebP oferece uma compressão significativamente melhor que JPG ou PNG, mantendo uma qualidade comparável.</p>
       <p>Esta é a melhor escolha se você deseja exibir conteúdos de PDF em um site moderno com carregamento rápido.</p>
@@ -524,7 +503,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'pdf-to-bmp': {
     title: 'PDF para BMP',
     metaDescription: 'Converta páginas de PDF em imagens BMP (Bitmap). Formato não compactado para máxima compatibilidade.',
-    keywords: ['pdf para bmp', 'converter bitmap', 'imagem sem compressão', 'formato legado'],
     description: `
       <p>Converta páginas de PDF no formato clássico BMP (Windows Bitmap). O BMP é um formato não compactado que garante compatibilidade universal com sistemas antigos e aplicações específicas do Windows.</p>
     `,
@@ -548,7 +526,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'pdf-to-tiff': {
     title: 'PDF para TIFF',
     metaDescription: 'Converta PDF em imagens TIFF. Qualidade profissional com suporte a arquivos TIFF de múltiplas páginas.',
-    keywords: ['pdf para tiff', 'impressão profissional tiff', 'tiff multipágina', 'arquivamento'],
     description: `
       <p>Converta PDFs para o formato de alta qualidade TIFF. O TIFF é o padrão na impressão profissional e no arquivamento de longo prazo, pois suporta profundidade de cor extrema e compressão sem perdas (LZW/ZIP).</p>
     `,
@@ -572,7 +549,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'pdf-to-greyscale': {
     title: 'PDF para Tons de Cinza',
     metaDescription: 'Converta PDFs coloridos para preto e branco (escala de cinza). Reduza o tamanho do arquivo e economize na impressão.',
-    keywords: ['pdf escala de cinza', 'pdf preto e branco', 'economizar tinta pdf', 'remover cor'],
     description: `
       <p>Transforme um PDF colorido em uma versão em escala de cinza (preto e branco). Isso é ideal para reduzir o tamanho do arquivo e preparar documentos para impressão econômica.</p>
       <p>Os textos permanecem nítidos e as imagens mantêm seus detalhes, enquanto todas as informações de cor são removidas.</p>
@@ -597,7 +573,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'pdf-to-json': {
     title: 'PDF para JSON',
     metaDescription: 'Extraia o conteúdo do PDF para o formato JSON. Obtenha dados estruturados para suas aplicações.',
-    keywords: ['pdf para json', 'extração de dados pdf', 'parser pdf', 'dados estruturados'],
     description: `
       <p>Extraia texto, metadados e a estrutura do seu documento PDF para o formato JSON, legível por máquinas. Esta é a ferramenta perfeita para desenvolvedores e analistas de dados.</p>
     `,
@@ -620,7 +595,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'alternate-merge': {
     title: 'Mesclagem Alternada',
     metaDescription: 'Combine PDFs alternando páginas. Perfeito para unir scans de frente e verso realizados separadamente.',
-    keywords: ['mesclagem alternada pdf', 'combinar frente e verso', 'intercalar páginas pdf', 'unir scans'],
     description: `
       <p>Com a "Mesclagem Alternada", você combina dois arquivos PDF intercalando suas páginas (uma de cada arquivo). Esta é a solução ideal para quem digitalizou as frentes e os versos de um documento em arquivos separados.</p>
       <p>Basta carregar o arquivo das frentes e o das costas. A ferramenta os une automaticamente em um único documento lógico. Você também pode inverter a ordem de um dos arquivos, caso ele tenha sido digitalizado de trás para frente.</p>
@@ -645,7 +619,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'add-attachments': {
     title: 'Adicionar Anexos',
     metaDescription: 'Incorpore arquivos em documentos PDF. Adicione qualquer tipo de arquivo como anexo ao seu PDF.',
-    keywords: ['anexos pdf', 'embutir arquivo no pdf', 'portfólio pdf', 'anexar ao pdf'],
     description: `
       <p>Incorpore qualquer arquivo diretamente em seus documentos PDF. Seja uma planilha, imagem ou código-fonte – crie pacotes PDF completos contendo todos os dados relevantes.</p>
       <p>Os anexos tornam-se parte do arquivo PDF e podem ser extraídos pelo destinatário usando qualquer leitor de PDF comum.</p>
@@ -670,7 +643,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'extract-attachments': {
     title: 'Extrair Anexos',
     metaDescription: 'Extraia arquivos embutidos de PDFs. Baixe todos os anexos de um documento PDF.',
-    keywords: ['extrair anexos pdf', 'baixar arquivos do pdf', 'extrair arquivos embutidos'],
     description: `
       <p>Recupere todos os arquivos incorporados em um documento PDF. Você pode baixar os anexos individualmente ou todos juntos em um arquivo ZIP prático.</p>
     `,
@@ -694,7 +666,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'divide-pages': {
     title: 'Dividir Páginas',
     metaDescription: 'Divida páginas de PDF em várias seções. Corte páginas horizontalmente ou verticalmente.',
-    keywords: ['cortar página pdf', 'dividir seção pdf', 'cortar scan', 'divisão em grade'],
     description: `
       <p>Esta ferramenta corta páginas individuais de um PDF em várias partes. Você pode dividir páginas horizontalmente, verticalmente ou em grade para transformar uma única página em várias novas páginas.</p>
       <p>Especialmente útil para scans onde vários documentos (ex: recibos) estão na mesma página, ou para tornar plantas de grande formato mais manejáveis.</p>
@@ -719,7 +690,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'n-up-pdf': {
     title: 'N-Up (Múltiplas páginas por folha)',
     metaDescription: 'Imprima várias páginas de PDF em uma única folha. Crie layouts 2-Up, 4-Up ou personalizados.',
-    keywords: ['n-up pdf', 'várias páginas por folha', 'imposição pdf', 'criar apostilas'],
     description: `
       <p>O N-Up PDF organiza várias páginas do seu documento em uma única folha (ex: 2, 4, 6 ou 9 páginas por folha). Isso economiza papel na impressão e é ideal para criar apostilas e resumos.</p>
     `,
@@ -743,7 +713,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'grid-combine': {
     title: 'Combinar em Grade',
     metaDescription: 'Combine vários arquivos PDF em um único layout de grade. Crie planilhas de contatos, galerias de fotos e muito mais.',
-    keywords: ['combinar em grade', 'mosaico pdf', 'galeria pdf', 'unir pdfs em grade'],
     description: `
       <p>"Combinar em Grade" permite mesclar vários arquivos PDF (ou imagens convertidas em PDF) em um layout de grade estruturado. Ideal para criar galerias de fotos, portfólios visuais ou planilhas de contatos a partir de várias fontes.</p>
     `,
@@ -766,7 +735,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'reverse-pages': {
     title: 'Inverter Ordem das Páginas',
     metaDescription: 'Inverta a ordem das páginas do PDF. Espelhe o documento do fim para o começo.',
-    keywords: ['inverter pdf', 'espelhar páginas', 'ordem reversa', 'corrigir scan'],
     description: `
       <p>Esta ferramenta inverte toda a ordem das páginas do seu PDF. A última página torna-se a primeira, a penúltima a segunda, e assim por diante. Ideal para documentos que foram digitalizados na ordem errada.</p>
     `,
@@ -790,7 +758,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'compare-pdfs': {
     title: 'Comparar PDFs',
     metaDescription: 'Compare dois documentos PDF. Destaque as diferenças entre as versões com cores.',
-    keywords: ['comparar pdf', 'diff de documentos', 'controle de versão pdf', 'encontrar alterações'],
     description: `
       <p>Analise duas versões de um documento rapidamente. A ferramenta marca alterações de texto, adições e exclusões com cores, permitindo que você revise revisões instantaneamente.</p>
     `,
@@ -813,7 +780,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'fix-page-size': {
     title: 'Padronizar Tamanho das Páginas',
     metaDescription: 'Padronize as dimensões das páginas do seu PDF. Converta todas as páginas para um formato uniforme.',
-    keywords: ['ajustar tamanho pdf', 'padronizar pdf', 'corrigir formato página', 'pdf para a4'],
     description: `
       <p>Traga consistência ao seu PDF padronizando todas as páginas para uma dimensão única. Esta ferramenta converte documentos com tamanhos de página mistos em um formato uniforme para uma apresentação profissional ou impressão sem erros.</p>
       <p>Escolha entre tamanhos padrão como A4 e Carta (US-Letter) ou defina dimensões personalizadas. O conteúdo é redimensionado ou centralizado de forma inteligente para caber no novo formato.</p>
@@ -838,7 +804,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'linearize-pdf': {
     title: 'Otimizar PDF para Web',
     metaDescription: 'Otimize seu PDF para visualização rápida na internet. Ative o carregamento progressivo (Fast Web View).',
-    keywords: ['linearizar pdf', 'fast web view', 'otimizar pdf web', 'carregamento rápido pdf'],
     description: `
       <p>Linearize seus documentos para uma exibição instantânea na web. PDFs linearizados (também conhecidos como "Fast Web View") permitem que o navegador comece a exibir o conteúdo antes mesmo de terminar o download do arquivo completo.</p>
       <p>Isso melhora drasticamente a experiência do usuário em documentos grandes, pois a primeira página aparece imediatamente.</p>
@@ -863,7 +828,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'repair-pdf': {
     title: 'Reparar PDF',
     metaDescription: 'Recupere arquivos PDF corrompidos ou danificados. Tente restaurar conteúdos de documentos com erro.',
-    keywords: ['reparar pdf', 'consertar pdf corrompido', 'recuperar pdf', 'fix pdf error'],
     description: `
       <p>Tente recuperar arquivos PDF que apresentam erros ou estão corrompidos. Esta ferramenta analisa a estrutura do documento e tenta reconstruí-la para salvar o máximo de conteúdo possível.</p>
       <p>Muito útil para arquivos que não abrem, mostram mensagens de erro ou foram danificados durante um download incompleto.</p>
@@ -889,7 +853,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'encrypt-pdf': {
     title: 'Criptografar PDF',
     metaDescription: 'Proteja seu PDF com senha. Adicione criptografia e defina permissões de uso.',
-    keywords: ['proteger pdf com senha', 'criptografar pdf', 'segurança pdf', 'bloquear pdf'],
     description: `
       <p>Proteja seus documentos confidenciais com criptografia forte. Defina uma senha de usuário para abertura e uma senha de proprietário para controlar permissões como impressão e cópia de texto.</p>
       <p>Escolha entre criptografia AES de 128 ou 256 bits para garantir os mais altos padrões de segurança.</p>
@@ -914,7 +877,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'decrypt-pdf': {
     title: 'Descriptografar PDF',
     metaDescription: 'Remova senhas de arquivos PDF. Desbloqueie documentos protegidos permanentemente.',
-    keywords: ['remover senha pdf', 'desbloquear pdf', 'tirar proteção pdf', 'pdf decrypt'],
     description: `
       <p>Remova a proteção por senha de seus PDFs permanentemente. Ao inserir a senha correta uma vez, a ferramenta gera uma cópia desbloqueada para acesso livre.</p>
       <p>Nota: Você deve conhecer a senha atual. Esta ferramenta não foi feita para quebrar senhas de terceiros sem autorização.</p>
@@ -939,7 +901,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'edit-metadata': {
     title: 'Editar Metadados',
     metaDescription: 'Altere as propriedades do documento PDF. Edite título, autor, assunto e palavras-chave.',
-    keywords: ['editar metadados pdf', 'mudar autor pdf', 'alterar título pdf', 'info documento'],
     description: `
       <p>Personalize as informações ocultas do seu PDF. Edite ou remova título, autor, assunto e palavras-chave para apresentar seus documentos de forma profissional ou proteger sua privacidade.</p>
     `,
@@ -963,7 +924,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'pdf-to-docx': {
     title: 'PDF para Word',
     metaDescription: 'Converta PDF para documentos Word (DOCX) editáveis. Mantenha a formatação e o layout original.',
-    keywords: ['pdf para word', 'converter pdf em docx', 'pdf editável', 'pdf word converter'],
     description: `
       <p>Transforme seus documentos PDF em arquivos Microsoft Word (DOCX) totalmente editáveis. Graças a algoritmos avançados, layouts, fontes e tabelas são mantidos com a maior precisão possível.</p>
       <p>Edite seus textos diretamente no Word sem precisar digitar tudo do zero. Ideal para contratos, currículos e relatórios acadêmicos.</p>
@@ -988,7 +948,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'email-to-pdf': {
     title: 'Email para PDF',
     metaDescription: 'Converta arquivos de email (.eml, .msg) em documentos PDF. Preserva formatação, imagens inline, links clicáveis e anexos.',
-    keywords: ['email para pdf', 'eml para pdf', 'msg para pdf', 'converter email', 'outlook para pdf'],
     description: `
       <p>Email para PDF converte seus arquivos de email (formatos .eml e .msg) em documentos PDF bem formatados. A ferramenta preserva as informações do cabeçalho do email, conteúdo do corpo, imagens inline com substituição CID, links clicáveis e incorpora anexos diretamente no PDF.</p>
       <p>Personalize as opções de saída incluindo tamanho de página (A4, Letter, Legal), formato de data com suporte a fuso horário, e se deseja incluir campos CC/BCC e informações de anexos.</p>
@@ -1016,7 +975,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'djvu-to-pdf': {
     title: 'DJVU para PDF',
     metaDescription: 'Converta arquivos de documentos DJVU para PDF. Renderização de alta qualidade para documentos e livros digitalizados.',
-    keywords: ['djvu para pdf', 'converter djvu', 'conversor djvu', 'djvu pdf', 'djv para pdf'],
     description: `
       <p>DJVU para PDF converte arquivos de documentos DjVu em documentos PDF de alta qualidade. DjVu é um formato de arquivo de computador projetado principalmente para armazenar documentos digitalizados, especialmente aqueles que contêm uma combinação de texto, desenhos em linha e fotografias.</p>
       <p>Esta ferramenta renderiza cada página do seu arquivo DJVU no DPI escolhido (pontos por polegada) e os combina em um documento PDF pesquisável. Perfeito para converter livros digitalizados, manuais técnicos e documentos de arquivo.</p>
@@ -1042,7 +1000,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'fb2-to-pdf': {
     title: 'FB2 para PDF',
     metaDescription: 'Converta livros eletrônicos FictionBook (FB2) para PDF. Suporta vários arquivos com renderização de alta qualidade.',
-    keywords: ['fb2 para pdf', 'converter fb2', 'fictionbook para pdf', 'conversor fb2', 'fb2.zip para pdf'],
     description: `
       <p>FB2 para PDF converte arquivos de livros eletrônicos FictionBook (FB2) em documentos PDF de alta qualidade. FB2 é um formato popular de livro eletrônico baseado em XML amplamente usado na Rússia e no Leste Europeu.</p>
       <p>Esta ferramenta suporta tanto arquivos .fb2 quanto .fb2.zip, e pode processar vários arquivos de uma vez. Preserva a formatação de texto, imagens e a estrutura de capítulos dos seus livros eletrônicos.</p>
@@ -1068,7 +1025,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'deskew-pdf': {
     title: 'Endireitar PDF',
     metaDescription: 'Endireite automaticamente páginas PDF digitalizadas ou inclinadas. Corrija documentos distorcidos com detecção precisa de ângulo.',
-    keywords: ['endireitar pdf', 'corrigir pdf inclinado', 'corrigir digitalização inclinada', 'rotacionar pdf automático', 'corrigir ângulo pdf'],
     description: `
       <p>Endireitar PDF detecta e corrige automaticamente páginas inclinadas ou distorcidas nos seus documentos PDF usando análise avançada de variância de perfil de projeção. Isso é essencial para documentos digitalizados que foram inseridos no scanner em um ângulo.</p>
       <p>A ferramenta analisa o alinhamento de texto e conteúdo em diferentes ângulos para encontrar a rotação ótima, depois aplica a correção. Você pode ajustar o limite de sensibilidade (1-30) e as configurações DPI (72-300) para resultados ótimos.</p>
@@ -1096,7 +1052,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'pdf-to-pdfa': {
     title: 'PDF para PDF/A',
     metaDescription: 'Converta PDF para formato de arquivo PDF/A. Garanta preservação de documentos de longo prazo com padrões ISO.',
-    keywords: ['pdf para pdfa', 'conversor pdfa', 'arquivar pdf', 'arquivo pdf', 'preservação de longo prazo'],
     description: `
       <p>PDF para PDF/A converte seus documentos PDF para o formato PDF/A, o padrão ISO para arquivamento de documentos de longo prazo. PDF/A garante que os documentos serão visualizáveis e reproduzíveis por décadas.</p>
       <p>Escolha entre PDF/A-1b (conformidade básica), PDF/A-2b (recomendado, suporta transparência) ou PDF/A-3b (permite arquivos incorporados). A ferramenta incorpora fontes e achata transparência conforme necessário.</p>
@@ -1122,7 +1077,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'digital-sign-pdf': {
     title: 'Assinatura Digital',
     metaDescription: 'Adicione assinaturas digitais X.509 a documentos PDF. Assine PDFs com certificados PFX, P12 ou PEM para validade legal.',
-    keywords: ['assinatura digital pdf', 'certificado x509', 'assinatura pfx', 'assinatura p12', 'assinatura pem', 'assinatura eletrônica'],
     description: '<p>A ferramenta de Assinatura Digital permite adicionar assinaturas digitais X.509 criptográficas a documentos PDF.</p>',
     howToUse: [
       { step: 1, title: 'Enviar PDF', description: 'Envie o documento PDF que deseja assinar digitalmente.' },
@@ -1144,7 +1098,6 @@ export const toolContentPt: Record<string, ToolContent> = {
   'validate-signature': {
     title: 'Validar Assinatura',
     metaDescription: 'Verifique assinaturas digitais em documentos PDF. Verifique a validade do certificado, informações do signatário e integridade do documento.',
-    keywords: ['validar assinatura pdf', 'verificar assinatura digital', 'verificar certificado pdf', 'verificação de assinatura'],
     description: '<p>A ferramenta Validar Assinatura permite verificar assinaturas digitais em documentos PDF.</p>',
     howToUse: [
       { step: 1, title: 'Enviar PDF Assinado', description: 'Envie um documento PDF que contenha assinaturas digitais.' },

@@ -151,7 +151,6 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
             <QuickAnswerSection
               tool={tool}
               locale={locale}
-              primaryQuery={seoProfile.primaryQuery}
               bestFor={seoProfile.bestFor}
             />
 
@@ -266,20 +265,16 @@ function ToolHeader({ tool, content, pageHeading, fastAnswer }: ToolHeaderProps)
 interface QuickAnswerSectionProps {
   tool: Tool;
   locale: string;
-  primaryQuery: string;
   bestFor: string[];
 }
 
-function QuickAnswerSection({ tool, locale, primaryQuery, bestFor }: QuickAnswerSectionProps) {
+function QuickAnswerSection({ tool, locale, bestFor }: QuickAnswerSectionProps) {
   return (
     <section className="mt-10 grid gap-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(260px,0.65fr)]" aria-labelledby="quick-answer-heading">
       <Card variant="outlined" size="lg" className="glass-card">
         <h2 id="quick-answer-heading" className="text-2xl font-bold text-[hsl(var(--color-foreground))]">
           What this tool is best for
         </h2>
-        <p className="mt-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
-          Primary search intent: <span className="font-medium text-[hsl(var(--color-foreground))]">{primaryQuery}</span>
-        </p>
         <ul className="mt-4 space-y-3 text-sm text-[hsl(var(--color-muted-foreground))]">
           {bestFor.map((item) => (
             <li key={item} className="flex gap-3">

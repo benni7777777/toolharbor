@@ -35,7 +35,6 @@ function createMockToolContent(tool: Tool): ToolContent {
   return {
     title: `${tool.id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())} - OpenToolsKit`,
     metaDescription: `Use ${tool.id.replace(/-/g, ' ')} tool to process your PDF files. Free, private, and secure.`,
-    keywords: [tool.id, 'PDF', 'tool', ...tool.features.slice(0, 3)],
     description: `A powerful tool for ${tool.id.replace(/-/g, ' ')} operations.`,
     howToUse: [
       { step: 1, title: 'Upload', description: 'Upload your PDF file' },
