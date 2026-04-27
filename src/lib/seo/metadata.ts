@@ -76,8 +76,7 @@ export function getAlternateUrls(path: string = ''): Record<string, string> {
     alternates[locale] = getCanonicalUrl(locale, path);
   }
 
-  // Root is the x-default language chooser and redirects to the canonical English route.
-  alternates['x-default'] = normalizePagePath(path) ? getCanonicalUrl(defaultLocale, path) : `${siteConfig.url}/`;
+  alternates['x-default'] = getCanonicalUrl(defaultLocale, path);
 
   return alternates;
 }

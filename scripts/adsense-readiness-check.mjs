@@ -111,6 +111,72 @@ function outPathForHref(href) {
   return path.join(outDir, normalized.slice(1), 'index.html');
 }
 
+function outPathForAbsoluteUrl(url) {
+  const parsed = new URL(url);
+  return outPathForHref(parsed.pathname);
+}
+
+function collectAbsoluteUrls(value, urls = []) {
+  if (!value) {
+    return urls;
+  }
+
+  if (typeof value === 'string') {
+    if (value.startsWith('https://www.opentoolskit.com/') || value.startsWith('https://opentoolskit.com/')) {
+      urls.push(value);
+    }
+    return urls;
+  }
+
+  if (Array.isArray(value)) {
+    for (const item of value) {
+      collectAbsoluteUrls(item, urls);
+    }
+    return urls;
+  }
+
+  if (typeof value === 'object') {
+    for (const nested of Object.values(value)) {
+      collectAbsoluteUrls(nested, urls);
+    }
+  }
+
+  return urls;
+}
+
+function isBlockedPath(pathname) {
+  return pathname.startsWith('/api/') || pathname.startsWith('/go/');
+}
+
+function isHtmlRoutePath(pathname) {
+  return pathname === '/' || (!/\.[a-z0-9]{2,16}$/i.test(pathname) && !pathname.startsWith('/_next/'));
+}
+
+function validateGeneratedHtmlUrl(url, sourceLabel) {
+  if (!url.startsWith(`${canonicalHost}/`)) {
+    fail(`${sourceLabel} uses a non-canonical host URL: ${url}`);
+    return;
+  }
+
+  const parsed = new URL(url);
+  if (isBlockedPath(parsed.pathname)) {
+    fail(`${sourceLabel} points to a robots-blocked path: ${url}`);
+  }
+
+  if (isHtmlRoutePath(parsed.pathname) && !parsed.pathname.endsWith('/')) {
+    fail(`${sourceLabel} points to a non-trailing-slash route: ${url}`);
+  }
+
+  if (parsed.pathname === '/') {
+    fail(`${sourceLabel} points to the root redirect helper instead of a final canonical URL: ${url}`);
+    return;
+  }
+
+  if (isHtmlRoutePath(parsed.pathname) && !fs.existsSync(outPathForAbsoluteUrl(url))) {
+    fail(`${sourceLabel} points to a missing generated page: ${url}`);
+  }
+}
+
 function checkOutputFiles() {
   if (!fs.existsSync(outDir)) {
     console.warn('out/ does not exist yet; skipping generated-output checks. Run npm run build first.');
@@ -137,9 +203,50 @@ function checkOutputFiles() {
   if (!sitemap.includes(`${canonicalHost}/en/`)) {
     fail('out/sitemap.xml is missing the canonical English homepage.');
   }
+  if (sitemap.includes(`<loc>${canonicalHost}/</loc>`)) {
+    fail('out/sitemap.xml includes the root redirect helper.');
+  }
   const nonCanonicalLoc = sitemap.match(/<loc>https:\/\/www\.opentoolskit\.com\/[^<]*(?<!\/)<\/loc>/);
   if (nonCanonicalLoc) {
     fail(`out/sitemap.xml contains a non-trailing-slash page URL: ${nonCanonicalLoc[0]}`);
+  }
+
+  const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+  const sitemapUrlSet = new Set(sitemapUrls);
+  for (const url of sitemapUrls) {
+    validateGeneratedHtmlUrl(url, 'out/sitemap.xml');
+
+    const pagePath = outPathForAbsoluteUrl(url);
+    if (!fs.existsSync(pagePath)) {
+      continue;
+    }
+
+    const html = fs.readFileSync(pagePath, 'utf8');
+    const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+    if (canonical !== url) {
+      fail(`${path.relative(outDir, pagePath)} canonical does not match sitemap URL. expected=${url} actual=${canonical || 'missing'}`);
+    }
+
+    const ogUrl = html.match(/<meta property="og:url" content="([^"]+)"/)?.[1];
+    if (ogUrl && ogUrl !== url) {
+      fail(`${path.relative(outDir, pagePath)} og:url does not match canonical URL. expected=${url} actual=${ogUrl}`);
+    }
+
+    if (/<meta name="robots" content="[^"]*noindex/i.test(html)) {
+      fail(`${path.relative(outDir, pagePath)} is noindex but appears in sitemap.`);
+    }
+
+    const alternates = [...html.matchAll(/<link rel="alternate" hrefLang="([^"]+)" href="([^"]+)"/g)];
+    if (alternates.length === 0) {
+      fail(`${path.relative(outDir, pagePath)} is missing hreflang alternates.`);
+    }
+
+    for (const [, hreflang, href] of alternates) {
+      validateGeneratedHtmlUrl(href, `${path.relative(outDir, pagePath)} hreflang ${hreflang}`);
+      if (hreflang !== 'x-default' && !sitemapUrlSet.has(href)) {
+        fail(`${path.relative(outDir, pagePath)} hreflang ${hreflang} is not present in sitemap: ${href}`);
+      }
+    }
   }
 
   const home = fs.readFileSync(path.join(outDir, 'en', 'index.html'), 'utf8');
@@ -174,19 +281,48 @@ function checkOutputFiles() {
     '/pdfjs-annotation-viewer/',
     '/pymupdf-wasm/',
     '/libreoffice-wasm/',
-    '/go/',
-    '/api/',
   ];
 
   for (const file of htmlFiles) {
     const text = fs.readFileSync(file, 'utf8');
+    if (text.includes(apexHost)) {
+      fail(`${path.relative(outDir, file)} references apex host directly instead of the canonical www host.`);
+    }
+
+    const ldJsonBlocks = [...text.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+    for (const [, block] of ldJsonBlocks) {
+      try {
+        const parsed = JSON.parse(block);
+        for (const url of collectAbsoluteUrls(parsed)) {
+          validateGeneratedHtmlUrl(url.split('#')[0], `${path.relative(outDir, file)} JSON-LD`);
+        }
+      } catch {
+        fail(`${path.relative(outDir, file)} contains invalid JSON-LD.`);
+      }
+    }
+
     for (const match of text.matchAll(hrefPattern)) {
       const href = match[1];
       if (!href.startsWith('/') || skipPrefixes.some((prefix) => href.startsWith(prefix))) {
         continue;
       }
 
+      if (href.startsWith('/api/') || href.startsWith('/go/')) {
+        broken.push(`${path.relative(outDir, file)} -> ${href} (robots-blocked internal link)`);
+        continue;
+      }
+
       const cleaned = href.split('?')[0].split('#')[0];
+      if (cleaned === '/') {
+        broken.push(`${path.relative(outDir, file)} -> ${href} (root redirect helper)`);
+        continue;
+      }
+
+      if (cleaned && !cleaned.endsWith('/') && !/\.[a-z0-9]{2,16}$/i.test(cleaned)) {
+        broken.push(`${path.relative(outDir, file)} -> ${href} (non-trailing-slash route)`);
+        continue;
+      }
+
       if (/\.[a-z0-9]{2,16}$/i.test(cleaned)) {
         const assetPath = path.join(outDir, cleaned.slice(1));
         if (!fs.existsSync(assetPath)) {
