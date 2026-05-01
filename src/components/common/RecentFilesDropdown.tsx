@@ -37,6 +37,10 @@ export const RecentFilesDropdown: React.FC<RecentFilesDropdownProps> = ({
 
   // Close dropdown when clicking outside
   useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
@@ -46,7 +50,7 @@ export const RecentFilesDropdown: React.FC<RecentFilesDropdownProps> = ({
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  }, [isOpen]);
 
   // Close on escape key
   useEffect(() => {

@@ -49,6 +49,10 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocal
 
   // Close dropdown when clicking outside
   useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
@@ -58,10 +62,14 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocal
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  }, [isOpen]);
 
   // Close dropdown on escape key
   useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setIsOpen(false);
@@ -71,7 +79,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocal
 
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
-  }, []);
+  }, [isOpen]);
 
   // Focus option when focusedIndex changes
   useEffect(() => {

@@ -8,9 +8,14 @@ const canonicalHost = 'https://www.opentoolskit.com';
 const apexHost = 'https://opentoolskit.com';
 
 const failures = [];
+const warnings = [];
 
 function fail(message) {
   failures.push(message);
+}
+
+function warn(message) {
+  warnings.push(message);
 }
 
 function read(relativePath) {
@@ -424,8 +429,31 @@ function checkOutputFiles() {
 
   for (const file of htmlFiles) {
     const text = fs.readFileSync(file, 'utf8');
+    const rel = path.relative(outDir, file);
+
+    const adsenseScriptTags = [...text.matchAll(/<script\b[^>]*\bsrc=["'][^"']*pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=ca-pub-7143107898355663[^"']*["'][^>]*>/gi)];
+    if (adsenseScriptTags.length > 1) {
+      fail(`${rel} contains duplicate AdSense verification script tags.`);
+    }
+
+    const adsenseMetaTags = [...text.matchAll(/<meta\b[^>]*\bname=["']google-adsense-account["'][^>]*>/gi)];
+    if (adsenseMetaTags.length > 1) {
+      fail(`${rel} contains duplicate google-adsense-account meta tags.`);
+    }
+
+    const htmlBytes = Buffer.byteLength(text, 'utf8');
+    if (htmlBytes > 750_000) {
+      warn(`${rel} is a large generated HTML file (${Math.round(htmlBytes / 1024)} KiB).`);
+    }
+
+    const inlineScriptBytes = [...text.matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)]
+      .reduce((total, [, scriptBody]) => total + Buffer.byteLength(scriptBody, 'utf8'), 0);
+    if (inlineScriptBytes > 500_000) {
+      warn(`${rel} has large inline script payloads (${Math.round(inlineScriptBytes / 1024)} KiB).`);
+    }
+
     if (text.includes(apexHost)) {
-      fail(`${path.relative(outDir, file)} references apex host directly instead of the canonical www host.`);
+      fail(`${rel} references apex host directly instead of the canonical www host.`);
     }
 
     const ldJsonBlocks = [...text.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
@@ -433,10 +461,10 @@ function checkOutputFiles() {
       try {
         const parsed = JSON.parse(block);
         for (const url of collectAbsoluteUrls(parsed)) {
-          validateGeneratedHtmlUrl(url.split('#')[0], `${path.relative(outDir, file)} JSON-LD`);
+          validateGeneratedHtmlUrl(url.split('#')[0], `${rel} JSON-LD`);
         }
       } catch {
-        fail(`${path.relative(outDir, file)} contains invalid JSON-LD.`);
+        fail(`${rel} contains invalid JSON-LD.`);
       }
     }
 
@@ -447,32 +475,32 @@ function checkOutputFiles() {
       }
 
       if (href.startsWith('/api/') || href.startsWith('/go/')) {
-        broken.push(`${path.relative(outDir, file)} -> ${href} (robots-blocked internal link)`);
+        broken.push(`${rel} -> ${href} (robots-blocked internal link)`);
         continue;
       }
 
       const cleaned = href.split('?')[0].split('#')[0];
       if (cleaned === '/') {
-        broken.push(`${path.relative(outDir, file)} -> ${href} (root redirect helper)`);
+        broken.push(`${rel} -> ${href} (root redirect helper)`);
         continue;
       }
 
       if (cleaned && !cleaned.endsWith('/') && !/\.[a-z0-9]{2,16}$/i.test(cleaned)) {
-        broken.push(`${path.relative(outDir, file)} -> ${href} (non-trailing-slash route)`);
+        broken.push(`${rel} -> ${href} (non-trailing-slash route)`);
         continue;
       }
 
       if (/\.[a-z0-9]{2,16}$/i.test(cleaned)) {
         const assetPath = path.join(outDir, cleaned.slice(1));
         if (!fs.existsSync(assetPath)) {
-          broken.push(`${path.relative(outDir, file)} -> ${href}`);
+          broken.push(`${rel} -> ${href}`);
         }
         continue;
       }
 
       const target = outPathForHref(href);
       if (!fs.existsSync(target)) {
-        broken.push(`${path.relative(outDir, file)} -> ${href}`);
+        broken.push(`${rel} -> ${href}`);
       }
     }
   }
@@ -486,6 +514,16 @@ function checkOutputFiles() {
 
 checkSourceFiles();
 checkOutputFiles();
+
+if (warnings.length > 0) {
+  console.warn(`AdSense readiness check completed with ${warnings.length} warning(s):`);
+  for (const warning of warnings.slice(0, 40)) {
+    console.warn(`- ${warning}`);
+  }
+  if (warnings.length > 40) {
+    console.warn(`- ...and ${warnings.length - 40} more warning(s).`);
+  }
+}
 
 if (failures.length > 0) {
   console.error(`AdSense readiness check failed with ${failures.length} issue(s):`);

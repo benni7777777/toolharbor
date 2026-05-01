@@ -2,9 +2,9 @@
 
 /* OpenToolsKit Design System - CSS Variables for Theming */
 :root {
-  --color-primary: 183 74% 37%;
+  --color-primary: 183 74% 30%;
   --color-primary-foreground: 52 55% 96%;
-  --color-primary-hover: 186 80% 28%;
+  --color-primary-hover: 186 80% 24%;
 
   --color-secondary: 36 28% 90%;
   --color-secondary-foreground: 202 54% 14%;
