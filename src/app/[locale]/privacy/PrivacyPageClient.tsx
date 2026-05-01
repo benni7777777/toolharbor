@@ -150,7 +150,7 @@ export default function PrivacyPageClient({ locale }: PrivacyPageClientProps) {
 
               <h2 className="text-2xl font-bold text-[hsl(var(--color-foreground))] mt-8 mb-4">5. Ads and partner offers</h2>
               <p className="text-[hsl(var(--color-muted-foreground))] mb-4">
-                OpenToolsKit may show labeled ad placements or partner suggestions outside AdSense review mode. These
+                OpenToolsKit may show labeled ad placements or partner suggestions when enabled. These
                 surfaces help fund the open-source service, but they are separate from the browser-side file tools.
               </p>
               <ul className="list-disc pl-6 space-y-2 text-[hsl(var(--color-muted-foreground))] mb-4">

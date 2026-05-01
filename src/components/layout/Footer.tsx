@@ -146,6 +146,13 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                   Build a PDF workflow
                 </Link>
               </li>
+              {locale === 'en' && (
+                <li>
+                  <Link href={`/${locale}/guides/`} className="transition-colors hover:text-[hsl(var(--color-foreground))]">
+                    Read PDF workflow guides
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
 

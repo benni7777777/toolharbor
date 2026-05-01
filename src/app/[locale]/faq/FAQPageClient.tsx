@@ -29,12 +29,13 @@ export default function FAQPageClient({ locale }: FAQPageClientProps) {
   const showInfoNativeAd =
     monetizationProfile.allowNativeUnits && siteConfig.ads.placements.infoPages.nativeBanner;
   const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
-  const [searchQuery, setSearchQuery] = useState('');
-  const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-
   const faqs = getFAQPageItems(t);
   const categories = getFAQPageCategories(t);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [expandedItems, setExpandedItems] = useState<Set<number>>(
+    () => new Set(faqs.map((_, index) => index))
+  );
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   // Filter FAQs
   const filteredFaqs = faqs.filter(faq => {

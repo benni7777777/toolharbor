@@ -21,6 +21,7 @@ import { CATEGORY_INFO, type ToolCategory } from '@/types/tool';
 import { useFavorites } from '@/hooks/useFavorites';
 import { siteConfig } from '@/config/site';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
+import { getGuideSummaries } from '@/content/guides';
 
 type CategoryFilter = ToolCategory | 'all' | 'favorites';
 
@@ -37,6 +38,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
   const showToolsNativeAd = monetizationProfile.allowNativeUnits && siteConfig.ads.placements.toolsIndex.nativeBanner;
   const showInlineAd = monetizationProfile.allowAggressiveUnits;
   const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
+  const guideSummaries = locale === 'en' ? getGuideSummaries(4) : [];
 
   const categoryTranslationKeys: Record<ToolCategory, string> = {
     'edit-annotate': 'editAnnotate',
@@ -103,7 +105,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
     { value: 'optimize-repair', label: t('home.categories.optimizeRepair') },
     { value: 'secure-pdf', label: t('home.categories.securePdf') },
   ];
-  const highIntentStartingPoints = [
+  const commonPdfJobs = [
     {
       href: `/${locale}/tools/merge-pdf/`,
       title: 'Merge PDF files',
@@ -233,18 +235,18 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
               </div>
             </section>
 
-            <section className="mb-10" aria-labelledby="high-intent-starting-points-heading">
+            <section className="mb-10" aria-labelledby="common-pdf-jobs-heading">
               <div className="mb-4">
-                <h2 id="high-intent-starting-points-heading" className="text-2xl font-bold text-[hsl(var(--color-foreground))]">
-                  High-intent starting points
+                <h2 id="common-pdf-jobs-heading" className="text-2xl font-bold text-[hsl(var(--color-foreground))]">
+                  Common PDF jobs
                 </h2>
                 <p className="mt-2 max-w-3xl text-sm text-[hsl(var(--color-muted-foreground))]">
-                  These are the live routes most likely to solve a specific PDF job fast: combine files, trim upload size,
-                  convert images, extract pages for portals, or secure the final document before it leaves your browser.
+                  Start here when you know the document problem but not the exact tool name: combine files, trim upload
+                  size, convert images, extract pages for portals, or secure the final document before sharing.
                 </p>
               </div>
               <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {highIntentStartingPoints.map((item) => (
+                {commonPdfJobs.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
@@ -260,6 +262,41 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                 ))}
               </div>
             </section>
+
+            {guideSummaries.length > 0 && (
+              <section className="mb-10" aria-labelledby="tools-guides-heading">
+                <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <h2 id="tools-guides-heading" className="text-2xl font-bold text-[hsl(var(--color-foreground))]">
+                      Guides for choosing the right workflow
+                    </h2>
+                    <p className="mt-2 max-w-3xl text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                      Use these guides when the decision is not just which button to press, but how to prepare,
+                      verify, and safely share the resulting PDF.
+                    </p>
+                  </div>
+                  <Link href={`/${locale}/guides/`} className="text-sm font-medium text-[hsl(var(--color-primary))] hover:underline">
+                    View all guides
+                  </Link>
+                </div>
+                <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                  {guideSummaries.map((guide) => (
+                    <Link
+                      key={guide.slug}
+                      href={`/${locale}/guides/${guide.slug}/`}
+                      className="rounded-[1.5rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-5 shadow-[var(--shadow-sm)] transition-transform hover:-translate-y-0.5"
+                    >
+                      <h3 className="text-base font-semibold text-[hsl(var(--color-foreground))]">
+                        {guide.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                        {guide.summary}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Filter Bar */}
             <div className="flex flex-col md:flex-row items-center gap-6 mb-10 sticky top-20 z-40 py-4 px-6 rounded-2xl glass-card transition-all">

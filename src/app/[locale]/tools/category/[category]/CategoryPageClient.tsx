@@ -18,6 +18,7 @@ import Link from 'next/link';
 import { Home, ChevronRight } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
+import { getGuidesBySlugs } from '@/content/guides';
 
 interface CategoryPageClientProps {
     locale: Locale;
@@ -33,6 +34,7 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
     const showCategoryNativeAd = monetizationProfile.allowNativeUnits && siteConfig.ads.placements.categoryHub.nativeBanner;
     const showInlineAd = monetizationProfile.allowAggressiveUnits;
     const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
+    const guideLinks = locale === 'en' ? getGuidesBySlugs(categorySeo.relatedGuideSlugs) : [];
 
     // Map categories to translation keys (matching ToolsPage structure)
     const categoryTranslationKeys: Record<ToolCategory, string> = {
@@ -131,6 +133,84 @@ export default function CategoryPageClient({ locale, category, localizedToolCont
                             </div>
                         </aside>
                     </section>
+
+                    <section className="mb-8 grid gap-4 lg:grid-cols-3" aria-labelledby="category-guidance-heading">
+                        <div className="rounded-[1.75rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-6 shadow-[var(--shadow-sm)]">
+                            <h2 id="category-guidance-heading" className="text-xl font-semibold text-[hsl(var(--color-foreground))]">
+                                How to choose
+                            </h2>
+                            <ul className="mt-4 space-y-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                                {categorySeo.howToChoose.map((item) => (
+                                    <li key={item} className="flex gap-3">
+                                        <span className="mt-2 h-2 w-2 rounded-full bg-[hsl(var(--color-primary))]" aria-hidden="true" />
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="rounded-[1.75rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-6 shadow-[var(--shadow-sm)]">
+                            <h2 className="text-xl font-semibold text-[hsl(var(--color-foreground))]">
+                                Quality checks
+                            </h2>
+                            <ul className="mt-4 space-y-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                                {categorySeo.qualityChecks.map((item) => (
+                                    <li key={item} className="flex gap-3">
+                                        <span className="mt-2 h-2 w-2 rounded-full bg-[hsl(var(--color-accent-strong))]" aria-hidden="true" />
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="rounded-[1.75rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-6 shadow-[var(--shadow-sm)]">
+                            <h2 className="text-xl font-semibold text-[hsl(var(--color-foreground))]">
+                                Privacy notes
+                            </h2>
+                            <ul className="mt-4 space-y-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                                {categorySeo.privacyNotes.map((item) => (
+                                    <li key={item} className="flex gap-3">
+                                        <span className="mt-2 h-2 w-2 rounded-full bg-[hsl(var(--color-highlight))]" aria-hidden="true" />
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </section>
+
+                    {guideLinks.length > 0 && (
+                        <section className="mb-8 rounded-[1.75rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-6 shadow-[var(--shadow-sm)]" aria-labelledby="category-guides-heading">
+                            <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                                <div>
+                                    <h2 id="category-guides-heading" className="text-xl font-semibold text-[hsl(var(--color-foreground))]">
+                                        Related guides
+                                    </h2>
+                                    <p className="mt-2 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                                        Read these guides before choosing a workflow for documents that need extra review.
+                                    </p>
+                                </div>
+                                <Link href={`/${locale}/guides/`} className="text-sm font-medium text-[hsl(var(--color-primary))] hover:underline">
+                                    View all guides
+                                </Link>
+                            </div>
+                            <div className="grid gap-4 md:grid-cols-2">
+                                {guideLinks.map((guide) => (
+                                    <Link
+                                        key={guide.slug}
+                                        href={`/${locale}/guides/${guide.slug}/`}
+                                        className="rounded-[1.25rem] border border-[hsl(var(--color-border))] p-4 transition-colors hover:bg-[hsl(var(--color-surface-subtle))]"
+                                    >
+                                        <span className="text-sm font-semibold text-[hsl(var(--color-foreground))]">
+                                            {guide.title}
+                                        </span>
+                                        <span className="mt-2 block text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                                            {guide.summary}
+                                        </span>
+                                    </Link>
+                                ))}
+                            </div>
+                        </section>
+                    )}
 
                     {showCategoryNativeAd && (
                         <div className="mb-8">

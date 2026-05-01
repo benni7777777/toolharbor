@@ -24,8 +24,9 @@ import {
   validateSoftwareApplicationSchema,
   validateFAQPageSchema,
 } from '@/lib/seo/structured-data';
-import { locales, type Locale } from '@/lib/i18n/config';
-import { tools, getAllTools } from '@/config/tools';
+import { locales } from '@/lib/i18n/config';
+import { indexableLocales } from '@/lib/i18n/indexing';
+import { tools } from '@/config/tools';
 import type { Tool, ToolContent, FAQ } from '@/types/tool';
 
 /**
@@ -156,10 +157,13 @@ describe('SEO Property Tests', () => {
             expect(metadata.alternates?.languages).toBeDefined();
             const languages = metadata.alternates?.languages as Record<string, string>;
             
-            // All locales should be present
-            for (const loc of locales) {
+            // Only reviewed indexable locales should be present in hreflang.
+            for (const loc of indexableLocales) {
               expect(languages[loc]).toBeTruthy();
               expect(languages[loc]).toContain(loc);
+            }
+            for (const loc of locales.filter((item) => !(indexableLocales as readonly string[]).includes(item))) {
+              expect(languages[loc]).toBeUndefined();
             }
             
             // x-default should be present
@@ -361,15 +365,18 @@ describe('SEO Property Tests', () => {
       );
     });
 
-    it('getAlternateUrls includes all locales', () => {
+    it('getAlternateUrls includes reviewed indexable locales', () => {
       const path = '/tools/merge-pdf';
       const alternates = getAlternateUrls(path);
       
-      // All locales should be present
-      for (const locale of locales) {
+      // Reviewed indexable locales should be present.
+      for (const locale of indexableLocales) {
         expect(alternates[locale]).toBeTruthy();
         expect(alternates[locale]).toContain(locale);
         expect(alternates[locale]).toContain(path);
+      }
+      for (const locale of locales.filter((item) => !(indexableLocales as readonly string[]).includes(item))) {
+        expect(alternates[locale]).toBeUndefined();
       }
       
       // x-default should be present

@@ -60,6 +60,10 @@ export function getLocaleFromPath(path: string): Locale | null {
  */
 export function getLocalizedPath(path: string, locale: Locale): string {
   const cleanPath = path.replace(/^\/(en|ja|ko|es|fr|de|zh-TW|zh|pt|ar|it|id|vi)(\/|$)/, '/');
+  if (locale !== 'en' && /^\/guides(\/|$)/.test(cleanPath)) {
+    return `/${locale}/tools/`;
+  }
+
   const normalizedPath = cleanPath === '/' ? '/' : cleanPath.replace(/^\/+/, '/');
   const localizedPath = `/${locale}${normalizedPath === '/' ? '/' : normalizedPath}`;
   return localizedPath.endsWith('/') ? localizedPath : `${localizedPath}/`;

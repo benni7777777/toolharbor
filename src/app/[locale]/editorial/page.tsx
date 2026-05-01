@@ -59,7 +59,7 @@ export default async function EditorialPage({ params }: EditorialPageProps) {
     {
       title: 'Monetization boundaries',
       body:
-        'Advertising and partner surfaces, when enabled outside AdSense review mode, must be labeled and kept separate from core tool actions. They should not be presented as editorial recommendations.',
+        'Advertising and partner surfaces, when enabled, must be labeled and kept separate from core tool actions. They should not be presented as editorial recommendations.',
     },
     {
       title: 'Corrections',

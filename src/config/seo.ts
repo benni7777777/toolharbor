@@ -20,6 +20,10 @@ export interface CategorySeoProfile {
   description: string;
   intro: string;
   bestFor: string[];
+  howToChoose: string[];
+  qualityChecks: string[];
+  privacyNotes: string[];
+  relatedGuideSlugs: string[];
   adjacentCategories: ToolCategory[];
 }
 
@@ -84,6 +88,21 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
       'Splitting a large PDF into page ranges or separate files.',
       'Reordering, deleting, duplicating, or extracting pages before sending or archiving.',
     ],
+    howToChoose: [
+      'Use Merge PDF when several complete documents should become one file.',
+      'Use Split or Extract Pages when one long document needs to become smaller outputs.',
+      'Use Organize PDF when page order, deletion, rotation, or duplication all need review before export.',
+    ],
+    qualityChecks: [
+      'Open the final PDF and verify page order, page count, and section boundaries.',
+      'Check page orientation when the source includes scans or mixed page sizes.',
+      'Keep the original files until the combined or extracted output has been accepted.',
+    ],
+    privacyNotes: [
+      'Review page content before merging because a combined file can expose pages that were meant to stay separate.',
+      'Use metadata removal, redaction, or encryption as separate checks for sensitive packets.',
+    ],
+    relatedGuideSlugs: ['how-to-merge-pdf-files'],
     adjacentCategories: ['edit-annotate', 'optimize-repair'],
   },
   'edit-annotate': {
@@ -96,6 +115,21 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
       'Adjusting page appearance with page numbers, headers, footers, or watermarks.',
       'Cleaning up annotations, colors, and visible page presentation before sharing.',
     ],
+    howToChoose: [
+      'Use Sign PDF for a visible handwritten, typed, or uploaded signature.',
+      'Use Watermark, Page Numbers, or Header/Footer when the change should appear consistently across pages.',
+      'Use Edit PDF or Form Filler when the document needs page-level markup or field entry.',
+    ],
+    qualityChecks: [
+      'Confirm edits do not cover important text, form fields, or signatures.',
+      'Open the exported file in a reader and inspect pages at normal zoom.',
+      'For formal signatures, confirm the recipient accepts the signature type used.',
+    ],
+    privacyNotes: [
+      'Visible edits can expose personal signatures, comments, or reviewer notes if the wrong file is shared.',
+      'Use redaction or metadata cleanup separately when information should be removed, not just covered or labeled.',
+    ],
+    relatedGuideSlugs: ['how-to-sign-a-pdf-online-safely'],
     adjacentCategories: ['organize-manage', 'secure-pdf'],
   },
   'convert-to-pdf': {
@@ -108,6 +142,21 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
       'Preparing PDFs from mixed source files before merging or annotating them.',
       'Converting supported document and ebook formats into a standard PDF output.',
     ],
+    howToChoose: [
+      'Use JPG to PDF or Image to PDF when photos, scans, or screenshots need a shareable document.',
+      'Use Text or Markdown to PDF when the source is plain content rather than page images.',
+      'Use document-format converters only when the source format is supported and the output has been reviewed.',
+    ],
+    qualityChecks: [
+      'Verify image order, page orientation, and readability after conversion.',
+      'Check whether the output file size is acceptable before upload or email.',
+      'Keep the source files until the PDF has been opened and reviewed.',
+    ],
+    privacyNotes: [
+      'Conversion does not remove visible sensitive details from photos, scans, or source documents.',
+      'Review images for addresses, IDs, signatures, or account numbers before sharing the PDF.',
+    ],
+    relatedGuideSlugs: ['how-to-convert-jpg-to-pdf'],
     adjacentCategories: ['convert-from-pdf', 'organize-manage'],
   },
   'convert-from-pdf': {
@@ -120,6 +169,21 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
       'Pulling document content into DOCX, Excel, JSON, or Markdown workflows.',
       'Extracting PDF data into a format that is easier to edit or process elsewhere.',
     ],
+    howToChoose: [
+      'Use PDF to JPG or PNG when a page image is the desired output.',
+      'Use PDF to DOCX, Excel, or Markdown when the next step is editing or analysis.',
+      'Use OCR first when the PDF is a scan and selectable text is required.',
+    ],
+    qualityChecks: [
+      'Inspect exported text, tables, and image quality before relying on the converted output.',
+      'Check whether page images need JPG for smaller size or PNG for sharper detail.',
+      'Review OCR or document conversions carefully because layout can change.',
+    ],
+    privacyNotes: [
+      'Exporting a page as an image preserves visible sensitive information.',
+      'Converted documents can make previously hard-to-copy text easier to reuse, so share outputs carefully.',
+    ],
+    relatedGuideSlugs: ['browser-based-pdf-tools-and-privacy'],
     adjacentCategories: ['convert-to-pdf', 'optimize-repair'],
   },
   'optimize-repair': {
@@ -132,6 +196,21 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
       'Repairing damaged PDFs and cleaning files that refuse to open properly.',
       'Flattening, sanitizing, deskewing, or linearizing PDFs before delivery.',
     ],
+    howToChoose: [
+      'Use Compress PDF when size is the main problem.',
+      'Use Repair PDF before other tools if the source file fails to open or process.',
+      'Use Sanitize, Flatten, or Linearize when the issue is hidden data, viewer behavior, or delivery performance.',
+    ],
+    qualityChecks: [
+      'Compare the original and optimized file before deleting either copy.',
+      'Inspect small text, scans, signatures, and diagrams after compression or cleanup.',
+      'Retry from the original file if repair or optimization produces a partial result.',
+    ],
+    privacyNotes: [
+      'Compression and repair do not automatically redact visible sensitive details.',
+      'Sanitizing and metadata cleanup should be verified in a PDF viewer before external sharing.',
+    ],
+    relatedGuideSlugs: ['how-to-compress-a-pdf-without-losing-readability'],
     adjacentCategories: ['organize-manage', 'secure-pdf'],
   },
   'secure-pdf': {
@@ -143,6 +222,25 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
       'Encrypting PDFs or changing permissions before distribution.',
       'Removing metadata, sanitizing files, or checking digital signatures.',
       'Redacting or hiding sensitive information in client-side workflows.',
+    ],
+    howToChoose: [
+      'Use Encrypt PDF when access to the file should require a password.',
+      'Use Find and Redact when visible sensitive content should not be disclosed.',
+      'Use Remove Metadata or Sanitize PDF when hidden document properties need cleanup.',
+    ],
+    qualityChecks: [
+      'Open protected outputs and confirm the expected password or permission behavior.',
+      'Try copying or searching redacted areas when the document is sensitive.',
+      'Check document properties after metadata cleanup.',
+    ],
+    privacyNotes: [
+      'Security tools should only be used on documents you own or are authorized to modify.',
+      'Encryption, redaction, and metadata cleanup solve different problems and may need to be combined.',
+    ],
+    relatedGuideSlugs: [
+      'how-to-protect-a-pdf-with-a-password',
+      'how-to-redact-sensitive-information-in-a-pdf',
+      'how-to-remove-pdf-metadata-before-sharing',
     ],
     adjacentCategories: ['edit-annotate', 'optimize-repair'],
   },

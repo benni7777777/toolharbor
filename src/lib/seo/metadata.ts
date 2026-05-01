@@ -8,7 +8,8 @@
 import type { Metadata } from 'next';
 import { getCategorySeo, getStaticPageSeo } from '@/config/seo';
 import { siteConfig } from '@/config/site';
-import { defaultLocale, type Locale, locales } from '@/lib/i18n/config';
+import { defaultLocale, type Locale } from '@/lib/i18n/config';
+import { indexableLocales, isIndexableLocale } from '@/lib/i18n/indexing';
 import { getToolSeoProfile } from '@/lib/seo/profiles';
 import type { Tool, ToolContent } from '@/types/tool';
 import type { ToolCategory } from '@/types/tool';
@@ -29,6 +30,7 @@ export interface PageMetadataOptions extends BaseMetadataOptions {
   description: string;
   image?: string;
   noIndex?: boolean;
+  alternateLocales?: readonly Locale[];
 }
 
 /**
@@ -69,10 +71,10 @@ export function getCanonicalUrl(locale: Locale, path: string = ''): string {
 /**
  * Generate alternate language URLs for hreflang tags
  */
-export function getAlternateUrls(path: string = ''): Record<string, string> {
+export function getAlternateUrls(path: string = '', alternateLocales: readonly Locale[] = indexableLocales): Record<string, string> {
   const alternates: Record<string, string> = {};
 
-  for (const locale of locales) {
+  for (const locale of alternateLocales) {
     alternates[locale] = getCanonicalUrl(locale, path);
   }
 
@@ -85,7 +87,7 @@ export function getAlternateUrls(path: string = ''): Record<string, string> {
  * Generate base metadata for any page
  */
 export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
-  const { locale, path = '', title, description, image, noIndex = false } = options;
+  const { locale, path = '', title, description, image, noIndex = false, alternateLocales = indexableLocales } = options;
 
   const fullTitle = title.includes(siteConfig.name)
     ? title
@@ -106,7 +108,7 @@ export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
     authors: [{ name: siteConfig.creator }],
     creator: siteConfig.creator,
     publisher: siteConfig.name,
-    robots: noIndex
+    robots: noIndex || !isIndexableLocale(locale)
       ? { index: false, follow: true }
       : {
         index: true,
@@ -122,7 +124,7 @@ export function generateBaseMetadata(options: PageMetadataOptions): Metadata {
     },
     alternates: {
       canonical: canonicalUrl,
-      languages: getAlternateUrls(path),
+      languages: getAlternateUrls(path, alternateLocales),
     },
     openGraph: {
       type: 'website',

@@ -334,6 +334,7 @@ export const navConfig = {
     { title: 'Home', href: '/en/' },
     { title: 'Tools', href: '/en/tools/' },
     { title: 'Workflow', href: '/en/workflow/' },
+    { title: 'Guides', href: '/en/guides/' },
     { title: 'About', href: '/en/about/' },
     { title: 'FAQ', href: '/en/faq/' },
   ],
@@ -342,6 +343,7 @@ export const navConfig = {
     { title: 'Terms', href: '/en/terms/' },
     { title: 'Editorial policy', href: '/en/editorial/' },
     { title: 'Support', href: '/en/contact/' },
+    { title: 'Guides', href: '/en/guides/' },
     { title: 'Source', href: siteConfig.links.source },
   ],
 } as const;

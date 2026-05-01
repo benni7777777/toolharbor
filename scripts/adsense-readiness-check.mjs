@@ -177,6 +177,145 @@ function validateGeneratedHtmlUrl(url, sourceLabel) {
   }
 }
 
+function decodeEntities(value) {
+  return value
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#x27;/g, "'")
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+}
+
+function stripHtmlToText(html) {
+  const mainMatch = html.match(/<main\b[\s\S]*?<\/main>/i);
+  const primaryHtml = mainMatch?.[0] ?? html;
+  return decodeEntities(
+    primaryHtml
+      .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<svg\b[\s\S]*?<\/svg>/gi, ' ')
+      .replace(/<nav\b[\s\S]*?<\/nav>/gi, ' ')
+      .replace(/<footer\b[\s\S]*?<\/footer>/gi, ' ')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+  );
+}
+
+function normalizeVisibleText(value) {
+  return value
+    .toLowerCase()
+    .replace(/\d{4}-\d{2}-\d{2}/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function getMinimumVisibleCharacters(pathname) {
+  if (pathname === '/en/') {
+    return 1800;
+  }
+  if (pathname === '/en/guides/') {
+    return 1200;
+  }
+  if (pathname.startsWith('/en/guides/')) {
+    return 2600;
+  }
+  if (pathname.startsWith('/en/tools/category/')) {
+    return 1800;
+  }
+  if (pathname.startsWith('/en/tools/') && pathname !== '/en/tools/') {
+    return 2600;
+  }
+  if (pathname === '/en/tools/') {
+    return 1800;
+  }
+  if (/^\/en\/(about|contact|editorial|faq|privacy|terms|workflow)\//.test(pathname)) {
+    return 1100;
+  }
+  return 900;
+}
+
+function checkPublisherContentQuality({ sitemapUrls, htmlFiles }) {
+  const sitemapPathnames = new Set(sitemapUrls.map((url) => new URL(url).pathname));
+  const lowTextPages = [];
+  const missingH1Pages = [];
+  const missingDescriptionPages = [];
+  const placeholderPages = [];
+  const reviewModeAdPages = [];
+  const noindexPages = [];
+  const contentHashes = new Map();
+  let indexablePageCount = 0;
+
+  for (const file of htmlFiles) {
+    const rel = path.relative(outDir, file);
+    const html = fs.readFileSync(file, 'utf8');
+    const isNoindex = /<meta name="robots" content="[^"]*noindex/i.test(html);
+    if (isNoindex) {
+      noindexPages.push(rel);
+    }
+
+    const pathname = `/${rel.replace(/\\/g, '/').replace(/index\.html$/, '')}`;
+    const normalizedPathname = pathname === '/' ? '/' : pathname;
+    const inSitemap = sitemapPathnames.has(normalizedPathname);
+    if (!inSitemap) {
+      continue;
+    }
+
+    indexablePageCount += 1;
+
+    const text = stripHtmlToText(html);
+    const minimumChars = getMinimumVisibleCharacters(normalizedPathname);
+    if (text.length < minimumChars) {
+      lowTextPages.push(`${rel} (${text.length}/${minimumChars} visible chars)`);
+    }
+
+    if (!/<h1\b[^>]*>/i.test(html)) {
+      missingH1Pages.push(rel);
+    }
+
+    if (!/<meta name="description" content="[^"]{50,}"/i.test(html)) {
+      missingDescriptionPages.push(rel);
+    }
+
+    if (/\b(coming soon|under construction|lorem ipsum|todo:|placeholder content)\b/i.test(text)) {
+      placeholderPages.push(rel);
+    }
+
+    if (/profitablecpm|zeydoo|adsterra-native-host|otk-adsterra|popunder|socialbar|sponsored left rail|sponsored right rail/i.test(html)) {
+      reviewModeAdPages.push(rel);
+    }
+
+    const normalizedText = normalizeVisibleText(text);
+    const hash = normalizedText.slice(0, 2400);
+    const previous = contentHashes.get(hash);
+    if (previous && normalizedText.length > 1200) {
+      fail(`Potential duplicate visible content between ${previous} and ${rel}.`);
+    } else {
+      contentHashes.set(hash, rel);
+    }
+  }
+
+  if (lowTextPages.length > 0) {
+    fail(`Indexable pages below visible-content thresholds:\n${lowTextPages.slice(0, 40).join('\n')}`);
+  }
+  if (missingH1Pages.length > 0) {
+    fail(`Indexable pages missing an H1:\n${missingH1Pages.slice(0, 40).join('\n')}`);
+  }
+  if (missingDescriptionPages.length > 0) {
+    fail(`Indexable pages missing a usable meta description:\n${missingDescriptionPages.slice(0, 40).join('\n')}`);
+  }
+  if (placeholderPages.length > 0) {
+    fail(`Indexable pages contain placeholder or under-construction language:\n${placeholderPages.slice(0, 40).join('\n')}`);
+  }
+  if (reviewModeAdPages.length > 0) {
+    fail(`Review-mode output still contains ad or aggressive monetization surfaces:\n${reviewModeAdPages.slice(0, 40).join('\n')}`);
+  }
+
+  console.log(`Publisher content audit: ${indexablePageCount} indexable sitemap page(s), ${noindexPages.length} generated noindex page(s).`);
+}
+
 function checkOutputFiles() {
   if (!fs.existsSync(outDir)) {
     console.warn('out/ does not exist yet; skipping generated-output checks. Run npm run build first.');
@@ -341,6 +480,8 @@ function checkOutputFiles() {
   if (broken.length > 0) {
     fail(`Generated output has broken internal hrefs:\n${broken.slice(0, 30).join('\n')}`);
   }
+
+  checkPublisherContentQuality({ sitemapUrls, htmlFiles });
 }
 
 checkSourceFiles();

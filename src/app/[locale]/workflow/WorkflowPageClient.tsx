@@ -57,7 +57,7 @@ export default function WorkflowPageClient({ locale }: WorkflowPageClientProps) 
         {
     href: `/${locale}/tools/merge-pdf/`,
             title: 'Start with Merge PDF',
-            description: 'High-intent route for combining several source files before the rest of the workflow runs.',
+            description: 'A common starting point for combining several source files before the rest of the workflow runs.',
         },
         {
     href: `/${locale}/tools/compress-pdf/`,

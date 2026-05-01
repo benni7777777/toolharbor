@@ -21,6 +21,13 @@ import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureC
 import { GrowthPathways } from '@/components/seo/GrowthPathways';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 import type { ToolSeoExample } from '@/config/seo';
+import {
+  getToolEditorialContent,
+  getToolVisibleFaq,
+  type ToolEditorialContent,
+  type RelatedToolReason,
+} from '@/content/tool-editorial';
+import { getGuidesBySlugs, type GuideContent } from '@/content/guides';
 
 export interface ToolPageProps {
   /** Tool data */
@@ -33,6 +40,10 @@ export interface ToolPageProps {
   children?: React.ReactNode;
   /** Localized content for related tools */
   localizedRelatedTools?: Record<string, { title: string; description: string }>;
+  /** Page-level editorial content rendered as visible publisher content */
+  editorial?: ToolEditorialContent;
+  /** Merged visible FAQ data used by page-level structured data */
+  faqItems?: FAQ[];
 }
 
 const categoryTranslationKeys: Record<ToolCategory, string> = {
@@ -48,12 +59,18 @@ const categoryTranslationKeys: Record<ToolCategory, string> = {
  * ToolPage layout component provides the structure for individual tool pages.
  * Includes tool interface, description, how-to, use cases, FAQ, and related tools.
  */
-export function ToolPage({ tool, content, locale, children, localizedRelatedTools = {} }: ToolPageProps) {
+export function ToolPage({ tool, content, locale, children, localizedRelatedTools = {}, editorial, faqItems }: ToolPageProps) {
   // Get related tools data
   const relatedTools = tool.relatedTools
     .map(id => getToolById(id))
     .filter((t): t is Tool => t !== undefined);
   const seoProfile = getToolSeoProfile(tool, content);
+  const editorialContent = editorial ?? getToolEditorialContent(tool, content, seoProfile);
+  const showEnglishEditorial = locale === 'en';
+  const visibleFaq = faqItems ?? (showEnglishEditorial ? getToolVisibleFaq(content, editorialContent) : content.faq);
+  const guideLinks = showEnglishEditorial
+    ? getGuidesBySlugs(editorialContent.relatedGuideSlugs)
+    : [];
   const comparisonTools = seoProfile.comparisonToolIds
     .map(id => getToolById(id))
     .filter((candidate): candidate is Tool => candidate !== undefined);
@@ -159,6 +176,14 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
             {/* Description Section */}
             <DescriptionSection description={content.description} />
 
+            {showEnglishEditorial && (
+              <EditorialContentSection
+                editorial={editorialContent}
+                guides={guideLinks}
+                locale={locale}
+              />
+            )}
+
             {/* How to Use Section */}
             <HowToUseSection steps={content.howToUse} />
 
@@ -170,6 +195,7 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
               locale={locale}
               tools={comparisonTools}
               localizedRelatedTools={localizedRelatedTools}
+              relatedReasons={showEnglishEditorial ? editorialContent.relatedToolReasons : []}
             />
 
             <LimitationsSection limitations={seoProfile.limitations} />
@@ -184,7 +210,7 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
             />
 
             {/* FAQ Section */}
-            <FAQSection faq={content.faq} />
+            <FAQSection faq={visibleFaq} />
 
             {/* Related Tools Section */}
             <RelatedToolsSection
@@ -378,6 +404,82 @@ function DescriptionSection({ description }: DescriptionSectionProps) {
   );
 }
 
+interface EditorialContentSectionProps {
+  editorial: ToolEditorialContent;
+  guides: GuideContent[];
+  locale: string;
+}
+
+function EditorialContentSection({ editorial, guides, locale }: EditorialContentSectionProps) {
+  const sections = [
+    { title: 'What this tool does', items: editorial.whatItDoes },
+    { title: 'When to use it', items: editorial.whenToUse },
+    { title: 'Practical examples', items: editorial.practicalExamples },
+    { title: 'Privacy and file handling', items: editorial.privacyNotes },
+    { title: 'Common mistakes to avoid', items: editorial.commonMistakes },
+    { title: 'Troubleshooting', items: editorial.troubleshooting },
+  ];
+
+  if (editorial.responsibleUse && editorial.responsibleUse.length > 0) {
+    sections.push({ title: 'Responsible use', items: editorial.responsibleUse });
+  }
+
+  return (
+    <section className="mt-10" aria-labelledby="editorial-guide-heading">
+      <div className="mb-6 max-w-3xl">
+        <h2 id="editorial-guide-heading" className="text-2xl font-bold text-[hsl(var(--color-foreground))]">
+          Practical guide for this tool
+        </h2>
+        <p className="mt-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+          {editorial.summary}
+        </p>
+      </div>
+
+      <div className="grid gap-5 lg:grid-cols-2">
+        {sections.map((section) => (
+          <Card key={section.title} variant="outlined" size="lg" className="glass-card">
+            <h3 className="text-lg font-semibold text-[hsl(var(--color-foreground))]">
+              {section.title}
+            </h3>
+            <ul className="mt-4 space-y-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+              {section.items.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-[hsl(var(--color-primary))]" aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        ))}
+      </div>
+
+      {guides.length > 0 && (
+        <div className="mt-6 rounded-[1.75rem] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] p-6 shadow-[var(--shadow-sm)]">
+          <h3 className="text-lg font-semibold text-[hsl(var(--color-foreground))]">
+            Related guides
+          </h3>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            {guides.map((guide) => (
+              <Link
+                key={guide.slug}
+                href={`/${locale}/guides/${guide.slug}/`}
+                className="block rounded-[1.25rem] border border-[hsl(var(--color-border))] p-4 transition-colors hover:bg-[hsl(var(--color-surface-subtle))]"
+              >
+                <span className="text-sm font-semibold text-[hsl(var(--color-foreground))]">
+                  {guide.title}
+                </span>
+                <span className="mt-2 block text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                  {guide.summary}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
 /**
  * How to use section with numbered steps
  */
@@ -502,9 +604,10 @@ interface ComparisonSectionProps {
   tools: Tool[];
   locale: string;
   localizedRelatedTools: Record<string, { title: string; description: string }>;
+  relatedReasons: RelatedToolReason[];
 }
 
-function ComparisonSection({ currentTool, tools, locale, localizedRelatedTools }: ComparisonSectionProps) {
+function ComparisonSection({ currentTool, tools, locale, localizedRelatedTools, relatedReasons }: ComparisonSectionProps) {
   if (!tools || tools.length === 0) return null;
 
   const currentToolName = currentTool.id
@@ -520,6 +623,7 @@ function ComparisonSection({ currentTool, tools, locale, localizedRelatedTools }
       <div className="grid gap-4 lg:grid-cols-3">
         {tools.map((tool) => {
           const localized = localizedRelatedTools[tool.id];
+          const relatedReason = relatedReasons.find((item) => item.toolId === tool.id)?.reason;
           const toolName = localized?.title || tool.id
             .split('-')
             .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -531,9 +635,13 @@ function ComparisonSection({ currentTool, tools, locale, localizedRelatedTools }
                 {toolName}
               </h3>
               <p className="mt-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
-                Use <span className="font-medium text-[hsl(var(--color-foreground))]">{currentToolName}</span> when
-                the job is narrower or more direct than <span className="font-medium text-[hsl(var(--color-foreground))]">{toolName}</span>.
-                Switch to {toolName} if your problem is actually about its broader workflow or output.
+                {relatedReason || (
+                  <>
+                    Use <span className="font-medium text-[hsl(var(--color-foreground))]">{currentToolName}</span> when
+                    the job is narrower or more direct than <span className="font-medium text-[hsl(var(--color-foreground))]">{toolName}</span>.
+                    Switch to {toolName} if your problem is actually about its broader workflow or output.
+                  </>
+                )}
               </p>
             <Link href={`/${locale}/tools/${tool.slug}/`} className="mt-4 inline-block text-sm font-medium text-[hsl(var(--color-primary))] hover:underline">
                 Compare with {toolName}

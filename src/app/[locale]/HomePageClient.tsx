@@ -20,6 +20,7 @@ import { locales, type Locale } from '@/lib/i18n/config';
 import { type ToolCategory } from '@/types/tool';
 import { siteConfig } from '@/config/site';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
+import { getGuideSummaries } from '@/content/guides';
 
 interface HomePageClientProps {
   locale: Locale;
@@ -34,6 +35,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
   const showHomepageNativeAd = monetizationProfile.allowNativeUnits && siteConfig.ads.placements.homepage.nativeBanner;
   const showInlineAd = monetizationProfile.allowAggressiveUnits;
   const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
+  const homepageGuides = locale === 'en' ? getGuideSummaries(4) : [];
 
   // Feature highlights
   const features = [
@@ -173,6 +175,90 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
             </div>
           </div>
         </section>
+
+        <section className="py-14" aria-labelledby="publisher-value-heading">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 id="publisher-value-heading" className="text-3xl font-bold text-[hsl(var(--color-foreground))]">
+                Practical document workflows, not just buttons
+              </h2>
+              <p className="mt-4 text-base leading-7 text-[hsl(var(--color-muted-foreground))]">
+                OpenToolsKit pairs browser-based PDF tools with clear guidance about inputs, outputs, privacy limits,
+                and what to check before sharing a finished document. The goal is to help users choose the right tool,
+                avoid common file mistakes, and verify results before a document leaves their device.
+              </p>
+            </div>
+
+            <div className="mx-auto mt-8 grid max-w-6xl gap-5 md:grid-cols-3">
+              <Card className="p-6">
+                <h3 className="text-lg font-semibold text-[hsl(var(--color-foreground))]">
+                  Choose by task
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                  Use merge and organize tools when page order matters, conversion tools when a format needs to change,
+                  and security tools when access, metadata, or visible sensitive content needs review.
+                </p>
+              </Card>
+              <Card className="p-6">
+                <h3 className="text-lg font-semibold text-[hsl(var(--color-foreground))]">
+                  Process locally where applicable
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                  Many workflows run in the browser using JavaScript, workers, and WebAssembly. The privacy pages
+                  explain the boundaries, and tool pages call out cases where output verification matters.
+                </p>
+              </Card>
+              <Card className="p-6">
+                <h3 className="text-lg font-semibold text-[hsl(var(--color-foreground))]">
+                  Review before sending
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                  A successful export should still be opened and checked. Page order, readability, signatures,
+                  redactions, metadata, and password settings can all affect whether a PDF is ready to share.
+                </p>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {homepageGuides.length > 0 && (
+          <section className="py-14 bg-[hsl(var(--color-card))/0.66]" aria-labelledby="home-guides-heading">
+            <div className="container mx-auto px-4">
+              <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                <div className="max-w-3xl">
+                  <h2 id="home-guides-heading" className="text-3xl font-bold text-[hsl(var(--color-foreground))]">
+                    Learn the safest path for common PDF jobs
+                  </h2>
+                  <p className="mt-3 text-base leading-7 text-[hsl(var(--color-muted-foreground))]">
+                    These short guides explain practical choices, limits, and verification steps for the most common
+                    browser-based PDF workflows.
+                  </p>
+                </div>
+                <Link href={`/${locale}/guides/`}>
+                  <Button variant="outline" size="sm" className="group">
+                    View all guides
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  </Button>
+                </Link>
+              </div>
+
+              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+                {homepageGuides.map((guide) => (
+                  <Link key={guide.slug} href={`/${locale}/guides/${guide.slug}/`} className="block">
+                    <Card className="h-full p-5" hover>
+                      <h3 className="text-base font-semibold text-[hsl(var(--color-foreground))]">
+                        {guide.title}
+                      </h3>
+                      <p className="mt-3 text-sm leading-6 text-[hsl(var(--color-muted-foreground))]">
+                        {guide.summary}
+                      </p>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {showHomepageNativeAd && (
           <section className="py-4">

@@ -200,7 +200,7 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
                     paths are kept visible so users and reviewers can verify the project boundaries.
                   </p>
                   <p>
-                    Optional advertising or partner surfaces, when enabled outside review mode, are separate from the
+                    Optional advertising or partner surfaces, when enabled, are separate from the
                     core file-processing flow.
                   </p>
                 </div>

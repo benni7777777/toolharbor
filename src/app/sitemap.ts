@@ -6,10 +6,12 @@
  */
 
 import { MetadataRoute } from 'next';
-import { locales, type Locale } from '@/lib/i18n/config';
+import { type Locale } from '@/lib/i18n/config';
+import { indexableLocales } from '@/lib/i18n/indexing';
 import { getAllTools } from '@/config/tools';
 import { TOOL_CATEGORIES } from '@/types/tool';
 import { getCanonicalUrl } from '@/lib/seo/metadata';
+import { guides } from '@/content/guides';
 
 // Required for static export
 export const dynamic = 'force-static';
@@ -23,6 +25,8 @@ const PRIORITY = {
   category: 0.8,
   toolPage: 0.8,
   workflow: 0.7,
+  guides: 0.7,
+  guidePage: 0.7,
   static: 0.6,
 } as const;
 
@@ -35,6 +39,8 @@ const CHANGE_FREQUENCY = {
   category: 'weekly',
   toolPage: 'weekly',
   workflow: 'weekly',
+  guides: 'monthly',
+  guidePage: 'monthly',
   static: 'monthly',
 } as const;
 
@@ -88,6 +94,24 @@ function generateLocaleEntries(locale: Locale, lastModified: Date): MetadataRout
       priority: PRIORITY.toolPage,
     });
   }
+
+  if (locale === 'en') {
+    entries.push({
+      url: getCanonicalUrl(locale, '/guides'),
+      lastModified,
+      changeFrequency: CHANGE_FREQUENCY.guides,
+      priority: PRIORITY.guides,
+    });
+
+    for (const guide of guides) {
+      entries.push({
+        url: getCanonicalUrl(locale, `/guides/${guide.slug}`),
+        lastModified,
+        changeFrequency: CHANGE_FREQUENCY.guidePage,
+        priority: PRIORITY.guidePage,
+      });
+    }
+  }
   
   return entries;
 }
@@ -99,8 +123,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   const allEntries: MetadataRoute.Sitemap = [];
   
-  // Generate entries for each locale
-  for (const locale of locales) {
+  // Generate entries only for locales with reviewed, indexable public content.
+  for (const locale of indexableLocales) {
     const localeEntries = generateLocaleEntries(locale, lastModified);
     allEntries.push(...localeEntries);
   }
@@ -117,7 +141,8 @@ export function getSitemapUrlCount(): number {
   const staticPagesCount = STATIC_PAGES.length;
   const categoryPagesCount = TOOL_CATEGORIES.length;
   const toolPagesCount = tools.length;
-  const localesCount = locales.length;
+  const localesCount = indexableLocales.length;
+  const englishGuidePagesCount = guides.length + 1;
   
-  return (staticPagesCount + categoryPagesCount + toolPagesCount) * localesCount;
+  return ((staticPagesCount + categoryPagesCount + toolPagesCount) * localesCount) + englishGuidePagesCount;
 }

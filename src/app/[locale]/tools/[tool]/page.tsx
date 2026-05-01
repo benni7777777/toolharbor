@@ -101,6 +101,8 @@ import {
   generateWebPageSchema,
   generateBreadcrumbSchema
 } from '@/lib/seo/structured-data';
+import { getToolSeoProfile } from '@/lib/seo/profiles';
+import { getToolEditorialContent, getToolVisibleFaq } from '@/content/tool-editorial';
 import type { Metadata } from 'next';
 
 const SUPPORTED_LOCALES: Locale[] = ['en', 'ja', 'ko', 'es', 'fr', 'de', 'zh', 'zh-TW', 'pt', 'ar', 'it', 'id', 'vi'];
@@ -183,9 +185,13 @@ export default async function ToolPageRoute({ params }: ToolPageParams) {
     notFound();
   }
 
+  const seoProfile = getToolSeoProfile(tool, content);
+  const editorial = getToolEditorialContent(tool, content, seoProfile);
+  const visibleFaq = locale === 'en' ? getToolVisibleFaq(content, editorial) : content.faq;
+
   // Generate structured data
   const toolStructuredData = generateSoftwareApplicationSchema(tool, content, locale);
-  const faqStructuredData = generateFAQSchema(content.faq);
+  const faqStructuredData = generateFAQSchema(visibleFaq);
   const howToStructuredData = generateHowToSchema(tool, content, locale);
   const webPageStructuredData = generateWebPageSchema(tool, content, locale);
   const breadcrumbStructuredData = generateBreadcrumbSchema(
@@ -439,6 +445,8 @@ export default async function ToolPageRoute({ params }: ToolPageParams) {
         content={content}
         locale={locale}
         localizedRelatedTools={localizedRelatedTools}
+        editorial={editorial}
+        faqItems={visibleFaq}
       >
         {renderToolInterface()}
       </ToolPage>
