@@ -16,6 +16,7 @@ import {
 } from '@/lib/seo/structured-data';
 import { getToolSeoProfile } from '@/lib/seo/profiles';
 import { getToolEditorialContent, getToolVisibleFaq } from '@/content/tool-editorial';
+import { isPublisherReviewedTool } from '@/lib/seo/publisher-review';
 import type { Metadata } from 'next';
 
 const SUPPORTED_LOCALES: Locale[] = ['en', 'ja', 'ko', 'es', 'fr', 'de', 'zh', 'zh-TW', 'pt', 'ar', 'it', 'id', 'vi'];
@@ -116,6 +117,11 @@ export default async function ToolPageRoute({ params }: ToolPageParams) {
 
   // Prepare localized content for related tools
   const localizedRelatedTools = tool.relatedTools.reduce((acc, relatedId) => {
+    const relatedTool = getAllTools().find((candidate) => candidate.id === relatedId);
+    if (!relatedTool || !isPublisherReviewedTool(relatedTool)) {
+      return acc;
+    }
+
     const relatedContent = getToolContent(locale, relatedId);
     if (relatedContent) {
       acc[relatedId] = {

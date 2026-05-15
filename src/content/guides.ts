@@ -246,6 +246,7 @@ export const guides: GuideContent[] = [
         body: [
           'Use a password that is not easy to guess and do not put the password in the same email or message as the encrypted PDF.',
           'If a recipient loses the password, recovery may not be possible. Keep a safe copy of the original file when the document matters.',
+          'For shared teams, decide who is responsible for storing the password before the file is sent so access does not depend on one inbox or chat thread.',
         ],
         steps: [
           'Review the PDF and remove information that should not be shared.',

@@ -13,6 +13,7 @@ import { generateBaseMetadata, generateBasicWebPageSchema, generateBreadcrumbSch
 import { getCanonicalUrl } from '@/lib/seo/metadata';
 import type { Locale } from '@/lib/i18n/config';
 import { getGuideBySlug, guides } from '@/content/guides';
+import { isPublisherReviewedTool } from '@/lib/seo/publisher-review';
 
 export const dynamicParams = false;
 
@@ -164,7 +165,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
                 <div className="mt-5 grid gap-4 md:grid-cols-2">
                   {guide.relatedTools.map((item) => {
                     const tool = getToolById(item.toolId);
-                    if (!tool) {
+                    if (!tool || !isPublisherReviewedTool(tool)) {
                       return null;
                     }
                     const content = getToolContent(localeValue, tool.id);

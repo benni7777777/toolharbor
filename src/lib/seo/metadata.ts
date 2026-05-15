@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 import { defaultLocale, type Locale } from '@/lib/i18n/config';
 import { indexableLocales, isIndexableLocale } from '@/lib/i18n/indexing';
 import { getToolSeoProfile } from '@/lib/seo/profiles';
+import { isPublisherReviewedTool } from '@/lib/seo/publisher-review';
 import type { Tool, ToolContent } from '@/types/tool';
 import type { ToolCategory } from '@/types/tool';
 
@@ -172,6 +173,7 @@ export function generateToolMetadata(options: ToolMetadataOptions): Metadata {
     path,
     title: seoProfile.pageTitle,
     description: seoProfile.metaDescription,
+    noIndex: !isPublisherReviewedTool(tool),
   });
 }
 

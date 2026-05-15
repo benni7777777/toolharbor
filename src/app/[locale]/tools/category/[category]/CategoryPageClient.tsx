@@ -10,7 +10,6 @@ import {
 } from '@/components/ads/DynamicAdsterraComponents';
 import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureCard';
 import { ToolGrid } from '@/components/tools/ToolGrid';
-import { getToolsByCategory } from '@/config/tools';
 import { getCategorySeo } from '@/config/seo';
 import { type Locale } from '@/lib/i18n/config';
 import { type ToolCategory } from '@/types/tool';
@@ -19,6 +18,7 @@ import { Home, ChevronRight } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 import { getGuidesBySlugs } from '@/content/guides';
+import { getPublisherReviewedToolsByCategory } from '@/lib/seo/publisher-review';
 
 interface CategoryPageClientProps {
     locale: Locale;
@@ -29,7 +29,7 @@ interface CategoryPageClientProps {
 export default function CategoryPageClient({ locale, category, localizedToolContent }: CategoryPageClientProps) {
     const t = useTranslations();
     const monetizationProfile = useMonetizationProfile();
-    const tools = getToolsByCategory(category);
+    const tools = getPublisherReviewedToolsByCategory(category);
     const categorySeo = getCategorySeo(category);
     const showCategoryNativeAd = monetizationProfile.allowNativeUnits && siteConfig.ads.placements.categoryHub.nativeBanner;
     const showInlineAd = monetizationProfile.allowAggressiveUnits;

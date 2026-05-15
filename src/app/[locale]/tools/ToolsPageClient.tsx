@@ -14,7 +14,7 @@ import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureC
 import { ToolGrid } from '@/components/tools/ToolGrid';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
-import { getAllTools, getToolsByCategory, getToolById } from '@/config/tools';
+import { getToolById } from '@/config/tools';
 import { toolMatchesQuery } from '@/lib/utils/search';
 import { type Locale } from '@/lib/i18n/config';
 import { CATEGORY_INFO, type ToolCategory } from '@/types/tool';
@@ -22,6 +22,11 @@ import { useFavorites } from '@/hooks/useFavorites';
 import { siteConfig } from '@/config/site';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 import { getGuideSummaries } from '@/content/guides';
+import {
+  getPublisherReviewedTools,
+  getPublisherReviewedToolsByCategory,
+  isPublisherReviewedTool,
+} from '@/lib/seo/publisher-review';
 
 type CategoryFilter = ToolCategory | 'all' | 'favorites';
 
@@ -33,7 +38,7 @@ interface ToolsPageClientProps {
 export default function ToolsPageClient({ locale, localizedToolContent }: ToolsPageClientProps) {
   const t = useTranslations();
   const monetizationProfile = useMonetizationProfile();
-  const allTools = getAllTools();
+  const allTools = getPublisherReviewedTools();
   const { favorites, isLoaded: favoritesLoaded, favoritesCount } = useFavorites();
   const showToolsNativeAd = monetizationProfile.allowNativeUnits && siteConfig.ads.placements.toolsIndex.nativeBanner;
   const showInlineAd = monetizationProfile.allowAggressiveUnits;
@@ -75,9 +80,9 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
       // Filter to only show favorite tools
       tools = favorites
         .map(id => getToolById(id))
-        .filter((tool): tool is NonNullable<typeof tool> => tool !== undefined);
+        .filter((tool): tool is NonNullable<typeof tool> => tool !== undefined && isPublisherReviewedTool(tool));
     } else if (selectedCategory !== 'all') {
-      tools = getToolsByCategory(selectedCategory as ToolCategory);
+      tools = getPublisherReviewedToolsByCategory(selectedCategory as ToolCategory);
     }
 
     // Filter by search query (supports current language search)
@@ -227,7 +232,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                         </p>
                       </div>
                       <span className="rounded-full bg-[hsl(var(--color-primary)/0.1)] px-2.5 py-1 text-xs font-medium text-[hsl(var(--color-primary))]">
-                        {getToolsByCategory(categoryKey).length}
+                        {getPublisherReviewedToolsByCategory(categoryKey).length}
                       </span>
                     </div>
                   </Link>
@@ -342,7 +347,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                     )}
                     {cat.value !== 'all' && cat.value !== 'favorites' && (
                       <span className={`ml-0.5 text-xs ${selectedCategory === cat.value ? 'opacity-100' : 'opacity-60'}`}>
-                        ({getToolsByCategory(cat.value as ToolCategory).length})
+                        ({getPublisherReviewedToolsByCategory(cat.value as ToolCategory).length})
                       </span>
                     )}
                   </button>

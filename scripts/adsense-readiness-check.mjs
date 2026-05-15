@@ -116,6 +116,17 @@ function outPathForHref(href) {
   return path.join(outDir, normalized.slice(1), 'index.html');
 }
 
+function pathnameForHtmlFile(file) {
+  const rel = path.relative(outDir, file).replace(/\\/g, '/');
+  if (rel === 'index.html') {
+    return '/';
+  }
+  if (rel.endsWith('/index.html')) {
+    return `/${rel.slice(0, -'index.html'.length)}`;
+  }
+  return `/${rel.replace(/\.html$/, '/')}`;
+}
+
 function outPathForAbsoluteUrl(url) {
   const parsed = new URL(url);
   return outPathForHref(parsed.pathname);
@@ -410,6 +421,8 @@ function checkOutputFiles() {
 
   const htmlFiles = walk(outDir).filter((file) => file.endsWith('.html'));
   const broken = [];
+  const sitemapPathnames = new Set(sitemapUrls.map((url) => new URL(url).pathname));
+  const noindexPathnames = new Set();
   const hrefPattern = /\s(?:href|src)=["']([^"']+)["']/g;
   const skipPrefixes = [
     'http:',
@@ -429,7 +442,16 @@ function checkOutputFiles() {
 
   for (const file of htmlFiles) {
     const text = fs.readFileSync(file, 'utf8');
+    if (/<meta name="robots" content="[^"]*noindex/i.test(text)) {
+      noindexPathnames.add(pathnameForHtmlFile(file));
+    }
+  }
+
+  for (const file of htmlFiles) {
+    const text = fs.readFileSync(file, 'utf8');
     const rel = path.relative(outDir, file);
+    const sourcePathname = pathnameForHtmlFile(file);
+    const sourceIsIndexable = sitemapPathnames.has(sourcePathname);
 
     const adsenseScriptTags = [...text.matchAll(/<script\b[^>]*\bsrc=["'][^"']*pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=ca-pub-7143107898355663[^"']*["'][^>]*>/gi)];
     if (adsenseScriptTags.length > 1) {
@@ -501,6 +523,12 @@ function checkOutputFiles() {
       const target = outPathForHref(href);
       if (!fs.existsSync(target)) {
         broken.push(`${rel} -> ${href}`);
+        continue;
+      }
+
+      const targetPathname = cleaned.endsWith('/') ? cleaned : `${cleaned}/`;
+      if (sourceIsIndexable && noindexPathnames.has(targetPathname)) {
+        broken.push(`${rel} -> ${href} (indexable page links to noindex route)`);
       }
     }
   }

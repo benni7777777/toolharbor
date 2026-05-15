@@ -8,7 +8,7 @@
 import { MetadataRoute } from 'next';
 import { type Locale } from '@/lib/i18n/config';
 import { indexableLocales } from '@/lib/i18n/indexing';
-import { getAllTools } from '@/config/tools';
+import { getPublisherReviewedTools } from '@/lib/seo/publisher-review';
 import { TOOL_CATEGORIES } from '@/types/tool';
 import { getCanonicalUrl } from '@/lib/seo/metadata';
 import { guides } from '@/content/guides';
@@ -85,7 +85,7 @@ function generateLocaleEntries(locale: Locale, lastModified: Date): MetadataRout
   }
   
   // Add tool pages
-  const tools = getAllTools();
+  const tools = getPublisherReviewedTools();
   for (const tool of tools) {
     entries.push({
       url: getCanonicalUrl(locale, `/tools/${tool.slug}`),
@@ -137,7 +137,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
  * Useful for testing and validation
  */
 export function getSitemapUrlCount(): number {
-  const tools = getAllTools();
+  const tools = getPublisherReviewedTools();
   const staticPagesCount = STATIC_PAGES.length;
   const categoryPagesCount = TOOL_CATEGORIES.length;
   const toolPagesCount = tools.length;

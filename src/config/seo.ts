@@ -136,7 +136,7 @@ export const CATEGORY_SEO: Record<ToolCategory, CategorySeoProfile> = {
     title: 'Convert Files to PDF - Images, Text, Office, Ebook | OpenToolsKit',
     h1: 'Convert files to PDF in your browser',
     description: 'Convert images, text, JSON, ebooks, email, and supported document formats to PDF in a browser-first workflow with private local handling.',
-    intro: 'Use the convert-to-PDF hub when the source file is not already a PDF and the goal is to create a shareable PDF output.',
+    intro: 'Use the convert-to-PDF hub when the source file is not already a PDF and the goal is to create a shareable PDF output. Start with the converter that matches the original file type, then open the finished PDF to confirm page size, orientation, readability, and file size before sending it onward.',
     bestFor: [
       'Turning images, text files, and structured content into a PDF.',
       'Preparing PDFs from mixed source files before merging or annotating them.',

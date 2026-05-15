@@ -15,12 +15,18 @@ import MonetizationDisclosureCard from '@/components/ads/MonetizationDisclosureC
 import { ToolGrid } from '@/components/tools/ToolGrid';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
-import { getAllTools, getToolsByCategory, getPopularTools } from '@/config/tools';
-import { locales, type Locale } from '@/lib/i18n/config';
+import { getPopularTools } from '@/config/tools';
+import { type Locale } from '@/lib/i18n/config';
+import { indexableLocales } from '@/lib/i18n/indexing';
 import { type ToolCategory } from '@/types/tool';
 import { siteConfig } from '@/config/site';
 import { useMonetizationProfile } from '@/hooks/useMonetizationProfile';
 import { getGuideSummaries } from '@/content/guides';
+import {
+  getPublisherReviewedTools,
+  getPublisherReviewedToolsByCategory,
+  isPublisherReviewedTool,
+} from '@/lib/seo/publisher-review';
 
 interface HomePageClientProps {
   locale: Locale;
@@ -30,8 +36,8 @@ interface HomePageClientProps {
 export default function HomePageClient({ locale, localizedToolContent }: HomePageClientProps) {
   const t = useTranslations();
   const monetizationProfile = useMonetizationProfile();
-  const allTools = getAllTools();
-  const popularTools = getPopularTools();
+  const allTools = getPublisherReviewedTools();
+  const popularTools = getPopularTools().filter(isPublisherReviewedTool);
   const showHomepageNativeAd = monetizationProfile.allowNativeUnits && siteConfig.ads.placements.homepage.nativeBanner;
   const showInlineAd = monetizationProfile.allowAggressiveUnits;
   const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
@@ -324,7 +330,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
               </Link>
             </div>
             <ToolGrid
-              tools={getToolsByCategory('organize-manage').slice(0, 8)}
+              tools={getPublisherReviewedToolsByCategory('organize-manage').slice(0, 8)}
               locale={locale}
               localizedToolContent={localizedToolContent}
               enableDiscoveryMonetization
@@ -357,7 +363,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {categoryOrder.map((category) => {
-                const categoryTools = getToolsByCategory(category);
+                const categoryTools = getPublisherReviewedToolsByCategory(category);
                 const Icon = categoryIcons[category];
                 const categoryName = t(`home.categories.${categoryTranslationKeys[category]}`);
                 const categoryDescription = t(`home.categoriesDescription.${categoryTranslationKeys[category]}`);
@@ -417,7 +423,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
               </div>
               <div className="p-4">
                 <div className="text-3xl lg:text-4xl font-bold text-gradient mb-1">
-                  {locales.length}
+                  {indexableLocales.length}
                 </div>
                 <div className="text-xs font-medium text-[hsl(var(--color-muted-foreground))] uppercase tracking-wider">
                   {t('home.stats.languages')}

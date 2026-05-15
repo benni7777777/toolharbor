@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { Globe, ChevronDown, Check } from 'lucide-react';
 import { type Locale, locales, localeConfig, getLocalizedPath } from '@/lib/i18n/config';
+import { indexableLocales } from '@/lib/i18n/indexing';
 import { Button } from '@/components/ui/Button';
 import { useSafeTranslations } from '@/lib/i18n/useSafeTranslations';
 
@@ -13,6 +14,7 @@ export interface LanguageSelectorProps {
 
 // Storage key for language preference
 const LANGUAGE_PREFERENCE_KEY = 'opentoolskit-language-preference';
+const visibleLocales = indexableLocales as readonly Locale[];
 
 /**
  * Save language preference to localStorage
@@ -46,6 +48,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocal
   const optionRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const currentConfig = localeConfig[currentLocale];
+  const showSelector = visibleLocales.length > 1;
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -92,7 +95,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocal
     setIsOpen((prev) => {
       if (!prev) {
         // Find current locale index when opening
-        const currentIndex = locales.indexOf(currentLocale);
+        const currentIndex = visibleLocales.indexOf(currentLocale);
         setFocusedIndex(currentIndex >= 0 ? currentIndex : 0);
       } else {
         setFocusedIndex(-1);
@@ -107,7 +110,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocal
       if (!isOpen) {
         setIsOpen(true);
       }
-      const currentIndex = locales.indexOf(currentLocale);
+      const currentIndex = visibleLocales.indexOf(currentLocale);
       setFocusedIndex(currentIndex >= 0 ? currentIndex : 0);
     }
   }, [isOpen, currentLocale]);
@@ -124,7 +127,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocal
     setFocusedIndex(-1);
   }, [pathname, router]);
 
-  const handleOptionKeyDown = useCallback((event: React.KeyboardEvent, locale: Locale, index: number) => {
+  const handleOptionKeyDown = useCallback((event: React.KeyboardEvent, locale: Locale) => {
     switch (event.key) {
       case 'Enter':
       case ' ':
@@ -133,11 +136,11 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocal
         break;
       case 'ArrowDown':
         event.preventDefault();
-        setFocusedIndex((prev) => (prev < locales.length - 1 ? prev + 1 : 0));
+        setFocusedIndex((prev) => (prev < visibleLocales.length - 1 ? prev + 1 : 0));
         break;
       case 'ArrowUp':
         event.preventDefault();
-        setFocusedIndex((prev) => (prev > 0 ? prev - 1 : locales.length - 1));
+        setFocusedIndex((prev) => (prev > 0 ? prev - 1 : visibleLocales.length - 1));
         break;
       case 'Home':
         event.preventDefault();
@@ -145,7 +148,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocal
         break;
       case 'End':
         event.preventDefault();
-        setFocusedIndex(locales.length - 1);
+        setFocusedIndex(visibleLocales.length - 1);
         break;
       case 'Escape':
         event.preventDefault();
@@ -158,6 +161,10 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocal
         break;
     }
   }, [handleLanguageSelect]);
+
+  if (!showSelector) {
+    return null;
+  }
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -185,9 +192,9 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocal
           className="absolute top-full right-0 mt-1 w-48 py-1 bg-[hsl(var(--color-background))] border border-[hsl(var(--color-border))] rounded-[var(--radius-lg)] shadow-lg z-50"
           role="listbox"
           aria-label={t('selectLanguage')}
-          aria-activedescendant={focusedIndex >= 0 ? `language-option-${locales[focusedIndex]}` : undefined}
+          aria-activedescendant={focusedIndex >= 0 ? `language-option-${visibleLocales[focusedIndex]}` : undefined}
         >
-          {locales.map((locale, index) => {
+          {visibleLocales.map((locale, index) => {
             const config = localeConfig[locale];
             const isSelected = locale === currentLocale;
 
@@ -197,7 +204,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLocal
                 id={`language-option-${locale}`}
                 ref={(el) => { optionRefs.current[index] = el; }}
                 onClick={() => handleLanguageSelect(locale)}
-                onKeyDown={(e) => handleOptionKeyDown(e, locale, index)}
+                onKeyDown={(e) => handleOptionKeyDown(e, locale)}
                 className={`
                   flex items-center justify-between w-full px-3 py-2 text-sm text-left
                   transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[hsl(var(--color-ring))]

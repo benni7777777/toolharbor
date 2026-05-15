@@ -36,9 +36,9 @@ export default async function ToolsPage({ params }: ToolsPageProps) {
   setRequestLocale(locale);
 
   // Get localized content for tools
-  const { getAllTools } = await import('@/config/tools');
+  const { getPublisherReviewedTools } = await import('@/lib/seo/publisher-review');
   const { getToolContent } = await import('@/config/tool-content');
-  const activeTools = getAllTools();
+  const activeTools = getPublisherReviewedTools();
 
   const localizedToolContent = activeTools.reduce((acc, tool) => {
     const content = getToolContent(locale as Locale, tool.id);

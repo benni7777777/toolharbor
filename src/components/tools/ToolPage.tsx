@@ -28,6 +28,7 @@ import {
   type RelatedToolReason,
 } from '@/content/tool-editorial';
 import { getGuidesBySlugs, type GuideContent } from '@/content/guides';
+import { isPublisherReviewedTool } from '@/lib/seo/publisher-review';
 
 export interface ToolPageProps {
   /** Tool data */
@@ -63,7 +64,7 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
   // Get related tools data
   const relatedTools = tool.relatedTools
     .map(id => getToolById(id))
-    .filter((t): t is Tool => t !== undefined);
+    .filter((t): t is Tool => t !== undefined && isPublisherReviewedTool(t));
   const seoProfile = getToolSeoProfile(tool, content);
   const editorialContent = editorial ?? getToolEditorialContent(tool, content, seoProfile);
   const showEnglishEditorial = locale === 'en';
@@ -73,7 +74,7 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
     : [];
   const comparisonTools = seoProfile.comparisonToolIds
     .map(id => getToolById(id))
-    .filter((candidate): candidate is Tool => candidate !== undefined);
+    .filter((candidate): candidate is Tool => candidate !== undefined && isPublisherReviewedTool(candidate));
 
   const t = useSafeTranslations();
   const monetizationProfile = useMonetizationProfile();

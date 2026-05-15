@@ -5,10 +5,10 @@ import CategoryPageClient from './CategoryPageClient';
 import { notFound } from 'next/navigation';
 import { generateCategoryMetadata } from '@/lib/seo';
 import { getCategorySeo } from '@/config/seo';
-import { getToolsByCategory } from '@/config/tools';
 import { getToolContent } from '@/config/tool-content';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateBasicWebPageSchema, generateBreadcrumbSchema, generateItemListSchema } from '@/lib/seo';
+import { getPublisherReviewedToolsByCategory } from '@/lib/seo/publisher-review';
 import type { Metadata } from 'next';
 
 export function generateStaticParams() {
@@ -47,7 +47,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ local
     // Enable static rendering
     setRequestLocale(locale);
 
-    const categoryTools = getToolsByCategory(category as ToolCategory);
+    const categoryTools = getPublisherReviewedToolsByCategory(category as ToolCategory);
     const localizedToolContent = categoryTools.reduce((acc, tool) => {
         const content = getToolContent(locale as Locale, tool.id);
         if (content) {

@@ -3,7 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { Github, Globe, ShieldCheck } from 'lucide-react';
-import { type Locale, locales, localeConfig, getLocalizedPath } from '@/lib/i18n/config';
+import { type Locale, localeConfig, getLocalizedPath } from '@/lib/i18n/config';
+import { indexableLocales } from '@/lib/i18n/indexing';
 import { usePathname, useRouter } from 'next/navigation';
 import { saveLanguagePreference } from './LanguageSelector';
 import { BrandMark } from './BrandMark';
@@ -20,6 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
   const router = useRouter();
   const pathname = usePathname();
   const showMonetizationDisclosure = siteConfig.ads.enabled || siteConfig.sponsorship.enabled;
+  const visibleLocales = indexableLocales as readonly Locale[];
 
   const handleLanguageChange = (newLocale: Locale) => {
     saveLanguagePreference(newLocale);
@@ -194,28 +196,30 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
 
         <div className="mt-10 border-t border-[hsl(var(--color-border))] pt-6">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex items-center gap-2">
-              <Globe className="h-4 w-4 text-[hsl(var(--color-muted-foreground))]" aria-hidden="true" />
-              <div className="flex flex-wrap gap-2">
-                {locales.map((loc) => {
-                  const isActive = loc === locale;
-                  return (
-                    <button
-                      key={loc}
-                      type="button"
-                      onClick={() => handleLanguageChange(loc)}
-                      className={`rounded-full px-3 py-1.5 text-xs transition-colors ${
-                        isActive
-                          ? 'bg-[hsl(var(--color-primary))] text-[hsl(var(--color-primary-foreground))]'
-                          : 'bg-[hsl(var(--color-surface-subtle))] text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]'
-                      }`}
-                    >
-                      {localeConfig[loc].nativeName}
-                    </button>
-                  );
-                })}
+            {visibleLocales.length > 1 && (
+              <div className="flex items-center gap-2">
+                <Globe className="h-4 w-4 text-[hsl(var(--color-muted-foreground))]" aria-hidden="true" />
+                <div className="flex flex-wrap gap-2">
+                  {visibleLocales.map((loc) => {
+                    const isActive = loc === locale;
+                    return (
+                      <button
+                        key={loc}
+                        type="button"
+                        onClick={() => handleLanguageChange(loc)}
+                        className={`rounded-full px-3 py-1.5 text-xs transition-colors ${
+                          isActive
+                            ? 'bg-[hsl(var(--color-primary))] text-[hsl(var(--color-primary-foreground))]'
+                            : 'bg-[hsl(var(--color-surface-subtle))] text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]'
+                        }`}
+                      >
+                        {localeConfig[loc].nativeName}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            )}
 
             <p className="text-sm text-[hsl(var(--color-muted-foreground))]">
               &copy; {currentYear} {t('brand')}. {siteConfig.legal.license} licensed.
